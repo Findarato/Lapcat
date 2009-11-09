@@ -1,0 +1,224 @@
+/* Keywords in this page: General, Background, Color Swatches, Displays, Effects, Fonts, Form, Hotkeys, Line, Open Line, Options */
+/* CTRL-F for search */
+/* CSS - General */
+body,html{margin:0;padding:0;}
+a{color:rgb(255,255,255);font-family:Arial,Helvetica,sans-serif;font-size:12px;text-decoration:none;}
+font{color:#FFFFFF;font-family:Arial,Helvetica,sans-serif;}
+.font{font-family:Arial,Helvetica,sans-serif;}
+form{font-family:Arial,Helvetica,sans-serif;font-size:12px;text-decoration:none;}
+img{border:none;}
+table{border:none;border-collapse:collapse;margin:0;padding:0;}
+.fake-link{cursor:pointer;}
+/*
+.hidden{display:none;}
+.shown{display:inline;}
+*/
+/* CSS - Catalog Controls */
+/*
+.C-dock{background-repeat:no-repeat; height:21px;}
+.C-dock:hover{background-image:url(/lapcat/layout/icons/21-21-11.png);}
+.C-load{background-repeat:no-repeat; height:21px;}
+.C-load:hover{background-image:url(/lapcat/layout/icons/21-21-18.png);}
+.C-new-window{background-repeat:no-repeat; height:21px;}
+.C-new-window:hover{background-image:url(/lapcat/layout/icons/21-21-13.png);}
+.C-undock{background-repeat:no-repeat; height:21px;}
+.C-undock:hover{background-image:url(/lapcat/layout/icons/21-21-16.png);}
+.C-X{background-repeat:no-repeat; height:21px;}
+.C-X:hover{background-image:url(/lapcat/layout/icons/21-21-15.png);}
+*/
+/* CSS - Color Swatches */
+/* .swatch{background:#FF0000; border:2px solid #0E0E0E; cursor:pointer; float:left; height:20px; margin-left:4px; width:20px;} */
+/* CSS - Displays */
+/*
+.displays-nebula{visibility:visible; width:706px;}
+.displays-none{visibility:hidden; width:0px;}
+.help-space-nebula{background-color:#0E0E0E; border:1px solid #0E0E0E; width:16px;}
+.help-space-nebula:hover{background-color:#1E1E1E; border:1px solid #2E2E2E; cursor:pointer;}
+.help-nebula{visibility:visible; width:180px;}
+.help-none{visibility:hidden; width:0px;}
+.special-nebula{visibility:visible; width:180px;}
+.special-none{visibility:hidden; width:0px;}
+*/
+/* CSS - Effects */
+/*
+.dark{background-image:url(/lapcat/layout/images/1-1-25.png); background-repeat:repeat;}
+.darker,.calendar-cell{background-image:url(/lapcat/layout/images/1-1-50.png); background-repeat:repeat;}
+.darkest{background-image:url(/lapcat/layout/images/1-1-75.png); background-repeat:repeat;}
+.calendar-cell:hover{background-image:url(/lapcat/layout/images/1-1-75.png); background-repeat:repeat;}
+.info-black{background-color:rgb(0,0,0); background-color:rgba(0,0,0,0.5); border:1px solid rgb(12,12,12); border:1px solid rgba(12,12,12,0.65);}
+*/
+.display-bars{background-image:url(/lapcat/layout/images/18-12-0.png); background-repeat:repeat; cursor:pointer;}
+.display-lines{background-image:url(/lapcat/layout/images/18-18-0.png); background-repeat:repeat;}
+.shine{background-image:url(/lapcat/layout/images/1-13-1.png);background-position:top;background-repeat:repeat-x;}
+.shine-less{background-image:url(/lapcat/layout/images/1-13-0.png);background-position:top;background-repeat:repeat-x;}
+.shine-light{background-image:url(/lapcat/layout/images/1-42-1.png);background-position:top;background-repeat:repeat-x;}
+.shine-tall{background-image:url(/lapcat/layout/images/1-120-0.png);background-position:top;background-repeat:repeat-x;}
+.shadow-right-12{background-image:url(/lapcat/layout/images/12-1-0.png);background-position:right;background-repeat:repeat-y;}
+/* CSS - Fonts */
+.black{color:#000000;}
+.dark-grey{color:#4E4E4E;}
+.dark-red{color:#990000;}
+.gold{color:#F8C21D; font-weight:bold;}
+.gold-tag:hover{color:#F8C21D; font-weight:bold;}
+.grey{color:#CECECE;}
+.med-grey{color:#8E8E8E;}
+.pulseblue{color:#336699;}
+.text-font{color:#333366;}
+.white{color:#FFFFFF;}
+.opposite{color:#FFFFFF;}
+/* CSS - Next and Previous */
+/*
+.nap-empty{background-image:url(/lapcat/layout/images/1-1-50.png); background-repeat:repeat; border:1px solid #002244;}
+.nap{background-color:#002244; background-image:url(/lapcat/layout/images/1-13-0.png); background-repeat:repeat-x; border:1px solid #114477; cursor:pointer;}
+.nap:hover{background-color:#114477; background-image:url(/lapcat/layout/images/1-13-0.png); background-repeat:repeat-x; border:1px solid #336699;}
+*/
+/* CSS - Options */
+.option-up{background-image:url(/lapcat/layout/images/87-21-0.png); background-repeat:no-repeat; cursor:pointer;}
+.option-up:hover{background-image:url(/lapcat/layout/images/87-21-1.png);}
+.option-down{background-image:url(/lapcat/layout/images/87-21-2.png); background-repeat:no-repeat; cursor:pointer;}
+.option-down:hover{background-image:url(/lapcat/layout/images/87-21-3.png);}
+.option-all{height:52px; vertical-align:bottom; text-align:center; width:52px;}
+.option-empty{
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,1.0);
+	background-image:url(/lapcat/layout/images/1-13-0.png);
+	background-repeat:repeat-x;
+	border:1px solid rgb(23,23,23);
+	border:1px solid rgba(23,23,23,1.0);
+}
+.option-black{
+	background-color:rgb(0,0,0);
+	background-color:rgba(0,0,0,1.0);
+	background-image:url(/lapcat/layout/images/1-13-0.png);
+	background-repeat:repeat-x;
+	border:1px solid rgb(0,0,0); border:1px solid rgba(0,0,0,1.0);
+	cursor:pointer;
+}
+.option-black:hover{
+	background-color:rgb(26,26,26);
+	background-color:rgba(26,26,26,1.0);
+}
+.option-blue{
+	background-color:rgb(0,26,52);
+	background-color:rgba(0,26,52,1.0);
+	background-image:url(/lapcat/layout/images/1-13-0.png);
+	background-repeat:repeat-x;
+	border:1px solid rgb(0,0,0); border:1px solid rgba(0,0,0,1.0);
+	cursor:pointer;
+}
+.option-blue:hover{
+	background-color:rgb(26,52,78);
+	background-color:rgba(26,52,78,1.0);
+}
+.option-gold{
+	background-color:rgb(175,90,0);
+	background-color:rgba(175,90,0,1.0);
+	background-image:url(/lapcat/layout/images/1-13-0.png);
+	background-repeat:repeat-x;
+	border:1px solid rgb(210,125,0);
+	border:1px solid rgba(210,125,0,1.0);
+	cursor:pointer;
+}
+.option-gold:hover{
+	background-color:rgb(210,125,0);
+	background-color:rgba(210,125,0,1.0);
+	border:1px solid rgb(255,170,0);
+	border:1px solid rgba(255,170,0,1.0);
+}
+.option-purple{
+	background-color:rgb(52,26,52);
+	background-color:rgba(52,26,52,1.0);
+	background-image:url(/lapcat/layout/images/1-13-0.png);
+	background-repeat:repeat-x;
+	border:1px solid rgb(99,43,99);
+	border:1px solid rgba(99,43,99,1.0);
+	cursor:pointer;
+}
+.option-purple:hover{
+	background-color:rgb(78,52,78);
+	background-color:rgba(78,52,78,1.0);
+	border:1px solid rgb(149,93,149);
+	border:1px solid rgba(149,93,149,1.0);
+}
+.option-red{
+	background-color:rgb(52,13,0);
+	background-color:rgba(52,13,0,1.0);
+	background-image:url(/lapcat/layout/images/1-13-0.png);
+	background-repeat:repeat-x;
+	border:1px solid rgb(119,13,0);
+	border:1px solid rgba(119,13,0,1.0);
+	cursor:pointer;
+}
+.option-red:hover{
+	background-color:rgb(78,39,26);
+	background-color:rgba(78,39,26,1.0);
+	border:1px solid rgb(169,26,0);
+	border:1px solid rgba(169,26,0,1.0);
+}
+.catalog-link{
+  padding-bottom:3px;
+  padding-left:20px;
+  background: url(/lapcat/layout/icons/cat-2.png) no-repeat 0 50%;
+  text-decoration:underline;
+}
+.database-link{
+  padding-bottom:3px;
+  padding-left:20px;
+  background: url(http://cdn1.lapcat.org/famfamfam/silk/database.png) no-repeat 0 50%;
+  text-decoration:underline;
+}
+.rss-link{
+	padding-bottom:3px;
+	padding-left:20px;
+	background: url(http://cdn1.lapcat.org/famfamfam/silk/feed.png) no-repeat 0 50%;
+}
+.library-link{
+	padding-bottom:3px;
+	padding-left:20px;
+	background: url(http://cdn1.lapcat.org/famfamfam/silk/building.png) no-repeat 0 50%;
+}
+.catalog_book{
+  padding: 0 0 0 17px;
+  background: url(http://cdn1.lapcat.org/famfamfam/silk/book_link.png) no-repeat 0 50%;
+  text-decoration:underline;
+}
+.catalog_movie{
+  padding: 0 0 0 17px;
+  background: url(http://cdn1.lapcat.org/famfamfam/silk/dvd_link.png) no-repeat 0 50%;
+  text-decoration:underline;
+}
+/* CSS - Lighting */
+.light-left{background-image:url(/lapcat/layout/icons/16-16-28.png); background-position:left; background-repeat:repeat-y;}
+.light-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-position:top; background-repeat:repeat-x;}
+.light-right{background-image:url(/lapcat/layout/icons/16-16-30.png); background-position:right; background-repeat:repeat-y;}
+.light-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-position:bottom; background-repeat:repeat-x;}
+/* CSS - Shadows */
+.shadow-right{background-image:url(/lapcat/layout/icons/16-16-24.png); background-position:right; background-repeat:repeat-y;}
+.shadow-left{background-image:url(/lapcat/layout/icons/16-16-25.png); background-position:left; background-repeat:repeat-y;}
+.shadow-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-position:bottom; background-repeat:repeat-x;}
+.shadow-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-position:top; background-repeat:repeat-x;}
+
+/* Filament Group CSS */
+.fg-button{outline:0; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
+
+.ui-corner-tl { -moz-border-radius-topleft: 6px; -webkit-border-top-left-radius: 6px; }
+.ui-corner-tr { -moz-border-radius-topright: 6px; -webkit-border-top-right-radius: 6px; }
+.ui-corner-bl { -moz-border-radius-bottomleft: 6px; -webkit-border-bottom-left-radius: 6px; }
+.ui-corner-br { -moz-border-radius-bottomright: 6px; -webkit-border-bottom-right-radius: 6px; }
+.ui-corner-top { -moz-border-radius-topleft: 6px; -webkit-border-top-left-radius: 6px; -moz-border-radius-topright: 6px; -webkit-border-top-right-radius: 6px; }
+.ui-corner-bottom { -moz-border-radius-bottomleft: 6px; -webkit-border-bottom-left-radius: 6px; -moz-border-radius-bottomright: 6px; -webkit-border-bottom-right-radius: 6px; }
+.ui-corner-right {  -moz-border-radius-topright: 6px; -webkit-border-top-right-radius: 6px; -moz-border-radius-bottomright: 6px; -webkit-border-bottom-right-radius: 6px; }
+.ui-corner-left { -moz-border-radius-topleft: 6px; -webkit-border-top-left-radius: 6px; -moz-border-radius-bottomleft: 6px; -webkit-border-bottom-left-radius: 6px; }
+.ui-corner-all { -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+.OL-fred{-moz-border-radius:4px;-webkit-border-radius:4px;}
+.fred{-moz-border-radius:2px;-webkit-border-radius:2px;}
+.scrollbar-hidden{overflow:hidden;}
+.scrollbar{overflow:auto;}
+
+.stage{display:none; visibility:hidden;}
+.checkmark{background-image:url(/lapcat/images/10-10-10.png); background-repeat:no-repeat; margin-top:3px;}
+.star-empty{background-image:url(/lapcat/images/14-14-0.png); background-repeat:no-repeat;}
+.star-full{background-image:url(/lapcat/images/14-14-1.png); background-repeat:no-repeat;}
+.star-half{background-image:url(/lapcat/images/14-14-2.png); background-repeat:no-repeat;}
+.star-sky{background-image:url(/lapcat/images/14-14-3.png); background-repeat:no-repeat;}
+.star-sky:hover{background-image:url(/lapcat/images/14-14-6.png); background-repeat:no-repeat;}
