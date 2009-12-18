@@ -71,7 +71,6 @@
 		 * @return int
 		 */
 		public function Count_res(){return mysql_num_rows($this -> Resid);	}
-
 		/**
 		 * Runs the query passed to it.
 		 * @since 1.0
@@ -163,18 +162,25 @@
 						if($this -> Count_res() == 1 || $force === true){
 							$return = mysql_fetch_row($this -> Resid);
 						}else{
-							while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }}
-							if($this->Count_res() > 0){
-								if(count($return) == 1) {$return = $return[0];} //make sure its more than one
-							}
+							while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }
+						}
+						if($this->Count_res() > 0){
+							if(count($return) == 1) {$return = $return[0];} //make sure its more than one
+						}
 					break;
 					case "assoc_array":
-						while($line = mysql_fetch_assoc($this -> Resid)){ $return[] = $line; }
+						while($line = mysql_fetch_assoc($this -> Resid)){
+							$return[] = $line; 
+						}
 					break;
 					case "row_array":
 						while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }
-						if(count($return) == 1) {return $return;} //make sure its more than one
-						if(count($return[0])==1){foreach($return as $r){$newArray[]=$r[0];}	$return = $newArray;}
+						if(count($return[0])==1){
+							foreach($return as $r){
+								$newArray[]=$r[0];
+							}
+							$return = $newArray;
+						}
 					break;
 					default:
 						$return = "broke";
@@ -209,7 +215,6 @@
 				}
 			}	return $holderArray;
 		}
-
 		/**
 		 * Cleans a string.  More robust than the 2 above
 		 * 
