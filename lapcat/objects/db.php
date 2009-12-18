@@ -7,7 +7,7 @@
         public $Error = array(); //Will store 2 entries, the query that failed and the error
 		public $Lastid = 0;
 		public $Cache_all = false; //This will force all queries to be cache queries.
-
+		public $Prefix = "";
         //Define the database connection information
         private $config = array(); //config values in associat
         private $linkid = 0; //store the link id.
@@ -18,6 +18,7 @@
 		
 		//Define the database connection information
 		private $prefixString = "{prefix}";
+
 		private $storeResults = array(); //Store query results for later in the rendering.
 		function getInstance(){
 			static $instance;
@@ -198,7 +199,16 @@
 		 * @return string
 		 * @param mixed $array
 		 */
-		public function Mysql_clean($array){$holderArray=array();foreach ($array as $key => $value){$holderArray[$key] = mysql_real_escape_string($value);}	return $holderArray;}
+		public function Mysql_clean($array){
+			$holderArray=array();
+			foreach ($array as $key => $value){
+				if(is_array($value)){
+					$holderArray[$key] = $this->Mysql_clean($value);	
+				}else{
+					$holderArray[$key] = mysql_real_escape_string($value);
+				}
+			}	return $holderArray;
+		}
 
 		/**
 		 * Cleans a string.  More robust than the 2 above
