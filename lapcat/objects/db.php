@@ -15,10 +15,8 @@
         private $user = "lapcat";
         private $password = "tacpal";
         private $host = "localhost";
-		
 		//Define the database connection information
 		private $prefixString = "{prefix}";
-
 		private $storeResults = array(); //Store query results for later in the rendering.
 		function getInstance(){
 			static $instance;
