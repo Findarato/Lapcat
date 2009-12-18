@@ -3,7 +3,7 @@
        
         public $Queries = 0; //count how many are executed
         public $Lastsql = ""; //store the last query
-        public $Resid;
+        public $Resid = 0;
         public $Error = array(); //Will store 2 entries, the query that failed and the error
 		public $Lastid = 0;
 		public $Cache_all = false; //This will force all queries to be cache queries.
@@ -88,7 +88,7 @@
 						str_replace("select","SELECT SQL_CACHE",strtolower($sql));
 					}
 				}
-				$return = mysql_query($sql,$this -> linkid) or $return = FALSE;
+				$return = mysql_query($sql,$this -> linkid) or $return = 0;
 				$this -> Resid = $return;
 				$this -> Lastsql = $sql;
 				if(!$return){//set the error values
