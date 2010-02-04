@@ -70,10 +70,9 @@ function makeCoolXMLStuff($array){
 		"Bookmobile"=>0
 		);
 		foreach ($array as $k=>$v)	{
-			$loc = split(" ",$k);
-
+			$loc = explode(" ",substr($k,2));
 			foreach ($v as $v_k=>$v_v)	{
-				if(strpos($v_v,'AVAILABLE')){$locs[$loc[1]]++;}
+				if(strpos($v_v,'AVAILABLE')){$locs[trim($loc[0])]++;}
 			}
 		}
 	}else{
@@ -84,6 +83,4 @@ function makeCoolXMLStuff($array){
 //http://catalog.lapcat.org/search/i097368924345
 //print_r(avalByisbn("097368924345"));
 //echo "<br>";
-//print_r(makeCoolXMLStuff(avalByisbn("097368924345")));
-
 ?>
