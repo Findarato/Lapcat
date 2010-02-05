@@ -3,7 +3,134 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/no-cache.php';
 SESSION_START();
 function __autoload($v_CN) {require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/objects/'.strtolower($v_CN).'.php';}
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/php-functions.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/aval.php';
+//include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/aval.php';
+
+$A_URL=array_splice(explode('/',strtolower($_SERVER['REQUEST_URI'])),0,6);
+array_shift($A_URL);
+$V_Area='';
+$V_Command='';
+$V_Fresh=true;
+$V_JSON='';
+$V_Clear='fresh';
+$V_Main='';
+$V_MessagesOn=false;
+$V_Secondary='';
+$V_ServerRoot=$_SERVER['DOCUMENT_ROOT'];
+$V_UserID=0;
+
+if($A_URL[0]==''){
+	$V_Area='home';
+}else{
+	foreach($A_URL as $v_Key=>$v_Text){
+		switch($v_Key){
+			case 0:if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}break;
+			case 1:$V_Area=$v_Text;break;
+			case 2:$V_Command=$v_Text;break;
+			case 3:$V_Main=$v_Text;break;
+			case 4:$V_Secondary=$v_Text;break;
+			default:break;
+		}
+	}
+}
+
+function F_URLNF(){header('HTTP/1.0 404 Not Found');header('Status: 404 Not Found');echo '404 Error';}
+function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v_JSON);}
+
+if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
+if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
+// V_Area, V_Command, V_Main, V_Secondary
+if(!$V_Fresh){
+	switch($V_Area){
+		case 'request-view':$V_JSON=$o_LAPCAT->F_GetMonthView(false,explode('-',$V_Command));break;
+		case 'month-view':$V_JSON=$o_LAPCAT->F_GetMonthView(true,explode('-',$o_LAPCAT->F_CurrentDate()));break;
+		case 'popular-tags':$V_JSON=$o_LAPCAT->F_GetPopularTags();break;
+
+		case 'home':case 'databases':case 'events':case 'materials':case 'news':
+			switch($V_Command){
+				case 'search':case 'suggest':
+				case 'change-date':case 'change-popular':case 'change-search':case 'change-sort':case 'change-tag':
+				case 'change-page':
+				case 'open-line':
+					$V_JSON=$o_LAPCAT->F_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary);
+					break;
+				default:
+					break;
+			}
+			break;
+		/*
+		case 'databases':case 'events':case 'home':case 'materials':case 'news':
+			switch($V_Command){
+				case 'in-list':
+				case 'change-date':case 'change-popular':case 'change-search':case 'change-sort':case 'change-tag':
+				case 'similar':
+				case 'next-page':case 'next-line':case 'page':case 'previous-page':case 'previous-line':
+				case 'browse':case 'specific':case 'suggest':
+				case 'open-line':
+				case 'reset':
+					$V_JSON=$o_LAPCAT->F_PerformCommand($V_Area,$V_Command,$V_Main,$V_Secondary);
+					break;
+				default:
+					break;
+			}
+			break;
+		*/
+		/*
+		case 'popular-tags':
+			$V_JSON=$o_LAPCAT->F_GetPopularTags();
+			break;
+		case 'home':case 'news':
+			switch($V_Command){
+				case 'get-html':
+					switch($V_Main){
+						case 'materials':default:$v_Page=100;break;
+						case 'databases':$v_Page=500;break;
+						case 'events':$v_Page=200;break;
+						case 'news':$v_Page=300;break;
+						case 'browse':
+							switch($V_Area){
+								case 'databases':$v_Page=400;break;
+								case 'events':$v_Page=400;break;
+								case 'materials':$v_Page=400;break;
+								case 'news':$v_Page=400;break;
+								default:
+									break;
+							}
+					}
+					$V_JSON=json_encode(array(
+						'pointer'=>$V_Area,
+						'type'=>$V_Command,
+						'cell'=>$V_Main,
+						'data'=>file_get_contents($V_ServerRoot.'/lapcat/layout/display-html-'.$v_Page.'.html')
+					));
+					break;
+				case 'reset':
+					$o_LAPCAT->F_PerformCommand($V_Area,'reset');
+				default:case 'browse':case 'change-date':case 'change-sort':case 'change-tag':case 'open-line':case 'specific':case 'suggest':
+					$V_JSON=$o_LAPCAT->F_PerformCommand($V_Area,$V_Command,$V_Main,$V_Secondary);
+					break;
+			}
+			break;
+		*/
+		default:break;
+	}
+}else{
+	$o_LAPCAT->F_PerformQuickCommand($V_Area,'reset');
+}
+
+if(isset($o_LAPCAT)){$_SESSION['LAPCAT']=serialize($o_LAPCAT);}
+if(isset($o_User)){$_SESSION['user']=serialize($o_User);}
+
+if($V_Fresh){
+	header('HTTP/1.1 200 OK');
+	header('Status: 200 OK');
+}else{
+	header('Content-type: application/json');
+	F_HR($V_JSON);
+}
+
+
+
+/*
 $A_URLE=explode('/',strtolower($_SERVER['REQUEST_URI']));
 $V_LI=false;
 $V_SR=$_SERVER['DOCUMENT_ROOT'];
@@ -35,7 +162,7 @@ if(!$V_Simple){
 }
 array_shift($A_URLE);
 if(is_null($A_URLE[0])||strlen($A_URLE[0])==0){$A_URLE=explode('/',((!$V_LI)?'join/clear':'my-library/clear'));}
-$V_S=array_shift($A_URLE);
+$V_Area=array_shift($A_URLE);
 if(isset($_SESSION['tag'])){$o_CT=unserialize($_SESSION['tag']);}else{$o_CT=new Tag();}
 // User ID
 $V_UserID=$o_U->A_U['user-ID'];
@@ -45,23 +172,88 @@ $V_TagID=$o_U->A_U['tag'];
 $V_TagName='';
 $V_MessagesOn=true;
 $V_TargetID=0;
-if($V_S=='multi'){$V_S.='-'.$A_URLE[0];}
+*/
+/* new code */
+//if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
+/* end new code */
+/*
+
+if($V_Area=='multi'){$V_Area.='-'.$A_URLE[0];}
 if($V_Simple){
 
-// Simple
-switch($V_S){
-	/* All */
-	case 'all':switch($A_URLE[0]){case 'change-tag-ac':if(isset($A_URLE[1])){$a_XML[]=$o_CT->F_AC($V_UserID,$A_URLE[1]);}break;default:break;}break;
+	$V_Command=$A_URLE[0];
+	$V_Optional=$A_URLE[1];
 
-	/* Available (material availability - parse the catalog and determine if material is available) */
-	case 'available':
-		if(array_key_exists(0,$A_URLE)){$a_XML[]=FF_CATXML(makeCoolXMLStuff(avalByisbn($A_URLE[0])),$V_S);}
+// Simple
+switch($V_Area){
+	// Month View
+	case 'month-view':
+		$a_XML[]=$o_LAPCAT->F_GetMonthView(explode('-',$o_LAPCAT->F_CurrentDate()));
 		break;
 
-	/* Promotions List */
+	// Refresh
+	case 'refresh':
+		// Refresh
+		$o_LAPCAT->F_Refresh();break;
+
+	// Popular Tags
+	case 'popular-tags':
+		// Get Popular Tags
+		$a_XML[]=$o_LAPCAT->F_GetPopularTags();
+		break;
+
+	// My Library
+	case 'home':case 'my-library':
+		switch($A_URLE[0]){
+			// Change Tag
+			case 'change-tag-interests':case 'change-tag-possibles':case 'change-tag-suggestions':
+				$A_URLE[0]=str_replace('change-tag-','',$A_URLE[0]);
+				$o_LAPCAT->F_ChangeTag($A_URLE[1]);
+			// Get Data
+			case 'interests':case 'possibles':case 'suggestions':$a_XML[]=$o_LAPCAT->F_GetData($V_Area,$A_URLE[0],$A_URLE[1]);break;
+
+			case 'suggest-materials':$a_XML[]=$o_LAPCAT->F_PerformCommand($V_Area,$V_Command);break;
+
+			default:break;
+		}
+		break;
+
+	// Events, News
+	case 'events':case 'news':
+		switch($A_URLE[0]){
+			// Change Tag
+			case 'change-tag':
+				$o_LAPCAT->F_ChangeTag($A_URLE[1]);
+			// Get Data
+			case 'article':case 'event':
+			case 'browse':
+			case 'calendar':case 'change-search':case 'change-sort':
+			case 'favorites':
+			case 'next-page':case 'previous-page':
+			case 'open-line':
+			case 'page':
+			case 'reset':
+				$a_XML[]=$o_LAPCAT->F_GetData($V_Area,$A_URLE[0],$A_URLE[1]);
+				break;
+			default:break;
+		}
+		break;
+
+
+
+
+	// All
+	case 'all':switch($A_URLE[0]){case 'change-tag-ac':if(isset($A_URLE[1])){$a_XML[]=$o_CT->F_AC($V_UserID,$A_URLE[1]);}break;default:break;}break;
+
+	// Available (material availability - parse the catalog and determine if material is available)
+	case 'available':
+		if(array_key_exists(0,$A_URLE)){$a_XML[]=FF_CATXML(makeCoolXMLStuff(avalByisbn($A_URLE[0])),$V_Area);}
+		break;
+
+	// Promotions List
 	case 'promotions-list':$a_XML=array();$a_XML[]=$o_U->F_GetPromotionsXML();break;
 	
-	/* Information */
+	// Information
 	case 'information':
 		switch($A_URLE[0]){
 			case 'points':
@@ -69,33 +261,6 @@ switch($V_S){
 				break;
 			default:break;
 		}
-		break;
-	
-	/* My Library */
-	case 'home':case 'my-library':
-		if(isset($_SESSION['my-library'])){$o_ML=unserialize($_SESSION['my-library']);}else{$o_ML=new Mylibrary($V_UserID);}
-		switch($A_URLE[0]){
-			case 'suggestions':case 'possibles':case 'interests':$a_XML[]=$o_ML->F_GetData($V_UserID,$A_URLE[0]);break;
-			default:break;
-		}
-		if(isset($o_ML)){$_SESSION['my-library']=serialize($o_ML);}
-		break;
-
-	case 'news':
-		if(isset($_SESSION['news'])){$o_N=unserialize($_SESSION['news']);}else{$o_N=new News($V_UserID,$o_U->A_U['tag']);}
-		switch($A_URLE[0]){
-			// Add XML
-			case 'change-tag':
-			case 'browse':case 'thin-line':
-			case 'next-page':case 'previous-page':
-				$a_XML[]=$o_N->F_GetData($V_UserID,$V_MessagesOn,$A_URLE[0],$A_URLE[1]);
-				break;
-			case 'favorite':case 'flag':
-				$a_XML[]=$o_N->F_PerformAction($V_UserID,$V_MessagesOn,$A_URLE[0],$A_URLE[1]);
-				break;
-			default:break;
-		}
-		if(isset($o_N)){$_SESSION['news']=serialize($o_N);}
 		break;
 
 	case 'events':
@@ -153,9 +318,9 @@ switch($V_S){
 }else{
 
 // Full
-switch($V_S){
+switch($V_Area){
 
-	/* Promotions */
+	// Promotions
 	case 'promotions':
 		break;
 
@@ -164,15 +329,15 @@ switch($V_S){
 		F_HR('');
 		break;
 
-	/* Validate Email Address */
+	// Validate Email Address
 	case 'valid':if(!$o_U->A_U['validated']){$a_XML[]='<area-info><area-ID>2</area-ID></area-info>';$a_XML[]='<join></join>';$a_XML[]='<validated>26</validated>';$o_U->F_ACC($A_URLE[0],$A_URLE[1]);}break;
 
 	case 'home':
 		// Home
-		if($V_LI){$V_S='my-library';}else{$V_S='join';}
+		if($V_LI){$V_Area='my-library';}else{$V_Area='join';}
 	case 'join':case 'my-library':
-		if($v_LAP||($V_S=='join'&&$o_U->A_U['area-ID']!=2)||($V_S=='my-library'&&$o_U->A_U['area-ID']!=3)){
-			switch($V_S){case 'join':$o_U->A_U['area-ID']=2;break;default:$o_U->A_U['area-ID']=3;break;}
+		if($v_LAP||($V_Area=='join'&&$o_U->A_U['area-ID']!=2)||($V_Area=='my-library'&&$o_U->A_U['area-ID']!=3)){
+			switch($V_Area){case 'join':$o_U->A_U['area-ID']=2;break;default:$o_U->A_U['area-ID']=3;break;}
 			// Add XML
 			$a_XML[]=$o_U->F_GPI();
 			// Add XML
@@ -604,11 +769,12 @@ switch($V_S){
 		break;
 
 	default:
-		if(FF_PageExists($V_UserID,$V_S)){$a_XML[]=FF_LoadPage($V_UserID,$V_S);}
+		if(FF_PageExists($V_UserID,$V_Area)){$a_XML[]=FF_LoadPage($V_UserID,$V_Area);}
 		break;
 }
 
 }
+if(isset($o_LAPCAT)){$_SESSION['LAPCAT']=serialize($o_LAPCAT);}
 
 if(!empty($a_XML)){
 	if(!$V_Simple){
@@ -627,23 +793,26 @@ if($v_LAP){
 	if($V_JSON){header('Content-type: application/json');}
 	F_HR(implode($a_XML,'<boom>'));
 }
+*/
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html class="border-off-2 color-off">
 	<head>
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
-		<link id="index-css-theme" rel="stylesheet" type="text/css" href="/lapcat/css/themes/theme-generator.php?theme=<?=$o_U->V_TS;?>" />
+		<link id="index-css-theme" rel="stylesheet" type="text/css" href="/lapcat/css/themes/theme-generator.php?theme=<?=$o_User->V_TS;?>" />
+		<script src="/lapcat/java/get-all-tags.php" type="text/javascript"></script>
 		<script defer src="/lapcat/java/pngfix.js" type="text/javascript"></script>
-		<script src="http://cdn1.lapcat.org/js/jquery-1.3.2.min.js" type="text/javascript"></script>
+		<script src="http://cdn1.lapcat.org/js/jquery-1.4.1.min.js" type="text/javascript"></script>
+		<!--//<script src="http://cdn1.lapcat.org/js/jquery-1.3.2.min.js" type="text/javascript"></script>//-->
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
-        <script src="/lapcat/java/combine.php"></script>
+		<script src="/lapcat/java/combine.php"></script>
 	</head>
 	<body class="color-off" style="width:auto;">
 		<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
-        <?
+		<?
 		//include_once $V_SR.'/lapcat/layout/layout-2009.php';
-		include_once $V_SR.'/lapcat/layout/live-test-2009.php';
+		include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
 		flush();
 		?>
 	</body>
