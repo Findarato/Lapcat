@@ -14,14 +14,16 @@ $files = array(
 'ajax-2009.js',
 'jquery.purr.js',
 'date.js',
-'dateter.js',
+'http://dev.lapcat.org/rooms/js/dateter.js',
 'parts-2009.js',
-'client-2009.js'
+'client-02-03-2010.js' //' previous version: client-01-25-2010.js'
 );
 $allScript = "";
 foreach($files as $f){
 	$allScript .= file_get_contents($f);
 }
-echo JSMin::minify($allScript);
+//echo JSMin::minify($allScript);
+
+echo $allScript;
  
 ?>
