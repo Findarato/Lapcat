@@ -420,7 +420,10 @@ function F_Expand(v_Construct){
 	$('#'+v_Construct+' #master').css('width',A_Cells[v_Construct]['expanded']['master']['width']);
 	$('#'+v_Construct+' #open-line').css('width',A_Cells[v_Construct]['expanded']['open-line']['width']).show();
 }
-function F_ReSizeCalendar(v_Construct,v_Size){$.fn.dateter.resize(parseInt(A_Cells[v_Construct][v_Size]['construct']['height'])-50,$('#month-view-master'));}
+function F_ReSizeCalendar(v_Construct,v_Size){
+	$('#month-view-master').data('Settings').height=parseInt(A_Cells[v_Construct][v_Size]['construct']['height'])-50;
+	$.fn.dateter.resize($('#month-view-master').data('Settings').height,$('#month-view-master'));
+}
 function F_GetData(v_Construct,v_Name){return A_Cells[v_Construct][v_Name];}
 function F_GetLine(v_Construct,v_Name,v_LineKey){return A_Cells[v_Construct][v_Name][v_LineKey];}
 function F_HighlightOpenLine(v_Construct){$('#'+v_Construct+' .open-line:visible').removeClass('open-line');$('#'+v_Construct+' [name="counter-'+(A_Cells[v_Construct]['target'])+'"]').addClass('open-line');}
