@@ -213,9 +213,7 @@ class LAPCAT{
 			'where-similar'=>'',
 			'group-by'=>' GROUP BY ve.ID',
 			'order-start'=>' ORDER BY',
-			'order-base'=>' ve.o_date ASC, ve.start ASC, ve.counted DESC',
-			'limit-start'=>' LIMIT',
-			'limit-base'=>' '.$this->F_CalculateLimit('events').';'
+			'order-base'=>' ve.o_date ASC, ve.start ASC, ve.counted DESC'
 		);
 		// SQL - Where
 		if($this->A_Search['tag']['on']){
