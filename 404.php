@@ -42,7 +42,7 @@ if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{
 if(!$V_Fresh){
 	switch($V_Area){
 		case 'request-view':$V_JSON=$o_LAPCAT->f_GetMonthView(false,explode('-',$V_Command));break;
-		case 'month-view':$V_JSON=$o_LAPCAT->f_GetMonthView(true,explode('-',$o_LAPCAT->f_CurrentDate()));break;
+		case 'month-view':$V_JSON=$o_LAPCAT->f_GetMonthView(true,explode('-',$o_LAPCAT->f_GetCurrentDate()));break;
 		case 'popular-tags':$V_JSON=$o_LAPCAT->f_GetPopularTags();break;
 
 		case 'home':case 'databases':case 'events':case 'materials':case 'news':
