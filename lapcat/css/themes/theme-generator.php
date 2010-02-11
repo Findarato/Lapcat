@@ -129,7 +129,7 @@ if(isset($_GET['theme'])){
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_Theme];}
-	
+
 	
 	switch($v_Theme){
 		// Background - Light
@@ -290,8 +290,12 @@ if(isset($_GET['json'])){
 	echo '.corners-top-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px;}';
 	// Corner - Top Left
 	echo '.corners-top-left-1{-moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px;}';
+	echo '.corners-top-left-2{-moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px;}';
+	echo '.corners-top-left-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px;}';
 	// Corner - Top Right
 	echo '.corners-top-right-1{-moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
+	echo '.corners-top-right-2{-moz-border-radius-topright:4px; -webkit-border-top-right-radius:4px;}';
+	echo '.corners-top-right-3{-moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px;}';
 
 	// B o r d e r s
 	// Border - A
