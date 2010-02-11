@@ -5,18 +5,19 @@
 <div class="color-F-1 corners-top-3 corners-bottom-3" id="message-box" style="display:none; padding:2px; position:absolute; overflow:hidden; z-index:10;">
 	<div class="border-all-Z-1 corners-top-2 corners-bottom-2 light-up" id="message-text" style="padding:2px;"></div>
 </div>
+<div id="image-holder" style="position:absolute; z-index:-100;"></div>
 
 
 
 <!--// Line HTML - 100 //-->
 <div id="line-HTML-100" style="display:none;">
-	<div style="float:left; height:180px; text-align:center; width:133px;">
+	<div style="float:left; height:187px; text-align:center; width:133px;">
 		<div class="corners-bottom-3 corners-top-3" style="height:22px; padding:1px; width:auto;"><div class="corners-bottom-2 corners-top-2 line-click effect-hover-Z-2" name="counter-replace-counter" style="height:22px; overflow:hidden; text-align:center; width:100%;">
 			<font class="font-X" style="font-size:12px;"><span class="browse-link fake-link" href="http://catalog.lapcat.org/search/ireplace-ISBNorSN" id="replace-dirty-name" name="materials" onfocus="javascript:this.blur();">replace-name</span></font>
 		</div></div>
 		<div style="height:114px; overflow:hidden; text-align:center; width:100%;">
 			<table style="height:114px; width:100%;"><tr><td style="vertical-align:top; width:auto;">
-				<div style="height:114px; vertical-align:bottom; padding-right:5px;"><div class="browse-link fake-link" name="http://catalog.lapcat.org/search/ireplace-ISBNorSN" id="catalog-ISBN-link-replace-ID" onfocus="javascript:this.blur();" style="float:right;"><img class="line-click" id="image-view-cover-replace-counter" name="counter-replace-counter" style="border:0; height:auto; width:auto;"/></div></div>
+				<div style="height:114px; vertical-align:bottom; padding-right:5px;"><div class="browse-link fake-link" name="http://catalog.lapcat.org/search/ireplace-ISBNorSN" id="catalog-ISBN-link-replace-ID" onfocus="javascript:this.blur();" style="float:right;"><img class="line-click" id="on-screen-image-view-cover-replace-counter" name="counter-replace-counter" style="border:0; height:auto; width:auto;"/></div></div>
 			</td><td style="vertical-align:top; width:20px;">
 				<div id="suggestion-replace-ID-search" style="height:18px; width:18px;"><div class="browse-link fake-link" name="http://catalog.lapcat.org/search/ireplace-ISBNorSN" id="catalog-ISBN-link-replace-ID" onfocus="javascript:this.blur();" title="Click to show this material in the catalog."><img src="/lapcat/layout/icons/cat-2.png" style="border:0; height:auto; width:auto;"/></div></div>
 				<div id="suggestion-replace-ID-catalog-link" style="height:18px; margin-top:2px; width:18px;"><img class="fake-link specific-click" id="materials-replace-ID" name="specific-replace-counter" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier.png" style="border:0; height:auto; width:auto;"/></div>
@@ -26,27 +27,29 @@
 </div>
 <!--// Line HTML - 200 //-->
 <div id="line-HTML-200" style="display:none;">
-	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link effect-hover-Z-2 light-up line-click" id="events-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-top:4px; text-align:center; width:100%;">
+	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link effect-hover-Z-2 light-up line-click" id="events-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-top:4px; text-align:center; width:100%;" title="Click to expand this display.">
 		<div class="border-sides-C-1 border-top-C-1 corners-top-2" style="height:19px; overflow:hidden; text-align:left; width:auto;">
 			<table style="height:18px; width:100%;">
 				<tr>
 					<td style="height:18px; overflow:hidden; vertical-align:top; width:auto;">
 						<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
 					</td>
-					<td style="float:right; height:19px; width:auto;">
-						<a class="tag-change fake-link font-bold font-L" id="value-replace-tag-ID" name="tag/drop" style="margin-right:3px;">replace-tag-name</a>
+					<td style="float:right; height:19px; text-align:right; width:auto;">
+						<a class="add-to-all-searches fake-link font-bold font-L" name="construct|construct-2_key|tag_value|replace-tag-ID_text|replace-tag-name" style="margin-right:3px;">replace-tag-name</a>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<div class="background-alpha-5 border-sides-C-1 border-bottom-C-1 corners-bottom-2" style="height:21px; overflow:hidden; width:auto;">
 			<div style="width:100%;">
-				<div style="float:left; vertical-align:top; width:auto;">
-					<font class="font-H" style="font-size:10px; margin-left:12px;">at</font>
-					<font class="library-link-1 font-H" name="library-replace-library_ID" style="font-size:12px;">replace-library</font>
+				<div class="light-up corners-top-right-3" style="float:left; margin-left:1px; vertical-align:top; width:210px;">
+					<div style="margin:1px; text-align:left; width:auto;">
+						<font class="font-X" style="font-size:10px; margin-left:12px;">at</font>
+						<font class="add-to-search library-link-1 font-X location-replace-library-ID date-replace-o-date" name="construct|construct-2_key|search_value|replace-library-ID_text|replace-library" style="font-size:12px; margin-right:3px;">replace-library</font>
+					</div>
 				</div>
 				<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
-					<a class="date-click fake-link font-X" id="replace-o-date" name="events" style="font-size:12px;">replace-date-words</a>
+					<font class="add-to-search font-X" name="construct|construct-2_key|date_value|replace-o-date_text|replace-date-words" style="font-size:12px; margin-right:3px;">replace-date-words</font>
 				</div>
 				<div id="anticipation-bar-replace-ID" style="float:left; height:4px; padding-left:5px; padding-right:5px; width:100%;"></div>
 			</div>
@@ -55,24 +58,26 @@
 </div>
 <!--// Line HTML - 300 //-->
 <div id="line-HTML-300" style="display:none;">
-	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link effect-hover-Z-2 light-up line-click" id="news-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-top:4px; text-align:center; width:100%;">
+	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link effect-hover-Z-2 light-up line-click" id="news-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-top:4px; text-align:center; width:100%;" title="Click to expand this display.">
 		<div class="border-sides-C-1 border-top-C-1 corners-top-2" style="height:19px; overflow:hidden; text-align:left; width:auto;">
 			<table style="height:18px; width:100%;">
 				<tr>
 					<td style="height:18px; overflow:hidden; vertical-align:top; width:auto;">
 						<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
 					</td>
-					<td style="float:right; height:19px; width:auto;">
-						<a class="tag-change fake-link font-bold font-L" id="value-replace-tag-ID" name="tag/drop" style="margin-right:3px;">replace-tag-name</a>
+					<td style="float:right; height:19px; text-align:right; width:auto;">
+						<a class="add-to-all-searches fake-link font-bold font-L" name="construct|construct-3_key|tag_value|replace-tag-ID_text|replace-tag-name" style="margin-right:3px;">replace-tag-name</a>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<div class="background-alpha-5 border-sides-C-1 border-bottom-C-1 corners-bottom-2" style="height:21px; overflow:hidden; width:auto;">
 			<div style="width:100%;">
-				<div style="float:left; vertical-align:top; width:auto;">
-					<font class="font-H" style="font-size:10px; margin-left:12px;">by</font>
-					<font class="user-click user-link-1 font-N" style="font-size:12px;">replace-username</font>
+				<div class="light-up corners-top-right-3" style="float:left; margin-left:1px; vertical-align:top; width:210px;">
+					<div style="margin:1px; text-align:left; width:auto;">
+						<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
+						<font class="add-to-search user-link-1 font-X" name="construct|construct-3_key|search_value|replace-username_text|replace-username" style="font-size:12px; margin-right:3px;">replace-username</font>
+					</div>
 				</div>
                 <div id="icons" style="float:left;">
 					<div id="line-group-icons-replace-ID" style="height:21px; overflow:hidden; width:auto;">
@@ -89,7 +94,7 @@
 					</div>
 				</div>
 				<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
-					<a class="date-click fake-link font-X" id="replace-o-date" name="news" style="font-size:12px;">replace-date-words</a>
+					<font class="add-to-search font-X" name="construct|construct-3_key|date_value|replace-o-date_text|replace-date-words" style="font-size:12px; margin-right:3px;">replace-date-words</font>
 				</div>
 			</div>
 		</div>
@@ -97,26 +102,28 @@
 </div>
 <!--// Line HTML - 400 //-->
 <div id="line-HTML-400" style="display:none;">
-	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link float-left effect-hover-Z-2 light-up line-click" id="materials-replace-ID" name="counter-replace-counter" style="height:42px; text-align:center; margin-top:4px; width:100%;">
+	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link float-left effect-hover-Z-2 light-up line-click" id="materials-replace-ID" name="counter-replace-counter" style="height:42px; text-align:center; margin-top:4px; width:100%;" title="Click to expand this display.">
 		<div class="border-sides-C-1 border-top-C-1 corners-top-2" style="height:19px; overflow:hidden; text-align:left; width:auto;">
 			<table style="height:18px; width:100%;">
 				<tr>
 					<td style="height:18px; overflow:hidden; vertical-align:top; width:auto;">
 						<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
-						<font class="font-H" style="float:left; font-size:12px; margin-left:6px; vertical-align:top;">replace-sub-name</font>
+						<font class="font-L" style="float:left; font-size:12px; margin-left:6px; vertical-align:top;">replace-sub-name</font>
 					</td>
-					<td style="float:right; height:19px; min-width:90px; width:auto;">
-						<a class="tag-change fake-link font-bold font-L float-right" id="value-replace-tag-ID" name="tag/drop" style="margin-right:3px;">replace-tag-name</a>
+					<td style="float:right; height:19px; min-width:90px; text-align:right; width:auto;">
+						<a class="add-to-all-searches fake-link font-bold font-L" name="construct|construct-1_key|tag_value|replace-tag-ID_text|replace-tag-name" style="margin-right:3px;">replace-tag-name</a>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<div class="background-alpha-5 border-sides-C-1 border-bottom-C-1 corners-bottom-2" style="height:21px; overflow:hidden; width:auto;">
 			<div style="width:100%;">
-				<div class="light-up" style="float:left; margin-left:1px; vertical-align:top; width:210px;"><div class="shadow-up" style="margin:1px; text-align:left; width:auto;">
-					<font class="font-H" style="font-size:10px; margin-left:12px;">replace-credit-word</font>
-					<font class="user-click user-link-1 font-Z" style="font-size:12px;">replace-credit-name</font>
-				</div></div>
+				<div class="light-up corners-top-right-3 replace-class-A" style="float:left; height:21px; margin-left:1px; vertical-align:top; width:210px;">
+					<div style="margin:1px; height:21px; text-align:left; width:auto;">
+						<font class="font-X" style="font-size:10px; margin-left:6px;">replace-credit-word</font>
+						<font class="add-to-search user-link-1 font-X" name="construct|construct-1_key|search_value|replace-credit-name_text|replace-credit-name" style="font-size:12px; margin-right:3px;">replace-credit-name</font>
+					</div>
+				</div>
                 <div id="icons" style="float:left;">
 					<div id="line-group-icons-replace-ID" style="height:21px; overflow:hidden; width:auto;">
 <!--//Gold Award//-->
@@ -138,7 +145,7 @@
 					</div>
 				</div>
 				<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
-					<a class="date-click fake-link font-X" id="replace-o-date" name="news" style="font-size:12px;">replace-date-words</a>
+					<font class="add-to-search font-X" name="construct|construct-1_key|date_value|replace-date-words_text|replace-date-words" style="font-size:12px; margin-right:3px;">replace-date-words</font>
 				</div>
 			</div>
 		</div>
@@ -168,10 +175,12 @@
 		</div>
 		<div class="background-alpha-5 border-sides-C-1 border-bottom-C-1 corners-bottom-2" style="height:21px; overflow:hidden; width:auto;">
 			<div style="width:100%;">
-				<div class="light-up" style="float:left; margin-left:1px; vertical-align:top; width:210px;"><div class="shadow-up" style="margin:1px; text-align:left; width:auto;">
-					<font class="font-H" style="font-size:10px; margin-left:12px;">replace-credit-word</font>
-					<font class="user-click user-link-1 font-Z" style="font-size:12px;">replace-credit-name</font>
-				</div></div>
+				<div class="light-up corners-top-right-3" style="float:left; margin-left:1px; vertical-align:top; width:210px;">
+					<div style="margin:1px; text-align:left; width:auto;">
+						<font class="font-H" style="font-size:10px; margin-left:12px;">replace-credit-word</font>
+						<font class="user-click user-link-1 font-Z" style="font-size:12px;">replace-credit-name</font>
+					</div>
+				</div>
                 <div id="icons" style="float:left;">
 					<div id="line-group-icons-replace-ID" style="height:21px; overflow:hidden; width:auto;">
 <!--//Gold Award//-->
@@ -204,82 +213,92 @@
 </div>
 <!--// Line HTML - 500 //-->
 <div id="line-HTML-500" style="display:none;">
-	<div style="float:left; height:4px; width:100%;"></div>
-	<div class="color-Z-3 corners-bottom-3 corners-top-3 fake-link effect-hover-Z-1 light-up databases-line-click" id="browse-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-right:1px; min-width:155px; text-align:center; width:98%;">
-		<div class="border-all-C-1 corners-bottom-2 corners-top-2" style="height:40px; overflow:hidden; text-align:left; width:auto;">
-			<table style="height:40px; width:100%;">
+	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link effect-hover-Z-2 light-up line-click" id="news-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-top:4px; text-align:center; width:100%;" title="Click to expand this display.">
+		<div class="border-sides-C-1 border-top-C-1 corners-top-2" style="height:19px; overflow:hidden; text-align:left; width:auto;">
+			<table style="height:18px; width:100%;">
 				<tr>
-					<td style="height:40px; overflow:hidden; vertical-align:middle; text-align:center; width:auto;">
-						<font class="font-X" style="float:left; font-size:15px; vertical-align:top;">replace-name</font>
+					<td style="height:18px; overflow:hidden; vertical-align:top; width:auto;">
+						<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
+					</td>
+					<td style="float:right; height:19px; text-align:right; width:auto;">
+						<a class="add-to-all-searches fake-link font-bold font-L" name="construct|construct-3_key|tag_value|replace-tag-ID_text|replace-tag-name" style="margin-right:3px;">replace-tag-name</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="background-alpha-5 border-sides-C-1 border-bottom-C-1 corners-bottom-2" style="height:21px; overflow:hidden; width:auto;">
+			<div style="width:100%;">
+				<div class="light-up corners-top-right-3" style="float:left; margin-left:1px; vertical-align:top; width:210px;">
+					<div style="margin:1px; text-align:left; width:auto;">
+						<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
+						<font class="add-to-search user-link-1 font-X" name="construct|construct-3_key|search_value|replace-username_text|replace-username" style="font-size:12px; margin-right:3px;">replace-username</font>
+					</div>
+				</div>
+				<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
+					<font class="add-to-search font-X" name="construct|construct-3_key|date_value|replace-o-date_text|replace-date-words" style="font-size:12px; margin-right:3px;">replace-date-words</font>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="color-X-3 corners-bottom-3 corners-top-3" style="float:left; height:230px; margin-right:1px; min-width:155px; text-align:center; width:100%;">
+		<div class="border-all-C-1 corners-bottom-2 corners-top-2" style="height:228px; overflow:auto; text-align:left; width:auto;">
+			<table style="height:228px; width:100%;">
+				<tr>
+					<td style="height:228px; overflow:hidden; vertical-align:top; text-align:left; width:auto;">
+						<font class="font-X" style="float:left; font-size:15px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">replace-description</font>
 					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
-	<div style="height:142px; width:100%;">
-		<div class="background-alpha-5 border-all-Z-1 corners-bottom-2" style="height:142px; overflow:hidden; width:auto;">
-			<div style="height:140px; vertical-align:top; width:100%;">
-				<font class="font-X" style="font-size:12px;">replace-description</font>
-			</div>
-		</div>
-	</div>
 </div>
-<!--// Line HTML - 400 //-->
-<!--//
-<div id="line-HTML-400" style="display:none;">
-	<div style="float:left; height:6px; width:100%;"></div>
-	<div class="color-X-4 corners-left-3 fake-link effect-hover-Z-1 line-click" name="replace-area/open-line/browse/replace-ID" style="float:left; height:42px; margin-left:6px; text-align:center; width:387px;">
-		<div class="border-left-C-1 border-top-C-1 border-bottom-C-1 corners-left-2 light-up" id="browse-replace-ID" style="height:40px; width:auto;">
-			<div style="height:21px; overflow:hidden; width:100%;">
-				<font class="font-X float-left" id="browse-replace-ID-font" style="padding-left:3px; padding-right:3px;">replace-name</font>
-			</div>
-			<div class="background-alpha-5" style="height:19px; overflow:hidden; width:auto;">
-				<div style="width:100%;">
-					<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
-			<div id="line-group-icons-replace-ID" style="height:21px; overflow:hidden; width:386px;">
-				<img id="icon-replace-ID-33" src="/lapcat/images/31-31-33.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-				<img id="icon-replace-ID-50" src="/lapcat/images/31-31-50.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-				<img id="icon-replace-ID-51" src="/lapcat/images/31-31-51.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-				<img id="icon-replace-ID-10" src="/lapcat/images/31-31-10.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-				<img id="icon-replace-ID-11" src="/lapcat/images/31-31-11.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-				<img id="icon-replace-ID-0" src="/lapcat/images/31-31-0.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-				<img id="icon-replace-ID-92" src="/lapcat/images/31-31-92.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-				<img id="icon-replace-ID-94" src="/lapcat/images/31-31-94.png" style="display:none; float:right; height:16px; width:16px; margin-right:3px;" title="" />
-			</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-//-->
-<!--// Line HTML - 600 //-->
-<div id="line-HTML-600" style="display:none;">
-	<div style="float:left; height:297px; text-align:center; width:100%;">
-		<div class="border-all-D-1 corners-top-1" style="height:295px; overflow:hidden; text-align:left; width:auto;">
-			<div style="height:280px; overflow:hidden; width:100%;">
-				<table cellpadding="0" cellspacing="0" style="height:280px; width:100%;">
+<!--// Line HTML - 800 //-->
+<div id="line-HTML-800" style="display:none;">
+	<div class="color-Z-3 corners-bottom-3 corners-top-3 effect-hover-Z-1 light-up" id="news-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-top:4px; text-align:center; width:100%;" title="Click to use this database.">
+		<div class="database-dockable fake-link" name="replace-link-in" style="height:42px; width:100%;">
+			<div class="border-sides-C-1 border-top-C-1 corners-top-2" style="height:19px; text-align:left; width:auto;">
+				<table style="height:18px; width:100%;">
 					<tr>
-						<td colspan="3" class="color-B-3 background-special-1" style="height:36px; padding:1px; vertical-align:top; width:100%;"><div class="corners-bottom-2 color-Z-3 corners-top-2" style="height:36px; padding:1px; width:auto;"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 database-dockable effect-hover-Z-1 fake-link light-down" name="replace-link_in" style="height:34px; width:auto;" title="Click to use this database."><div style="height:32px; line-height:80%; padding-top:2px; text-align:center; width:100%;"><div style="height:32px; width:100%;"><a class="font-bold font-G fake-click" id="databases" onfocus="javascript:this.blur();" style="font-size:14px; height:32px;">replace-name</a></div></div></div></div></td>
-					</tr>
-					<tr>
-						<td class="color-B-3 background-special-1" style="width:6px;"></td>
-						<td class="border-all-D-1 background-alpha-2" style="height:244px; overflow:hidden; padding-left:6px; vertical-align:top; width:auto;"><div style="width:100%;"><font class="font-X" style="font-size:12px; margin-left:6px;">replace-description</font></div></td>
-						<td class="color-B-3 background-special-1" style="width:6px;"></td>
+						<td style="height:18px; overflow:hidden; vertical-align:top; width:100%;">
+							<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
+						</td>
 					</tr>
 				</table>
 			</div>
-			<div class="border-sides-D-1 border-bottom-D-1 color-X-2" style="height:15px; width:auto;">
-				<div class="border-top-E-1 color-Z-4" style="float:left; height:13px; width:100%;">
-					<div class="fake-link move-to-click" id="databases" style="float:right; margin-top:-5px; z-index:8;"><img src="http://cdn1.lapcat.org/famfamfam/silk/database.png" style="height:16px; margin-right:3px; width:16px;" /></div>
-					<font class="fake-link font-G move-to-click" id="databases" style="float:right; margin-right:6px; font-size:10px;">See Other Databases</font>
-				</div>
+			<div class="border-sides-C-1 border-bottom-C-1 corners-bottom-2" style="height:21px; overflow:hidden; width:auto;">
+				<div style="width:100%;"></div>
 			</div>
 		</div>
 	</div>
+	<div class="color-X-3 corners-bottom-3 corners-top-3" style="float:left; height:230px; margin-right:1px; min-width:155px; text-align:center; width:100%;">
+		<div class="border-all-C-1 corners-bottom-2 corners-top-2" style="height:228px; overflow:auto; text-align:left; width:auto;">
+			<table style="height:228px; width:100%;">
+				<tr>
+					<td style="height:228px; overflow:hidden; vertical-align:top; text-align:left; width:auto;">
+						<font class="font-X" style="float:left; font-size:15px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">replace-description</font>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
 </div>
-
-
+<!--// Line HTML - 700 //-->
+<div id="line-HTML-700" style="display:none;">
+	<div class="color-X-4 corners-bottom-3 corners-top-3 fake-link effect-hover-Z-1 light-up line-click" id="databases-replace-ID" name="counter-replace-counter" style="float:left; height:42px; margin-top:4px; text-align:center; width:100%;" title="Click to expand this display.">
+		<div class="border-sides-C-1 border-top-C-1 corners-top-2" style="height:19px; overflow:hidden; text-align:left; width:auto;">
+			<table style="height:18px; width:100%;">
+				<tr>
+					<td style="height:18px; overflow:hidden; vertical-align:top; width:auto;">
+						<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="background-alpha-5 border-sides-C-1 border-bottom-C-1 corners-bottom-2" style="height:21px; overflow:hidden; width:auto;">
+			<div style="width:100%;"></div>
+		</div>
+	</div>
+</div>
 
 <!--// Stage - Play //-->
 <div class="color-A-1" id="stage-play" style="width:100%;">
@@ -315,7 +334,7 @@
 
 			<!--// LINK - Close //-->
 			<div id="dockable-close-link" style="display:none; float:right; margin-right:12px; padding-top:1px;">
-				<div class="close-link button-red" onfocus="javascript:this.blur();" style="float:left; height:17px; margin-left:3px; padding-left:3px; padding-right:3px; text-align:center; vertical-align:top; width:auto;" title="Click to close the window."><font class="font-G" id="dockable-close" style="vertical-align:top; font-size:14px;">Close</font></div>
+				<div class="close-dockable button-red" onfocus="javascript:this.blur();" style="float:left; height:17px; margin-left:3px; padding-left:3px; padding-right:3px; text-align:center; vertical-align:top; width:auto;" title="Click to close the window."><font class="font-G" id="dockable-close" style="vertical-align:top; font-size:14px;">Close</font></div>
 			</div>
 
 		</div>
@@ -358,9 +377,9 @@
 		<div style="float:left; vertical-align:top; width:100%;">
 
 			<!--// Dockable Window //-->
-			<!--// ****** //-->
-			<div class="border-top-B-1 color-D-2" id="dockable-window" style="float:left; height:908px; position:absolute; top:21px; left:0px; width:100%; vertical-align:top; visibility:hidden; z-index:21;"><iframe id="dockable-content" src="" style="border:0; height:908px; visibility:hidden; width:100%; z-index:21;"></iframe></div>
-			<!--// ****** //-->
+			<!--// *************** //-->
+			<div class="border-top-B-1 color-D-2" id="dockable-window" style="float:left; height:1022px; position:absolute; top:21px; left:0px; width:100%; vertical-align:top; visibility:hidden; z-index:21;"><iframe id="dockable-content" src="" style="border:0; height:1022px; visibility:hidden; width:100%; z-index:21;"></iframe></div>
+			<!--// *************** //-->
 
 			<!--// LAPCAT - Normal Display //-->
 			<div style="float:left; height:555px; vertical-align:top; width:auto;">
@@ -409,13 +428,13 @@
 			<div style="float:right; height:15px; width:16px;"><font class="font-X" style="font-size:9px;">Tag</font></div>
 		</div>
 		<div style="float:left; width:128px;">
-			<form id="change-tag-action" action="javascript:$(this).find('#change-tag-master').keyup();" autocomplete="off" method="get" style="float:left; height:20px; margin-left:3px; text-align:center; width:126px;" title="Type to change tags.">
+			<form id="change-tag-action" action="javascript:$(this).find('#change-tag-master').keyup();" autocomplete="off" method="get" style="float:left; height:20px; margin-left:3px; text-align:center; width:126px;" title="Click, then type to change tags.">
 				<input class="dropdown-A-1 tag-box image-lines" id="change-tag-master" type="text" value="search here" style="height:18px; width:126px;">
 			</form>
 		</div>
 		<div style="float:left; width:14px;">
 			<div id="tag-selected" style="display:none; float:right; height:15px; padding-left:3px; padding-top:6px; width:10px;">
-				<img class="remove-tag fake-link" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="float:left; width:12px; height:12px;" title="Click to remove this tag from the search." />
+				<img class="remove-from-all-searches fake-link" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="float:left; width:12px; height:12px;" title="Click to remove this tag from the search." />
 			</div>
 		</div>
 		
@@ -436,6 +455,25 @@
 		<div style="float:left; width:14px;">
 			<div id="popular-selected" style="display:none; float:right; height:15px; padding-left:3px; padding-top:4px; width:10px;">
 				<img class="remove-popular fake-link" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="float:left; width:12px; height:12px;" title="Click to remove this tag from the search." />
+			</div>
+		</div>
+	</div>
+
+	<!--// ********** //-->
+	<!--// Change Type //-->
+	<div class="drops-out-top" id="container-change-type" style="display:none; float:left; height:24px; padding-left:3px; padding-top:6px; width:176px;">
+		<font>
+		<div class="dropdown drops-out" id="change-type-drops-lines" style="display:none; margin-top:24px; margin-left:1px; position:absolute; width:175px; z-index:10;"></div>
+		</font>
+		<div style="float:left; width:33px;">
+			<div style="float:right; height:15px;"><font class="font-X" style="font-size:9px;">Type</font></div>
+		</div>
+		<div style="float:left; width:128px;">
+			<div class="drops dropdown fake-link" id="change-type-drops" onfocus="javascript:this.blur();" style="float:left; height:20px; margin-left:3px; text-align:center; width:126px;" title="Click to change locations."><font class="font-G" id="change-type-master" style="float:left; font-size:14px; margin-left:3px; margin-top:2px;"></font><font class="font-G" style="float:right; font-size:14px; margin-right:3px; margin-top:2px;">+</font></div>
+		</div>
+		<div style="float:left; width:14px;">
+			<div id="type-selected" style="display:none; float:right; height:15px; padding-left:3px; padding-top:4px; width:10px;">
+				<img class="remove-type fake-link" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="float:left; width:12px; height:12px;" title="Click to remove this criteria from the search." />
 			</div>
 		</div>
 	</div>
@@ -534,52 +572,119 @@
                                            	<div class="font-X font-italic" id="loader" style="display:none; position:absolute; margin-top:4px; margin-left:9px; z-index:8;">searching...</div>
 											<div id="destination-content" style="width:100%;">
 <!--// Construct 1 //-->
-<div id="construct-1" style="display:none; height:auto; padding:2px; overflow:hidden; width:auto;">
+<div id="construct-1" style="display:none; height:auto; padding:2px; margin-bottom:8px; overflow:hidden; width:auto;">
 	<div style="max-height:512px; width:auto;">
-		<div id="master-header" style="height:20px; width:100%;">
-			<font class="float-left font-X" id="header" style="margin-left:8px; font-size:14px;"></font>
-			<div id="icons">
-				<img class="fake-link float-right magnifier-click" name="magnify" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" title="Click to expand/shrink this display."/>
-				<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
-				<img class="fake-link float-right image-view-click" id="image-view" src="http://cdn1.lapcat.org/famfamfam/silk/image.png" style="height:16px; width:16px;" title="Click to show this information with images." />
-				<img class="fake-link float-right list-view-click" id="list-view" src="http://cdn1.lapcat.org/famfamfam/silk/application_view_list.png" style="display:none; height:16px; width:16px;" title="Click to show this information in a list." />
-				<img class="fake-link float-right stop-refresh-click" id="stop-refresh" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="display:none; height:16px; width:16px;" title="Click to disable this display to automatically refresh." />
-				<img class="fake-link float-right auto-refresh-click" id="auto-refresh" src="http://cdn1.lapcat.org/famfamfam/silk/arrow_rotate_clockwise.png" style="height:16px; width:16px;" title="Click to enable this display to automatically refresh." />
+	<table cellpadding="0" cellspacing="0" style="max-height:512px; width:100%;">
+		<tr><td style="height:16px; width:100%;">
+			<div id="master-header" style="height:16px; width:100%;">
+				<table cellpadding="0" cellspacing="0" style="height:16px; width:100%;">
+					<tr>
+						<td style="max-height:16px; overflow:hidden; width:auto;">
+				<div id="show-previous-next" style="display:none; float:left; height:16px; padding-top:2px; width:24px;"><img class="fake-link float-left previous-materials" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_previous.png" style="height:12px; width:12px;" title="Click to change material type for this search."/><img class="fake-link float-left next-materials" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="height:12px; width:12px;" title="Click to change material type for this search."/></div>
+				<font class="float-left font-X" id="header" style="margin-left:8px; overflow:hidden; max-height:16px; font-size:14px; text-align:left; width:686px;"></font>
+						</td>
+						<td style="overflow:hidden; width:auto;">
+				<div id="icons">
+					<img class="fake-link float-right magnifier-click" id="zoom-in" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" title="Click to expand this display."/>
+					<img class="fake-link float-right magnifier-click" id="zoom-out" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_out.png" style="display:none; height:16px; width:16px;" title="Click to shrink this display."/>
+					<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+					<img class="fake-link float-right image-view-click" id="image-view" src="http://cdn1.lapcat.org/famfamfam/silk/images.png" style="height:16px; width:16px;" title="Click to show this information with images." />
+					<img class="fake-link float-right list-view-click" id="list-view" src="http://cdn1.lapcat.org/famfamfam/silk/application_view_list.png" style="display:none; height:16px; width:16px;" title="Click to show this information in a list." />
+					<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+					<img class="fake-link float-right stop-refresh-click" id="stop-refresh" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="display:none; height:16px; width:16px;" title="Click to disable this display to automatically refresh." />
+					<img class="fake-link float-right auto-refresh-click" id="auto-refresh" src="http://cdn1.lapcat.org/famfamfam/silk/arrow_rotate_clockwise.png" style="height:16px; width:16px;" title="Click to enable this display to automatically refresh." />
+					<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+					<img class="fake-link float-right remove-search-click" id="search-on-search" src="http://cdn1.lapcat.org/famfamfam/silk/user_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the username from this search." />
+					<img class="fake-link float-right remove-search-click" id="search-on-date" src="http://cdn1.lapcat.org/famfamfam/silk/date_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the date from this search." />
+				</div>
+						</td>
+					</tr>
+				</table>
 			</div>
-		</div>
-		<div class="float-left" id="failed-master" name="construct-views" style="display:none;"></div>
-		<div class="float-left" id="image-view-master" name="construct-views" style="display:none;"></div>
-		<div class="float-left" id="master" name="construct-views"></div><div class="float-left" id="open-line" name="construct-views" style="display:none;"></div>
+		</td></tr><tr><td style="height:auto; overflow:hidden; vertical-align:top;">
+			<div class="float-left" id="failed-master" name="construct-views" style="display:none;"></div>
+			<div class="float-left" id="image-view-master" name="construct-views" style="display:none;"></div>
+			<div class="float-left" id="master" name="construct-views"></div><div class="float-left" id="open-line" name="construct-views" style="display:none;"></div>
+		</td></tr></table>
 	</div>
 </div>
 <!--// Construct 2 //-->
 <div id="construct-2" style="display:none; float:left; height:auto; padding:2px; overflow:hidden; width:auto;">
-	<div style="max-height:512px; width:auto;">
-		<div id="master-header" style="height:20px; width:100%;">
-			<font class="float-left font-X" id="header" style="margin-left:8px; font-size:14px;"></font>
-			<div id="icons">
-				<img class="fake-link float-right magnifier-click" name="magnify" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" />
-				<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
-				<img class="fake-link float-right future-view-click" id="future-view" src="http://cdn1.lapcat.org/famfamfam/silk/application_view_list.png" style="display:none; height:16px; width:16px;" title="Click to show this information in a list." />
-				<img class="fake-link float-right month-view-click" id="month-view" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to show this information in a calendar."/>
+	<table cellpadding="0" cellspacing="0" style="max-height:512px; width:100%;">
+		<tr><td style="height:16px; width:100%;">
+			<div id="master-header" style="height:16px; width:100%;">
+				<table cellpadding="0" cellspacing="0" style="height:16px; width:100%;">
+					<tr>
+						<td style="max-height:16px; overflow:hidden; width:auto;">
+				<font class="float-left font-X" id="header" style="margin-left:8px; overflow:hidden; max-height:16px; font-size:14px; text-align:left; width:216px;"></font>
+						</td>
+						<td style="overflow:hidden; width:auto;">
+				<div id="icons">
+					<img class="fake-link float-right magnifier-click" id="zoom-in" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" title="Click to expand this display."/>
+					<img class="fake-link float-right magnifier-click" id="zoom-out" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_out.png" style="display:none; height:16px; width:16px;" title="Click to shrink this display."/>
+					<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+					<img class="fake-link float-right future-view-click" id="future-view" src="http://cdn1.lapcat.org/famfamfam/silk/application_view_list.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to show this information in a list." />
+					<img class="fake-link float-right month-view-click" id="month-view" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; margin-right:2px; width:16px;" title="Click to show this information in a calendar."/>
+					<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+					<img class="fake-link float-right remove-search-click" id="search-on-search" src="http://cdn1.lapcat.org/famfamfam/silk/building_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the location from this search." />
+					<img class="fake-link float-right remove-search-click" id="search-on-date" src="http://cdn1.lapcat.org/famfamfam/silk/date_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the date from this search." />
+				</div>
+						</td>
+					</tr>
+				</table>
 			</div>
-		</div>
-		<div class="float-left" id="failed-master" name="construct-views" style="display:none;"></div>
-		<div class="float-left" id="month-view-master" name="construct-views" style="display:none; width:100%;"></div>
-        <div class="float-left" id="master" name="construct-views"></div><div class="float-left" id="open-line" name="construct-views" style="display:none;"></div>
+		</td></tr><tr><td style="height:auto; overflow:hidden; vertical-align:top;">
+			<div class="float-left" id="failed-master" name="construct-views" style="display:none;"></div>
+			<div class="float-left" id="month-view-master" name="construct-views" style="display:none; width:100%;"></div>
+        	<div class="float-left" id="master" name="construct-views" style="position:relative;"></div><div class="float-left" id="open-line" name="construct-views" style="display:none;"></div>
+		</td></tr></table>
 	</div>
 </div>
 <!--// Construct 3 //-->
 <div id="construct-3" style="display:none; float:left; height:auto; padding:2px; overflow:hidden; width:auto;">
 	<div style="max-height:512px; width:auto;">
-		<div id="master-header" style="height:20px; width:100%;">
-			<font class="float-left font-X" id="header" style="margin-left:8px; font-size:14px;"></font>
+		<div id="master-header" style="height:16px; width:100%;">
+			<table cellpadding="0" cellspacing="0" style="height:16px; width:100%;">
+				<tr>
+					<td style="max-height:16px; overflow:hidden; width:auto;">
+			<font class="float-left font-X" id="header" style="margin-left:8px; overflow:hidden; max-height:16px; font-size:14px; text-align:left; width:236px;"></font>
+					</td>
+					<td style="overflow:hidden; width:auto;">
 			<div id="icons">
-				<img class="fake-link float-right magnifier-click" name="magnify" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" />
+				<img class="fake-link float-right magnifier-click" id="zoom-in" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" title="Click to expand this display."/>
+				<img class="fake-link float-right magnifier-click" id="zoom-out" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_out.png" style="display:none; height:16px; width:16px;" title="Click to shrink this display."/>
+				<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+				<img class="fake-link float-right featured-view-click" id="list-view" src="http://cdn1.lapcat.org/famfamfam/silk/application_view_list.png" style="height:16px; width:16px;" title="Click to show this information in a list."/>
+				<img class="fake-link float-right featured-view-click" id="featured-view" src="http://cdn1.lapcat.org/famfamfam/silk/layout_content.png" style="display:none; height:16px; width:16px;" title="Click to show the featured article."/>
+				<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+				<img class="fake-link float-right remove-search-click" id="search-on-search" src="http://cdn1.lapcat.org/famfamfam/silk/user_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the username from this search." />
+				<img class="fake-link float-right remove-search-click" id="search-on-date" src="http://cdn1.lapcat.org/famfamfam/silk/date_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the date from this search." />
+			</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="float-left" id="failed-master" name="construct-views" style="display:none;"></div>
+		<div class="float-left" id="master" name="construct-views"></div><div class="float-left" id="open-line" name="construct-views" style="display:none;"></div>
+		<div class="float-left" id="featured-view-master" name="construct-views" style="display:none;"></div>
+	</div>
+</div>
+<!--// Construct 4 //-->
+<div id="construct-4" style="display:none; float:left; height:auto; padding:2px; overflow:hidden; width:auto;">
+	<div style="max-height:512px; width:auto;">
+		<div id="master-header" style="height:16px; width:100%;">
+			<font class="float-left font-X" id="header" style="margin-left:8px; overflow:hidden; max-height:16px; font-size:14px; text-align:left; width:164px;"></font>
+			<div id="icons">
+				<img class="fake-link float-right magnifier-click" id="zoom-in" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" title="Click to expand this display."/>
+				<img class="fake-link float-right magnifier-click" id="zoom-out" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_out.png" style="display:none; height:16px; width:16px;" title="Click to shrink this display."/>
+				<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
+				<img class="fake-link float-right featured-view-click" id="list-view" src="http://cdn1.lapcat.org/famfamfam/silk/application_view_list.png" style="height:16px; width:16px;" title="Click to show this information in a list."/>
+				<img class="fake-link float-right featured-view-click" id="featured-view" src="http://cdn1.lapcat.org/famfamfam/silk/layout_content.png" style="display:none; height:16px; width:16px;" title="Click to show the featured database."/>
 			</div>
 		</div>
 		<div class="float-left" id="failed-master" name="construct-views" style="display:none;"></div>
 		<div class="float-left" id="master" name="construct-views"></div><div class="float-left" id="open-line" name="construct-views" style="display:none;"></div>
+		<div class="float-left" id="featured-view-master" name="construct-views" style="display:none;"></div>
 	</div>
 </div>
 											</div>
@@ -817,7 +922,7 @@
 				<div style="height:380px; overflow:auto; width:auto;">
 				<table cellpadding="0" cellspacing="0" style="height:380px; vertical-align:top; width:100%;">
 					<tr>
-						<td style="height:36px; padding:1px; vertical-align:top; width:100%;"><div class="corners-bottom-2 color-Z-2 corners-top-2" style="height:36px; padding:1px; width:auto;"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 database-dockable effect-hover-Z-1 fake-link light-down" name="replace-link_in" style="height:34px; width:auto;" title="Click to show this material in the catalog."><div style="height:32px; line-height:90%; padding-top:2px; text-align:center; width:100%;"><div style="height:32px; width:100%;"><a class="font-bold font-G fake-click" id="materials" onfocus="javascript:this.blur();" style="font-size:14px; height:32px;">replace-name</a></div></div></div></div></td>
+						<td style="height:36px; padding:1px; vertical-align:top; width:100%;"><div class="corners-bottom-2 color-Z-2 corners-top-2" style="height:36px; padding:1px; width:auto;"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 database-dockable effect-hover-Z-1 fake-link light-down" name="replace-link-in" style="height:34px; width:auto;" title="Click to show this material in the catalog."><div style="height:32px; line-height:90%; padding-top:2px; text-align:center; width:100%;"><div style="height:32px; width:100%;"><a class="font-bold font-G fake-click" id="materials" onfocus="javascript:this.blur();" style="font-size:14px; height:32px;">replace-name</a></div></div></div></div></td>
 					</tr>
 					<tr>
 						<td style="height:338px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top;">
@@ -840,7 +945,7 @@
 				<div style="height:380px; overflow:auto; width:auto;">
 				<table cellpadding="0" cellspacing="0" style="height:380px; vertical-align:top; width:100%;">
 					<tr>
-						<td style="height:36px; padding:1px; vertical-align:top; width:100%;"><div class="corners-bottom-2 color-Z-2 corners-top-2" style="height:36px; padding:1px; width:auto;"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 database-dockable effect-hover-Z-1 fake-link light-down" name="replace-link_in" style="height:34px; width:auto;" title="Click to show this material in the catalog."><div style="height:32px; line-height:90%; padding-top:2px; text-align:center; width:100%;"><div style="height:32px; width:100%;"><a class="font-bold font-G fake-click" id="materials" onfocus="javascript:this.blur();" style="font-size:14px; height:32px;">replace-name</a></div></div></div></div></td>
+						<td style="height:36px; padding:1px; vertical-align:top; width:100%;"><div class="corners-bottom-2 color-Z-2 corners-top-2" style="height:36px; padding:1px; width:auto;"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 database-dockable effect-hover-Z-1 fake-link light-down" name="replace-link-in" style="height:34px; width:auto;" title="Click to show this material in the catalog."><div style="height:32px; line-height:90%; padding-top:2px; text-align:center; width:100%;"><div style="height:32px; width:100%;"><a class="font-bold font-G fake-click" id="materials" onfocus="javascript:this.blur();" style="font-size:14px; height:32px;">replace-name</a></div></div></div></div></td>
 					</tr>
 					<tr>
 						<td style="height:338px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top;">
@@ -862,7 +967,7 @@
 				<div style="height:380px; overflow:auto; width:auto;">
 				<table cellpadding="0" cellspacing="0" style="height:380px; vertical-align:top; width:100%;">
 					<tr>
-						<td style="height:36px; padding:1px; vertical-align:top; width:100%;"><div class="corners-bottom-2 color-Z-3 corners-top-2" style="height:36px; padding:1px; width:auto;"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 database-dockable effect-hover-Z-1 fake-link light-down" name="replace-link_in" style="height:34px; width:auto;" title="Click to use this database."><div style="height:32px; line-height:90%; padding-top:2px; text-align:center; width:100%;"><div style="height:32px; width:100%;"><a class="font-bold font-G fake-click" id="databases" onfocus="javascript:this.blur();" style="font-size:14px; height:32px;">replace-name</a></div></div></div></div></td>
+						<td style="height:36px; padding:1px; vertical-align:top; width:100%;"><div class="corners-bottom-2 color-Z-3 corners-top-2" style="height:36px; padding:1px; width:auto;"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 database-dockable effect-hover-Z-1 fake-link light-down" name="replace-link-in" style="height:34px; width:auto;" title="Click to use this database."><div style="height:32px; line-height:90%; padding-top:2px; text-align:center; width:100%;"><div style="height:32px; width:100%;"><a class="font-bold font-G fake-click" id="databases" onfocus="javascript:this.blur();" style="font-size:14px; height:32px;">replace-name</a></div></div></div></div></td>
 					</tr>
 					<tr>
 						<td style="height:338px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top;">
