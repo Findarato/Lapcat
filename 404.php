@@ -48,7 +48,7 @@ if(!$V_Fresh){
 		case 'home':case 'databases':case 'events':case 'materials':case 'news':
 			switch($V_Command){
 				case 'search':case 'suggest':
-				case 'change-date':case 'change-popular':case 'change-search':case 'change-sort':case 'change-tag':
+				case 'change-date':case 'change-popular':case 'change-search':case 'change-sort':case 'change-tag':case 'change-type':
 				case 'change-page':
 				case 'open-line':
 					$V_JSON=$o_LAPCAT->F_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary);
@@ -114,7 +114,8 @@ if(!$V_Fresh){
 		default:break;
 	}
 }else{
-	$o_LAPCAT->F_PerformQuickCommand($V_Area,'reset');
+	$o_LAPCAT->f_ResetAllSearches();
+	//$o_LAPCAT->F_PerformQuickCommand($V_Area,'reset');
 }
 
 if(isset($o_LAPCAT)){$_SESSION['LAPCAT']=serialize($o_LAPCAT);}
@@ -801,6 +802,10 @@ if($v_LAP){
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
 		<link id="index-css-theme" rel="stylesheet" type="text/css" href="/lapcat/css/themes/theme-generator.php?theme=<?=$o_User->V_TS;?>" />
+		<script type="text/javascript">
+			var V_Date=new Date();
+			var V_TimeStamp=V_Date.getTime();
+		</script>
 		<script src="/lapcat/java/get-all-tags.php" type="text/javascript"></script>
 		<script defer src="/lapcat/java/pngfix.js" type="text/javascript"></script>
 		<script src="http://cdn1.lapcat.org/js/jquery-1.4.1.min.js" type="text/javascript"></script>
