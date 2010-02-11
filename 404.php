@@ -41,9 +41,9 @@ if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{
 // V_Area, V_Command, V_Main, V_Secondary
 if(!$V_Fresh){
 	switch($V_Area){
-		case 'request-view':$V_JSON=$o_LAPCAT->F_GetMonthView(false,explode('-',$V_Command));break;
-		case 'month-view':$V_JSON=$o_LAPCAT->F_GetMonthView(true,explode('-',$o_LAPCAT->F_CurrentDate()));break;
-		case 'popular-tags':$V_JSON=$o_LAPCAT->F_GetPopularTags();break;
+		case 'request-view':$V_JSON=$o_LAPCAT->f_GetMonthView(false,explode('-',$V_Command));break;
+		case 'month-view':$V_JSON=$o_LAPCAT->f_GetMonthView(true,explode('-',$o_LAPCAT->f_CurrentDate()));break;
+		case 'popular-tags':$V_JSON=$o_LAPCAT->f_GetPopularTags();break;
 
 		case 'home':case 'databases':case 'events':case 'materials':case 'news':
 			switch($V_Command){
@@ -51,7 +51,7 @@ if(!$V_Fresh){
 				case 'change-date':case 'change-popular':case 'change-search':case 'change-sort':case 'change-tag':case 'change-type':
 				case 'change-page':
 				case 'open-line':
-					$V_JSON=$o_LAPCAT->F_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary);
+					$V_JSON=$o_LAPCAT->f_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary);
 					break;
 				default:
 					break;
