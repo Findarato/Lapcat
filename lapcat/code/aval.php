@@ -42,13 +42,12 @@ function makeCoolXMLStuff($array,$home="main",$cache=false,$isbn=0){
 		$res = $db->Fetch("row");
 		$locs = unserialize($res);
 	}
-	
-	
 	return $locs;
 }
 
 function avalByisbn($isbn,$home="main",$cache=false){
 	$db = db::getInstance();
+	$returnArray = array();
 	if(is_array($isbn)){
 		$sql = "SELECT isbn,updated,cache,TIMESTAMPDIFF(SECOND ,updated, now( ) ) AS updatedDiff FROM lapcat.cache_aval WHERE isbn IN ('".implode("','",$isbn)."')";
 		$db->Query($sql);
