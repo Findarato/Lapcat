@@ -1,5 +1,5 @@
 <?Php
-function makeCoolXMLStuff($array,$home="Main"){
+function makeCoolXMLStuff($array,$home="main"){
 	if(is_array($array)){
 		$locs = array(
 		"main"=>0,
@@ -17,9 +17,9 @@ function makeCoolXMLStuff($array,$home="Main"){
 		foreach ($array as $k=>$v)	{
 			$loc = explode(" ",substr($k,2));
 			foreach ($v as $v_k=>$v_v)	{
-				if(strpos($v_v,'AVAILABLE')){
+				if(strpos(ucwords($v_v),'AVAILABLE')){
 					$locs[strtolower(trim($loc[0]))]++;
-					if($home == $locs[strtolower(trim($loc[0]))]){
+					if($home == strtolower(trim($loc[0]))){
 						$locs["available-home"]++;	
 					}else{
 						$locs["available-other"]++;
@@ -34,7 +34,7 @@ function makeCoolXMLStuff($array,$home="Main"){
 	return $locs;
 }
 
-function avalByisbn($isbn,$home="Main"){
+function avalByisbn($isbn,$home="main"){
 	if(is_array($isbn)){
 		foreach ($isbn as $is){
 			$returnArray[$is] = avalByisbn($is);
