@@ -38,6 +38,7 @@ function makeCoolXMLStuff($array,$home="main",$cache=false,$isbn=0){
 		$sql = "INSERT INTO lapcat.cache_aval (isbn,updated,cache) VALUES('".$isbn."',NOW(),'".serialize($locs)."');";
 		$db->Query($sql);
 	}else{//the data is still fresh, do not delete just show it
+		//this is kind of an old way of doing it and it should not ever be hit.  Its here mainly as a catch for a mistake
 		$db->Query("SELECT cache from lapcat.cache_aval WHERE isbn='".$isbn."';");
 		$res = $db->Fetch("row");
 		$locs = unserialize($res);
