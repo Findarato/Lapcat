@@ -1,6 +1,46 @@
 <?Php
-//http://catalog.lapcat.org/search/i008888344315
-function avalByisbn($isbn){
+function makeCoolXMLStuff($array,$home="Main"){
+	if(is_array($array)){
+		$locs = array(
+		"main"=>0,
+		"coolspring"=>0,
+		"fish"=>0,
+		"hanna"=>0,
+		"kingsford"=>0,
+		"rolling"=>0,
+		"union"=>0,
+		"bookmobile"=>0,
+		"available"=>0,
+		"available-other"=>0,
+		"available-home"=>0
+		);
+		foreach ($array as $k=>$v)	{
+			$loc = explode(" ",substr($k,2));
+			foreach ($v as $v_k=>$v_v)	{
+				if(strpos($v_v,'AVAILABLE')){
+					$locs[strtolower(trim($loc[0]))]++;
+					if($home == $locs[strtolower(trim($loc[0]))]){
+						$locs["available-home"]++;	
+					}else{
+						$locs["available-other"]++;
+					}
+					$locs["available"]++;
+				}
+			}
+		}
+	}else{
+		$locs=array('error'=>'Could not parse item record.');
+	}
+	return $locs;
+}
+
+function avalByisbn($isbn,$home="Main"){
+	if(is_array($isbn)){
+		foreach ($isbn as $is){
+			$returnArray[$is] = avalByisbn($is);
+		}
+		return $returnArray;
+	}
 	$url = "http://catalog.lapcat.org/search/i".$isbn;
 	$doc = new DOMDocument();
 	@$doc->loadHTMLFile($url);
@@ -26,7 +66,7 @@ function avalByisbn($isbn){
 							if($attr->name == "width"){
 								if(substr_count($node->nodeValue,"Location")){
 									if($ls == true){
-										if(!$multi){return $a_status;}
+										if(!$multi){return makeCoolXMLStuff($a_status,$home);}
 									}else{$ls=true;}
 								}
 								if($attr->value == "27%"){
@@ -54,33 +94,7 @@ function avalByisbn($isbn){
 				} 
 			}
 		}
-		return $a_status;
+		return makeCoolXMLStuff($a_status,$home);
 	}
 }
-function makeCoolXMLStuff($array){
-	if(is_array($array)){
-		$locs = array(
-		"Main"=>0,
-		"Kingsford"=>0,
-		"Union"=>0,
-		"Rolling"=>0,
-		"Hanna"=>0,
-		"Coolspring"=>0,
-		"Fish"=>0,
-		"Bookmobile"=>0
-		);
-		foreach ($array as $k=>$v)	{
-			$loc = explode(" ",substr($k,2));
-			foreach ($v as $v_k=>$v_v)	{
-				if(strpos($v_v,'AVAILABLE')){$locs[trim($loc[0])]++;}
-			}
-		}
-	}else{
-		$locs=array('error'=>'Could not parse item record.');
-	}
-	return $locs;
-}
-//http://catalog.lapcat.org/search/i097368924345
-//print_r(avalByisbn("097368924345"));
-//echo "<br>";
 ?>
