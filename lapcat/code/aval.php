@@ -21,7 +21,7 @@ function makeCoolXMLStuff($array,$home="main",$cache=false,$isbn=0){
 			"due-ts-array"=>array(),
 			"holds"=>0,
 			"total-copies"=>0,
-			"full-mark-record"=>"",
+			"full-marc-record"=>"",
 			"marc-record"=>""
 			
 			);
@@ -143,7 +143,7 @@ function avalByisbn($isbn,$home="main",$cache=false,$marc=520){
 					}
 					 
 				}
-				if(isset($fixedMCR[$marc])){$a_status["marcR"]["parsed"] = $fixedMCR[$marc];}else{$a_status["marcR"]["parsed"] = "No Entry";}
+				if(isset($fixedMCR[$marc])){$a_status["marcR"]["parsed"] = $fixedMCR[$marc];}else{$a_status["marcR"]["parsed"] = "";}
 				$a_status["marcR"]["full"] = $mr->nodeValue;
 			}
 		}
