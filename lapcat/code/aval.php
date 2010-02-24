@@ -77,7 +77,7 @@ function makeCoolXMLStuff($array,$home="main",$cache=false,$isbn=0){
 	return $locs;
 }
 
-function avalByisbn($isbn,$home="main",$cache=false,$marc=521){
+function avalByisbn($isbn,$home="main",$cache=false,$marc=520){
 	$db = db::getInstance();
 	$returnArray = array();
 	if(is_array($isbn)){
