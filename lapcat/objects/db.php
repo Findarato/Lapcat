@@ -13,7 +13,7 @@
         private $linkid = 0; //store the link id.
         private $dbase = "lapcat";
         private $user = "lapcat";
-        private $password = "tacpal";
+        private $password = "ETNXPRRHcTAZsXQy";
         private $host = "localhost";
 		//Define the database connection information
 		private $prefixString = "{prefix}";
