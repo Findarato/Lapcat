@@ -1,13 +1,18 @@
 <?Php
     class db{
        
-        public $Queries = 0; //count how many are executed
         public $Lastsql = ""; //store the last query
-        public $Resid = 0;
         public $Error = array(); //Will store 2 entries, the query that failed and the error
-		public $Lastid = 0;
 		public $Cache_all = false; //This will force all queries to be cache queries.
 		public $Prefix = "";
+
+		//Standard LAPCAT code adjustments
+		public $a_Error = array(); //store the last query
+		public $v_Lastsql = ""; //store the last query
+		public $v_Resid = 0; //store the last query
+		public $v_Lastid = 0;
+		public $v_Queries = 0; //count how many are executed
+		
         //Define the database connection information
         private $config = array(); //config values in associat
         private $linkid = 0; //store the link id.
@@ -68,7 +73,8 @@
 		 * @since 1.0
 		 * @return int
 		 */
-		public function Count_res(){return mysql_num_rows($this -> Resid);	}
+		public function Count_res(){return mysql_num_rows($this -> v_Resid);	}
+		public function f_Count_res(){return $this->Count_res;}
 		/**
 		 * Runs the query passed to it.
 		 * @since 1.0
@@ -76,6 +82,7 @@
 		 * @param string $sql[optional] not really optional.  Will just run a blank query.  Useful for testing
 		 * @param bool $cache[optional] defaults to false
 		 */
+		public function f_Query($sql = "",$cache = false){$this->Query($sq,$cache);}
 		public function Query($sql = "",$cache = false){
 			if($this -> linkid != 0){
 				//mysql_ping($this -> linkid);
@@ -86,16 +93,19 @@
 					}
 				}
 				$return = mysql_query($sql,$this -> linkid) or $return = 0;
-				$this -> Resid = $return;
+				$this -> v_Resid = $return;
 				$this -> Lastsql = $sql;
+				$this -> v_Lastsql = $sql;
 				if(!$return){//set the error values
 					$this -> Error["Query"] = $this -> Lastsql;
 					$this -> Error["Error"] = mysql_error();
+					$this -> a_Error["Query"] = $this -> Lastsql;
+					$this -> a_Error["Error"] = mysql_error();
 					$return = "There was an error with your sql";
 				}else { $this -> Error = array(); 
-					$this -> Queries++;
+					$this -> v_Queries++;
 					if(strpos(strtolower($sql),"insert") == 0){//this was an insert
-						$this -> Lastid = mysql_insert_id($this -> linkid);	}
+						$this -> v_Lastid = mysql_insert_id($this -> linkid);	}
 				}
 				return true; //Something always has to be returned
 			}
@@ -109,6 +119,7 @@
 		 * @param string $type
 		 * @param bool $force[optional]
 		 */
+		public function f_Fetch($type,$force = FALSE){ return $this->Format($type,$force);} // to be more like mysql
 		public function Fetch($type,$force = FALSE){ return $this->Format($type,$force);} // to be more like mysql
 		/**
 		 * Used to save stored resluts.  Can be dangerous and should be used with caution.
@@ -152,27 +163,27 @@
 				switch(strtolower($type)){
 					case "assoc":
 						if($this -> Count_res() == 1 || $force === true)
-							$return = mysql_fetch_assoc($this -> Resid); 
+							$return = mysql_fetch_assoc($this -> v_Resid); 
 						else					
-							while($line = mysql_fetch_assoc($this -> Resid)){ $return[] = $line; }
+							while($line = mysql_fetch_assoc($this -> v_Resid)){ $return[] = $line; }
 					break;
 					case "row":
 						if($this -> Count_res() == 1 || $force === true){
-							$return = mysql_fetch_row($this -> Resid);
+							$return = mysql_fetch_row($this -> v_Resid);
 						}else{
-							while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }
+							while($line = mysql_fetch_row($this -> v_Resid)){ $return[] = $line; }
 						}
 						if($this->Count_res() > 0){
 							if(count($return) == 1) {$return = $return[0];} //make sure its more than one
 						}
 					break;
 					case "assoc_array":
-						while($line = mysql_fetch_assoc($this -> Resid)){
+						while($line = mysql_fetch_assoc($this -> v_Resid)){
 							$return[] = $line; 
 						}
 					break;
 					case "row_array":
-						while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }
+						while($line = mysql_fetch_row($this -> v_Resid)){ $return[] = $line; }
 						if(count($return[0])==1){
 							foreach($return as $r){
 								$newArray[]=$r[0];
@@ -188,6 +199,7 @@
 				return $return;
 			}
  		}
+		public function f_Format($type,$force = FALSE){ return $this->Format($type,$force);} // to be more like mysql
 		/**
 		 * Used to clean and escape a string for entering into a SQL query
 		 * 
