@@ -46,7 +46,7 @@ header('content-type:text/css'); header("Expires: ".time(). " GMT");
 
 $a_Theme=array(
 	'background'=>'url(/lapcat/layout/images/1680-1050-31.png)', // BG Image
-	'special-background'=>'url(/lapcat/layout/tiled-images/18-1050-100.png)',
+	'special-background'=>'url(/lapcat/layout/transparent-colors/1-1-G-50.png)',
 	'accent-color'=>array(
 		'A'=>'90,150,220',  // Accent Color I
 		'B'=>'80,130,190'   // Accent Color II
@@ -64,7 +64,7 @@ $a_Theme=array(
 		'J'=>'85,85,85',    // Grey III
 		'K'=>'0,0,0',       // Black
 		'L'=>'240,190,30',  // Theme Color VII
-		'M'=>'100,250,0',   // Basic Color I - Green
+		'M'=>'70,150,20',   // Basic Color I - Green
 		'N'=>'250,200,100'  // Basic Color II - Orange
 	),
 	'transparency'=>array(
@@ -85,6 +85,7 @@ $a_BG=array(
 	70=>'url(/lapcat/layout/images/1-1050-1.png)',
 	90=>'url(/lapcat/layout/images/1-1050-1.png)',
 
+	21=>'url(/lapcat/layout/transparent-colors/1-1-G-100.png)',
 	22=>'url(/lapcat/layout/images/1680-1050-31.png)',
 	26=>'url(/lapcat/layout/images/1680-1050-1.png)',
 	28=>'url(/lapcat/images/20-20-0.png)',
@@ -92,6 +93,7 @@ $a_BG=array(
 	32=>'url(/lapcat/layout/images/1680-1050-31.png)',
 	39=>'url(/lapcat/layout/images/1-1-75.png)',
 	42=>'url(/lapcat/layout/images/1680-1050-31.png)',
+	65=>'url(/lapcat/layout/images/1680-1050-104.png)',
 	68=>'url(/lapcat/layout/images/1680-1050-51.png)',
 	69=>'url(/lapcat/layout/tiled-images/18-1050-106.png)',
 	78=>'url(/lapcat/layout/images/1680-1050-19.png)'
@@ -105,6 +107,7 @@ $a_SpecialBG=array(
 	70=>'url(/lapcat/layout/tiled-images/18-18-100.png)', // not done
 	90=>'url(/lapcat/layout/tiled-images/18-18-114.png)',
 	
+	21=>'url(/lapcat/layout/transparent-colors/1-1-K-10.png)',
 	22=>'url(/lapcat/layout/transparent-colors/1-1-G-50.png)',
 	26=>'url(/lapcat/layout/tiled-images/18-18-103.png)',
 	28=>'url(/lapcat/layout/tiled-images/18-18-103.png)',
@@ -112,11 +115,13 @@ $a_SpecialBG=array(
 	32=>'url(/lapcat/layout/tiled-images/18-18-109.png)',
 	39=>'url(/lapcat/layout/tiled-images/18-18-101.png)',
 	42=>'url(/lapcat/layout/tiled-images/18-18-116.png)',
+	65=>'url(/lapcat/layout/tiled-images/18-18-116.png)',
 	68=>'url(/lapcat/layout/tiled-images/18-18-117.png)',
 	69=>'url(/lapcat/layout/tiled-images/18-18-102.png)',
 	78=>'url(/lapcat/layout/tiled-images/18-18-108.png)'
 );
 $a_OpenLineBG=array(
+	21=>'url(/lapcat/layout/transparent-colors/1-1-K-10.png)',
 	22=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
 	26=>'url(/lapcat/layout/transparent-colors/1-1-K-50.png)',
 	28=>'url(/lapcat/layout/transparent-colors/1-1-K-100.png)',
@@ -125,7 +130,7 @@ $a_OpenLineBG=array(
 );
 if(isset($_GET['theme'])){
 	$v_Theme=$_GET['theme'];
-	$v_Theme=68;
+	$v_Theme=21;
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_Theme];}
@@ -134,10 +139,16 @@ if(isset($_GET['theme'])){
 	switch($v_Theme){
 		// Background - Light
 		case '9':
-		case '22':case '32':case '42':case '52':case '62':case '72':case '92':
+		case '22':case '32':case '42':case '52':case '62':case '72':case '92':case '82':
 			$a_Theme['color']['L']='250,110,10';
 			$a_Theme['color']['M']='70,150,20'; // Darker Green
 			$a_Theme['color']['N']='150,100,70'; // Darker Brown
+			break;
+
+		case '21':case '81':
+			$a_Theme['color']['L']='250,110,10';
+			$a_Theme['color']['M']='70,150,20'; // Darker Green
+			$a_Theme['color']['N']='200,90,5'; // Darker Brown
 			break;
 
 		default:
@@ -157,7 +168,9 @@ if(isset($_GET['theme'])){
 			$a_Theme['color']['C']='94,135,54';
 			$a_Theme['color']['D']='47,68,27';
 			$a_Theme['color']['E']='24,34,13';
-			$a_Theme['color']['F']='155,255,35';
+			$a_Theme['color']['F']='55,55,35';
+			$a_Theme['accent-color']['A']='50,65,75'; // Lighter Accent Color
+			$a_Theme['accent-color']['B']='20,190,0'; // Darker Accent Color
 			break;
 			
 		// Base Color - Rose
@@ -209,7 +222,21 @@ if(isset($_GET['theme'])){
 			$a_Theme['color']['E']='54,0,0';
 			$a_Theme['color']['F']='255,55,0';
 			break;
+		
+		//Thanks a latte
+		case '80':case '81':case '82':case '83':case '84':case '85':case '88':case '89':
+			//FFF6B8, ABCCA7, 403529, 7A5E2F, A68236
 			
+			//342326, 948F70, C4C596, F4FABA, 9A9352
+			$a_Theme['color']['A']='171,204,167';
+			$a_Theme['color']['B']='255,246,184';
+			$a_Theme['color']['C']='166,130,54';
+			$a_Theme['color']['D']='122,94,47';
+			$a_Theme['color']['F']='64,53,41';
+			break;
+
+
+
 		// Base Color - Teal
 		case '90':case '91':case '92':case '93':case '94':case '95':case '98':case '99':
 			$a_Theme['color']['A']='80,203,142';
@@ -222,16 +249,6 @@ if(isset($_GET['theme'])){
 			
 		default:
 			break;
-	}
-	// Alternate Themes
-	switch($v_Theme){
-		// Alternate Color - Silver
-		case '25':case '35':case '45':case '55':case '65':case '75':case '85':case '95':
-		case '27':
-		case '28':case '38':case '48':case '58':case '68':case '78':case '98':
-			//$a_Theme['color']['B']='55,55,55';break;
-		
-		default:break;
 	}
 }
 
@@ -269,33 +286,33 @@ if(isset($_GET['json'])){
 
 	// C o r n e r s
 	// Corner - Bottom
-	echo '.corners-bottom-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; -moz-border-radius-bottomright:2px; -webkit-border-bottom-right-radius:2px;}';
-	echo '.corners-bottom-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -moz-border-radius-bottomright:4px; -webkit-border-bottom-right-radius:4px;}';
-	echo '.corners-bottom-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; -moz-border-radius-bottomright:6px; -webkit-border-bottom-right-radius:6px;}';
+	echo '.corners-bottom-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; -moz-border-radius-bottomright:2px; -webkit-border-bottom-right-radius:2px; border-bottom-left-radius:2px; border-bottom-right-radius:2px;}';
+	echo '.corners-bottom-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -moz-border-radius-bottomright:4px; -webkit-border-bottom-right-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;}';
+	echo '.corners-bottom-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; -moz-border-radius-bottomright:6px; -webkit-border-bottom-right-radius:6px; border-bottom-left-radius:6px; border-bottom-right-radius:6px;}';
 	// Corner - Bottom Left
-	echo '.corners-bottom-left-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px;}';
-	echo '.corners-bottom-left-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px;}';
-	echo '.corners-bottom-left-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px;}';
+	echo '.corners-bottom-left-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; border-bottom-left-radius:2px;}';
+	echo '.corners-bottom-left-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; border-bottom-left-radius:4px;}';
+	echo '.corners-bottom-left-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; border-bottom-left-radius:6px;}';
 	// Corner - Left
-	echo '.corners-left-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; -moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px;}';
-	echo '.corners-left-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px;}';
-	echo '.corners-left-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; -moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px;}';
+	echo '.corners-left-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; -moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px; border-bottom-left-radius:2px; border-top-left-radius:2px;}';
+	echo '.corners-left-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px; border-bottom-left-radius:4px; border-top-left-radius:4px;}';
+	echo '.corners-left-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; -moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; border-bottom-left-radius:6px; border-top-left-radius:6px;}';
 	// Corner - Right
-	echo '.corners-right-1{-moz-border-radius-bottomright:2px; -webkit-border-bottom-right-radius:2px; -moz-border-radius-topright:2px; -webkit-border-top-left-radius:2px;}';
+	echo '.corners-right-1{-moz-border-radius-bottomright:2px; -webkit-border-bottom-right-radius:2px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
 	echo '.corners-right-2{-moz-border-radius-bottomright:4px; -webkit-border-bottom-right-radius:4px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
 	echo '.corners-right-3{-moz-border-radius-bottomright:6px; -webkit-border-bottom-right-radius:6px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
 	// Corner - Top
-	echo '.corners-top-1{-moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
-	echo '.corners-top-2{-moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px; -moz-border-radius-topright:4px; -webkit-border-top-right-radius:4px;}';
-	echo '.corners-top-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px;}';
+	echo '.corners-top-1{-moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px; border-top-left-radius:2px; border-top-right-radius:2px;}';
+	echo '.corners-top-2{-moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px; -moz-border-radius-topright:4px; -webkit-border-top-right-radius:4px; border-top-left-radius:4px; border-top-right-radius:4px;}';
+	echo '.corners-top-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px; border-top-left-radius:6px; border-top-right-radius:6px;}';
 	// Corner - Top Left
-	echo '.corners-top-left-1{-moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px;}';
-	echo '.corners-top-left-2{-moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px;}';
-	echo '.corners-top-left-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px;}';
+	echo '.corners-top-left-1{-moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px; border-top-left-radius:2px;}';
+	echo '.corners-top-left-2{-moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px; border-top-left-radius:4px;}';
+	echo '.corners-top-left-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; border-top-left-radius:6px;}';
 	// Corner - Top Right
-	echo '.corners-top-right-1{-moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
-	echo '.corners-top-right-2{-moz-border-radius-topright:4px; -webkit-border-top-right-radius:4px;}';
-	echo '.corners-top-right-3{-moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px;}';
+	echo '.corners-top-right-1{-moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px; border-top-right-radius:2px;}';
+	echo '.corners-top-right-2{-moz-border-radius-topright:4px; -webkit-border-top-right-radius:4px; border-top-right-radius:4px;}';
+	echo '.corners-top-right-3{-moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px; border-top-right-radius:6px;}';
 
 	// B o r d e r s
 	// Border - A
@@ -387,6 +404,17 @@ if(isset($_GET['json'])){
 	echo '.border-sides-K-1{border-left:1px solid rgb('.$a_Theme['color']['K'].'); border-right:1px solid rgb('.$a_Theme['color']['K'].');}';
 	echo '.border-top-K-1{border-top:1px solid rgb('.$a_Theme['color']['K'].');}';
 
+	echo '.border-all-I-1-35{border:1px solid rgba('.$a_Theme['color']['I'].',0.35);}';
+	echo '.border-all-I-1-65{border:1px solid rgba('.$a_Theme['color']['I'].',0.65);}';
+	echo '.border-bottom-I-1-35{border-bottom:1px solid rgba('.$a_Theme['color']['I'].',0.35);}';
+	echo '.border-bottom-I-1-65{border-bottom:1px solid rgba('.$a_Theme['color']['I'].',0.65);}';
+	echo '.border-left-I-1-35{border-left:1px solid rgba('.$a_Theme['color']['I'].',0.35);}';
+	echo '.border-left-I-1-65{border-left:1px solid rgba('.$a_Theme['color']['I'].',0.65);}';
+	echo '.border-right-I-1-35{border-right:1px solid rgba('.$a_Theme['color']['I'].',0.35);}';
+	echo '.border-right-I-1-65{border-right:1px solid rgba('.$a_Theme['color']['I'].',0.65);}';
+	echo '.border-top-I-1-35{border-top:1px solid rgba('.$a_Theme['color']['I'].',0.35);}';
+	echo '.border-top-I-1-65{border-top:1px solid rgba('.$a_Theme['color']['I'].',0.65);}';
+
 
 	// C o l o r s
 	// Color - A
@@ -448,6 +476,21 @@ if(isset($_GET['json'])){
 	switch($v_Theme){
 		case '9':
 		case '22':case '32':case '42':case '52':case '62':case '72':case '92':
+
+		case '21':
+			// Light
+			echo '.LAPCAT-image{background-image:url(/lapcat/images/100-18-1.png); background-repeat:no-repeat;}';
+			break;
+		default:
+			// Dark
+			echo '.LAPCAT-image{background-image:url(/lapcat/images/100-18-0.png); background-repeat:no-repeat;}';
+			break;
+	}
+	switch($v_Theme){
+		case '9':
+		case '22':case '32':case '42':case '52':case '62':case '72':case '92':
+
+		case '21':
 			// L i g h t
 			// Default Font Color
 			echo 'a, font{color:rgb('.$a_Theme['color']['K'].');}';
@@ -457,6 +500,8 @@ if(isset($_GET['json'])){
 			echo '.effect-hover-X-3:hover{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.6);}';
 			echo '.effect-hover-X-4:hover{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.3);}';
 			echo '.effect-hover-Z-1:hover{background-color:rgb('.$a_Theme['accent-color']['A'].');}';
+			echo '.effect-hover-Z-1-35:hover{background-color:rgba('.$a_Theme['accent-color']['A'].',0.35);}';
+			echo '.effect-hover-Z-1-65:hover{background-color:rgba('.$a_Theme['accent-color']['A'].',0.65);}';
 			echo '.effect-hover-Z-2:hover{background-color:rgb('.$a_Theme['accent-color']['A'].'); background-color:rgba('.$a_Theme['accent-color']['A'].',0.8);}';
 			echo '.effect-hover-Z-3:hover{background-color:rgb('.$a_Theme['accent-color']['A'].'); background-color:rgba('.$a_Theme['accent-color']['A'].',0.6);}';
 			echo '.effect-hover-Z-4:hover{background-color:rgb('.$a_Theme['accent-color']['A'].'); background-color:rgba('.$a_Theme['accent-color']['A'].',0.3);}';
@@ -465,6 +510,10 @@ if(isset($_GET['json'])){
 			echo '.color-X-2{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.8);}';
 			echo '.color-X-3{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.6);}';
 			echo '.color-X-4{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.3);}';
+			echo '.color-Y-1{background-color:rgb('.$a_Theme['color']['K'].');}';
+			echo '.color-Y-2{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.8);}';
+			echo '.color-Y-3{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.6);}';
+			echo '.color-Y-4{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.3);}';
 			echo '.color-Z-1{background-color:rgb('.$a_Theme['accent-color']['A'].');}';
 			echo '.color-Z-2{background-color:rgb('.$a_Theme['accent-color']['A'].'); background-color:rgba('.$a_Theme['accent-color']['A'].',0.8);}';
 			echo '.color-Z-3{background-color:rgb('.$a_Theme['accent-color']['A'].'); background-color:rgba('.$a_Theme['accent-color']['A'].',0.6);}';
@@ -482,13 +531,81 @@ if(isset($_GET['json'])){
 			echo '.font-X{color:rgb('.$a_Theme['color']['K'].');}';
 			echo '.font-Y{color:rgb('.$a_Theme['color']['G'].');}';
 			echo '.font-Z{color:rgb('.$a_Theme['accent-color']['B'].');}';
-			// Links
-			echo '.open-line{background-color:rgb('.$a_Theme['accent-color']['A'].'); background-color:rgba('.$a_Theme['accent-color']['A'].',0.6);}';
 			echo '.menu-highlight{background-color:rgb('.$a_Theme['accent-color']['A'].');}';
-			echo '.menu-normal{background-color:rgb('.$a_Theme['color']['F'].');}';
+			echo '.menu-normal{background-color:rgba('.$a_Theme['color']['K'].',0.8);}';
+
+			// Shadow or Light X - Down / Up (for Light)
+			echo '.shadow-or-light-X-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-repeat:repeat-x;}';
+			echo '.shadow-or-light-X-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-repeat:repeat-x;}';
+			// Shadow or Light Y - Down / Up (for Light)
+			echo '.shadow-or-light-Y-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-repeat:repeat-x;}';
+			echo '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-repeat:repeat-x;}';
+	// Open Line
+	echo '.open-line{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.10); border:1px solid rgba(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.open-line:hover{background-color:rgba('.$a_Theme['color']['K'].',0.15);}';
+
+	// Button - X 1
+	echo '.button-X{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-X:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}';
+
+	// Button - X Fake
+	echo '.button-X-fake{background-color:rgb(26,26,52); border:1px solid rgb(126,126,152); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	// Button - Y Fake
+	echo '.button-Y-fake{background-color:rgb(225,225,251); border:1px solid rgb(179,179,205); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+
+	// Button - X 35 (Alpha)
+	echo '.button-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-X-35:hover{background-color:rgba(26,26,26,0.35); border:1px solid rgba(126,126,126,0.35);}';
+
+	// Menu - X 35 (Alpha)
+	echo '.menu-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-X-35:hover{background-color:rgba(76,76,76,0.65);}';
+	// Menu - X 65 (Alpha)
+	echo '.menu-X-65{background-color:rgba(0,0,0,0.65); border:1px solid rgba(76,76,76,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-X-65:hover{background-color:rgb(76,76,76);}';
+
+	// Menu - Y 35 (Alpha)
+	echo '.menu-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-Y-35:hover{background-color:rgba(255,255,255,0.65);}';
+	// Menu - Y 65 (Alpha)
+	echo '.menu-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(179,179,179,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-Y-65:hover{background-color:rgb(255,255,255);}';
+
+	// Menu - Z 35 (Alpha)
+	echo '.menu-Z-35{background-color:rgba(78,91,130,0.35); border:1px solid rgba(0,13,119,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.menu-Z-35:hover{background-color:rgba(104,117,156,0.35);}';
+
+	// Menu - Z 65 (Alpha)
+	echo '.menu-Z-65{background-color:rgba(78,91,130,0.65); border:1px solid rgba(0,13,119,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.menu-Z-65:hover{background-color:rgb(104,117,156);}';
+
+	// Button - X 2
+	echo '.button-X-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-X-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
+
+	// Button - Y 1
+	echo '.button-Y{background-color:rgb(255,255,255); border:1px solid rgb(179,179,179); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y:hover{background-color:rgb(229,229,229); border:1px solid rgb(129,129,129);}';
+
+	// Button - Y 35 (Alpha)
+	echo '.button-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y-35:hover{background-color:rgba(229,229,229,0.35); border:1px solid rgba(129,129,129,0.35);}';
+
+	// Button - Y 2
+	echo '.button-Y-2{background-color:rgb(179,179,179); border:1px solid rgb(129,129,129); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y-2:hover{background-color:rgb(129,129,129); border:1px solid rgb(109,109,109);}';
 			break;
 		case '29':case '39':case '49':case '59':case '69':case '79':case '99':
 		default:
+			// Link - Open Line
+			echo '.open-line{background-color:rgb('.$a_Theme['color']['B'].'); background-color:rgba('.$a_Theme['color']['B'].',0.35);}';
+			// Shadow or Light - Down / Up (for Dark)
+			echo '.shadow-or-light-X-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-repeat:repeat-x;}';
+			echo '.shadow-or-light-X-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-repeat:repeat-x;}';
+			// Shadow or Light - Down / Up (for Dark)
+			echo '.shadow-or-light-Y-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-repeat:repeat-x;}';
+			echo '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-repeat:repeat-x;}';
+
 			// D a r k
 			// Default Font Color
 			echo 'a, font{color:rgb('.$a_Theme['color']['G'].');}';
@@ -498,6 +615,8 @@ if(isset($_GET['json'])){
 			echo '.effect-hover-X-3:hover{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.6);}';
 			echo '.effect-hover-X-4:hover{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.3);}';
 			echo '.effect-hover-Z-1:hover{background-color:rgb('.$a_Theme['accent-color']['B'].');}';
+			echo '.effect-hover-Z-1-35:hover{background-color:rgba('.$a_Theme['accent-color']['B'].',0.35);}';
+			echo '.effect-hover-Z-1-65:hover{background-color:rgba('.$a_Theme['accent-color']['B'].',0.65);}';
 			echo '.effect-hover-Z-2:hover{background-color:rgb('.$a_Theme['accent-color']['B'].'); background-color:rgba('.$a_Theme['accent-color']['B'].',0.8);}';
 			echo '.effect-hover-Z-3:hover{background-color:rgb('.$a_Theme['accent-color']['B'].'); background-color:rgba('.$a_Theme['accent-color']['B'].',0.6);}';
 			echo '.effect-hover-Z-4:hover{background-color:rgb('.$a_Theme['accent-color']['B'].'); background-color:rgba('.$a_Theme['accent-color']['B'].',0.3);}';
@@ -506,6 +625,10 @@ if(isset($_GET['json'])){
 			echo '.color-X-2{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.8);}';
 			echo '.color-X-3{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.6);}';
 			echo '.color-X-4{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.3);}';
+			echo '.color-Y-1{background-color:rgb('.$a_Theme['color']['G'].');}';
+			echo '.color-Y-2{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.8);}';
+			echo '.color-Y-3{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.6);}';
+			echo '.color-Y-4{background-color:rgb('.$a_Theme['color']['G'].'); background-color:rgba('.$a_Theme['color']['G'].',0.3);}';
 			echo '.color-Z-1{background-color:rgb('.$a_Theme['accent-color']['B'].');}';
 			echo '.color-Z-2{background-color:rgb('.$a_Theme['accent-color']['B'].'); background-color:rgba('.$a_Theme['accent-color']['B'].',0.8);}';
 			echo '.color-Z-3{background-color:rgb('.$a_Theme['accent-color']['B'].'); background-color:rgba('.$a_Theme['accent-color']['B'].',0.6);}';
@@ -523,12 +646,21 @@ if(isset($_GET['json'])){
 			echo '.font-X{color:rgb('.$a_Theme['color']['G'].');}';
 			echo '.font-Y{color:rgb('.$a_Theme['color']['K'].');}';
 			echo '.font-Z{color:rgb('.$a_Theme['accent-color']['A'].');}';
-			// Link - Open Line
-			echo '.open-line{background-color:rgb('.$a_Theme['accent-color']['B'].'); background-color:rgba('.$a_Theme['accent-color']['B'].',0.6);}';
+
 			echo '.menu-highlight{background-color:rgb('.$a_Theme['accent-color']['B'].');}';
 			echo '.menu-normal{background-color:rgb('.$a_Theme['color']['F'].');}';
 			break;
 	}
+	// Light 
+	echo '.light-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-position:bottom; background-repeat:repeat-x;}';
+	echo '.light-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-position:top; background-repeat:repeat-x;}';
+	// Shadow or Light Y - Down / Up (for Light)
+	echo '.shadow-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-position:bottom; background-repeat:repeat-x;}';
+	echo '.shadow-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-position:top; background-repeat:repeat-x;}';
+
+	echo '.color-M-1{background-color:rgb('.$a_Theme['color']['M'].');}';
+	
+	echo '.catalog-link{color:rgb(125,125,255);}';
 
 	// B a c k g r o u n d s
 	// Background - Special I
@@ -545,6 +677,8 @@ if(isset($_GET['json'])){
 	// Font - Default
 	echo '.font-bold{font-weight:bold;}';
 	echo '.font-italic{font-style:italic;}';
+	echo '.font-fake{font-family:Arial, Helvetica, sans-serif;}';
+	
 	// Font - A - N
 	echo '.font-A{color:rgb('.$a_Theme['color']['A'].');}';
 	echo '.font-B{color:rgb('.$a_Theme['color']['B'].');}';
@@ -560,7 +694,7 @@ if(isset($_GET['json'])){
 	echo '.font-L{color:rgb('.$a_Theme['color']['L'].');}';
 	echo '.font-M{color:rgb('.$a_Theme['color']['M'].');}';
 	echo '.font-N{color:rgb('.$a_Theme['color']['N'].');}';
-
+	
 	// D r o p d o w n s
 	// Dropdown - A
 	echo '.dropdown-A-1{background-color:rgb('.$a_Theme['color']['K'].'); border:1px solid rgb('.$a_Theme['color']['A'].'); color:rgb('.$a_Theme['color']['G'].');}';
@@ -588,31 +722,45 @@ if(isset($_GET['json'])){
 	echo '.effect-hover-K-3:hover{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.35);}';
 
 
+	echo '.fake-link{cursor:pointer;}';
+
 	// B u t t o n s
 	// Button - Black
-	echo '.button-black{background-color:rgb(0,0,0); border:1px solid rgb(60,60,60); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px;}';
-	echo '.button-black:hover{background-color:rgb(26,26,26); border:1px solid rgb(90,90,90); -moz-border-radius:4px; -webkit-border-radius:4px;}';
+	echo '.button-black{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-black:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}';
+	// Button - Black 2
+	echo '.button-black-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-black-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
+	// Button - Blue
+	echo '.button-blue{background-color:rgb(0,13,52); border:1px solid rgb(0,13,119); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-blue:hover{background-color:rgb(26,39,78);}';
+	// Button - Blue 2
+	echo '.button-blue-2{background-color:rgb(78,91,130); border:1px solid rgb(0,13,119); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-blue-2:hover{background-color:rgb(104,117,156);}';
+	// Button - Purple
+	echo '.button-purple{background-color:rgb(130,65,130); border:1px solid rgb(49,13,49); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-purple:hover{background-color:rgb(156,91,156);}';
 	// Button - Green
-	echo '.button-green{background-color:rgb(13,52,0); border:1px solid rgb(13,119,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px;-webkit-border-radius:4px;}';
-	echo '.button-green:hover{background-color:rgb(39,78,26); border:1px solid rgb(13,119,0); -moz-border-radius:4px;-webkit-border-radius:4px;}';
+	echo '.button-green{background-color:rgb(13,52,0); border:1px solid rgb(13,49,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-green:hover{background-color:rgb(39,78,26);}';
 	// Button - Red
-	echo '.button-red{background-color:rgb(52,13,0); border:1px solid rgb(119,13,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px;-webkit-border-radius:4px;}';
-	echo '.button-red:hover{background-color:rgb(78,39,26); border:1px solid rgb(119,13,0); -moz-border-radius:4px;-webkit-border-radius:4px;}';
+	echo '.button-red{background-color:rgb(52,13,0); border:1px solid rgb(119,13,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-red:hover{background-color:rgb(78,39,26); border:1px solid rgb(119,13,0);}';
 	// Button - Theme
-	echo '.button-theme{background-color:rgb('.$a_Theme['color']['F'].'); border:1px solid rgb('.$a_Theme['color']['C'].'); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px;}';
-	echo '.button-theme:hover{background-color:rgb('.$a_Theme['color']['D'].'); border:1px solid rgb('.$a_Theme['color']['A'].'); -moz-border-radius:4px; -webkit-border-radius:4px;}';
-	// Button - Theme
-	echo '.button-accent{background-color:rgb('.$a_Theme['color']['F'].'); border:1px solid rgb('.$a_Theme['accent-color']['B'].'); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px;}';
-	echo '.button-accent:hover{background-color:rgb('.$a_Theme['accent-color']['A'].'); border:1px solid rgb('.$a_Theme['accent-color']['B'].'); -moz-border-radius:4px; -webkit-border-radius:4px;}';
+	echo '.button-theme{background-color:rgb('.$a_Theme['color']['F'].'); border:1px solid rgb('.$a_Theme['color']['C'].'); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-theme:hover{background-color:rgb('.$a_Theme['color']['D'].'); border:1px solid rgb('.$a_Theme['color']['A'].');}';
+	// Button - Accent
+	echo '.button-accent{background-color:rgb('.$a_Theme['color']['N'].'); border:1px solid rgb('.$a_Theme['color']['L'].'); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-accent:hover{background-color:rgb('.$a_Theme['color']['L'].'); border:1px solid rgb('.$a_Theme['color']['L'].');}';
 
 	// Button - Current Page
-	echo '.current-page-button{background-color:rgb('.$a_Theme['accent-color']['B'].'); border:1px solid rgb('.$a_Theme['accent-color']['A'].'); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px;}';
+	echo '.current-page-button{background-color:rgb('.$a_Theme['accent-color']['B'].'); border:1px solid rgb('.$a_Theme['accent-color']['A'].'); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 
 	echo '.calendar-cell{background-color:rgb('.$a_Theme['color']['C'].');}';
 
 
 	// Option Black
-	echo '.option-black{background-color:rgb(0,0,0); border:1px solid rgb(0,0,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px;}';
+	echo '.option-black{background-color:rgb(0,0,0); border:1px solid rgb(0,0,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	echo '.option-black:hover{background-color:rgb(26,26,26);}';
 
 
@@ -625,18 +773,18 @@ if(isset($_GET['json'])){
 	
 	// Color
 	// A
-	echo '.line{background-image:none; -moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; border:1px solid rgba('.$a_Theme['color']['A'].',0);}';
+	echo '.line{background-image:none; -moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; border-bottom-left-radius:6px; border-top-left-radius:6px; border:1px solid rgba('.$a_Theme['color']['A'].',0);}';
 	// B
 	echo '.next-button{background-color:rgb('.$a_Theme['color']['B'].'); cursor:pointer;}';
 
-	echo '.dropbutton{background-color:rgb('.$a_Theme['color']['B'].'); border:1px solid rgb('.$a_Theme['color']['B'].'); color:rgb(255,255,255); cursor:pointer; -moz-border-radius:6px; -webkit-border-radius:6px;}';
+	echo '.dropbutton{background-color:rgb('.$a_Theme['color']['B'].'); border:1px solid rgb('.$a_Theme['color']['B'].'); color:rgb(255,255,255); cursor:pointer; -moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px;}';
 	// C
 	echo '.option-theme{background-color:rgb('.$a_Theme['color']['C'].'); background-color:rgba('.$a_Theme['color']['C'].',1.0);'.$a_CSS['A'].$a_CSS['B'].'}';
 	echo '.line:hover{background-color:rgb('.$a_Theme['color']['C'].'); background-color:rgba('.$a_Theme['color']['C'].',0.6); cursor:pointer;}';
 	// D
 	// E
 	echo '.OL-fred{border:1px solid rgb('.$a_Theme['color']['D'].');}';
-	echo '.option-selected{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px; background-color:rgb('.$a_Theme['color']['D'].'); border:1px solid rgb('.$a_Theme['color']['F'].'); border-bottom:0; cursor:pointer;}';
+	echo '.option-selected{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px; border-top-left-radius:6px; border-top-right-radius:6px; background-color:rgb('.$a_Theme['color']['D'].'); border:1px solid rgb('.$a_Theme['color']['F'].'); border-bottom:0; cursor:pointer;}';
 	// F
 	echo '.option-empty{background-color:rgb('.$a_Theme['color']['E'].');'.$a_CSS['A'].$a_CSS['B'].'}';
 	echo '.option-theme:hover{background-color:rgb('.$a_Theme['color']['F'].'); background-color:rgba('.$a_Theme['color']['F'].',1.0);}';
