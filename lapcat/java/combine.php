@@ -13,10 +13,10 @@ require 'jsmin-1.1.1.php';
 $files = array(
 'ajax-2009.js',
 'jquery.purr.js',
-'date.js',
-'http://dev.lapcat.org/rooms/js/dateter.js',
+//'date.js',
+//'http://dev.lapcat.org/dateter/dateter.min.js',
 'parts-2009.js',
-'client-02-08-2010.js' //' previous version: client-01-25-2010.js'
+'client-03-08-2010.js' //' previous version: client-01-25-2010.js'
 );
 $allScript = "";
 foreach($files as $f){
