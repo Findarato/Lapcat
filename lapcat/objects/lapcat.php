@@ -1,5 +1,7 @@
 <?
 class LAPCAT{
+	/* Variable - In House */
+	private $v_InHouse='in';
 	/* Function - Log User In */
 	function f_LogUserIn($v_UserID=0){$this->a_User['ID']=$v_UserID;}
 
@@ -9,6 +11,7 @@ class LAPCAT{
 		$this->a_Parameters['message-filter']=$v_MessageFilter;
 		$this->f_GetFeaturedDatabase();
 		$this->f_SetIP($v_IP);
+		if(in_array($v_IP,array('75.150.196.1','75.150.196.2','75.150.196.3','75.150.196.4','75.150.196.5','75.150.196.6','75.150.196.9','75.150.196.10','75.150.196.11','75.150.196.12','75.150.196.13','75.150.196.14','75.150.196.17','75.150.196.18','75.150.196.19','75.150.196.20','75.150.196.21','75.150.196.22','75.150.211.249','75.150.211.250','75.150.211.251','75.150.211.252','75.150.211.253','75.150.211.254','70.91.251.193','70.91.251.194','70.91.251.195','70.91.251.196','70.91.251.197','70.91.251.198','75.145.130.225','75.145.130.226','75.145.130.227','75.145.130.228','75.145.130.229','75.145.130.230','75.149.222.209','75.149.222.210','75.149.222.211','75.149.222.212','75.149.222.213','75.149.222.214'))||substr($v_IP,0,5)=='10.1.'){$this->v_InHouse='in';}else{$this->v_InHouse='out';}
 	}
 	
 	/* Array - ID Storage */
@@ -402,7 +405,7 @@ class LAPCAT{
 			case 'databases':
 				$this->f_GetPushList($v_Area);
 				$a_SQL=array(
-					'select'=>'SELECT vd.ID, vd.name, vd.description, vd.link_in AS `link-in`',
+					'select'=>'SELECT vd.ID, vd.name, vd.description, vd.link_'.$this->v_InHouse.' AS `link-in`',
 					'from'=>' FROM hex_databases AS vd LEFT JOIN hex_tags_by_database AS htbd ON (htbd.ID=vd.ID) LEFT JOIN hex_tags AS ht ON (htbd.tag_ID=ht.ID)',
 					'where'=>'',
 					'group'=>' GROUP BY vd.ID',
@@ -454,7 +457,7 @@ class LAPCAT{
 	// Function - Get Credits
 	function f_GetCredits($a_Row){foreach($a_Row as $v_Key=>$v_Credit){if($v_Credit!==''&&$v_Credit!==' '){return array('credit-type'=>$v_Key,'credit-name'=>$v_Credit);}}return array('credit-type'=>0,'credit-name'=>'');}
 	// Function - Get Credit Word
-	function f_GetCreditWord($v_Type){$a_Words=array('act1'=>'starring','act2'=>'starring','act3'=>'starring','artist'=>'drawn by','author'=>'written by','console_name'=>'for','m_artist'=>'by','narrator'=>'narrated by');return ((array_key_exists($v_Type,$a_Words))?$a_Words[$v_Type]:'by');}
+	function f_GetCreditWord($v_Type){$a_Words=array('act1'=>'starring','act2'=>'starring','act3'=>'starring','artist'=>'drawn by','author'=>'written by','console_name'=>'for','m_artist'=>'by','narrator'=>'narrated by');return ((array_key_exists($v_Type,$a_Words))?$a_Words[$v_Type]:'');}
 	// Function - Get Current Date
 	function f_GetCurrentDate(){return date('Y-m-d',time());}
 	// Function - Get Featured Database
@@ -536,7 +539,7 @@ class LAPCAT{
 		$v_DC=db::getInstance();
 		switch($v_PushType){
 			case 110: // Suggest Articles II
-				$this->a_FirstHeader[$v_Area]='Recent news and articles';
+				$this->a_FirstHeader[$v_Area]='Recent news';
 				return ' vn.entered_on<=NOW()';
 				break;
 			case 220: // Suggest Events II
