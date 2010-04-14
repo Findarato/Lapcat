@@ -1,5 +1,33 @@
 // LAPCAT - Client
 // 2010-03-08
+var V_LogCounter=0;
+
+function F_CreateLogWindow(){
+	$('<div/>',{
+		'class':'border-all-I-1-65 corners-top-2 corners-bottom-2 color-F-1 font-fake font-X inside-border',
+		'id':'log-window',
+		'css':{'position':'fixed','top':0,'right':0,'height':180,'padding-top':2,'padding-bottom':2,'width':480,'z-index':20}
+	}).appendTo('body');
+}
+
+/* Function - Show Log */
+function F_ShowLog(a_Log){
+	var a_Colors={'narrator':'font-Y','narrator-bold':'font-bold font-Y'};
+	for(var v_Key in a_Log){
+		if(V_LogCounter>=11){
+			$('#log-line-'+(V_LogCounter-11)).replaceWith('');
+		}
+		V_LogCounter++;
+		$('<div/>',{
+			'id':'log-line-'+V_LogCounter,
+			'class':a_Colors[a_Log[v_Key]['type']],
+			'css':{'font-size':12,'height':14,'padding-left':3,'width':480},
+			'html':a_Log[v_Key]['text']
+		}).appendTo('#log-window');
+	}
+}
+
+
 /* Array - Anticipated Events */
 var A_AnticipatedEvents=new Array();
 /* Variable - Total Anticipated Events */
@@ -549,6 +577,7 @@ function F_AddConstruct(v_Construct,a_HardParameters){
 					o_Construct.trigger('show-open-line');
 					F_ShowPageButtons(v_Construct);
 				}
+				F_ShowLog(o_JSON['log']);
 			}
 			if(A_Cells[v_Construct]['on-screen']&&(V_Area==v_Alias||V_Area=='home')){
 				if(!V_ExpandedOpenLine&&!A_Cells[v_Construct]['failed']){
@@ -1315,6 +1344,9 @@ $('.hours-event-click').live('click',function(){
 function F_ShowPageButtons(v_Construct){
 	//var a_Data=F_GetData(v_Construct,'page');
 	var a_Data=A_Cells[v_Construct]['page'];
+	//alert('Current Page: '+a_Data['current-page']);
+	//alert('Total Pages: '+a_Data['total-pages']);
+	//alert('Total Records: '+a_Data['total-records']);
 	var a_Buttons=eval({
 		1:{'on':true,'button':true,'value':1},
 		2:{'on':false,'button':false,'value':'...'},
@@ -1374,7 +1406,7 @@ function F_ShowPageButtons(v_Construct){
 				$('#button-page-list').append('<div class="'+((a_Buttons[v_Key]['value']==a_Data['current-page'])?'button-blue-2':'page-click button-blue')+'" id="button-page" name="'+a_Buttons[v_Key]['value']+'" onfocus="javascript:this.blur();" style="float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:18px;"><font class="font-G" style="font-weight:bold; font-size:10px; vertical-align:top;">'+a_Buttons[v_Key]['value']+'</font></div>');
 			}else{
 				// Text
-				$('#button-page-list').append('<font class="font-bold font-G" style="float:left; font-size:10px; margin-right:4px; vertical-align:top; text-align:center; width:20px;">'+a_Buttons[v_Key]['value']+'</font>');
+				$('#button-page-list').append('<font class="font-bold font-X" style="float:left; font-size:10px; margin-right:4px; vertical-align:top; text-align:center; width:20px;">'+a_Buttons[v_Key]['value']+'</font>');
 			}
 		}
 	}
@@ -1668,6 +1700,7 @@ function F_SearchCatalog(){F_OpenDockable('http://catalog.lapcat.org/search/X'+$
 
 /* Document - Ready */
 $(document).ready(function(){
+	//F_CreateLogWindow();
 	F_PrepareCalendar();
 	F_OpenHelp();
 	$.getJSON('/quick/status',function(o_JSON){F_LogUser(false,o_JSON['switch'],o_JSON['theme']);});
