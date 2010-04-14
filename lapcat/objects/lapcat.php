@@ -1,5 +1,13 @@
 <?
 class LAPCAT{
+	/* Array - Log */
+	private $a_Log=array();
+	/* Variable - Reset Search Counter */
+	private $v_ResetSearchCounter=0;
+	/* Function - Reset Log */
+	function f_ResetLog(){$this->a_Log=array();}
+	
+	
 	/* Variable - In House */
 	private $v_InHouse='in';
 	/* Function - Log User In */
@@ -48,6 +56,7 @@ class LAPCAT{
 		$v_BaseSQL=$a_BaseSQL['select'];
 		$v_Header='';
 		if(!$v_SameSearch){
+			$this->a_Log[]=array('type'=>'narrator','text'=>'For '.$v_Area.', the same search was NOT performed.');
 			$a_Data=$this->f_AlterSQL($v_Area,$a_BaseSQL,true);
 			$v_PageSQL=$a_Data['page-SQL'];
 			$a_SQL=$a_Data['SQL'];
@@ -72,10 +81,14 @@ class LAPCAT{
 					'client-changes'=>$this->f_GetClientChanges(),
 					'triggers'=>$this->f_GetClientTriggers(),
 					'header'=>$this->a_FirstHeader[$v_Area].$v_Header.'.',
-					'page'=>$this->f_GetPageInformation($v_Area)
+					'page'=>$this->f_GetPageInformation($v_Area),
+					'log'=>$this->a_Log
 				));
 			}
+		}else{
+			$this->a_Log[]=array('type'=>'narrator','text'=>'For '.$v_Area.', the same search was performed.');
 		}
+		$this->a_Log[]=array('type'=>'narrator-bold','text'=>'Searches have been reset '.$this->v_ResetSearchCounter.' times in total.');
 		$v_StartingKey=$this->f_GetStartingKeyForIDStorage($v_Area);
 		$a_PushIDs=array_slice($this->a_IDStorage[$v_Area],$v_StartingKey,$this->a_Search[$v_Area]['maximum-records']);
 		$a_Records=$this->f_GetDataByIDs($v_Area,$v_BaseSQL,$a_PushIDs);
@@ -88,7 +101,8 @@ class LAPCAT{
 					'client-changes'=>$this->f_GetClientChanges(),
 					'triggers'=>$this->f_GetClientTriggers(),
 					'header'=>$this->a_FirstHeader[$v_Area].$v_Header.'.',
-					'page'=>$this->f_GetPageInformation($v_Area)
+					'page'=>$this->f_GetPageInformation($v_Area),
+					'log'=>$this->a_Log
 				)
 			);
 		}
@@ -150,6 +164,7 @@ class LAPCAT{
 							$a_Results[$v_Key]['tag-'.$v_Counter.'-name']=$a_Tags[$v_Counter]['tag-name'];
 						}
 					}
+					$a_Results[$v_Key]['credit-word']='by';
 				}
 				break;
 			case 'events':
@@ -172,6 +187,7 @@ class LAPCAT{
 							$a_Results[$v_Key]['tag-'.$v_Counter.'-name']=$a_Tags[$v_Counter]['tag-name'];
 						}
 					}
+					$a_Results[$v_Key]['credit-word']='at';
 				}
 				break;
 			case 'materials':
@@ -234,7 +250,7 @@ class LAPCAT{
 					$a_SQL['where']=' WHERE htbd2.tag_ID IN('.$this->a_Search[$v_Area]['tag']['value'].')';
 				}
 				/* Page SQL */
-				$v_SQL='SELECT COUNT(vd.ID) AS total'.$a_SQL['from'].$a_SQL['where'];
+				$v_SQL='SELECT COUNT(DISTINCT(vd.ID)) AS total'.$a_SQL['from'].$a_SQL['where'];
 				break;
 			case 'news':
 				/* Tag */
@@ -254,7 +270,7 @@ class LAPCAT{
 					$a_SQL['where'].=' AND vn.username="'.$this->a_Search[$v_Area]['search']['value'].'"';
 				}
 				/* Page SQL */
-				$v_SQL='SELECT COUNT(vn.ID) AS total'.$a_SQL['from'].$a_SQL['where'];
+				$v_SQL='SELECT COUNT(DISTINCT(vn.ID)) AS total'.$a_SQL['from'].$a_SQL['where'];
 				break;
 			case 'events':
 				/* Tag */
@@ -290,7 +306,7 @@ class LAPCAT{
 					$a_SQL['where'].=' AND hf.content_ID>0';
 				}
 				/* Page SQL */
-				$v_SQL='SELECT COUNT(ve.ID) AS total'.$a_SQL['from'].$a_SQL['where'];
+				$v_SQL='SELECT COUNT(DISTINCT(ve.ID)) AS total'.$a_SQL['from'].$a_SQL['where'];
 				/* Similar */
 				if($this->a_Search[$v_Area]['similar']['on']){
 					$v_ExtraHeader.=' containing "'.ucwords($this->a_Search[$v_Area]['similar']['value']).'"';
@@ -336,7 +352,7 @@ class LAPCAT{
 					$a_SQL['where'].=' AND vm.year="'.$this->a_Search[$v_Area]['date']['value'].'"';
 				}
 				/* Page SQL */
-				$v_SQL='SELECT COUNT(vm.ID) AS total'.$a_SQL['from'].$a_SQL['where'];
+				$v_SQL='SELECT COUNT(DISTINCT(vm.ID)) AS total'.$a_SQL['from'].$a_SQL['where'];
 				/* Similar */
 				if($this->a_Search[$v_Area]['similar']['on']){
 					$v_ExtraHeader.=' containing "'.ucwords($this->a_Search[$v_Area]['similar']['value']).'"';
@@ -502,6 +518,7 @@ class LAPCAT{
 	}
 	// Function - Get Page Information
 	function f_GetPageInformation($v_Key='news'){
+		$this->a_Log[]=array('type'=>'narrator','text'=>'Page data for '.$v_Key.' - Current Page: '.$this->a_Search[$v_Key]['current-page'].', Total Records: '.$this->a_Search[$v_Key]['total-records'].', Total Pages: '.$this->a_Search[$v_Key]['total-pages'].'.');
 		return array(
 			'current-page'=>$this->a_Search[$v_Key]['current-page'],
 			'total-pages'=>$this->a_Search[$v_Key]['total-pages'],
@@ -594,6 +611,7 @@ class LAPCAT{
 	function f_ChangePage($v_Area,$v_Page=1){$this->a_Search[$v_Area]['current-page']=$v_Page;}
 	// Function - Perform Request
 	function f_PerformRequest($v_Type='quick',$v_Area='materials',$v_Command='suggest',$v_Main='',$v_Secondary=''){
+		$this->a_Log=array();
 		$v_SameSearch=true;
 		switch($v_Command){
 			case 'change-popular':
@@ -817,6 +835,7 @@ class LAPCAT{
 	}
 	// Function - Reset All Searches
 	function f_ResetAllSearches(){
+		$this->v_ResetSearchCounter++;
 		foreach(array('databases','events','hiring','hours','news','materials') as $v_Key=>$v_Area){
 			$this->f_ResetSearch($v_Area);
 		}
