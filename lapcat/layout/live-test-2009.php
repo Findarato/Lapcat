@@ -26,7 +26,7 @@
 							<div style="float:left; width:285px; height:19px;"><a class="library-link-1 font-X" onfocus="javascript:this.blur();" style="font-size:14px; margin-left:6px; margin-top:1px;">La Porte County Public Library System</a></div>
 
 							<!--// LINK - Notes //-->
-							<div class="browse-link fake-link button-blue light-up" name="/lapcat/notes.html" onfocus="javascript:this.blur();" style="float:right; height:16px; margin-right:6px; margin-top:1px; padding-left:3px; padding-right:3px; text-align:center; vertical-align:top; width:auto;" title="Click to show/hide the notes window."><font class="font-G" style="vertical-align:top; font-size:14px;"><img src="http://cdn1.lapcat.org/famfamfam/silk/script.png" style="height:12px; margin-right:2px; width:12px;" />notes</font></div>
+							<!--//<div class="browse-link fake-link button-blue inside-border light-up" name="/lapcat/notes.html" onfocus="javascript:this.blur();" style="float:right; height:18px; margin-right:6px; margin-top:1px; padding-left:3px; padding-right:3px; text-align:center; vertical-align:top; width:60px;" title="Click to show/hide the notes window."><font class="font-G" style="vertical-align:top; font-size:14px;"><img src="http://cdn1.lapcat.org/famfamfam/silk/script.png" style="height:12px; margin-right:2px; width:12px;" />notes</font></div>//-->
 							<!--// LINK - Log out //-->
 							<div id="top-link-log-out" style="display:none; float:right; margin-right:6px; padding-top:1px;"><div class="fake-link button-theme log-out-click light-up" onfocus="javascript:this.blur();" style="float:left; height:16px; margin-left:3px; padding-left:3px; padding-right:3px; text-align:center; vertical-align:top; width:auto;" title="Click to log out of LAPCAT."><font class="font-G" style="vertical-align:top; font-size:14px;">log out</font></div></div>
 							<!--// LINK - Give //-->
@@ -81,7 +81,7 @@
 
 					<div style="float:left; width:14px;"><div id="tag-selected" style="display:none; float:right; height:15px; padding-left:3px; padding-top:3px; width:10px;"><img class="remove-from-all-searches fake-link" id="remove-tag" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="float:left; width:12px; height:12px;" title="Click to remove this tag from the search." /></div></div>
 
-					<div class="dropdown drops-out font-fake" id="change-tag-drops-lines" style="display:none; margin-top:17px; position:relative; right:52px; width:175px; z-index:10;"></div>
+					<div class="dropdown drops-out font-fake" id="change-tag-drops-lines" style="display:none; margin-top:17px; position:relative; right:52px; width:175px; z-index:20;"></div>
 
 				</div>
 
@@ -130,8 +130,10 @@
 </div>
 
 <!--// Account Box //-->
-<div class="color-X-1 corners-top-3 corners-bottom-3 shadow-or-light-X-up" id="anchored-account-box" style="padding:2px; position:fixed; bottom:-120px; left:0.5%; width:99%; z-index:10;">
-	<div class="border-all-I-1 corners-top-2 corners-bottom-2 shadow-or-light-X-up" style="height:90px; padding:4px; width:auto;">
+<div class="color-X-1 corners-top-3 corners-bottom-3 shadow-or-light-X-up" id="anchored-account-box" style="background-position:0px 2px; max-width:980px; position:fixed; bottom:-114px; padding-left:0.5%; padding-right:0.5%; text-align:center; width:99%; z-index:10;">
+	<div class="color-Y-4 corners-bottom-3 corners-top-3" style="bottom:-3px; left:1px; right:1px; height:106px; position:absolute; width:100%; z-index:-1;"></div>
+	<div style="position:absolute; bottom:0px; left:426px; text-align:center; width:auto; z-index:2;"><font class="fake-link" style="color:rgb(0,0,255); font-size:11px; text-decoration:underline;"><a class="font-L" href="/lapcat/files/Mission.pdf" target="_blank">About Us</a> / <a class="font-L" href="/lapcat/files/WebsiteTermsOfUse.pdf" target="_blank">Terms of Use</a> / <a class="font-L" href="/lapcat/files/Meeting.pdf" target="_blank">Meeting Room Policy</a> / <a class="font-L" href="/lapcat/files/WebsiteUserGuidelines.pdf" target="_blank">Guidelines</a> / <a class="font-L" href="/lapcat/files/WebsitePrivacyPolicy.pdf" target="_blank">Privacy Policy</a></font></div>
+	<div class="color-X-1 border-all-I-1 corners-top-2 corners-bottom-2 shadow-or-light-X-up" style="height:90px; padding:4px; width:auto;">
 		<table cellpadding="0" cellspacing="0" style="width:100%;">
 			<tr>
 				<td style="width:auto;">
@@ -664,7 +666,7 @@
 	<table cellpadding="0" cellspacing="0" style="width:100%;">
 		<tr>
 			<td style="width:42px;">
-				<div class="browse-link fake-link" name="http://catalog.lapcat.org/search/ireplace-ISBNorSN" id="catalog-ISBN-link-replace-ID" onfocus="javascript:this.blur();" style="float:left; width:44px; height:auto; padding-left:2px; position:0 0;"><img id="suggestions-replace-ISBNorSN-cover" src="http://cdn1.lapcat.org/famfamfam/silk/image.png" name="image-replace-counter"/></div>
+				<div class="browse-link fake-link" name="http://catalog.lapcat.org/search/ireplace-ISBNorSN" id="catalog-ISBN-link-replace-ID" onfocus="javascript:this.blur();" style="float:left; width:44px; height:auto; padding-left:2px; position:0px 0px;"><img id="suggestions-replace-ISBNorSN-cover" src="http://cdn1.lapcat.org/famfamfam/silk/image.png" name="image-replace-counter"/></div>
 			</td>
 			<td style="width:auto;">
 	<div class="corners-bottom-3 corners-top-3 fake-link effect-hover-Z-4 shadow-or-light-X-up line-click" id="materials-replace-ID" name="counter-replace-counter" style="float:left; height:42px; text-align:center; width:100%;">
@@ -996,7 +998,7 @@
 			<tr>
 				<td style="height:24px; overflow:hidden; vertical-align:top; width:auto;">
 				<!--// Button - Facebook Share //-->
-				<div class="button-black light-up" id="option-share" style="display:none; float:right; height:19px; width:68px; text-align:center;" title="Click to share this event on Facebook."><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script><a class="font-G" name="fb_share" type="icon_link" share_url="http://dev.lapcat.org/events/specific/replace-ID" href="http://www.facebook.com/sharer.php" style="font-size:14px;" target="_blank">share</a></div>
+				<div class="button-black light-up" id="option-share" style="display:none; float:right; height:19px; width:68px; text-align:center;" title="Click to share this event on Facebook."><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script><a class="font-G" name="fb_share" type="icon_link" share_url="http://www.lapcat.org/events/specific/replace-ID" href="http://www.facebook.com/sharer.php" style="font-size:14px;" target="_blank">share</a></div>
 				</td>
 			</tr>
 		</table>
@@ -1041,7 +1043,7 @@
 			<tr>
 				<td style="height:24px; overflow:hidden; vertical-align:top; width:100%;">
 				<!--// Button - Facebook Share //-->
-				<div class="button-black light-up" id="option-share" style="display:none; float:right; height:19px; width:68px; text-align:center;" title="Click to share this article on Facebook."><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script><a class="font-G" name="fb_share" type="icon_link" share_url="http://dev.lapcat.org/news/specific/replace-ID" href="http://www.facebook.com/sharer.php" style="font-size:14px;" target="_blank">share</a></div>
+				<div class="button-black light-up" id="option-share" style="display:none; float:right; height:19px; width:68px; text-align:center;" title="Click to share this article on Facebook."><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script><a class="font-G" name="fb_share" type="icon_link" share_url="http://www.lapcat.org/news/specific/replace-ID" href="http://www.facebook.com/sharer.php" style="font-size:14px;" target="_blank">share</a></div>
 				</td>
 			</tr>
 		</table>
@@ -1060,17 +1062,7 @@
 		<table cellpadding="0" cellspacing="0" style="height:460px; vertical-align:top; width:100%;">
 			<tr>
 				<td style="height:46px; padding:1px; vertical-align:top; width:auto;">
-					<div class="button-blue database-dockable shadow-or-light-X-up" name="replace-link-in" style="float:left; height:40px; margin-top:4px; width:100%; text-align:center;" title="Click to use this database.">
-						<div style="height:40px; width:100%;">
-							<table style="height:40px; width:100%;">
-								<tr>
-									<td style="height:20px; overflow:hidden; vertical-align:top; width:auto;">
-										<font class="font-G" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
-									</td>
-								</tr>
-							</table>
-						</div>
-					</div>
+					<div class="font-fake button-blue database-dockable font-G shadow-or-light-X-up" name="replace-link-in" id="database-link" style="float:left; height:40px; margin-top:4px; padding-left:6px; text-align:left; width:100%; vertical-align:top;" title="Click to use this database.">replace-name</div>
 				</td>
 			</tr>
 			<tr>
@@ -1108,47 +1100,48 @@
 				<td style="height:390px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top; width:auto;">
 					<div class="border-bottom-C-1" style="float:left; height:1px; width:100%;"></div>
 					<div class="shadow-or-light-X-up" style="height:20px; text-align:left; vertical-align:top; width:100%;"></div>
-					<div class="border-all-I-1-65 corners-bottom-2 corners-top-2" style="background-image:url(/lapcat/layout/library/150-100-replace-ID.png); height:100px; text-align:left; vertical-align:top; width:150px;"></div>
+					<div class="border-all-I-1-65 corners-bottom-2 corners-top-2" style="background-image:url(/lapcat/layout/library/150-100-replace-ID.png); float:left; height:100px; text-align:left; vertical-align:top; width:150px;"></div>
+					<div class="font-X font-fake" style="float:left; padding-left:6px;">replace-street<br/>replace-city-state<br/>replace-zip<br/>replace-phone</div>
 					<table cellpadding="0" cellspacing="0" style="width:100%;">
 						<tr>
 							<td style="width:6px;"><img id="current-day-0" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2" id="current-day-cell-0" style="height:30px; text-align:center; width:40px;"><font class="font-X">Sun</font></div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-0" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-0" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; widht:16px;" title="Click to search for events at replace-name on replace-date-words-0."/></td>
+							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-0" style="height:30px; text-align:center; width:40px;">Sun</div></div></td>
+							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-0" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-0" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-0."/></td>
 							<td style="width:auto;"><font id="current-day-time-0" class="font-X">replace-time-0</font></td>
 						</tr>
 						<tr>
 							<td style="width:6px;"><img id="current-day-1" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2" id="current-day-cell-1" style="height:30px; text-align:center; width:40px;"><font class="font-X">Mon</font></div></div></td>
+							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-1" style="height:30px; text-align:center; width:40px;">Mon</div></div></td>
 							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-1" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-1" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-1."/></td>
 							<td style="width:auto;"><font id="current-day-time-1" class="font-X">replace-time-1</font></td>
 						</tr>
 						<tr>
 							<td style="width:6px;"><img id="current-day-2" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2" id="current-day-cell-2" style="height:30px; text-align:center; width:40px;"><font class="font-X">Tue</font></div></div></td>
+							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-2" style="height:30px; text-align:center; width:40px;">Tue</div></div></td>
 							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-2" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-2" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-2."/></td>
 							<td style="width:auto;"><font id="current-day-time-2" class="font-X">replace-time-2</font></td>
 						</tr>
 						<tr>
 							<td style="width:6px;"><img id="current-day-3" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2" id="current-day-cell-3" style="height:30px; text-align:center; width:40px;"><font class="font-X">Wed</font></div></div></td>
+							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-3" style="height:30px; text-align:center; width:40px;">Wed</div></div></td>
 							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-3" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-3" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-3."/></td>
 							<td style="width:auto;"><font id="current-day-time-3" class="font-X">replace-time-3</font></td>
 						</tr>
 						<tr>
 							<td style="width:6px;"><img id="current-day-4" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2" id="current-day-cell-4" style="height:30px; text-align:center; width:40px;"><font class="font-X">Thu</font></div></div></td>
+							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-4" style="height:30px; text-align:center; width:40px;">Thu</div></div></td>
 							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-4" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-4" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-4."/></td>
 							<td style="width:auto;"><font id="current-day-time-4" class="font-X">replace-time-4</font></td>
 						</tr>
 						<tr>
 							<td style="width:6px;"><img id="current-day-5" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2" id="current-day-cell-5" style="height:30px; text-align:center; width:40px;"><font class="font-X">Fri</font></div></div></td>
+							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-5" style="height:30px; text-align:center; width:40px;">Fri</div></div></td>
 							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-5" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-5" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-5."/></td>
 							<td style="width:auto;"><font id="current-day-time-5" class="font-X">replace-time-5</font></td>
 						</tr>
 						<tr>
 							<td style="width:6px;"><img id="current-day-6" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2" id="current-day-cell-6" style="height:30px; text-align:center; width:40px;"><font class="font-X">Sat</font></div></div></td>
+							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-6" style="height:30px; text-align:center; width:40px;">Sat</div></div></td>
 							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-6" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-6" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-6."/></td>
 							<td style="width:auto;"><font id="current-day-time-6" class="font-X">replace-time-6</font></td>
 						</tr>
@@ -1197,7 +1190,7 @@
 					</a>
 				</div>
 				<div style="float:left; margin-left:8px; margin-top:8px;">
-					<a href="/lapcat/jobs/replace-file-name" target="_blank" title="Click to open the application PDF.">
+					<a href="/lapcat/files/Application.pdf" target="_blank" title="Click to open the application PDF.">
 						<div class="button-green light-up" onfocus="javascript:this.blur();" style="float:left; height:72px; margin-left:2px; padding-left:3px; padding-right:3px; text-align:center; vertical-align:top; width:72px;">
 							<div style="margin-top:18px;">
 								<font class="font-G" style="font-size:14px;">
