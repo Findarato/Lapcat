@@ -262,6 +262,8 @@ if(isset($_GET['json'])){
 	$jsonReturn = array('colors'=>$a_Theme);
 	echo json_encode($jsonReturn);
 }else{
+	/* Box Size */
+	echo '.inside-border{-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}';
 	// D e f a u l t s
 	//echo '.round-corners{-moz-border-radius:4px;-webkit-border-radius:4px;}';
 	echo '.info-black{background-color:rgb(255,255,255); background-color:rgba(255,255,255,0.5); border:1px solid rgb(235,235,255); border:1px solid rgba(235,235,255,0.65);}';
@@ -541,7 +543,7 @@ if(isset($_GET['json'])){
 			echo '.shadow-or-light-Y-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-repeat:repeat-x;}';
 			echo '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-repeat:repeat-x;}';
 	// Open Line
-	echo '.open-line{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.10); border:1px solid rgba(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.open-line{background-color:rgb('.$a_Theme['color']['D'].'); background-color:rgba('.$a_Theme['color']['K'].',0.10); border:1px solid rgba(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	echo '.open-line:hover{background-color:rgba('.$a_Theme['color']['K'].',0.15);}';
 
 	// Button - X 1
@@ -723,7 +725,8 @@ if(isset($_GET['json'])){
 
 
 	echo '.fake-link{cursor:pointer;}';
-
+	echo '.color-blue{background-color:rgb(0,13,52);}';
+	echo '.border-blue{border:1px solid rgb(0,13,119);}';
 	// B u t t o n s
 	// Button - Black
 	echo '.button-black{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
