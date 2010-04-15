@@ -15,12 +15,12 @@ if(isset($_SESSION['user'])){
 						$o_LAPCAT->f_LogUserIn($a_Status['user']);
 						$_SESSION['LAPCAT']=serialize($o_LAPCAT);
 						$_SESSION['user']=serialize($o_User);
-						echo json_encode(array('switch'=>'passed','theme'=>$o_User->a_User['theme']));
+						echo json_encode(array('switch'=>'passed','theme'=>$o_User->a_User['theme'],'type'=>$o_User->A_U['type']));
 						die();
 						break;
-					case 1:echo json_encode(array('switch'=>'could-not-create-account','theme'=>$o_User->a_User['theme']));die();break;
+					case 1:echo json_encode(array('switch'=>'could-not-create-account','theme'=>$o_User->a_User['theme'],'type'=>$o_User->A_U['type']));die();break;
 					case 0:default:
-						echo json_encode(array('switch'=>$a_Status['success'],'theme'=>$o_User->a_User['theme']));die();break;
+						echo json_encode(array('switch'=>$a_Status['success'],'theme'=>$o_User->a_User['theme'],'type'=>$o_User->A_U['type']));die();break;
 						break;
 				}
 			}
