@@ -618,23 +618,26 @@ function F_AddConstruct(v_Construct,a_HardParameters){
 			for(var v_Key in A_Search[v_Construct]){
 				if(F_ArrayKeyExists('on',A_Search[v_Construct][v_Key])){
 					if(A_Search[v_Construct][v_Key]['on']){
+						if(v_Alias=='materials'&&v_Key=='type'){
+						}else{
 						// Date / Popular / Search / Tag / Type
-						v_CSS=((v_Key=='tag')?'remove-from-all-searches':'remove-from-search');
-						v_HTML
-							.append($('<br/>'))
-							.append($('<img/>',{
-								'class':'fake-link '+v_CSS,
-								'css':{'height':8,'width':8,'margin-left':9},
-								'id':'remove-'+v_Key,
-								'src':'http://cdn1.lapcat.org/famfamfam/silk/cross.png',
-								'title':'Click to remove this criteria from the search.'}
-							))
-							.append($('<font/>',{
-								'class':'fake-link '+v_CSS,
-								'id':'remove-'+v_Key,
-								'css':{'font-size':12,'margin-left':1},
-								'html':'Remove '+A_Search[v_Construct][v_Key]['text']+' from the search.'}
-							));
+							v_CSS=((v_Key=='tag')?'remove-from-all-searches':'remove-from-search');
+							v_HTML
+								.append($('<br/>'))
+								.append($('<img/>',{
+									'class':'fake-link '+v_CSS,
+									'css':{'height':8,'width':8,'margin-left':9},
+									'id':'remove-'+v_Key,
+									'src':'http://cdn1.lapcat.org/famfamfam/silk/cross.png',
+									'title':'Click to remove this criteria from the search.'}
+								))
+								.append($('<font/>',{
+									'class':'fake-link '+v_CSS,
+									'id':'remove-'+v_Key,
+									'css':{'font-size':12,'margin-left':1},
+									'html':'Remove '+A_Search[v_Construct][v_Key]['text']+' from the search.'}
+								));
+						}
 					}
 				}else{
 					if(v_Key){
@@ -701,7 +704,7 @@ function F_AddConstruct(v_Construct,a_HardParameters){
 						}
 					case 'share':
 						o_Construct.find('#option-'+A_Cells[v_Construct]['open-line-options'][v_Key]+' [name="fb_share"]')
-							.attr('share_url','http://dev.lapcat.org/'+V_Area+'/specific/'+a_Data[A_Cells[v_Construct]['target']]['id']);
+							.attr('share_url','http://www.lapcat.org/'+V_Area+'/specific/'+a_Data[A_Cells[v_Construct]['target']]['id']);
 						o_Construct.find('.FBConnectButton_Text_Simple').css({'text-decoration':'none'});
 					case 'favorite':case 'watched':case 'watchlist':
 						if(v_Option!=='similar'&&v_Option!=='share'){
@@ -717,8 +720,12 @@ function F_AddConstruct(v_Construct,a_HardParameters){
 		})
 		.bind('after-effects',function(){
 			switch(v_Alias){
+				case 'databases':
+					F_TurnOffLinks(v_Construct);
+					break;
 				case 'hours':
-					F_ShowLocationInformation();
+					F_ShowLocationInformation(v_Construct);
+					F_FixMobileLibraryData(v_Construct);
 					break;
 				case 'materials':
 					F_ShowAvailable(v_Construct+((A_Cells[v_Construct]['view']=='image')?'-view-image':'-open-line'));
@@ -761,10 +768,12 @@ function F_AddConstruct(v_Construct,a_HardParameters){
 			if(A_Cells[v_Construct]['has-data']){
 				F_ShowSearchMenu(V_Area);
 				if(A_Cells[v_Construct]['size']=='expanded-with-open-line'){
-					o_Construct
-						.trigger('add-open-line')
-						.trigger('after-effects')
-						.trigger('show-open-line');
+					if(!A_Cells[v_Construct]['failed']){
+						o_Construct
+							.trigger('add-open-line')
+							.trigger('after-effects')
+							.trigger('show-open-line');
+					}
 				}
 			}
 			if(V_Area=='events'){$('#on-screen-calendar').trigger('expand-events');}
@@ -772,6 +781,8 @@ function F_AddConstruct(v_Construct,a_HardParameters){
 		})
 		.bind('zoom-out',function(){
 			F_HideAllOpenLines(v_Construct);
+			$('#construct-5').hide();
+			$('#construct-6').hide();
 			$('#promotion-1').show();
 			$('#on-screen-calendar').trigger('shrink-events');
 			$('#button-page-list').hide();
@@ -1117,10 +1128,10 @@ function F_HideOpenLine(v_Construct){$('#'+v_Construct+'-open-line').hide();}
 /* Function - Highlight Menu */
 function F_HighlightMenu(){
 	$('.menu-Z-35')
-		.removeClass('font-Y').addClass('font-X')
+		.removeClass('font-E').addClass('font-X')
 		.removeClass('menu-Z-35').addClass('menu-Y-65');
 	$('#menu-'+V_Area)
-		.removeClass('font-X').addClass('font-Y')
+		.removeClass('font-X').addClass('font-E')
 		.removeClass('menu-Y-65').addClass('menu-Z-35');
 }
 /* Function - Line Click */
@@ -1136,8 +1147,8 @@ function F_LogUser(v_ShowMessage,v_Status,v_Theme){
 		$('#top-link-log-in').hide();
 		$('#top-link-log-out').show();
 		$('#top-link-account').show();
-		$('[name="username"]').attr('value','account');
-		$('[name="password"]').attr('value','password');
+		$('[name="username"]').attr('value','library card number');
+		$('[name="password"]').attr('value','LCPL');
 		$('[id|="start-menu-not-logged-in"]').hide();
 		$('[id|="start-menu-logged-in"]').show();
 		$('#start-menu-arrow-1').hide();
@@ -1326,9 +1337,33 @@ function F_ShowAvailable(v_Construct){
 }
 /* Function - Show Home Libraries */
 function F_ShowHomeLibraries(){$('font:.location-'+V_HomeLibrary).removeClass('library-link-1').addClass('library-link-3 font-M');}
-/* Function - Show Location Informatio */
-function F_ShowLocationInformation(){
-	
+/* Function - Turn Off Links */
+function F_TurnOffLinks(v_Construct){
+	var v_Target=A_Cells[v_Construct]['target'];
+	if(A_Cells[v_Construct]['data'][v_Target]['at-home']==3&&A_Cells[v_Construct]['data'][v_Target]['in-or-out']=='out'){
+		$('#'+v_Construct+' #database-link').removeClass('button-blue database-dockable font-G shadow-or-light-X-up').addClass('button-Y-fake font-X');
+	}
+}
+/* Function - Fix Mobile Library Data */
+function F_FixMobileLibraryData(v_Construct){
+	if(F_ArrayKeyExists(7,A_Cells[v_Construct]['data'])){
+		for(var v_Counter=0;v_Counter<7;v_Counter++){
+			A_Cells[v_Construct]['data'][7]['time-'+v_Counter]='&nbsp;';
+		}
+	}
+}
+/* Function - Show Location Information */
+function F_ShowLocationInformation(v_Construct){
+	$('#'+v_Construct+' [id|="current-day-cell"]').each(function(v_Index){
+		//alert($(this).attr('id').replace('current-day-cell-',''));
+		var v_Day=parseInt($(this).attr('id').replace('current-day-cell-',''));
+		//alert(v_Day+' :: '+A_Calendar['first-day-starts-on']);
+		if(v_Day<A_Calendar['first-day-starts-on']){
+			$(this).addClass('color-Z-4 shadow-or-light-X-up');
+		}else if(v_Day==A_Calendar['first-day-starts-on']){
+			$(this).addClass('color-Z-2 shadow-or-light-Y-up');
+		}
+	});
 }
 /* Function - Hours Event Click */
 $('.hours-event-click').live('click',function(){
@@ -1710,8 +1745,8 @@ $(document).ready(function(){
 	F_AddConstruct('construct-2',{'float':'left','padding-right':12});
 	F_AddConstruct('construct-3',{'float':'left','padding-right':12,});
 	F_AddConstruct('construct-4',{'float':'left','padding-right':12});
-	F_AddConstruct('construct-5',{'float':'left'});
-	F_AddConstruct('construct-6',{'float':'left'});
+	F_AddConstruct('construct-5',{'display':'none','float':'left'});
+	F_AddConstruct('construct-6',{'display':'none','float':'left'});
 	//F_RequestPopularTags();
 	F_ParseURL();
 	F_BlindRequestAll();
