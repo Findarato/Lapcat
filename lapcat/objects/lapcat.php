@@ -247,7 +247,7 @@ class LAPCAT{
 				if($this->a_Search[$v_Area]['tag']['on']){
 					$v_ExtraHeader.=' tagged as '.$this->f_GetTagName($this->a_Search[$v_Area]['tag']['value']);
 					$a_SQL['from'].=' LEFT JOIN hex_tags_by_database AS htbd2 ON(htbd2.ID=vd.ID)';
-					$a_SQL['where']=' WHERE htbd2.tag_ID IN('.$this->a_Search[$v_Area]['tag']['value'].')';
+					$a_SQL['where']=' AND htbd2.tag_ID IN('.$this->a_Search[$v_Area]['tag']['value'].')';
 				}
 				/* Page SQL */
 				$v_SQL='SELECT COUNT(DISTINCT(vd.ID)) AS total'.$a_SQL['from'].$a_SQL['where'];
@@ -421,9 +421,9 @@ class LAPCAT{
 			case 'databases':
 				$this->f_GetPushList($v_Area);
 				$a_SQL=array(
-					'select'=>'SELECT vd.ID, vd.name, vd.description, vd.link_'.$this->v_InHouse.' AS `link-in`',
+					'select'=>'SELECT vd.ID, vd.name, vd.description, vd.link_'.$this->v_InHouse.' AS `link-in`, vd.at_home AS `at-home`, "'.$this->v_InHouse.'" AS `in-or-out`',
 					'from'=>' FROM hex_databases AS vd LEFT JOIN hex_tags_by_database AS htbd ON (htbd.ID=vd.ID) LEFT JOIN hex_tags AS ht ON (htbd.tag_ID=ht.ID)',
-					'where'=>'',
+					'where'=>' WHERE vd.locked=2',
 					'group'=>' GROUP BY vd.ID',
 					'order'=>' ORDER BY vd.name ASC',
 					'limit'=>' LIMIT',
@@ -750,6 +750,11 @@ class LAPCAT{
 			$a_Results[$v_Key]['ID']++;
 			$a_Results[$v_Key]['counter']=$v_Key;
 			$a_Results[$v_Key]['current-day-of-week']=$v_CurrentDayOfWeek;
+			$a_LibraryData=F_GetLibraryInformation();
+			$a_Results[$v_Key]['street']=$a_LibraryData['street'];
+			$a_Results[$v_Key]['city-state']=$a_LibraryData['city-state'];
+			$a_Results[$v_Key]['zip']=$a_LibraryData['zip'];
+			$a_Results[$v_Key]['phone']=$a_LibraryData['phone'];
 			$a_Results[$v_Key]=array_merge($a_Results[$v_Key],F_GetLibraryInformation($v_Key));
 		}
 		return json_encode(array(
