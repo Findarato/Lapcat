@@ -869,7 +869,7 @@ function F_ArrayKeyExists(v_Key,a_Array){for(var v_ArrayKey in a_Array){if(v_Arr
 function F_LogInOrCreateAccount(){
 	$.getJSON('/lapcat/code/accounts.php',$('#account-log-in').serialize(),function(o_JSON){
 		switch(o_JSON['switch']){
-			case 'passed':F_LogUser(true,true,o_JSON['theme']);break;
+			case 'passed':F_LogUser(true,true,o_JSON['theme'],o_JSON['type']);break;
 			case 'could-not-create-account':
 				var a_Parameters={'html':'<font class="font-G" style="font-size:12px;">LAPCAT users must be 13 years of age or older. Please review the <a class="font-L" href="/lapcat/files/WebsiteTermsOfUse.pdf" target="_blank">User Agreement</a> for further details.</font>'};
 				F_AddInformationBox(a_Parameters,false,3000);
@@ -883,7 +883,7 @@ function F_LogInOrCreateAccount(){
 }
 /* Function - Bind */
 function F_Bind(){
-	$('.log-out-click').bind('click',function(){$.getJSON('/quick/log-out',function(){F_LogUser(true,false,22);});});
+	$('.log-out-click').bind('click',function(){$.getJSON('/quick/log-out',function(){F_LogUser(true,false,22,2);});});
 	$('[name="password"]').keydown(function(v_KeyPressed){if(v_KeyPressed.keyCode==13){F_LogInOrCreateAccount();}});
 }
 /* Function - Blind Request All */
@@ -1137,13 +1137,14 @@ function F_HighlightMenu(){
 /* Function - Line Click */
 function F_LineClick(v_Construct,v_LineKey){A_Cells[v_Construct]['target']=v_LineKey;$('#'+v_Construct).trigger('zoom-in').trigger('highlight-line');}
 /* Function - Log In User */
-function F_LogUser(v_ShowMessage,v_Status,v_Theme){
+function F_LogUser(v_ShowMessage,v_Status,v_Theme,v_Type){
 	if(v_ShowMessage){
 		var a_Parameters={};
 		a_Parameters={'html':'<font class="font-G" style="font-size:12px;">You have successfully logged '+((v_Status)?'into':'out of')+' LAPCAT.</font>'};
 		F_AddInformationBox(a_Parameters,false,3000);
 	}
 	if(v_Status){
+		if(v_Type>=5){$('#top-link-tickets').show();}
 		$('#top-link-log-in').hide();
 		$('#top-link-log-out').show();
 		$('#top-link-account').show();
@@ -1155,6 +1156,7 @@ function F_LogUser(v_ShowMessage,v_Status,v_Theme){
 		$('#start-menu-arrow-2').hide();
 		F_GetAnticipatedEventsList();
 	}else{
+		$('#top-link-tickets').hide();
 		$('#top-link-account').hide();
 		$('#top-link-log-out').hide();
 		$('#top-link-log-in').show();
@@ -1738,7 +1740,7 @@ $(document).ready(function(){
 	//F_CreateLogWindow();
 	F_PrepareCalendar();
 	F_OpenHelp();
-	$.getJSON('/quick/status',function(o_JSON){F_LogUser(false,o_JSON['switch'],o_JSON['theme']);});
+	$.getJSON('/quick/status',function(o_JSON){F_LogUser(false,o_JSON['switch'],o_JSON['theme'],o_JSON['type']);});
 	F_HighlightMenu();
 	F_AddConstruct('construct-1',{});
 	F_AddPromotion('promotion-1',{'float':'left'});
