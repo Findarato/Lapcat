@@ -94,7 +94,7 @@
 
 					<div style="float:left; width:14px;"><div id="type-selected" style="display:none; float:right; height:15px; padding-left:3px; padding-top:3px; width:10px;"><img class="remove-from-search fake-link" id="remove-type" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="float:left; width:12px; height:12px;" title="Click to remove this criteria from the search." /></div></div>
 
-					<div class="dropdown drops-out font-fake" id="change-type-drops-lines" style="display:none; margin-top:18px; position:relative; right:52px; width:175px; z-index:10;"></div>
+					<div class="dropdown drops-out font-fake" id="change-type-drops-lines" style="display:none; margin-top:18px; position:relative; right:52px; width:175px; z-index:20;"></div>
 
 				</div>
 
@@ -107,7 +107,7 @@
 
 					<div style="float:left; width:14px;"><div id="search-selected" style="display:none; float:right; height:15px; padding-left:3px; padding-top:3px; width:10px;"><img class="remove-from-search fake-link" id="remove-search" src="http://cdn1.lapcat.org/famfamfam/silk/cross.png" style="float:left; width:12px; height:12px;" title="Click to remove this criteria from the search." /></div></div>
 
-					<div class="dropdown drops-out font-fake" id="change-search-drops-lines" style="display:none; margin-top:18px; position:relative; right:52px; width:175px; z-index:10;"></div>
+					<div class="dropdown drops-out font-fake" id="change-search-drops-lines" style="display:none; margin-top:18px; position:relative; right:52px; width:175px; z-index:20;"></div>
 
 				</div>
 
