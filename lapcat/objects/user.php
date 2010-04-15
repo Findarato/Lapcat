@@ -7,12 +7,13 @@ class User {
 	);
 	/* Function - Get Logged In Status */
 	function f_GetLoggedInStatus(){
-		return json_encode(array('switch'=>$this->a_User['logged-in'],'theme'=>$this->a_User['theme']));
+		return json_encode(array('switch'=>$this->a_User['logged-in'],'type'=>$this->A_U['type'],'theme'=>$this->a_User['theme']));
 	}
 	/* Function - Log User Out */
 	function f_LogUserOut(){
 		$this->a_User['logged-in']=false;
 		$this->a_User['theme']=22;
+		$this->A_U['type']=2;
 		return $this->f_GetLoggedInStatus();
 	}
 	/* Function - Get Theme */
@@ -179,7 +180,7 @@ class User {
 				$this->A_U['logged-in']=3;
 				$this->A_U['validated']=true;
 				if($row['cardnumber']>0&&$row['pin']>0){$this->A_U['patron-plus']=FF_PinAPI($row['cardnumber'],$row['pin']);}
-				return array('success'=>2,'user'=>$this->A_U['user-ID']);
+				return array('success'=>2,'user'=>$this->A_U['user-ID'],'theme'=>$this->a_User['theme'],'type'=>$this->A_U['type']);
 			}
 		}else{
 			if(!$v_FailSafe){
