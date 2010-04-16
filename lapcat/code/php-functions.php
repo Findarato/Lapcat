@@ -134,7 +134,7 @@ function FF_PinAPI($card,$pin){
 			$holdvalue=explode('=',$value);
 			if(substr_count($holdvalue[0],'RETCOD')>0){$holdvalue[0]='RETCOD';}
 			if(!in_array($holdvalue[0],array('','UNIQUEID','PIN'))){$info[$holdvalue[0]]=$holdvalue[1];}}}
-	if(isset($info['RETCOD'])){if($info['RETCOD']==0){return 2;}}
-	return 3;
+	if(isset($info['RETCOD'])){if($info['RETCOD']==0){return true;}}
+	return false;
 }
 ?>
