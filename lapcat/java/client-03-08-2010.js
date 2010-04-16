@@ -1144,7 +1144,10 @@ function F_LogUser(v_ShowMessage,v_Status,v_Theme,v_Type){
 		F_AddInformationBox(a_Parameters,false,3000);
 	}
 	if(v_Status){
-		if(v_Type>=5){$('#top-link-tickets').show();}
+		if(v_Type>=5){
+			$('#top-link-tickets').show();
+			$('#top-link-objectives').show();
+		}
 		$('#top-link-log-in').hide();
 		$('#top-link-log-out').show();
 		$('#top-link-account').show();
@@ -1156,6 +1159,7 @@ function F_LogUser(v_ShowMessage,v_Status,v_Theme,v_Type){
 		$('#start-menu-arrow-2').hide();
 		F_GetAnticipatedEventsList();
 	}else{
+		$('#top-link-objectives').hide();
 		$('#top-link-tickets').hide();
 		$('#top-link-account').hide();
 		$('#top-link-log-out').hide();
@@ -1166,6 +1170,7 @@ function F_LogUser(v_ShowMessage,v_Status,v_Theme,v_Type){
 		$('#start-menu-arrow-2').show();
 	}
 	A_User['logged-in']=v_Status;
+	A_User['type']=v_Type;
 	if(v_Theme!==V_Theme){$('#index-css-theme').attr('href','/lapcat/css/themes/theme-generator.php?theme='+v_Theme);}
 	V_Theme=v_Theme;
 }
