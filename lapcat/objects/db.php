@@ -207,7 +207,7 @@
 		 * @return string
 		 * @param string $item
 		 */
-		public function Escape_str($item){foreach ($item as $key=>$i){$return[] = "'".mysql_real_escape_string($i)."'";	}return $return;}
+		public function Escape_str($item){foreach ($item as $key=>$i){$return[$key] = "'".mysql_real_escape_string($i)."'";	}return $return;}
 		/**
 		 * Used to clean and escape an Array for entering into a SQL query
 		 * 
