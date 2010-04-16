@@ -165,9 +165,9 @@ class Objectives{
 		$a_Tags=array('objective-data-24','objective-data-25','objective-data-26','objective-data-27');
 		switch($v_OID){
 
-			case 21:$v_SQL='INSERT INTO '.$this->A_R['tablename'].' ('.$this->A_R['column_names'].',entered_on,entered_by_ID,locked) VALUES ("'.$v_DC->escape_str($_POST['objective-data-29']).'","'.date('Y-m-d g:i:s',time()).'","'.$v_UID.'",2);';break;
+			case 21:$v_SQL='INSERT INTO '.$this->A_R['tablename'].' ('.$this->A_R['column_names'].',entered_on,entered_by_ID,locked) VALUES ("'.$v_DC->Clean($_POST['objective-data-29']).'","'.date('Y-m-d g:i:s',time()).'","'.$v_UID.'",2);';break;
 
-			case 26:$v_GVK=$this->F_GetValidationKey(date('Y-m-d',time()));$v_SQL='INSERT INTO '.$this->A_R['tablename'].' ('.$this->A_R['column_names'].') VALUES ("'.$v_DC->escape_str($_POST['objective-data-1']).'","'.$v_DC->escape_str($_POST['objective-data-2']).'","'.$_POST['objective-data-3'].'", MD5("'.$_POST['objective-data-4'].'") ,"'.date('Y-m-d',strtotime($_POST['objective-data-7'].'-'.$_POST['objective-data-6'].'-01')).'","'.$_POST['objective-data-8'].'","'.$_POST['objective-data-9'].'","'.date('Y-m-d g:i:s',time()).'","'.$v_DC->escape_str($_POST['objective-data-12']).'","'.$v_GVK.'","'.$_SERVER['REMOTE_ADDR'].'");';break;
+			case 26:$v_GVK=$this->F_GetValidationKey(date('Y-m-d',time()));$v_SQL='INSERT INTO '.$this->A_R['tablename'].' ('.$this->A_R['column_names'].') VALUES ("'.$v_DC->Clean($_POST['objective-data-1']).'","'.$v_DC->Clean($_POST['objective-data-2']).'","'.$_POST['objective-data-3'].'", MD5("'.$_POST['objective-data-4'].'") ,"'.date('Y-m-d',strtotime($_POST['objective-data-7'].'-'.$_POST['objective-data-6'].'-01')).'","'.$_POST['objective-data-8'].'","'.$_POST['objective-data-9'].'","'.date('Y-m-d g:i:s',time()).'","'.$v_DC->Clean($_POST['objective-data-12']).'","'.$v_GVK.'","'.$_SERVER['REMOTE_ADDR'].'");';break;
 
 			case 318:
 				// Add An Event
@@ -182,7 +182,11 @@ class Objectives{
 				if(array_key_exists('objective-data-36',$_POST)){$_POST['objective-data-36']=date('H:i:s',strtotime($_POST['objective-data-36']));}
 			case 28:case 319:
 				$v_SQL='INSERT INTO '.$this->A_R['tablename'].' ('.$this->A_R['column_names'].',entered_on,entered_by_ID,objective_ID,locked) VALUES (';
-				foreach($_POST as $v_K=>$v_D){if(!in_array($v_K,$a_Tags)){$v_SQL.='"'.$v_DC->escape_str($v_D).'",';}}
+				foreach($_POST as $v_K=>$v_D){
+					if(!in_array($v_K,$a_Tags)){
+						$v_SQL.='"'.$v_DC->Clean($v_D).'",';
+					}
+				}
 				$v_SQL.='"'.date('Y-m-d g:i:s',time()).'","'.$v_UID.'","'.$v_OID.'",2);';
 				break;
 
@@ -191,14 +195,14 @@ class Objectives{
 		$v_DC->Query($v_SQL);
 		if(count($v_DC->Error)==2){
 		}else{
-			$v_LID=$v_DC->Lastid;
+			$v_LID=$v_DC->v_Lastid;
 			switch($v_OID){
 				case 26:
 					$v_DC->Query('INSERT INTO hex_points (ID,objective_points,patron_plus_points,hotkeys_unlocked) VALUES ('.$v_LID.',1000,10,2);');
 					$v_DC->Query('INSERT INTO hex_my_library (user_ID,library_ID) VALUES ('.$v_LID.',0);');
 					$v_DC->Query('INSERT INTO hex_portals_collected (user_ID,portal_ID,active_status,position) VALUES ('.$v_LID.',1000,2,1);');
 					$v_DC->Query('INSERT INTO hex_themes_by_user (user_ID,theme_ID) VALUES ('.$v_LID.',9);');
-					FF_CE($v_LID,$v_DC->escape_str($_POST['objective-data-12']),$v_DC->escape_str($v_GVK),$v_OID);
+					FF_CE($v_LID,$v_DC->Clean($_POST['objective-data-12']),$v_DC->Clean($v_GVK),$v_OID);
 					break;
 				case 28:case 318:
 					if($this->A_R['tags_tablename']!=''){
