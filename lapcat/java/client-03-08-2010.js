@@ -734,6 +734,7 @@ function F_AddConstruct(v_Construct,a_HardParameters){
 					break;
 				case 'events':
 					F_ShowHomeLibraries();
+					F_ReplaceTimes(v_Construct);
 					break;
 				default:break;
 			}
@@ -1341,6 +1342,19 @@ function F_ShowAvailable(v_Construct){
 		}
 		$(this).show();
 	});
+}
+/* Function - Replace Times */
+function F_ReplaceTimes(v_Construct){
+	var v_Target=A_Cells[v_Construct]['target'];
+	var v_StartTime=F_GetRealTime(A_Cells[v_Construct]['data'][v_Target]['o-date']+' '+A_Cells[v_Construct]['data'][v_Target]['start']);
+	var v_EndTime=F_GetRealTime(A_Cells[v_Construct]['data'][v_Target]['o-date']+' '+A_Cells[v_Construct]['data'][v_Target]['end']);
+	$('#'+v_Construct+'-open-line #start-time').html(v_StartTime);
+	if(v_EndTime){
+		$('#'+v_Construct+'-open-line #end-time').html(v_EndTime);
+		$('#has-end-time').show();
+	}else{
+		$('#has-end-time').hide();
+	}
 }
 /* Function - Show Home Libraries */
 function F_ShowHomeLibraries(){$('font:.location-'+V_HomeLibrary).removeClass('library-link-1').addClass('library-link-3 font-M');}
