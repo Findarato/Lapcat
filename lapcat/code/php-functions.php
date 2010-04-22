@@ -123,8 +123,17 @@ function FF_Message($v_Title='',$v_Body='',$v_Sticky=false){return '<message><me
 // Function - Pin API
 function FF_PinAPI($card,$pin){
 	// Patron Validation Attempt
-	$bad=array('<HTML>','</HTML>','<BODY>','</BODY>');
+	// $bad=array('<HTML>','</HTML>','<BODY>','</BODY>');
 	$url='http://10.1.1.2:4500/PATRONAPI/'.$card.'/'.$pin.'/pintest';
+	$data=@file_get_contents($url);
+	if(substr_count($data,'ERRNUM')>0||$data==''){
+		return false;
+	}elseif(substr_count($data,'RETCOD')>0){
+		return true;
+	}else{
+		return false;
+	}
+	/*
 	$info=array();
 	$data=str_replace('\n','',@file_get_contents($url));
 	$data=str_replace($bad,'',$data);
@@ -133,8 +142,11 @@ function FF_PinAPI($card,$pin){
 		if(substr_count($value,'=')>0){
 			$holdvalue=explode('=',$value);
 			if(substr_count($holdvalue[0],'RETCOD')>0){$holdvalue[0]='RETCOD';}
-			if(!in_array($holdvalue[0],array('','UNIQUEID','PIN'))){$info[$holdvalue[0]]=$holdvalue[1];}}}
+			if(!in_array($holdvalue[0],array('','UNIQUEID','PIN'))){$info[$holdvalue[0]]=$holdvalue[1];}
+		}
+	}
 	if(isset($info['RETCOD'])){if($info['RETCOD']==0){return true;}}
 	return false;
+	*/
 }
 ?>
