@@ -995,8 +995,16 @@
 				<td style="height:390px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top; width:auto;">
 				<div class="border-bottom-C-1" style="float:left; height:1px; width:100%;"></div>
 				<div class="shadow-or-light-X-up" style="height:20px; text-align:left; vertical-align:top; width:100%;">
-					<font class="font-X" style="font-size:10px; margin-left:12px;">at</font>
+					<font class="font-I" style="font-size:10px; margin-left:12px;">at</font>
 					<font class="add-to-search library-link-1 font-X fake-link location-replace-library-ID date-replace-o-date" name="construct|construct-2_key|search_value|replace-library-ID_text|replace-library" style="font-size:12px; margin-right:3px;">replace-library</font>
+				</div>
+				<div style="height:20px; text-align:left; vertical-align:top; width:100%;">
+					<font class="font-I" style="float:left; font-size:10px; margin-left:12px;">starts at</font>
+					<font class="font-X" id="start-time" style="float:left; font-size:12px; margin-left:3px;">replace-start</font>
+					<div id="has-end-time" style="display:none; float:left;">
+						<font class="font-I" style="float:left; font-size:10px; margin-left:3px;">and ends at</font>
+						<font class="font-X" id="end-time" style="float:left; font-size:12px; margin-left:3px;">replace-end</font>
+					</div>
 				</div>
 				<div style="float:left; width:100%;"><font class="font-X post-title" id="general-font-size" style="float:left; font-size:15px; overflow:hidden; margin-top:12px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">replace-description</font></div>
 				</td>
