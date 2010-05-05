@@ -513,6 +513,44 @@ if(isset($_GET['json'])){
 	echo '.color-S-3{background-color:rgb('.$a_Theme['color']['S'].'); background-color:rgba('.$a_Theme['color']['S'].',0.6);}';
 	echo '.color-S-4{background-color:rgb('.$a_Theme['color']['S'].'); background-color:rgba('.$a_Theme['color']['S'].',0.3);}';
 
+	//Shadows -- Joe
+	echo '.gradient-1-both{
+		background-image:
+			-webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(0, rgba(0,0,0,.75)),
+				color-stop(0.30, rgba(0,0,0.0)),
+				color-stop(.68, rgba(255,255,255,.0)),
+				color-stop(1, rgba(255,255,255.75))
+			); 
+		background-image:
+			-moz-linear-gradient(
+				center bottom,
+				rgba(0,0,0,.75) 0%,
+				rgba(255,255,255,0) 33%,
+				rgba(255,255,255,0) 68%,
+			    rgba(255,255,255,.75) 100%
+			)
+		}';
+	echo '.gradient-1-top-light{
+		background-image:
+			-webkit-gradient(
+				linear,
+				left bottom,
+				left top,
+				color-stop(.68, rgba(255,255,255,.0)),
+				color-stop(1, rgba(255,255,255.75))
+			); 
+		background-image:
+			-moz-linear-gradient(
+				center bottom,
+				rgba(255,255,255,0) 68%,
+			    rgba(255,255,255,.75) 100%
+			)
+		}';
+
 	switch($v_Theme){
 		case '9':
 		case '22':case '32':case '42':case '52':case '62':case '72':case '92':
@@ -649,10 +687,6 @@ if(isset($_GET['json'])){
 			// Shadow or Light - Down / Up (for Dark)
 			echo '.shadow-or-light-Y-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-repeat:repeat-x;}';
 			echo '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-repeat:repeat-x;}';
-
-			echo '.gradient-1-up{background-image:
-			-webkit-gradient(linear,left bottom,left top,color-stop(0, rgba(0,0,0,.5)),color-stop(0.20, rgba(255,255,255.0)))
-			-moz-linear-gradient(center bottom,rgba(0,0,0,.5) 0%,rgba(255,255,255,0) 20%)}';
 
 			// D a r k
 			// Default Font Color
