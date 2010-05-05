@@ -65,7 +65,12 @@ $a_Theme=array(
 		'K'=>'0,0,0',       // Black
 		'L'=>'240,190,30',  // Theme Color VII
 		'M'=>'70,150,20',   // Basic Color I - Green
-		'N'=>'250,200,100'  // Basic Color II - Orange
+		'N'=>'250,200,100', // Basic Color II - Orange,
+		'P'=>'200,0,250',   // Basic Color IV - Purple
+		'Q'=>'0,250,50',    // Basic Color V - Green
+		'R'=>'250,0,0',     // Basic Color VI - Red
+		'S'=>'250,250,0',      // Basic Color VI - Yellow
+		'T'=>'180,50,50'   // Basic Color III - Purple
 	),
 	'transparency'=>array(
 		'A'=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
@@ -405,6 +410,14 @@ if(isset($_GET['json'])){
 	echo '.border-right-K-1{border-right:1px solid rgb('.$a_Theme['color']['K'].');}';
 	echo '.border-sides-K-1{border-left:1px solid rgb('.$a_Theme['color']['K'].'); border-right:1px solid rgb('.$a_Theme['color']['K'].');}';
 	echo '.border-top-K-1{border-top:1px solid rgb('.$a_Theme['color']['K'].');}';
+	// Border - P
+	echo '.border-all-P-1{border:1px solid rgb('.$a_Theme['color']['P'].');}';
+	// Border - Q
+	echo '.border-all-Q-1{border:1px solid rgb('.$a_Theme['color']['Q'].');}';
+	// Border - R
+	echo '.border-all-R-1{border:1px solid rgb('.$a_Theme['color']['R'].');}';
+	// Border - S
+	echo '.border-all-S-1{border:1px solid rgb('.$a_Theme['color']['S'].');}';
 
 	echo '.border-all-I-1-35{border:1px solid rgba('.$a_Theme['color']['I'].',0.35);}';
 	echo '.border-all-I-1-65{border:1px solid rgba('.$a_Theme['color']['I'].',0.65);}';
@@ -474,6 +487,31 @@ if(isset($_GET['json'])){
 	echo '.color-K-2{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.8);}';
 	echo '.color-K-3{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.6);}';
 	echo '.color-K-4{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.3);}';
+	// Color - O
+	echo '.color-T-1{background-color:rgb('.$a_Theme['color']['T'].');}';
+	echo '.color-T-2{background-color:rgb('.$a_Theme['color']['T'].'); background-color:rgba('.$a_Theme['color']['T'].',0.8);}';
+	echo '.color-T-3{background-color:rgb('.$a_Theme['color']['T'].'); background-color:rgba('.$a_Theme['color']['T'].',0.6);}';
+	echo '.color-T-4{background-color:rgb('.$a_Theme['color']['T'].'); background-color:rgba('.$a_Theme['color']['T'].',0.3);}';
+	// Color - P
+	echo '.color-P-1{background-color:rgb('.$a_Theme['color']['P'].');}';
+	echo '.color-P-2{background-color:rgb('.$a_Theme['color']['P'].'); background-color:rgba('.$a_Theme['color']['P'].',0.8);}';
+	echo '.color-P-3{background-color:rgb('.$a_Theme['color']['P'].'); background-color:rgba('.$a_Theme['color']['P'].',0.6);}';
+	echo '.color-P-4{background-color:rgb('.$a_Theme['color']['P'].'); background-color:rgba('.$a_Theme['color']['P'].',0.3);}';
+	// Color - Q
+	echo '.color-Q-1{background-color:rgb('.$a_Theme['color']['Q'].');}';
+	echo '.color-Q-2{background-color:rgb('.$a_Theme['color']['Q'].'); background-color:rgba('.$a_Theme['color']['Q'].',0.8);}';
+	echo '.color-Q-3{background-color:rgb('.$a_Theme['color']['Q'].'); background-color:rgba('.$a_Theme['color']['Q'].',0.6);}';
+	echo '.color-Q-4{background-color:rgb('.$a_Theme['color']['Q'].'); background-color:rgba('.$a_Theme['color']['Q'].',0.3);}';
+	// Color - R
+	echo '.color-R-1{background-color:rgb('.$a_Theme['color']['R'].');}';
+	echo '.color-R-2{background-color:rgb('.$a_Theme['color']['R'].'); background-color:rgba('.$a_Theme['color']['R'].',0.8);}';
+	echo '.color-R-3{background-color:rgb('.$a_Theme['color']['R'].'); background-color:rgba('.$a_Theme['color']['R'].',0.6);}';
+	echo '.color-R-4{background-color:rgb('.$a_Theme['color']['R'].'); background-color:rgba('.$a_Theme['color']['R'].',0.3);}';
+	// Color - S
+	echo '.color-S-1{background-color:rgb('.$a_Theme['color']['S'].');}';
+	echo '.color-S-2{background-color:rgb('.$a_Theme['color']['S'].'); background-color:rgba('.$a_Theme['color']['S'].',0.8);}';
+	echo '.color-S-3{background-color:rgb('.$a_Theme['color']['S'].'); background-color:rgba('.$a_Theme['color']['S'].',0.6);}';
+	echo '.color-S-4{background-color:rgb('.$a_Theme['color']['S'].'); background-color:rgba('.$a_Theme['color']['S'].',0.3);}';
 
 	switch($v_Theme){
 		case '9':
@@ -593,6 +631,10 @@ if(isset($_GET['json'])){
 	echo '.button-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	echo '.button-Y-35:hover{background-color:rgba(229,229,229,0.35); border:1px solid rgba(129,129,129,0.35);}';
 
+	// Button - Y 65 (Alpha)
+	echo '.button-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y-65:hover{background-color:rgba(255,255,255,0.65);}';
+
 	// Button - Y 2
 	echo '.button-Y-2{background-color:rgb(179,179,179); border:1px solid rgb(129,129,129); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	echo '.button-Y-2:hover{background-color:rgb(129,129,129); border:1px solid rgb(109,109,109);}';
@@ -607,6 +649,10 @@ if(isset($_GET['json'])){
 			// Shadow or Light - Down / Up (for Dark)
 			echo '.shadow-or-light-Y-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-repeat:repeat-x;}';
 			echo '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-repeat:repeat-x;}';
+
+			echo '.gradient-1-up{background-image:
+			-webkit-gradient(linear,left bottom,left top,color-stop(0, rgba(0,0,0,.5)),color-stop(0.20, rgba(255,255,255.0)))
+			-moz-linear-gradient(center bottom,rgba(0,0,0,.5) 0%,rgba(255,255,255,0) 20%)}';
 
 			// D a r k
 			// Default Font Color
@@ -681,7 +727,7 @@ if(isset($_GET['json'])){
 	echo '.font-italic{font-style:italic;}';
 	echo '.font-fake{font-family:Arial, Helvetica, sans-serif;}';
 	
-	// Font - A - N
+	// Font - A - N, R, S
 	echo '.font-A{color:rgb('.$a_Theme['color']['A'].');}';
 	echo '.font-B{color:rgb('.$a_Theme['color']['B'].');}';
 	echo '.font-C{color:rgb('.$a_Theme['color']['C'].');}';
@@ -696,6 +742,10 @@ if(isset($_GET['json'])){
 	echo '.font-L{color:rgb('.$a_Theme['color']['L'].');}';
 	echo '.font-M{color:rgb('.$a_Theme['color']['M'].');}';
 	echo '.font-N{color:rgb('.$a_Theme['color']['N'].');}';
+	echo '.font-P{color:rgb('.$a_Theme['color']['P'].');}';
+	echo '.font-Q{color:rgb('.$a_Theme['color']['Q'].');}';
+	echo '.font-R{color:rgb('.$a_Theme['color']['R'].');}';
+	echo '.font-S{color:rgb('.$a_Theme['color']['S'].');}';
 	
 	// D r o p d o w n s
 	// Dropdown - A
