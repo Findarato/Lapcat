@@ -94,8 +94,17 @@ if($V_Fresh){
 	header('Content-type: application/json');
 	F_HR($V_JSON);
 }
+
+define('SMARTY_DIR', '/www/smarty/libs/');
+require_once(SMARTY_DIR . 'Smarty.class.php');
+$smarty = new Smarty();
+$smarty->template_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/templates/'; 
+$smarty->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/templates_c';
+$smarty->cache_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/cache';
+$smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/configs';
+
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html> 
 <html>
 	<head>
 		<title><?=$a_Share['name'];?></title>
