@@ -135,7 +135,7 @@ $a_OpenLineBG=array(
 );
 if(isset($_GET['theme'])){
 	$v_Theme=$_GET['theme'];
-	$v_Theme=21;
+	$v_Theme=22;
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_Theme];}
@@ -661,6 +661,17 @@ if(isset($_GET['json'])){
 	echo '.button-X-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	echo '.button-X-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
 
+	// Button - Gold
+	echo '.button-gold{background-color:rgb(255,193,37); border:1px solid rgb(205,143,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-gold:hover{background-color:rgb(205,143,0); border:1px solid rgb(155,93,0);}';
+	echo '.color-gold{background-color:rgb(255,193,37);}';
+	echo '.font-gold{color:rgb(255,193,37);}';
+
+	// Button - Orange
+	echo '.button-orange{background-color:rgb(255,140,0); border:1px solid rgb(205,90,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-orange:hover{background-color:rgb(205,90,0); border:1px solid rgb(155,40,0);}';
+	echo '.font-orange{color:rgb(255,140,0);}';
+	
 	// Button - Y 1
 	echo '.button-Y{background-color:rgb(255,255,255); border:1px solid rgb(179,179,179); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	echo '.button-Y:hover{background-color:rgb(229,229,229); border:1px solid rgb(129,129,129);}';
@@ -780,7 +791,7 @@ if(isset($_GET['json'])){
 	echo '.font-Q{color:rgb('.$a_Theme['color']['Q'].');}';
 	echo '.font-R{color:rgb('.$a_Theme['color']['R'].');}';
 	echo '.font-S{color:rgb('.$a_Theme['color']['S'].');}';
-	
+
 	// D r o p d o w n s
 	// Dropdown - A
 	echo '.dropdown-A-1{background-color:rgb('.$a_Theme['color']['K'].'); border:1px solid rgb('.$a_Theme['color']['A'].'); color:rgb('.$a_Theme['color']['G'].');}';
