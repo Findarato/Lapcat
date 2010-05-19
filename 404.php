@@ -18,12 +18,91 @@ $V_MessagesOn=false;
 $V_Secondary='';
 $V_ServerRoot=$_SERVER['DOCUMENT_ROOT'];
 $V_UserID=0;
+$v_page = "blank.tpl";
+$V_Buffer = 1;
+$V_UrlString = join("/",$A_URL);
+$V_Static = false;
+$V_search = "";
+if(isset($_SESSION["A_status"])){
+	$A_status = unserialize($_SESSION["A_status"]);	
+}else{
+	$A_status = array();
+	$_SESSION["A_status"] = serialize($A_status);
+}
+
+define('SMARTY_DIR', '/www/smarty/libs/');
+require_once(SMARTY_DIR . 'Smarty.class.php');
+$smarty = new Smarty();
+$smarty->template_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/templates';
+$smarty->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/templates_c';
+$smarty->cache_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/cache';
+$smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/configs';
+
+if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
+if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
+
 if($A_URL[0]==''){
 	$V_Area='home';
 }else{
 	foreach($A_URL as $v_Key=>$v_Text){
 		switch($v_Key){
-			case 0:if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}break;
+			case 0:
+				if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}
+				switch(strtolower($v_Text)){
+					case "new":
+						$V_Static = true;
+						$smarty->Assign("currentUrl",$V_UrlString);
+						$idKey=$V_Buffer+1;
+						if(isset($A_URL[$V_Buffer])){
+							switch(strtolower($A_URL[$V_Buffer])){
+								default:
+								case "news": 
+									$v_page = "news";
+								break;
+								case "databases":
+									$v_page = "databases";
+								break;
+							}
+						}else{
+							$v_page = "news";
+						}
+					//	$A_status["area"] = $v_page; //make sure to keep track of where we are
+						
+						//$V_JSON=$o_LAPCAT->f_PerformRequest("quick","news","suggest","","",false);
+						
+						if(isset($A_URL[$idKey])){
+							if(isset($A_URL[$idKey+1])){
+								$A_status[$A_URL[$idKey]] = $A_URL[$idKey+1];
+								$_SESSION["A_status"] = serialize($A_status);
+								foreach ($A_status as $key=>$value){	$V_search .= $key."=".$value.",";	} //lets build the search.  Going to need a way to clear them from the search too
+								echo $V_search;
+								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
+							}else{
+								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);		
+							}
+						}else{$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);} //A basic search must happen
+						
+						
+						if(isset($V_JSON["data"])){
+							foreach ($V_JSON["data"] as $key=>$value){//loop though the items to work with them
+								foreach ($value as $k=>$v){ //fix the values to work better with smarty
+									if(!is_array($v)){
+										$V_JSON["data"][$key][str_replace("-","_",$k)] = $v;
+									}
+								}
+								//This works only for the article search
+								if(isset($A_URL[$idKey]) && $A_URL[$idKey]!="tag"&& $A_URL[$idKey]!="user"&& $A_URL[$idKey]!="date"){
+									if($value["ID"]==$A_URL[$idKey]){
+										$smarty -> assign("V_openLineData",$V_JSON["data"][$key]);
+									}
+								}else{//we need to make sure something is always shown
+									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
+								}
+							}
+						}
+					break;
+				}
+			break;
 			case 1:$V_Area=$v_Text;break;
 			case 2:$V_Command=$v_Text;break;
 			case 3:$V_Main=$v_Text;break;
@@ -36,8 +115,7 @@ if($A_URL[0]==''){
 function F_URLNF(){header('HTTP/1.0 404 Not Found');header('Status: 404 Not Found');echo '404 Error';}
 function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v_JSON);}
 
-if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
-if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
+
 // V_Area, V_Command, V_Main, V_Secondary
 $a_Share['name']='www.lapcat.org';
 $a_Share['text']='LAPCAT';
@@ -60,9 +138,10 @@ if(!$V_Fresh){
 				case 'change-page':
 				case 'open-line':
 				case 'reset':
-					$V_JSON=$o_LAPCAT->f_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary);
+					$V_JSON=$o_LAPCAT->f_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary,true);
 					break;
 				default:
+					
 					break;
 			}
 			break;
@@ -95,14 +174,9 @@ if($V_Fresh){
 	F_HR($V_JSON);
 }
 
-define('SMARTY_DIR', '/www/smarty/libs/');
-require_once(SMARTY_DIR . 'Smarty.class.php');
-$smarty = new Smarty();
-$smarty->template_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/templates/'; 
-$smarty->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/templates_c';
-$smarty->cache_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/cache';
-$smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/configs';
-
+//Debug
+print_r($A_status);
+//Debug
 ?>
 <!DOCTYPE html> 
 <html>
@@ -114,6 +188,21 @@ $smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/configs';
 		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
 		<link id="index-css-theme" rel="stylesheet" type="text/css" href="/lapcat/css/themes/theme-generator.php?theme=<?=$o_User->a_User['theme'];?>" />
 		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-8067208-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		</script>
+		
+		
+		<? if(!$V_Static){ ?>
+		<script type="text/javascript">
 			var V_Date=new Date();
 			var V_TimeStamp=V_Date.getTime();
 		</script>
@@ -123,26 +212,21 @@ $smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/templates/configs';
 		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
 		<script src="/lapcat/java/combine.php"></script>
+		<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
+		<?} ?>
 	</head>
 	<body class="color-X-1" style="height:auto; width:auto;">
-		<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
+		
 		<?
+		if($v_page =="news" || $v_page =="databases"){
+			$smarty -> assign("area","new/".$v_page);
+			$smarty -> assign("V_displayData",$V_JSON["data"]);
+			$smarty -> assign('content',"news_display.tpl");	
+		}else{$smarty -> assign('content',$v_page);}
+		
+		$smarty -> display('body.tpl');
 		include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
 		flush();
 		?>
-		<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-8067208-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-  })();
-
-</script>
-
 	</body>
 </html>
