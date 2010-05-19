@@ -175,7 +175,7 @@ if($V_Fresh){
 }
 
 //Debug
-print_r($A_status);
+//print_r($A_status);
 //Debug
 ?>
 <!DOCTYPE html> 
