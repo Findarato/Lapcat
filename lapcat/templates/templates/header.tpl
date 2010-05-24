@@ -5,7 +5,7 @@
 				<!--// Home //-->
 				<a class="menu-Y-65 font-X shadow-or-light-Y-up menu-move-click" href="/" id="menu-home" style="cursor:pointer; display:block; float:left; height:18px; margin-left:6px;"><img src="http://cdn1.lapcat.org/famfamfam/silk/house.png" style="height:16px; margin-left:4px; width:16px;" /><font style="color:inherit; font-size:14px; margin-left:2px; margin-right:4px; vertical-align:top;">Home</font></a>
 				<!--// News //-->
-				<a class="menu-Y-65 font-X shadow-or-light-Y-up menu-move-click" href="/news" id="menu-news" style="cursor:pointer; display:block; float:left; height:18px; margin-left:6px;">
+				<a class="menu-Y-65 font-X shadow-or-light-Y-up menu-move-click" href="/new/news" id="menu-news" style="cursor:pointer; display:block; float:left; height:18px; margin-left:6px;">
 					<img src="http://cdn1.lapcat.org/famfamfam/silk/newspaper.png" style="height:16px; margin-left:4px; margin-top:2px; width:16px;" />
 					<font style="color:inherit; font-size:14px; margin-left:2px; margin-right:4px; vertical-align:top;">News</font>
 				</a>
@@ -14,7 +14,10 @@
 				<!--// Materials //-->
 				<div class="menu-Y-65 font-X menu-move-click shadow-or-light-Y-up" id="menu-materials" onfocus="javascript:this.blur();" style="cursor:pointer; float:left; height:18px; margin-left:3px;"><img src="http://cdn1.lapcat.org/famfamfam/silk/book_open.png" style="height:16px; margin-left:4px; margin-top:2px; width:16px;" /><font style="color:inherit; font-size:14px; margin-left:2px; margin-right:4px; vertical-align:top;">Materials</font></div>
 				<!--// Databases //-->
-				<div class="menu-Y-65 font-X menu-move-click shadow-or-light-Y-up" id="menu-databases" onfocus="javascript:this.blur();" style="cursor:pointer; float:left; height:18px; margin-left:3px;"><img src="http://cdn1.lapcat.org/famfamfam/silk/database.png" style="height:16px; margin-left:4px; margin-top:2px; width:16px;" /><font style="color:inherit; font-size:14px; margin-left:2px; margin-right:4px; vertical-align:top;">Databases</font></div>
+				<a class="menu-Y-65 font-X shadow-or-light-Y-up menu-move-click" href="/new/databases" id="menu-databases" style="cursor:pointer; display:block; float:left; height:18px; margin-left:6px;">
+					<img src="http://cdn1.lapcat.org/famfamfam/silk/newspaper.png" style="height:16px; margin-left:4px; margin-top:2px; width:16px;" />
+					<font style="color:inherit; font-size:14px; margin-left:2px; margin-right:4px; vertical-align:top;">Databases</font>
+				</a>
 				<!--// Hours //-->
 				<div class="menu-Y-65 font-X menu-move-click shadow-or-light-Y-up" id="menu-hours" onfocus="javascript:this.blur();" style="cursor:pointer; float:left; height:18px; margin-left:3px;"><img src="http://cdn1.lapcat.org/famfamfam/silk/time.png" style="height:16px; margin-left:4px; margin-top:2px; width:16px;" /><font style="color:inherit; font-size:14px; margin-left:2px; margin-right:4px; vertical-align:top;">Hours</font></div>
 				<!--// Hiring //-->
