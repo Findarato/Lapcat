@@ -50,6 +50,7 @@ if($A_URL[0]==''){
 				if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}
 				switch(strtolower($v_Text)){
 					case "new":
+						//Start of server layout code
 						$V_Static = true;
 						$smarty->Assign("currentUrl",$V_UrlString);
 						$idKey=$V_Buffer+1;
@@ -66,10 +67,6 @@ if($A_URL[0]==''){
 						}else{
 							$v_page = "news";
 						}
-					//	$A_status["area"] = $v_page; //make sure to keep track of where we are
-						
-						//$V_JSON=$o_LAPCAT->f_PerformRequest("quick","news","suggest","","",false);
-						
 						if(isset($A_URL[$idKey])){
 							if(isset($A_URL[$idKey+1])){
 								$A_status[$A_URL[$idKey]] = $A_URL[$idKey+1];
@@ -100,6 +97,7 @@ if($A_URL[0]==''){
 								}
 							}
 						}
+						//End of server layout code
 					break;
 				}
 			break;
