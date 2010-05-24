@@ -215,7 +215,7 @@ if($V_Fresh){
 		<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
 		<?} ?>
 	</head>
-	<body class="color-X-1" style="height:auto; width:auto;">
+	<body class="color-X-1" style="height:100%; width:100%;">
 		
 		<?
 		if($v_page =="news" || $v_page =="databases"){
