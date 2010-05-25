@@ -1,13 +1,11 @@
 <table cellpadding="0" cellspacing="0" class="color-X-1" style="height:100%; position:absolute; top:0px; width:100%;"><tr><td style="height:auto; vertical-align:top; width:auto;">
-	<div class="color-X-4" style="height:100%; width:auto;">
+	<div class="color-X-4" style="height:100%; width:auto;"> 
 		<table cellpadding="0" cellspacing="0" class="image-background" style="height:100%; width:100%;"><tr><td style="height:auto; width:auto;">
-
 			<div class="color-X-1 border-bottom-H-1 shadow-or-light-X-down" style="background-position:0px 30px; height:46px; width:100%;">
-
 				<div class="color-X-1" id="dockable-black-curtain" style="display:none; height:21px; position:absolute; top:0px; width:500px;"></div>
 				<table cellpadding="0" cellspacing="0" style="height:46px; width:100%;">
 					<tr>
-						<td rowspan="2" style="width:220px;">
+						<td rowspan="2" style="width:220px;vertical-align:top;">
 							<!--// Stage - LAPCAT Logo //-->
 							<div style="float:left; height:40px; margin-left:8px; margin-top:3px; width:67px;">
 								<a href="" onfocus="javascript:this.blur();"><img src="/lapcat/images/101-58-1.png" style="height:38px; width:67px;"/></a>
@@ -47,14 +45,13 @@
 						</td>
 					</tr>
 				</table>
-
 			</div>
-
-{include file="header.tpl"}
-
+			{include file="header.tpl"}
 			<div style="margin-top:21px; width:100%;">
 				<div id="interface-content-displays" style="vertical-align:top; width:100%;">
-					<div class="color-X-4 corners-bottom-3 corners-top-3" id="destination-content" style="float:left; margin-left:2%; margin-top:20px; width:96%;">{include file="$content"}</div>
+					<div class="color-X-4 corners-bottom-3 corners-top-3" id="destination-content" style="vertical-align:top;float:left; margin-left:2%; margin-top:20px; width:96%;">
+						{include file="$content"}
+					</div>
 				</div>
 			</div>
 

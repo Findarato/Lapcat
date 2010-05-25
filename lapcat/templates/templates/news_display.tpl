@@ -1,4 +1,4 @@
-<table cellpadding="0" cellspacing="0" width="960px" id="static">
+<table cellpadding="0" cellspacing="0" width="960px" id="static" style="">
 	<tr>
 		<td colspan="2" style="vertical-align:top;">
 			<div id="news-header" style="display:block;">
@@ -37,7 +37,7 @@
 			{foreach from=$V_displayData key=key item=value}
 			<div id="static-HTML-300-{$key}" style="vertical-align:top;display:block;">
 					<div style="float:left; height:42px; margin-top:8px; text-align:center; width:100%;">
-						<a href="/{$area}/{$value.ID}">
+						<a href="/{$area}/?{$currentUrl}item={$value.ID}">
 							<div class="button-Y-35 line-click" id="{$value.ID}" style="height:40px; width:auto;" title="Click to expand this display.">
 								<div style="background-position:0px 1px; height:19px; overflow:hidden; text-align:left; width:100%;">
 									<div style="display:table; height:18px; width:100%;">
@@ -60,11 +60,11 @@
 										<div style="float:left; margin-left:1px; vertical-align:top; width:210px;">
 											<div style="margin:1px; text-align:left; width:auto;">
 												<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
-												<a class="add-to-search user-link-1 font-X" href="/{$area}/user/{$value.entered_by_id}" style="font-size:12px; margin-right:3px;">{$value.username}</a>
+												<a class="add-to-search user-link-1 font-X" href="/{$area}/?{$currentUrl}user={$value.entered_by_id}" style="font-size:12px; margin-right:3px;">{$value.username}</a>
 											</div>
 										</div>
 										<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
-											<a class="add-to-search font-X" href="/{$area}/date/{$value.o_date}" style="font-size:12px; margin-right:3px;">{$value.date_words}</a>
+											<a class="add-to-search font-X" href="/{$area}/?{$currentUrl}date={$value.o_date}" style="font-size:12px; margin-right:3px;">{$value.date_words}</a>
 										</div>
 									</div>
 								</div>
