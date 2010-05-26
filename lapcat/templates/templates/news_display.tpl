@@ -1,6 +1,16 @@
 <table cellpadding="0" cellspacing="0" width="960px" id="static" style="">
 	<tr>
 		<td colspan="2" style="vertical-align:top;">
+			<div>
+				<div style="float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:auto;">Page:</div>
+				{foreach from=$pageData key=key item=value}
+					<a class="corners-bottom-2 corners-top-2 page-click button-blue font-G" href="/{$area}?date={$date}&tag={$tag}&page={$value}" style="line-height:8px;display:block;float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:18px;">{$value}</a>
+				{/foreach}
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" style="vertical-align:top;">
 			<div id="news-header" style="display:block;">
 				<div class="color-X-4 corners-bottom-2 corners-top-2 shadow-or-light-X-down" style="background-position:0px 2px; width:100%;">
 					<div class="corners-bottom-2 corners-top-2 shadow-or-light-Y-up" style="background-position:0px -2px; width:100%;">
@@ -14,13 +24,21 @@
 								    	<td id="icons" style="height:18px; width:120px;">
 											<div class="corners-top-2 shadow-up" style="float:right; height:16px; max-height:16px; margin-top:1px; width:auto;">
 												<img class="fake-link float-right magnifier-click" id="zoom-in" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_in.png" style="height:16px; width:16px;" title="Click to expand this display."/>
-												<img class="fake-link float-right magnifier-click" id="zoom-out" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_out.png" style="display:none; height:16px; width:16px;" title="Click to shrink this display."/>
+												<img class="fake-link float-right magnifier-click" id="zoom-out" src="http://cdn1.lapcat.org/famfamfam/silk/magnifier_zoom_out.png" style="display:block; height:16px; width:16px;" title="Click to shrink this display."/>
 												<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
 												<img class="fake-link float-right view-click" id="list-view" src="http://cdn1.lapcat.org/famfamfam/silk/application_view_list.png" style="height:16px; width:16px;" title="Click to show this information in a list."/>
-												<img class="fake-link float-right view-click" id="featured-view" src="http://cdn1.lapcat.org/famfamfam/silk/layout_content.png" style="display:none; height:16px; width:16px;" title="Click to show the featured article."/>
+												<img class="fake-link float-right view-click" id="featured-view" src="http://cdn1.lapcat.org/famfamfam/silk/layout_content.png" style="display:block; height:16px; width:16px;" title="Click to show the featured article."/>
 												<span class="float-right border-right-C-1" style="height:16px; margin-right:2px; width:2px;"></span>
-												<img class="fake-link float-right remove-search-click" id="search-on-search" src="http://cdn1.lapcat.org/famfamfam/silk/user_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the username from this search." />
-												<img class="fake-link float-right remove-search-click" id="search-on-date" src="http://cdn1.lapcat.org/famfamfam/silk/date_delete.png" style="display:none; height:16px; margin-right:2px; width:16px;" title="Click to remove the date from this search." />
+												{if $user != ""}
+												<a href="">
+													<img class="fake-link float-right remove-search-click" id="search-on-search" src="http://cdn1.lapcat.org/famfamfam/silk/user_delete.png" style="display:block; height:16px; margin-right:2px; width:16px;" title="Click to remove the username from this search." />
+												</a>
+												{/if}
+												{if $date != ""}
+												<a href="/{$area}?date=&user={$user}&tag={$tag}&page={$value}">
+													<img class="fake-link float-right remove-search-click" id="search-on-date" src="http://cdn1.lapcat.org/famfamfam/silk/date_delete.png" style="display:block; height:16px; margin-right:2px; width:16px;" title="Click to remove the date from this search." />
+												</a>
+												{/if}
 											</div>
 										</td>
 							        </tr>
@@ -37,7 +55,7 @@
 			{foreach from=$V_displayData key=key item=value}
 			<div id="static-HTML-300-{$key}" style="vertical-align:top;display:block;">
 					<div style="float:left; height:42px; margin-top:8px; text-align:center; width:100%;">
-						<a href="/{$area}/?{$currentUrl}item={$value.ID}">
+						<a href="/{$area}?item={$value.ID}&date={$date}&tag={$tag}">
 							<div class="button-Y-35 line-click" id="{$value.ID}" style="height:40px; width:auto;" title="Click to expand this display.">
 								<div style="background-position:0px 1px; height:19px; overflow:hidden; text-align:left; width:100%;">
 									<div style="display:table; height:18px; width:100%;">
@@ -60,11 +78,11 @@
 										<div style="float:left; margin-left:1px; vertical-align:top; width:210px;">
 											<div style="margin:1px; text-align:left; width:auto;">
 												<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
-												<a class="add-to-search user-link-1 font-X" href="/{$area}/?{$currentUrl}user={$value.entered_by_id}" style="font-size:12px; margin-right:3px;">{$value.username}</a>
+												<a class="add-to-search user-link-1 font-X" href="/{$area}?item={$item}&date={$date}&tag={$tag}&user={$value.entered_by_id}" style="font-size:12px; margin-right:3px;">{$value.username}</a>
 											</div>
 										</div>
 										<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
-											<a class="add-to-search font-X" href="/{$area}/?{$currentUrl}date={$value.o_date}" style="font-size:12px; margin-right:3px;">{$value.date_words}</a>
+											<a class="add-to-search font-X" href="/{$area}?item={$item}&date={$value.o_date}&tag={$tag}" style="font-size:12px; margin-right:3px;">{$value.date_words}</a>
 										</div>
 									</div>
 								</div>
@@ -88,10 +106,10 @@
 												<div id="content-open-line" style="height:400px; width:99%; margin-left:0.5%;">
 													<div style="float:left; height:460px; width:100%;">
 														<div style="height:15px;">
-															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}/tag/{$V_openLineData.tag_0_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_0_name}</a>
-															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}/tag/{$V_openLineData.tag_1_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_1_name}</a>
-															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}/tag/{$V_openLineData.tag_2_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_2_name}</a>
-															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}/tag/{$V_openLineData.tag_3_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_3_name}</a>
+															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}?item={$item}&date={$date}&tag={$V_openLineData.tag_0_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_0_name}</a>
+															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}?item={$item}&date={$date}&tag={$V_openLineData.tag_1_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_1_name}</a>
+															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}?item={$item}&date={$date}&tag={$V_openLineData.tag_2_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_2_name}</a>
+															<a class="add-to-all-searches fake-link font-bold font-L" href="/{$area}?item={$item}&date={$date}&tag={$V_openLineData.tag_3_ID}" style="float:left; margin-left:10px;">{$V_openLineData.tag_3_name}</a>
 														</div>
 														<table cellpadding="0" cellspacing="0" style="height:460px; vertical-align:top; width:100%;">
 															<tr>
