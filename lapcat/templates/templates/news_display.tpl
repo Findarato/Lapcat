@@ -77,8 +77,10 @@
 									<div style="width:100%;">
 										<div style="float:left; margin-left:1px; vertical-align:top; width:210px;">
 											<div style="margin:1px; text-align:left; width:auto;">
+											{if $page == "news"}
 												<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
 												<a class="add-to-search user-link-1 font-X" href="/{$area}?item={$item}&date={$date}&tag={$tag}&user={$value.entered_by_id}" style="font-size:12px; margin-right:3px;">{$value.username}</a>
+											{/if}
 											</div>
 										</div>
 										<div style="float:right; vertical-align:top; padding-right:6px; width:auto;">
@@ -119,7 +121,13 @@
 																			<table style="height:40px; width:100%;">
 																				<tr>
 																					<td style="height:20px; overflow:hidden; vertical-align:top; width:auto;">
-																						<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">{$V_openLineData.name}</font>
+																						{if $page=="databases"}
+																							<a target="databases" href="{$V_openLineData.link_in}">
+																								<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">{$V_openLineData.name}</font>
+																							</a>
+																						{else}
+																							<font class="font-X" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">{$V_openLineData.name}</font>
+																						{/if}
 																					</td>
 																				</tr>
 																			</table>
@@ -131,8 +139,10 @@
 																<td style="height:390px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top; width:100%;">
 																<div class="border-bottom-C-1" style="float:left; height:1px; width:100%;"></div>
 																<div class="shadow-or-light-X-up" style="height:20px; text-align:left; vertical-align:top; width:100%;">
+																	{if $page == "news"} 
 																	<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
 																	<a class="add-to-search user-link-1 font-X" href="/{$area}/user/{$V_openLineData.entered_by_id}" style="font-size:12px; margin-right:3px;">{$V_openLineData.username}</a>
+																	{/if}
 																</div>
 																<div style="float:left; overflow:hidden; overflow:auto; height:360px; width:100%;"><font class="font-X post-title" id="general-font-size" style="float:left; font-size:15px; margin-top:12px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">{$V_openLineData.description}</font></div>
 																</td>
