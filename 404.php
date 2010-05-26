@@ -23,6 +23,7 @@ $V_search = "";
 $V_UrlString = "";
 $a_Share['name']='LAPCAT';
 $a_Share['text']='LAPCAT';
+$V_SelectedDisplay = false;
 //unset($_SESSION["A_status"]);
 if(isset($_SESSION["A_status"])){
 	$A_status = unserialize($_SESSION["A_status"]);	
@@ -56,9 +57,8 @@ if($A_URL[0]==''){
 					case "new":
 						//Start of server layout code
 						$V_Static = true;
-						
 						$idKey=$V_Buffer+1;
-						if(!isset($v_page)){	$v_page = "news"; } //to make sure that a page is loaded
+						//if(!isset($v_page)){$v_page = "news"; } //to make sure that a page is loaded
 						if(isset($_GET["item"])){
 							$smarty->Assign("item",$_GET["item"]);
 						}
@@ -82,7 +82,8 @@ if($A_URL[0]==''){
 							if(isset($_GET["page"]) && $_GET["page"] !==""){ //there is a page selected
 								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
 							}
-						}else{$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);}
+						}else{$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);
+						}
 						$smarty->Assign("currentUrl",$V_UrlString);
 						
 						if(isset($V_JSON["data"])){
@@ -97,9 +98,13 @@ if($A_URL[0]==''){
 									if($value["ID"]==$_GET["item"]){
 										$smarty -> assign("V_openLineData",$V_JSON["data"][$key]);
 										$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][$key]["name"];
+										$V_SelectedDisplay = true;
 									}
 									
 								}else{//we need to make sure something is always shown
+									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
+								}
+								if(!$V_SelectedDisplay){// a display has not been selected
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
 								}
 							}
