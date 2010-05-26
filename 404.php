@@ -4,7 +4,6 @@ SESSION_START();
 function __autoload($v_CN) {require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/objects/'.strtolower($v_CN).'.php';}
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/php-functions.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/aval.php';
-
 $A_URL=array_splice(explode('/',strtolower($_SERVER['REQUEST_URI'])),0,6);
 $V_SpecificArea=$A_URL[1];
 array_shift($A_URL);
@@ -18,18 +17,23 @@ $V_MessagesOn=false;
 $V_Secondary='';
 $V_ServerRoot=$_SERVER['DOCUMENT_ROOT'];
 $V_UserID=0;
-$v_page = "blank.tpl";
 $V_Buffer = 1;
-$V_UrlString = join("/",$A_URL);
 $V_Static = false;
 $V_search = "";
+$V_UrlString = "";
+$a_Share['name']='LAPCAT';
+$a_Share['text']='LAPCAT';
+//unset($_SESSION["A_status"]);
 if(isset($_SESSION["A_status"])){
 	$A_status = unserialize($_SESSION["A_status"]);	
 }else{
 	$A_status = array();
 	$_SESSION["A_status"] = serialize($A_status);
 }
-
+foreach($A_status as $key=>$value){
+	$V_UrlString .= $key."=".$value."&";
+}
+//$V_UrlString = join("&=",$A_status);
 define('SMARTY_DIR', '/www/smarty/libs/');
 require_once(SMARTY_DIR . 'Smarty.class.php');
 $smarty = new Smarty();
@@ -52,33 +56,34 @@ if($A_URL[0]==''){
 					case "new":
 						//Start of server layout code
 						$V_Static = true;
-						$smarty->Assign("currentUrl",$V_UrlString);
-						$idKey=$V_Buffer+1;
-						if(isset($A_URL[$V_Buffer])){
-							switch(strtolower($A_URL[$V_Buffer])){
-								default:
-								case "news": 
-									$v_page = "news";
-								break;
-								case "databases":
-									$v_page = "databases";
-								break;
-							}
-						}else{
-							$v_page = "news";
-						}
-						if(isset($A_URL[$idKey])){
-							if(isset($A_URL[$idKey+1])){
-								$A_status[$A_URL[$idKey]] = $A_URL[$idKey+1];
-								$_SESSION["A_status"] = serialize($A_status);
-								foreach ($A_status as $key=>$value){	$V_search .= $key."=".$value.",";	} //lets build the search.  Going to need a way to clear them from the search too
-								echo $V_search;
-								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
-							}else{
-								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);		
-							}
-						}else{$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);} //A basic search must happen
 						
+						$idKey=$V_Buffer+1;
+						if(!isset($v_page)){	$v_page = "news"; } //to make sure that a page is loaded
+						if(isset($_GET["item"])){
+							$smarty->Assign("item",$_GET["item"]);
+						}
+						if(isset($_GET["date"])){
+							$smarty->Assign("date",$_GET["date"]);
+						}
+						if(isset($_GET["tag"])){
+							$smarty->Assign("tag",$_GET["tag"]);
+						}
+						if(count($_GET)>0){
+							foreach($_GET as $key=>$value){
+								//foreach ($A_status as $key=>$value){	$V_search .= $key."=".$value.",";	} //lets build the search.  Going to need a way to clear them from the search too
+								if($key=="user"){$key="search";}
+								
+								if($key!=="page"){
+									$V_search .= $key."=".$value.",";	
+								}
+								//print_r($V_JSON);die();
+							}
+							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
+							if(isset($_GET["page"]) && $_GET["page"] !==""){ //there is a page selected
+								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
+							}
+						}else{$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);}
+						$smarty->Assign("currentUrl",$V_UrlString);
 						
 						if(isset($V_JSON["data"])){
 							foreach ($V_JSON["data"] as $key=>$value){//loop though the items to work with them
@@ -88,15 +93,23 @@ if($A_URL[0]==''){
 									}
 								}
 								//This works only for the article search
-								if(isset($A_URL[$idKey]) && $A_URL[$idKey]!="tag"&& $A_URL[$idKey]!="user"&& $A_URL[$idKey]!="date"){
-									if($value["ID"]==$A_URL[$idKey]){
+								if(isset($_GET["item"])){
+									if($value["ID"]==$_GET["item"]){
 										$smarty -> assign("V_openLineData",$V_JSON["data"][$key]);
+										$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][$key]["name"];
 									}
+									
 								}else{//we need to make sure something is always shown
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
 								}
 							}
+							for($a=0;$a<$V_JSON["page"]["total-pages"];$a++){
+								$pageData[] = $a+1;	
+							}
+							$smarty->Assign("pageData",$pageData);
+
 						}
+						
 						//End of server layout code
 					break;
 				}
@@ -115,8 +128,6 @@ function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v
 
 
 // V_Area, V_Command, V_Main, V_Secondary
-$a_Share['name']='www.lapcat.org';
-$a_Share['text']='LAPCAT';
 if(!$V_Fresh){
 	switch($V_Area){
 		case 'get-anticipated-events':$V_JSON=$o_LAPCAT->f_GetAnticipatedEvents();break;
@@ -179,7 +190,7 @@ if($V_Fresh){
 <!DOCTYPE html> 
 <html>
 	<head>
-		<title><?=$a_Share['name'];?></title>
+		<title><?=$a_Share["name"];?></title>
 		<meta name="description" content="<?=strip_tags($a_Share['text']);?>"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=100" >
 		<link rel="shortcut icon" href="/favicon.ico" />
@@ -199,6 +210,7 @@ if($V_Fresh){
 		</script>
 		
 		
+		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 		<? if(!$V_Static){ ?>
 		<script type="text/javascript">
 			var V_Date=new Date();
@@ -207,20 +219,20 @@ if($V_Fresh){
 		<script src="/lapcat/java/get-all-tags.php" type="text/javascript"></script>
 		<script src="/lapcat/java/get-all-content-providers.php" type="text/javascript"></script>
 		<script defer src="/lapcat/java/pngfix.js" type="text/javascript"></script>
-		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+		
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
 		<script src="/lapcat/java/combine.php"></script>
-		<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
 		<?} ?>
+		
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
-		
+	<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
 		<?
 		if($v_page =="news" || $v_page =="databases"){
 			$smarty -> assign("area","new/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
 			$smarty -> assign('content',"news_display.tpl");	
-		}else{$smarty -> assign('content',$v_page);}
+		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
 		include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
