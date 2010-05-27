@@ -55,7 +55,7 @@
 			{foreach from=$V_displayData key=key item=value}
 			<div id="static-HTML-300-{$key}" style="vertical-align:top;display:block;">
 					<div style="float:left; height:42px; margin-top:8px; text-align:center; width:100%;">
-						<a href="/{$area}?item={$value.ID}&date={$date}&tag={$tag}">
+						<a href="/{$area}?item={$value.ID}&date={$date}&tag={$tag}&page={$pageNum}">
 							<div class="button-Y-35 line-click" id="{$value.ID}" style="height:40px; width:auto;" title="Click to expand this display.">
 								<div style="background-position:0px 1px; height:19px; overflow:hidden; text-align:left; width:100%;">
 									<div style="display:table; height:18px; width:100%;">
