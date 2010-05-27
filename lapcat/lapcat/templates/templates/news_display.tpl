@@ -1,4 +1,4 @@
-<table cellpadding="0" cellspacing="0" width="960px" id="static" style="">
+<table cellpadding="0" cellspacing="0" width="960px" id="static" style="display:block;">
 	<tr>
 		<td colspan="2" style="vertical-align:top;">
 			<div>
