@@ -85,6 +85,7 @@ if($A_URL[0]==''){
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
 							if(isset($_GET["page"]) && $_GET["page"] !==""){ //there is a page selected
 								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
+								$smarty -> Assign("pageNum",$_GET["page"]);
 							}
 						} else {
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);
