@@ -1,1 +1,4 @@
-<? include "../404.php"; ?>
+<?
+$v_page = "news";
+include "../404.php";
+?>

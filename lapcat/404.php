@@ -42,7 +42,10 @@ $smarty->template_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/templates';
 $smarty->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/templates_c';
 $smarty->cache_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/cache';
 $smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/configs';
-$smarty->Assign("page",$v_page);
+if(isset($v_page)){
+$smarty->Assign("page",$v_page);	
+}
+
 
 
 if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
@@ -83,11 +86,11 @@ if($A_URL[0]==''){
 							if(isset($_GET["page"]) && $_GET["page"] !==""){ //there is a page selected
 								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
 							}
-						}else {
+						} else {
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);
 						}
 						
-						//print_r($V_JSON);die();
+						//print_r($V_JSON);//die();
 						
 						$smarty->Assign("currentUrl",$V_UrlString);
 						
@@ -238,10 +241,11 @@ if($V_Fresh){
 	<body class="color-X-1" style="height:100%; width:100%;">
 	<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
 		<?
-		if($v_page){
+		if($V_Static){
 			$smarty -> assign("area","new/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
-			$smarty -> assign('content',"news_display.tpl");	
+			$smarty -> assign('content',"area_display.tpl");
+				
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
