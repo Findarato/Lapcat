@@ -42,8 +42,11 @@ $smarty->template_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/templates';
 $smarty->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/templates_c';
 $smarty->cache_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/cache';
 $smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/configs';
-$smarty->Assign("page",$v_page);
+if(isset($v_page)){
+$smarty->Assign("page",$v_page);	
+}
 
+//print_r($_SERVER);die();
 
 if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
 if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
@@ -57,6 +60,7 @@ if($A_URL[0]==''){
 				if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}
 				switch(strtolower($v_Text)){
 					case "new":
+						$smarty -> Assign("fblink",$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']);
 						//Start of server layout code
 						$V_Static = true;
 						$idKey=$V_Buffer+1;
@@ -82,12 +86,13 @@ if($A_URL[0]==''){
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
 							if(isset($_GET["page"]) && $_GET["page"] !==""){ //there is a page selected
 								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
+								$smarty -> Assign("pageNum",$_GET["page"]);
 							}
-						}else {
+						} else {
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);
 						}
 						
-						//print_r($V_JSON);die();
+					//	print_r($V_JSON);die();
 						
 						$smarty->Assign("currentUrl",$V_UrlString);
 						
@@ -108,15 +113,20 @@ if($A_URL[0]==''){
 									
 								}else{//we need to make sure something is always shown
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
+									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
 								}
 								if(!$V_SelectedDisplay){// a display has not been selected
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
+									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
 								}
 							}
 							for($a=0;$a<$V_JSON["page"]["total-pages"];$a++){
 								$pageData[] = $a+1;	
 							}
-							$smarty->Assign("pageData",$pageData);
+							if(isset($pageData)){
+							$smarty->Assign("pageData",$pageData);	
+							}
+							
 
 						}
 						
@@ -238,10 +248,11 @@ if($V_Fresh){
 	<body class="color-X-1" style="height:100%; width:100%;">
 	<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
 		<?
-		if($v_page){
+		if($V_Static){
 			$smarty -> assign("area","new/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
-			$smarty -> assign('content',"news_display.tpl");	
+			$smarty -> assign('content',"area_display.tpl");
+				
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
