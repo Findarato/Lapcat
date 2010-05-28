@@ -45,11 +45,31 @@ class LAPCAT{
 		}
 	}
 
+	/* Function - Get Material Lists */
+	function f_GetMaterialLists(){
+		$v_DC=db::getInstance();
+		$v_DC->Query('SELECT ID, name, description FROM hex_lists WHERE locked=2;');
+		$a_Results=$v_DC->Format('assoc_array');
+		return json_encode(array('switch'=>'data','data'=>$a_Results));
+		
+		$v_DC->Query('SELECT COUNT(*) FROM hex_markers WHERE user_id='.$this->a_User['ID'].';');
+		$v_MarkerTotal=$v_DC->Format('row');
+		$v_DC->Query('SELECT calendar_id FROM hex_markers WHERE user_id='.$this->a_User['ID'].' LIMIT 2;');
+		$a_Results=$v_DC->Format('row_array');
+		if(!empty($a_Results)){
+			$v_DC->Query('SELECT id, name FROM viewable_events WHERE id IN('.implode(',',$a_Results).') ORDER BY o_date;');
+			$a_Data=$v_DC->Format('assoc_array');
+			return json_encode(array('switch'=>'data','data'=>$a_Data,'markers'=>$v_MarkerTotal));
+		}else{
+			return json_encode(array('switch'=>'failed'));
+		}
+	}
+
 	/* Function - Get Starting Key (for ID Storage) */
 	function f_GetStartingKeyForIDStorage($v_Area){return (($this->a_Search[$v_Area]['current-page']-1)*$this->a_Search[$v_Area]['maximum-records']);}
 
 	/* Function - Push Data (with ID Storage) */
-	function f_PushDataWithIDStorage($v_Area,$v_SameSearch){
+	function f_PushDataWithIDStorage($v_Area,$v_SameSearch,$v_Encode=false){
 		$v_DC=db::getInstance();
 		$a_Data=array();
 		$a_BaseSQL=$this->f_GetBaseSQL($v_Area);
@@ -75,7 +95,8 @@ class LAPCAT{
 			if(!empty($a_Results)){
 				$this->a_IDStorage[$v_Area]=$a_Results;
 			}else{
-				return json_encode(array(
+				/* Joe Approved */
+				$a_Stuff=array(
 					'alias'=>$v_Area,
 					'switch'=>'failed',
 					'client-changes'=>$this->f_GetClientChanges(),
@@ -83,7 +104,8 @@ class LAPCAT{
 					'header'=>$this->a_FirstHeader[$v_Area].$v_Header.'.',
 					'page'=>$this->f_GetPageInformation($v_Area),
 					'log'=>$this->a_Log
-				));
+				);
+				if($v_Encode){return json_encode($a_Stuff);}else{return $a_Stuff;}
 			}
 		}else{
 			$this->a_Log[]=array('type'=>'narrator','text'=>'For '.$v_Area.', the same search was performed.');
@@ -93,18 +115,17 @@ class LAPCAT{
 		$a_PushIDs=array_slice($this->a_IDStorage[$v_Area],$v_StartingKey,$this->a_Search[$v_Area]['maximum-records']);
 		$a_Records=$this->f_GetDataByIDs($v_Area,$v_BaseSQL,$a_PushIDs);
 		if(!empty($a_Records)){
-			return json_encode(
-				array(
-					'alias'=>$v_Area,
-					'switch'=>'data',
-					'data'=>$a_Records,
-					'client-changes'=>$this->f_GetClientChanges(),
-					'triggers'=>$this->f_GetClientTriggers(),
-					'header'=>$this->a_FirstHeader[$v_Area].$v_Header.'.',
-					'page'=>$this->f_GetPageInformation($v_Area),
-					'log'=>$this->a_Log
-				)
+			$a_Stuff=array(
+				'alias'=>$v_Area,
+				'switch'=>'data',
+				'data'=>$a_Records,
+				'client-changes'=>$this->f_GetClientChanges(),
+				'triggers'=>$this->f_GetClientTriggers(),
+				'header'=>$this->a_FirstHeader[$v_Area].$v_Header.'.',
+				'page'=>$this->f_GetPageInformation($v_Area),
+				'log'=>$this->a_Log
 			);
+			if($v_Encode){return json_encode($a_Stuff);}else{return $a_Stuff;}
 		}
 	}
 
@@ -610,7 +631,7 @@ class LAPCAT{
 	// Function - Change Page
 	function f_ChangePage($v_Area,$v_Page=1){$this->a_Search[$v_Area]['current-page']=$v_Page;}
 	// Function - Perform Request
-	function f_PerformRequest($v_Type='quick',$v_Area='materials',$v_Command='suggest',$v_Main='',$v_Secondary=''){
+	function f_PerformRequest($v_Type='quick',$v_Area='materials',$v_Command='suggest',$v_Main='',$v_Secondary='',$v_Encode=false){
 		$this->a_Log=array();
 		$v_SameSearch=true;
 		switch($v_Command){
@@ -669,13 +690,13 @@ class LAPCAT{
 				switch($v_Area){
 					default:break;
 					case 'databases':case 'events':case 'materials':case 'news':
-						return $this->f_PushDataWithIDStorage($v_Area,$v_SameSearch);
+						return $this->f_PushDataWithIDStorage($v_Area,$v_SameSearch,$v_Encode);
 						break;
 					case 'hours':
-						return $this->f_PushHours();
+						return $this->f_PushHours($v_Encode);
 						break;
 					case 'hiring':
-						return $this->f_PushHiring();
+						return $this->f_PushHiring($v_Encode);
 						break;
 				}
 				break;
@@ -730,7 +751,7 @@ class LAPCAT{
 		return json_encode(array('inserted'=>$v_Inserted));
 	}
 	/* Function - Push Hours */
-	function f_PushHours(){
+	function f_PushHours($encode=true){
 		$v_DC=db::getInstance();
 		$v_SQL='SELECT hln.ID, hln.name FROM hex_library_names AS hln WHERE hln.ID<8 ORDER BY hln.ID;';
 		$v_DC->Query($v_SQL);
@@ -757,7 +778,7 @@ class LAPCAT{
 			$a_Results[$v_Key]['phone']=$a_LibraryData['phone'];
 			$a_Results[$v_Key]=array_merge($a_Results[$v_Key],F_GetLibraryInformation($v_Key));
 		}
-		return json_encode(array(
+		$returnHours = array(
 			'alias'=>'hours',
 			'client-changes'=>$this->f_GetClientChanges(),
 			'triggers'=>$this->f_GetClientTriggers(),
@@ -765,7 +786,11 @@ class LAPCAT{
 			'header'=>'Library hours and locations.',
 			'page'=>$this->f_GetPageInformation('hours'),
 			'switch'=>'data'
-		));
+		);
+		if($encode){
+			return json_encode($returnHours);
+		}else{return $returnHours;}
+		
 	}
 	/* Function - Get Promotions */
 	function f_GetPromotions(){
