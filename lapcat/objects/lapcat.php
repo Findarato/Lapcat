@@ -813,7 +813,7 @@ class LAPCAT{
 		return json_encode(array('data'=>$a_Files));
 	}
 	/* Function - Push Hiring */
-	function f_PushHiring(){
+	function f_PushHiring($encode=true){
 		$a_Files=array();
 		$v_Counter=0;
 		if($v_Directory=opendir('lapcat/jobs/')){
@@ -831,7 +831,7 @@ class LAPCAT{
     		}
 			closedir($v_Directory);
 		}
-		return json_encode(array(
+		$returnHiring = array(
 			'alias'=>'hiring',
 			'client-changes'=>$this->f_GetClientChanges(),
 			'triggers'=>$this->f_GetClientTriggers(),
@@ -839,7 +839,9 @@ class LAPCAT{
 			'header'=>'Employment opportunities.',
 			'page'=>$this->f_GetPageInformation('hiring'),
 			'switch'=>'data'
-		));
+		);
+		if($encode){return json_encode($returnHiring);}else{return $returnHiring;}
+		
 	}
 	/* Function - Reset Search */
 	function f_ResetSearch($v_Area='databases'){
