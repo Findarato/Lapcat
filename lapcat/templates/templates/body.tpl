@@ -1,6 +1,6 @@
 <table cellpadding="0" cellspacing="0" class="color-X-1" style="height:100%; position:absolute; top:0px; width:100%;"><tr><td style="height:auto; vertical-align:top; width:auto;">
 	<div class="color-X-4" style="height:100%; width:auto;"> 
-		<table cellpadding="0" cellspacing="0" class="image-background" style="height:100%; width:100%;"><tr><td style="height:auto; width:auto;">
+		<table cellpadding="0" cellspacing="0" class="image-background" style="height:1024px; width:100%;"><tr><td style="height:auto; vertical-align:top; width:auto;">
 			<div class="color-X-1 border-bottom-H-1 shadow-or-light-X-down" style="background-position:0px 30px; height:46px; width:100%;">
 				<div class="color-X-1" id="dockable-black-curtain" style="display:none; height:21px; position:absolute; top:0px; width:500px;"></div>
 				<table cellpadding="0" cellspacing="0" style="height:46px; width:100%;">

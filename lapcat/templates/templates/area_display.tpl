@@ -2,10 +2,12 @@
 	<tr>
 		<td colspan="2" style="vertical-align:top;">
 			<div>
+				{if $page != "hours"}
 				<div style="float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:auto;">Page:</div>
 				{foreach from=$pageData key=key item=value}
 					<a class="corners-bottom-2 corners-top-2 page-click button-blue font-G" href="/{$area}?date={$date}&tag={$tag}&page={$value}" style="line-height:8px;display:block;float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:18px;">{$value}</a>
 				{/foreach}
+				{/if}
 			</div>
 		</td>
 	</tr>
