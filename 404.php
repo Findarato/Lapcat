@@ -257,7 +257,7 @@ if($V_Fresh){
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
-		include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
+		//include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
 		flush();
 		?>
 	</body>
