@@ -92,7 +92,7 @@ if($A_URL[0]==''){
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);
 						}
 						
-					//	print_r($V_JSON);die();
+						//print_r($V_JSON);die();
 						
 						$smarty->Assign("currentUrl",$V_UrlString);
 						
@@ -257,7 +257,7 @@ if($V_Fresh){
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
-		//include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
+		include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
 		flush();
 		?>
 	</body>
