@@ -1484,6 +1484,8 @@ $('.page-click').live('click',function(){
 	A_Cells[v_Construct]['blind-URL']='/quick/'+V_Area+'/change-page/'+$(this).attr('name');
 	$('#'+v_Construct).trigger('blind-request');
 	A_Cells[v_Construct]['blind-URL']='/quick/'+V_Area+'/search/'+F_ConstructSearch(v_Construct);
+	var pageTracker = _gat._getTracker('UA-8067208-1');		
+	pageTracker._trackPageview('Changed pages to page '+$(this).attr('name')+' in '+V_Area+'.');
 });
 
 /* Function - Show Search Menu */
@@ -1565,9 +1567,19 @@ $('.remove-from-all-searches').live('click',function(){
 /* Live Event - Auto Refresh Click */
 $('.auto-refresh-click').live('click',function(){F_ToggleRefresh(F_GetConstructID($(this).parents('[id|="construct"]').attr('id')),true);});
 /* Live Event - Browse Link / Database Dockable */
-$('.browse-link,.database-dockable').live('click',function(){F_OpenDockable($(this).attr('name'));return false;});
+$('.browse-link,.database-dockable').live('click',function(){
+	var pageTracker = _gat._getTracker('UA-8067208-1');		
+	pageTracker._trackPageview('Opened the catalog or a database.');
+	F_OpenDockable($(this).attr('name'));
+	return false;
+});
 /* Live Event - Catalog Link */
-$('.catalog-link').live('click',function(){F_OpenDockable($(this).attr('href'));return false;});
+$('.catalog-link').live('click',function(){
+	var pageTracker = _gat._getTracker('UA-8067208-1');		
+	pageTracker._trackPageview('Opened the catalog.');
+	F_OpenDockable($(this).attr('href'));
+	return false;
+});
 /* Live Event - Close Anchored Account */
 $('.close-anchored-account').live('click',function(){F_CloseAccount();});
 /* Live Event - Close Anchored Message */
@@ -1592,7 +1604,11 @@ $('.increase-font-click').live('click',function(){V_FontSize+=2;if(V_FontSize>19
 /* Live Event - Line Click */
 $('.line-click').live('click',function(){F_LineClick(F_GetConstructID($(this).parents('[id|="construct"]').attr('id')),$(this).attr('name').replace(/counter-/g,''));});
 /* Live Event - Magnifier Click */
-$('.magnifier-click').live('click',function(){$('#'+$(this).parents('[id|="construct"]').attr('id')).trigger($(this).attr('id'));});
+$('.magnifier-click').live('click',function(){
+	$('#'+$(this).parents('[id|="construct"]').attr('id')).trigger($(this).attr('id'));
+	var pageTracker = _gat._getTracker('UA-8067208-1');		
+	pageTracker._trackPageview('Clicked on a magnifier.');
+});
 /* Live Event - Menu Move Click */
 $('.menu-move-click').live('click',function(){
 	var v_Area=$(this).attr('id').replace(/menu-/g,'');
@@ -1601,6 +1617,8 @@ $('.menu-move-click').live('click',function(){
 	if(V_Area!==v_Area){v_Movement=true;}
 	var v_Construct=F_GetConstructByAlias(v_Area);
 	if(v_Movement){if(v_Area!=='home'){$('#'+v_Construct).trigger('zoom-in');}else{$('#'+F_GetConstructByAlias(v_PreviousArea)).trigger('zoom-out');}}
+	var pageTracker = _gat._getTracker('UA-8067208-1');		
+	pageTracker._trackPageview('Moved to '+v_Area+' from '+V_Area+'.');
 	V_Area=v_Area;
 });
 /* Live Event - Name Hover */
@@ -1706,7 +1724,10 @@ $('.tag-box').live('keyup',function(){if($(this).attr('value').length>0){$('#cha
 /* Live Event - View Click */
 $('.view-click').live('click',function(){
 	var v_Construct=F_GetConstructID($(this).parents('[id|="construct"]').attr('id'));
-	if(!A_Cells[v_Construct]['failed']){F_ChangeView(v_Construct,$(this).attr('id').replace(/-view/g,''));}
+	var v_View=$(this).attr('id').replace(/-view/g,'');
+	if(!A_Cells[v_Construct]['failed']){F_ChangeView(v_Construct,v_View);}
+	var pageTracker = _gat._getTracker('UA-8067208-1');		
+	pageTracker._trackPageview('Changed view in '+v_Construct+' to '+v_View+'.');
 });
 
 
@@ -1764,7 +1785,7 @@ $(document).ready(function(){
 	F_AddConstruct('construct-1',{});
 	F_AddPromotion('promotion-1',{'float':'left'});
 	F_AddConstruct('construct-2',{'float':'left','padding-right':12});
-	F_AddConstruct('construct-3',{'float':'left','padding-right':12,});
+	F_AddConstruct('construct-3',{'float':'left','padding-right':12});
 	F_AddConstruct('construct-4',{'float':'left','padding-right':12});
 	F_AddConstruct('construct-5',{'display':'none','float':'left'});
 	F_AddConstruct('construct-6',{'display':'none','float':'left'});
