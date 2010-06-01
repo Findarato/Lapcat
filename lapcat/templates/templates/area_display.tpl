@@ -81,11 +81,11 @@
 	</tr>
 	<tr>
 		<td style="vertical-align:top;height: 526px; width: 384px;">
-			{foreach from=$V_displayData key=key item=value}
+			{foreach from=$V_displayData key=key item=value name=listLoop}
 			<div id="static-HTML-300-{$key}" style="vertical-align:top;display:block;">
-					<div style="float:left; height:42px; margin-top:8px; text-align:center; width:100%;">
+					<div style="float:left; height:40px; margin-bottom:3px;max-height:40px; text-align:center; width:100%;">
 						<a href="/{$area}?item={$value.ID}&date={$date}&tag={$tag}&page={$pageNum}&user={$user}">
-							<div class="button-Y-35 line-click" id="{$value.ID}" style="height:40px; width:auto;" title="Click to expand this display.">
+							<div class="{if $item == $value.ID}open-line{else}{if !isset($item) && $smarty.foreach.listLoop.first}open-line{else}button-Y-35 line-click{/if}{/if}" id="{$value.ID}" style="height:40px; width:auto;" title="Click to expand this display.">
 								<div style="background-position:0px 1px; height:19px; overflow:hidden; text-align:left; width:100%;">
 									<div style="display:table; height:18px; width:100%;">
 										<div style="display:table-cell; height:18px; overflow:hidden; vertical-align:top; max-width:100%; width:auto;">
