@@ -46,7 +46,7 @@ if(isset($v_page)){
 $smarty->Assign("page",$v_page);	
 }
 
-//print_r($_SERVER);die();
+
 
 if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
 if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
@@ -55,12 +55,12 @@ if($A_URL[0]==''){
 	$V_Area='home';
 }else{
 	foreach($A_URL as $v_Key=>$v_Text){
+		echo $v_Text;die(); 
 		switch($v_Key){
 			case 0:
 				if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}
-				switch(strtolower($v_Text)){
-					case "new":
-						$smarty -> Assign("fblink",$_SERVER["HTTP_HOST"].$_SERVER['REQUEST_URI']);
+				switch(strtolower($v_Text)){ 
+					case "static":
 						//Start of server layout code
 						$V_Static = true;
 						$idKey=$V_Buffer+1;
@@ -70,7 +70,7 @@ if($A_URL[0]==''){
 						}
 						if(isset($_GET["date"])){
 							$smarty->Assign("date",$_GET["date"]);
-						}
+						} 
 						if(isset($_GET["tag"])){
 							$smarty->Assign("tag",$_GET["tag"]);
 						}
@@ -92,7 +92,7 @@ if($A_URL[0]==''){
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);
 						}
 						
-						//print_r($V_JSON);die();
+						//print_r($V_JSON);//die();
 						
 						$smarty->Assign("currentUrl",$V_UrlString);
 						
@@ -113,20 +113,15 @@ if($A_URL[0]==''){
 									
 								}else{//we need to make sure something is always shown
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
-									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
 								}
 								if(!$V_SelectedDisplay){// a display has not been selected
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
-									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
 								}
 							}
 							for($a=0;$a<$V_JSON["page"]["total-pages"];$a++){
 								$pageData[] = $a+1;	
 							}
-							if(isset($pageData)){
-							$smarty->Assign("pageData",$pageData);	
-							}
-							
+							$smarty->Assign("pageData",$pageData);
 
 						}
 						
@@ -150,7 +145,6 @@ function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v
 // V_Area, V_Command, V_Main, V_Secondary
 if(!$V_Fresh){
 	switch($V_Area){
-		case 'get-material-lists':$V_JSON=$o_LAPCAT->f_GetMaterialLists();break;
 		case 'get-anticipated-events':$V_JSON=$o_LAPCAT->f_GetAnticipatedEvents();break;
 		case 'log-out':$V_JSON=$o_User->f_LogUserOut();break;
 		case 'status':$V_JSON=$o_User->f_GetLoggedInStatus();break;
@@ -250,10 +244,10 @@ if($V_Fresh){
 	<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
 		<?
 		if($V_Static){
-			$smarty -> assign("area","new/".$v_page);
+			$smarty -> assign("area","static/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
 			$smarty -> assign('content',"area_display.tpl");
-				
+		
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
