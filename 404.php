@@ -55,7 +55,6 @@ if($A_URL[0]==''){
 	$V_Area='home';
 }else{
 	foreach($A_URL as $v_Key=>$v_Text){
-		echo $v_Text;die(); 
 		switch($v_Key){
 			case 0:
 				if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}
