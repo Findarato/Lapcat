@@ -49,7 +49,7 @@
 			{include file="header.tpl"}
 			<div style="margin-top:21px; width:100%;">
 				<div id="interface-content-displays" style="vertical-align:top; width:100%;">
-					<div class="color-X-4 corners-bottom-3 corners-top-3" id="destination-content" style="vertical-align:top;float:left; margin-left:2%; margin-top:2px; width:96%;">
+					<div class="color-X-4 corners-bottom-3 corners-top-3" id="destination-content" style="vertical-align:top;float:left; margin-left:2%; margin-top:20px; width:96%;">
 						{include file="$content"}
 					</div>
 				</div>
