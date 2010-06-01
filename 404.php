@@ -34,6 +34,7 @@ if(isset($_SESSION["A_status"])){
 foreach($A_status as $key=>$value){
 	$V_UrlString .= $key."=".$value."&";
 }
+//print_r($_SERVER["SERVER_NAME"]);die();
 //$V_UrlString = join("&=",$A_status);
 define('SMARTY_DIR', '/www/smarty/libs/');
 require_once(SMARTY_DIR . 'Smarty.class.php');
@@ -43,10 +44,8 @@ $smarty->compile_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/templates_c'
 $smarty->cache_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/cache';
 $smarty->config_dir = $_SERVER['DOCUMENT_ROOT'].'/lapcat/templates/configs';
 if(isset($v_page)){
-$smarty->Assign("page",$v_page);	
+$smarty->assign("Areapage",$v_page);	
 }
-
-
 
 if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
 if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
@@ -65,35 +64,44 @@ if($A_URL[0]==''){
 						$idKey=$V_Buffer+1;
 						//if(!isset($v_page)){$v_page = "news"; } //to make sure that a page is loaded
 						if(isset($_GET["item"])){
-							$smarty->Assign("item",$_GET["item"]);
+							$smarty->assign("item",$_GET["item"]);
 						}
 						if(isset($_GET["date"])){
-							$smarty->Assign("date",$_GET["date"]);
+							$smarty->assign("date",$_GET["date"]);
 						} 
 						if(isset($_GET["tag"])){
-							$smarty->Assign("tag",$_GET["tag"]);
+							$smarty->assign("tag",$_GET["tag"]);
+						}
+						if(isset($_GET["tag"])){
+							$smarty->assign("tag",$_GET["tag"]);
+						}
+						if(isset($_GET["user"])){
+							$smarty->assign("user",$_GET["user"]);
+						}
+						if(!isset($_GET["page"])){
+							$_GET["page"] = 1;
 						}
 						if(count($_GET)>0){
 							foreach($_GET as $key=>$value){
-								//foreach ($A_status as $key=>$value){	$V_search .= $key."=".$value.",";	} //lets build the search.  Going to need a way to clear them from the search too
+								$smarty->assign($key,$value);
 								if($key=="user"){$key="search";}
 								
 								if($key!=="page"){
 									$V_search .= $key."=".$value.",";	
 								}
 							}
+						//	echo $V_search;die();
 							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
 							if(isset($_GET["page"]) && $_GET["page"] !==""){ //there is a page selected
 								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
-								$smarty -> Assign("pageNum",$_GET["page"]);
+								$smarty -> assign("pageNum",$_GET["page"]);
 							}
 						} else {
-							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"suggest","","",false);
+							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search","","",false);
 						}
+						//print_r($V_JSON);die();
 						
-						//print_r($V_JSON);//die();
-						
-						$smarty->Assign("currentUrl",$V_UrlString);
+						$smarty->assign("currentUrl",$V_UrlString);
 						
 						if(isset($V_JSON["data"])){
 							foreach ($V_JSON["data"] as $key=>$value){//loop though the items to work with them
@@ -107,20 +115,38 @@ if($A_URL[0]==''){
 									if($value["ID"]==$_GET["item"]){
 										$smarty -> assign("V_openLineData",$V_JSON["data"][$key]);
 										$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][$key]["name"];
+										if($v_page == "databases" || $v_page=="materials"){
+										$smarty->assign("fblink","?item=".$V_JSON["data"][$key]["ID"]."&page=".$_GET["page"]);
+										}else{
+											$smarty->assign("fblink","?item=".$V_JSON["data"][$key]["ID"]."&date=".$V_JSON["data"][$key]["o_date"]);	
+										}
+										
 										$V_SelectedDisplay = true;
 									}
 									
 								}else{//we need to make sure something is always shown
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
+									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
+									if($v_page == "databases" || $v_page=="materials"){
+										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&page=".$_GET["page"]);
+									}else{
+										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&date=".$V_JSON["data"][0]["o_date"]);
+									}
 								}
 								if(!$V_SelectedDisplay){// a display has not been selected
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
+									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
+									if($v_page == "databases" || $v_page=="materials"){
+										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&page=".$_GET["page"]);
+									}else{
+										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&date=".$V_JSON["data"][0]["o_date"]);
+									}
 								}
 							}
 							for($a=0;$a<$V_JSON["page"]["total-pages"];$a++){
 								$pageData[] = $a+1;	
 							}
-							$smarty->Assign("pageData",$pageData);
+							$smarty->assign("pageData",$pageData);
 
 						}
 						
@@ -212,19 +238,13 @@ if($V_Fresh){
 		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
 		<link id="index-css-theme" rel="stylesheet" type="text/css" href="/lapcat/css/themes/theme-generator.php?theme=<?=$o_User->a_User['theme'];?>" />
 		<script type="text/javascript">
-		
-		  var _gaq = _gaq || [];
-		  _gaq.push(['_setAccount', 'UA-8067208-1']);
-		  _gaq.push(['_trackPageview']);
-		
-		  (function() {
-		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		  })();
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 		</script>
-		
-		
+		<script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-8067208-1");
+			pageTracker._trackPageview();
+		</script>
 		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 		<? if(!$V_Static){ ?>
 		<script type="text/javascript">
@@ -237,13 +257,28 @@ if($V_Fresh){
 		
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
 		<script src="/lapcat/java/combine.php"></script>
-		<?} ?>
+		<?}?>
 		
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
+	<div id="fb-root"></div>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({appId: 'your app id', status: true, cookie: true,
+		             xfbml: true});
+		  };
+		  (function() {
+		    var e = document.createElement('script'); e.async = true;
+		    e.src = document.location.protocol +
+		      '//connect.facebook.net/en_US/all.js';
+		    document.getElementById('fb-root').appendChild(e);
+		  }());
+		</script>
+
 	<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
 		<?
 		if($V_Static){
+			$smarty -> assign("tld",$_SERVER["SERVER_NAME"]);
 			$smarty -> assign("area","static/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
 			$smarty -> assign('content',"area_display.tpl");
@@ -251,7 +286,7 @@ if($V_Fresh){
 		
 		$smarty -> display('body.tpl');
 		include_once $V_ServerRoot.'/lapcat/layout/live-test-2009.php';
-		flush();
+		//flush();
 		?>
 	</body>
 </html>

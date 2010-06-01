@@ -21,7 +21,7 @@
 															<tr>
 																<td style="height:46px; padding:1px; vertical-align:top; width:100%;">
 																	<div class="button-Y-fake" style="float:left; height:40px; margin-top:4px; width:100%; text-align:center;">
-																	{if $page=="databases"}
+																	{if $Areapage=="databases"}
 																		<div class="font-fake button-blue database-dockable font-G shadow-or-light-X-up" style="height:40px; width:100%;">
 																	{else}
 																		<div class="font-fake font-G shadow-or-light-X-up" style="height:40px; width:100%;">
@@ -29,7 +29,7 @@
 																			<table style="height:40px; width:100%;">
 																				<tr>
 																					<td style="height:20px; overflow:hidden; vertical-align:top; width:auto;">
-																						{if $page=="databases"}
+																						{if $Areapage=="databases"}
 																							<a target="databases" href="{$V_openLineData.link_in}">
 																								<font class="font-Y" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">{$V_openLineData.name}</font>
 																							</a>
@@ -47,10 +47,17 @@
 																<td style="height:390px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top; width:100%;">
 																<div class="border-bottom-C-1" style="float:left; height:1px; width:100%;"></div>
 																<div class="shadow-or-light-X-up" style="height:20px; text-align:left; vertical-align:top; width:100%;">
-																	{if $page == "news"} 
-																	<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
-																	<a class="add-to-search user-link-1 font-X" href="/{$area}/user/{$V_openLineData.entered_by_id}" style="font-size:12px; margin-right:3px;">{$V_openLineData.username}</a>
+																	{if $Areapage == "news"} 
+																	<span class="font-I" style="font-size:10px; margin-left:12px;">by</span>
+																	<a class="add-to-search user-link-1 font-X" href="/{$area}?item={$item}&date={$date}&tag={$tag}&user={$V_openLineData.entered_by_id}" style="font-size:12px; margin-right:3px;">{$V_openLineData.username}</a>
 																	{/if}
+																	{if $Areapage == "events"} 
+																	<span class="font-I" style="font-size:10px; margin-left:12px;float:left;">at</span>
+																	<a class="add-to-search library-link-1 font-X" href="/{$area}?item={$item}&date={$date}&tag={$tag}&user={$V_openLineData.library_ID}" style="font-size:12px; margin-right:3px;;float:left;">{$V_openLineData.library}</a>
+																	<div class="font-I" style="font-size:10px; margin-left:12px;float:left;">starts at</div>
+																	<div style="font-size:12px; margin-left:3px;float:left;"> {$V_openLineData.start|date_format:'%I:%M %p'}</div>
+																	{/if}
+
 																</div>
 																<div style="float:left; overflow:hidden; overflow:auto; height:360px; width:100%;"><font class="font-X post-title" id="general-font-size" style="float:left; font-size:15px; margin-top:12px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">{$V_openLineData.description}</font></div>
 																</td>
@@ -58,11 +65,12 @@
 															<tr>
 																<td style="height:24px; overflow:hidden; vertical-align:top; width:100%;">
 																<!--// Button - Facebook Share //-->
-																{if $page == "news"} 
+																{if $Areapage == "news"} 
 																<div class="button-black light-up" id="option-share" style="display:block; float:right; height:19px; width:68px; text-align:center;" title="Click to share this article on Facebook."><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script><a class="font-G" name="fb_share" type="icon_link" share_url="http://dev.lapcat.org/news/specific/replace-ID" href="http://www.facebook.com/sharer.php" style="font-size:14px;" target="_blank">share</a></div>
 																{/if}
-																{if $page == "materials" || $page == "databases"} 
-																<iframe src="http://www.facebook.com/widgets/like.php?href={$fblink}" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe>
+																{if $Areapage == "materials" || $Areapage == "databases" ||$Areapage == "events"} 
+																<fb:like href="{$tld}/{$area}{$fblink}" font="arial"></fb:like>
+																<!--<iframe src="http://www.facebook.com/widgets/like.php?href={$area}{$fblink}" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe>-->
 																<!--<div class="button-black light-up" id="option-share" style="display:block; float:right; height:19px; width:68px; text-align:center;" title="Click to share this article on Facebook."><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script><a class="font-G" name="fb_share" type="icon_link" share_url="http://dev.lapcat.org/news/specific/replace-ID" href="http://www.facebook.com/sharer.php" style="font-size:14px;" target="_blank">share</a></div>-->
 																{/if}
 																</td>
