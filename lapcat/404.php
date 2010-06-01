@@ -59,7 +59,7 @@ if($A_URL[0]==''){
 			case 0:
 				if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}
 				switch(strtolower($v_Text)){
-					case "new":
+					case "static":
 						//Start of server layout code
 						$V_Static = true;
 						$idKey=$V_Buffer+1;
