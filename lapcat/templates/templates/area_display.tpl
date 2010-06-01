@@ -6,18 +6,14 @@
 				{if $Areapage != "hours"}
 				{foreach from=$pageData key=key item=value}
 					<a href="/{$area}?date={$date}&tag={$tag}&page={$value}">
-						{if $value == $page}
-						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" onfocus="javascript:this.blur();" name="1" id="button-page" class="button-blue-2">
-						{else}
-						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" onfocus="javascript:this.blur();" name="1" id="button-page" class="button-blue">
-						{/if}
+						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" name="{$value}" id="button-page-{$value}" class="button-blue{if $value == $page}-2{/if}">
 							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">{$value}</span>
 						</div>
 					</a>
 				{/foreach}
 				{else}
 					<a href="/{$area}?date={$date}&tag={$tag}&page=1">
-						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" onfocus="javascript:this.blur();" name="1" id="button-page" class="button-blue-2">
+						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" name="1" id="button-page-1" class="button-blue-2">
 							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">1</span>
 						</div>
 					</a>
