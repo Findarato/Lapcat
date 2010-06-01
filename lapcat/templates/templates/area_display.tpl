@@ -1,22 +1,39 @@
 <table cellpadding="0" cellspacing="0" width="960px" id="static" style="display:block;">
 	<tr>
 		<td colspan="2" style="vertical-align:top;">
-			<div style="width:100%">
-<div class="font-bold font-X" style="float: left; font-size: 10px; margin-left: 4px; margin-right: 2px; text-align: center; vertical-align: top; width: auto;">Page:</div>
+			<div style="position: absolute; padding-left: 12px; top: 71px;left:10px; width: 400px;">
+				<div class="font-bold font-X" style="float: left; font-size: 10px; margin-left: 4px; margin-right: 2px; text-align: center; vertical-align: top; width: auto;">Page:</div>
+					<a href="/{$area}?date={$date}&tag={$tag}&page=1">
+						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" name="1" id="button-page-1" class="button-blue{if $page == 1}-2{/if}">
+							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">1</span>
+						</div>
+					</a>
 				{if $Areapage != "hours"}
-				{foreach from=$pageData key=key item=value}
+				{if $page>3}
+					<font style="float: left; font-size: 10px; margin-right: 4px; vertical-align: top; text-align: center; width: 20px;" class="font-bold font-X">...</font>
+				{/if}
+				{foreach from=$pageData key=key item=value name=pageDisplay}
+					{if $page!=1 && $page!=2}
+						{if $value == $page || $value==$page-1 || $value==$page+1}
 					<a href="/{$area}?date={$date}&tag={$tag}&page={$value}">
 						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" name="{$value}" id="button-page-{$value}" class="button-blue{if $value == $page}-2{/if}">
 							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">{$value}</span>
 						</div>
 					</a>
-				{/foreach}
-				{else}
-					<a href="/{$area}?date={$date}&tag={$tag}&page=1">
-						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" name="1" id="button-page-1" class="button-blue-2">
-							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">1</span>
+						{/if}
+					{else}
+						{if $value==2 || $value==3}
+					<a href="/{$area}?date={$date}&tag={$tag}&page={$value}">
+						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" name="{$value}" id="button-page-{$value}" class="button-blue{if $value == $page}-2{/if}">
+							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">{$value}</span>
 						</div>
 					</a>
+						{/if}
+					{/if}
+				{/foreach}
+				{if $smarty.foreach.pageDisplay.total !=$page && $smarty.foreach.pageDisplay.total>3}
+					<font style="float: left; font-size: 10px; margin-right: 4px; vertical-align: top; text-align: center; width: 20px;" class="font-bold font-X">...</font>
+				{/if}
 				{/if}
 			</div>
 		</td>
