@@ -1,12 +1,26 @@
 <table cellpadding="0" cellspacing="0" width="960px" id="static" style="display:block;">
 	<tr>
 		<td colspan="2" style="vertical-align:top;">
-			<div>
+			<div style="width:100%">
+<div class="font-bold font-X" style="float: left; font-size: 10px; margin-left: 4px; margin-right: 2px; text-align: center; vertical-align: top; width: auto;">Page:</div>
 				{if $Areapage != "hours"}
-				<div style="float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:auto;">Page:</div>
 				{foreach from=$pageData key=key item=value}
-					<a class="corners-bottom-2 corners-top-2 page-click button-blue font-G" href="/{$area}?date={$date}&tag={$tag}&page={$value}" style="line-height:8px;display:block;float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:18px;">{$value}</a>
+					<a href="/{$area}?date={$date}&tag={$tag}&page={$value}">
+						{if $value == $page}
+						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" onfocus="javascript:this.blur();" name="1" id="button-page" class="button-blue-2">
+						{else}
+						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" onfocus="javascript:this.blur();" name="1" id="button-page" class="button-blue">
+						{/if}
+							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">{$value}</span>
+						</div>
+					</a>
 				{/foreach}
+				{else}
+					<a href="/{$area}?date={$date}&tag={$tag}&page=1">
+						<div style="float: left; margin-right: 4px; height: 12px; text-align: center; vertical-align: top; width: 18px;" onfocus="javascript:this.blur();" name="1" id="button-page" class="button-blue-2">
+							<span style="font-weight: bold; font-size: 10px; vertical-align: top;" class="font-G">1</span>
+						</div>
+					</a>
 				{/if}
 			</div>
 		</td>
