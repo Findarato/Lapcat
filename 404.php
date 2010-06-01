@@ -63,6 +63,7 @@ if($A_URL[0]==''){
 						$V_Static = true;
 						$idKey=$V_Buffer+1;
 						//if(!isset($v_page)){$v_page = "news"; } //to make sure that a page is loaded
+		/*
 						if(isset($_GET["item"])){
 							$smarty->assign("item",$_GET["item"]);
 						}
@@ -78,6 +79,7 @@ if($A_URL[0]==''){
 						if(isset($_GET["user"])){
 							$smarty->assign("user",$_GET["user"]);
 						}
+						*/
 						if(!isset($_GET["page"])){
 							$_GET["page"] = 1;
 						}
@@ -115,7 +117,7 @@ if($A_URL[0]==''){
 									if($value["ID"]==$_GET["item"]){
 										$smarty -> assign("V_openLineData",$V_JSON["data"][$key]);
 										$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][$key]["name"];
-										if($v_page == "databases" || $v_page=="materials"){
+										if($v_page == "databases" || $v_page=="materials" || $v_page=="hours"){
 										$smarty->assign("fblink","?item=".$V_JSON["data"][$key]["ID"]."&page=".$_GET["page"]);
 										}else{
 											$smarty->assign("fblink","?item=".$V_JSON["data"][$key]["ID"]."&date=".$V_JSON["data"][$key]["o_date"]);	
@@ -127,7 +129,7 @@ if($A_URL[0]==''){
 								}else{//we need to make sure something is always shown
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
 									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
-									if($v_page == "databases" || $v_page=="materials"){
+									if($v_page == "databases" || $v_page=="materials" || $v_page=="hours"){
 										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&page=".$_GET["page"]);
 									}else{
 										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&date=".$V_JSON["data"][0]["o_date"]);
@@ -136,7 +138,7 @@ if($A_URL[0]==''){
 								if(!$V_SelectedDisplay){// a display has not been selected
 									$smarty -> assign("V_openLineData",$V_JSON["data"][0]);
 									$a_Share["name"] = "LAPCAT - ".$V_JSON["data"][0]["name"];
-									if($v_page == "databases" || $v_page=="materials"){
+									if($v_page == "databases" || $v_page=="materials" || $v_page=="hours"){
 										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&page=".$_GET["page"]);
 									}else{
 										$smarty->assign("fblink","?item=".$V_JSON["data"][0]["ID"]."&date=".$V_JSON["data"][0]["o_date"]);
@@ -146,7 +148,10 @@ if($A_URL[0]==''){
 							for($a=0;$a<$V_JSON["page"]["total-pages"];$a++){
 								$pageData[] = $a+1;	
 							}
-							$smarty->assign("pageData",$pageData);
+							if(isset($pageData)){
+								$smarty->assign("pageData",$pageData);	
+							}
+							
 
 						}
 						
