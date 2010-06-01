@@ -2,7 +2,7 @@
 	<tr>
 		<td colspan="2" style="vertical-align:top;">
 			<div>
-				{if $page != "hours"}
+				{if $Areapage != "hours"}
 				<div style="float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:auto;">Page:</div>
 				{foreach from=$pageData key=key item=value}
 					<a class="corners-bottom-2 corners-top-2 page-click button-blue font-G" href="/{$area}?date={$date}&tag={$tag}&page={$value}" style="line-height:8px;display:block;float:left; margin-right:4px; height:12px; text-align:center; vertical-align:top; width:18px;">{$value}</a>
@@ -57,7 +57,7 @@
 			{foreach from=$V_displayData key=key item=value}
 			<div id="static-HTML-300-{$key}" style="vertical-align:top;display:block;">
 					<div style="float:left; height:42px; margin-top:8px; text-align:center; width:100%;">
-						<a href="/{$area}?item={$value.ID}&date={$date}&tag={$tag}&page={$pageNum}">
+						<a href="/{$area}?item={$value.ID}&date={$date}&tag={$tag}&page={$pageNum}&user={$user}">
 							<div class="button-Y-35 line-click" id="{$value.ID}" style="height:40px; width:auto;" title="Click to expand this display.">
 								<div style="background-position:0px 1px; height:19px; overflow:hidden; text-align:left; width:100%;">
 									<div style="display:table; height:18px; width:100%;">
@@ -79,9 +79,13 @@
 									<div style="width:100%;">
 										<div style="float:left; margin-left:1px; vertical-align:top; width:210px;">
 											<div style="margin:1px; text-align:left; width:auto;">
-											{if $page == "news"}
+											{if $Areapage == "news"}
 												<font class="font-X" style="font-size:10px; margin-left:12px;">by</font>
 												<a class="add-to-search user-link-1 font-X" href="/{$area}?item={$item}&date={$date}&tag={$tag}&user={$value.entered_by_id}" style="font-size:12px; margin-right:3px;">{$value.username}</a>
+											{/if}
+											{if $Areapage == "events"}
+												<font class="font-X" style="font-size:10px; margin-left:12px;">at</font>
+												<a class="add-to-search user-link-1 font-X" href="/{$area}?item={$item}&date={$date}&tag={$tag}&user={$value.library_ID}" style="font-size:12px; margin-right:3px;">{$value.library}</a>
 											{/if}
 											</div>
 										</div>
@@ -97,7 +101,7 @@
 			{/foreach}
 		</td>
 		<td width="584px" style="vertical-align:top;">
-			{if $page != "hours"}
+			{if $Areapage != "hours"}
 				{include file="main_display.tpl"}
 			{else}
 				{include file="hours_display.tpl"}
