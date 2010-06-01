@@ -144,6 +144,7 @@ function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v
 // V_Area, V_Command, V_Main, V_Secondary
 if(!$V_Fresh){
 	switch($V_Area){
+		case 'get-material-lists':$V_JSON=$o_LAPCAT->f_GetMaterialLists();break;
 		case 'get-anticipated-events':$V_JSON=$o_LAPCAT->f_GetAnticipatedEvents();break;
 		case 'log-out':$V_JSON=$o_User->f_LogUserOut();break;
 		case 'status':$V_JSON=$o_User->f_GetLoggedInStatus();break;
@@ -246,7 +247,6 @@ if($V_Fresh){
 			$smarty -> assign("area","static/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
 			$smarty -> assign('content',"area_display.tpl");
-		
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
