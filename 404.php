@@ -59,27 +59,16 @@ if($A_URL[0]==''){
 				if($v_Text=='quick'||$v_Text=='fresh'){$V_Clear=$v_Text;$V_Fresh=false;}
 				switch(strtolower($v_Text)){ 
 					case "static":
+
 						//Start of server layout code
 						$V_Static = true;
 						$idKey=$V_Buffer+1;
-						//if(!isset($v_page)){$v_page = "news"; } //to make sure that a page is loaded
-		/*
-						if(isset($_GET["item"])){
-							$smarty->assign("item",$_GET["item"]);
+						if($v_page=="home"){
+							$V_NewsJSON=$o_LAPCAT->f_PerformRequest("quick","news","search","","",false);
+							$V_EventsJSON=$o_LAPCAT->f_PerformRequest("quick","events","search","","",false);
+							$V_DatabasesJSON=$o_LAPCAT->f_PerformRequest("quick","databases","search","","",false);
+							break;
 						}
-						if(isset($_GET["date"])){
-							$smarty->assign("date",$_GET["date"]);
-						} 
-						if(isset($_GET["tag"])){
-							$smarty->assign("tag",$_GET["tag"]);
-						}
-						if(isset($_GET["tag"])){
-							$smarty->assign("tag",$_GET["tag"]);
-						}
-						if(isset($_GET["user"])){
-							$smarty->assign("user",$_GET["user"]);
-						}
-						*/
 						if(!isset($_GET["page"])){
 							$_GET["page"] = 1;
 						}
@@ -286,7 +275,16 @@ if($V_Fresh){
 			$smarty -> assign("tld",$_SERVER["SERVER_NAME"]);
 			$smarty -> assign("area","static/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
-			$smarty -> assign('content',"area_display.tpl");
+			if($v_page=="home"){
+				$smarty -> assign("V_displayEventsData",$V_EventsJSON["data"]);
+				$smarty -> assign("V_displayDatabaseData",$V_DatabasesJSON["data"]);
+				$smarty -> assign("V_displayNewsData",$V_NewsJSON["data"]);
+				$smarty -> assign('content',"home.tpl");
+			}else{
+				$smarty -> assign('content',"area_display.tpl");	
+			}
+			
+			
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
