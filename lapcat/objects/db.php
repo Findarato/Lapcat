@@ -23,7 +23,7 @@
 		//Define the database connection information
 		private $prefixString = "{prefix}";
 		private $storeResults = array(); //Store query results for later in the rendering.
-		function getInstance(){
+		function getInstance(){ 
 			static $instance;
 			if(!isset($instance)){
 				$object= __CLASS__;
@@ -73,9 +73,8 @@
 		 * @since 1.0
 		 * @return int
 		 */
-		public function Count_res(){return mysql_num_rows($this -> v_Resid);	}
-		public function f_Count_res(){return $this->Count_res;}
-		public function f_Query($sql = "",$cache = false){$this->Query($sq,$cache);}
+		public function Count_res(){return mysql_num_rows($this -> Resid);	}
+
 		/**
 		 * Runs the query passed to it.
 		 * @since 1.0
@@ -124,8 +123,7 @@
 		 * @param string $type
 		 * @param bool $force[optional]
 		 */
-		public function f_Fetch($type,$force = FALSE){ return $this->Format($type,$force);} // to be more like mysql
-		public function Fetch($type,$force = FALSE){ return $this->Format($type,$force);} // to be more like mysql
+		public function Fetch($type,$force = FALSE,$idField="id"){ return $this->Format($type,$force,$idField);} // to be more like mysql
 		/**
 		 * Used to save stored resluts.  Can be dangerous and should be used with caution.
 		 * @return int|string
@@ -160,7 +158,7 @@
 		 * @param string $type
 		 * @param bool $force[optional]
 		 */
-		public function Format($type,$force = false){
+		public function Format($type,$force = false,$idField = "id"){
 			$return = "";
 			if(count($this -> Error) == 2){//there is an error
 				return "There was an error with the query"; 
@@ -168,33 +166,33 @@
 				switch(strtolower($type)){
 					case "assoc":
 						if($this -> Count_res() == 1 || $force === true)
-							$return = mysql_fetch_assoc($this -> v_Resid); 
+							$return = mysql_fetch_assoc($this -> Resid); 
 						else					
-							while($line = mysql_fetch_assoc($this -> v_Resid)){ $return[] = $line; }
+							while($line = mysql_fetch_assoc($this -> Resid)){ $return[] = $line; }
 					break;
 					case "row":
 						if($this -> Count_res() == 1 || $force === true){
-							$return = mysql_fetch_row($this -> v_Resid);
+							$return = mysql_fetch_row($this -> Resid);
 						}else{
-							while($line = mysql_fetch_row($this -> v_Resid)){ $return[] = $line; }
-						}
-						if($this->Count_res() > 0){
-							if(count($return) == 1) {$return = $return[0];} //make sure its more than one
-						}
+							while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }}
+							if($this->Count_res() > 0){
+								if(count($return) == 1) {$return = $return[0];} //make sure its more than one
+							}
 					break;
 					case "assoc_array":
-						while($line = mysql_fetch_assoc($this -> v_Resid)){
-							$return[] = $line; 
+						while($line = mysql_fetch_assoc($this -> Resid)){ 
+							if(isset($line[$idField])){
+								$return[$line[$idField]] = $line;	
+							}else{
+								$return[] = $line;	
+							}
+						 
 						}
 					break;
 					case "row_array":
-						while($line = mysql_fetch_row($this -> v_Resid)){ $return[] = $line; }
-						if(count($return[0])==1){
-							foreach($return as $r){
-								$newArray[]=$r[0];
-							}
-							$return = $newArray;
-						}
+						while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }
+						if(count($return) == 1) {return $return;} //make sure its more than one
+						if(count($return[0])==1){foreach($return as $r){$newArray[]=$r[0];}	$return = $newArray;}
 					break;
 					default:
 						$return = "broke";
@@ -204,7 +202,6 @@
 				return $return;
 			}
  		}
-		public function f_Format($type,$force = FALSE){ return $this->Format($type,$force);} // to be more like mysql
 		/**
 		 * Used to clean and escape a string for entering into a SQL query
 		 * 
@@ -212,7 +209,7 @@
 		 * @return string
 		 * @param string $item
 		 */
-		public function Escape_str($item){foreach ($item as $key=>$i){$return[$key] = "'".mysql_real_escape_string($i)."'";	}return $return;}
+		public function Escape_str($item){foreach ($item as $key=>$i){$return[] = "'".mysql_real_escape_string($i)."'";	}return $return;}
 		/**
 		 * Used to clean and escape an Array for entering into a SQL query
 		 * 
@@ -220,16 +217,8 @@
 		 * @return string
 		 * @param mixed $array
 		 */
-		public function Mysql_clean($array){
-			$holderArray=array();
-			foreach ($array as $key => $value){
-				if(is_array($value)){
-					$holderArray[$key] = $this->Mysql_clean($value);	
-				}else{
-					$holderArray[$key] = mysql_real_escape_string($value);
-				}
-			}	return $holderArray;
-		}
+		public function Mysql_clean($array){$holderArray=array();foreach ($array as $key => $value){$holderArray[$key] = mysql_real_escape_string($value);}	return $holderArray;}
+
 		/**
 		 * Cleans a string.  More robust than the 2 above
 		 * 
@@ -262,5 +251,5 @@
 		 * @param string $sql
 		 */
 		private function prefixParse($sql){	return str_replace($this->prefixString,$this->Prefix,$sql);}
-    }
+	}
 ?>
