@@ -164,6 +164,7 @@ function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v
 // V_Area, V_Command, V_Main, V_Secondary
 if(!$V_Fresh){
 	switch($V_Area){
+		case 'get-material-list':$V_JSON=$o_LAPCAT->f_GetMaterialList($V_Command);break;
 		case 'get-material-lists':$V_JSON=$o_LAPCAT->f_GetMaterialLists(true);break;
 		case 'get-anticipated-events':$V_JSON=$o_LAPCAT->f_GetAnticipatedEvents();break;
 		case 'log-out':$V_JSON=$o_User->f_LogUserOut();break;
@@ -236,10 +237,6 @@ if($V_Fresh){
 			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 		</script>
-		<script type="text/javascript">
-			var pageTracker = _gat._getTracker("UA-8067208-1");
-			pageTracker._trackPageview();
-		</script>
 		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 		<? if(!$V_Static){ ?>
 		<script type="text/javascript">
@@ -248,7 +245,6 @@ if($V_Fresh){
 		</script>
 		<script src="/lapcat/java/get-all-tags.php" type="text/javascript"></script>
 		<script src="/lapcat/java/get-all-content-providers.php" type="text/javascript"></script>
-		<script defer src="/lapcat/java/pngfix.js" type="text/javascript"></script>
 		
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
 		<script src="/lapcat/java/combine.php"></script>
@@ -256,6 +252,10 @@ if($V_Fresh){
 		
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
+		<script type="text/javascript">
+			var pageTracker = _gat._getTracker("UA-8067208-1");
+			pageTracker._trackPageview();
+		</script>
 	<div id="fb-root"></div>
 		<script>
 		  window.fbAsyncInit = function() {
