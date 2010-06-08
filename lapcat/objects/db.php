@@ -75,15 +75,18 @@
 		 */
 		public function Count_res(){return mysql_num_rows($this -> v_Resid);	}
 		public function f_Count_res(){return $this->Count_res;}
+		public function f_Query($sql = "",$cache = false){$this->Query($sq,$cache);}
 		/**
 		 * Runs the query passed to it.
 		 * @since 1.0
 		 * @return int|string|bool (You should never get back true, its just a catch all)
 		 * @param string $sql[optional] not really optional.  Will just run a blank query.  Useful for testing
 		 * @param bool $cache[optional] defaults to false
+		 * @param bool $fetch[optional] if passed will call format with the value.
+		 * @param bool $force[optional] see format for definition
+		 * @param string $fetchId [optional] the id field to set as each key of a multidementional array
 		 */
-		public function f_Query($sql = "",$cache = false){$this->Query($sq,$cache);}
-		public function Query($sql = "",$cache = false){
+		public function Query($sql = "",$cache = false,$fetch=false,$force=false,$fetchId=false){
 			if($this -> linkid != 0){
 				//mysql_ping($this -> linkid);
 				$sql = $this->prefixParse($sql); //Lets check to see if the prefix string is being used
@@ -92,22 +95,24 @@
 						str_replace("select","SELECT SQL_CACHE",strtolower($sql));
 					}
 				}
-				$return = mysql_query($sql,$this -> linkid) or $return = 0;
-				$this -> v_Resid = $return;
+				$return = mysql_query($sql,$this -> linkid) or $return = FALSE;
+				$this -> Resid = $return;
 				$this -> Lastsql = $sql;
-				$this -> v_Lastsql = $sql;
 				if(!$return){//set the error values
 					$this -> Error["Query"] = $this -> Lastsql;
 					$this -> Error["Error"] = mysql_error();
-					$this -> a_Error["Query"] = $this -> Lastsql;
-					$this -> a_Error["Error"] = mysql_error();
 					$return = "There was an error with your sql";
 				}else { $this -> Error = array(); 
-					$this -> v_Queries++;
+					$this -> Queries++;
 					if(strpos(strtolower($sql),"insert") == 0){//this was an insert
-						$this -> v_Lastid = mysql_insert_id($this -> linkid);	}
+						$this -> Lastid = mysql_insert_id($this -> linkid);	}
 				}
-				return true; //Something always has to be returned
+				if(!$fetch){
+					return true; //Something always has to be returned	
+				}else{
+					return $this->Fetch($fetch,$force,$fetchId);
+				}
+				
 			}
 		}
 		/**
