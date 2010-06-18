@@ -54,7 +54,7 @@
 					</div>
 				</div>
 			</div>
-
 		</td></tr></table>
 	</div>
 </td></tr></table>
+{include file="popup.tpl"}
