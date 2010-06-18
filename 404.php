@@ -249,6 +249,29 @@ if($V_Fresh){
 		
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
 		<script src="/lapcat/java/combine.php"></script>
+		<style>
+			#anchored-message-box{
+				position:absolute;
+				bottom:-114px;
+				-moz-transition: all 1s ease-out;  /* FF3.7+ */
+       			-o-transition: all 1s ease-out;  /* Opera 10.5 */
+  				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
+			}
+		</style>
+		<?}else{?>
+		<style>
+			#anchored-message-box{
+				position:absolute;
+				bottom:-90px;
+				-moz-transition: all 1s ease-out;  /* FF3.7+ */
+       			-o-transition: all 1s ease-out;  /* Opera 10.5 */
+  				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
+			}
+			#anchored-message-box:hover{
+				position:absolute;
+				bottom:0px;
+			} 
+		</style>
 		<?}?>
 		
 	</head>
@@ -277,6 +300,7 @@ if($V_Fresh){
 			$smarty -> assign("tld",$_SERVER["SERVER_NAME"]);
 			$smarty -> assign("area","static/".$v_page);
 			$smarty -> assign("V_displayData",$V_JSON["data"]);
+			$smarty -> assign('content',"home.tpl");
 			if($v_page=="home"){
 				$smarty -> assign("V_displayEventsData",$V_EventsJSON["data"]);
 				$smarty -> assign("V_displayDatabaseData",$V_DatabasesJSON["data"]);
@@ -285,8 +309,6 @@ if($V_Fresh){
 			}else{
 				$smarty -> assign('content',"area_display.tpl");	
 			}
-			
-			
 		}else{$smarty -> assign('content',"blank.tpl");}
 		
 		$smarty -> display('body.tpl');
