@@ -44,6 +44,55 @@ header('content-type:text/css'); header("Expires: ".time(). " GMT");
 		'F'=>'35,155,255',  // Theme Color VI
 */
 
+
+
+
+function rgb2hsl($rgb){
+    $clrR = ($rgb[0]);
+    $clrG = ($rgb[1]);
+    $clrB = ($rgb[2]);
+	if(isset($rgb[3])){
+		$clrA = ($rgb[3]);		
+	}else{$clrA = false;}
+    
+    $clrMin = min($clrR, $clrG, $clrB);
+    $clrMax = max($clrR, $clrG, $clrB);
+    $deltaMax = $clrMax - $clrMin;
+    
+    $L = ($clrMax + $clrMin) / 510;
+    
+    if (0 == $deltaMax){
+        $H = 0;
+        $S = 0;
+    }
+    else{
+        if (0.5 > $L){
+            $S = $deltaMax / ($clrMax + $clrMin);
+        }
+        else{
+            $S = $deltaMax / (510 - $clrMax - $clrMin);
+        }
+
+        if ($clrMax == $clrR) {
+            $H = ($clrG - $clrB) / (6.0 * $deltaMax);
+        }
+        else if ($clrMax == $clrG) {
+            $H = 1/3 + ($clrB - $clrR) / (6.0 * $deltaMax);
+        }
+        else {
+            $H = 2 / 3 + ($clrR - $clrG) / (6.0 * $deltaMax);
+        }
+
+        if (0 > $H) $H += 1;
+        if (1 < $H) $H -= 1;
+    }
+    if($clrA){
+		return array(round($H*360), round($S),round($L),$clrA);
+	}else{return array(round($H*360), round($S),round($L));}
+}
+
+
+$v_HSL = false;
 $a_Theme=array(
 	'background'=>'url(/lapcat/layout/images/1680-1050-31.png)', // BG Image
 	'special-background'=>'url(/lapcat/layout/transparent-colors/1-1-G-50.png)',
@@ -135,6 +184,8 @@ $a_OpenLineBG=array(
 );
 if(isset($_GET['theme'])){
 	$v_Theme=$_GET['theme'];
+	if(isset($_GET['hsl'])){$v_HSL = true;}
+	//$v_HSL = true;
 	$v_Theme=22;
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_Theme];}
@@ -292,6 +343,10 @@ if(isset($_GET['json'])){
 	echo '.user-link-2{padding-bottom:3px; padding-left:20px; background:url(http://cdn1.lapcat.org/famfamfam/silk/user.png) no-repeat 0 50%; text-decoration:underline;}';
 
 	// C o r n e r s
+	// Corner - All
+	echo '.corners-all-1{-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}';
+	echo '.corners-all-2{-moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.corners-all-3{-moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px;}';
 	// Corner - Bottom
 	echo '.corners-bottom-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; -moz-border-radius-bottomright:2px; -webkit-border-bottom-right-radius:2px; border-bottom-left-radius:2px; border-bottom-right-radius:2px;}';
 	echo '.corners-bottom-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -moz-border-radius-bottomright:4px; -webkit-border-bottom-right-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;}';
@@ -323,8 +378,9 @@ if(isset($_GET['json'])){
 
 	// B o r d e r s
 	// Border - A
+	
 	echo '.border-all-A-1{border:1px solid rgb('.$a_Theme['color']['A'].');}';
-	echo '.border-all-A-2{border:2px solid rgb('.$a_Theme['color']['A'].');}';
+	echo '.border-all-A-2{border:2px solid rgb('.$a_Theme['color']['A'].');}';	
 	echo '.border-bottom-A-1{border-bottom:1px solid rgb('.$a_Theme['color']['A'].');}';
 	echo '.border-left-A-1{border-left:1px solid rgb('.$a_Theme['color']['A'].');}';
 	echo '.border-right-A-1{border-right:1px solid rgb('.$a_Theme['color']['A'].');}';
@@ -487,6 +543,11 @@ if(isset($_GET['json'])){
 	echo '.color-K-2{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.8);}';
 	echo '.color-K-3{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.6);}';
 	echo '.color-K-4{background-color:rgb('.$a_Theme['color']['K'].'); background-color:rgba('.$a_Theme['color']['K'].',0.3);}';
+	// Color - L
+	echo '.color-L-1{background-color:rgb('.$a_Theme['color']['L'].');}';
+	echo '.color-L-2{background-color:rgb('.$a_Theme['color']['L'].'); background-color:rgba('.$a_Theme['color']['L'].',0.8);}';
+	echo '.color-L-3{background-color:rgb('.$a_Theme['color']['L'].'); background-color:rgba('.$a_Theme['color']['L'].',0.6);}';
+	echo '.color-L-4{background-color:rgb('.$a_Theme['color']['L'].'); background-color:rgba('.$a_Theme['color']['L'].',0.3);}';
 	// Color - O
 	echo '.color-T-1{background-color:rgb('.$a_Theme['color']['T'].');}';
 	echo '.color-T-2{background-color:rgb('.$a_Theme['color']['T'].'); background-color:rgba('.$a_Theme['color']['T'].',0.8);}';
@@ -622,71 +683,6 @@ if(isset($_GET['json'])){
 	echo '.open-line{background-color:rgb('.$a_Theme['color']['D'].'); background-color:rgba('.$a_Theme['color']['K'].',0.10); border:1px solid rgba(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	echo '.open-line:hover{background-color:rgba('.$a_Theme['color']['K'].',0.15);}';
 
-	// Button - X 1
-	echo '.button-X{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-X:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}';
-
-	// Button - X Fake
-	echo '.button-X-fake{background-color:rgb(26,26,52); border:1px solid rgb(126,126,152); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	// Button - Y Fake
-	echo '.button-Y-fake{background-color:rgb(225,225,251); border:1px solid rgb(179,179,205); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-
-	// Button - X 35 (Alpha)
-	echo '.button-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-X-35:hover{background-color:rgba(26,26,26,0.35); border:1px solid rgba(126,126,126,0.35);}';
-
-	// Menu - X 35 (Alpha)
-	echo '.menu-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	echo '.menu-X-35:hover{background-color:rgba(76,76,76,0.65);}';
-	// Menu - X 65 (Alpha)
-	echo '.menu-X-65{background-color:rgba(0,0,0,0.65); border:1px solid rgba(76,76,76,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	echo '.menu-X-65:hover{background-color:rgb(76,76,76);}';
-
-	// Menu - Y 35 (Alpha)
-	echo '.menu-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	echo '.menu-Y-35:hover{background-color:rgba(255,255,255,0.65);}';
-	// Menu - Y 65 (Alpha)
-	echo '.menu-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(179,179,179,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	echo '.menu-Y-65:hover{background-color:rgb(255,255,255);}';
-
-	// Menu - Z 35 (Alpha)
-	echo '.menu-Z-35{background-color:rgba(78,91,130,0.35); border:1px solid rgba(0,13,119,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.menu-Z-35:hover{background-color:rgba(104,117,156,0.35);}';
-
-	// Menu - Z 65 (Alpha)
-	echo '.menu-Z-65{background-color:rgba(78,91,130,0.65); border:1px solid rgba(0,13,119,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.menu-Z-65:hover{background-color:rgb(104,117,156);}';
-
-	// Button - X 2
-	echo '.button-X-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-X-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
-
-	// Button - Gold
-	echo '.button-gold{background-color:rgb(255,193,37); border:1px solid rgb(205,143,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-gold:hover{background-color:rgb(205,143,0); border:1px solid rgb(155,93,0);}';
-	echo '.color-gold{background-color:rgb(255,193,37);}';
-	echo '.font-gold{color:rgb(255,193,37);}';
-
-	// Button - Orange
-	echo '.button-orange{background-color:rgb(255,140,0); border:1px solid rgb(205,90,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-orange:hover{background-color:rgb(205,90,0); border:1px solid rgb(155,40,0);}';
-	echo '.font-orange{color:rgb(255,140,0);}';
-	
-	// Button - Y 1
-	echo '.button-Y{background-color:rgb(255,255,255); border:1px solid rgb(179,179,179); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-Y:hover{background-color:rgb(229,229,229); border:1px solid rgb(129,129,129);}';
-
-	// Button - Y 35 (Alpha)
-	echo '.button-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-Y-35:hover{background-color:rgba(229,229,229,0.35); border:1px solid rgba(129,129,129,0.35);}';
-
-	// Button - Y 65 (Alpha)
-	echo '.button-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-Y-65:hover{background-color:rgba(255,255,255,0.65);}';
-
-	// Button - Y 2
-	echo '.button-Y-2{background-color:rgb(179,179,179); border:1px solid rgb(129,129,129); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	echo '.button-Y-2:hover{background-color:rgb(129,129,129); border:1px solid rgb(109,109,109);}';
 			break;
 		case '29':case '39':case '49':case '59':case '69':case '79':case '99':
 		default:
@@ -742,8 +738,79 @@ if(isset($_GET['json'])){
 
 			echo '.menu-highlight{background-color:rgb('.$a_Theme['accent-color']['B'].');}';
 			echo '.menu-normal{background-color:rgb('.$a_Theme['color']['F'].');}';
+	// Open Line
+	echo '.open-line{background-color:rgb('.$a_Theme['color']['D'].'); background-color:rgba('.$a_Theme['color']['G'].',0.10); border:1px solid rgba(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.open-line:hover{background-color:rgba('.$a_Theme['color']['G'].',0.15);}';
+
 			break;
 	}
+	// Button - X 1
+	echo '.button-X{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-X:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}';
+
+	// Button - X Fake
+	echo '.button-X-fake{background-color:rgb(26,26,52); border:1px solid rgb(126,126,152); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	// Button - Y Fake
+	echo '.button-Y-fake{background-color:rgb(225,225,251); border:1px solid rgb(179,179,205); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+
+	// Button - X 35 (Alpha)
+	echo '.button-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-X-35:hover{background-color:rgba(26,26,26,0.35); border:1px solid rgba(126,126,126,0.35);}';
+
+	// Menu - X 35 (Alpha)
+	echo '.menu-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-X-35:hover{background-color:rgba(76,76,76,0.65);}';
+	// Menu - X 65 (Alpha)
+	echo '.menu-X-65{background-color:rgba(0,0,0,0.65); border:1px solid rgba(76,76,76,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-X-65:hover{background-color:rgb(76,76,76);}';
+
+	// Menu - Y 35 (Alpha)
+	echo '.menu-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-Y-35:hover{background-color:rgba(255,255,255,0.65);}';
+	// Menu - Y 65 (Alpha)
+	echo '.menu-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(179,179,179,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+	echo '.menu-Y-65:hover{background-color:rgb(255,255,255);}';
+
+	// Menu - Z 35 (Alpha)
+	echo '.menu-Z-35{background-color:rgba(78,91,130,0.35); border:1px solid rgba(0,13,119,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.menu-Z-35:hover{background-color:rgba(104,117,156,0.35);}';
+
+	// Menu - Z 65 (Alpha)
+	echo '.menu-Z-65{background-color:rgba(78,91,130,0.65); border:1px solid rgba(0,13,119,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.menu-Z-65:hover{background-color:rgb(104,117,156);}';
+
+	// Button - X 2
+	echo '.button-X-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-X-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
+
+	// Button - Gold
+	echo '.button-gold{background-color:rgb(255,193,37); border:1px solid rgb(225,163,7); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-gold:hover{background-color:rgb(225,163,7); border:1px solid rgb(195,133,0);}';
+	echo '.border-all-gold-1{border:1px solid rgb(255,193,37);}';
+	echo '.color-gold{background-color:rgb(255,193,37);}';
+	echo '.font-gold{color:rgb(255,193,37);}';
+
+	// Button - Orange
+	echo '.button-orange{background-color:rgb(255,140,0); border:1px solid rgb(205,90,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-orange:hover{background-color:rgb(205,90,0); border:1px solid rgb(155,40,0);}';
+	echo '.font-orange{color:rgb(255,140,0);}';
+	
+	// Button - Y 1
+	echo '.button-Y{background-color:rgb(255,255,255); border:1px solid rgb(179,179,179); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y:hover{background-color:rgb(229,229,229); border:1px solid rgb(129,129,129);}';
+
+	// Button - Y 35 (Alpha)
+	echo '.button-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y-35:hover{background-color:rgba(229,229,229,0.35); border:1px solid rgba(129,129,129,0.35);}';
+
+	// Button - Y 65 (Alpha)
+	echo '.button-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y-65:hover{background-color:rgba(255,255,255,1.00);}';
+
+	// Button - Y 2
+	echo '.button-Y-2{background-color:rgb(179,179,179); border:1px solid rgb(129,129,129); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+	echo '.button-Y-2:hover{background-color:rgb(129,129,129); border:1px solid rgb(109,109,109);}';
+
 	// Light 
 	echo '.light-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-position:bottom; background-repeat:repeat-x;}';
 	echo '.light-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-position:top; background-repeat:repeat-x;}';
