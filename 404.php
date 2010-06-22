@@ -1,4 +1,5 @@
 <?
+header("X-UA-Compatiblel: chrome=1");
 SESSION_START();
 function __autoload($v_CN) {require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/objects/'.strtolower($v_CN).'.php';}
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/php-functions.php';
