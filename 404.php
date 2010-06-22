@@ -228,9 +228,6 @@ if($V_Fresh){
 <html>
 	<head>
 		<title><?=$a_Share["name"];?></title>
-		<meta name="description" content="<?=strip_tags($a_Share['text']);?>"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=100" >
-		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
 		<link id="index-css-theme" rel="stylesheet" type="text/css" href="/lapcat/css/themes/theme-generator.php?theme=<?=$o_User->a_User['theme'];?>" />
@@ -272,8 +269,10 @@ if($V_Fresh){
 				bottom:0px;
 			} 
 		</style>
-		<?}?>
-		
+		<?}?> 
+		<meta name="description" content="<?=strip_tags($a_Share['text']);?>"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=100" > 
+		<meta http-equiv="X-UA-Compatible" content="chrome=1"> 
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
 		<script type="text/javascript">
