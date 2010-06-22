@@ -227,6 +227,7 @@ if($V_Fresh){
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html>
 	<head>
+		<meta http-equiv="X-UA-Compatible" content="chrome=1">
 		<meta name="description" content="<?=strip_tags($a_Share['text']);?>"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=100" > 
 		<meta http-equiv="X-UA-Compatible" content="chrome=1"> 
@@ -246,32 +247,10 @@ if($V_Fresh){
 		</script>
 		<script src="/lapcat/java/get-all-tags.php" type="text/javascript"></script>
 		<script src="/lapcat/java/get-all-content-providers.php" type="text/javascript"></script>
-		
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
 		<script src="/lapcat/java/combine.php"></script>
-		<style>
-			#anchored-message-box{
-				position:absolute;
-				bottom:-114px;
-				-moz-transition: all 1s ease-out;  /* FF3.7+ */
-       			-o-transition: all 1s ease-out;  /* Opera 10.5 */
-  				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
-			}
-		</style>
+
 		<?}else{?>
-		<style>
-			#anchored-message-box{
-				position:absolute;
-				bottom:-90px;
-				-moz-transition: all 1s ease-out;  /* FF3.7+ */
-       			-o-transition: all 1s ease-out;  /* Opera 10.5 */
-  				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
-			}
-			#anchored-message-box:hover{
-				position:absolute;
-				bottom:0px;
-			} 
-		</style>
 		<?}?> 
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
