@@ -1,5 +1,4 @@
 <?
-require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/no-cache.php';
 SESSION_START();
 function __autoload($v_CN) {require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/objects/'.strtolower($v_CN).'.php';}
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/php-functions.php';
@@ -224,9 +223,12 @@ if($V_Fresh){
 //print_r($A_status);
 //Debug
 ?>
-<!DOCTYPE html> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
 <html>
 	<head>
+		<meta name="description" content="<?=strip_tags($a_Share['text']);?>"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=100" > 
+		<meta http-equiv="X-UA-Compatible" content="chrome=1"> 
 		<title><?=$a_Share["name"];?></title>
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
@@ -270,9 +272,6 @@ if($V_Fresh){
 			} 
 		</style>
 		<?}?> 
-		<meta name="description" content="<?=strip_tags($a_Share['text']);?>"/>
-		<meta http-equiv="X-UA-Compatible" content="IE=100" > 
-		<meta http-equiv="X-UA-Compatible" content="chrome=1"> 
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
 		<script type="text/javascript">
