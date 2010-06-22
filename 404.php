@@ -249,27 +249,15 @@ if($V_Fresh){
 		<script src="/lapcat/java/get-all-content-providers.php" type="text/javascript"></script>
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
 		<script src="/lapcat/java/combine.php"></script>
-
+		
 		<?}else{?>
+		
 		<?}?> 
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
 		<script type="text/javascript">
 			var pageTracker = _gat._getTracker("UA-8067208-1");
 			pageTracker._trackPageview();
-		</script>
-	<div id="fb-root"></div>
-		<script>
-		  window.fbAsyncInit = function() {
-		    FB.init({appId: 'your app id', status: true, cookie: true,
-		             xfbml: true});
-		  };
-		  (function() {
-		    var e = document.createElement('script'); e.async = true;
-		    e.src = document.location.protocol +
-		      '//connect.facebook.net/en_US/all.js';
-		    document.getElementById('fb-root').appendChild(e);
-		  }());
 		</script>
 
 	<script type="text/javascript">if(jQuery.browser.msie){window.innerWidth-16;}else{document.body.offsetWidth-20;}</script>
