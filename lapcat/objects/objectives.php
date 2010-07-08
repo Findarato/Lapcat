@@ -136,6 +136,7 @@ class Objectives{
 	function F_CompleteObjective($v_UID=0,$v_UT=2,$v_LI=false,$v_OID=0,$v_SC=''){
 		$this->V_EC=0;
 		$a_OE=array();
+		//print_r($_POST);die();
 		//print_r($_POST['objective-data-12']);die();
 		//print_r($this->A_PD);die();
 		foreach($this->A_PD as $v_K=>$a_D){
@@ -156,7 +157,7 @@ class Objectives{
 					case 7:if(FF_PinAPI($v_PAPI,$v_D)==3){$a_OE[$v_K]='The library card-number or PIN is not valid.';}break;
 					case 8:$v_PAPI=$v_D;if($this->F_CheckCardNumber($v_D)){$a_OE[$v_K]='The library card-number or PIN is not valid.';}break;
 					case 11:if($v_SC!==$v_D){$a_OE[$v_K]='The security code was incorrect.';}break;
-					case 13:$_POST['objective-data-14']=str_replace(array('<p>','</p>'),'',$v_D);break;
+					case 13:$_POST['objective-data-14']=nl2br($v_D);break;
 					default:break;}}
 		}
 		if(!empty($a_OE)){$this->A_OE[]=$a_OE;$this->V_EC=count($this->A_OE);return FALSE;}
@@ -180,11 +181,11 @@ class Objectives{
 				if(array_key_exists('objective-data-34',$_POST)){$_POST['objective-data-34']=date('Y-m-d',strtotime($_POST['objective-data-34']));}
 				if(array_key_exists('objective-data-35',$_POST)){$_POST['objective-data-35']=date('H:i:s',strtotime($_POST['objective-data-35']));}
 				if(array_key_exists('objective-data-36',$_POST)){$_POST['objective-data-36']=date('H:i:s',strtotime($_POST['objective-data-36']));}
-			case 28:case 319:
+			case 28:case 319: //Articles and something else --Joe
 				$v_SQL='INSERT INTO '.$this->A_R['tablename'].' ('.$this->A_R['column_names'].',entered_on,entered_by_ID,objective_ID,locked) VALUES (';
 				foreach($_POST as $v_K=>$v_D){
 					if(!in_array($v_K,$a_Tags)){
-						$v_SQL.='"'.$v_DC->Clean($v_D).'",';
+						$v_SQL.='"'.$v_DC->Clean($v_D,true).'",';
 					}
 				}
 				$v_SQL.='"'.date('Y-m-d g:i:s',time()).'","'.$v_UID.'","'.$v_OID.'",2);';
