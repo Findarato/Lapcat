@@ -22,6 +22,8 @@ if(in_array('ajax',$A_URLE)){$v_LAP=false;}else{$v_LAP=true;}
 $v_P=false;
 // Array - Extra
 $a_XMLE=false;
+
+//print_r($_POST);
 if(isset($_SESSION['objectives'])){$o_O=unserialize($_SESSION['objectives']);}else{$o_O=new Objectives();$v_LAP=true;}
 $v_URL='start/ajax';
 if(isset($_SESSION['tag'])){$o_CT=unserialize($_SESSION['tag']);}else{$o_CT=new Tag();}
@@ -86,17 +88,29 @@ if(!empty($a_XML)||$v_P){$o_U->A_U['XML']=implode($a_XML,'<boom>');}else{F_URLNF
 if(isset($o_U)){$_SESSION['user']=serialize($o_U);}
 if($v_LAP){header('HTTP/1.1 200 OK');header('Status: 200 OK');}else{F_HR($o_U->A_U['XML']);}
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html class="color-off">
 	<head>
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link href="/lapcat/css/nebula.css" rel="stylesheet" type="text/css" />
+		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+		
+		<!--Mark it up style -->		
+		<script type="text/javascript" src="/lapcat/markitup/sets/html/set.js"></script>
+		<link rel="stylesheet" type="text/css" href="/lapcat/markitup/sets/html/style.css" />
+		<!--End Mark it up style -->
+		
+		<link rel="stylesheet" type="text/css" href="/lapcat/markitup/skins/markitup/style.css" />
+		
+		<script type="text/javascript" src="/lapcat/markitup/jquery.markitup.pack.js"></script>
+		
 		<link href="/lapcat/css/themes/theme-0.css" id="css-theme" rel="stylesheet" type="text/css" />
 		<link href="/lapcat/css/themes/theme-generator.php?theme=<?=$o_U->V_TS;?>" id="css-theme" rel="stylesheet" type="text/css" />
 		<link href="/lapcat/css/objectives.css" rel="stylesheet" type="text/css" />
 		<script src="/lapcat/java/parts-2009.js" type="text/javascript"></script>
 		<script src="/lapcat/java/objectives-2009.js" type="text/javascript"></script>
-		<script type="text/javascript" src="/lapcat/tinymce_3_2_2_1/jscripts/tiny_mce/tiny_mce.js"></script>
+		<!--<script type="text/javascript" src="/lapcat/tinymce_3_2_2_1/jscripts/tiny_mce/tiny_mce.js"></script>-->
+		
 	</head>
 	<body class="color-off" style="margin:2px; width:auto;">
         <?
