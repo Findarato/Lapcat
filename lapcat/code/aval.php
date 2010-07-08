@@ -143,7 +143,7 @@ function avalByisbn($isbn,$home="main",$cache=false,$marc=520){
 					}
 					 
 				}
-				if(isset($fixedMCR[$marc])){$a_status["marcR"]["parsed"] = $fixedMCR[$marc];}else{$a_status["marcR"]["parsed"] = "No ";}
+				if(isset($fixedMCR[$marc])){$a_status["marcR"]["parsed"] = $fixedMCR[$marc];}else{$a_status["marcR"]["parsed"] = "";}
 				$a_status["marcR"]["full"] = $mr->nodeValue;
 			}
 		}
