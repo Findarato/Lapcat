@@ -34,7 +34,8 @@ mySettings = {
 		{separator:'---------------' },
 		{name:'Picture', key:'P', replaceWith:'<img src="[![Source:!:http://]!]" alt="[![Alternative text]!]" />' },
 		{name:'Link', key:'L', openWith:'<a href="[![Link:!:http://]!]"(!( title="[![Title]!]")!)>', closeWith:'</a>', placeHolder:'Your text to link...' },
-		{name:'catalogLink', key:'cL', openWith:'<a class="catalog-link" href="[![Link:!:http://]!]"(!( title="[![Title]!]")!)>', closeWith:'</a>', placeHolder:'Your text to link...' },
+		{name:'Catalog Link', key:'cL', openWith:'<a class="catalog-link" href="[![Link:!:http://]!]"(!( title="[![Title]!]")!)>', closeWith:'</a>', placeHolder:'Your text to link...' },
+		{name:'Catalog Link', key:'cLp', openWith:'<a class="catalog-link" href="http://catalog.lapcat.org/search/i[![isbn]!]" ><img style="border:none;" src="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=[![isbn]!]&size=S">', closeWith:'</a>', placeHolder:'' },
 		{separator:'---------------' },
 		{name:'Clean', className:'clean', replaceWith:function(markitup) { return markitup.selection.replace(/<(.*?)>/g, "") } },
 		{name:'Preview', className:'preview', call:'preview' }
