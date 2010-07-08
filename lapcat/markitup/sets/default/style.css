@@ -2,6 +2,9 @@
 // markItUp!
 // By Jay Salvat - http://markitup.jaysalvat.com/
 // ------------------------------------------------------------------*/
+
+
+
 .markItUp .markItUpButton1 a {
 	background-image:url(images/bold.png);
 }
@@ -25,3 +28,4 @@
 .markItUp .preview a {
 	background-image:url(images/preview.png);
 }
+
