@@ -55,6 +55,10 @@
 .markItUp .markItUpButton17 a { /*catalog link */
 	background-image:url(http://cdn1.lapcat.org/fugue/icons/book--arrow.png);
 }
+.markItUp .markItUpButton18 a { /*catalog isbn image link */
+	background-image:url(http://cdn1.lapcat.org/fugue/icons/book--plus.png);
+}
+
 
 .markItUp .clean a {
 	background-image:url(images/clean.png);
