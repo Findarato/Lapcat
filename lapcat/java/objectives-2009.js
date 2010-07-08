@@ -101,51 +101,65 @@ function Fu_CV(v_PID,v_OD,v_ODa){
 function F_VF(v_N){if(A_OP['current-total']>0&&A_OP['current-total']==A_OP['required-total']){return true;}else{return false;}}
 //
 // Function - Parse XML (Objective)
-function Fu_PXMLOb(v_XML,v_HO,v_T,v_FD){
-	var a_IT=new Array();
-	var a_Tr=new Array();
-	var a_PB=F_B(F_PSXML(F_PGXML(v_XML,'parts','pull'),'value'),'part');
-	A_PD=[];
-	for(v_K in a_PB){
-		a_Tr[v_K]=F_CXMLA(a_PB[v_K]);
-		a_IT[a_Tr[v_K]['position']]=a_Tr[v_K];
+function Fu_PXMLOb(v_XML, v_HO, v_T, v_FD){
+	var a_IT = new Array();
+	var a_Tr = new Array();
+	var a_PB = F_B(F_PSXML(F_PGXML(v_XML, 'parts', 'pull'), 'value'), 'part');
+	A_PD = [];
+	for (v_K in a_PB) {
+		a_Tr[v_K] = F_CXMLA(a_PB[v_K]);
+		a_IT[a_Tr[v_K]['position']] = a_Tr[v_K];
 	}
-	var a_Ob=F_CXMLA(F_PGXML(v_XML,'parts-box','rest'));
-	var v_HTML='';
-	v_HTML+='<table style="height:470px; width:100%;"><tr><td style="vertical-align:top; width:100%;">';
-	v_HTML+='<table style="width:100%;"><tr><td style="vertical-align:top; width:160px;"><font style="font-size:14px; font-weight:bold; margin-left:6px;"><span id="objective-name">...</span></font></td><td style="vertical-align:top; width:auto;"><font style="margin-left:6px;"><span id="objective-description">...</span></font></td></tr></table>';
-	v_HTML+='<table style="width:100%;"><tr><td id="objective-progress" style="vertical-align:top; width:100%;"><font>...</font></td></tr></table>';
-	v_HTML+='<table style="width:100%;"><tr><td style="vertical-align:top; width:100%;"><font style="margin-left:6px;">&radic;<span id="objective-current-total" style="margin-left:6px;">...</span><font class="med-grey"> / </font><span id="objective-required-total">...</span></font></td></tr></table>';
-	v_HTML+='<table style="width:100%;"><tr><td style="vertical-align:top; width:100%;"><form id="objective-form" action="/lapcat/code/objectives.php?url=action/'+a_Ob['ID']+'" autocomplete="off" method="post" name="objective-form" onsubmit="javascript:return F_VF(\'objective-form\');">';
-	for(v_K in a_IT){v_HTML+='<table style="width:100%;"><tr><td style="vertical-align:top; width:100%;"><font><span id="objective-input-'+a_IT[v_K]['part-ID']+'">...</span></font></td></tr></table>';}
-	v_HTML+='<table style="width:100%;"><tr><td id="objective-complete" style="vertical-align:top; width:100%;"><span id="objective-submit"><input class="dropbutton" onclick="" type="submit" value="Submit"/></span></td></tr></table>';
-	v_HTML+='</form></td></tr></table>';
-	v_HTML+='</td></tr></table>';
-	F_MEHTML('container-main|objectives',v_HTML);
-	F_MEHTML('objective-progress',F_CPB(0,a_Ob['required-total'],a_Ob['required-total'],1));
-	for(v_K in a_Ob){F_MEHTML('objective-'+v_K,a_Ob[v_K]);}
-	for(v_K in a_IT){
-		if(a_IT[v_K]['required']==2){A_PD[a_IT[v_K]['part-ID']]=0;}
-		F_MEHTML('objective-input-'+a_IT[v_K]['part-ID'],F_OIT(a_IT[v_K]));
+	var a_Ob = F_CXMLA(F_PGXML(v_XML, 'parts-box', 'rest'));
+	var v_HTML = '';
+	v_HTML += '<table style="height:470px; width:100%;"><tr><td style="vertical-align:top; width:100%;">';
+	v_HTML += '<table style="width:100%;"><tr><td style="vertical-align:top; width:160px;"><font style="font-size:14px; font-weight:bold; margin-left:6px;"><span id="objective-name">...</span></font></td><td style="vertical-align:top; width:auto;"><font style="margin-left:6px;"><span id="objective-description">...</span></font></td></tr></table>';
+	v_HTML += '<table style="width:100%;"><tr><td id="objective-progress" style="vertical-align:top; width:100%;"><font>...</font></td></tr></table>';
+	v_HTML += '<table style="width:100%;"><tr><td style="vertical-align:top; width:100%;"><font style="margin-left:6px;">&radic;<span id="objective-current-total" style="margin-left:6px;">...</span><font class="med-grey"> / </font><span id="objective-required-total">...</span></font></td></tr></table>';
+	v_HTML += '<table style="width:100%;"><tr><td style="vertical-align:top; width:100%;"><form id="objective-form" action="/lapcat/code/objectives.php?url=action/' + a_Ob['ID'] + '" autocomplete="off" method="post" name="objective-form" onsubmit="javascript:return F_VF(\'objective-form\');">';
+	for (v_K in a_IT) {
+		v_HTML += '<table style="width:100%;"><tr><td style="vertical-align:top; width:100%;"><font><span id="objective-input-' + a_IT[v_K]['part-ID'] + '">...</span></font></td></tr></table>';
+	}
+	v_HTML += '<table style="width:100%;"><tr><td id="objective-complete" style="vertical-align:top; width:100%;"><span id="objective-submit"><input class="dropbutton" onclick="" type="submit" value="Submit"/></span></td></tr></table>';
+	v_HTML += '</form></td></tr></table>';
+	v_HTML += '</td></tr></table>';
+	F_MEHTML('container-main|objectives', v_HTML);
+	F_MEHTML('objective-progress', F_CPB(0, a_Ob['required-total'], a_Ob['required-total'], 1));
+	for (v_K in a_Ob) {
+		F_MEHTML('objective-' + v_K, a_Ob[v_K]);
+	}
+	for (v_K in a_IT) {
+		if (a_IT[v_K]['required'] == 2) {
+			A_PD[a_IT[v_K]['part-ID']] = 0;
+		}
+		F_MEHTML('objective-input-' + a_IT[v_K]['part-ID'], F_OIT(a_IT[v_K]));
 	}
 	//tinyMCE.init({mode:"textareas",height:"200",width:"380"});
-	tinyMCE.init({
-		mode:"exact",
-		elements:"objective-data-"+V_MCE,
-		height:"160",
-		width:"580",
-		theme:"advanced",
-		theme_advanced_buttons1:"bold,italic,underline,|,link,unlink,|,fontsizeselect,|,preview",
-		theme_advanced_buttons2:"",
-		theme_advanced_buttons3:"",
-		theme_advanced_buttons3_add : "pastetext,pasteword,selectall",
-		theme_advanced_font_sizes:"10,12,14",
-		extended_valid_elements:"a[href|class]",
-		advlink_styles:"Catalog Book Link=catalog-link;Normal Link=fakelink",
-		paste_auto_cleanup_on_paste : true,
-		paste_create_linebreaks : true,
-		paste_use_dialog : false,
-		plugins:"preview,advlink,paste"});
+
+	//Joe stuff------------------------------------------
+
+	$("#objective-data-"+V_MCE).markItUp(mySettings);
+
+	/*
+	 tinyMCE.init({
+	 mode:"exact",
+	 elements:"objective-data-"+V_MCE,
+	 height:"160",
+	 width:"580",
+	 theme:"advanced",
+	 theme_advanced_buttons1:"bold,italic,underline,|,link,unlink,|,fontsizeselect,|,preview",
+	 theme_advanced_buttons2:"",
+	 theme_advanced_buttons3:"",
+	 theme_advanced_buttons3_add : "pastetext,pasteword,selectall",
+	 theme_advanced_font_sizes:"10,12,14",
+	 extended_valid_elements:"a[href|class]",
+	 advlink_styles:"Catalog Book Link=catalog-link;Normal Link=fakelink",
+	 paste_auto_cleanup_on_paste : true,
+	 paste_create_linebreaks : true,
+	 paste_use_dialog : false,
+	 plugins:"preview,advlink,paste"});
+	 */
+	//End of Joe stuff------------------------------------------
 }
 //
 // Function - Check Objective Data
