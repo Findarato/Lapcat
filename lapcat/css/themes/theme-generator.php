@@ -587,8 +587,6 @@ if(isset($_GET['theme'])){
 		break;
 	}
 
-
-
 	$v_CSS .= '.color-M-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['M'].');}';
 	
 	$v_CSS .= '.catalog-link{color:'.$v_RGBorHSL.'(125,125,255);}';
@@ -610,27 +608,6 @@ if(isset($_GET['theme'])){
 	$v_CSS .= '.font-italic{font-style:italic;}';
 	$v_CSS .= '.font-fake{font-family:Arial, Helvetica, sans-serif;}';
 	
-	// Font - A - N, R, S
-	/*
-	$v_CSS .= '.font-A{	color:'.$v_RGBorHSL.'('.$a_Theme['color']['A'].');}';
-	$v_CSS .= '.font-B{color:'.$v_RGBorHSL.'('.$a_Theme['color']['B'].');}';
-	$v_CSS .= '.font-C{color:'.$v_RGBorHSL.'('.$a_Theme['color']['C'].');}';
-	$v_CSS .= '.font-D{color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].');}';
-	$v_CSS .= '.font-E{color:'.$v_RGBorHSL.'('.$a_Theme['color']['E'].');}';
-	$v_CSS .= '.font-F{color:'.$v_RGBorHSL.'('.$a_Theme['color']['F'].');}';
-	$v_CSS .= '.font-G{color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
-	$v_CSS .= '.font-H{color:'.$v_RGBorHSL.'('.$a_Theme['color']['H'].');}';
-	$v_CSS .= '.font-I{color:'.$v_RGBorHSL.'('.$a_Theme['color']['I'].');}';
-	$v_CSS .= '.font-J{color:'.$v_RGBorHSL.'('.$a_Theme['color']['J'].');}';
-	$v_CSS .= '.font-K{color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
-	$v_CSS .= '.font-L{color:'.$v_RGBorHSL.'('.$a_Theme['color']['L'].');}';
-	$v_CSS .= '.font-M{color:'.$v_RGBorHSL.'('.$a_Theme['color']['M'].');}';
-	$v_CSS .= '.font-N{color:'.$v_RGBorHSL.'('.$a_Theme['color']['N'].');}';
-	$v_CSS .= '.font-P{color:'.$v_RGBorHSL.'('.$a_Theme['color']['P'].');}';
-	$v_CSS .= '.font-Q{color:'.$v_RGBorHSL.'('.$a_Theme['color']['Q'].');}';
-	$v_CSS .= '.font-R{color:'.$v_RGBorHSL.'('.$a_Theme['color']['R'].');}';
-	$v_CSS .= '.font-S{color:'.$v_RGBorHSL.'('.$a_Theme['color']['S'].');}';
-	*/
 	// D r o p d o w n s
 	// Dropdown - A
 	$v_CSS .= '.dropdown-A-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); border:1px solid '.$v_RGBorHSL.'('.$a_Theme['color']['A'].'); color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
