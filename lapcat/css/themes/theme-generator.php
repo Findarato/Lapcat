@@ -141,7 +141,9 @@ $a_ThemeHSL=array(
 		'Q'=>'132,98%,49%',    // Basic Color V - Green
 		'R'=>'0,98%,49%',     // Basic Color VI - Red
 		'S'=>'60,98%,49%',      // Basic Color VI - Yellow
-		'T'=>'0,51%,45%'   // Basic Color III - Purple
+		'T'=>'0,51%,45%',   // Basic Color III - Purple
+		'black'=>'0,0%,0%',   // Black
+		'white'=>'0,0%,100%' // White
 	),
 	'transparency'=>array(
 		'A'=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
@@ -180,7 +182,10 @@ $a_Theme=array(
 		'Q'=>'0,250,50',    // Basic Color V - Green
 		'R'=>'250,0,0',     // Basic Color VI - Red
 		'S'=>'250,250,0',      // Basic Color VI - Yellow
-		'T'=>'180,50,50'   // Basic Color III - Purple
+		'T'=>'180,50,50',   // Basic Color III - Purple
+		'black'=>'0,0,0',   // Black
+		'white'=>'255,255,255' // White
+		
 	),
 	'transparency'=>array(
 		'A'=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
@@ -245,9 +250,15 @@ $a_OpenLineBG=array(
 	68=>'url(/lapcat/layout/transparent-colors/1-1-K-75.png)'
 );
 if(isset($_GET['theme'])){
+//Theme is setup in a maintheme subtheme.  The last number is the subtheme, the primary theme is setup with the first set of numbers.  
+
 	$v_Theme=$_GET['theme'];
 	$v_Theme=22;
+	$v_subTheme = ($v_Theme%10);
+	$v_mainTheme = floor($v_Theme/10);
+	
 	if(isset($_GET['hsl'])){$v_HSL = true;$a_Theme = $a_ThemeHSL;$v_RGBorHSL="hsl";$v_RGBAorHSLA="hsla";$v_hslword = "hsl";}
+	if(isset($_GET['rgb'])){$v_HSL = false;$a_Theme = $a_ThemeHSL;$v_RGBorHSL="rgb";$v_RGBAorHSLA="rgba";$v_hslword = "rgb";}
 	//$v_HSL = true;
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_Theme];}
@@ -261,12 +272,10 @@ if(isset($_GET['theme'])){
 		$v_CSS = "";
 		$staticCss = array("static.css");
 		foreach($staticCss as $f){$v_CSS .= file_get_contents($f);}
-		//include "static.css";
 		
-		switch($v_Theme){
+		switch($v_subTheme){
 			// Background - Light
-			case '9':
-			case '22':case '32':case '42':case '52':case '62':case '72':case '92':case '82':
+			case '2':
 				if($v_HSL){
 					$a_Theme['color']['L']='25,94%,51%';
 					$a_Theme['color']['M']='97,51%,33%'; // Darker Green
@@ -279,7 +288,7 @@ if(isset($_GET['theme'])){
 				}
 				break;
 	
-			case '21':case '81':
+			case '1':
 				$a_Theme['color']['L']='250,110,10';
 				$a_Theme['color']['M']='70,150,20'; // Darker Green
 				$a_Theme['color']['N']='200,90,5'; // Darker Brown
@@ -294,9 +303,9 @@ if(isset($_GET['theme'])){
 				$a_Theme['transparency']['F']='url(/lapcat/layout/transparent-colors/1-1-K-100.png)';
 				break;
 		}
-		switch($v_Theme){
+		switch($v_mainTheme){
 			// Base Color - Green
-			case '30':case '31':case '32':case '33':case '34':case '35':case '38':case '39':
+			case '3':
 				if($v_HSL){
 					$a_Theme['color']['A']='178,51%,60%'; //0
 					$a_Theme['color']['B']='179,43%,53%'; //1
@@ -319,27 +328,27 @@ if(isset($_GET['theme'])){
 				break;
 				
 			// Base Color - Rose
-			case '40':case '41':case '42':case '43':case '44':case '45':case '48':case '49':
+			case '4':
 				$a_Theme['color']['A']='203,80,142';
 				$a_Theme['color']['B']='169,67,118';
 				$a_Theme['color']['C']='135,54,94';
 				$a_Theme['color']['D']='68,27,47';
 				$a_Theme['color']['E']='34,13,24';
 				$a_Theme['color']['F']='255,35,155';
-				break;
+			break;
 				
 			// Base Color - Purple
-			case '50':case '51':case '52':case '53':case '54':case '55':case '58':case '59':
+			case '5':
 				$a_Theme['color']['A']='142,80,203';
 				$a_Theme['color']['B']='118,67,169';
 				$a_Theme['color']['C']='94,54,135';
 				$a_Theme['color']['D']='47,27,68';
 				$a_Theme['color']['E']='24,13,34';
 				$a_Theme['color']['F']='155,35,255';
-				break;
+			break;
 				
 			// Base Color - Brown
-			case '60':case '61':case '62':case '63':case '64':case '65':case '68':case '69':
+			case '6':
 				$a_Theme['color']['A']='210,150,90';
 				$a_Theme['color']['B']='175,125,75';
 				$a_Theme['color']['C']='140,100,60';
@@ -351,7 +360,7 @@ if(isset($_GET['theme'])){
 			break;
 				
 			// Base Color - Red
-			case '70':case '71':case '72':case '73':case '74':case '75':case '78':case '79':
+			case '7':
 				$a_Theme['color']['A']='223,42,40';
 				$a_Theme['color']['B']='189,18,27';
 				$a_Theme['color']['C']='155,0,14';
@@ -359,42 +368,18 @@ if(isset($_GET['theme'])){
 				$a_Theme['color']['E']='54,0,0';
 				$a_Theme['color']['F']='255,55,0';
 			break;
-			
-			//Thanks a latte
-			case '80':case '81':case '82':case '83':case '84':case '85':case '88':case '89':
-				if($v_HSL){
-					$a_Theme['color']['A']='43,60%,22%'; //0
-					$a_Theme['color']['B']='223,40%,22%'; //1
-					$a_Theme['color']['C']='43,30%,22%'; //1
-					$a_Theme['color']['D']='223,27%,22%'; //2
-					$a_Theme['color']['E']='43,20%,22%'; //3
-					$a_Theme['color']['F']='223,11%,22%'; //8
-					$a_Theme['accent-color']['A']='43,60%,60%'; // Lighter Accent Color
-					$a_Theme['accent-color']['B']='223,43%,52%'; // Darker Accent Color
-				}else{
-					$a_Theme['color']['A']='142,203,80';
-					$a_Theme['color']['B']='118,169,67';
-					$a_Theme['color']['C']='94,135,54';
-					$a_Theme['color']['D']='47,68,27';
-					$a_Theme['color']['E']='24,34,13';
-					$a_Theme['color']['F']='55,55,35';
-					$a_Theme['accent-color']['A']='50,65,75'; // Lighter Accent Color
-					$a_Theme['accent-color']['B']='20,190,0'; // Darker Accent Color
-				}
-				break;
-	
 			// Base Color - Teal
-			case '90':case '91':case '92':case '93':case '94':case '95':case '98':case '99':
+			case '9':
 				$a_Theme['color']['A']='80,203,142';
 				$a_Theme['color']['B']='67,169,118';
 				$a_Theme['color']['C']='54,135,94';
 				$a_Theme['color']['D']='27,68,47';
 				$a_Theme['color']['E']='13,34,24';
 				$a_Theme['color']['F']='35,255,155';
-				break;
-				
+			break;
+			
 			default:
-				break;
+			break;
 		}
 	}
 	
@@ -455,20 +440,44 @@ if(isset($_GET['theme'])){
 		}
 	}
 	
-	//switch that sets some values to be either light or dark
-	switch($v_Theme){
-		case '9':
-		case '21': case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82':
+	//switch that sets some values to be either light or dark.
+	
+	//This currently only works with HSL values.  The goal might be to do the whole generator in them, and then convert it to RGB afterwords
+	$dl = $v_Theme;
+	if($v_HSL){//lets calculate the darness
+
+		$avgLight = array();
+		foreach($a_Theme["color"] as $value){
+			$valHold = explode (",",str_replace("%","",$value));
+			$avgLight[] = $valHold[2];
+		}
+		$avgVal = array_sum($avgLight)/count(array_filter($avgLight));
+		if($avgVal >50){
+			$v_CSS .= "<!--L I G H T   T H E M E ! -->";
+			$dl = "light";
+		}else {
+			$v_CSS .= "<!--D A R K   T H E M E ! -->";
+			$dl = "dark";
+		}
+		
+	}else{
+		
+	}
+	
+	
+	switch($dl){
+		case "20": case '21': case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82': case "light":
 		
 			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-1.png); background-repeat:no-repeat;}';
 			// L i g h t
 			// Default Font Color
 			$v_CSS .= '	a, font{color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');	}';
 			// Effect
-			$v_CSS .= '.effect-hover-X-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
-			$v_CSS .= '.effect-hover-X-2:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.8);}';
-			$v_CSS .= '.effect-hover-X-3:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.6);}';
-			$v_CSS .= '.effect-hover-X-4:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.3);}';
+			$v_CSS .= '.effect-hover-X-1:hover,.effect-hover-X-2:hover,.effect-hover-X-3:hover,.effect-hover-X-4:hover,{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
+			$v_CSS .= '.effect-hover-X-2:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.8);}';
+			$v_CSS .= '.effect-hover-X-3:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.6);}';
+			$v_CSS .= '.effect-hover-X-4:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.3);}';
+			
 			$v_CSS .= '.effect-hover-Z-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['A'].');}';
 			$v_CSS .= '.effect-hover-Z-1-35:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['A'].',0.35);}';
 			$v_CSS .= '.effect-hover-Z-1-65:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['A'].',0.65);}';
@@ -476,10 +485,11 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.effect-hover-Z-3:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['A'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['A'].',0.6);}';
 			$v_CSS .= '.effect-hover-Z-4:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['A'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['A'].',0.3);}';
 			// Color - G
-			$v_CSS .= '.color-X-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
-			$v_CSS .= '.color-X-2{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.8);}';
-			$v_CSS .= '.color-X-3{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.6);}';
-			$v_CSS .= '.color-X-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.3);}';
+			$v_CSS .= '.color-X-1,.color-X-2,.color-X-3,.color-X-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
+			$v_CSS .= '.color-X-2{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.8);}';
+			$v_CSS .= '.color-X-3{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.6);}';
+			$v_CSS .= '.color-X-4{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.3);}';
+			
 			$v_CSS .= '.color-Y-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
 			$v_CSS .= '.color-Y-2{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.8);}';
 			$v_CSS .= '.color-Y-3{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.6);}';
@@ -516,7 +526,7 @@ if(isset($_GET['theme'])){
 
 		break;
 		// D a r k		
-		case '29':case '39':case '49':case '59':case '69':case '79':case '99':default:
+		case '29':case '39':case '49':case '59':case '69':case '79':case '99':default:case "dark":
 			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-0.png); background-repeat:no-repeat;}';
 			// Link - Open Line
 			$v_CSS .= '.open-line{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['B'].',0.35);}';
@@ -534,25 +544,29 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.effect-hover-X-2:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.8);}';
 			$v_CSS .= '.effect-hover-X-3:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.6);}';
 			$v_CSS .= '.effect-hover-X-4:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.3);}';
-			$v_CSS .= '.effect-hover-Z-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].');}';
+			
+			$v_CSS .= '.effect-hover-Z-1:hover,.effect-hover-Z-2:hover,.effect-hover-Z-3:hover,.effect-hover-Z-4:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].');}';
 			$v_CSS .= '.effect-hover-Z-1-35:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.35);}';
 			$v_CSS .= '.effect-hover-Z-1-65:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.65);}';
-			$v_CSS .= '.effect-hover-Z-2:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.8);}';
-			$v_CSS .= '.effect-hover-Z-3:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.6);}';
-			$v_CSS .= '.effect-hover-Z-4:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.3);}';
+		
+			$v_CSS .= '.effect-hover-Z-2:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.8);}';
+			$v_CSS .= '.effect-hover-Z-3:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.6);}';
+			$v_CSS .= '.effect-hover-Z-4:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.3);}';
 			// Color
-			$v_CSS .= '.color-X-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
-			$v_CSS .= '.color-X-2{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.8);}';
-			$v_CSS .= '.color-X-3{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.6);}';
-			$v_CSS .= '.color-X-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.3);}';
-			$v_CSS .= '.color-Y-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
-			$v_CSS .= '.color-Y-2{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.8);}';
-			$v_CSS .= '.color-Y-3{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.6);}';
-			$v_CSS .= '.color-Y-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.3);}';
-			$v_CSS .= '.color-Z-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].');}';
-			$v_CSS .= '.color-Z-2{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.8);}';
-			$v_CSS .= '.color-Z-3{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.6);}';
-			$v_CSS .= '.color-Z-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.3);}';
+			$v_CSS .= '.color-X-1,.color-X-2,.color-X-3,.color-X-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
+			$v_CSS .= '.color-X-2{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.8);}';
+			$v_CSS .= '.color-X-3{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.6);}';
+			$v_CSS .= '.color-X-4{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.3);}';
+			
+			$v_CSS .= '.color-Y-1,.color-Y-2,.color-Y-3,.color-Y-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
+			$v_CSS .= '.color-Y-2{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.8);}';
+			$v_CSS .= '.color-Y-3{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.6);}';
+			$v_CSS .= '.color-Y-4{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.3);}';
+			
+			$v_CSS .= '.color-Z-1,.color-Z-2,.color-Z-3,.color-Z-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].');}';
+			$v_CSS .= '.color-Z-2{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.8);}';
+			$v_CSS .= '.color-Z-3{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.6);}';
+			$v_CSS .= '.color-Z-4{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['accent-color']['B'].',0.3);}';
 			// Border
 			$v_CSS .= '.border-all-X-1{border:1px solid '.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
 			$v_CSS .= '.border-all-X-2{border:2px solid '.$v_RGBorHSL.'('.$a_Theme['color']['K'].');}';
