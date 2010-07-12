@@ -246,12 +246,8 @@ if(isset($_GET['theme'])){
 		return;
 	}else{
 		$v_CSS = "";
-		$staticCss = array(
-		"static.css"
-		);
-		foreach($staticCss as $f){
-			$v_CSS .= file_get_contents($f);
-		}
+		$staticCss = array("static.css");
+		foreach($staticCss as $f){$v_CSS .= file_get_contents($f);}
 		//include "static.css";
 		
 		switch($v_Theme){
@@ -682,7 +678,7 @@ if(isset($_GET['theme'])){
 	$v_CSS .= '.option-selected font{color:'.$v_RGBorHSL.'('.$a_Theme['color']['B'].');}';
 	$v_CSS .= '.option-selected:hover font{color:'.$v_RGBorHSL.'('.$a_Theme['color']['C'].');}';
 	echo compress($v_CSS)."<!-- NOT CACHED //-->";
-	file_put_contents("cache/".$v_Theme.$v_hslword.".cache", "<!-- CACHED on ".date("D.M.Y")." //-->/* COOL */" .compress($v_CSS));
+	file_put_contents("cache/".$v_Theme.$v_hslword.".cache", "<!-- CACHED on ".date("D.M.Y")." //-->" .compress($v_CSS));
 
 }
 if(extension_loaded('zlib')){ob_end_flush();}
