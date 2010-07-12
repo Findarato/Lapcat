@@ -390,12 +390,16 @@ if(isset($_GET['theme'])){
 				break;
 		}
 	}
+	
+	//start using the colors that were picked
 	$a_CSS=array(
 		'A'=>' background-image:url(/lapcat/layout/images/1-13-0.png); background-repeat:repeat-x;',
 		'B'=>' border:1px solid rgb(0,0,0); border:1px solid rgb(0,0,0,1.0);',
 		'C'=>' background-image:'.$a_Theme['special-background'].';',
 		'D'=>' background-image:'.$a_Theme['open-line-background'].';'
 	);
+	
+	/* Test to see if the color profile needs to be returns as json.  If it does then just die out */
 	if(isset($_GET['json'])){
 		$jsonReturn = array('colors'=>$a_Theme);
 		echo json_encode($jsonReturn);
@@ -403,6 +407,7 @@ if(isset($_GET['theme'])){
 	}
 
 	//Color indexes to be generated
+	//Used in the loop to generate most of the theme code
 	$a_colorNameArray = array(
 		"A",	"B",	"C",	"D",
 		"E",	"F",	"G",	"H",
@@ -448,49 +453,10 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.font-'.$value.'{color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].');}';
 		}
 	}
-	//Shadows -- Joe
-	$v_CSS .= '.gradient-1-both{
-		background-image:
-			-webkit-gradient(
-				linear,
-				left bottom,
-				left top,
-				color-stop(0, rgba(0,0,0,.75)),
-				color-stop(0.30, rgba(0,0,0.0)),
-				color-stop(.68, rgba(255,255,255,.0)),
-				color-stop(1, rgba(255,255,255.75))
-			); 
-		background-image:
-			-moz-linear-gradient(
-				center bottom,
-				rgba(0,0,0,.75) 0%,
-				rgba(255,255,255,0) 33%,
-				rgba(255,255,255,0) 68%,
-			   rgba(255,255,255,.75) 100%
-			)
-		}';
-	$v_CSS .= '.gradient-1-top-light{
-		background-image:
-			-webkit-gradient(
-				linear,
-				left bottom,
-				left top,
-				color-stop(.68, rgba(255,255,255,.0)),
-				color-stop(1, rgba(255,255,255.75))
-			); 
-		background-image:
-			-moz-linear-gradient(
-				center bottom,
-				rgba(255,255,255,0) 68%,
-			    rgba(255,255,255,.75) 100%
-			)
-		}';
-
+	
+	//Dark or light background
 	switch($v_Theme){
-		case '9':
-		case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82':
-
-		case '21':
+		case '9':case '21':case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82':
 			// Light
 			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-1.png); background-repeat:no-repeat;}';
 			break;
@@ -499,6 +465,9 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-0.png); background-repeat:no-repeat;}';
 			break;
 	}
+	
+	
+	//switch that sets some values to be either light or dark
 	switch($v_Theme){
 		case '9':
 		case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82':
@@ -553,13 +522,13 @@ if(isset($_GET['theme'])){
 			// Shadow or Light Y - Down / Up (for Light)
 			$v_CSS .= '.shadow-or-light-Y-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-repeat:repeat-x;}';
 			$v_CSS .= '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-repeat:repeat-x;}';
-	// Open Line
-	$v_CSS .= '.open-line{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.10); border:1px solid rgba(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.open-line:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.15);}';
+			// Open Line
+			$v_CSS .= '.open-line{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.10); border:1px solid rgba(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+			$v_CSS .= '.open-line:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.15);}';
 
-			break;
-		case '29':case '39':case '49':case '59':case '69':case '79':case '99':
-		default:
+		break;
+		// D a r k		
+		case '29':case '39':case '49':case '59':case '69':case '79':case '99':default:
 			// Link - Open Line
 			$v_CSS .= '.open-line{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['B'].',0.35);}';
 			// Shadow or Light - Down / Up (for Dark)
@@ -568,8 +537,7 @@ if(isset($_GET['theme'])){
 			// Shadow or Light - Down / Up (for Dark)
 			$v_CSS .= '.shadow-or-light-Y-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-repeat:repeat-x;}';
 			$v_CSS .= '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-repeat:repeat-x;}';
-
-			// D a r k
+		
 			// Default Font Color
 			$v_CSS .= 'a, font{color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
 			// Effect
@@ -612,85 +580,14 @@ if(isset($_GET['theme'])){
 
 			$v_CSS .= '.menu-highlight{background-color:'.$v_RGBorHSL.'('.$a_Theme['accent-color']['B'].');}';
 			$v_CSS .= '.menu-normal{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['F'].');}';
-	// Open Line
-	$v_CSS .= '.open-line{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.10); border:1px solid '.$v_RGBAorHSLA.'(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.open-line:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.15);}';
+			// Open Line
+			$v_CSS .= '.open-line{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.10); border:1px solid '.$v_RGBAorHSLA.'(76,76,76,0.35); cursor:pointer; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+			$v_CSS .= '.open-line:hover{background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.15);}';
 
-			break;
+		break;
 	}
-	// Button - X 1
-	$v_CSS .= '.button-X{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-X:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}';
 
-	// Button - X Fake
-	$v_CSS .= '.button-X-fake{background-color:rgb(26,26,52); border:1px solid rgb(126,126,152); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	// Button - Y Fake
-	$v_CSS .= '.button-Y-fake{background-color:rgb(225,225,251); border:1px solid rgb(179,179,205); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 
-	// Button - X 35 (Alpha)
-	$v_CSS .= '.button-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-X-35:hover{background-color:rgba(26,26,26,0.35); border:1px solid rgba(126,126,126,0.35);}';
-
-	// Menu - X 35 (Alpha)
-	$v_CSS .= '.menu-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.menu-X-35:hover{background-color:rgba(76,76,76,0.65);}';
-	// Menu - X 65 (Alpha)
-	$v_CSS .= '.menu-X-65{background-color:rgba(0,0,0,0.65); border:1px solid rgba(76,76,76,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.menu-X-65:hover{background-color:rgb(76,76,76);}';
-
-	// Menu - Y 35 (Alpha)
-	$v_CSS .= '.menu-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.menu-Y-35:hover{background-color:rgba(255,255,255,0.65);}';
-	// Menu - Y 65 (Alpha)
-	$v_CSS .= '.menu-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(179,179,179,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.menu-Y-65:hover{background-color:rgb(255,255,255);}'; 
-
-	// Menu - Z 35 (Alpha)
-	$v_CSS .= '.menu-Z-35{background-color:rgba(78,91,130,0.35); border:1px solid rgba(0,13,119,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.menu-Z-35:hover{background-color:rgba(104,117,156,0.35);}';
-
-	// Menu - Z 65 (Alpha)
-	$v_CSS .= '.menu-Z-65{background-color:rgba(78,91,130,0.65); border:1px solid rgba(0,13,119,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.menu-Z-65:hover{background-color:rgb(104,117,156);}';
-
-	// Button - X 2
-	$v_CSS .= '.button-X-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-X-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
-
-	// Button - Gold
-	$v_CSS .= '.button-gold{background-color:rgb(255,193,37); border:1px solid rgb(225,163,7); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-gold:hover{background-color:rgb(225,163,7); border:1px solid rgb(195,133,0);}';
-	$v_CSS .= '.border-all-gold-1{border:1px solid rgb(255,193,37);}';
-	$v_CSS .= '.color-gold{background-color:rgb(255,193,37);}';
-	$v_CSS .= '.font-gold{color:rgb(255,193,37);}';
-
-	// Button - Orange
-	$v_CSS .= '.button-orange{background-color:rgb(255,140,0); border:1px solid rgb(205,90,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-orange:hover{background-color:rgb(205,90,0); border:1px solid rgb(155,40,0);}';
-	$v_CSS .= '.font-orange{color:rgb(255,140,0);}';
-	
-	// Button - Y 1
-	$v_CSS .= '.button-Y{background-color:rgb(255,255,255); border:1px solid rgb(179,179,179); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-Y:hover{background-color:rgb(229,229,229); border:1px solid rgb(129,129,129);}';
-
-	// Button - Y 35 (Alpha)
-	$v_CSS .= '.button-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-Y-35:hover{background-color:rgba(229,229,229,0.35); border:1px solid rgba(129,129,129,0.35);}';
-
-	// Button - Y 65 (Alpha)
-	$v_CSS .= '.button-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-Y-65:hover{background-color:rgba(255,255,255,1.00);}';
-
-	// Button - Y 2
-	$v_CSS .= '.button-Y-2{background-color:rgb(179,179,179); border:1px solid rgb(129,129,129); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-Y-2:hover{background-color:rgb(129,129,129); border:1px solid rgb(109,109,109);}';
-
-	// Light 
-	$v_CSS .= '.light-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-position:bottom; background-repeat:repeat-x;}';
-	$v_CSS .= '.light-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-position:top; background-repeat:repeat-x;}';
-	// Shadow or Light Y - Down / Up (for Light)
-	$v_CSS .= '.shadow-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-position:bottom; background-repeat:repeat-x;}';
-	$v_CSS .= '.shadow-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-position:top; background-repeat:repeat-x;}';
 
 	$v_CSS .= '.color-M-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['M'].');}';
 	
