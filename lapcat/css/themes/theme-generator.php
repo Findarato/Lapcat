@@ -246,6 +246,14 @@ if(isset($_GET['theme'])){
 		return;
 	}else{
 		$v_CSS = "";
+		$staticCss = array(
+		"static.css"
+		);
+		foreach($staticCss as $f){
+			$v_CSS .= file_get_contents($f);
+		}
+		//include "static.css";
+		
 		switch($v_Theme){
 			// Background - Light
 			case '9':
@@ -393,63 +401,6 @@ if(isset($_GET['theme'])){
 		echo json_encode($jsonReturn);
 		return;
 	}
-	/* Box Size */
-	$v_CSS .= '.inside-border{-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}';
-	// D e f a u l t s
-	//$v_CSS .= '.round-corners{-moz-border-radius:4px;-webkit-border-radius:4px;}';
-	$v_CSS .= '.info-black{background-color:rgb(255,255,255); background-color:rgba(255,255,255,0.5); border:1px solid rgb(235,235,255); border:1px solid rgba(235,235,255,0.65);}';
-	$v_CSS .= '#purr-container{position:fixed; top:27px; right:7px; z-index:8;}';
-	$v_CSS .= '.notice{position:relative; width:188px; margin-bottom:6px;}';
-	$v_CSS .= '.notice-body{text-align:left; min-height: 65px; padding: 2px 2px 2px 2px;}';
-	$v_CSS .= '.notice-body h3{margin:0; font-size:1.1em;}';
-
-	// F l o a t s
-	// Float - Left / Right
-	$v_CSS .= '.float-left{float:left;}';
-	$v_CSS .= '.float-right{float:right;}';
-
-	// L i n k s   ( w i t h   I m a g e s )
-	// Link - Library
-	$v_CSS .= '.library-link-1,.library-link-2,.library-link-3{padding-bottom:3px; padding-left:20px; background:url(http://cdn1.lapcat.org/famfamfam/silk/building.png) no-repeat 0 50%; text-decoration:none;}';
-	$v_CSS .= '.library-link-3{background:url(http://cdn1.lapcat.org/famfamfam/silk/building_go.png) no-repeat 0 50%;}';
-	// Link - User
-	$v_CSS .= '.user-link-1,.user-link-2{padding-bottom:3px; padding-left:20px; background:url(http://cdn1.lapcat.org/famfamfam/silk/user.png) no-repeat 0 50%; text-decoration:none;}';
-	$v_CSS .= '.user-link-2{text-decoration:underline;}';
-
-	// C o r n e r s
-	// Corner - All
-	$v_CSS .= '.corners-all-1{-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}';
-	$v_CSS .= '.corners-all-2{-moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.corners-all-3{-moz-border-radius:6px; -webkit-border-radius:6px; border-radius:6px;}';
-	// Corner - Bottom
-	$v_CSS .= '.corners-bottom-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; -moz-border-radius-bottomright:2px; -webkit-border-bottom-right-radius:2px; border-bottom-left-radius:2px; border-bottom-right-radius:2px;}';
-	$v_CSS .= '.corners-bottom-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -moz-border-radius-bottomright:4px; -webkit-border-bottom-right-radius:4px; border-bottom-left-radius:4px; border-bottom-right-radius:4px;}';
-	$v_CSS .= '.corners-bottom-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; -moz-border-radius-bottomright:6px; -webkit-border-bottom-right-radius:6px; border-bottom-left-radius:6px; border-bottom-right-radius:6px;}';
-	// Corner - Bottom Left
-	$v_CSS .= '.corners-bottom-left-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; border-bottom-left-radius:2px;}';
-	$v_CSS .= '.corners-bottom-left-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; border-bottom-left-radius:4px;}';
-	$v_CSS .= '.corners-bottom-left-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; border-bottom-left-radius:6px;}';
-	// Corner - Left
-	$v_CSS .= '.corners-left-1{-moz-border-radius-bottomleft:2px; -webkit-border-bottom-left-radius:2px; -moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px; border-bottom-left-radius:2px; border-top-left-radius:2px;}';
-	$v_CSS .= '.corners-left-2{-moz-border-radius-bottomleft:4px; -webkit-border-bottom-left-radius:4px; -moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px; border-bottom-left-radius:4px; border-top-left-radius:4px;}';
-	$v_CSS .= '.corners-left-3{-moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; -moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; border-bottom-left-radius:6px; border-top-left-radius:6px;}';
-	// Corner - Right
-	$v_CSS .= '.corners-right-1{-moz-border-radius-bottomright:2px; -webkit-border-bottom-right-radius:2px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
-	$v_CSS .= '.corners-right-2{-moz-border-radius-bottomright:4px; -webkit-border-bottom-right-radius:4px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
-	$v_CSS .= '.corners-right-3{-moz-border-radius-bottomright:6px; -webkit-border-bottom-right-radius:6px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px;}';
-	// Corner - Top
-	$v_CSS .= '.corners-top-1{-moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px; -moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px; border-top-left-radius:2px; border-top-right-radius:2px;}';
-	$v_CSS .= '.corners-top-2{-moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px; -moz-border-radius-topright:4px; -webkit-border-top-right-radius:4px; border-top-left-radius:4px; border-top-right-radius:4px;}';
-	$v_CSS .= '.corners-top-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px; border-top-left-radius:6px; border-top-right-radius:6px;}';
-	// Corner - Top Left
-	$v_CSS .= '.corners-top-left-1{-moz-border-radius-topleft:2px; -webkit-border-top-left-radius:2px; border-top-left-radius:2px;}';
-	$v_CSS .= '.corners-top-left-2{-moz-border-radius-topleft:4px; -webkit-border-top-left-radius:4px; border-top-left-radius:4px;}';
-	$v_CSS .= '.corners-top-left-3{-moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; border-top-left-radius:6px;}';
-	// Corner - Top Right
-	$v_CSS .= '.corners-top-right-1{-moz-border-radius-topright:2px; -webkit-border-top-right-radius:2px; border-top-right-radius:2px;}';
-	$v_CSS .= '.corners-top-right-2{-moz-border-radius-topright:4px; -webkit-border-top-right-radius:4px; border-top-right-radius:4px;}';
-	$v_CSS .= '.corners-top-right-3{-moz-border-radius-topright:6px; -webkit-border-top-right-radius:6px; border-top-right-radius:6px;}';
-
 
 	//Color indexes to be generated
 	$a_colorNameArray = array(
@@ -493,6 +444,8 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.color-'.$value.'-2{background-color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color'][$value].',0.8);}';
 			$v_CSS .= '.color-'.$value.'-3{background-color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color'][$value].',0.6);}';
 			$v_CSS .= '.color-'.$value.'-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color'][$value].',0.3);}';
+			// Font
+			$v_CSS .= '.font-'.$value.'{color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].');}';
 		}
 	}
 	//Shadows -- Joe
@@ -761,9 +714,8 @@ if(isset($_GET['theme'])){
 	$v_CSS .= '.font-fake{font-family:Arial, Helvetica, sans-serif;}';
 	
 	// Font - A - N, R, S
-	$v_CSS .= '.font-A{
-			color:'.$v_RGBorHSL.'('.$a_Theme['color']['A'].');
-		}';
+	/*
+	$v_CSS .= '.font-A{	color:'.$v_RGBorHSL.'('.$a_Theme['color']['A'].');}';
 	$v_CSS .= '.font-B{color:'.$v_RGBorHSL.'('.$a_Theme['color']['B'].');}';
 	$v_CSS .= '.font-C{color:'.$v_RGBorHSL.'('.$a_Theme['color']['C'].');}';
 	$v_CSS .= '.font-D{color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].');}';
@@ -781,7 +733,7 @@ if(isset($_GET['theme'])){
 	$v_CSS .= '.font-Q{color:'.$v_RGBorHSL.'('.$a_Theme['color']['Q'].');}';
 	$v_CSS .= '.font-R{color:'.$v_RGBorHSL.'('.$a_Theme['color']['R'].');}';
 	$v_CSS .= '.font-S{color:'.$v_RGBorHSL.'('.$a_Theme['color']['S'].');}';
-
+	*/
 	// D r o p d o w n s
 	// Dropdown - A
 	$v_CSS .= '.dropdown-A-1{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); border:1px solid '.$v_RGBorHSL.'('.$a_Theme['color']['A'].'); color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].');}';
@@ -812,28 +764,7 @@ if(isset($_GET['theme'])){
 	$v_CSS .= '.fake-link{cursor:pointer;}';
 	$v_CSS .= '.color-blue{background-color:rgb(0,13,52);}';
 	$v_CSS .= '.border-blue{border:1px solid rgb(0,13,119);}';
-	// B u t t o n s
-	// Button - Black
-	$v_CSS .= '.button-black{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-black:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}';
-	// Button - Black 2
-	$v_CSS .= '.button-black-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-black-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
-	// Button - Blue
-	$v_CSS .= '.button-blue{background-color:rgb(0,13,52); border:1px solid rgb(0,13,119); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-blue:hover{background-color:rgb(26,39,78);}';
-	// Button - Blue 2
-	$v_CSS .= '.button-blue-2{background-color:rgb(78,91,130); border:1px solid rgb(0,13,119); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-blue-2:hover{background-color:rgb(104,117,156);}';
-	// Button - Purple
-	$v_CSS .= '.button-purple{background-color:rgb(130,65,130); border:1px solid rgb(49,13,49); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-purple:hover{background-color:rgb(156,91,156);}';
-	// Button - Green
-	$v_CSS .= '.button-green{background-color:rgb(13,52,0); border:1px solid rgb(13,49,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-green:hover{background-color:rgb(39,78,26);}';
-	// Button - Red
-	$v_CSS .= '.button-red{background-color:rgb(52,13,0); border:1px solid rgb(119,13,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.button-red:hover{background-color:rgb(78,39,26); border:1px solid rgb(119,13,0);}';
+	
 	// Button - Theme
 	$v_CSS .= '.button-theme{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['F'].'); border:1px solid '.$v_RGBorHSL.'('.$a_Theme['color']['C'].'); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
 	$v_CSS .= '.button-theme:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].'); border:1px solid '.$v_RGBorHSL.'('.$a_Theme['color']['A'].');}';
@@ -846,17 +777,9 @@ if(isset($_GET['theme'])){
 
 	$v_CSS .= '.calendar-cell{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['C'].');}';
 
-
-	// Option Black
-	$v_CSS .= '.option-black{background-color:rgb(0,0,0); border:1px solid rgb(0,0,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
-	$v_CSS .= '.option-black:hover{background-color:rgb(26,26,26);}';
-
-	// Tiled Images
-	$v_CSS .= '.image-lines{background-image:url(/lapcat/layout/images/18-18-0.png); background-repeat:repeat;}';
-	
 	// Background
 	$v_CSS .= '.image-background{background-image:'.$a_Theme['background'].'; background-repeat:repeat;}';
-	
+
 	// Color
 	// A
 	$v_CSS .= '.line{background-image:none; -moz-border-radius-topleft:6px; -webkit-border-top-left-radius:6px; -moz-border-radius-bottomleft:6px; -webkit-border-bottom-left-radius:6px; border-bottom-left-radius:6px; border-top-left-radius:6px; border:1px solid '.$v_RGBAorHSLA.'('.$a_Theme['color']['A'].',0);}';
