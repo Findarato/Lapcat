@@ -82,3 +82,80 @@
 .option-black:hover{background-color:rgb(26,26,26);}
 /* Tiled Images */
 .image-lines{background-image:url(/lapcat/layout/images/18-18-0.png); background-repeat:repeat;}
+
+/* Button - X 1 */
+.button-X{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-X:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}';
+
+/* Button - X Fake */
+.button-X-fake{background-color:rgb(26,26,52); border:1px solid rgb(126,126,152); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+
+/* Button - Y Fake */
+.button-Y-fake{background-color:rgb(225,225,251); border:1px solid rgb(179,179,205); vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+
+/* Button - X 35 (Alpha) */
+.button-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-X-35:hover{background-color:rgba(26,26,26,0.35); border:1px solid rgba(126,126,126,0.35);}';
+
+/* Menu - X 35 (Alpha) */
+.menu-X-35{background-color:rgba(0,0,0,0.35); border:1px solid rgba(76,76,76,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+.menu-X-35:hover{background-color:rgba(76,76,76,0.65);}';
+
+/* Menu - X 65 (Alpha) */
+.menu-X-65{background-color:rgba(0,0,0,0.65); border:1px solid rgba(76,76,76,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+.menu-X-65:hover{background-color:rgb(76,76,76);}';
+
+/* Menu - Y 35 (Alpha) */
+.menu-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+.menu-Y-35:hover{background-color:rgba(255,255,255,0.65);}';
+
+/* Menu - Y 65 (Alpha) */
+.menu-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(179,179,179,0.65); cursor:pointer; vertical-align:middle; -moz-border-bottom-radius:4px; -webkit-border-bottom-radius:4px; border-radius:4px;}';
+.menu-Y-65:hover{background-color:rgb(255,255,255);}'; 
+
+/* Menu - Z 35 (Alpha) */
+.menu-Z-35{background-color:rgba(78,91,130,0.35); border:1px solid rgba(0,13,119,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.menu-Z-35:hover{background-color:rgba(104,117,156,0.35);}';
+
+/* Menu - Z 65 (Alpha) */
+.menu-Z-65{background-color:rgba(78,91,130,0.65); border:1px solid rgba(0,13,119,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.menu-Z-65:hover{background-color:rgb(104,117,156);}';
+
+/* Button - X 2 */
+.button-X-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-X-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}';
+
+/* Button - Gold */
+.button-gold{background-color:rgb(255,193,37); border:1px solid rgb(225,163,7); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-gold:hover{background-color:rgb(225,163,7); border:1px solid rgb(195,133,0);}';
+.border-all-gold-1{border:1px solid rgb(255,193,37);}';
+.color-gold{background-color:rgb(255,193,37);}';
+.font-gold{color:rgb(255,193,37);}';
+
+/* Button - Orange */
+.button-orange{background-color:rgb(255,140,0); border:1px solid rgb(205,90,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-orange:hover{background-color:rgb(205,90,0); border:1px solid rgb(155,40,0);}';
+.font-orange{color:rgb(255,140,0);}';
+
+/* Button - Y 1 */
+.button-Y{background-color:rgb(255,255,255); border:1px solid rgb(179,179,179); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-Y:hover{background-color:rgb(229,229,229); border:1px solid rgb(129,129,129);}';
+
+/* Button - Y 35 (Alpha) */
+.button-Y-35{background-color:rgba(255,255,255,0.35); border:1px solid rgba(179,179,179,0.35); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-Y-35:hover{background-color:rgba(229,229,229,0.35); border:1px solid rgba(129,129,129,0.35);}';
+
+/* Button - Y 65 (Alpha) */
+.button-Y-65{background-color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.65); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-Y-65:hover{background-color:rgba(255,255,255,1.00);}';
+
+/* Button - Y 2 */
+.button-Y-2{background-color:rgb(179,179,179); border:1px solid rgb(129,129,129); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}';
+.button-Y-2:hover{background-color:rgb(129,129,129); border:1px solid rgb(109,109,109);}';
+
+/* Light */
+.light-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-position:bottom; background-repeat:repeat-x;}';
+.light-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-position:top; background-repeat:repeat-x;}';
+/* Shadow or Light Y - Down / Up (for Light) */
+.shadow-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-position:bottom; background-repeat:repeat-x;}';
+.shadow-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-position:top; background-repeat:repeat-x;}';
