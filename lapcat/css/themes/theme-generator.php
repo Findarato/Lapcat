@@ -102,6 +102,19 @@ $v_RGBorHSL = "rgb";
 $v_RGBAorHSLA = "rgba";
 $v_hslword = "";
 
+//Color indexes to be generated
+//Used in the loop to generate most of the theme code
+$a_colorNameArray = array(
+	"A",	"B",	"C",	"D",
+	"E",	"F",	"G",	"H",
+	"I",	"J",	"K",	"L",
+	"M",	"N",	"O",	"P",
+	"Q",	"R",	"S",	"T",
+	"U",	"V",	"W",	"X",
+	"Y",	"Z"
+);
+
+
 $a_ThemeHSL=array(
 	'background'=>'url(/lapcat/layout/images/1680-1050-31.png)', // BG Image
 	'special-background'=>'url(/lapcat/layout/transparent-colors/1-1-G-50.png)',
@@ -370,8 +383,6 @@ if(isset($_GET['theme'])){
 				}
 				break;
 	
-	
-	
 			// Base Color - Teal
 			case '90':case '91':case '92':case '93':case '94':case '95':case '98':case '99':
 				$a_Theme['color']['A']='80,203,142';
@@ -401,18 +412,6 @@ if(isset($_GET['theme'])){
 		echo json_encode($jsonReturn);
 		return;
 	}
-
-	//Color indexes to be generated
-	//Used in the loop to generate most of the theme code
-	$a_colorNameArray = array(
-		"A",	"B",	"C",	"D",
-		"E",	"F",	"G",	"H",
-		"I",	"J",	"K",	"L",
-		"M",	"N",	"O",	"P",
-		"Q",	"R",	"S",	"T",
-		"U",	"V",	"W",	"X",
-		"Y",	"Z"
-	);
 
 	// B o r d e r s
 	// Border - A
@@ -447,28 +446,21 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.color-'.$value.'-4{background-color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color'][$value].',0.3);}';
 			// Font
 			$v_CSS .= '.font-'.$value.'{color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].');}';
+			
+			// E f f e c t s
+			// Effect - Hover
+			$v_CSS .= '.effect-hover-'.$value.'-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color'][$value].',1.00);}';
+			$v_CSS .= '.effect-hover-'.$value.'-2:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color'][$value].',0.65);}';
+			$v_CSS .= '.effect-hover-'.$value.'-3:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color'][$value].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color'][$value].',0.35);}';
 		}
 	}
-	
-	//Dark or light background
-	switch($v_Theme){
-		case '9':case '21':case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82':
-			// Light
-			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-1.png); background-repeat:no-repeat;}';
-			break;
-		default:
-			// Dark
-			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-0.png); background-repeat:no-repeat;}';
-			break;
-	}
-	
 	
 	//switch that sets some values to be either light or dark
 	switch($v_Theme){
 		case '9':
-		case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82':
-
-		case '21':
+		case '21': case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82':
+		
+			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-1.png); background-repeat:no-repeat;}';
 			// L i g h t
 			// Default Font Color
 			$v_CSS .= '	a, font{color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].');	}';
@@ -525,6 +517,7 @@ if(isset($_GET['theme'])){
 		break;
 		// D a r k		
 		case '29':case '39':case '49':case '59':case '69':case '79':case '99':default:
+			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-0.png); background-repeat:no-repeat;}';
 			// Link - Open Line
 			$v_CSS .= '.open-line{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['B'].',0.35);}';
 			// Shadow or Light - Down / Up (for Dark)
@@ -613,23 +606,6 @@ if(isset($_GET['theme'])){
 	$v_CSS .= '.dropdown-black{background-color:rgb(0,0,0); border:1px solid rgb(26,26,26); color:rgb(255,255,255);}';
 	
 	// E f f e c t s
-	// Effect - Hover
-	$v_CSS .= '.effect-hover-A-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['A'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['A'].',1.00);}';
-	$v_CSS .= '.effect-hover-B-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['B'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['B'].',1.00);}';
-	$v_CSS .= '.effect-hover-C-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['C'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['C'].',1.00);}';
-	$v_CSS .= '.effect-hover-D-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['D'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['D'].',1.00);}';
-	$v_CSS .= '.effect-hover-E-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['E'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['E'].',1.00);}';
-	$v_CSS .= '.effect-hover-F-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['F'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['F'].',1.00);}';
-	$v_CSS .= '.effect-hover-G-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',1.00);}';
-	$v_CSS .= '.effect-hover-G-2:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.65);}';
-	$v_CSS .= '.effect-hover-G-3:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['G'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['G'].',0.35);}';
-	$v_CSS .= '.effect-hover-H-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['H'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['H'].',1.00);}';
-	$v_CSS .= '.effect-hover-I-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['I'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['I'].',1.00);}';
-	$v_CSS .= '.effect-hover-J-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['J'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['J'].',1.00);}';
-	$v_CSS .= '.effect-hover-K-1:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',1.00);}';
-	$v_CSS .= '.effect-hover-K-2:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.65);}';
-	$v_CSS .= '.effect-hover-K-3:hover{background-color:'.$v_RGBorHSL.'('.$a_Theme['color']['K'].'); background-color:'.$v_RGBAorHSLA.'('.$a_Theme['color']['K'].',0.35);}';
-
 
 	$v_CSS .= '.fake-link{cursor:pointer;}';
 	$v_CSS .= '.color-blue{background-color:rgb(0,13,52);}';
