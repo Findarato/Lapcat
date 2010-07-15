@@ -253,9 +253,11 @@ if($V_Fresh){
 			#anchored-message-box{
 				position:absolute;
 				bottom:-114px;
-				-moz-transition: all 1s ease-out;  /* FF3.7+ */
-       			-o-transition: all 1s ease-out;  /* Opera 10.5 */
-  				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
+			/*
+				-moz-transition: all 1s ease-out;  // FF3.7+
+       			-o-transition: all 1s ease-out;  // Opera 10.5
+  				-webkit-transition: all 1s ease-out;  // Saf3.2+, Chrome
+			*/
 			}
 		</style>
 		<?}else{?>
