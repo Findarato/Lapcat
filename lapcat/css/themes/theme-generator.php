@@ -452,11 +452,11 @@ if(isset($_GET['theme'])){
 			$avgLight[] = $valHold[2];
 		}
 		$avgVal = array_sum($avgLight)/count(array_filter($avgLight));
-		if($avgVal >50){
-			$v_CSS .= "<!--L I G H T   T H E M E ! -->";
+		if($avgVal >40){
+			$v_CSS .= "/* L I G H T   T H E M E ! */";
 			$dl = "light";
 		}else {
-			$v_CSS .= "<!--D A R K   T H E M E ! -->";
+			$v_CSS .= "/* D A R K   T H E M E ! */";
 			$dl = "dark";
 		}
 		
