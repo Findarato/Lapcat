@@ -215,7 +215,6 @@ if(isset($_GET['theme'])){
 	$v_Theme=2122;
 	$v_subTheme = ($v_Theme%10);
 	$v_mainTheme = floor($v_Theme/10);
-	
 	if(isset($_GET['hsl'])){
 		$v_HSL = true;
 		$v_hslword = "hsl";
@@ -224,10 +223,6 @@ if(isset($_GET['theme'])){
 		$v_hslword = "rgb";
 	}
 	//$v_HSL = false; //Debug
-	
-	
-
-	
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_Theme];}
 	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_Theme];}
@@ -302,48 +297,6 @@ if(isset($_GET['theme'])){
 				$a_Theme['accent-color']['A']='2,51%,60%'; // Lighter Accent Color
 				$a_Theme['accent-color']['B']='2,43%,52%'; // Darker Accent Color
 			break;
-			/*
-			// Base Color - Purple
-			case '5':
-				$a_Theme['color']['A']='142,80,203';
-				$a_Theme['color']['B']='118,67,169';
-				$a_Theme['color']['C']='94,54,135';
-				$a_Theme['color']['D']='47,27,68';
-				$a_Theme['color']['E']='24,13,34';
-				$a_Theme['color']['F']='155,35,255';
-			break;
-				
-			// Base Color - Brown
-			case '6':
-				$a_Theme['color']['A']='210,150,90';
-				$a_Theme['color']['B']='175,125,75';
-				$a_Theme['color']['C']='140,100,60';
-				$a_Theme['color']['D']='105,75,45';
-				$a_Theme['color']['E']='70,50,30';
-				$a_Theme['color']['F']='35,25,15';
-				$a_Theme['accent-color']['A']='250,165,75'; // Lighter Accent Color
-				$a_Theme['accent-color']['B']='200,90,0'; // Darker Accent Color
-			break;
-				
-			// Base Color - Red
-			case '7':
-				$a_Theme['color']['A']='223,42,40';
-				$a_Theme['color']['B']='189,18,27';
-				$a_Theme['color']['C']='155,0,14';
-				$a_Theme['color']['D']='88,0,0';
-				$a_Theme['color']['E']='54,0,0';
-				$a_Theme['color']['F']='255,55,0';
-			break;
-			// Base Color - Teal
-			case '9':
-				$a_Theme['color']['A']='80,203,142';
-				$a_Theme['color']['B']='67,169,118';
-				$a_Theme['color']['C']='54,135,94';
-				$a_Theme['color']['D']='27,68,47';
-				$a_Theme['color']['E']='13,34,24';
-				$a_Theme['color']['F']='35,255,155';
-			break;
-			*/
 			default:
 				//Figure it out Single Color
 				$a_Theme['color']['A']=array($v_mainTheme,"51%","60%"); 
