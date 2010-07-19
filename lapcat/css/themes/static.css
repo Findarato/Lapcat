@@ -159,3 +159,5 @@
 /* Shadow or Light Y - Down / Up (for Light) */
 .shadow-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-position:bottom; background-repeat:repeat-x;}
 .shadow-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-position:top; background-repeat:repeat-x;}
+
+/* End of Static */
