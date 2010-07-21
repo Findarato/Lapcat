@@ -178,13 +178,13 @@ $a_BG=array(
 	78=>'url(/lapcat/layout/images/1680-1050-19.png)'
 );
 $a_SpecialBG=array(
-	20=>'url(/lapcat/layout/tiled-images/18-18-103.png)',
-	30=>'url(/lapcat/layout/tiled-images/18-18-109.png)',
-	40=>'url(/lapcat/layout/tiled-images/18-18-116.png)',
-	50=>'url(/lapcat/layout/tiled-images/18-18-113.png)',
-	60=>'url(/lapcat/layout/tiled-images/18-18-100.png)', // not done
-	70=>'url(/lapcat/layout/tiled-images/18-18-100.png)', // not done
-	90=>'url(/lapcat/layout/tiled-images/18-18-114.png)',
+	2=>'url(/lapcat/layout/tiled-images/18-18-103.png)',
+	3=>'url(/lapcat/layout/tiled-images/18-18-109.png)',
+	4=>'url(/lapcat/layout/tiled-images/18-18-116.png)',
+	5=>'url(/lapcat/layout/tiled-images/18-18-113.png)',
+	6=>'url(/lapcat/layout/tiled-images/18-18-100.png)', // not done
+	7=>'url(/lapcat/layout/tiled-images/18-18-100.png)', // not done
+	9=>'url(/lapcat/layout/tiled-images/18-18-114.png)',
 	
 	21=>'url(/lapcat/layout/transparent-colors/1-1-K-10.png)',
 	22=>'url(/lapcat/layout/transparent-colors/1-1-G-50.png)',
@@ -200,19 +200,19 @@ $a_SpecialBG=array(
 	78=>'url(/lapcat/layout/tiled-images/18-18-108.png)'
 );
 $a_OpenLineBG=array(
-	21=>'url(/lapcat/layout/transparent-colors/1-1-K-10.png)',
-	22=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
-	42=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
-	26=>'url(/lapcat/layout/transparent-colors/1-1-K-50.png)',
-	28=>'url(/lapcat/layout/transparent-colors/1-1-K-100.png)',
-	29=>'url(/lapcat/layout/transparent-colors/1-1-K-100.png)',
-	68=>'url(/lapcat/layout/transparent-colors/1-1-K-75.png)'
+	1=>'url(/lapcat/layout/transparent-colors/1-1-K-10.png)',
+	2=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
+	2=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
+	6=>'url(/lapcat/layout/transparent-colors/1-1-K-50.png)',
+	8=>'url(/lapcat/layout/transparent-colors/1-1-K-100.png)',
+	9=>'url(/lapcat/layout/transparent-colors/1-1-K-100.png)',
+	8=>'url(/lapcat/layout/transparent-colors/1-1-K-75.png)'
 );
 if(isset($_GET['theme'])){
 //Theme is setup in a maintheme subtheme.  The last number is the subtheme, the primary theme is setup with the first set of numbers.  
 
 	$v_Theme=$_GET['theme'];
-	$v_Theme=2122;
+	$v_Theme=02;
 	$v_subTheme = ($v_Theme%10);
 	$v_mainTheme = floor($v_Theme/10);
 	if(isset($_GET['hsl'])){
@@ -224,8 +224,8 @@ if(isset($_GET['theme'])){
 	}
 	//$v_HSL = false; //Debug
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
-	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_Theme];}
-	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_Theme];}
+	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_subTheme];}
+	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_mainTheme];}else{$a_Theme['open-line-background']=$a_OpenLineBG[2];}
 	
 	if( file_exists("cache/".$v_Theme.$v_hslword.".cache") && !isset($_GET["update"]) ){
 		$theme = join("",file("cache/".$v_Theme.".cache"));
@@ -396,7 +396,7 @@ if(isset($_GET['theme'])){
 	
 	
 	switch($dl){
-		case "20": case '21': case '22':case '32':case '42':case '52':case '62':case '72':case '92': case '82': case "light":
+		case "light":
 		
 			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-1.png); background-repeat:no-repeat;}';
 			// L i g h t
@@ -456,7 +456,7 @@ if(isset($_GET['theme'])){
 
 		break;
 		// D a r k		
-		case '29':case '39':case '49':case '59':case '69':case '79':case '99':default:case "dark":
+		default:case "dark":
 			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-0.png); background-repeat:no-repeat;}';
 			// Link - Open Line
 			$v_CSS .= '.open-line{background-color:hsl('.$a_Theme['color']['B'].'); background-color:hsla('.$a_Theme['color']['B'].',0.35);}';

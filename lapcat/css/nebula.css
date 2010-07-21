@@ -131,6 +131,7 @@ table{border:none;border-collapse:collapse;margin:0;padding:0;}
 	border:1px solid rgba(149,93,149,1.0);
 }
 .catalog-link{
+	font-size:15px;
 	padding-bottom:3px;
 	padding-left:20px;
 	background: url(/lapcat/layout/icons/cat-2.png) no-repeat 0 50%;
@@ -164,14 +165,10 @@ table{border:none;border-collapse:collapse;margin:0;padding:0;}
 }
 /* CSS - Lighting */
 .light-left{background-image:url(/lapcat/layout/icons/16-16-28.png); background-position:left; background-repeat:repeat-y;}
-.light-up{background-image:url(/lapcat/layout/icons/16-16-29.png); background-position:top; background-repeat:repeat-x;}
 .light-right{background-image:url(/lapcat/layout/icons/16-16-30.png); background-position:right; background-repeat:repeat-y;}
-.light-down{background-image:url(/lapcat/layout/icons/16-16-31.png); background-position:bottom; background-repeat:repeat-x;}
 /* CSS - Shadows */
 .shadow-right{background-image:url(/lapcat/layout/icons/16-16-24.png); background-position:right; background-repeat:repeat-y;}
 .shadow-left{background-image:url(/lapcat/layout/icons/16-16-25.png); background-position:left; background-repeat:repeat-y;}
-.shadow-down{background-image:url(/lapcat/layout/icons/16-16-26.png); background-position:bottom; background-repeat:repeat-x;}
-.shadow-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-position:top; background-repeat:repeat-x;}
 
 /* Filament Group CSS */
 .fg-button{outline:0; text-decoration:none !important; cursor:pointer; position: relative; text-align: center; zoom: 1; }
