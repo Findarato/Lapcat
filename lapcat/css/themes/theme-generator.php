@@ -111,49 +111,6 @@ $a_Theme=array(
 		'F'=>'url(/lapcat/layout/transparent-colors/1-1-G-100.png)'
 	)
 );
-
-/*
-$a_Theme=array(
-	'background'=>'url(/lapcat/layout/images/1680-1050-31.png)', // BG Image
-	'special-background'=>'url(/lapcat/layout/transparent-colors/1-1-G-50.png)',
-	'accent-color'=>array(
-		'A'=>'90,150,220',  // Accent Color I
-		'B'=>'80,130,190'   // Accent Color II
-	),
-	'color'=>array(
-		'A'=>'90,150,220',  // Theme Color I
-		'B'=>'80,130,190',  // Theme Color II
-		'C'=>'70,110,160',  // Theme Color III
-		'D'=>'60,90,130',   // Theme Color IV
-		'E'=>'50,70,100',   // Theme Color V
-		'F'=>'40,50,70',    // Theme Color VI
-		'G'=>'255,255,255', // White
-		'H'=>'170,170,170', // Grey I
-		'I'=>'125,125,125', // Grey II
-		'J'=>'85,85,85',    // Grey III
-		'K'=>'0,0,0',       // Black
-		'L'=>'240,190,30',  // Theme Color VII
-		'M'=>'70,150,20',   // Basic Color I - Green
-		'N'=>'250,200,100', // Basic Color II - Orange,
-		'P'=>'200,0,250',   // Basic Color IV - Purple
-		'Q'=>'0,250,50',    // Basic Color V - Green
-		'R'=>'250,0,0',     // Basic Color VI - Red
-		'S'=>'250,250,0',      // Basic Color VI - Yellow
-		'T'=>'180,50,50',   // Basic Color III - Purple
-		'black'=>'0,0,0',   // Black
-		'white'=>'255,255,255' // White
-		
-	),
-	'transparency'=>array(
-		'A'=>'url(/lapcat/layout/transparent-colors/1-1-G-10.png)',
-		'B'=>'url(/lapcat/layout/transparent-colors/1-1-G-25.png)',
-		'C'=>'url(/lapcat/layout/transparent-colors/1-1-G-50.png)',
-		'D'=>'url(/lapcat/layout/transparent-colors/1-1-G-75.png)',
-		'E'=>'url(/lapcat/layout/transparent-colors/1-1-G-95.png)',
-		'F'=>'url(/lapcat/layout/transparent-colors/1-1-G-100.png)'
-	)
-);
-*/
 $a_BG=array(
 	20=>'url(/lapcat/layout/images/1-1050-1.png)',
 	30=>'url(/lapcat/layout/images/1-1050-1.png)',
@@ -212,7 +169,8 @@ if(isset($_GET['theme'])){
 //Theme is setup in a maintheme subtheme.  The last number is the subtheme, the primary theme is setup with the first set of numbers.  
 
 	$v_Theme=$_GET['theme'];
-	$v_Theme=02;
+	$v_Theme=62;
+	$v_Theme=52;
 	$v_subTheme = ($v_Theme%10);
 	$v_mainTheme = floor($v_Theme/10);
 	if(isset($_GET['hsl'])){
@@ -297,6 +255,19 @@ if(isset($_GET['theme'])){
 				$a_Theme['accent-color']['A']='2,51%,60%'; // Lighter Accent Color
 				$a_Theme['accent-color']['B']='2,43%,52%'; // Darker Accent Color
 			break;
+			case '6': //going to be brown and gold
+				$a_Theme['color']['A']=array("40","100%","25%"); 
+				$a_Theme['color']['B']=array("40","43%","53%"); 
+				$a_Theme['color']['C']=array("40","35%","45%"); 
+				$a_Theme['color']['D']=array("0","0%","37%"); 
+				$a_Theme['color']['E']=array("0","20%","30%"); 
+				$a_Theme['color']['F']=array("0","11%","22%"); 
+				$a_Theme['accent-color']['A']='2,51%,60%'; // Lighter Accent Color
+				$a_Theme['accent-color']['B']='2,43%,52%'; // Darker Accent Color
+				$a_Theme['background']="url(http://www.lapcat.org/~jharry/rotate/wallpaper-401892.jpg)";
+				$a_Theme['special-background'] ="url(/lapcat/layout/tiled-images/18-18-109.png)";
+				
+			break;			
 			default:
 				//Figure it out Single Color
 				$a_Theme['color']['A']=array($v_mainTheme,"51%","60%"); 
@@ -551,7 +522,7 @@ if(isset($_GET['theme'])){
 	
 	// E f f e c t s
 
-	$v_CSS .= '.fake-link{cursor:pointer;}';
+	$v_CSS .= '.fake-link{cursor:pointer;}'; 
 	$v_CSS .= '.color-blue{background-color:rgb(0,13,52);}';
 	$v_CSS .= '.border-blue{border:1px solid rgb(0,13,119);}';
 	
