@@ -186,7 +186,7 @@ if(isset($_GET['theme'])){
 	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_mainTheme];}else{$a_Theme['open-line-background']=$a_OpenLineBG[2];}
 	
 	if( file_exists("cache/".$v_Theme.$v_hslword.".cache") && !isset($_GET["update"]) ){
-		$theme = join("",file("cache/".$v_Theme.".cache"));
+		$theme = join("",file("cache/".$v_Theme.$v_hslword.".cache"));
 		echo $theme ."/* FROM CACHE */" ;
 		return;
 	}else{
