@@ -170,7 +170,7 @@ if(isset($_GET['theme'])){
 
 	$v_Theme=$_GET['theme'];
 	$v_Theme=62;
-	$v_Theme=52;
+	$v_Theme=22;
 	$v_subTheme = ($v_Theme%10);
 	$v_mainTheme = floor($v_Theme/10);
 	if(isset($_GET['hsl'])){
@@ -217,6 +217,8 @@ if(isset($_GET['theme'])){
 		}
 		switch($v_mainTheme){
 			// Base Color - Green
+			case '2': //lets just use the default colors
+				break;
 			case '3':
 				$a_Theme['color']['A']=array("178","51%","60%"); 
 				$a_Theme['color']['B']=array("178","43%","53%"); 
