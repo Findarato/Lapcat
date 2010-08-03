@@ -57,6 +57,7 @@ $v_HSL = true;
 $v_RGBorHSL = "rgb";
 $v_RGBAorHSLA = "rgba";
 $v_hslword = "";
+$dl_text ="None.";
 
 //Color indexes to be generated
 //Used in the loop to generate most of the theme code
@@ -351,21 +352,21 @@ if(isset($_GET['theme'])){
 	
 	//This currently only works with HSL values.  The goal might be to do the whole generator in them, and then convert it to RGB afterwords
 	$dl = $v_Theme;
-	if($v_HSL){//lets calculate the darness
-		$avgLight = array();
-		foreach($a_Theme["color"] as $value){
-			$valHold = explode (",",str_replace("%","",$value));
-			$avgLight[] = $valHold[2];
-		}
-		$avgVal = array_sum($avgLight)/count(array_filter($avgLight));
-		if($avgVal >40){
-			$v_CSS .= "/* L I G H T   T H E M E ! */";
-			$dl = "light";
-		}else {
-			$v_CSS .= "/* D A R K   T H E M E ! */";
-			$dl = "dark";
-		}
+
+	$avgLight = array();
+	foreach($a_Theme["color"] as $value){
+		$valHold = explode (",",str_replace("%","",$value));
+		$avgLight[] = $valHold[2];
 	}
+	$avgVal = array_sum($avgLight)/count(array_filter($avgLight));
+	if($avgVal >40){
+		$dl_text = "LIGHT THEME";
+		$dl = "light";
+	}else {
+		$dl_text = "DARK THEME";
+		$dl = "dark";
+	}
+
 	
 	
 	switch($dl){
@@ -576,10 +577,10 @@ if(isset($_GET['theme'])){
 		$hsl = new hsl2rgb;
 		$hsl->css = $v_CSS;
 		$hsl->convert();
-		echo compress($hsl->css)."/* NOT CACHED RGB */";
+		echo compress($hsl->css)."/* NOT CACHED RGB ".$dl_text." */";
 	}else{
-		echo compress($v_CSS)."/* NOT CACHED HSL */";
-		file_put_contents("cache/".$v_Theme.$v_hslword.".cache", "/* CACHED on ".date("D.M.Y")." */" .compress($v_CSS));
+		echo compress($v_CSS)."/* NOT CACHED HSL ".$dl_text." */";
+		file_put_contents("cache/".$v_Theme.$v_hslword.".cache", "/* CACHED on ".date("D.M.Y")." ".$dl_text." */" .compress($v_CSS));
 	}
 
 }
