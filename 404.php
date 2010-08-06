@@ -1,9 +1,11 @@
 <?
 header("X-UA-Compatiblel: chrome=1");
 SESSION_START();
+date_default_timezone_set( 'America/Chicago' );
 function __autoload($v_CN) {require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/objects/'.strtolower($v_CN).'.php';}
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/php-functions.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/aval.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/local-storage.php';
 $A_URL=array_splice(explode('/',strtolower($_SERVER['REQUEST_URI'])),0,6);
 $V_SpecificArea=$A_URL[1];
 array_shift($A_URL);
@@ -49,6 +51,7 @@ $smarty->assign("Areapage",$v_page);
 
 if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
 if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
+if(isset($_SESSION['local-storage'])){$o_Storage=unserialize($_SESSION['local-storage']);}else{$o_Storage=new Storage();}
 
 if($A_URL[0]==''){
 	$V_Area='home';
@@ -164,6 +167,9 @@ function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v
 // V_Area, V_Command, V_Main, V_Secondary
 if(!$V_Fresh){
 	switch($V_Area){
+		case 'local-storage-records':$V_JSON=$o_Storage->f_RequestRecords($V_Command,$V_Main);break;
+		case 'local-storage-tags':$V_JSON=$o_Storage->f_RequestTags($V_Command);break;
+
 		case 'get-material-list':$V_JSON=$o_LAPCAT->f_GetMaterialList($V_Command);break;
 		case 'get-material-lists':$V_JSON=$o_LAPCAT->f_GetMaterialLists(true);break;
 		case 'get-anticipated-events':$V_JSON=$o_LAPCAT->f_GetAnticipatedEvents();break;
@@ -224,7 +230,7 @@ if($V_Fresh){
 //print_r($A_status);
 //Debug
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 1.0 Strict//EN"    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<!DOCTYPE html> 
 <html>
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="chrome=1">
