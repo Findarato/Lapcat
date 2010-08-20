@@ -103,15 +103,18 @@
           $return = "There was an error with your sql";
         }else { $this -> Error = array(); 
           $this -> Queries++;
-          if(strpos(strtolower($sql),"insert") == 0){//this was an insert
-            $this -> Lastid = mysql_insert_id($this -> linkid); }
+          if(substr_count(strtolower($sql),"insert") > 0){//this was an insert
+            $this -> Lastid = mysql_insert_id($this -> linkid);
+            return $this->Lastid;
+          }
+          
+          
         }
         if(!$fetch){
           return true; //Something always has to be returned  
         }else{
-          return $this->Fetch($fetch,$force,$fetchId);
+          return $this->Format($fetch,$force,$fetchId);
         }
-        
       }
     }
     /**
@@ -123,7 +126,7 @@
      * @param string $type
      * @param bool $force[optional]
      */
-    public function Fetch($type,$force = FALSE,$idField="id"){ return $this->Format($type,$force,$idField);} // to be more like mysql
+    public function Fetch($type,$force = false,$idField="id"){ return $this->Format($type,$force,$idField);} // to be more like mysql
     /**
      * Used to save stored resluts.  Can be dangerous and should be used with caution.
      * @return int|string
@@ -155,8 +158,8 @@
      * 
      * @since 1.0
      * @return mixed
-     * @param string $type
-     * @param bool $force[optional]
+     * @param string $type 
+     * @param bool $force[optional] 
      */
     public function Format($type,$force = false,$idField = "id"){
       $return = "";
@@ -178,10 +181,13 @@
           break;
           case "row":
             if($this -> Count_res() == 1 || $force === true){
+              return "broke";
               $return = mysql_fetch_row($this -> Resid);
             }elseif($this -> Count_res() == 0){
-              return 0;
+              
+              $return = 0;
             }else{
+              
               while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }}
               if($this->Count_res() > 0){
                 if(count($return) == 1) {$return = $return[0];} //make sure its more than one
