@@ -181,13 +181,10 @@
           break;
           case "row":
             if($this -> Count_res() == 1 || $force === true){
-              return "broke";
               $return = mysql_fetch_row($this -> Resid);
             }elseif($this -> Count_res() == 0){
-              
               $return = 0;
             }else{
-              
               while($line = mysql_fetch_row($this -> Resid)){ $return[] = $line; }}
               if($this->Count_res() > 0){
                 if(count($return) == 1) {$return = $return[0];} //make sure its more than one
