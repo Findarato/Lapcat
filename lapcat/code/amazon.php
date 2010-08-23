@@ -144,7 +144,7 @@ id,name
       if($xml->Items->Item->ItemAttributes->Actor){
         $actor = array();
         foreach ($xml->Items->Item->ItemAttributes->Actor as $a){
-          $actor[] = $actor;
+          $actor[] = $a;
         } 
         $db->Query("UPDATE lapcat_materials SET actors='".json_encode($actor)."' WHERE id=".$materialId); 
       }
@@ -172,7 +172,7 @@ id,name
       if($directorId === 0){ 
         $directorId = $db->Query("INSERT INTO lapcat.lapcat_director (name,modified_on) VALUES('".(string)$xml->Items->Item->ItemAttributes->Director."',NOW())");
       }
-      if($materialId >0 && $rateId >0){
+      if($materialId >0 && $directorId >0){
         $db->Query("UPDATE lapcat_materials SET director_id=".$directorId." WHERE id=".$materialId);
       }
     }
