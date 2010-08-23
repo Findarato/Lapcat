@@ -110,12 +110,8 @@ foreach($res as $r){
 	
 	if($xml->Items->Item->ASIN){ //there is a record
 /**
- *  echo "Platform:".(string)$xml->Items->Item->ItemAttributes->Platform."<br>"; //assoc
-  echo "ESRB Rateing:".(string)$xml->Items->Item->ItemAttributes->ESRBAgeRating."<br>";
-  echo "Operating System:".(string)$xml->Items->Item->ItemAttributes->OperatingSystem."<br>";
-  echo "Origional Release Date:".(string)$xml->Items->Item->ItemAttributes->OriginalReleaseDate."<br>";
-  echo "Release Date:".(string)$xml->Items->Item->ItemAttributes->ReleaseDate."<br>";
- 
+  echo "Run Time:".(string)$xml->Items->Item->ItemAttributes->RunningTime."<br>";
+
 lapcat_label
 id,name
 //
@@ -140,6 +136,21 @@ id,name
 
     //Parse out non searchable things
     if($materialId >0){
+      
+      /*
+       * 
+
+    */  
+      if($xml->Items->Item->ItemAttributes->Actor){
+        $actor = array();
+        foreach ($xml->Items->Item->ItemAttributes->Actor as $a){
+          $actor[] = $actor;
+        } 
+        $db->Query("UPDATE lapcat_materials SET actors='".json_encode($actor)."' WHERE id=".$materialId); 
+      }
+      if((string)$xml->Items->Item->ItemAttributes->RunningTime){
+         $db->Query("UPDATE lapcat_materials SET run_time='".(string)$xml->Items->Item->ItemAttributes->RunningTime."' WHERE id=".$materialId);
+      }
       if((string)$xml->Items->Item->ItemAttributes->Title){
          $db->Query("UPDATE lapcat_materials SET title='".(string)$xml->Items->Item->ItemAttributes->Title."' WHERE id=".$materialId);
       }
@@ -152,6 +163,17 @@ id,name
         if((string)$xml->Items->Item->ItemAttributes->PublicationDate){
            $db->Query("UPDATE lapcat_materials SET release_date='".date("Y-m-d",strtotime((string)$xml->Items->Item->ItemAttributes->PublicationDate))."' WHERE id=".$materialId);
         }
+      }
+    }
+
+    //Parse out and update the Director
+    if((string)$xml->Items->Item->ItemAttributes->Director){
+      $directorId = $db->Query("SELECT id FROM lapcat.lapcat_director WHERE name='".(string)$xml->Items->Item->ItemAttributes->Director."'",false,"row");
+      if($directorId === 0){ 
+        $directorId = $db->Query("INSERT INTO lapcat.lapcat_director (name,modified_on) VALUES('".(string)$xml->Items->Item->ItemAttributes->Director."',NOW())");
+      }
+      if($materialId >0 && $rateId >0){
+        $db->Query("UPDATE lapcat_materials SET director_id=".$directorId." WHERE id=".$materialId);
       }
     }
     
