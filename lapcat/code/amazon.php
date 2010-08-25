@@ -125,8 +125,8 @@ id,name
     $actorId = 0;
     $artistId = 0;
 
-    $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$r[1]."'",false,"row");
-    if($materialId === 0){ 
+    //$materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$r[1]."'",false,"row");
+    //if($materialId === 0){ 
       $materialId = $db->Query("INSERT INTO lapcat.lapcat_materials (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on) VALUES(
       '".$r[1]."',
       '".(string)$xml->Items->Item->ASIN."',
@@ -136,7 +136,7 @@ id,name
       true,
       NOW()
       )");
-    }
+    //}
     
 
 /**
@@ -167,6 +167,20 @@ id,name
         }
       }
     }
+    //Parse out and update the Tracks
+    
+    if((array)$xml->Items->Item->Tracks->Disc->Track){
+      $trackHold = array();
+      foreach ((array)$xml->Items->Item->Tracks->Disc->Track as $t){
+        $trackHold[] = $t;
+      }     
+      if($materialId >0 && count($trackHold)>1){
+        $db->Query("UPDATE lapcat_materials SET tracks=".json_encode($trackHold)." WHERE id=".$materialId);
+      }
+    }
+    
+    
+
     //Parse out and update the Artist
     if((string)$xml->Items->Item->ItemAttributes->Artist){
       $artistId = $db->Query("SELECT id FROM lapcat.lapcat_artist WHERE name='".(string)$xml->Items->Item->ItemAttributes->Artist."'",false,"row");
