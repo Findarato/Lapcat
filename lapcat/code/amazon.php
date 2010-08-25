@@ -168,16 +168,17 @@ id,name
       }
     }
     //Parse out and update the Tracks
+  if((string)$xml->Items->Request->ItemSearchRequest->SearchIndex=="Music"){
     
-    if((array)$xml->Items->Item->Tracks->Disc->Track){
-      $trackHold = array();
-      foreach ((array)$xml->Items->Item->Tracks->Disc->Track as $t){
-        $trackHold[] = $t;
-      }     
-      if($materialId >0 && count($trackHold)>1){
-        $db->Query("UPDATE lapcat_materials SET tracks=".json_encode($trackHold)." WHERE id=".$materialId);
-      }
+    $trackHold = array();
+    foreach ($xml->Items->Item->Tracks->Disc->Track as $t){
+      $trackHold[] = (string)$t;
     }
+    if($materialId >0 ){
+      $db->Query("UPDATE lapcat_materials SET tracks='".json_encode($trackHold)."' WHERE id=".$materialId);
+    }
+  }
+    
     
     
 
@@ -188,7 +189,7 @@ id,name
         $artistId = $db->Query("INSERT INTO lapcat.lapcat_artist (name,modified_on) VALUES('".(string)$xml->Items->Item->ItemAttributes->Artist."',NOW())");
       }
       if($materialId >0 && $artistId >0){
-        $db->Query("UPDATE lapcat_materials SET director_id=".$artistId." WHERE id=".$materialId);
+        $db->Query("UPDATE lapcat_materials SET artist_id=".$artistId." WHERE id=".$materialId);
       }
     }
     
@@ -293,7 +294,7 @@ id,name
  * Lets deal with the records that are missing ASIN tags
  * 
  */ 
-
+/*
 $missing = $db->Query("SELECT isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE valid=0",true,"assoc");
 foreach($missing as $m){
 	$t = array($m["tag1_id"],$m["tag2_id"],$m["tag3_id"],$m["tag4_id"]);
@@ -345,7 +346,7 @@ foreach($missing as $m){
 		}	
 	}
 }
-
+*/
 echo "Total Queries Executed:".$db->v_Queries;
 
 
