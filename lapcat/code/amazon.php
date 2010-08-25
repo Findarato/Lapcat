@@ -122,32 +122,34 @@ id,name
     $studioId = 0;
     $publisherId = 0;
     $platformId = 0;
+    $actorId = 0;
+    $artistId = 0;
 
+    $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$r[1]."'",false,"row");
+    if($materialId === 0){ 
+      $materialId = $db->Query("INSERT INTO lapcat.lapcat_materials (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on) VALUES(
+      '".$r[1]."',
+      '".(string)$xml->Items->Item->ASIN."',
+      '".$category."',
+      ".join(",",$tag)."
+      ,
+      true,
+      NOW()
+      )");
+    }
+    
 
-    $materialId = $db->Query("INSERT INTO lapcat.lapcat_materials (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on) VALUES(
-    '".$r[1]."',
-    '".(string)$xml->Items->Item->ASIN."',
-    '".$category."',
-    ".join(",",$tag)."
-    ,
-    true,
-    NOW()
-    )");    
+/**
+ * 
+ *   
+
+ * 
+ * 
+ */
+
 
     //Parse out non searchable things
     if($materialId >0){
-      
-      /*
-       * 
-
-    */  
-      if($xml->Items->Item->ItemAttributes->Actor){
-        $actor = array();
-        foreach ($xml->Items->Item->ItemAttributes->Actor as $a){
-          $actor[] = $a;
-        } 
-        $db->Query("UPDATE lapcat_materials SET actors='".json_encode($actor)."' WHERE id=".$materialId); 
-      }
       if((string)$xml->Items->Item->ItemAttributes->RunningTime){
          $db->Query("UPDATE lapcat_materials SET run_time='".(string)$xml->Items->Item->ItemAttributes->RunningTime."' WHERE id=".$materialId);
       }
@@ -165,7 +167,34 @@ id,name
         }
       }
     }
-
+    //Parse out and update the Artist
+    if((string)$xml->Items->Item->ItemAttributes->Artist){
+      $artistId = $db->Query("SELECT id FROM lapcat.lapcat_artist WHERE name='".(string)$xml->Items->Item->ItemAttributes->Artist."'",false,"row");
+      if($artistId === 0){ 
+        $artistId = $db->Query("INSERT INTO lapcat.lapcat_artist (name,modified_on) VALUES('".(string)$xml->Items->Item->ItemAttributes->Artist."',NOW())");
+      }
+      if($materialId >0 && $artistId >0){
+        $db->Query("UPDATE lapcat_materials SET director_id=".$artistId." WHERE id=".$materialId);
+      }
+    }
+    
+    //Parse out and update the Actors
+    if($xml->Items->Item->ItemAttributes->Actor){
+      $actor = array();
+      foreach ($xml->Items->Item->ItemAttributes->Actor as $a){
+        $actorId = $db->Query("SELECT id FROM lapcat.lapcat_actor WHERE name='".(string)$a."'",false,"row");
+        if($actorId === 0){ 
+          $actorId = $db->Query("INSERT INTO lapcat.lapcat_actor (name,modified_on) VALUES('".(string)$a."',NOW())");
+        }
+        /* I know its a lot more queries, but we should make sure that the actor->material link is not already in. */
+        $actorCheck = $db->Query("SELECT material_id FROM lapcat.lapcat_materials_by_actor WHERE actor_id='".$actorId."'",false,"row");
+        if($actorCheck === 0){ //We know that there is not already a link, so lets make one.
+          $db->Query("INSERT INTO lapcat.lapcat_materials_by_actor (material_id,actor_id,modified_on) VALUES ('".$materialId."','".$actorId."',NOW())");
+        }
+      } 
+      //$db->Query("UPDATE lapcat_materials SET actors='".json_encode($actor)."' WHERE id=".$materialId); 
+    }
+      
     //Parse out and update the Director
     if((string)$xml->Items->Item->ItemAttributes->Director){
       $directorId = $db->Query("SELECT id FROM lapcat.lapcat_director WHERE name='".(string)$xml->Items->Item->ItemAttributes->Director."'",false,"row");
@@ -176,8 +205,6 @@ id,name
         $db->Query("UPDATE lapcat_materials SET director_id=".$directorId." WHERE id=".$materialId);
       }
     }
-    
-
     //Parse out and update the rateingAudienceRating
     if((string)$xml->Items->Item->ItemAttributes->ESRBAgeRating || (string)$xml->Items->Item->ItemAttributes->AudienceRating){
       $rate = "";
@@ -304,4 +331,8 @@ foreach($missing as $m){
 		}	
 	}
 }
+
+echo "Total Queries Executed:".$db->v_Queries;
+
+
 ?>
