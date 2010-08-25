@@ -68,7 +68,7 @@
 		$a_status = array_smart_implode($a_status);
 	//	print_r($a_status);
 		foreach ($a_status as $key=>$value){
-
+ 
 			switch ($key){
 				case 245:
 					$split = explode("|", $value);
@@ -121,13 +121,13 @@
 	//$isbn = "9781602525177";
 	//parseMarc($isbn);
 	//print_r(parseMarc($isbn));
-
+/*
 	$db->Query("SELECT ISBNorSN FROM lapcat.hex_materials;");
 //	$db->Query("SELECT isbn FROM lapcat.marc_record WHERE year=0");
 	$res = $db->Fetch("row");
 	foreach($res as $r){
 		$cleaned = parseMarc($r[0]);
-		print_r($cleaned);
+		//print_r($cleaned);
 
 		$db->Query("
 		REPLACE INTO lapcat.marc_record (title,description,year,rating,isbn,studio,city,console)
@@ -143,4 +143,6 @@
 		)
 		");
 	}
+ * 
+ */
 ?>
