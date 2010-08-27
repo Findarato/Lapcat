@@ -93,17 +93,6 @@ $db = db::getInstance();
  }',true);
 
 function parseAmazon($xml,$category,$isbn,$update=false){
-        /*
-      echo "<pre>";
-      print_r($xml);
-      echo "</pre>";
-         * */
-     // echo "<pre>";
-      //print_r($xml["tags"]); 
-     // print_r($isbn);
-      //echo "</pre>";
-         
-         
     $db = db::getInstance();         
     $xml = $db->Clean($xml);
     if(isset($xml["asin"]) && $xml["asin"]!="" || $update){ //there is a record
@@ -116,9 +105,7 @@ function parseAmazon($xml,$category,$isbn,$update=false){
     $actorId = 0;
     $artistId = 0;
     if($update){
-      echo $update."||||";
       $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$update."' LIMIT 1",false,"row");
-      print_r($materialId);echo "<br>";
     }else{
       $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$isbn."' LIMIT 1",false,"row");  
     }
@@ -180,12 +167,14 @@ function parseAmazon($xml,$category,$isbn,$update=false){
       $actor = array();
       foreach ($xml["actor"] as $a){
         $actorId = $db->Query("SELECT id FROM lapcat.lapcat_actor WHERE name='".strval($a)."'",false,"row");
-        if($actorId === 0){ 
+        if($actorId === 0){
+          echo "I am going to insert an actor"; 
           $actorId = $db->Query("INSERT INTO lapcat.lapcat_actor (name,modified_on) VALUES('".strval($a)."',NOW())");
         }
         /* I know its a lot more queries, but we should make sure that the actor->material link is not already in. */
         $actorCheck = $db->Query("SELECT material_id FROM lapcat.lapcat_materials_by_actor WHERE actor_id='".$actorId."'",false,"row");
         if($actorCheck === 0){ //We know that there is not already a link, so lets make one.
+          echo "I am going to insert an actor material link";
           $db->Query("INSERT INTO lapcat.lapcat_materials_by_actor (material_id,actor_id,modified_on) VALUES ('".$materialId."','".$actorId."',NOW())");
         }
       } 
@@ -288,9 +277,11 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   }else{
     $data["tags"] = array(0,0,0,0);
   }
+  /*
   if(strval($xml->Items->Item->ASIN) ==""){
     return $data;
   }
+   * */
   $data["asin"] = @strval($xml->Items->Item->ASIN);
   $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);
   $data["description"] = @strval($xml->Items->Item->EditorialReviews->EditorialReview->Content);
@@ -300,12 +291,18 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
     $data["rating"] = @strval($xml->Items->Item->ItemAttributes->AudienceRating);
   }
   $data["director"] = @strval($xml->Items->Item->ItemAttributes->Director);
-  foreach ((array)$xml->Items->Item->ItemAttributes->Actor as $a){
-    $data["actors"][] = $a;
-  }
-
+  //if(is_array(@$xml->Items->Item->ItemAttributes->Actor)){
+    foreach (@$xml->Items->Item->ItemAttributes->Actor as $a){
+      $data["actor"][] = strval($a);
+    }
+  //}
   
-  $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);
+  if($xml->Items->Item->ItemAttributes->Platform){
+    $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);  
+  }
+  if($xml->Items->Item->ItemAttributes->Artist){
+    $data["artist"] = @strval($xml->Items->Item->ItemAttributes->Artist);  
+  }
   $data["runTime"] = @strval($xml->Items->Item->ItemAttributes->RunningTime);
   $data["releaseDate"] = @strval($xml->Items->Item->ItemAttributes->ReleaseDate);  
   $data["origionalReleaseDate"] = @strval($xml->Items->Item->ItemAttributes->OriginalReleaseDate);
@@ -313,11 +310,11 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   $data["studio"] = @strval($xml->Items->Item->ItemAttributes->Studio);
   $data["publisher"] = @strval($xml->Items->Item->ItemAttributes->Publisher);
   $data["title"] = @strval($xml->Items->Item->ItemAttributes->Title);
-  $data["artist"] = @strval($xml->Items->Item->ItemAttributes->Artist);
+  
   $data["publicationDate"] = strval($xml->Items->Item->ItemAttributes->PublicationDate);
-  if(@is_array((array)$xml->Items->Item->Tracks->Disc->Track)){
-    foreach (@(array)$xml->Items->Item->Tracks->Disc->Track as $a){
-      $data["tracks"][] = $a;
+  if(is_array(@$xml->Items->Item->Tracks->Disc->Track)){
+    foreach (@$xml->Items->Item->Tracks->Disc->Track as $a){
+      $data["tracks"][] = strval($a);
     }    
   }
 
@@ -326,7 +323,7 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
 }
 
 
-$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT 200;",false,"row");
+$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT 100;",false,"row");
 //$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials;",false,"row");
 //$res = array();* 
 $start = time();
