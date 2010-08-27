@@ -1,6 +1,5 @@
 <?php
-	include("../objects/db.php");
-	$db = db::getInstance();
+  include_once("../objects/db.php");  
   //now for the actual processing of the website
 	function array_implode($arrays, &$target = array()) {
 		if(is_array($arrays)){
@@ -26,6 +25,7 @@
 		return $returnArray;
 	}
 	function parseMarc($isbn){
+	   $db = db::getInstance();
 		preg_match("/([0-9]*)/",$isbn,$matches);
 		$isbn = $matches[0];
 		$url = "http://catalog.lapcat.org/search~S12?/i".$isbn."/i".$isbn."/1%2C1%2C1%2CE/marc&FF=i".$isbn;
@@ -68,8 +68,7 @@
 		$a_status = array_smart_implode($a_status);
 	//	print_r($a_status);
 		foreach ($a_status as $key=>$value){
- 
-			switch ($key){
+ 			switch ($key){
 				case 245:
 					$split = explode("|", $value);
 					preg_match("/([A-Za-z \s]*)/",$split[0],$titleMatches);
@@ -108,7 +107,12 @@
 					}else{if(preg_match("/([A-Z0-9a-z \s]*)/",$value,$Matches)){$cleaned["type".$key] = $Matches[0];}}
 				break;
 				case 590: //this should be the tags field
-					$cleaned["tags"]=explode(",",$value);
+					$cleaned["tags"] = explode(",",$value);
+          $tagIds = array();
+          foreach($cleaned["tags"] as $t){
+            $tagIds[] = $db->Query("SELECT id FROM lapcat.lapcat_tag WHERE name = '".$t."'",false,"row");
+          }
+          $cleaned["tags"] = $tagIds;
 				break;
 				case 690: //This is where video games are normally entered
 					if(isset($value) && preg_match("/([A-Z0-9a-z \s]*)/",$value,$Matches)){$cleaned["console"] = $Matches[0];}
@@ -118,31 +122,4 @@
 		}
 		return $cleaned;	
 	}
-	//$isbn = "9781602525177";
-	//parseMarc($isbn);
-	//print_r(parseMarc($isbn));
-/*
-	$db->Query("SELECT ISBNorSN FROM lapcat.hex_materials;");
-//	$db->Query("SELECT isbn FROM lapcat.marc_record WHERE year=0");
-	$res = $db->Fetch("row");
-	foreach($res as $r){
-		$cleaned = parseMarc($r[0]);
-		//print_r($cleaned);
-
-		$db->Query("
-		REPLACE INTO lapcat.marc_record (title,description,year,rating,isbn,studio,city,console)
-		VALUES(
-		'".$cleaned["title"]."',
-		'".$cleaned["description"]."',
-		'".$cleaned["year"]."',
-		'".$cleaned["rating"]."',
-		'".$cleaned["isbn"]."',
-		'".$cleaned["studio"]."',
-		'".$cleaned["location"]."',
-		'".$cleaned["console"]."'
-		)
-		");
-	}
- * 
- */
 ?>

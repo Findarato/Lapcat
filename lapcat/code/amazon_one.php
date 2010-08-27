@@ -55,17 +55,17 @@ function awsRequest($searchIndex, $keywords, $responseGroup = false, $operation 
 
 // make the request
 //$xml = simplexml_load_file(awsRequest("DVD", "883929059065",false, "ItemSearch", "1"));
-//$xml = simplexml_load_file(awsRequest("VideoGames", "B000ZKA0J6",false, "ItemSearch", "1"));
+$xml = simplexml_load_file(awsRequest("VideoGames", "B000P46NMK",false, "ItemSearch", "1"));
 //echo awsRequest("DVD", "883929059065",false, "ItemSearch", "1");
 //$xml = simplexml_load_file(awsRequest("DVD", "043396239043",false, "ItemSearch", "1")); 
 //$xml = simplexml_load_file(awsRequest("Music", "886976095222",false, "ItemSearch", "1"));
 //$xml = simplexml_load_file(awsRequest("All", "9781428143135",false, "ItemSearch", "1"));
 //$xml = simplexml_load_file(awsRequest("Books", "159397535X",false, "ItemSearch", "1"));
 //$xml = simplexml_load_file(awsRequest("Books", "9781602525467",false, "ItemSearch", "1"));
-$xml = simplexml_load_file(awsRequest("Books", "1599505177",false, "ItemSearch", "1"));
+//$xml = simplexml_load_file(awsRequest("Books", "1599505177",false, "ItemSearch", "1"));
 //$xml = simplexml_load_file(awsRequest("Books", "067102423X",false, "ItemSearch", "1"));
 //$xml = awsRequest("Music", "5099921235825",false, "ItemSearch", "1");
-//$xml = simplexml_load_file(awsRequest("Music", "5099921235825",false, "ItemSearch", "1"));
+//$xml = simplexml_load_file(awsRequest("Music", "B0011V7OQA",false, "ItemSearch", "1"));
 //$xml = simplexml_load_file(awsRequest("Music", "5099921235825", "false", "ItemSearch", "1"));
 
 //echo $xml;die();
