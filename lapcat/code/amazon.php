@@ -168,13 +168,11 @@ function parseAmazon($xml,$category,$isbn,$update=false){
       foreach ($xml["actor"] as $a){
         $actorId = $db->Query("SELECT id FROM lapcat.lapcat_actor WHERE name='".strval($a)."'",false,"row");
         if($actorId === 0){
-          echo "I am going to insert an actor"; 
           $actorId = $db->Query("INSERT INTO lapcat.lapcat_actor (name,modified_on) VALUES('".strval($a)."',NOW())");
         }
         /* I know its a lot more queries, but we should make sure that the actor->material link is not already in. */
         $actorCheck = $db->Query("SELECT material_id FROM lapcat.lapcat_materials_by_actor WHERE actor_id='".$actorId."'",false,"row");
         if($actorCheck === 0){ //We know that there is not already a link, so lets make one.
-          echo "I am going to insert an actor material link";
           $db->Query("INSERT INTO lapcat.lapcat_materials_by_actor (material_id,actor_id,modified_on) VALUES ('".$materialId."','".$actorId."',NOW())");
         }
       } 
@@ -323,7 +321,7 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
 }
 
 
-$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT 100;",false,"row");
+$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT 10000;",false,"row");
 //$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials;",false,"row");
 //$res = array();* 
 $start = time();
