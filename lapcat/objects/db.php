@@ -97,12 +97,13 @@
         $return = mysql_query($sql,$this -> linkid) or $return = FALSE;
         $this -> Resid = $return;
         $this -> Lastsql = $sql;
+        $this -> Queries++;
+        $this -> v_Queries++;
         if(!$return){//set the error values
           $this -> Error["Query"] = $this -> Lastsql;
           $this -> Error["Error"] = mysql_error();
           $return = "There was an error with your sql";
         }else { $this -> Error = array(); 
-          $this -> Queries++;
           if(substr_count(strtolower($sql),"insert") > 0){//this was an insert
             $this -> Lastid = mysql_insert_id($this -> linkid);
             return $this->Lastid;
