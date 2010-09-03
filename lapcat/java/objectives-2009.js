@@ -134,32 +134,8 @@ function Fu_PXMLOb(v_XML, v_HO, v_T, v_FD){
 		}
 		F_MEHTML('objective-input-' + a_IT[v_K]['part-ID'], F_OIT(a_IT[v_K]));
 	}
-	//tinyMCE.init({mode:"textareas",height:"200",width:"380"});
-
-	//Joe stuff------------------------------------------
-
 	$("#objective-data-"+V_MCE).markItUp(mySettings);
 
-	/*
-	 tinyMCE.init({
-	 mode:"exact",
-	 elements:"objective-data-"+V_MCE,
-	 height:"160",
-	 width:"580",
-	 theme:"advanced",
-	 theme_advanced_buttons1:"bold,italic,underline,|,link,unlink,|,fontsizeselect,|,preview",
-	 theme_advanced_buttons2:"",
-	 theme_advanced_buttons3:"",
-	 theme_advanced_buttons3_add : "pastetext,pasteword,selectall",
-	 theme_advanced_font_sizes:"10,12,14",
-	 extended_valid_elements:"a[href|class]",
-	 advlink_styles:"Catalog Book Link=catalog-link;Normal Link=fakelink",
-	 paste_auto_cleanup_on_paste : true,
-	 paste_create_linebreaks : true,
-	 paste_use_dialog : false,
-	 plugins:"preview,advlink,paste"});
-	 */
-	//End of Joe stuff------------------------------------------
 }
 //
 // Function - Check Objective Data
