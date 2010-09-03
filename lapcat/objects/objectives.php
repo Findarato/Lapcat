@@ -157,7 +157,7 @@ class Objectives{
 					case 7:if(FF_PinAPI($v_PAPI,$v_D)==3){$a_OE[$v_K]='The library card-number or PIN is not valid.';}break;
 					case 8:$v_PAPI=$v_D;if($this->F_CheckCardNumber($v_D)){$a_OE[$v_K]='The library card-number or PIN is not valid.';}break;
 					case 11:if($v_SC!==$v_D){$a_OE[$v_K]='The security code was incorrect.';}break;
-					case 13:$_POST['objective-data-14']=nl2br($v_D);break;
+					case 13:$_POST['objective-data-14']=$v_D;break;
 					default:break;}}
 		}
 		if(!empty($a_OE)){$this->A_OE[]=$a_OE;$this->V_EC=count($this->A_OE);return FALSE;}
