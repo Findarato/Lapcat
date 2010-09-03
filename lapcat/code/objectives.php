@@ -109,7 +109,6 @@ if($v_LAP){header('HTTP/1.1 200 OK');header('Status: 200 OK');}else{F_HR($o_U->A
 		<link href="/lapcat/css/objectives.css" rel="stylesheet" type="text/css" />
 		<script src="/lapcat/java/parts-2009.js" type="text/javascript"></script>
 		<script src="/lapcat/java/objectives-2009.js" type="text/javascript"></script>
-		<!--<script type="text/javascript" src="/lapcat/tinymce_3_2_2_1/jscripts/tiny_mce/tiny_mce.js"></script>-->
 		
 	</head>
 	<body class="color-off" style="margin:2px; width:auto;">
