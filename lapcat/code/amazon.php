@@ -230,6 +230,15 @@ function parseAmazon($xml,$category,$isbn,$update=false){
         $db->Query("UPDATE lapcat_materials SET label_id=".$labelId." WHERE id=".$materialId);
       }
     }
+    if($xml["author"]){
+      $authorId = $db->Query("SELECT id FROM lapcat.lapcat_author WHERE name='".$xml["author"]."'",false,"row");
+      if($authorId === 0){
+        $authorId = $db->Query("INSERT INTO lapcat.lapcat_author (name,modified_on) VALUES('".$xml["author"]."',NOW())");
+      }
+      if($materialId >0 && $authorId >0){
+        $db->Query("UPDATE lapcat_materials SET author_id=".$authorId." WHERE id=".$materialId);
+      }
+    }    
     //Parse out and update the studios
     if($xml["studio"]){
       $studioId = $db->Query("SELECT id FROM lapcat.lapcat_studio WHERE name='".$xml["studio"]."'",false,"row");
@@ -295,6 +304,7 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
     }
   //}
   
+  
   if($xml->Items->Item->ItemAttributes->Platform){
     $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);  
   }
@@ -308,6 +318,7 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   $data["studio"] = @strval($xml->Items->Item->ItemAttributes->Studio);
   $data["publisher"] = @strval($xml->Items->Item->ItemAttributes->Publisher);
   $data["title"] = @strval($xml->Items->Item->ItemAttributes->Title);
+  $data["author"] = @strval($xml->Items->Item->ItemAttributes->Author);
   
   $data["publicationDate"] = strval($xml->Items->Item->ItemAttributes->PublicationDate);
   if(is_array(@$xml->Items->Item->Tracks->Disc->Track)){
