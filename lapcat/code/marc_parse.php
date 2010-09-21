@@ -33,6 +33,7 @@
 		//settings variables
 		$cleaned = array("isbn"=>$isbn);
 		$a_status = array();
+    $cleaned["author"] = 0;
 		$cleaned["year"] = 0;
 		$cleaned["studio"] = "";
 		$cleaned["location"] = "";
@@ -69,16 +70,24 @@
 	//	print_r($a_status);
 		foreach ($a_status as $key=>$value){
  			switch ($key){
-				case 245:
+        case 100: //This should be the author field
+          $split = explode("|", $value);
+          preg_match("/([A-Za-z \, \s]*)/",$value,$authorMatches);
+          $cleaned["author"] = $authorMatches[0];
+        break;
+
+
+				case 245: //Title of the item
 					$split = explode("|", $value);
 					preg_match("/([A-Za-z \s]*)/",$split[0],$titleMatches);
 					$cleaned["title"] = $titleMatches[0];
+          //echo "catalog Parsed Title:".$cleaned["title"]."\n";
+          
 					if(isset($split[1])){
 						switch(substr($split[1], 0,1)){
 							case "n":
 								if(preg_match("/([Vv]ol\.\s[0-9][0-9])/",substr($split[1], 0),$titleMatches)){$cleaned["volume"] = $titleMatches[0];}
 							break;
-							
 							default:break;
 						}
 					}
@@ -107,12 +116,22 @@
 					}else{if(preg_match("/([A-Z0-9a-z \s]*)/",$value,$Matches)){$cleaned["type".$key] = $Matches[0];}}
 				break;
 				case 590: //this should be the tags field
-					$cleaned["tags"] = explode(",",$value);
+					$cleaned["tags"] = explode(",",trim(strtolower($value)));
           $tagIds = array();
           foreach($cleaned["tags"] as $t){
-            $tagIds[] = $db->Query("SELECT id FROM lapcat.lapcat_tag WHERE name = '".$t."'",false,"row");
+            $tagIds[] = $db->Query("SELECT id FROM lapcat.lapcat_tag WHERE name LIKE '".trim(strtolower($t))."%'",false,"row");
+            $tagIds = array_implode($tagIds);
           }
-          $cleaned["tags"] = $tagIds;
+        //  echo "--------------catalogTags------------------:\n";
+          //print_r($cleaned["tags"]);echo "-------------------End the tags------------\n";
+          $tempTags = array();
+          foreach ($tagIds as $t){
+            if($t>0){
+              $tempTags[]=$t;
+            }
+          }
+          $tempTags = array_pad($tempTags,4,"0"); 
+          $cleaned["tags"] = $tempTags;
 				break;
 				case 690: //This is where video games are normally entered
 					if(isset($value) && preg_match("/([A-Z0-9a-z \s]*)/",$value,$Matches)){$cleaned["console"] = $Matches[0];}
