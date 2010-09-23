@@ -4,6 +4,8 @@
 //ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
+$globalQueryAmount = 0;
+
 $startTime = time();
 $catalogTemplate = 
   array(
@@ -126,16 +128,17 @@ function enterData($xml,$category,$isbn,$update=false){
       $actorId = 0;
       $artistId = 0;
       $authorId = 0;
-  
+      $internalISBN = "";
       if($update){
+        $internalISBN = $update;
         $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$update."' LIMIT 1",false,"row");
       }else{
-        $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$isbn."' LIMIT 1",false,"row");  
+        $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$isbn."' LIMIT 1",false,"row");
+        $internalISBN = $isbn;  
       }
       echo "\n";
       echo "-----------\n";
-      //echo "working\n";
-      if($materialId == 0){
+      if($materialId == 0){ //this is a new item and needs to be inserted
         echo "New Record:".$isbn."\n";
         if(isset($xml["asin"]) && $xml["asin"]!=""){
           $dataSource = "amazon";
@@ -156,12 +159,33 @@ function enterData($xml,$category,$isbn,$update=false){
           NOW(),
           '".$dataSource."'
         )");
-      }else{echo "Update Record:".$materialId."\n";}
+      }else{ //this is an update on a record that had a problem
+        echo "Update Record:".$materialId."\n";
+      }
+      
+      
       //Lets just make sure there are tags
       $tag1Id = $db->Query("SELECT tag1_id FROM lapcat.lapcat_materials WHERE id='".$materialId."' LIMIT 1",false,"row");
       echo "Tag1ID:".$tag1Id."\n";
-      $xml["tags"] = array_pad($xml["tags"],4,"0");
-      $db->Query("UPDATE lapcat_materials SET tag1_id='".$xml["tags"][0]."',tag2_id='".$xml["tags"][1]."',tag3_id='".$xml["tags"][2]."',tag4_id='".$xml["tags"][3]."' WHERE id=".$materialId);
+      if($tag1Id == 0 && $xml["tags"][0] > 0){ //its missing tags and I have a tag to give it.
+        print_r($xml["tags"]);
+        $db->Query("UPDATE lapcat_materials SET tag1_id='".$xml["tags"][0]."',tag2_id='".$xml["tags"][1]."',tag3_id='".$xml["tags"][2]."',tag4_id='".$xml["tags"][3]."' WHERE id=".$materialId);
+      }else{ // its missing tags or I do not have tags to give it.
+        if($xml["tags"][0] == 0){//I some how do not have any tags to give the item.
+          if($materialId > 0){// we need to make sure at this point that we do indeed have a material id.  This should never fail, but better be safe
+            if($internalISBN != ""){ //we have a isbn number or standard number to work with
+              $oldMaterialId = $db->Query("SELECT ID FROM lapcat.hex_materials WHERE ISBNorSN='".$internalISBN."' LIMIT 1",false,"row");
+              if($oldMaterialID>0){ // this was an record converted from the old material table
+                //lets look up the tags from the old table
+                $dbTags = $db->Query("SELECT ID,tag_id FROM hex_tags_by_material WHERE ID=".$oldMaterialID." LIMIT 1;",false,"assoc");
+                if(is_array($dbTags)){//we have a list of tags from the old tags by material table we can use.
+                  $db->Query("UPDATE lapcat_materials SET tag1_id='".$dbTags["tags"][0]."',tag2_id='".$dbTags["tags"][1]."',tag3_id='".$dbTags["tags"][2]."',tag4_id='".$dbTags["tags"][3]."' WHERE id=".$materialId);                  
+                }else{echo "This item is missing tags totally.\n";}            
+              }else{echo "This item is not in the old material table\n";}
+            }else{echo "There was an error getting the ISBN number for this item\n";}
+          }else{echo "Item is missing a material ID\n";}
+        }
+      }
       //Parse out non searchable things
       if($materialId >0){
         if($xml["runTime"]>0){
@@ -348,10 +372,8 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   return $data;
 }
 
-$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT 10000;",false,"row");
+$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT ".$globalQueryAmount.";",false,"row");
 //$res = $db->Query("SELECT id,isbn_sn FROM lapcat.lapcat_materials WHERE title='' ;",false,"row");
-//$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials;",false,"row");
-//$res = array();* 
 $start = time();
 $xml = "";
 $category = "None"; 
@@ -368,12 +390,7 @@ if(is_array($res)){
 }
 
 
-/**
- * 
- * Lets deal with the records that are missing ASIN tags
- * 
- */ 
-
+//Lets deal with the records that are missing ASIN tags
 $missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE title='' or tag1_id=0",true,"assoc");
 //$missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE valid=0",true,"assoc");
 foreach($missing as $m){
@@ -413,7 +430,7 @@ foreach($missing as $m){
 }
 
 $endTime = time();
-echo "Total Queries Executed:".$db->v_Queries."<br>\n";
+echo "\n\n\nTotal Queries Executed:".$db->v_Queries."<br>\n";
 echo "Total Time:".($endTime - $startTime)."<br>\n";
 echo "Average Queries per second:".$db->v_Queries/($endTime - $startTime)."<br>\n";
 
