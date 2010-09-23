@@ -68,7 +68,9 @@
 		}
 		$a_status = array_smart_implode($a_status);
 	//	print_r($a_status);
+	  echo "Mark Record Display:===================\n";
 		foreach ($a_status as $key=>$value){
+		  echo $key."=>".$value."\n";
  			switch ($key){
         case 100: //This should be the author field
           $split = explode("|", $value);
@@ -79,10 +81,9 @@
 
 				case 245: //Title of the item
 					$split = explode("|", $value);
-					preg_match("/([A-Za-z \s]*)/",$split[0],$titleMatches);
+					preg_match("/([0-9A-Za-z \s]*)/",$split[0],$titleMatches);
 					$cleaned["title"] = $titleMatches[0];
           //echo "catalog Parsed Title:".$cleaned["title"]."\n";
-          
 					if(isset($split[1])){
 						switch(substr($split[1], 0,1)){
 							case "n":
@@ -107,7 +108,7 @@
 				case 521:
 					$cleaned["rating"] = str_replace("ESRB rating:", "", $value);
 					$cleaned["rating"] = str_replace("MPAA rating:", "", $cleaned["rating"]);
-				break;
+				break; 
 				case 655: case 538: //type
 					if(is_array($value)){
 						foreach($value as $k=>$v){
@@ -116,13 +117,20 @@
 					}else{if(preg_match("/([A-Z0-9a-z \s]*)/",$value,$Matches)){$cleaned["type".$key] = $Matches[0];}}
 				break;
 				case 590: //this should be the tags field
-					$cleaned["tags"] = explode(",",trim(strtolower($value)));
+					//we have to make sure they are separated by , and not ;
+					$cleanedTags = trim(strtolower($value));
+					if(!strpos($cleanedTags,";")){
+            $cleaned["tags"] = explode(",",$cleanedTags);
+					}else{
+            $cleaned["tags"] = explode(";",$cleanedTags); 
+					}
+          $cleaned["tagsRaw"] = trim(strtolower($value));
           $tagIds = array();
           foreach($cleaned["tags"] as $t){
             $tagIds[] = $db->Query("SELECT id FROM lapcat.lapcat_tag WHERE name LIKE '".trim(strtolower($t))."%'",false,"row");
             $tagIds = array_implode($tagIds);
           }
-        //  echo "--------------catalogTags------------------:\n";
+          //echo "--------------catalogTags------------------:\n";
           //print_r($cleaned["tags"]);echo "-------------------End the tags------------\n";
           $tempTags = array();
           foreach ($tagIds as $t){
@@ -132,6 +140,7 @@
           }
           $tempTags = array_pad($tempTags,4,"0"); 
           $cleaned["tags"] = $tempTags;
+          //$cleaned["tags"] = trim(strtolower($value));
 				break;
 				case 690: //This is where video games are normally entered
 					if(isset($value) && preg_match("/([A-Z0-9a-z \s]*)/",$value,$Matches)){$cleaned["console"] = $Matches[0];}
@@ -139,6 +148,7 @@
 				default:break;
 			}
 		}
+    echo "===================\n";
 		return $cleaned;	
 	}
 ?>
