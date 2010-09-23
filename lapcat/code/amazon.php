@@ -5,33 +5,35 @@
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
 $startTime = time();
-$catalogTemplate = json_decode('{
- "actor":[],
- "asin":"",
- "artist":"",
- "author":"",
- "console":"",
- "category":"",
- "description":"",
- "director":"",
- "isbn":"",
- "label":"",
- "origionalReleaseDate":"",
- "publisher":"",
- "publicationDate":"",
- "rating":"",
- "releaseDate":"",
- "runTime":"",
- "sn":[],
- "studio":"",
- "tags":[], 
- "title":"",
- "title":"",
- "tracks":[],
- "type":"",
- "url":"",
- "year":""
- }',true);
+$catalogTemplate = 
+  array(
+   "actor"=>array(),
+   "asin"=>"",
+   "artist"=>"",
+   "author"=>"",
+   "console"=>"",
+   "category"=>"",
+   "description"=>"",
+   "director"=>"",
+   "isbn"=>"",
+   "label"=>"",
+   "origionalReleaseDate"=>"",
+   "publisher"=>"",
+   "publicationDate"=>"",
+   "rating"=>"",
+   "releaseDate"=>"",
+   "runTime"=>"",
+   "sn"=>array(),
+   "studio"=>"",
+   "tags"=>array(), 
+   "tagsRaw"=>"",
+   "title"=>"",
+   "title"=>"",
+   "tracks"=>array(),
+   "type"=>"",
+   "url"=>"",
+   "year"=>""
+  );
 
 include_once("../objects/db.php");  
 
@@ -115,7 +117,6 @@ function getCategory($tag = array()){
 function enterData($xml,$category,$isbn,$update=false){
       $db = db::getInstance();         
       //$xml = $db->Clean($xml);
-    //  if(isset($xml["asin"]) && $xml["asin"]!="" || $update){ //there is a record
       //Lets make sure they are all defined first
       $labelId = 0;
       $materialId = 0;
@@ -124,6 +125,7 @@ function enterData($xml,$category,$isbn,$update=false){
       $platformId = 0;
       $actorId = 0;
       $artistId = 0;
+      $authorId = 0;
   
       if($update){
         $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$update."' LIMIT 1",false,"row");
@@ -136,12 +138,14 @@ function enterData($xml,$category,$isbn,$update=false){
       if($materialId == 0){
         echo "New Record:".$isbn."\n";
         if(isset($xml["asin"]) && $xml["asin"]!=""){
+          $dataSource = "amazon";
           echo "Amazon ASIN:".$xml["asin"]."\n";
         }else{
+          $dataSource = "catalog";
           echo "Catalog Parsed\n";
         }
         $materialId = $db->Query("INSERT INTO lapcat.lapcat_materials 
-        (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on) 
+        (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on,data_source) 
         VALUES(
           '".$isbn."',
           '".$xml["asin"]."',
@@ -149,7 +153,8 @@ function enterData($xml,$category,$isbn,$update=false){
           '".implode("','",$xml["tags"])."'
           ,
           1,
-          NOW()
+          NOW(),
+          '".$dataSource."'
         )");
       }else{echo "Update Record:".$materialId."\n";}
       //Lets just make sure there are tags
@@ -166,7 +171,10 @@ function enterData($xml,$category,$isbn,$update=false){
            echo "title:".mysql_real_escape_string($xml["title"])."\n";
            $db->Query("UPDATE lapcat_materials SET title='".mysql_real_escape_string($xml["title"])."' WHERE id=".$materialId);
            print_r($db->Lastsql."\n");
-        }else{echo "There was an error entering in the title\n";   echo "title:".mysql_real_escape_string($xml["title"])."\n";}
+        }else{
+          echo "There was an error entering in the title\n";
+          echo "title:".mysql_real_escape_string($xml["title"])."\n";
+        }
         if($xml["origionalReleaseDate"]!=""){
            $db->Query("UPDATE lapcat_materials SET origional_release_date='".date("Y-m-d",strtotime($xml["origionalReleaseDate"]))."' WHERE id=".$materialId);
         }
@@ -212,7 +220,6 @@ function enterData($xml,$category,$isbn,$update=false){
             $db->Query("INSERT INTO lapcat.lapcat_materials_by_actor (material_id,actor_id,modified_on) VALUES ('".$materialId."','".$actorId."',NOW())");
           }
         } 
-        //$db->Query("UPDATE lapcat_materials SET actors='".json_encode($actor)."' WHERE id=".$materialId); 
       }
       //Parse out and update the Director
       if($xml["director"]!=""){
@@ -284,24 +291,6 @@ function enterData($xml,$category,$isbn,$update=false){
         }
           
       }
-  /*
-  }else{ // no record
-    print_r($xml);
-    echo "\n";
-    $db = db::getInstance();
-    $db->Query("INSERT INTO lapcat.lapcat_materials (title,isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on) VALUES(
-    '".$xml["title"]."',
-    '".$isbn."',
-    0,
-    'None',
-     '".implode("','",$xml["tags"])."'
-    ,
-    false,
-    NOW()
-    )");
-    //print_r($db->Lastsql."\n");
-  }
-   * */
 }
 /**
  * Function used to normalize amazon data to that of the catalog 
@@ -318,22 +307,10 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   }
   
   if($tags){
-   $tempTags = array();
    $tags = array_implode($tags);
-   foreach ($tags as $t){
-     if($t>0){
-       $tempTags[]=$t;
-     }
-   }
-    $data["tags"] = array_pad($tempTags,4,0); 
-  }else{
-    $data["tags"] = array(0,0,0,0);
+   $data["tags"] = $tags;
   }
-  /*
-  if(strval($xml->Items->Item->ASIN) ==""){
-    return $data;
-  }
-   * */
+  
   $data["asin"] = @strval($xml->Items->Item->ASIN);
   $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);
   $data["description"] = @strval($xml->Items->Item->EditorialReviews->EditorialReview->Content);
@@ -343,13 +320,10 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
     $data["rating"] = @strval($xml->Items->Item->ItemAttributes->AudienceRating);
   }
   $data["director"] = @strval($xml->Items->Item->ItemAttributes->Director);
-  //if(is_array(@$xml->Items->Item->ItemAttributes->Actor)){
+  
   foreach (@$xml->Items->Item->ItemAttributes->Actor as $a){
     $data["actor"][] = strval($a);
   }
-  //}
-  
-  
   if(@$xml->Items->Item->ItemAttributes->Platform){
     $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);  
   }
@@ -374,8 +348,7 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   return $data;
 }
 
-
-$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT 1000000;",false,"row");
+$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT 10000;",false,"row");
 //$res = $db->Query("SELECT id,isbn_sn FROM lapcat.lapcat_materials WHERE title='' ;",false,"row");
 //$res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials;",false,"row");
 //$res = array();* 
@@ -401,15 +374,14 @@ if(is_array($res)){
  * 
  */ 
 
-$missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE title=''",true,"assoc");
+$missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE title='' or tag1_id=0",true,"assoc");
 //$missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE valid=0",true,"assoc");
 foreach($missing as $m){
 	$t = array($m["tag1_id"],$m["tag2_id"],$m["tag3_id"],$m["tag4_id"]);
   //Parse the catalog for the item
 	$catalog = parseMarc($m["isbn_sn"]);
-  //print_r($catalog);
   //Loop though the tags to set the category
-   $category = getCategory($t);
+  $category = getCategory($t);
 	if(!is_array($catalog["isbn"])){$catalog["isbn"] = array($catalog["isbn"]);	}
 	if(isset($catalog["sn"])){
 		if(!is_array($catalog["sn"])){
@@ -426,13 +398,13 @@ foreach($missing as $m){
 	    $xml = simplexml_load_file(awsRequest($category, $isbn2,false, "ItemSearch", "1"));
       if($xml->Items->Item->ASIN){ //there is a record with amazon
         //we must normalize the data from amazon to match that of the catalog
+        echo "Found a record with Amazon: ".$xml->Items->Item->ASIN."\n";
         enterData(normalizeData($xml,$catalogTemplate,$t,$m["isbn_sn"]),$category,$m["isbn_sn"],$m["isbn_sn"]);
         $parsed = true;
       }
 		}
 	}
   if(!$parsed){    //Something went wrong getting the category
-    // print_r($catalog["tags"]);echo "\n";
     echo "ISBN:".$catalog["isbn"][0]."\n";
     $catalog = array_merge($catalogTemplate,$catalog);
     $catalog["isbn"] = array_smart_implode($catalog["isbn"]);
