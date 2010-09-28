@@ -71,7 +71,7 @@
 		}
 		$a_status = array_smart_implode($a_status);
 	//	print_r($a_status);
-	  echo "===================\n";
+	  //echo "===================\n";
     //echo print_r($a_status);
     echo "\n";
 		foreach ($a_status as $key=>$value){
@@ -166,7 +166,7 @@
 				default:break;
 			}
 		}
-    echo "===================\n\n";
+   // echo "===================\n\n";
 		return $cleaned;	
 	}
 ?>
