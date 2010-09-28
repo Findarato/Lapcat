@@ -4,9 +4,6 @@
 //ini_set('display_errors', 1);
 error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 
-$globalQueryAmount = 4000;
-
-$startTime = time();
 $catalogTemplate = 
   array(
    "actor"=>array(),
