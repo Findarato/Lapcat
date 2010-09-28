@@ -160,28 +160,34 @@ function enterData($xml,$category,$isbn,$update=false){
           '".$dataSource."'
         )");
       }else{ //this is an update on a record that had a problem
-        echo "Update Record:".$materialId."\n";
+        echo ":".$materialId."\n";
       }
       
       
       //Lets just make sure there are tags
       $tag1Id = $db->Query("SELECT tag1_id FROM lapcat.lapcat_materials WHERE id='".$materialId."' LIMIT 1",false,"row");
-      echo "Tag1ID:".$tag1Id."\n";
+      //echo "Tag1ID:".$tag1Id."\n";
       if($tag1Id == 0 && $xml["tags"][0] > 0){ //its missing tags and I have a tag to give it.
-        print_r($xml["tags"]);
-        $db->Query("UPDATE lapcat_materials SET tag1_id='".$xml["tags"][0]."',tag2_id='".$xml["tags"][1]."',tag3_id='".$xml["tags"][2]."',tag4_id='".$xml["tags"][3]."' WHERE id=".$materialId);
+        echo "I am missing tags but I have tags to be put in.\n";
+        $db->Query("UPDATE lapcat.lapcat_materials SET tag1_id='".$xml["tags"][0]."',tag2_id='".$xml["tags"][1]."',tag3_id='".$xml["tags"][2]."',tag4_id='".$xml["tags"][3]."' WHERE id=".$materialId);
       }else{ // its missing tags or I do not have tags to give it.
         if($xml["tags"][0] == 0){//I some how do not have any tags to give the item.
           if($materialId > 0){// we need to make sure at this point that we do indeed have a material id.  This should never fail, but better be safe
             if($internalISBN != ""){ //we have a isbn number or standard number to work with
-              $oldMaterialId = $db->Query("SELECT ID FROM lapcat.hex_materials WHERE ISBNorSN='".$internalISBN."' LIMIT 1",false,"row");
-              if($oldMaterialID>0){ // this was an record converted from the old material table
+              if(!is_array($xml["numbers"])){$xml["numbers"] = array($xml["numbers"]);} // lets just make sure its an array so we do not have to edit the sql
+              $oldMaterialId = $db->Query("SELECT ID FROM lapcat.hex_materials WHERE ISBNorSN IN ('".join("','",$xml["numbers"])."') LIMIT 1",false,"row");
+              if($oldMaterialId>0){ // this was an record converted from the old material table
                 //lets look up the tags from the old table
-                $dbTags = $db->Query("SELECT ID,tag_id FROM hex_tags_by_material WHERE ID=".$oldMaterialID." LIMIT 1;",false,"assoc");
+                //echo "old material id\n";
+                //print_r($oldMaterialId);
+                $dbTags = $db->Query("SELECT tag_id FROM hex_tags_by_material WHERE ID=".$oldMaterialId.";",false,"row_array");
+                $dbTags = array_pad($dbTags,4,"0"); // lets just make sure we have 4 tags for the query.
+                print_r($dbTags);
                 if(is_array($dbTags)){//we have a list of tags from the old tags by material table we can use.
-                  $db->Query("UPDATE lapcat_materials SET tag1_id='".$dbTags["tags"][0]."',tag2_id='".$dbTags["tags"][1]."',tag3_id='".$dbTags["tags"][2]."',tag4_id='".$dbTags["tags"][3]."' WHERE id=".$materialId);                  
+                  $db->Query("UPDATE lapcat.lapcat_materials SET tag1_id='".$dbTags[0]."',tag2_id='".$dbTags[1]."',tag3_id='".$dbTags[2]."',tag4_id='".$dbTags[3]."' WHERE id=".$materialId);
+                  echo "Tags where successfully ported over\n";
                 }else{echo "This item is missing tags totally.\n";}            
-              }else{echo "This item is not in the old material table\n";}
+              }else{echo "This item is not in the old material table\n";echo $db->Lastsql."\n";}
             }else{echo "There was an error getting the ISBN number for this item\n";}
           }else{echo "Item is missing a material ID\n";}
         }
@@ -379,6 +385,8 @@ $xml = "";
 $category = "None"; 
 $tag = "";
 
+
+echo "***************** Starting a record *****************\n";
 if(is_array($res)){
   foreach($res as $r){
     $tag = $db->Query("SELECT tag_ID FROM lapcat.hex_tags_by_material WHERE id=".$r[0],true,"row_array");
@@ -425,8 +433,10 @@ foreach($missing as $m){
     echo "ISBN:".$catalog["isbn"][0]."\n";
     $catalog = array_merge($catalogTemplate,$catalog);
     $catalog["isbn"] = array_smart_implode($catalog["isbn"]);
+    print_r($catalog);
     enterData($catalog,$category,$m["isbn_sn"],$m["isbn_sn"]);
   }
+  echo "***************** Ending a record *****************\n\n\n\n";
 }
 
 $endTime = time();
