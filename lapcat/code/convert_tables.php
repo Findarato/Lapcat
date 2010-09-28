@@ -7,40 +7,9 @@ error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 $globalQueryAmount = 4000;
 
 $startTime = time();
-$catalogTemplate = 
-  array(
-   "actor"=>array(),
-   "asin"=>"",
-   "artist"=>"",
-   "author"=>"",
-   "console"=>"",
-   "category"=>"",
-   "description"=>"",
-   "director"=>"",
-   "isbn"=>"",
-   "label"=>"",
-   "origionalReleaseDate"=>"",
-   "publisher"=>"",
-   "publicationDate"=>"",
-   "rating"=>"",
-   "releaseDate"=>"",
-   "runTime"=>"",
-   "sn"=>array(),
-   "studio"=>"",
-   "tags"=>array(), 
-   "tagsRaw"=>"",
-   "title"=>"",
-   "title"=>"",
-   "tracks"=>array(),
-   "type"=>"",
-   "url"=>"",
-   "year"=>""
-  );
-
 include_once("../objects/db.php");  
 include_once("amazon.php");
-
-include "marc_parse.php";
+include_once "marc_parse.php";
 $db = db::getInstance();
 
 $res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT ".$globalQueryAmount.";",false,"row_array");
