@@ -1,7 +1,19 @@
 <?
 class User {
+	// Array - Hotkeys
+	public $a_Hotkeys=array();
+	//
+	// Function - User
+	function User($tickets=false){
+		$v_DC=db::getInstance();
+		$this->a_Hotkeys = $v_DC->Query('SELECT * FROM lapcat_hotkeys WHERE id IN(0,1,2,3,4,5,6,7,8,9,10,11);',false,"assoc_array");
+		//if($v_DC->Count_res()>0){$this->a_Hotkeys=$v_DC->Format('assoc_array');}
+	}
+	
+	
 	/* Array - User */
 	public $a_User=array(
+		'log-status'=>-1,
 		'logged-in'=>false,
 		'theme'=>22
 	);
@@ -147,18 +159,15 @@ class User {
 		return '<promotion>'.$this->A_Promotions[$this->V_Promotion].'</promotion>';
 	}
 	//
-	// Function - User
-	function User($tickets=false){if(!$tickets){$this->F_LoadPromotions();}}
-	//
 	// User Log-In
 	function UserLogin($name=0,$pass='',$v_FailSafe=false){
 		$SQL='SELECT hu.ID, hu.username, hu.adventureOn, hu.type, hu.cardnumber, hu.pin, hml.library_ID, hp.objective_points, hp.patron_plus_points, hp.hotkeys_unlocked, hu.firstname,hu.lastname FROM lapcat.hex_users AS hu LEFT JOIN lapcat.hex_points AS hp ON (hp.ID=hu.ID) LEFT JOIN lapcat.hex_my_library AS hml ON (hu.ID=hml.user_ID) WHERE (hu.username="'.$name.'" AND hu.password=MD5("'.$pass.'")) OR (hu.cardnumber="'.$name.'" AND hu.pin="'.$pass.'") AND hu.locked=2;';
 		$v_DC=db::getInstance();
-		$rows = $v_DC->Query($SQL,false,"assoc_array");
-		//$rows=$v_DC->Format('assoc_array');
+		$v_DC->Query($SQL);
+    $rows = $v_DC->Query($SQL,false,"assoc_array");
 		if(is_array($rows)){
 			foreach($rows as $row){
-				$this->a_User['logged-in']=true;
+				$this->a_User['logged-in']=true; 
 				$this->f_GetTheme($row['ID']);
 				
 				// Valid Log-In and Password 
