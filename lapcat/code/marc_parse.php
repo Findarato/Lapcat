@@ -25,7 +25,7 @@
 		return $returnArray;
 	}
 	function parseMarc($isbn){
-	   $db = db::getInstance();
+	  $db = db::getInstance();
 		preg_match("/([0-9]*)/",$isbn,$matches);
 		$isbn = $matches[0];
 		$url = "http://catalog.lapcat.org/search~S12?/i".$isbn."/i".$isbn."/1%2C1%2C1%2CE/marc&FF=i".$isbn;
@@ -44,6 +44,9 @@
 		$cleaned["url"] = $url;
 		$cleaned["tags"] = array();
 		$cleaned["console"] = "";
+    $cleaned["numbers"] = "";
+    $fiveNineZero = false;
+    $nfnz = 0;
 		$marcKeys = array(260,520,521,245);
 		$doc = new DOMDocument();
 		@$doc->loadHTMLFile($url);
@@ -56,11 +59,11 @@
 				$fixedMCR = array();
 				$preIndex = 0;
 				foreach($mcr as $mr2){
-					if(substr($mr2,0,3)=="   "){
+					if(substr($mr2,0,3)=="   "){ // there is a new row with the same id.
 						$fixedMCR[$preIndex][0] .= substr_replace($mr2, "", 0,7);
-					}else{
-						$fixedMCR[substr($mr2,0,3)][] = substr_replace($mr2, "", 0,7);
-						$preIndex = substr($mr2,0,3);
+					}else{ //this is a new row.
+					  $fixedMCR[substr($mr2,0,3)][] = trim(substr_replace($mr2, "", 0,7));
+					  $preIndex = substr($mr2,0,3);
 					}
 				}
 				$a_status = $fixedMCR;
@@ -68,10 +71,24 @@
 		}
 		$a_status = array_smart_implode($a_status);
 	//	print_r($a_status);
-	  echo "Mark Record Display:===================\n";
+	  echo "===================\n";
+    //echo print_r($a_status);
+    echo "\n";
 		foreach ($a_status as $key=>$value){
-		  echo $key."=>".$value."\n";
  			switch ($key){
+        case "020": //This should be the ISBN and Standard Number(UPC) field
+          $cleanedISBN = "";
+          if(is_string($value)){ // if there is only one 020 field we need to account for it
+            $cleaned["numbers"] = $value;  
+          }else{
+            foreach($value as $val){ // lets go though and make sure there is nothing extra being added to the ISBN tag
+              $trash = explode(" ",$val);
+              $cleanedISBN[]=$trash[0];
+            }
+            $cleaned["numbers"] = $cleanedISBN;            
+          }
+        break;
+        
         case 100: //This should be the author field
           $split = explode("|", $value);
           preg_match("/([A-Za-z \, \s]*)/",$value,$authorMatches);
@@ -117,6 +134,7 @@
 					}else{if(preg_match("/([A-Z0-9a-z \s]*)/",$value,$Matches)){$cleaned["type".$key] = $Matches[0];}}
 				break;
 				case 590: //this should be the tags field
+				  $fiveNineZero = true; 
 					//we have to make sure they are separated by , and not ;
 					$cleanedTags = trim(strtolower($value));
 					if(!strpos($cleanedTags,";")){
@@ -148,7 +166,7 @@
 				default:break;
 			}
 		}
-    echo "===================\n";
+    echo "===================\n\n";
 		return $cleaned;	
 	}
 ?>
