@@ -108,8 +108,6 @@
             $this -> Lastid = mysql_insert_id($this -> linkid);
             return $this->Lastid;
           }
-          
-          
         }
         if(!$fetch){
           return true; //Something always has to be returned  
@@ -163,7 +161,7 @@
      * @param bool $force[optional] 
      */
     public function Format($type,$force = false,$idField = "id"){
-      $return = "";
+      $return = ""; 
       if(count($this -> Error) == 2){//there is an error
         return "There was an error with the query"; 
       }else{
@@ -192,13 +190,12 @@
               }
           break;
           case "assoc_array":
-            while($line = mysql_fetch_assoc($this -> Resid)){ 
+            while($line = mysql_fetch_assoc($this -> Resid)){
               if(isset($line[$idField])){
                 $return[$line[$idField]] = $line; 
               }else{
                 $return[] = $line;  
               }
-             
             }
           break;
           case "row_array":
