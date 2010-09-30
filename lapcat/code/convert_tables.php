@@ -10,9 +10,33 @@ $startTime = time();
 include_once ("../objects/db.php");  
 include_once ("marc_parse.php");
 include_once ("amazon.php");
-
 $db = db::getInstance();
+/*
+$debugSQL = "
+TRUNCATE TABLE  `lapcat_actor`;
+TRUNCATE TABLE  `lapcat_artist`;
+TRUNCATE TABLE  `lapcat_author`;
+TRUNCATE TABLE  `lapcat_director`;
+TRUNCATE TABLE  `lapcat_label`;
+TRUNCATE TABLE  `lapcat_materials`;
+TRUNCATE TABLE  `lapcat_materials_by_actor`;
+TRUNCATE TABLE  `lapcat_platform`;
+TRUNCATE TABLE  `lapcat_publisher`;
+TRUNCATE TABLE  `lapcat_rating`;
+TRUNCATE TABLE  `lapcat_studio`;
+";
 
+$debugSQLarray = explode(";",$debugSQL);
+
+
+
+//THIS IS FOR DEBUG ONLY
+foreach($debugSQLarray as $bugSql){
+  $db->Query($bugSql);  
+}
+
+//THIS IS FOR DEBUG ONLY
+*/
 $res = $db->Query("SELECT ID,ISBNorSN FROM lapcat.hex_materials LIMIT ".$globalQueryAmount.";",false,"row_array");
 echo "Total Results to parse:".$db->Count_res()."\n";
 //$res = $db->Query("SELECT id,isbn_sn FROM lapcat.lapcat_materials WHERE title='' ;",false,"row");
@@ -26,6 +50,8 @@ if(is_array($res)){ // the query did not have a fit
     $isbn = $r[1];
     $globalProcessed++;
     $catalog = array();
+    $parsed = false;
+    $normalAmazon = array();
     echo "***************** Starting a record *****************\n";
     echo "Record: ".$globalProcessed."\n";
     $tag = $db->Query("SELECT tag_ID FROM lapcat.hex_tags_by_material WHERE id=".$oldId,true,"row_array");
@@ -34,18 +60,20 @@ if(is_array($res)){ // the query did not have a fit
     $xml = simplexml_load_file(awsRequest($category, $isbn,false, "ItemSearch", "1"));
     //Parse the catalog for the item
     $catalog = parseMarc($isbn); // lets just get the catalog item first.  That way we can fall back on this easier.
+    $catalog = array_merge($catalogTemplate,$catalog); // lets merge the templates together.
     
-    if(strval($xml->Items->Request->IsValid)=="True"){
+    if(strval($xml->Items->Request->IsValid)=="True"){ // there is an Amazon record
       echo "******** Amazon record ********\n";
-      $category = getCategory($tag);   
+      echo "Record: ".$globalProcessed."\n";
       $normalAmazon = normalizeData($xml,$catalogTemplate,$tag,$isbn);
-      if($normalAmazon["title"]==""){
+      if($normalAmazon["title"]==""){ // lets just do a fall back check before we even toss it over to the checker.
         $normalAmazon["title"] = $catalog["title"];
+        $normalAmazon = array_merge($catalog,$normalAmazon); // lets merge the templates together to see if we can make a one time insert of the record.
       }
+      //print_r($normalAmazon);
       enterData($normalAmazon,$category,$isbn);
     }else{ //this should be a bad record
-      $category = getCategory($tag);   
-      //Loop though the tags to set the category
+      echo "Amazon search result:".strval($xml->Items->Request->IsValid)."\n" ;
       if(!is_array($catalog["isbn"])){$catalog["isbn"] = array($catalog["isbn"]); }
       if(isset($catalog["sn"])){
         if(!is_array($catalog["sn"])){
@@ -55,18 +83,18 @@ if(is_array($res)){ // the query did not have a fit
         $catalog["sn"] = array();
       }
       
-      $isbnSn = array_merge($catalog["isbn"],$catalog["sn"]);
-      $parsed = false;
+      $isbnSn = $catalog["isbn"]+$catalog["sn"];
       echo "******** Amazon second Parse Start ********\n";
       foreach($isbnSn as $isbn2){
-        if($category!="borked" && $parsed === false){ // we do not need to run the code if its already found the result
+        if($parsed === false){ // we do not need to run the code if its already found the result
           $xml = simplexml_load_file(awsRequest($category, $isbn2,false, "ItemSearch", "1"));
-          if($xml->Items->Item->ASIN){ //there is a record with amazon
+          if(strval($xml->Items->Request->IsValid)=="True"){ //there is a record with amazon
             echo "******** Amazon record ********\n";
             echo "Record: ".$globalProcessed."\n";
             //we must normalize the data from amazon to match that of the catalog
             echo "Found a record with Amazon: ".$xml->Items->Item->ASIN."\n";
             $amazonData = normalizeData($xml,$catalogTemplate,$tag,$isbn);
+            $normalAmazon = array_merge($catalog,$normalAmazon); // lets merge the templates together to see if we can make a one time insert of the record.
             enterData($amazonData,$category,$isbn,$isbn);
             $parsed = true;
           }
@@ -76,10 +104,8 @@ if(is_array($res)){ // the query did not have a fit
       if(!$parsed){    //Something went wrong getting the category
         echo "******** Catalog record ********\n";
         echo "Record: ".$globalProcessed."\n";
-        echo "ISBN:".$catalog["isbn"][0]."\n";
-        $catalog = array_merge($catalogTemplate,$catalog);
+        echo "ISBN: ".$catalog["isbn"][0]."\n";
         $catalog["isbn"] = array_smart_implode($catalog["isbn"]);
-        //print_r($catalog);
         enterData($catalog,$category,$isbn,$isbn);
       }
     }
@@ -87,57 +113,7 @@ if(is_array($res)){ // the query did not have a fit
   }
 }else{echo "The primary conversion query is broken some how!";}
 
-
-//Lets deal with the records that are missing ASIN tags
-//$missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE id>995",true,"assoc");
-/*
-$missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE (title='' or tag1_id=0) and FALSE",true,"assoc");
-//$missing = $db->Query("SELECT id,isbn_sn,tag1_id,tag2_id,tag3_id,tag4_id FROM lapcat.lapcat_materials WHERE valid=0",true,"assoc");
-echo "Total Missing Results to parse:".$db->Count_res()."\n";
-$category = "";
-foreach($missing as $m){
-  $t = array($m["tag1_id"],$m["tag2_id"],$m["tag3_id"],$m["tag4_id"]);
-  //Parse the catalog for the item
-  $catalog = parseMarc($m["isbn_sn"]);
-  //Loop though the tags to set the category
-  $category = getCategory($t);
-  if(!is_array($catalog["isbn"])){$catalog["isbn"] = array($catalog["isbn"]); }
-  if(isset($catalog["sn"])){
-    if(!is_array($catalog["sn"])){
-      $catalog["sn"] = array($catalog["sn"]); 
-    }
-  }else{
-    $catalog["sn"] = array();
-  }
-  
-  $isbnSn = array_merge($catalog["isbn"],$catalog["sn"]);
-  $parsed = false;
-  echo "================= Starting second Amazon parse\n";
-  foreach($isbnSn as $isbn2){
-    if($catagory!="borked" && $parsed === false){ // we do not need to run the code if its already found the result
-      $xml = simplexml_load_file(awsRequest($category, $isbn2,false, "ItemSearch", "1"));
-      if($xml->Items->Item->ASIN){ //there is a record with amazon
-        //we must normalize the data from amazon to match that of the catalog
-        echo "Found a record with Amazon: ".$xml->Items->Item->ASIN."\n";
-        $amazonData = normalizeData($xml,$catalogTemplate,$t,$m["isbn_sn"]);
-        //print_r($amazonData);
-        enterData($amazonData,$category,$m["isbn_sn"],$m["isbn_sn"]);
-        $parsed = true;
-      }
-    }
-  }
-  echo "================= End second Amazon parse\n";
-  if(!$parsed){    //Something went wrong getting the category
-    echo "ISBN:".$catalog["isbn"][0]."\n";
-    $catalog = array_merge($catalogTemplate,$catalog);
-    $catalog["isbn"] = array_smart_implode($catalog["isbn"]);
-    //print_r($catalog);
-    enterData($catalog,$category,$m["isbn_sn"],$m["isbn_sn"]);
-  }
-}
-*/
 $endTime = time();
-
 echo "\n\n\nTotal Queries Executed:".$db->v_Queries."<br>\n";
 echo "Total Entries Processed:".$globalProcessed."<br>\n";
 echo "Total Time:".($endTime - $startTime)."<br>\n";

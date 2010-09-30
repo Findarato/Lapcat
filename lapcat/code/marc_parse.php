@@ -135,13 +135,20 @@
 				case 590: //this should be the tags field
 				  $fiveNineZero = true; 
 					//we have to make sure they are separated by , and not ;
-					$cleanedTags = trim(strtolower($value));
+					if(is_array($value)){
+            $cleanedTags = trim(strtolower(join(",",$value)));
+            $cleaned["tagsRaw"] = trim(strtolower($cleanedTags));
+					}else{
+            $cleanedTags = trim(strtolower($value));  
+            $cleaned["tagsRaw"] = trim(strtolower($cleanedTags));
+					}
+					
 					if(!strpos($cleanedTags,";")){
             $cleaned["tags"] = explode(",",$cleanedTags);
 					}else{
             $cleaned["tags"] = explode(";",$cleanedTags); 
 					}
-          $cleaned["tagsRaw"] = trim(strtolower($value));
+
           $tagIds = array();
           foreach($cleaned["tags"] as $t){
             $tagIds[] = $db->Query("SELECT id FROM lapcat.lapcat_tag WHERE name LIKE '".trim(strtolower($t))."%'",false,"row");
