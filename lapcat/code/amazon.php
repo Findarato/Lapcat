@@ -129,28 +129,30 @@ function enterData($xml,$category,$isbn,$update=false){
         $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$isbn."' LIMIT 1",false,"row");
         $internalISBN = $isbn;  
       }
-      echo "\n";
-      echo "-----------\n";
+      echo $materialId."\n";
+
+      if(count($xml["tags"])>4){
+        $tempArray[0]= $xml["tags"][0];
+        $tempArray[1]= $xml["tags"][1];
+        $tempArray[2]= $xml["tags"][2];
+        $tempArray[3]= $xml["tags"][3];
+        //die("There are more than 4 tags");
+        $xml["tags"] = $tempArray;
+        unset($tempArray);
+      }
+      if(isset($xml["asin"]) && $xml["asin"]!=""){
+        $dataSource = "amazon";
+        echo "Amazon ASIN:".$xml["asin"]."\n";
+      }else{
+        $dataSource = "catalog";
+        echo "Catalog Parsed\n";
+      }
+
       if($materialId == 0){ //this is a new item and needs to be inserted
         echo "New Record:".$isbn."\n";
-        if(isset($xml["asin"]) && $xml["asin"]!=""){
-          $dataSource = "amazon";
-          echo "Amazon ASIN:".$xml["asin"]."\n";
-        }else{
-          $dataSource = "catalog";
-          echo "Catalog Parsed\n";
-        }
+
         $xml["tags"] = fixTags($xml["tags"]);
         $tempArray = array();
-        if(count($xml["tags"])>4){
-          $tempArray[0]= $xml["tags"][0];
-          $tempArray[1]= $xml["tags"][1];
-          $tempArray[2]= $xml["tags"][2];
-          $tempArray[3]= $xml["tags"][3];
-          //die("There are more than 4 tags");
-          $xml["tags"] = $tempArray;
-          unset($tempArray);
-        }
         
         $materialId = $db->Query("INSERT INTO lapcat.lapcat_materials 
         (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on,data_source) 
@@ -167,20 +169,36 @@ function enterData($xml,$category,$isbn,$update=false){
         if($materialId == 0 || count($db->Error)==2){
           print_r($db->Error);die();
         }else{
-          echo "NEW Material ID".$materialId."\n";
+          echo "NEW Material ID: ".$materialId."\n";
         }
-      }else{ //this is an update on a record that had a problem
+      }else{ //this is a dupe record and should be put into the dupe table, and all references should be linked there
+        $db->Query("INSERT INTO lapcat.lapcat_materials_dupes 
+        (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on,data_source) 
+        VALUES(
+          '".$isbn."',
+          '".$xml["asin"]."',
+          '".$category."',
+          '".implode("','",$xml["tags"])."'
+          ,
+          1,
+          NOW(),
+          '".$dataSource."'
+        )");
+        //print_r($db->Lastsql);
+        echo "\n";
         echo "UPDATED Material ID:".$materialId."\n";
+        echo "DUPE ISBN :".$internalISBN."\n";
+        return "DUPE";
       }
       
       
       //Lets just make sure there are tags
       $tag1Id = $db->Query("SELECT tag1_id FROM lapcat.lapcat_materials WHERE id='".$materialId."' LIMIT 1",false,"row");
-      if($tag1Id == 0 && $xml["tags"][0] > 0){ //its missing tags and I have a tag to give it.
+      if($tag1Id == 0 && isset($xml["tags"][0]) && $xml["tags"][0] > 0){ //its missing tags and I have a tag to give it.
         echo "I am missing tags in the table but I have tags to be put in.\n";
         $db->Query("UPDATE lapcat.lapcat_materials SET tag1_id='".$xml["tags"][0]."',tag2_id='".$xml["tags"][1]."',tag3_id='".$xml["tags"][2]."',tag4_id='".$xml["tags"][3]."' WHERE id=".$materialId);
       }else{ // its missing tags or I do not have tags to give it.
-        if($xml["tags"][0] == 0 || !isset($xml["tags"][0])){//I some how do not have any tags to give the item.
+        if(!isset($xml["tags"][0]) && $xml["tags"][0] != 0){//I some how do not have any tags to give the item.
           if($materialId > 0){// we need to make sure at this point that we do indeed have a material id.  This should never fail, but better be safe
             if($internalISBN != ""){ //we have a isbn number or standard number to work with
               if(!is_array($xml["numbers"])){ // lets just make sure its an array so we do not have to edit the sql
@@ -340,27 +358,28 @@ function enterData($xml,$category,$isbn,$update=false){
  */
 function normalizeData($xml,$template,$tags=false,$isbn=0){
   $data = $template;
-  if(@strval($xml->Items->Item->ItemAttributes->ISBN)){
+  if(is_object($xml->Items->Item->ItemAttributes->ISBN)){
     $data["isbn"] = strval($xml->Items->Item->ItemAttributes->ISBN);
-  }elseif(@strval($xml->Items->Item->ItemAttributes->UPC)){
+  }elseif(is_object($xml->Items->Item->ItemAttributes->UPC)){
     $data["isbn"] = strval($xml->Items->Item->ItemAttributes->UPC);
   }else{
     $data["isbn"] = $isbn;
   }
   $data["tags"] = fixTags($tags); // yeah lets just make sure its good even here.
   $data["asin"] = @strval($xml->Items->Item->ASIN); 
-  $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);
   $data["description"] = @strval($xml->Items->Item->EditorialReviews->EditorialReview->Content);
-  if(strval($xml->Items->Item->ItemAttributes->ESRBAgeRating)){
+  if(is_object($xml->Items->Item->ItemAttributes->ESRBAgeRating)){
     $data["rating"] = @strval($xml->Items->Item->ItemAttributes->ESRBAgeRating);  
   }else{
     $data["rating"] = @strval($xml->Items->Item->ItemAttributes->AudienceRating);
   }
   $data["director"] = @strval($xml->Items->Item->ItemAttributes->Director);
-  
-  foreach (@$xml->Items->Item->ItemAttributes->Actor as $a){
-    $data["actor"][] = strval($a);
+  if(is_object($xml->Items->Item->ItemAttributes->Actor)){
+    foreach (@$xml->Items->Item->ItemAttributes->Actor as $a){
+      $data["actor"][] = strval($a);
+    }  
   }
+  
   if(@$xml->Items->Item->ItemAttributes->Platform){
     $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);  
   }
@@ -377,7 +396,7 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   $data["author"] = @strval($xml->Items->Item->ItemAttributes->Author);
   
   $data["publicationDate"] = strval($xml->Items->Item->ItemAttributes->PublicationDate);
-  if(is_array(@$xml->Items->Item->Tracks->Disc->Track)){
+  if(is_object(@$xml->Items->Item->Tracks->Disc->Track)){
     foreach (@$xml->Items->Item->Tracks->Disc->Track as $a){
       $data["tracks"][] = strval($a);
     }    
