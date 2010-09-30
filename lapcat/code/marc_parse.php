@@ -47,7 +47,6 @@
     $cleaned["numbers"] = "";
     $fiveNineZero = false;
     $nfnz = 0;
-		$marcKeys = array(260,520,521,245);
 		$doc = new DOMDocument();
 		@$doc->loadHTMLFile($url);
 		
@@ -85,7 +84,7 @@
               $trash = explode(" ",$val);
               $cleanedISBN[]=$trash[0];
             }
-            $cleaned["numbers"] = $cleanedISBN;            
+            $cleaned["numbers"] = $cleanedISBN;      
           }
         break;
         

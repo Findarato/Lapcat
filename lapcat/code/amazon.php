@@ -1,9 +1,9 @@
-<?
+<?Php
 
 //turn on the line below once all of the errors are fixed.
 //ini_set('display_errors', 1);
-error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-
+//error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+include_once ("marc_parse.php");
 $catalogTemplate = 
   array(
    "actor"=>array(),
@@ -33,11 +33,6 @@ $catalogTemplate =
    "url"=>"",
    "year"=>""
   );
-
-include_once("../objects/db.php");  
-
-include "marc_parse.php";
-$db = db::getInstance();
 
 /*
  * The main amazon parsing function 
@@ -126,6 +121,7 @@ function enterData($xml,$category,$isbn,$update=false){
       $artistId = 0;
       $authorId = 0;
       $internalISBN = "";
+
       if($update){
         $internalISBN = $update;
         $materialId = $db->Query("SELECT id FROM lapcat.lapcat_materials WHERE isbn_sn='".$update."' LIMIT 1",false,"row");
@@ -144,6 +140,18 @@ function enterData($xml,$category,$isbn,$update=false){
           $dataSource = "catalog";
           echo "Catalog Parsed\n";
         }
+        $xml["tags"] = fixTags($xml["tags"]);
+        $tempArray = array();
+        if(count($xml["tags"])>4){
+          $tempArray[0]= $xml["tags"][0];
+          $tempArray[1]= $xml["tags"][1];
+          $tempArray[2]= $xml["tags"][2];
+          $tempArray[3]= $xml["tags"][3];
+          //die("There are more than 4 tags");
+          $xml["tags"] = $tempArray;
+          unset($tempArray);
+        }
+        
         $materialId = $db->Query("INSERT INTO lapcat.lapcat_materials 
         (isbn_sn,asin,category,tag1_id,tag2_id,tag3_id,tag4_id,valid,modified_on,data_source) 
         VALUES(
@@ -156,8 +164,13 @@ function enterData($xml,$category,$isbn,$update=false){
           NOW(),
           '".$dataSource."'
         )");
+        if($materialId == 0 || count($db->Error)==2){
+          print_r($db->Error);die();
+        }else{
+          echo "NEW Material ID".$materialId."\n";
+        }
       }else{ //this is an update on a record that had a problem
-        echo "Material Id:".$materialId."\n";
+        echo "UPDATED Material ID:".$materialId."\n";
       }
       
       
@@ -167,17 +180,16 @@ function enterData($xml,$category,$isbn,$update=false){
         echo "I am missing tags in the table but I have tags to be put in.\n";
         $db->Query("UPDATE lapcat.lapcat_materials SET tag1_id='".$xml["tags"][0]."',tag2_id='".$xml["tags"][1]."',tag3_id='".$xml["tags"][2]."',tag4_id='".$xml["tags"][3]."' WHERE id=".$materialId);
       }else{ // its missing tags or I do not have tags to give it.
-        if($xml["tags"][0] == 0){//I some how do not have any tags to give the item.
+        if($xml["tags"][0] == 0 || !isset($xml["tags"][0])){//I some how do not have any tags to give the item.
           if($materialId > 0){// we need to make sure at this point that we do indeed have a material id.  This should never fail, but better be safe
             if($internalISBN != ""){ //we have a isbn number or standard number to work with
-              if(!is_array($xml["numbers"])){$xml["numbers"] = array($xml["numbers"]);} // lets just make sure its an array so we do not have to edit the sql
+              if(!is_array($xml["numbers"])){ // lets just make sure its an array so we do not have to edit the sql
+                $xml["numbers"] = array($xml["numbers"]);
+              }
               $oldMaterialId = $db->Query("SELECT ID FROM lapcat.hex_materials WHERE ISBNorSN IN ('".join("','",$xml["numbers"])."') LIMIT 1",false,"row");
               if($oldMaterialId>0){ // this was an record converted from the old material table
                 //lets look up the tags from the old table
-                $dbTags = $db->Query("SELECT tag_id FROM hex_tags_by_material WHERE ID=".$oldMaterialId.";",false,"row_array");
-                print_r($dbTags);
-                $dbTags = array_pad($dbTags,4,"0"); // lets just make sure we have 4 tags for the query.
-                print_r($dbTags);
+                $dbTags = fixTags($db->Query("SELECT tag_id FROM hex_tags_by_material WHERE ID=".$oldMaterialId.";",false,"row_array"));
                 if(is_array($dbTags)){//we have a list of tags from the old tags by material table we can use.
                   $db->Query("UPDATE lapcat.lapcat_materials SET tag1_id='".$dbTags[0]."',tag2_id='".$dbTags[1]."',tag3_id='".$dbTags[2]."',tag4_id='".$dbTags[3]."' WHERE id=".$materialId);
                   echo "Tags where successfully ported over\n";
@@ -195,7 +207,7 @@ function enterData($xml,$category,$isbn,$update=false){
         if($xml["title"]!=""){
            echo "title:".mysql_real_escape_string($xml["title"])."\n";
            $db->Query("UPDATE lapcat_materials SET title='".mysql_real_escape_string($xml["title"])."' WHERE id=".$materialId);
-           print_r($db->Lastsql."\n");
+           //print_r($db->Lastsql."\n");
         }else{
           echo "There was an error entering in the title\n";
           echo "title:".mysql_real_escape_string($xml["title"])."\n";
@@ -212,15 +224,18 @@ function enterData($xml,$category,$isbn,$update=false){
         }
       }
       //Parse out and update the Tracks
-      if(count($xml["tracks"])>0){
-        $trackHold = array();
-        foreach ($xml["tracks"] as $t){
-          $trackHold[] = strval($t);
-        }
-        if($materialId >0 ){
-          $db->Query("UPDATE lapcat_materials SET tracks='".json_encode($trackHold)."' WHERE id=".$materialId);
-        }
+      if(isset($xml["tracks"])){
+        if(count($xml["tracks"])>0){
+          $trackHold = array();
+          foreach ($xml["tracks"] as $t){
+            $trackHold[] = strval($t);
+          }
+          if($materialId >0 ){
+            $db->Query("UPDATE lapcat_materials SET tracks='".json_encode($trackHold)."' WHERE id=".$materialId);
+          }
+        }        
       }
+
       //Parse out and update the Artist
       if($xml["artist"]!=""){
         $artistId = $db->Query("SELECT id FROM lapcat.lapcat_artist WHERE name='".$xml["artist"]."'",false,"row");
@@ -232,19 +247,21 @@ function enterData($xml,$category,$isbn,$update=false){
         }
       }
       //Parse out and update the Actors
-      if(count($xml["actor"])>0){
-        $actor = array();
-        foreach ($xml["actor"] as $a){
-          $actorId = $db->Query("SELECT id FROM lapcat.lapcat_actor WHERE name='".strval($a)."'",false,"row");
-          if($actorId === 0){
-            $actorId = $db->Query("INSERT INTO lapcat.lapcat_actor (name,modified_on) VALUES('".strval($a)."',NOW())");
-          }
-          /* I know its a lot more queries, but we should make sure that the actor->material link is not already in. */
-          $actorCheck = $db->Query("SELECT material_id FROM lapcat.lapcat_materials_by_actor WHERE actor_id='".$actorId."'",false,"row");
-          if($actorCheck === 0){ //We know that there is not already a link, so lets make one.
-            $db->Query("INSERT INTO lapcat.lapcat_materials_by_actor (material_id,actor_id,modified_on) VALUES ('".$materialId."','".$actorId."',NOW())");
-          }
-        } 
+      if(isset($xml["actor"])>0){
+        if(count($xml["actor"])>0){
+          $actor = array();
+          foreach ($xml["actor"] as $a){
+            $actorId = $db->Query("SELECT id FROM lapcat.lapcat_actor WHERE name='".strval($a)."'",false,"row");
+            if($actorId === 0){
+              $actorId = $db->Query("INSERT INTO lapcat.lapcat_actor (name,modified_on) VALUES('".strval($a)."',NOW())");
+            }
+            /* I know its a lot more queries, but we should make sure that the actor->material link is not already in. */
+            $actorCheck = $db->Query("SELECT material_id FROM lapcat.lapcat_materials_by_actor WHERE actor_id='".$actorId."'",false,"row");
+            if($actorCheck === 0){ //We know that there is not already a link, so lets make one.
+              $db->Query("INSERT INTO lapcat.lapcat_materials_by_actor (material_id,actor_id,modified_on) VALUES ('".$materialId."','".$actorId."',NOW())");
+            }
+          } 
+        }
       }
       //Parse out and update the Director
       if($xml["director"]!=""){
@@ -271,6 +288,7 @@ function enterData($xml,$category,$isbn,$update=false){
         $platformId = $db->Query("SELECT id FROM lapcat.lapcat_platform WHERE name='".$xml["console"]."'",false,"row");
         if($platformId === 0){ 
           $platformId = $db->Query("INSERT INTO lapcat.lapcat_platform (name,modified_on) VALUES('".$xml["console"]."',NOW())");
+          echo "platform ID:".$platformId." Name".$xml["console"]."\n";
         }
         if($materialId >0 && $platformId >0){
           $db->Query("UPDATE lapcat_materials SET platform_id=".$platformId." WHERE id=".$materialId);
@@ -321,7 +339,6 @@ function enterData($xml,$category,$isbn,$update=false){
  * Function used to normalize amazon data to that of the catalog 
  */
 function normalizeData($xml,$template,$tags=false,$isbn=0){
-  $db = db::getInstance();
   $data = $template;
   if(@strval($xml->Items->Item->ItemAttributes->ISBN)){
     $data["isbn"] = strval($xml->Items->Item->ItemAttributes->ISBN);
@@ -330,12 +347,7 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
   }else{
     $data["isbn"] = $isbn;
   }
-  
-  if($tags){
-  // $tags = array_implode($tags);
-   $data["tags"] = $tags;
-  }
-  
+  $data["tags"] = fixTags($tags); // yeah lets just make sure its good even here.
   $data["asin"] = @strval($xml->Items->Item->ASIN); 
   $data["console"] = @strval($xml->Items->Item->ItemAttributes->Platform);
   $data["description"] = @strval($xml->Items->Item->EditorialReviews->EditorialReview->Content);
@@ -374,17 +386,21 @@ function normalizeData($xml,$template,$tags=false,$isbn=0){
 }
 
 function fixTags($tags){
-  $tags = array_pad($tags,4,"0");
-  if(!is_array($tags)){ return false; } //Both of the values must be set
+  if(!is_array($tags)){ return array(0,0,0,0); } //If we do not get an array we will return a blank one
+    $tags = array_pad($tags,4,"0"); // lets make sure we have 4 items
   //Now that we can be assured that both of the values are set lets do stuff to them.
-  if($tags[0]==0){//lets make sure that this is broken
     $firstTag = 0;
     $tagCount = 0;
     $replacedTag = 0;
+    if($tags[0]==0){//lets make sure that this is broken
     $newTags = array();
     foreach($tags as $t){
       switch($t){
         case "1": //books  
+        case "2": //music
+        case "3": //movie 
+        case "5": //tv
+        case "4": //video game
         case "23": //audio book
         case "24": //digital book
         case "32": //graphic novel
@@ -392,22 +408,22 @@ function fixTags($tags){
         case "75": //digital audio player
         case "76": //digital audio book
         case "159": //dital audio book
-        case "2": //music
-        case "3": //movie
-        case "5": //tv
-        case "4": //video game
           $firstTag = $t;
           $replacedTag = $tagCount;
         default:$tagCount++;break;
-      }
-    }
+      }//end of switch statement
+    }//end of loop though tags
+   
     $newTags[0] = $firstTag;
     for($a=1;$a<4;$a++){
       if($a!=$replacedTag){
         $newTags[$a] = $tags[$a];  
       }
     }
+    return $newTags;
+  }else{
+    return $tags;
   }
-  return $newTags;  
+    
 }
 ?>
