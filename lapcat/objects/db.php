@@ -127,7 +127,10 @@
      * @param string $type
      * @param bool $force[optional]
      */
-    public function Fetch($type,$force = false,$idField="id"){ return $this->Format($type,$force,$idField);} // to be more like mysql
+    public function Fetch($type,$force = false,$idField="id"){
+      if($this->Count_res()==0){return 0;}
+       return $this->Format($type,$force,$idField);
+    } // to be more like mysql
     /**
      * Used to save stored resluts.  Can be dangerous and should be used with caution.
      * @return int|string
@@ -164,6 +167,7 @@
      */
     public function Format($type,$force = false,$idField = "id"){
       $return = ""; 
+      if($this->Count_res()==0){return 0;}
       if(count($this -> Error) == 2){//there is an error
         return "There was an error with the query"; 
       }else{
