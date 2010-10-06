@@ -103,6 +103,8 @@
           $this -> Error["Query"] = $this -> Lastsql;
           $this -> Error["Error"] = mysql_error();
           $return = "There was an error with your sql";
+        }elseif($this->Count_res()==0){
+         return 0; 
         }else { $this -> Error = array(); 
           if(substr_count(strtolower($sql),"insert") > 0){//this was an insert
             $this -> Lastid = mysql_insert_id($this -> linkid);
