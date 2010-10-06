@@ -1,8 +1,8 @@
 <?Php
     class db{
        
-        public $Lastsql = ""; //store the last query
-        public $Error = array(); //Will store 2 entries, the query that failed and the error
+    public $Lastsql = ""; //store the last query
+    public $Error = array(); //Will store 2 entries, the query that failed and the error
 		public $Cache_all = false; //This will force all queries to be cache queries.
 		public $Prefix = "";
 
@@ -14,12 +14,12 @@
 		public $v_Queries = 0; //count how many are executed
 		
         //Define the database connection information
-        private $config = array(); //config values in associat
-        private $linkid = 0; //store the link id.
-        private $dbase = "lapcat";
-        private $user = "lapcat";
-        private $password = "ETNXPRRHcTAZsXQy";
-        private $host = "localhost";
+    private $config = array(); //config values in associat
+    private $linkid = 0; //store the link id.
+    private $dbase = "lapcat";
+    private $user = "lapcat";
+    private $password = "ETNXPRRHcTAZsXQy";
+    private $host = "localhost";
 		//Define the database connection information
 		private $prefixString = "{prefix}";
 		private $storeResults = array(); //Store query results for later in the rendering.
@@ -103,7 +103,7 @@
           $this -> Error["Query"] = $this -> Lastsql;
           $this -> Error["Error"] = mysql_error();
           $return = "There was an error with your sql";
-        }elseif($this->Count_res()==0){
+        }elseif(mysql_num_rows($return)==0){
          return 0; 
         }else { $this -> Error = array(); 
           if(substr_count(strtolower($sql),"insert") > 0){//this was an insert
@@ -128,7 +128,7 @@
      * @param bool $force[optional]
      */
     public function Fetch($type,$force = false,$idField="id"){
-      if($this->Count_res()==0){return 0;}
+      //if($this->Count_res()==0){return 0;}
        return $this->Format($type,$force,$idField);
     } // to be more like mysql
     /**
@@ -167,7 +167,7 @@
      */
     public function Format($type,$force = false,$idField = "id"){
       $return = ""; 
-      if($this->Count_res()==0){return 0;}
+     // if($this->Count_res()==0){return 0;}
       if(count($this -> Error) == 2){//there is an error
         return "There was an error with the query"; 
       }else{
