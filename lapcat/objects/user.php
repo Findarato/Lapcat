@@ -2,18 +2,52 @@
 class User {
 	// Array - Hotkeys
 	public $a_Hotkeys=array();
+	// Variable - In House
+	public $v_InHouse=-1;
 	//
 	// Function - User
 	function User($tickets=false){
-		$v_DC=db::getInstance();
-		$this->a_Hotkeys = $v_DC->Query('SELECT * FROM lapcat_hotkeys WHERE id IN(0,1,2,3,4,5,6,7,8,9,10,11);',false,"assoc_array");
-		//if($v_DC->Count_res()>0){$this->a_Hotkeys=$v_DC->Format('assoc_array');}
+		$v_IP=$_SERVER['REMOTE_ADDR'];
+		$this->f_SetIP($v_IP);
+		if(in_array($v_IP,array('75.150.196.1','75.150.196.2','75.150.196.3','75.150.196.4','75.150.196.5','75.150.196.6','75.150.196.9','75.150.196.10','75.150.196.11','75.150.196.12','75.150.196.13','75.150.196.14','75.150.196.17','75.150.196.18','75.150.196.19','75.150.196.20','75.150.196.21','75.150.196.22','75.150.211.249','75.150.211.250','75.150.211.251','75.150.211.252','75.150.211.253','75.150.211.254','70.91.251.193','70.91.251.194','70.91.251.195','70.91.251.196','70.91.251.197','70.91.251.198','75.145.130.225','75.145.130.226','75.145.130.227','75.145.130.228','75.145.130.229','75.145.130.230','75.149.222.209','75.149.222.210','75.149.222.211','75.149.222.212','75.149.222.213','75.149.222.214'))||substr($v_IP,0,5)=='10.1.'){$this->v_InHouse=1;}else{$this->v_InHouse=-1;}
+		$this->f_NoReallyLogUserIn();
 	}
+	function f_NoReallyLogUserIn(){
+		$v_DC=db::getInstance();
+		if($this->User_id>0){
+			$this->a_Hotkeys=array();
+			$v_DC->Query('SELECT order_id, hotkey_id FROM lapcat.lapcat_hotkeys_by_user WHERE user_id='.$this->User_id.';');
+			$a_HotkeyIDs=$v_DC->Format('assoc_array');
+			$a_Order=array();
+			if($v_DC->Count_res()>0){
+				foreach($a_HotkeyIDs as $v_Key=>$a_Hotkey){
+					$a_Order[$a_Hotkey['order_id']]=$a_Hotkey['hotkey_id'];
+				}
+			}else{
+				$a_Order=array(17,0,1,12,14,15,16);
+				foreach($a_Order as $v_OrderKey=>$v_HotkeyID){
+					$v_DC->Query('INSERT INTO lapcat.lapcat_hotkeys_by_user (user_id, hotkey_id, order_id) VALUES ('.$this->User_id.','.$v_HotkeyID.','.$v_OrderKey.');');
+				}
+			}
+		}else{
+			//$a_Order=array(13,64,17,0,1,12,14,15,16,11,42,43,44,45,46,47,48,49,50,51,52,53,55,56,57,58,59,60,61);
+			//$a_Order=array(13,0);
+			$a_Order=array(17,0,1,12,14,15,16);
+		}
+		$a_Hotkeys=$v_DC->Query('SELECT * FROM lapcat.lapcat_hotkeys WHERE id IN('.join(',',$a_Order).');',false,"assoc_array",false,"id");
+		// Array - Hotkeys
+		foreach($a_Order as $v_OrderID=>$v_HotkeyID){
+			$this->a_Hotkeys[$v_HotkeyID]=array_merge($a_Hotkeys[$v_HotkeyID],array('order_id'=>$v_OrderID));
+		}
+		//print_r($this->a_Hotkeys);die();
+	}
+	// Function - Set IP
+	function f_SetIP($v_IP=''){$a_IP=$v_IP.explode('.',$v_IP,4);$this->A_User['IP']=(intval($a_IP[0])*pow(2,24))+(intval($a_IP[1])*pow(2,16))+(intval($a_IP[2])*pow(2,8))+intval($a_IP[3]);}
 	
 	
 	/* Array - User */
 	public $a_User=array(
-		'log-status'=>-1,
+		'log-status'=>-1, 
 		'logged-in'=>false,
 		'theme'=>22
 	);
@@ -189,6 +223,7 @@ class User {
 				$this->A_U['logged-in']=3;
 				$this->A_U['validated']=true;
 				if($row['cardnumber']>0&&$row['pin']>0){$this->A_U['patron-plus']=FF_PinAPI($row['cardnumber'],$row['pin']);}
+				$this->f_NoReallyLogUserIn();
 				return array('success'=>2,'user'=>$this->A_U['user-ID'],'theme'=>$this->a_User['theme'],'type'=>$this->A_U['type']);
 			}
 		}else{
