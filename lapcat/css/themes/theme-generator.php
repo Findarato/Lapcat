@@ -92,6 +92,7 @@ $a_Theme=array(
 		'I'=>array("0","0%","49%"), // Grey II
 		'J'=>array("0","0%","33%"),    // Grey III
 		'K'=>array("0","0%","2%"),       // Black
+		'K2'=>array("0","0%","27%"),       // Black
 		'L'=>array("46","82%","53%"),  // Theme Color VII
 		'M'=>array("97","51%","33%"),   // Basic Color I - Green
 		'N'=>array("40","60%","69%"), // Basic Color II - Orange,
@@ -390,7 +391,7 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.LAPCAT-image{background-image:url(/lapcat/images/100-18-1.png); background-repeat:no-repeat;}';
 			// L i g h t
 			// Default Font Color
-			$v_CSS .= '	a, font{color:hsl('.$a_Theme['color']['K'].');	}';
+			$v_CSS .= '	a,a:active, a:visited, font{color:hsl('.$a_Theme['color']['K'].');	}';
 			// Effect
 			$v_CSS .= '.effect-hover-X-1:hover,.effect-hover-X-2:hover,.effect-hover-X-3:hover,.effect-hover-X-4:hover,{background-color:hsl('.$a_Theme['color']['K'].');}';
 			$v_CSS .= '.effect-hover-X-2:hover{background-color:hsla('.$a_Theme['color']['K'].',0.8);}';
@@ -428,6 +429,7 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.border-all-Z-1{border:1px solid hsl('.$a_Theme['accent-color']['B'].');}';
 			// Fonts
 			$v_CSS .= '.font-X{color:hsl('.$a_Theme['color']['K'].');}';
+      $v_CSS .= '.font-X2{color:hsl('.$a_Theme['color']['K2'].');}';
 			$v_CSS .= '.font-Y{color:hsl('.$a_Theme['color']['G'].');}';
 			$v_CSS .= '.font-Z{color:hsl('.$a_Theme['accent-color']['B'].');}';
 			$v_CSS .= '.menu-highlight{background-color:hsl('.$a_Theme['accent-color']['A'].');}';
@@ -457,7 +459,7 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.shadow-or-light-Y-up{background-image:url(/lapcat/layout/icons/16-16-27.png); background-repeat:repeat-x;}';
 		
 			// Default Font Color
-			$v_CSS .= 'a, font{color:hsl('.$a_Theme['color']['G'].');}';
+			$v_CSS .= 'a, a:active, a:visited,font{color:hsl('.$a_Theme['color']['G'].');}';
 			// Effect
 			$v_CSS .= '.effect-hover-X-1:hover{background-color:hsl('.$a_Theme['color']['G'].');}';
 			$v_CSS .= '.effect-hover-X-2:hover{background-color:hsl('.$a_Theme['color']['G'].'); background-color:hsla('.$a_Theme['color']['G'].',0.8);}';
@@ -496,6 +498,7 @@ if(isset($_GET['theme'])){
 			$v_CSS .= '.border-top-X-1{border-top:1px solid hsl('.$a_Theme['color']['K'].');}';
 			$v_CSS .= '.border-all-Z-1{border:1px solid hsl('.$a_Theme['accent-color']['A'].');}';
 			// Font
+			$v_CSS .= '.font-X2{color:hsl('.$a_Theme['color']['K2'].');}';
 			$v_CSS .= '.font-X{color:hsl('.$a_Theme['color']['G'].');}';
 			$v_CSS .= '.font-Y{color:hsl('.$a_Theme['color']['K'].');}';
 			$v_CSS .= '.font-Z{color:hsl('.$a_Theme['accent-color']['A'].');}';
