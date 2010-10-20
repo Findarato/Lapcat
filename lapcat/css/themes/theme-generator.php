@@ -91,7 +91,7 @@ $a_Theme=array(
 		'H'=>array("0","0%","67%"), // Grey I
 		'I'=>array("0","0%","49%"), // Grey II
 		'J'=>array("0","0%","33%"),    // Grey III
-		'K'=>array("0","0%","0%"),       // Black
+		'K'=>array("0","0%","2%"),       // Black
 		'L'=>array("46","82%","53%"),  // Theme Color VII
 		'M'=>array("97","51%","33%"),   // Basic Color I - Green
 		'N'=>array("40","60%","69%"), // Basic Color II - Orange,
@@ -100,7 +100,7 @@ $a_Theme=array(
 		'R'=>array("0","98%","49%"),     // Basic Color VI - Red
 		'S'=>array("60","98%","49%"),      // Basic Color VI - Yellow
 		'T'=>array("0","51%","45%"),   // Basic Color III - Purple
-		'black'=>array("0","0%","0%"),   // Black
+		'black'=>array("0","0%","2%"),   // Black
 		'white'=>array("0","0%","100%") // White
 	),
 	'transparency'=>array(
@@ -170,7 +170,8 @@ if(isset($_GET['theme'])){
 //Theme is setup in a maintheme subtheme.  The last number is the subtheme, the primary theme is setup with the first set of numbers.  
 
 	$v_Theme=$_GET['theme'];
-	$v_Theme=62;
+	//$v_Theme=68;
+	//$v_Theme=28;
 	$v_Theme=22;
 	$v_subTheme = ($v_Theme%10);
 	$v_mainTheme = floor($v_Theme/10);
@@ -183,7 +184,7 @@ if(isset($_GET['theme'])){
 	}
 	//$v_HSL = false; //Debug
 	if(array_key_exists($v_Theme,$a_BG)){$a_Theme['background']=$a_BG[$v_Theme];}
-	if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_subTheme];}
+	//if(array_key_exists($v_Theme,$a_SpecialBG)){$a_Theme['special-background']=$a_SpecialBG[$v_subTheme];}
 	if(array_key_exists($v_Theme,$a_OpenLineBG)){$a_Theme['open-line-background']=$a_OpenLineBG[$v_mainTheme];}else{$a_Theme['open-line-background']=$a_OpenLineBG[2];}
 	
 	if( file_exists("cache/".$v_Theme.$v_hslword.".cache") && !isset($_GET["update"]) ){
@@ -195,27 +196,6 @@ if(isset($_GET['theme'])){
 		$staticCss = array("static.css");
 		foreach($staticCss as $f){$v_CSS .= file_get_contents($f);}
 		
-		switch($v_subTheme){
-			case '1':
-				$a_Theme['color']['L']='250,110,10';
-				$a_Theme['color']['M']='70,150,20'; // Darker Green
-				$a_Theme['color']['N']='200,90,5'; // Darker Brown
-			break;
-			// Background - Light
-			case '2':
-				$a_Theme['color']['L']=array("25","94%","51%");
-				$a_Theme['color']['M']=array("97","51%","33%"); // Darker Green
-				$a_Theme['color']['N']=array("23","31%","43%"); // Darker Brown
-			break;
-			default:
-				$a_Theme['transparency']['A']='url(/lapcat/layout/transparent-colors/1-1-K-10.png)';
-				$a_Theme['transparency']['B']='url(/lapcat/layout/transparent-colors/1-1-K-25.png)';
-				$a_Theme['transparency']['C']='url(/lapcat/layout/transparent-colors/1-1-K-50.png)';
-				$a_Theme['transparency']['D']='url(/lapcat/layout/transparent-colors/1-1-K-75.png)';
-				$a_Theme['transparency']['E']='url(/lapcat/layout/transparent-colors/1-1-K-95.png)';
-				$a_Theme['transparency']['F']='url(/lapcat/layout/transparent-colors/1-1-K-100.png)';
-				break;
-		}
 		switch($v_mainTheme){
 			// Base Color - Green
 			case '2': //lets just use the default colors
@@ -282,6 +262,34 @@ if(isset($_GET['theme'])){
 				$a_Theme['accent-color']['A']='2,51%,60%'; // Lighter Accent Color
 				$a_Theme['accent-color']['B']='2,43%,52%'; // Darker Accent Color
 			break;
+		}
+		switch($v_subTheme){
+			case '1':
+				$a_Theme['color']['L']='250,110,10';
+				$a_Theme['color']['M']='70,150,20'; // Darker Green
+				$a_Theme['color']['N']='200,90,5'; // Darker Brown
+			break;
+			// Background - Light
+			case '2':
+				$a_Theme['color']['L']=array("25","94%","51%");
+				$a_Theme['color']['M']=array("97","51%","33%"); // Darker Green
+				$a_Theme['color']['N']=array("23","31%","43%"); // Darker Brown
+			break;
+			default:
+				$a_Theme['transparency']['A']='url(/lapcat/layout/transparent-colors/1-1-K-10.png)';
+				$a_Theme['transparency']['B']='url(/lapcat/layout/transparent-colors/1-1-K-25.png)';
+				$a_Theme['transparency']['C']='url(/lapcat/layout/transparent-colors/1-1-K-50.png)';
+				$a_Theme['transparency']['D']='url(/lapcat/layout/transparent-colors/1-1-K-75.png)';
+				$a_Theme['transparency']['E']='url(/lapcat/layout/transparent-colors/1-1-K-95.png)';
+				$a_Theme['transparency']['F']='url(/lapcat/layout/transparent-colors/1-1-K-100.png)';
+				break;
+		}
+		switch($v_Theme){
+			case 68:case 28:
+				$a_Theme['background']=$a_BG[$v_Theme];
+				break;
+			default:
+				break;
 		}
 	}
 	
@@ -365,6 +373,13 @@ if(isset($_GET['theme'])){
 	}else {
 		$dl_text = "DARK THEME";
 		$dl = "dark";
+	}
+	switch($v_Theme){
+		case 28:case 68:
+			$dl="dark";
+			break;
+		default:
+			break;
 	}
 
 	
