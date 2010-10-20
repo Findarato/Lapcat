@@ -1,3 +1,10 @@
+/* A n i m a t e */
+.animate{
+	-webkit-transition: 0.3s ease-in-out;
+	-moz-transition: 0.3s ease-in-out;
+	-o-transition: 0.3s ease-in-out;
+	transition: 0.3s ease-in-out;
+}
 /* C o r n e r s*/
 /* Corner - All */
 .corners-all-1{-moz-border-radius:2px; -webkit-border-radius:2px; border-radius:2px;}
@@ -59,6 +66,12 @@
 /* Button - Black */
 .button-black{background-color:rgb(0,0,0); border:1px solid rgb(76,76,76); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
 .button-black:hover{background-color:rgb(26,26,26); border:1px solid rgb(126,126,126);}
+/* Button - Brown */
+.button-brown{background-color:rgb(115,53,13); border:1px solid rgb(135,83,80); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+.button-brown:hover{background-color:rgb(115,83,57);}
+/* Button - Grey */
+.button-grey{background-color:rgb(125,125,125); border:1px solid rgb(201,201,201); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+.button-grey:hover{background-color:rgb(151,151,151); border:1px solid rgb(227,227,227);}
 /* Button - Black 2 */
 .button-black-2{background-color:rgb(76,76,76); border:1px solid rgb(126,126,126); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
 .button-black-2:hover{background-color:rgb(126,126,126); border:1px solid rgb(146,146,146);}
@@ -69,8 +82,8 @@
 .button-blue-2{background-color:rgb(78,91,130); border:1px solid rgb(0,13,119); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
 .button-blue-2:hover{background-color:rgb(104,117,156);}
 /* Button - Purple */
-.button-purple{background-color:rgb(130,65,130); border:1px solid rgb(49,13,49); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
-.button-purple:hover{background-color:rgb(156,91,156);}
+.button-purple{background-color:rgb(130,65,130); border:1px solid rgb(149,113,149); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
+.button-purple:hover{background-color:rgb(156,91,156); border:1px solid rgb(149,113,149);}
 /* Button - Green */
 .button-green{background-color:rgb(13,52,0); border:1px solid rgb(13,49,0); cursor:pointer; vertical-align:middle; -moz-border-radius:4px; -webkit-border-radius:4px; border-radius:4px;}
 .button-green:hover{background-color:rgb(39,78,26);}
