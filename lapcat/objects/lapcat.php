@@ -879,13 +879,13 @@ function F_GetLibraryName($v_ID=0){
 /* Function - Get Library Information */
 function F_GetLibraryInformation($v_LibraryID=0){
 	switch($v_LibraryID){
-		case 0:return array('street'=>'904 Indiana Avenue','city-state'=>'La Porte, IN','zip'=>'46350','phone'=>'(219) 362-6156');break;
-		case 1:return array('street'=>'7089 West 400 North','city-state'=>'Michigan City, IN','zip'=>'46360','phone'=>'(219) 879-3272');break;
-		case 2:return array('street'=>'7981 E. St. Rd. 4 (P.O. Box 125)','city-state'=>'Walkerton, IN','zip'=>'46574','phone'=>'(219) 369-1337');break;
-		case 3:return array('street'=>'202 North Thompson St. (P.O. Box 78)','city-state'=>'Hanna, IN','zip'=>'46340','phone'=>'(219) 797-4735');break;
-		case 4:return array('street'=>'436 Evanston (P.O. Box 219)','city-state'=>'Kingsford Heights, IN','zip'=>'46346','phone'=>'(219) 393-3280');break;
-		case 5:return array('street'=>'#1 East Michigan Avenue (P.O. Box 157)','city-state'=>'Rolling Prairie, IN','zip'=>'46371','phone'=>'(219) 778-2390');break;
-		case 6:return array('street'=>'3727 West 800 South (P.O. Box 98)','city-state'=>'Union Mills, IN','zip'=>'46382','phone'=>'(219) 767-2604');break;
+		case 0:return array('street'=>'904 Indiana Avenue','city-state'=>'La Porte, IN','zip'=>'46350','phone'=>'(219) 362-6156','email'=>'union@lapcat.org');break;
+		case 1:return array('street'=>'7089 West 400 North','city-state'=>'Michigan City, IN','zip'=>'46360','phone'=>'(219) 879-3272','email'=>'coolspring@lapcat.org');break;
+		case 2:return array('street'=>'7981 E. St. Rd. 4 (P.O. Box 125)','city-state'=>'Walkerton, IN','zip'=>'46574','phone'=>'(219) 369-1337','email'=>'fishlake@lapcat.org');break;
+		case 3:return array('street'=>'202 North Thompson St. (P.O. Box 78)','city-state'=>'Hanna, IN','zip'=>'46340','phone'=>'(219) 797-4735','email'=>'hanna@lapcat.org');break;
+		case 4:return array('street'=>'436 Evanston (P.O. Box 219)','city-state'=>'Kingsford Heights, IN','zip'=>'46346','phone'=>'(219) 393-3280','email'=>'kingsford@lapcat.org');break;
+		case 5:return array('street'=>'1 East Michigan Avenue (P.O. Box 157)','city-state'=>'Rolling Prairie, IN','zip'=>'46371','phone'=>'(219) 778-2390','email'=>'rolling@lapcat.org');break;
+		case 6:return array('street'=>'3727 West 800 South (P.O. Box 98)','city-state'=>'Union Mills, IN','zip'=>'46382','phone'=>'(219) 767-2604','email'=>'union@lapcat.org');break;
 		case 7:return array('street'=>'','city-state'=>'','zip'=>'','phone'=>'(219) 362-6156');break;
 		case 8:default:return array();break;
 	}
