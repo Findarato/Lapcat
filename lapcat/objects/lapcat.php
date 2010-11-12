@@ -879,7 +879,7 @@ function F_GetLibraryName($v_ID=0){
 /* Function - Get Library Information */
 function F_GetLibraryInformation($v_LibraryID=0){
 	switch($v_LibraryID){
-		case 0:return array('street'=>'904 Indiana Avenue','city-state'=>'La Porte, IN','zip'=>'46350','phone'=>'(219) 362-6156','email'=>'union@lapcat.org');break;
+		case 0:return array('street'=>'904 Indiana Avenue','city-state'=>'La Porte, IN','zip'=>'46350','phone'=>'(219) 362-6156','email'=>'reference@lapcat.org');break;
 		case 1:return array('street'=>'7089 West 400 North','city-state'=>'Michigan City, IN','zip'=>'46360','phone'=>'(219) 879-3272','email'=>'coolspring@lapcat.org');break;
 		case 2:return array('street'=>'7981 E. St. Rd. 4 (P.O. Box 125)','city-state'=>'Walkerton, IN','zip'=>'46574','phone'=>'(219) 369-1337','email'=>'fishlake@lapcat.org');break;
 		case 3:return array('street'=>'202 North Thompson St. (P.O. Box 78)','city-state'=>'Hanna, IN','zip'=>'46340','phone'=>'(219) 797-4735','email'=>'hanna@lapcat.org');break;
