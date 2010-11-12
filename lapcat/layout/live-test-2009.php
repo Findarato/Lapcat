@@ -1112,55 +1112,65 @@
 			</tr>
 			<tr>
 				<td style="height:390px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top; width:auto;">
-					<div class="border-bottom-C-1" style="float:left; height:1px; width:100%;"></div>
-					<div class="shadow-or-light-X-up" style="height:20px; text-align:left; vertical-align:top; width:100%;"></div>
-					<div class="border-all-I-1-65 corners-bottom-2 corners-top-2" style="background-image:url(/lapcat/layout/library/150-100-replace-ID.png); float:left; height:100px; text-align:left; vertical-align:top; width:150px;"></div>
-					<div class="font-X font-fake" style="float:left; padding-left:6px;">replace-street<br/>replace-city-state<br/>replace-zip<br/>replace-phone</div>
-					<table cellpadding="0" cellspacing="0" style="width:100%;">
-						<tr>
-							<td style="width:6px;"><img id="current-day-0" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-0" style="height:30px; text-align:center; width:40px;">Sun</div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-0" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-0" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-0."/></td>
-							<td style="width:auto;"><font id="current-day-time-0" class="font-X">replace-time-0</font></td>
-						</tr>
-						<tr>
-							<td style="width:6px;"><img id="current-day-1" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-1" style="height:30px; text-align:center; width:40px;">Mon</div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-1" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-1" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-1."/></td>
-							<td style="width:auto;"><font id="current-day-time-1" class="font-X">replace-time-1</font></td>
-						</tr>
-						<tr>
-							<td style="width:6px;"><img id="current-day-2" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-2" style="height:30px; text-align:center; width:40px;">Tue</div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-2" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-2" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-2."/></td>
-							<td style="width:auto;"><font id="current-day-time-2" class="font-X">replace-time-2</font></td>
-						</tr>
-						<tr>
-							<td style="width:6px;"><img id="current-day-3" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-3" style="height:30px; text-align:center; width:40px;">Wed</div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-3" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-3" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-3."/></td>
-							<td style="width:auto;"><font id="current-day-time-3" class="font-X">replace-time-3</font></td>
-						</tr>
-						<tr>
-							<td style="width:6px;"><img id="current-day-4" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-4" style="height:30px; text-align:center; width:40px;">Thu</div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-4" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-4" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-4."/></td>
-							<td style="width:auto;"><font id="current-day-time-4" class="font-X">replace-time-4</font></td>
-						</tr>
-						<tr>
-							<td style="width:6px;"><img id="current-day-5" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-5" style="height:30px; text-align:center; width:40px;">Fri</div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-5" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-5" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-5."/></td>
-							<td style="width:auto;"><font id="current-day-time-5" class="font-X">replace-time-5</font></td>
-						</tr>
-						<tr>
-							<td style="width:6px;"><img id="current-day-6" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
-							<td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-6" style="height:30px; text-align:center; width:40px;">Sat</div></div></td>
-							<td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-6" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-6" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-6."/></td>
-							<td style="width:auto;"><font id="current-day-time-6" class="font-X">replace-time-6</font></td>
-						</tr>
-					</table>
-
+            <div class="border-bottom-C-1" style="float:left; height:1px; width:100%;"></div>
+            <div class="shadow-or-light-X-up" style="height:20px; text-align:left; vertical-align:top; width:100%;"></div>          
+          <div style="width:100%;padding:0;margin:0;">
+            <div style="display:table-cell;vertical-align:top;">
+              <div class="border-all-I-1-65 corners-bottom-2 corners-top-2" style="display:table-cell;background-image:url(/lapcat/layout/library/150-100-replace-ID.png); float:left; height:100px; text-align:left; vertical-align:top; width:150px;"></div>
+              <div class="font-X font-fake" style="display:table-cell; padding-left:6px;width:200px">replace-street<br/>replace-city-state<br/>replace-zip<br/>replace-phone</div>
+            <table cellpadding="0" cellspacing="0" style="width:100%;">
+            <tr>
+              <td style="width:6px;"><img id="current-day-0" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
+              <td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-0" style="height:30px; text-align:center; width:40px;">Sun</div></div></td>
+              <td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-0" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-0" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-0."/></td>
+              <td style="width:auto;"><font id="current-day-time-0" class="font-X">replace-time-0</font></td>
+            </tr>
+            <tr>
+              <td style="width:6px;"><img id="current-day-1" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
+              <td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-1" style="height:30px; text-align:center; width:40px;">Mon</div></div></td>
+              <td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-1" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-1" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-1."/></td>
+              <td style="width:auto;"><font id="current-day-time-1" class="font-X">replace-time-1</font></td>
+            </tr>
+            <tr>
+              <td style="width:6px;"><img id="current-day-2" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
+              <td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-2" style="height:30px; text-align:center; width:40px;">Tue</div></div></td>
+              <td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-2" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-2" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-2."/></td>
+              <td style="width:auto;"><font id="current-day-time-2" class="font-X">replace-time-2</font></td>
+            </tr>
+            <tr>
+              <td style="width:6px;"><img id="current-day-3" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
+              <td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-3" style="height:30px; text-align:center; width:40px;">Wed</div></div></td>
+              <td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-3" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-3" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-3."/></td>
+              <td style="width:auto;"><font id="current-day-time-3" class="font-X">replace-time-3</font></td>
+            </tr>
+            <tr>
+              <td style="width:6px;"><img id="current-day-4" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
+              <td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-4" style="height:30px; text-align:center; width:40px;">Thu</div></div></td>
+              <td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-4" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-4" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-4."/></td>
+              <td style="width:auto;"><font id="current-day-time-4" class="font-X">replace-time-4</font></td>
+            </tr>
+            <tr>
+              <td style="width:6px;"><img id="current-day-5" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
+              <td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-5" style="height:30px; text-align:center; width:40px;">Fri</div></div></td>
+              <td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-5" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-5" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-5."/></td>
+              <td style="width:auto;"><font id="current-day-time-5" class="font-X">replace-time-5</font></td>
+            </tr>
+            <tr>
+              <td style="width:6px;"><img id="current-day-6" src="http://cdn1.lapcat.org/famfamfam/silk/resultset_next.png" style="display:none; height:16px; width:16px;"/></td>
+              <td style="width:40px; padding:2px;"><div class="corners-bottom-2 corners-top-2"><div class="border-all-Z-1 corners-bottom-2 corners-top-2 font-X font-fake" id="current-day-cell-6" style="height:30px; text-align:center; width:40px;">Sat</div></div></td>
+              <td style="width:20px;"><img class="fake-link hours-event-click" id="current-day-search-6" name="construct|construct-2_search-ID|replace-ID_search-text|replace-name_date-ID|1_date-text|replace-date-6" src="http://cdn1.lapcat.org/famfamfam/silk/calendar.png" style="height:16px; width:16px;" title="Click to search for events at replace-name on replace-date-words-6."/></td>
+              <td style="width:auto;"><font id="current-day-time-6" class="font-X">replace-time-6</font></td>
+            </tr>
+          </table>
+            
+            </div>
+            <div style="display:table-cell;width:200px;vertical-align:top;" >
+            <div class="border-all-I-1-65 corners-bottom-2 corners-top-2" 
+            style="display:table-cell;background-image:url('http://maps.google.com/maps/api/staticmap?size=200x200&markers=icon:http://dev.lapcat.org/lapcat/layout/icons/cat-2.png|replace-street+replace-city-state+replace-zip&sensor=false'); float:left; height:200px; text-align:left; vertical-align:top; width:200px;">
+            </div>
+              <span>Email: </span>replace-email
+            </div>
+          </div>
 				</td>
 			</tr>
 		</table>

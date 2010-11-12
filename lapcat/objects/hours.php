@@ -110,7 +110,7 @@ class Hours{
 			case 2:return array('library-name'=>'Fish Lake','street'=>'7981 E. St. Rd. 4 (P.O. Box 125)','city-state'=>'Walkerton, IN','zip'=>'46574','phone'=>'(219) 369-1337');break;
 			case 3:return array('library-name'=>'Hanna','street'=>'202 North Thompson St. (P.O. Box 78)','city-state'=>'Hanna, IN','zip'=>'46340','phone'=>'(219) 797-4735');break;
 			case 4:return array('library-name'=>'Kingsford Heights','street'=>'436 Evanston (P.O. Box 219)','city-state'=>'Kingsford Heights, IN','zip'=>'46346','phone'=>'(219) 393-3280');break;
-			case 5:return array('library-name'=>'Rolling Prairie','street'=>'#1 East Michigan Avenue (P.O. Box 157)','city-state'=>'Rolling Prairie, IN','zip'=>'46371','phone'=>'(219) 778-2390');break;
+			case 5:return array('library-name'=>'Rolling Prairie','street'=>'1 East Michigan Avenue (P.O. Box 157)','city-state'=>'Rolling Prairie, IN','zip'=>'46371','phone'=>'(219) 778-2390');break;
 			case 6:return array('library-name'=>'Union Mills','street'=>'3727 West 800 South (P.O. Box 98)','city-state'=>'Union Mills, IN','zip'=>'46382','phone'=>'(219) 767-2604');break;
 			case 7:return array('library-name'=>'Mobile Library','street'=>'','city-state'=>'','zip'=>'','phone'=>'(219) 362-6156');break;
 			case 8:default:return array();break;
