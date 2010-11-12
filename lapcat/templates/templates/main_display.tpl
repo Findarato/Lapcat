@@ -70,8 +70,6 @@
 																{/if}
 																{if $Areapage == "materials" || $Areapage == "databases" ||$Areapage == "events"} 
 																<fb:like href="{$tld}/{$area}{$fblink}" font="arial"></fb:like>
-																<!--<iframe src="http://www.facebook.com/widgets/like.php?href={$area}{$fblink}" scrolling="no" frameborder="0" style="border:none; width:450px; height:80px"></iframe>-->
-																<!--<div class="button-black light-up" id="option-share" style="display:block; float:right; height:19px; width:68px; text-align:center;" title="Click to share this article on Facebook."><script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script><a class="font-G" name="fb_share" type="icon_link" share_url="http://dev.lapcat.org/news/specific/replace-ID" href="http://www.facebook.com/sharer.php" style="font-size:14px;" target="_blank">share</a></div>-->
 																{/if}
 																</td>
 															</tr>

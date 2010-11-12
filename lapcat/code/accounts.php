@@ -11,11 +11,11 @@ if(isset($_SESSION['user'])){
 				$a_Status=$o_User->UserLogin($_GET['username'],$_GET['password']);
 				switch($a_Status['success']){
 					case 2:
-						$o_LAPCAT=unserialize($_SESSION['LAPCAT']);
-						$o_LAPCAT->f_LogUserIn($a_Status['user']);
-						$_SESSION['LAPCAT']=serialize($o_LAPCAT);
+						//$o_LAPCAT=unserialize($_SESSION['LAPCAT']);
+						//$o_LAPCAT->f_LogUserIn($a_Status['user']);
+						//$_SESSION['LAPCAT']=serialize($o_LAPCAT);
 						$_SESSION['user']=serialize($o_User);
-						echo json_encode(array('switch'=>'passed','theme'=>$o_User->a_User['theme'],'type'=>$o_User->A_U['type']));
+						echo json_encode(array('switch'=>'passed','hotkeys'=>$o_User->a_Hotkeys,'theme'=>$o_User->a_User['theme'],'type'=>$o_User->A_U['type']));
 						die();
 						break;
 					case 1:echo json_encode(array('switch'=>'could-not-create-account','theme'=>$o_User->a_User['theme'],'type'=>$o_User->A_U['type']));die();break;
