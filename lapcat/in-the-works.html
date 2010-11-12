@@ -1,0 +1,227 @@
+<!--//                   //-->
+<!--// in-the-works.html //-->
+<!--//                   //-->
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
+		<link id="index-css-theme" rel="stylesheet" type="text/css" href="/lapcat/css/themes/theme-generator.php?theme=22" />
+		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			/* Live Event - Toggle Notes */
+			$('.toggle-notes').live('click',function(){
+				var v_Name=$(this).attr('name');
+				if($('#'+v_Name).css('display')!=='none'){
+					$('#'+v_Name+'-delete').hide();
+					$('#'+v_Name+'-add').show();
+					$('#'+v_Name).hide();
+							}else{
+					$('#'+v_Name+'-add').hide();
+					$('#'+v_Name+'-delete').show();
+					$('#'+v_Name).show();
+				}
+			});
+		</script>
+	</head>
+	<body style="background-color:rgb(255,255,255);">
+<div class="corners-top-3 corners-bottom-3" id="notes-box" style="padding:2px; z-index:10;">
+	<div class="border-all-Z-1 corners-top-2 corners-bottom-2 light-up" style="padding:4px; width:auto;">
+		<div id="notes" style="float:left; overflow:hidden; width:98%; margin-left:0.5%; padding:4px;">
+			<div class="color-A-4 font-fake font-Y" style="height:16px; width:100%;">Notes</div>
+				<ol class="font-fake font-X">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td style="width:20px;">
+								<div class="fake-link toggle-notes" name="notes-major-fixes" style="float:left; height:16px; width:16px;" title="Click to expand this section."><img id="notes-major-fixes-add" src="http://cdn1.lapcat.org/famfamfam/silk/add.png"/><img id="notes-major-fixes-delete" src="http://cdn1.lapcat.org/famfamfam/silk/delete.png" style="display:none;"/></div>
+							</td>
+							<td style="width:auto;">
+								<div class="font-bold" style="float:left; width:90%;">Major Fixes<font> (3 added on Tuesday, March 16th)</font></div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="width:20px;">
+								<div id="notes-major-fixes" style="display:none; float:left; width:90%;">
+									<li type="disc">Open lines now showing while in a specific area.</li>
+									<li type="disc">Using tab movement now shows the correct display.</li>
+									<li type="disc">Expanded events on the large calendar view now shrink when zooming out or moving to Home.</li>
+									<li type="disc">Changed the hard-coded value for record limits to be customizable - materials area now shows 2 full rows in image view.</li>
+									<li type="disc">Materials open line is back to working. Availability has been shrunk and a request button has been added with it - this button takes you to the request page for that item in the catalog (unless the user is not signed into the catalog, then it first prompts the user to sign into the catalog.)</li>
+									<li type="disc">URL navigation is back to working. The following words can follow "http://dev.lapcat.org/": catalog, give, account, (any area, i.e., home) or (any tag name, i.e., golf). Navigation via the URL bar is not necessary to navigate within LAPCAT.</li>
+									<li type="disc">Browse searching (clicking on an author's name, library location, date, etc.) back to working. This should now be working for both adding to and removing from a search.</li>
+									<li type="disc">Start-Up/Help message box is now anchored to the bottom of the page (like Facebook) and is more robust and intuitive than before. The status log message box (right-side) is for development purposes only.</li>
+									<li type="disc">The IE bug that prevented displays from showing data has inadvertently been fixed.</li>
+									<li type="disc">The IE bug that prevented material cover images from showing has inadvertently been fixed.</li>
+									<li type="disc">Tweaked the Start box (formerly Start-Up/Help) to include a LAPCAT suggestion as to what you should do. By default, LAPCAT will suggest you log in or create an account. Also included in the Start box are several common catalog-related links as well as a simple search for the catalog. Once logged-in, the suggestions and links will change.</li>
+									<li type="disc">Made a copy of the old HTML layout and rearranged the HTML elements in it for a cleaner, more simplistic look and feel.</li>
+									<li type="disc">The hiring area should now be working. WARNING! There is a bug when closing a PDF in Opera that freezes Opera.</li>
+									<li type="disc">The search menu (formerly left-hand side) is now on top bar (middle to right-hand side.)</li>
+									<li type="disc">Added digital audio books (tag 159 - digital audiobook) to both client and server pages. Also, added one digital audio book to the development server for testing.</li>
+									<li type="disc">Added "all materials" (no tag) to both client and server pages. The server will continue to suggest materials by material type at random - "all materials" is not a random choice for it. The user must choose to search "all materials". "All materials" is needed in order to perform a similar search.</li>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<ol class="font-fake font-X">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td style="width:20px;">
+								<div class="fake-link toggle-notes" name="notes-minor-fixes" style="float:left; height:16px; width:16px;" title="Click to expand this section."><img id="notes-minor-fixes-add" src="http://cdn1.lapcat.org/famfamfam/silk/add.png"/><img id="notes-minor-fixes-delete" src="http://cdn1.lapcat.org/famfamfam/silk/delete.png" style="display:none;"/></div>
+							</td>
+							<td style="width:auto;">
+								<div class="font-bold" style="float:left; width:90%;">Minor Fixes<font> (2 added on Tuesday, March 16th)</font></div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="width:20px;">
+								<div id="notes-minor-fixes" style="display:none; float:left; width:100%;">
+									<li type="disc">Added notes.</li>
+									<li type="disc">Corrected the position of the list view icon at Events.</li>
+									<li type="disc">Hours and locations no longer show on the splash page.</li>
+									<li type="disc">All open lines now disappear when moving to Home.</li>
+									<li type="disc">The blue box around the open line has been removed.</li>
+									<li type="disc">Automatic refresh is back to working.</li>
+									<li type="disc">Next and Previous material type buttons are back to working.</li>
+									<li type="disc">Changed background color of entire page to be black or white, based off of theme. This is only visible when the page is being distorted somehow or when viewing on a monitor with a resolution greater than 1680x1050.</li>
+									<li type="disc">Made sure the open line would show when you changed views from one without an open line to one with an open line. This only affects specific areas.</li>
+									<li type="disc">Expand button is back to working.</li>
+									<li type="disc">The displays are better maintaining their expanded open line status. Switching between areas and returning to Home should no longer break previous viewed displays.</li>
+									<li type="disc">Fixed a bug where multiple lines in the same list were being highlighted.</li>
+									<li type="disc">Fixed a bug where next and previous material type buttons were defaulting to wrong type when first clicked.</li>
+									<li type="disc">Home library highlight (home library's name in green with different building icon) back to working for Events.</li>
+									<li type="disc">Moved Start (formerly Start-Up/Help) button to top left corner.</li>
+									<li type="disc">Added a black LAPCAT (text) image.</li>
+									<li type="disc">Fixed a bug causing a horizontal scroll bar to appear in Firefox.</li>
+									<li type="disc">Modified the Notes section so that it opens up in a dockable.</li>
+									<li type="disc">The five-star ratings for materials is back to working.</li>
+									<li type="disc">Tags in the Materials open line are now displaying properly.</li>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<ol class="font-fake font-X">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td style="width:20px;">
+								<div class="fake-link toggle-notes" name="notes-need-to-fix" style="float:left; height:16px; width:16px;" title="Click to expand this section."><img id="notes-need-to-fix-add" src="http://cdn1.lapcat.org/famfamfam/silk/add.png"/><img id="notes-need-to-fix-delete" src="http://cdn1.lapcat.org/famfamfam/silk/delete.png" style="display:none;"/></div>
+							</td>
+							<td style="width:auto;">
+								<div class="font-bold" style="float:left; width:90%;">Need To Fix<font> (4 added on Tuesday, March 16th)</font></div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="width:20px;">
+								<div id="notes-need-to-fix" style="display:none; width:100%;">
+									<li type="disc">Major bug - When re-requesting data for the calendar, the old data is still being displayed along with the newly requested data.</li>
+									<li type="disc">Minor Firefox bug - Events on the small/large calendar view are displaying NaN:NaN for start/end times.</li>
+									<li type="disc">Minor bug - Automatic refresh for materials sometimes changes the search's material type. This seems to happen the first time it is triggered.</li>
+									<li type="disc">Minor bug - At any area and when changing views, the open line does not show unless it had been triggered before.</li>
+									<li type="disc">Minor bug - Splash page height is being distorted. Need to double check the construct heights.</li>
+									<li type="disc">Minor bug - In several spots, like headers and material sub-titles, the "overflow" CSS property is not working correctly.<br/>Example: Materials - Audio Books - The Poet's Corner</li>
+									<li type="disc">Minor bug - When navigating via the URL (i.e., "http://dev.lapcat.org/golf"), the tag search does not appear in the search menu (left-hand side).</li>
+									<li type="disc">Minor bug - Depending on how fast a user repeatedly clicks the next material type or previous material type button, the data that is displayed may not match the header. This issue should resolve itself once suggestions for searches that return no results is back to working.</li>
+									<li type="disc">Minor IE bug - Certain areas do not fit in their containers.<br/>Example: Third panel in Start-Up/Help window.</li>
+									<li type="disc">Minor catalog bug - There is no default background color set for the online sign-up page.</li>
+									<li type="disc">Minor bug - Open line content height needs to be adjusted to fit the content container.</li>
+									<li type="disc">Minor bug - Sometimes the cat image in the first panel of the Start menu disappears.</li>
+									<li type="disc">Minor bug - Sometimes the Materials image view displays 11 events instead of 12.</li>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<ol class="font-fake font-X">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td style="width:20px;">
+								<div class="fake-link toggle-notes" name="notes-need-to-re-implement" style="float:left; height:16px; width:16px;" title="Click to expand this section."><img id="notes-need-to-re-implement-add" src="http://cdn1.lapcat.org/famfamfam/silk/add.png"/><img id="notes-need-to-re-implement-delete" src="http://cdn1.lapcat.org/famfamfam/silk/delete.png" style="display:none;"/></div>
+							</td>
+							<td style="width:auto;">
+								<div class="font-bold" style="float:left; width:90%;">Need To Re-Implement</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="width:20px;">
+								<div id="notes-need-to-re-implement" style="display:none; width:100%;">
+									<li type="disc">Major - Open line options (i.e., Expand, Favorite, Collect, etc.)</li>
+									<li type="disc">Major - List view page buttons</li>
+									<li type="disc">Major - Search menu (left-hand side).</li>
+									<li type="disc">Major - Account page (formerly Options).</li>
+									<li type="disc">Major - Featured view for News and Databases.</li>
+									<li type="disc">Minor - Suggestions for searches that return no results.</li>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<ol class="font-fake font-X">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td style="width:20px;">
+								<div class="fake-link toggle-notes" name="notes-need-to-add" style="float:left; height:16px; width:16px;" title="Click to expand this section."><img id="notes-need-to-add-add" src="http://cdn1.lapcat.org/famfamfam/silk/add.png"/><img id="notes-need-to-add-delete" src="http://cdn1.lapcat.org/famfamfam/silk/delete.png" style="display:none;"/></div>
+							</td>
+							<td style="width:auto;">
+								<div class="font-bold" style="float:left; width:90%;">Need To Add</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="width:20px;">
+								<div id="notes-need-to-add" style="display:none; width:100%;">
+									<li type="disc">Major - New material type - Downloadable Audio Books.</li>
+									<li type="disc">Major - The following tags should be added: culture, fashion, international, myth, school, sociology and story.</li>
+									<li type="disc">Major - The following tags should be removed: divorce, patron and treatment.</li>
+									<li type="disc">Minor - R&amp;B needs to be changed to rhythm and blues.</li>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<ol class="font-fake font-X">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td style="width:20px;">
+								<div class="fake-link toggle-notes" name="notes-like-to-work-more-on" style="float:left; height:16px; width:16px;" title="Click to expand this section."><img id="notes-like-to-work-more-on-add" src="http://cdn1.lapcat.org/famfamfam/silk/add.png"/><img id="notes-like-to-work-more-on-delete" src="http://cdn1.lapcat.org/famfamfam/silk/delete.png" style="display:none;"/></div>
+							</td>
+							<td style="width:auto;">
+								<div class="font-bold" style="float:left; width:90%;">Like To Work More On</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="width:20px;">
+								<div id="notes-like-to-work-more-on" style="display:none; width:100%;">
+									<li type="disc">Major - Themes.</li>
+									<li type="disc">Minor - Cat icon. The cat icon for Material links to the catalog kinda' looks like a gopher.</li>
+									<li type="disc">Minor - Need to replace the stop auto-refresh icon (red cross) with a custom-made icon - probably the auto-refresh icon (circular arrow) with a small "x" on it. Currently it looks like it should close something.</li>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+				<ol class="font-fake font-X">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td style="width:20px;">
+								<div class="fake-link toggle-notes" name="notes-like-to-add" style="float:left; height:16px; width:16px;" title="Click to expand this section."><img id="notes-like-to-add-add" src="http://cdn1.lapcat.org/famfamfam/silk/add.png"/><img id="notes-like-to-add-delete" src="http://cdn1.lapcat.org/famfamfam/silk/delete.png" style="display:none;"/></div>
+							</td>
+							<td style="width:auto;">
+								<div class="font-bold" style="float:left; width:90%;">Like To Add</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" style="width:20px;">
+								<div id="notes-like-to-add" style="display:none; width:100%;">
+									<li type="disc">Major - Facebook (and/or other third party sites) links for News and Events.</li>
+									<li type="disc">Minor - User customization buttons to increase list view line limits by +/-2. Also, this could add another row of materials in the image view at materials.</li>
+									<li type="disc">Minor - A more robust URL navigation system allowing for deeper navigation. For example, "http://dev.lapcat.org/materials/golf" would start the user at the materials area with a golf tag search.</li>
+									<li type="disc">Minor - More Start menu choices and links.</li>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+	</body>
+</html>

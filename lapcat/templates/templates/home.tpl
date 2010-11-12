@@ -1,4 +1,3 @@
-
 <div style="height: 220px; width: 960px; overflow: hidden; opacity: 1;" id="construct-1">
     <div id="construct-1-header">
         <div style="background-position: 0px 2px; width: 100%;" class="color-X-4 corners-bottom-2 corners-top-2 shadow-or-light-X-down">
@@ -24,7 +23,7 @@
                                                 </div>
                                             </div>
 
-                                            <font style="float: left; padding-left: 3px; font-size: 15px;" id="header" class="font-bold font-X">Digital audio books.
+                                            <font style="float: left; padding-left: 3px; font-size: 15px;" id="header" class="font-bold font-X">318px audio books.
                                             </font>
 
                                         </div>
@@ -97,36 +96,7 @@
                         </div>
                         <div style="position: absolute; height: 0px; width: 100%;" id="content-graphics-line">
                             <div style="float: right; overflow: hidden; margin-top: 94px; padding-right: 5px; width: 100%;" id="open-line-options">
-                                <!--// Button - Favorite //-->
-                                <div title="Click to make this item a favorite." style="display: none; float: right; height: 19px; margin-right: 4px; width: 68px; text-align: center;" id="option-favorite" class="button-blue-2 light-up option-click">
-                                    <font style="font-size: 14px;" class="font-G">favorite
-                                    </font>
-                                </div>
-                                <!--// Button - Anticipate //-->
-                                <div title="Click to anticipate this event." style="display: none; float: right; height: 19px; margin-right: 4px; width: 68px; text-align: center;" id="option-watched" class="button-blue-2 light-up option-click">
-                                    <font style="font-size: 14px;" class="font-G">anticipate
-                                    </font>
-                                </div>
-                                <!--// Button - Watch //-->
-                                <div title="Click to add this material to your watch list." style="display: none; float: right; height: 19px; margin-right: 4px; width: 68px; text-align: center;" id="option-watchlist" class="button-blue-2 light-up option-click">
-                                    <font style="font-size: 14px;" class="font-G">watch
-                                    </font>
-                                </div>
-                                <!--// Button - Collect //-->
-                                <div title="Click to add this material to your collection." style="display: none; float: right; height: 19px; margin-right: 4px; width: 68px; text-align: center;" id="option-collect" class="button-blue-2 light-up option-click">
-                                    <font style="font-size: 14px;" class="font-G">collect
-                                    </font>
-                                </div>
-                                <!--// Button - Expand //-->
-                                <div title="Click to expand the open line." style="display: none; float: right; height: 19px; margin-right: 4px; width: 68px; text-align: center;" id="option-expand" class="button-X-35 light-up option-click">
-                                    <font style="font-size: 14px;" class="font-G">expand
-                                    </font>
-                                </div>
-                                <!--// Button - Similar //-->
-                                <div title="Click to show a list of similar items." style="display: none; float: right; height: 19px; margin-right: 4px; width: 68px; text-align: center;" id="option-similar" class="button-X-35 light-up option-click">
-                                    <font style="font-size: 14px;" class="font-G">similar
-                                    </font>
-                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -146,12 +116,12 @@
         </div>
     </div>
 </div>
-<div style="height: 326px; width: 200px; float: left;" id="promotion-1">
+<div style="height: 318px; width: 200px; float: left;" id="promotion-1">
     <img class="border-all-F-1 corners-bottom-1 corners-top-1" style="height: 216px; margin-left: 4px; margin-top: 5px; width: 182px;" src="promotions/promo%20for%20mango%20copy.png" id="promotion-image">
     <div class="corners-bottom-2 corners-top-2 shadow-or-light-X-up" style="height: 88px; margin-left: 4px; width: 184px;">
     </div>
 </div>
-<div style="height: 326px; width: 240px; overflow: hidden; float: left; padding-right: 12px; opacity: 1;" id="construct-2">
+<div style="height: 318px; width: 240px; overflow: hidden; float: left; padding-right: 12px; opacity: 1;" id="construct-2">
     <div id="construct-2-header">
         <div style="background-position: 0px 2px; width: 100%;" class="color-X-4 corners-bottom-2 corners-top-2 shadow-or-light-X-down">
             <div style="background-position: 0px -2px; width: 100%;" class="corners-bottom-2 corners-top-2 shadow-or-light-Y-up">
@@ -189,7 +159,7 @@
         </div>
     </div>
     <div id="construct-2-views">
-        <div id="construct-2-view-list" style="height: 326px; width: 240px; overflow: hidden; float: left;">
+        <div id="construct-2-view-list" style="height: 318px; width: 240px; overflow: hidden; float: left;">
 			{foreach from=$V_displayEventsData key=key item=value name=listLoopEvents}
 				{include file="side_list.tpl" area="static/events" Areapage="events"}
 			{/foreach}
@@ -198,7 +168,7 @@
         </div>
     </div>
 </div>
-<div style="height: 326px; width: 240px; overflow: hidden; float: left; padding-right: 12px; opacity: 1;" id="construct-3">
+<div style="height: 318px; width: 240px; overflow: hidden; float: left; padding-right: 12px; opacity: 1;" id="construct-3">
     <div id="construct-3-header">
         <div style="background-position: 0px 2px; width: 100%;" class="color-X-4 corners-bottom-2 corners-top-2 shadow-or-light-X-down">
             <div style="background-position: 0px -2px; width: 100%;" class="corners-bottom-2 corners-top-2 shadow-or-light-Y-up">
@@ -236,7 +206,7 @@
         </div>
     </div>
     <div id="construct-3-views">
-        <div id="construct-3-view-list" style="height: 326px; width: 240px; overflow: hidden; float: left;">
+        <div id="construct-3-view-list" style="height: 318px; width: 240px; overflow: hidden; float: left;">
 			{foreach from=$V_displayNewsData key=key item=value name=listLoopNews}
 				{include file="side_list.tpl" area="static/news" Areapage="news"}
 			{/foreach}
@@ -245,7 +215,7 @@
         </div>
     </div>
 </div>
-<div style="height: 326px; width: 240px; overflow: hidden; float: left; padding-right: 12px; opacity: 1;" id="construct-4">
+<div style="height: 318px; width: 240px; overflow: hidden; float: left; padding-right: 12px; opacity: 1;" id="construct-4">
     <div id="construct-4-header">
         <div style="background-position: 0px 2px; width: 100%;" class="color-X-4 corners-bottom-2 corners-top-2 shadow-or-light-X-down">
             <div style="background-position: 0px -2px; width: 100%;" class="corners-bottom-2 corners-top-2 shadow-or-light-Y-up">
@@ -279,7 +249,7 @@
         </div>
     </div>
     <div id="construct-4-views">
-        <div id="construct-4-view-list" style="height: 326px; width: 240px; overflow: hidden; float: left;">
+        <div id="construct-4-view-list" style="height: 318px; width: 240px; overflow: hidden; float: left;">
 			{foreach from=$V_displayDatabaseData key=key item=value name=listLoopDatabases}
 				{include file="side_list.tpl" area="static/databases" Areapage="databases"}
 			{/foreach}
