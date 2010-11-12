@@ -50,7 +50,7 @@ $smarty->assign("Areapage",$v_page);
 }
 
 if(isset($_SESSION['user'])){$o_User=unserialize($_SESSION['user']);}else{$o_User=new User();}
-if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
+//if(isset($_SESSION['LAPCAT'])){$o_LAPCAT=unserialize($_SESSION['LAPCAT']);}else{$o_LAPCAT=new LAPCAT($V_UserID,$_SERVER['REMOTE_ADDR'],$V_MessagesOn);}
 if(isset($_SESSION['local-storage'])){$o_Storage=unserialize($_SESSION['local-storage']);}else{$o_Storage=new Storage();}
 
 if($A_URL[0]==''){
@@ -67,9 +67,9 @@ if($A_URL[0]==''){
 						$V_Static = true;
 						$idKey=$V_Buffer+1;
 						if($v_page=="home"){
-							$V_NewsJSON=$o_LAPCAT->f_PerformRequest("quick","news","search","","",false);
-							$V_EventsJSON=$o_LAPCAT->f_PerformRequest("quick","events","search","","",false);
-							$V_DatabasesJSON=$o_LAPCAT->f_PerformRequest("quick","databases","search","","",false);
+							//$V_NewsJSON=$o_LAPCAT->f_PerformRequest("quick","news","search","","",false);
+							//$V_EventsJSON=$o_LAPCAT->f_PerformRequest("quick","events","search","","",false);
+							//$V_DatabasesJSON=$o_LAPCAT->f_PerformRequest("quick","databases","search","","",false);
 							break;
 						}
 						if(!isset($_GET["page"])){
@@ -85,13 +85,13 @@ if($A_URL[0]==''){
 								}
 							}
 						//	echo $V_search;die();
-							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
+							//$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search",$V_search,"",false);
 							if(isset($_GET["page"]) && $_GET["page"] !==""){ //there is a page selected
-								$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
+								//$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"change-page",$_GET["page"],"",false);
 								$smarty -> assign("pageNum",$_GET["page"]);
 							}
 						} else {
-							$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search","","",false);
+							//$V_JSON=$o_LAPCAT->f_PerformRequest("quick",$v_page,"search","","",false);
 						}
 						//print_r($V_JSON);die();
 						
@@ -167,17 +167,23 @@ function F_HR($v_JSON){header('HTTP/1.1 200 OK');header('Status: 200 OK');die($v
 // V_Area, V_Command, V_Main, V_Secondary
 if(!$V_Fresh){
 	switch($V_Area){
-		case 'local-storage-records':$V_JSON=$o_Storage->f_RequestRecords($V_Command,$V_Main);break;
-		case 'local-storage-tags':$V_JSON=$o_Storage->f_RequestTags($V_Command);break;
+		case 'request':$V_JSON=$o_Storage->f_Request($V_Command,$V_Main,$V_Secondary);break;
 
-		case 'get-material-list':$V_JSON=$o_LAPCAT->f_GetMaterialList($V_Command);break;
-		case 'get-material-lists':$V_JSON=$o_LAPCAT->f_GetMaterialLists(true);break;
-		case 'get-anticipated-events':$V_JSON=$o_LAPCAT->f_GetAnticipatedEvents();break;
+		case 'pull':$V_JSON=$o_Storage->f_Pull($V_Command,$V_Main,$V_Secondary);break;
+
+		case 'local-storage-items':$V_JSON=$o_Storage->f_RequestModifiedItems($V_Command,$V_Main);break;
+		case 'local-storage-tags':$V_JSON=$o_Storage->f_RequestTags($V_Command);break;
+		case 'lists':$V_JSON=$o_Storage->f_RequestLists($V_Command);break;
+		case 'request-items':$V_JSON=$o_Storage->f_RequestItems($V_Command,$V_Main);break;
+
+		//case 'get-material-list':$V_JSON=$o_LAPCAT->f_GetMaterialList($V_Command);break;
+		//case 'get-material-lists':$V_JSON=$o_LAPCAT->f_GetMaterialLists(true);break;
+		//case 'get-anticipated-events':$V_JSON=$o_LAPCAT->f_GetAnticipatedEvents();break;
 		case 'log-out':$V_JSON=$o_User->f_LogUserOut();break;
 		case 'status':$V_JSON=$o_User->f_GetLoggedInStatus();break;
-		case 'promotions':$V_JSON=$o_LAPCAT->f_GetPromotions();break;
-		case 'request-calendar':$V_JSON=$o_LAPCAT->f_GetCalendarData($o_LAPCAT->f_GetCurrentDate());break;
-		case 'popular-tags':$V_JSON=$o_LAPCAT->f_GetPopularTags();break;
+		//case 'promotions':$V_JSON=$o_LAPCAT->f_GetPromotions();break;
+		//case 'request-calendar':$V_JSON=$o_LAPCAT->f_GetCalendarData($o_LAPCAT->f_GetCurrentDate());break;
+		//case 'popular-tags':$V_JSON=$o_LAPCAT->f_GetPopularTags();break;
 
 		case 'home':case 'databases':case 'events':case 'materials':case 'news':case 'hours':case 'hiring':
 			switch($V_Command){
@@ -190,7 +196,7 @@ if(!$V_Fresh){
 				case 'change-page':
 				case 'open-line':
 				case 'reset':
-					$V_JSON=$o_LAPCAT->f_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary,true);
+					//$V_JSON=$o_LAPCAT->f_PerformRequest($V_Clear,$V_Area,$V_Command,$V_Main,$V_Secondary,true);
 					break;
 				default:
 					
@@ -210,12 +216,12 @@ if(!$V_Fresh){
 		$v_DC->Query('SELECT '.$v_Select.' FROM viewable_'.$V_SpecificArea.' WHERE ID='.$V_Command.';');
 		$a_Share=$v_DC->Format('assoc');
 		$a_Share['text']=strip_tags($a_Share['text']);
-		$o_LAPCAT->v_SpecificName=$a_Share['name'];
+		//$o_LAPCAT->v_SpecificName=$a_Share['name'];
 	}
-	$o_LAPCAT->f_ResetAllSearches();
+	//$o_LAPCAT->f_ResetAllSearches();
 }
 
-if(isset($o_LAPCAT)){$_SESSION['LAPCAT']=serialize($o_LAPCAT);}
+//if(isset($o_LAPCAT)){$_SESSION['LAPCAT']=serialize($o_LAPCAT);}
 if(isset($o_User)){$_SESSION['user']=serialize($o_User);}
 
 if($V_Fresh){
@@ -247,6 +253,11 @@ if($V_Fresh){
 		</script>
 		<script src="http://cdn1.lapcat.org/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 		<? if(!$V_Static){ ?>
+			<script type="text/javascript">
+				var V_LogStatus=<?=$o_User->a_User['log-status'];?>;
+				var A_Hotkeys=<?=json_encode($o_User->a_Hotkeys,JSON_FORCE_OBJECT);?>;
+				var V_InHouse=<?=$o_User->v_InHouse;?>;
+			</script>
 		<script type="text/javascript">
 			var V_Date=new Date();
 			var V_TimeStamp=V_Date.getTime();
@@ -254,33 +265,14 @@ if($V_Fresh){
 		<script src="/lapcat/java/get-all-tags.php" type="text/javascript"></script>
 		<script src="/lapcat/java/get-all-content-providers.php" type="text/javascript"></script>
 		<script type="text/javascript">if(jQuery.browser.msie){document.write('<link rel="stylesheet" type="text/css" href="/lapcat/css/IE.css" />');}</script>
-		<script src="/lapcat/java/combine.php"></script>
+		<script src="/lapcat/java/client-05-13-2010.js"></script>
 		<style>
 			#anchored-message-box{
 				position:absolute;
 				bottom:-114px;
-			/*
-				-moz-transition: all 1s ease-out;  // FF3.7+
-       			-o-transition: all 1s ease-out;  // Opera 10.5
-  				-webkit-transition: all 1s ease-out;  // Saf3.2+, Chrome
-			*/
 			}
 		</style>
-		<?}else{?>
-		<style>
-			#anchored-message-box{
-				position:absolute;
-				bottom:-90px;
-				-moz-transition: all 1s ease-out;  /* FF3.7+ */
-       			-o-transition: all 1s ease-out;  /* Opera 10.5 */
-  				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
-			}
-			#anchored-message-box:hover{
-				position:absolute;
-				bottom:0px;
-			} 
-		</style>
-		<?}?> 
+		<?}?>
 	</head>
 	<body class="color-X-1" style="height:100%; width:100%;">
 		<script type="text/javascript">
