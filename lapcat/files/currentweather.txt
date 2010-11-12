@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<rss version="2.0" xmlns:yweather="http://xml.weather.yahoo.com/ns/rss/1.0" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#">
+<channel>
+
+<title>Yahoo! Weather - La Porte, IN</title>
+<link>http://us.rd.yahoo.com/dailynews/rss/weather/La_Porte__IN/*http://weather.yahoo.com/forecast/USIN0337_f.html</link>
+<description>Yahoo! Weather for La Porte, IN</description>
+<language>en-us</language>
+<lastBuildDate>Fri, 14 Nov 2008 4:53 pm CST</lastBuildDate>
+<ttl>60</ttl>
+<yweather:location city="La Porte" region="IN"   country="US"/>
+<yweather:units temperature="F" distance="mi" pressure="in" speed="mph"/>
+<yweather:wind chill="42"   direction="360"   speed="8" />
+<yweather:atmosphere humidity="89"  visibility="8"  pressure="29.74"  rising="1" />
+<yweather:astronomy sunrise="6:35 am"   sunset="4:27 pm"/>
+<image>
+<title>Yahoo! Weather</title>
+<width>142</width>
+<height>18</height>
+<link>http://weather.yahoo.com</link>
+<url>http://l.yimg.com/us.yimg.com/i/us/nws/th/main_142b.gif</url>
+</image>
+<item>
+<title>Conditions for La Porte, IN at 4:53 pm CST</title>
+<geo:lat>41.61</geo:lat>
+<geo:long>-86.71</geo:long>
+<link>http://us.rd.yahoo.com/dailynews/rss/weather/La_Porte__IN/*http://weather.yahoo.com/forecast/USIN0337_f.html</link>
+<pubDate>Fri, 14 Nov 2008 4:53 pm CST</pubDate>
+<yweather:condition  text="Mostly Cloudy"  code="27"  temp="46"  date="Fri, 14 Nov 2008 4:53 pm CST" />
+<description><![CDATA[
+<img src="http://l.yimg.com/us.yimg.com/i/us/we/52/27.gif"/><br />
+<b>Current Conditions:</b><br />
+Mostly Cloudy, 46 F<BR />
+<BR /><b>Forecast:</b><BR />
+Fri - Showers. High: 50 Low: 38<br />
+Sat - Rain/Snow/Wind. High: 39 Low: 30<br />
+<br />
+<a href="http://us.rd.yahoo.com/dailynews/rss/weather/La_Porte__IN/*http://weather.yahoo.com/forecast/USIN0337_f.html">Full Forecast at Yahoo! Weather</a><BR/>
+(provided by The Weather Channel)<br/>
+]]></description>
+<yweather:forecast day="Fri" date="14 Nov 2008" low="38" high="50" text="Showers" code="11" />
+<yweather:forecast day="Sat" date="15 Nov 2008" low="30" high="39" text="Rain/Snow/Wind" code="5" />
+<guid isPermaLink="false">USIN0337_2008_11_14_16_53_CST</guid>
+</item>
+</channel>
+</rss><!-- api3.weather.sp1.yahoo.com uncompressed Fri Nov 14 15:10:47 PST 2008 -->
