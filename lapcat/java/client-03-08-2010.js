@@ -1578,7 +1578,7 @@ $('.fake-link').live('click',function(){
   var pageTracker = _gat._getTracker('UA-8067208-1');   
   pageTracker._trackPageview('Opened :'+$(this).attr('name'));
   //F_OpenDockable($(this).attr('name'));
-  $(this).attr("target",$(this).attr('name'));
+  //$(this).attr("target",$(this).attr('name'));
   //return false;
 });
 /* Live Event - Catalog Link */

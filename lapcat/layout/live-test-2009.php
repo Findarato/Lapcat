@@ -753,7 +753,7 @@
 				<table style="height:40px; width:100%;">
 					<tr>
 						<td style="height:40px; overflow:hidden; vertical-align:top; width:100%;">
-							<font class="font-G" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font>
+							<font class="font-G" style="float:left; font-size:15px; margin-left:6px; vertical-align:top;">replace-name</font> COOL
 						</td>
 					</tr>
 				</table>
@@ -765,6 +765,7 @@
 			<table style="height:228px; width:100%;">
 				<tr>
 					<td style="height:228px; overflow:hidden; vertical-align:top; text-align:left; width:auto;">
+					
 						<font class="font-X" id="general-font-size" style="float:left; font-size:15px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">replace-description</font>
 					</td>
 				</tr>
@@ -1083,7 +1084,7 @@
 				<td style="height:390px; overflow:hidden; padding-left:6px; padding-right:6px; vertical-align:top; width:auto;">
 				<div class="border-bottom-C-1" style="float:left; height:1px; width:100%;"></div>
 				<div class="shadow-or-light-X-up" style="height:20px; text-align:left; vertical-align:top; width:100%;"></div>
-				<div style="float:left; width:100%;"><font class="font-X post-title" id="general-font-size" style="float:left; font-size:15px; overflow:hidden; margin-top:12px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">replace-description</font></div>
+				<div style="float:left; width:100%;"><font class="font-X post-title" id="general-font-size" style="float:left; font-size:15px; overflow:hidden; margin-top:12px; padding:2px; padding-left:6px; padding-right:6px; vertical-align:top;">replace-description</font><br><br><br><a href="replace-link-in">Open replace-name</a></div>
 				</td>
 			</tr>
 		</table>
