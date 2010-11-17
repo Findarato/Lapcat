@@ -1180,7 +1180,7 @@ function F_OpenDockable(v_URL){
 	$('#dockable-black-curtain').show();
 	$('#dockable-close-link').show();
 	if(!A_User['logged-in']){$('#top-link-log-in').hide();}
-	$('#dockable-window').css({'visibility':'visible'});
+	$('#dockable-window').css({'visibility':'visible',"background-color":"white"});
 	$('#dockable-content').css({'visibility':'visible'});
 	$('#dockable-content').attr('src',v_URL);
 }
@@ -1569,16 +1569,25 @@ $('.auto-refresh-click').live('click',function(){F_ToggleRefresh(F_GetConstructI
 /* Live Event - Browse Link / Database Dockable */
 $('.browse-link,.database-dockable').live('click',function(){
 	var pageTracker = _gat._getTracker('UA-8067208-1');		
-	pageTracker._trackPageview('Opened the catalog or a database.');
+	pageTracker._trackPageview('Opened :'+$(this).attr('name'));
 	F_OpenDockable($(this).attr('name'));
+	//$(this).attr("target",$(this).attr('name'));
 	return false;
+});
+$('.fake-link').live('click',function(){
+  var pageTracker = _gat._getTracker('UA-8067208-1');   
+  pageTracker._trackPageview('Opened :'+$(this).attr('name'));
+  //F_OpenDockable($(this).attr('name'));
+  $(this).attr("target",$(this).attr('name'));
+  //return false;
 });
 /* Live Event - Catalog Link */
 $('.catalog-link').live('click',function(){
 	var pageTracker = _gat._getTracker('UA-8067208-1');		
 	pageTracker._trackPageview('Opened the catalog.');
-	F_OpenDockable($(this).attr('href'));
-	return false;
+	//F_OpenDockable($(this).attr('href'));
+	//return false;
+	$(this).attr("target","catalog");
 });
 /* Live Event - Close Anchored Account */
 $('.close-anchored-account').live('click',function(){F_CloseAccount();});
