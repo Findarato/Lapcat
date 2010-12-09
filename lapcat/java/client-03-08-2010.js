@@ -1058,7 +1058,17 @@ function F_CloseDockable(v_URL){
 	$('#dockable-content').attr('src','');
 }
 /* Function - Construct And Replace */
-function F_ConstructAndReplace(v_HTML,a_Data){for(var v_Key in a_Data){while(v_HTML.indexOf('replace-'+v_Key)>-1){v_HTML=v_HTML.replace('replace-'+v_Key,a_Data[v_Key]);}}return v_HTML;};
+function F_ConstructAndReplace(v_HTML,a_Data){
+  for(var v_Key in a_Data){
+    while(v_HTML.indexOf('replace2-'+v_Key)>-1){
+      v_HTML=v_HTML.replace('replace2-'+v_Key,a_Data[v_Key].replace(/ /g,"+"));
+    }
+    while(v_HTML.indexOf('replace-'+v_Key)>-1){
+      v_HTML=v_HTML.replace('replace-'+v_Key,a_Data[v_Key]);
+    }
+  }
+  return v_HTML;
+};
 /* Function - Construct Search */
 function F_ConstructSearch(v_Construct){
 	var a_Search=new Array();
