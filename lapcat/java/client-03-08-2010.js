@@ -1061,7 +1061,14 @@ function F_CloseDockable(v_URL){
 function F_ConstructAndReplace(v_HTML,a_Data){
   for(var v_Key in a_Data){
     while(v_HTML.indexOf('replace2-'+v_Key)>-1){
-      v_HTML=v_HTML.replace('replace2-'+v_Key,a_Data[v_Key].replace(/ /g,"+"));
+      v_HTML=v_HTML.replace('replace2-'+v_Key,a_Data[v_Key]
+      .replace(/ /g,"+")
+      .replace("(P.O.+Box+125)","")
+      .replace("(P.O.+Box+78)","")
+      .replace("(P.O.+Box+219)","")
+      .replace("(P.O.+Box+157)","")
+      .replace("(P.O.+Box+98)","")
+      .replace(/ /g,"+")  );
     }
     while(v_HTML.indexOf('replace-'+v_Key)>-1){
       v_HTML=v_HTML.replace('replace-'+v_Key,a_Data[v_Key]);
