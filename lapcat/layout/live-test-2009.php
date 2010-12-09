@@ -1167,7 +1167,7 @@
             </div>
             <div style="display:table-cell;width:250px;vertical-align:top;" >
             <div class="border-all-I-1-65 corners-bottom-2 corners-top-2" 
-            style="display:table-cell;background-image:url('http://maps.google.com/maps/api/staticmap?size=250x320&markers=icon:http://dev.lapcat.org/lapcat/layout/icons/cat-2.png|replace-street+replace-city-state+replace-zip&sensor=false'); float:left; height:320px; text-align:left; vertical-align:top; width:250px;">
+            style="display:table-cell;background:url('http://maps.google.com/maps/api/staticmap?size=250x320&markers=icon:http://dev.lapcat.org/lapcat/layout/icons/cat-2.png|replace2-street+replace2-city-state+replace2-zip&sensor=false') #000; float:left; height:320px; text-align:left; vertical-align:top; width:250px;">
             </div>
               <span>Email: </span>replace-email
             </div>
