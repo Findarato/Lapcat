@@ -1,78 +1,216 @@
 <!doctype html>
 <html lang="en" class="no-js">
-<head>
-  <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-  <!-- www.phpied.com/conditional-comments-block-downloads/ -->
-  <!--[if IE]><![endif]-->
+        <!-- www.phpied.com/conditional-comments-block-downloads/ -->
+        <!--[if IE]><![endif]-->
 
-  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame 
-       Remove this if you use the .htaccess -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+        Remove this if you use the .htaccess -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-  <!--  Mobile Viewport Fix
-        j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
-  device-width : Occupy full width of the screen in its current orientation
-  initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
-  maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
-  -->
-  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+        <!--  Mobile Viewport Fix
+        j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag
+        device-width : Occupy full width of the screen in its current orientation
+        initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+        maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+        -->
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 
+        <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
+        <link rel="shortcut icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root of your domain and delete these references -->
-  <link rel="shortcut icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <!-- CSS : implied media="all" -->
+        <link rel="stylesheet" href="css/style.css?v=1">
+        <link rel="stylesheet" href="css/lapcat.css?v=1">
 
+        <!-- For the less-enabled mobile browsers like Opera Mini -->
+        <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">
 
-  <!-- CSS : implied media="all" -->
-  <link rel="stylesheet" href="css/style.css?v=1">
+        <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
+        <script src="js/modernizr-1.5.min.js">
+        </script>
+    </head>
+    <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 
-  <!-- For the less-enabled mobile browsers like Opera Mini -->
-  <link rel="stylesheet" media="handheld" href="css/handheld.css?v=1">
+    <!--[if lt IE 7 ]> <body class="ie6 bodyBackgroundImage"> <![endif]-->
+    <!--[if IE 7 ]>    <body class="ie7" > <![endif]-->
+    <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
+    <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
+    <!--[if (gt IE 9)|!(IE)]><!-->
+    <body>
+        <!--<![endif]-->
 
- 
-  <!-- All JavaScript at the bottom, except for Modernizr which enables HTML5 elements & feature detects -->
-  <script src="js/modernizr-1.5.min.js"></script>
+        <div id="container" style="height:100%;width:100%">
+            <header>
 
-</head>
+            </header>
+            <div id="main" style="height:100%;width:100%">
+                <TABLE align="center" border="0" cellpadding="4" bgcolor="whitesmoke" width="100%">
 
-<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+                    <TR>
+                        <TD width="120" valign="middle">
+                        <DIV class="INDEX_LOGO">
+                            <A href="http://www.lapcat.org.org/">
+                            <IMG src="http://www.lapcat.org/lapcat/images/101-58-1.png" border="0"
+                            width="100"></A>
+                        </DIV>
+                        </TD>
+                        <TD align="center">
+                        <DIV style="font-size:24px; color:tomato">
+                            One World Many Stories.
+                            <br>Lapcat Summer Reading Program
+                        </DIV>
+                        <BR>
+                        <DIV class="oFullName">
+                            La Porte County Public Library
+                        </DIV>
+                        <BR>
+                        <BR><I>Click <A href="javascript:PopBigHelp('welcome.cfm?curOrg=MPL&curHelp=off')" class="login">here</A> for an introduction to LitKeeper.</I>
+                        </TD>
+                        <TD width="120">
+                        <DIV class="INDEX_LOGIN">
 
-<!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
-<!--[if IE 7 ]>    <body class="ie7"> <![endif]-->
-<!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
-<!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+                            <DIV class="fancybox" onClick="location.href='readers/reader_index.cfm?curOrg=MPL'"
+                            onMouseOver="FussButt(this,'over');" onMouseOut="FussButt(this,'out');" >
+                                MY PAGE
+                            </DIV>
+                            <DIV class="fancybox"
+                            onClick="location.href='readers/reader_RecordEdit.cfm?curOrg=MPL&curEditMode=SIGNUP&curHelp=off'"
+                            onMouseOver="FussButt(this,'over');" onMouseOut="FussButt(this,'out');" >
+                                SIGNUP
+                            </DIV>
+                            <DIV class="fancybox" onClick="PopBigHelp('help.cfm?curOrg=MPL&curHelp=off')"
+                            onMouseOver="FussButt(this,'over');" onMouseOut="FussButt(this,'out');" >
+                                HELP
+                            </DIV>
+                        </DIV>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD colspan="3" align="center">
+                        <HR width="88%" size="4" NOSHADE></TD>
+                    </TR>
+                </TABLE>
+                <TABLE align="center" border="0" cellpadding="4" bgcolor="whitesmoke" width="100%">
 
-  <div id="container">
-    <header>
+                    <TR>
+                        <TD colspan="2" align="center">
+                        <DIV class="div_indexMsg_Center">
+    Stuff about our site.  Please let me know what should go here.
+                        </TD>
+                    </TR>
+                    <TR>
 
-    </header>
-    
-    <div id="main">
-      
-    </div>
-    
-    <footer>
+                        <TD align="center" valign="middle">
+                        <INPUT type="image" value="GO" name="iGoProgram"
+                        style="color:pink;" src="http://www.eventkeeper.com/litkeeper/files/sys/sys_wingnut.jpg" width="80"
+                        onClick="this.form.showPgm_ID.value=1">
 
-    </footer>
-  </div> <!--! end of #container -->
+                        </TD>
+                        <TD align="left" valign="center">
+                        <DIV style="margin-left:36px; width:84%; font-size:16px; color:red; margin-bottom:12px;">
+                            1. Little Kids (Keeping Track of Minutes)
+                            <BR>
+                            <BR>
+                            <INPUT type="submit" value="More Details and Prize Information" name="bGoProgram"
+                            style="width:240px; color:black; font-size:11px;"
+                            onClick="this.form.showPgm_ID.value=1">
 
+                        </DIV>
+                        <DIV style="margin-left:36px; width:84%; font-size:12px">
+                            A Spring Reading Program for students at the Mayflower Elementary School.
+                            <br>
+                            We don't care what you read as long as you open a book.
+                            <hr>
+                        </DIV>
+                        </TD>
+                    </TR>
+                    <TR>
 
-  <!-- Javascript at the bottom for fast page loading -->
+                        <TD align="center" valign="middle">
+                        <INPUT type="image" value="GO" name="iGoProgram"
+                        style="color:pink;" src="http://www.eventkeeper.com/litkeeper/files/sys/sys_marktwain.jpg" width="80"
+                        onClick="this.form.showPgm_ID.value=5">
 
-  <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-  <script>!window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')</script>
-  <script src="js/plugins.js?v=1"></script>
-  <script src="js/script.js?v=1"></script>
+                        </TD>
+                        <TD align="left" valign="center">
+                        <DIV style="margin-left:36px; width:84%; font-size:16px; color:red; margin-bottom:12px;">
+                            2. Big Kids (Keeping Track of Books and Pages Read) x
+                            <BR>
+                            <BR>
+                            <INPUT type="submit" value="More Details and Prize Information" name="bGoProgram"
+                            style="width:240px; color:black; font-size:11px;"
+                            onClick="this.form.showPgm_ID.value=5">
 
-  <!--[if lt IE 7 ]>
-    <script src="js/dd_belatedpng.js?v=1"></script>
-  <![endif]-->
-</body>
+                        </DIV>
+                        <DIV style="margin-left:36px; width:84%; font-size:12px">
+                            This program keeps track of titles and the number of pages read.
+                            <hr>
+                        </DIV>
+                        </TD>
+                    </TR>
+                    <TR>
+
+                        <TD align="center" valign="middle">
+                        <INPUT type="image" value="GO" name="iGoProgram"
+                        style="color:pink;" src="http://www.eventkeeper.com/litkeeper/files/sys/sys_beach.jpg" width="80"
+                        onClick="this.form.showPgm_ID.value=4">
+
+                        </TD>
+                        <TD align="left" valign="center">
+                        <DIV style="margin-left:36px; width:84%; font-size:16px; color:red; margin-bottom:12px;">
+                            3. Old Kids (Mixed Media that has been Completed)
+                            <BR>
+                            <BR>
+                            <INPUT type="submit" value="More Details and Prize Information" name="bGoProgram"
+                            style="width:240px; color:black; font-size:11px;"
+                            onClick="this.form.showPgm_ID.value=4">
+
+                        </DIV>
+                        <DIV style="margin-left:36px; width:84%; font-size:12px">
+                            An adult program that keeps track of assorted media for you.
+                        </DIV>
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD colspan="2" align="center">
+                        <HR width="88%" size="4" NOSHADE></TD>
+                    </TR>
+                    <TR>
+                        <TD colspan="2" align="center">
+
+                        <A href="index.cfm?curMode=ADMIN&curOrg=MPL" class="nav">STAFF LOGIN</A>
+                        </TD>
+                    </TR>
+                </TABLE>
+            </DIV>
+        </div>
+        <footer>
+
+        </footer>
+        </div> <!--! end of #container -->
+
+        <!-- Javascript at the bottom for fast page loading -->
+
+        <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+        </script>
+        <script>
+            !window.jQuery && document.write('<script src="js/jquery-1.4.2.min.js"><\/script>')
+        </script>
+        <script src="js/plugins.js?v=1">
+        </script>
+        <script src="js/script.js?v=1">
+        </script>
+        <!--[if lt IE 7 ]>
+        <script src="js/dd_belatedpng.js?v=1"></script>
+        <![endif]-->
+    </body>
 </html>
