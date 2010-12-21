@@ -3,9 +3,8 @@
    * An atempt to enable a facebook like button on each of the catalog records.   
    * paramaters item=ISBN
    */
-  include_once("db.php");  
+  
   include ("marc_parse.php");  
-  $db = db::getInstance();
   $_GET = $db->Clean($_GET);
   $marc = parseMarc($_GET["item"]);
  if(count($marc["numbers"])==1){
