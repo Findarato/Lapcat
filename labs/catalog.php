@@ -4,28 +4,43 @@
    * paramaters item=ISBN
    */
   include_once("db.php");  
-  include ("marc_parse.php");
+  include ("marc_parse.php");  
   $db = db::getInstance();
   $_GET = $db->Clean($_GET);
   $marc = parseMarc($_GET["item"]);
- // print_r(parseMarc($_GET["item"]));
+ if(count($marc["numbers"])==1){
+   $numbers = $marc["numbers"];
+ }else{$numbers = $marc["numbers"][0];}
 ?>
-
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:og="http://opengraphprotocol.org/schema/"
-      xmlns:fb="http://www.facebook.com/2008/fbml">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <title><?=$marc["title"];?></title>
     <meta property="og:title" content="<?=$marc["title"];?>"/>
-    <? //<meta property="og:type" content="movie"/> ?>
-    <meta property="og:url" content="http://catalog.lapcat.org/search~S12?/i<?=$marc["numbers"][0];?>/"/>
-    <meta property="og:image" content="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?=$marc["numbers"][0];?>&size=S"/>
+    <meta property="og:type" content="movie"/>
+    <meta property="og:url" content="http://dev.lapcat.org/labs/catalog.php?item=<?=$numbers;?>&redirect=1&fb"/>
+    <meta property="og:image" content="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?=$numbers;?>&size=S"/>
     <meta property="og:site_name" content="LAPCAT Catalog"/>
-<?/*
-    <meta property="og:description"
-          content="A group of U.S. Marines, under command of
-                   a renegade general, take over Alcatraz and
-                   threaten San Francisco Bay with biological
-                   weapons."/>*/?>
+    <meta property="fb:admins" content="joseph.harry"/>
+    <meta property="og:description" content="<?=$marc["description"];?>"/>
   </head>
+  <body style="height:100px;width:200px;">
+  <?php
+  if(isset($_GET["redirect"]) && $_GET["redirect"]==1){
+    ?>
+    <script>window.location="http://catalog.lapcat.org/search/i<?=$numbers;?>";</script>
+  <?}else{
+    ?>
+    <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script>
+    <script>
+      FB.init({
+        appId  : '174063745959859',
+        status : true, // check login status
+        cookie : true, // enable cookies to allow the server to access the session
+        xfbml  : true  // parse XFBML
+      });
+    </script>
+  <div id="fb-root"></div>    
+  <fb:like href="http://dev.lapcat.org/labs/catalog.php?item=<?=$numbers;?>" show_faces="true" width="450"></fb:like>
+  <?}?>  
+  </body>
 </html>

@@ -75,7 +75,7 @@
     echo "\n";
 		foreach ($a_status as $key=>$value){
  			switch ($key){
-        case "020": //This should be the ISBN and Standard Number(UPC) field
+        case "020": case "024"://This should be the ISBN and Standard Number(UPC) field
           $cleanedISBN = "";
           if(is_string($value)){ // if there is only one 020 field we need to account for it
             $cleaned["numbers"] = $value;  
