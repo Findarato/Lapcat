@@ -8,16 +8,18 @@
   $db = db::getInstance();
   $_GET = $db->Clean($_GET);
   $marc = parseMarc($_GET["item"]);
+  if(strlen($marc["subTitle"])>1){
+    $marc["subTitle"] = " : ".$marc["subTitle"];
+  }
   
  if(count($marc["numbers"])==1){
    $numbers = $marc["numbers"];
  }else{$numbers = $marc["numbers"][0];}
- 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
   <head>
     <title><?=$marc["title"];?></title>
-    <meta property="og:title" content="<?=urlencode($marc["title"]);?>"/>
+    <meta property="og:title" content="<?=$marc["title"];?><?=$marc["subTitle"];?>"/>
     <meta property="og:url" content="http://www.lapcat.org/labs/catalog.php?item=<?=$numbers;?>&redirect=1&fb"/>
     <meta property="og:image" content="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?=$numbers;?>&size=S"/>
     <meta property="og:site_name" content="LAPCAT Catalog"/>
