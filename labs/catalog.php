@@ -10,7 +10,7 @@
   $marc = parseMarc($_GET["item"]);
   if(strlen($marc["subTitle"])>1){
     $marc["subTitle"] = " : ".$marc["subTitle"];
-  }
+  }else{$marc["subTitle"] = "";}
   
  if(count($marc["numbers"])==1){
    $numbers = $marc["numbers"];
