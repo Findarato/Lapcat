@@ -98,7 +98,10 @@
 				case 245: //Title of the item
 					$split = explode("|", $value);
 					preg_match("/([0-9A-Za-z \s]*)/",$split[0],$titleMatches);
-					$cleaned["title"] = $titleMatches[0];
+					$cleaned["title"] = rtrim($titleMatches[0]);
+          preg_match("/([0-9A-Za-z \s]*)/",$split[1],$subTitleMatches);
+          $cleaned["subTitle"] = ltrim($subTitleMatches[0],"b");
+                    
           //echo "catalog Parsed Title:".$cleaned["title"]."\n";
 					if(isset($split[1])){
 						switch(substr($split[1], 0,1)){
