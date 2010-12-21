@@ -112,9 +112,8 @@
                 preg_match("/([0-9A-Za-z \s]*)/",$val,$subTitleMatches);
                 $cleaned["subTitlec"] = substr($subTitleMatches[0],1);
                 break;                
-
               default:
-                preg_match("/([0-9A-Za-z \s]*)/",$val,$titleMatches);
+                preg_match("/([0-9A-Za-z \, \s]*)/",$val,$titleMatches);
                 $cleaned["title"] = rtrim($titleMatches[0]);
 
                 break;
