@@ -8,7 +8,7 @@
   $db = db::getInstance();
   $_GET = $db->Clean($_GET);
   $marc = parseMarc($_GET["item"]);
-  if(strlen($marc["subTitle"])>1){
+  if(isset($marc["subTitle"]) && strlen($marc["subTitle"])>1){
     $marc["subTitle"] = " : ".$marc["subTitle"];
   }else{$marc["subTitle"] = "";}
   
