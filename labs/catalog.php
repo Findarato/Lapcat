@@ -5,9 +5,10 @@
    */
   include_once("db.php");  
   include ("marc_parse.php");  
+  $db = db::getInstance();
   $_GET = $db->Clean($_GET);
   $marc = parseMarc($_GET["item"]);
-  $db = db::getInstance();
+  
  if(count($marc["numbers"])==1){
    $numbers = $marc["numbers"];
  }else{$numbers = $marc["numbers"][0];}
