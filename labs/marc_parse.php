@@ -59,7 +59,7 @@
 				$preIndex = 0;
 				foreach($mcr as $mr2){
 					if(substr($mr2,0,3)=="   "){ // there is a new row with the same id.
-						$fixedMCR[$preIndex][0] .= substr_replace($mr2, "", 0,7);
+						$fixedMCR[$preIndex][0] .= substr_replace($mr2, " ", 0,7);
 					}else{ //this is a new row.
 					  $fixedMCR[substr($mr2,0,3)][] = trim(substr_replace($mr2, "", 0,7));
 					  $preIndex = substr($mr2,0,3);
@@ -97,10 +97,29 @@
 
 				case 245: //Title of the item
 					$split = explode("|", $value);
-					preg_match("/([0-9A-Za-z \s]*)/",$split[0],$titleMatches);
-					$cleaned["title"] = rtrim($titleMatches[0]);
-          preg_match("/([0-9A-Za-z \s]*)/",$split[1],$subTitleMatches);
-          $cleaned["subTitle"] = ltrim($subTitleMatches[0],"b");
+          //Cloudy with a chance of meatballs|h[Game] :|bfor  Playstation 3. 
+          foreach($split as $val){
+            switch(substr($val,0,1)){
+              case "b":
+                preg_match("/([0-9A-Za-z \s]*)/",$val,$subTitleMatches);
+                $cleaned["subTitle"] = substr($subTitleMatches[0],1);
+                break;
+              case "h":
+                preg_match("/([0-9A-Za-z \s]*)/",$val,$subTitleMatches);
+                $cleaned["subTitleh"] = substr($subTitleMatches[0],1);
+                break;                
+              case "c":
+                preg_match("/([0-9A-Za-z \s]*)/",$val,$subTitleMatches);
+                $cleaned["subTitlec"] = substr($subTitleMatches[0],1);
+                break;                
+
+              default:
+                preg_match("/([0-9A-Za-z \s]*)/",$val,$titleMatches);
+                $cleaned["title"] = rtrim($titleMatches[0]);
+
+                break;
+            }
+          }
                     
           //echo "catalog Parsed Title:".$cleaned["title"]."\n";
 					if(isset($split[1])){
