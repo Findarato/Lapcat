@@ -18,7 +18,7 @@
     <title><?=$marc["title"];?></title>
     <meta property="og:title" content="<?=$marc["title"];?>"/>
     <meta property="og:type" content="movie"/>
-    <meta property="og:url" content="http://dev.lapcat.org/labs/catalog.php?item=<?=$numbers;?>&redirect=1&fb"/>
+    <meta property="og:url" content="http://www.lapcat.org/labs/catalog.php?item=<?=$numbers;?>&redirect=1&fb"/>
     <meta property="og:image" content="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?=$numbers;?>&size=S"/>
     <meta property="og:site_name" content="LAPCAT Catalog"/>
     <meta property="fb:admins" content="joseph.harry"/>
@@ -41,7 +41,7 @@
       });
     </script>
   <div id="fb-root"></div>    
-  <fb:like href="http://dev.lapcat.org/labs/catalog.php?item=<?=$numbers;?>" show_faces="true" width="450"></fb:like>
+  <fb:like href="http://www.lapcat.org/labs/catalog.php?item=<?=$numbers;?>" show_faces="true" width="450"></fb:like>
   <?}?>  
   </body>
 </html>
