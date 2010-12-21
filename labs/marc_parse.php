@@ -1,5 +1,5 @@
 <?php
-  include_once("../objects/db.php");  
+  include_once("db.php");  
   //now for the actual processing of the website
 	function array_implode($arrays, &$target = array()) {
 		if(is_array($arrays)){
@@ -8,7 +8,7 @@
 		            array_implode($item, $target);
 		        } else {
 		            $target[] = $item;
-		        }
+		        } 
 		    }
 		    return $target;
 		}else {return false;}
