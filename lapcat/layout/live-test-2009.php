@@ -138,7 +138,19 @@
 <!--// Account Box //-->
 <div class="color-X-1 corners-top-3 corners-bottom-3 shadow-or-light-X-up" id="anchored-account-box" style="background-position:0px 2px; max-width:980px; position:fixed; bottom:-114px; padding-left:0.5%; padding-right:0.5%; text-align:center; width:99%; z-index:10;">
 	<div class="color-Y-4 corners-bottom-3 corners-top-3" style="bottom:-3px; left:1px; right:1px; height:106px; position:absolute; width:100%; z-index:-1;"></div>
-	<div style="position:absolute; bottom:0px; left:426px; text-align:center; width:auto; z-index:2;"><font class="fake-link" style="color:rgb(0,0,255); font-size:11px; text-decoration:underline;"><a class="font-L" href="/lapcat/files/Mission.pdf" target="_blank">About Us</a> / <a class="font-L" href="/lapcat/files/WebsiteTermsOfUse.pdf" target="_blank">Terms of Use</a> / <a class="font-L" href="/lapcat/files/Meeting.pdf" target="_blank">Meeting Room Policy</a> / <a class="font-L" href="/lapcat/files/WebsiteUserGuidelines.pdf" target="_blank">Guidelines</a> / <a class="font-L" href="/lapcat/files/WebsitePrivacyPolicy.pdf" target="_blank">Privacy Policy</a></font></div>
+	<div style="position:absolute; bottom:0px; left:426px; text-align:center; width:auto; z-index:2;">
+    <font class="fake-link" style="color:rgb(0,0,255); font-size:11px; text-decoration:underline;">
+      <a class="font-L" href="/lapcat/files/Mission.pdf" target="_blank">About Us</a> 
+      / 
+      <a class="font-L" href="/lapcat/files/WebsiteTermsOfUse.pdf" target="_blank">Terms of Use</a> 
+      / 
+      <a class="font-L" href="/lapcat/files/Meeting.pdf" target="_blank">Meeting Room Policy</a> 
+      / 
+      <a class="font-L" href="/lapcat/files/WebsiteUserGuidelines.pdf" target="_blank">Guidelines</a> 
+      / 
+      <a class="font-L" href="/lapcat/files/WebsitePrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+     </font>
+  </div>
 	<div class="color-X-1 border-all-I-1 corners-top-2 corners-bottom-2 shadow-or-light-X-up" style="height:90px; padding:4px; width:auto;">
 		<table cellpadding="0" cellspacing="0" style="width:100%;">
 			<tr>
@@ -158,7 +170,21 @@
 <!--// Anchored Message Box //-->
 <div class="color-X-1 corners-top-3 corners-bottom-3 shadow-or-light-X-up" id="anchored-message-box" style="background-position:0px 2px; max-width:980px; position:fixed; bottom:-114px; padding-left:0.5%; padding-right:0.5%; text-align:center; width:99%; z-index:10;">
 	<div class="color-Y-4 corners-bottom-3 corners-top-3" style="bottom:-3px; left:1px; right:1px; height:106px; position:absolute; width:100%; z-index:-1;"></div>
-	<div style="position:absolute; bottom:0px; left:426px; text-align:center; width:auto; z-index:2;"><font class="fake-link" style="color:rgb(0,0,255); font-size:11px; text-decoration:underline;"><a class="font-L" href="/lapcat/files/Mission.pdf" target="_blank">About Us</a> / <a class="font-L" href="/lapcat/files/WebsiteTermsOfUse.pdf" target="_blank">Terms of Use</a></font></div>
+	<div style="position:absolute; bottom:0px; left:426px; text-align:center; width:auto; z-index:2;">
+    <font class="fake-link" style="color:rgb(0,0,255); font-size:11px; text-decoration:underline;">
+      <div style="width:200px">
+        <div style="float:left;">
+          <a class="font-L" href="/lapcat/files/Mission.pdf" target="_blank">About Us</a> / <a class="font-L" href="/lapcat/files/WebsiteTermsOfUse.pdf" target="_blank">Terms of Use</a>
+        </div>
+        <div style="float:left;">
+          <a class="font-L" href="/lapcat/files/WebsiteUserGuidelines.pdf" target="_blank">Guidelines</a> / <a class="font-L" href="/lapcat/files/WebsitePrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+        </div>
+        <div style="float:left;">
+          <a class="font-L" href="/lapcat/files/LibraryBrochure2.pdf" target="_blank">Library Brochure </a>
+        </div>                  
+      </div>
+     </font>
+  </div>
 	<div class="color-X-1 border-all-I-1 corners-top-2 corners-bottom-2 shadow-or-light-X-up" style="height:90px; padding:4px; width:auto;">
 		<table cellpadding="0" cellspacing="0" style="width:100%;">
 			<tr>
