@@ -1,5 +1,6 @@
 <?
-//header('content-type:text/css'); header("Expires: ".gmdate("D, d M Y H:i:s", (time()+900000)) . " GMT"); 
+header('content-type:text/css'); 
+header("Expires: ".gmdate("D, d M Y H:i:s", (time()+900000)) . " GMT"); 
 header('content-type:text/css'); header("Expires: ".time(). " GMT"); 
 // Tiled Images
 // 18-18-100 (More Diagonal Lines)
