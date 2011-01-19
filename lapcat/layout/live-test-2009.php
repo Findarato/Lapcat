@@ -176,9 +176,11 @@
         <div style="float:left;">
           <a class="font-L" href="/lapcat/files/Mission.pdf" target="_blank">About Us</a> / <a class="font-L" href="/lapcat/files/WebsiteTermsOfUse.pdf" target="_blank">Terms of Use</a>
         </div>
+<!--
         <div style="float:left;">
           <a class="font-L" href="/lapcat/files/WebsiteUserGuidelines.pdf" target="_blank">Guidelines</a> / <a class="font-L" href="/lapcat/files/WebsitePrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
         </div>
+        -->
         <div style="float:left;">
           <a class="font-L" href="/lapcat/files/LibraryBrochure2.pdf" target="_blank">Library Brochure </a>
         </div>                  
