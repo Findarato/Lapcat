@@ -1,7 +1,12 @@
 <?
 header("X-UA-Compatiblel: chrome=1");
 SESSION_START();
-function __autoload($v_CN) {require_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/objects/'.strtolower($v_CN).'.php';}
+//function __autoload($v_CN) {include $_SERVER['DOCUMENT_ROOT'].'/lapcat/objects/'.strtolower($v_CN).'.php';}
+include $_SERVER["DOCUMENT_ROOT"]."/lapcat/objects/db.php";
+include $_SERVER["DOCUMENT_ROOT"]."/lapcat/objects/user.php"; 
+include $_SERVER["DOCUMENT_ROOT"]."/lapcat/objects/lapcat.php";
+
+
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/php-functions.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/lapcat/code/aval.php';
 $A_URL=array_splice(explode('/',strtolower($_SERVER['REQUEST_URI'])),0,6);
@@ -231,6 +236,7 @@ if($V_Fresh){
 		<meta name="description" content="<?=strip_tags($a_Share['text']);?>"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=100" > 
 		<meta http-equiv="X-UA-Compatible" content="chrome=1"> 
+		<meta name="google-site-verification" content="8XW3IwQawfpXvXNrULOQKETm2SaDBt4IfTkdc0O--rI" />
 		<title><?=$a_Share["name"];?></title>
 		<link rel="shortcut icon" href="/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="/lapcat/css/nebula.css" />
