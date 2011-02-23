@@ -238,7 +238,7 @@
 					<div class="corners-bottom-3 corners-top-3 color-E-1" style="float:right; height:90px; text-align:center; width:90px;">
 						<div class="border-all-Z-1 corners-bottom-2 corners-top-2" style="height:88px; overflow:hidden; width:88px;">
 							<font class="font-L" id="catalog-new-sign-up" style="font-size:11px;">No Library Card?</font>
-							<div class="browse-link fake-link button-blue light-up" name="http://old.lapcat.org/signup.html" onfocus="javascript:this.blur();" style="float:right; height:63px; margin-right:2px; margin-top:2px; padding-left:3px; padding-right:3px; text-align:center; width:76px;" title="Click to sign-up online for a library card."><font class="font-G" style="font-size:14px;">sign-up<br/>for a<br/>library card</font></div>
+							<div class="browse-link fake-link button-blue light-up" name="https://catalog.lapcat.org/selfreg~S12" onfocus="javascript:this.blur();" style="float:right; height:63px; margin-right:2px; margin-top:2px; padding-left:3px; padding-right:3px; text-align:center; width:76px;" title="Click to sign-up online for a library card."><font class="font-G" style="font-size:14px;">sign-up<br/>for a<br/>library card</font></div>
 						</div>
 					</div>
 
