@@ -182,8 +182,8 @@
         </div>
         -->
         <div style="float:left;">
-          <a class="font-L" href="/lapcat/files/LibraryBrochure2.pdf" target="_blank">Library Brochure </a>
-        </div>                  
+          <a class="font-L" href="/lapcat/files/LibraryBrochure2.pdf" target="_blank">Library Brochure </a> <br><a class="font-L" href="/lapcat/files/RFP.for.Telephone.Svc.2011.pdf" target="_blank">RFP for Telephone Service</a> 
+        </div>      
       </div>
      </font>
   </div>
