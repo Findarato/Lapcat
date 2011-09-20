@@ -8,22 +8,29 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title></title>
-		<meta name="description" content="">
+		<meta name="description" content="La Porte County Public Library">
 		<meta name="author" content="La Porte County Public Library">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		<!-- CSS concatenated and minified via ant build script-->
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/oldStyle.css">
+		<link rel="stylesheet" href="css/roundCorners.css">
 		<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Buda:light' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css' />
-		<!-- CSS concatenated and minified via ant build script-->
-		<link rel="stylesheet" href="css/style.css">
 		<!-- end CSS-->
-		<script src="js/libs/modernizr-2.0.6.min.js"></script>
+		<script src="js/libs/modernizr-2.0.6.min.js"></script> 
 	</head>
 	<body>
-		<div id="container">
-			<header></header>
+		<div id="container" style="margin: 0 auto;width:1025px;text-align:left;">
+			<header>
+				{include file="header.tpl"}
+			</header>
 			<div id="main" role="main"></div>
-			<footer></footer>
+			<footer>
+				{include file="footer.tpl"}
+			</footer>
 		</div>
 		<!--! end of #container -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
@@ -31,18 +38,22 @@
 		<!-- scripts concatenated and minified via ant build script-->
 		<script defer src="js/plugins.js"></script>
 		<script defer src="js/script.js"></script>
+		
+		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		
+
 		<!-- end scripts-->
 		<script>
 			// Change UA-XXXXX-X to be your site's ID
-			window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
+			window._gaq = [['_setAccount', 'UA80672081'], ['_trackPageview'], ['_trackPageLoadTime']];
 			Modernizr.load({
 				load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
 			});
-
+			$("a").live("click", function () { 
+			var uri = $(this).attr("href");
+			_gaq.push(['_trackEvent', 'pages', 'click', uri]);
+			});
 		</script>
-		<!--[if lt IE 7 ]>
-		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-		<![endif]-->
 	</body>
 </html>
