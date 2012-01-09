@@ -2,23 +2,21 @@
 	<div class="tr">
 		<div class="td" style="width:250px">
 			<!-- Left Colmn -->
-			<div class="smallSection downloadsNav">
+			<div class="smallSection">
+				<a class="downloadsNav" href="downloads.html"></a>
 				<div class="sectionText">
 					<a href="downloads.html">Downloads</a>
 				</div>
-				<div class="smallSection shadowBox"></div>
 			</div>
 			<div class="smallSection">
 				<div class="sectionText">
 					<a href="greatpicks.php">Great Picks!</a>
 				</div>
-				<div class="smallSection shadowBox"></div>
 			</div>
 			<div class="smallSection">
 				<div class="sectionText">
 					<a href="research.php">Research</a>
 				</div>
-				<div class="smallSection shadowBox" ></div>
 			</div>
 		</div>
 		<div class="td" style="width:400px;">
@@ -38,28 +36,24 @@
 						<input type="submit" value="GO!" />
 					</form>
 				</div>
-				<div class="middleSection shadowBox" ></div>
 			</div>
 		</div>
 		<div class="td" style="width:250px">
 			<!-- Right Colmn -->
 			<div class="smallSection">
 				<div class="sectionText">
-					<a href="genealogy.php">Genealogy</a>
+					<a class="hideMe" href="genealogy.php">Genealogy</a>
 				</div>
-				<div class="smallSection shadowBox" ></div>
 			</div>
 			<div class="smallSection">
 				<div class="sectionText">
 					<a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
 				</div>
-				<div class="smallSection shadowBox" ></div>
 			</div>
 			<div class="smallSection">
 				<div class="sectionText">
 					<a href="hours.html">Hours</a>
 				</div>
-				<div class="smallSection shadowBox" ></div>
 			</div>
 		</div>
 	</div>

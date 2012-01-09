@@ -213,6 +213,7 @@ function displayLocation(locationCode,domElementSelector){
 }
 
 $(document).ready(function(){
+	//$(".shadowBox").css("display","block"); 
 	$(".locationHover")
 		.mouseenter(
 			function(){
@@ -234,15 +235,24 @@ $(document).ready(function(){
 		speed: 1000
 	});
 	$('#demo2').theatre();
-	*/
+	
 	$(".middleSection,.smallSection")
 	.mouseenter(function(){
-		$(".shadowBox").css("background-color","rgba(0,0,0,.7)");
-		$(this).find(".shadowBox").css("background-color","rgba(0,0,0,.0)");
+		$(".middleSection >div,.smallSection>div").css("opacity",".5");
+
+		/*
+		if($(this).hasClass("middleSection")){
+			$(this).find(".shadowBox").css({"background-color":"rgba(0,0,0,.0)","display":"none"});
+		}else{
+			
+		}
+	
+//		$(this).find(".shadowBox").css({"background-color":"rgba(0,0,0,.0)"});	
 	})
 	.mouseleave(function(){
-		$(".shadowBox").css("background-color","rgba(0,0,0,.0)");
+	//	$(".shadowBox").css({"background-color":"rgba(0,0,0,.0)","display":"block"});
 	})
+	*/
 });
 
 
