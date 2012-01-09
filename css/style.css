@@ -215,7 +215,6 @@ h4 {
 	transition: .3s ease-in;
 }
 .menuSelect:hover{
-	
 	background:rgba(255,255,255,.7);
 }
 .topMenu {
@@ -243,39 +242,42 @@ li{
 	background:#FFF;
 	padding:3px;
 }
-.smallSection{
+.smallSection,.mediumSection,.middleSection{
+	display:block;
+	background:#000 no-repeat;
 	position:relative;
-	background:url() #FF0 no-repeat;
+	-webkit-transition: .3s ease-in;
+	-moz-transition: .3s ease-in;
+	-o-transition: .3s ease-in;
+	transition: .3s ease-in;	
+}
+.smallSection:hover,.mediumSection:hover,.middleSection:hover{
+	opacity:1;
+}
+.smallSection,.smallSection a{
 	height:100px;
 	width:250px;
 	margin:3px;
-	display:block;
 	background-size:250px 100px;
 }
 .mediumSection{
 	height:150px;
 	width:250px;;
-	background:url() #FF0;
 	margin:3px;
-	display:block;
 }
-.middleSection{
+.middleSection,.midleSection form{
 	height:306px;
 	width:400px;
-	background: no-repeat;
 	margin:3px;
-	display:block;
 	background-size:400px 306px;
+}
+.middleSection form:hover{
+	opacity:1;
 }
 .shadowBox{
 	position:absolute;
 	top:-3px;
 	left:-3px;
-	background:rgba(0,0,0,.0);
-	-webkit-transition: .3s ease-in;
-	-moz-transition: .3s ease-in;
-	-o-transition: .3s ease-in;
-	transition: .3s ease-in;	
 }
 .downloadsNav{
 	background-image:url("/images/download.jpg");
