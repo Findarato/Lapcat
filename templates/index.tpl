@@ -23,13 +23,13 @@
 		<script src="js/libs/modernizr-2.0.6.min.js"></script> 
 	</head>
 	<body>
-		<div id="container" style="margin: 0 auto;width:1025px;text-align:left;">
-			<header>
-				{include file="header.tpl"}
-			</header>
-			<div id="main" role="main"></div>
+		<div id="container" style="">
+			{include file="header.tpl"}
+			<div class="mainArea" id="main" role="main">
+				{include file="mainNavagation.tpl"}
+			</div>
 			<footer>
-				{include file="footer.tpl"}
+				<!--{include file="footer.tpl"}-->
 			</footer>
 		</div>
 		<!--! end of #container -->
