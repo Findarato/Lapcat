@@ -226,14 +226,23 @@ $(document).ready(function(){
 		);
 	//This makes sure something is being shown
 	
-	displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));
-
+	//displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));
+/*
 	$('#demo').theatre({
 		selector: 'img', // We want to resize/rotate images and not links
 		effect: '3d',
 		speed: 1000
 	});
 	$('#demo2').theatre();
+	*/
+	$(".middleSection,.smallSection")
+	.mouseenter(function(){
+		$(".shadowBox").css("background-color","rgba(0,0,0,.7)");
+		$(this).find(".shadowBox").css("background-color","rgba(0,0,0,.0)");
+	})
+	.mouseleave(function(){
+		$(".shadowBox").css("background-color","rgba(0,0,0,.0)");
+	})
 });
 
 
