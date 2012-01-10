@@ -258,21 +258,16 @@ function get_rss_feed() {
 		});
 	});
 	$(".soonCalendarNext").click(function(){
-		
-		if(currentRss == totalRssItems){ currentRss = -1;}
-		var position = (currentRss*40);
+//		if(currentRss == totalRssItems){ currentRss = -1;}
+		var position = 0
+		position = (560*currentRss)+40;
 		currentRss--;
-		alert(currentRss);
-		position = position + (currentRss*520);
-		//alert(position)
 		sCC.css({"left": position});
 	});
 	$(".soonCalendarBack").click(function(){
-		//if(currentRss == 0){ currentRss = (totalRssItems+1);}		
-		var position = (currentRss*40);
+		var position = 0
+		position = (560*currentRss)+40;
 		currentRss++;
-		alert(currentRss+"|back");
-		position = position - (currentRss*520);
 		sCC.css({"left": position});
 	});	
 };
