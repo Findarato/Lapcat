@@ -141,7 +141,8 @@ var locations={
          "phone":"(219) 362-6156"
       }
 };
-
+var totalRssItems = 0;
+var currentRss = 0;
 function displayLocation(locationCode,domElementSelector){
 	var today = new Date();
 	var dayOfWeek = today.getDay();
@@ -212,6 +213,71 @@ function displayLocation(locationCode,domElementSelector){
 		}
 }
 
+function get_rss_feed() {
+	var sCC = $("#soonCalendarContainer")
+	//clear the content in the div for the next feed.
+	sCC.empty();
+ 
+	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
+	$.get("ajax/rss.php",{"url":"http://engagedpatrons.org/RSS4LE.cfm?SiteID=9267&BranchID="}, function(d) {
+ 
+		//find each 'item' in the file and parse it
+		$(d).find('item').each(function() {
+ 			totalRssItems++;
+			//name the current found item this for this particular loop run
+			var $item = $(this);
+			// grab the post title
+			var title = $item.find('title').text();
+			// grab the post's URL
+			var link = $item.find('link').text();
+			// next, the description
+			var description = $item.find('description').text();
+			//don't forget the pubdate
+			var pubDate = $item.find('dc\:date').text();
+ 
+			// now create a var 'html' to store the markup we're using to output the feed to the browser window
+			html = $("<div/>",{"class":"rssItem",css:{}})
+				.html(
+					$("<div/>",{html:title,"class":"rssTitle"})
+				)
+				.append(
+					$("<date/>",{"class":"rssDate",html:pubDate})
+				)
+				.append(
+					$("<span/>",{"class":"rssDescription",html:description})
+				)
+				.append(
+					$("<a/>",{"class":"rssReadMore",html:"Read More >>","href":link,"target":"_blank"})
+				)
+			//put that feed content on the screen!
+			sCC.append(html);  
+		});
+	});
+	if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"0"})}
+	$(".soonCalendarNext").click(function(){
+		if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"1"})}
+		currentRss--;
+		sCC.css({"left":currentRss*520});
+		//alert(currentRss);
+		if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"0"})}
+		if(currentRss == totalRssItems){$(".soonCalendarNext").css({"opacity":"0"})}
+		
+	});
+	$(".soonCalendarBack").click(function(){
+		if(currentRss == 0){$(".soonCalendarNext").css({"opacity":"1"})}
+		if(currentRss < 0){
+			currentRss++;
+			sCC.css({"left":currentRss*520});
+			//alert(currentRss);
+		}
+		if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"0"})}
+		if(currentRss == totalRssItems){$(".soonCalendarNext").css({"opacity":"0"})}
+
+	});	
+};
+
+
+
 $(document).ready(function(){
 	//$(".shadowBox").css("display","block"); 
 	$(".locationHover")
@@ -225,34 +291,11 @@ $(document).ready(function(){
 				displayLocation("MA",$("#locationDisplay"));
 			}
 		);
+		if($("#soonCalendarContainer")){get_rss_feed();}
+		
 	//This makes sure something is being shown
 	
 	//displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));
-/*
-	$('#demo').theatre({
-		selector: 'img', // We want to resize/rotate images and not links
-		effect: '3d',
-		speed: 1000
-	});
-	$('#demo2').theatre();
-	
-	$(".middleSection,.smallSection")
-	.mouseenter(function(){
-		$(".middleSection >div,.smallSection>div").css("opacity",".5");
-
-		/*
-		if($(this).hasClass("middleSection")){
-			$(this).find(".shadowBox").css({"background-color":"rgba(0,0,0,.0)","display":"none"});
-		}else{
-			
-		}
-	
-//		$(this).find(".shadowBox").css({"background-color":"rgba(0,0,0,.0)"});	
-	})
-	.mouseleave(function(){
-	//	$(".shadowBox").css({"background-color":"rgba(0,0,0,.0)","display":"block"});
-	})
-	*/
 });
 
 
