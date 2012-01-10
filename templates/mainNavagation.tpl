@@ -1,9 +1,9 @@
-<div class="t" style="width:auto;height:300px;margin:0 auto;">
+<div class="t navDisplay" style="width:auto;height:300px;margin:0 auto;">
 	<div class="tr">
 		<div class="td" style="width:250px">
 			<!-- Left Colmn -->
 			<div class="smallSection">
-				<a class="downloadsNav" href="downloads.html"></a>
+				<a class="downloadsNav smoothAnimate" href="downloads.html" style="position:absolute;top:-3px;left:-3px;"></a>
 				<div class="sectionText">
 					<a href="downloads.html">Downloads</a>
 				</div>
@@ -21,13 +21,13 @@
 		</div>
 		<div class="td" style="width:400px;">
 			<!-- Middle Colmn -->
-			<div class="middleSection catalogNav" style="text-align:center;position:relative;">
-				<div style="position:absolute;bottom:20px;left:30px;padding:3px;">
-					<form method="get" action="http://catalog.lapcat.org/search/~/a?a">
+			<div class="middleSection" style="text-align:center;position:relative;">
+				<div style="position:absolute;top:-3px;left:-3px;">
+					<form method="get" action="http://catalog.lapcat.org/search/~/a?a" class="catalogNav smoothAnimate">
 						Search the Catalog
 						<br>
-						<input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
-						<select name="searchtype">
+						<input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog" style="position:absolute;bottom:30px; left:30px;">
+						<select name="searchtype" style="position:absolute;bottom:28px; left:217px;">
 							<option value="X" selected="selected">KEYWORD</option>
 							<option value="t">TITLE</option>
 							<option value="a">AUTHOR</option>

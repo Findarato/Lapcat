@@ -251,27 +251,33 @@ li{
 	-o-transition: .3s ease-in;
 	transition: .3s ease-in;	
 }
-.smallSection:hover,.mediumSection:hover,.middleSection:hover{
+.navDisplay:hover .smallSection a,.navDisplay:hover .middleSection form{
+	opacity:.6;
+}
+
+.navDisplay .smallSection a:hover,.navDisplay .mediumSection a:hover,.navDisplay .middleSection form:hover{
 	opacity:1;
 }
+
+
 .smallSection,.smallSection a{
 	height:100px;
 	width:250px;
 	margin:3px;
 	background-size:250px 100px;
 }
-.mediumSection{
+.mediumSection,.mediumSection a{
 	height:150px;
 	width:250px;;
 	margin:3px;
 }
-.middleSection,.midleSection form{
+.middleSection,.middleSection form{
 	height:306px;
 	width:400px;
 	margin:3px;
 	background-size:400px 306px;
 }
-.middleSection form:hover{
+.middleSection form:hover,.smallSection:hover a{
 	opacity:1;
 }
 .shadowBox{
@@ -279,11 +285,17 @@ li{
 	top:-3px;
 	left:-3px;
 }
+.smoothAnimate{
+	-webkit-transition: .3s ease-in;
+	-moz-transition: .3s ease-in;
+	-o-transition: .3s ease-in;
+	transition: .3s ease-in;
+}
 .downloadsNav{
-	background-image:url("/images/download.jpg");
+	background:url("/images/download.jpg") no-repeat scroll 50% 50% transparent;
 }
 .catalogNav{
-	background-image:url("/images/cardCatalog.jpg");
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
 }
 
 /* ==|== media queries ====================================================== */
