@@ -27,6 +27,7 @@
 			{include file="header.tpl"}
 			<div class="mainArea" id="main" role="main">
 				{include file="mainNavagation.tpl"}
+				{include file="soonCalendar.tpl"}
 			</div>
 			<footer>
 				<!--{include file="footer.tpl"}-->
@@ -40,8 +41,7 @@
 		<script defer src="js/script.js"></script>
 		
 		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-		<script src="js/script.js" type="text/javascript"></script>
-		
+	
 
 		<!-- end scripts-->
 		<script>
