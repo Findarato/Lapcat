@@ -238,41 +238,42 @@ function get_rss_feed() {
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"rssItem",css:{}})
 				.html(
-					$("<div/>",{html:title,"class":"rssTitle"})
+					$("<div/>",{css:{"overflow":"hidden","width":"510px"}})
+						.html(
+						$("<div/>",{html:title,"class":"rssTitle"})
+						)
+						.append(
+							$("<date/>",{"class":"rssDate",html:pubDate})
+						)
+						.append(
+							$("<span/>",{"class":"rssDescription",html:description})
+						)
+						.append(
+							$("<a/>",{"class":"rssReadMore",html:"Read More >>","href":link,"target":"_blank"})
+						)
 				)
-				.append(
-					$("<date/>",{"class":"rssDate",html:pubDate})
-				)
-				.append(
-					$("<span/>",{"class":"rssDescription",html:description})
-				)
-				.append(
-					$("<a/>",{"class":"rssReadMore",html:"Read More >>","href":link,"target":"_blank"})
-				)
+				
 			//put that feed content on the screen!
 			sCC.append(html);  
 		});
 	});
-	if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"0"})}
 	$(".soonCalendarNext").click(function(){
-		if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"1"})}
-		currentRss--;
-		sCC.css({"left":currentRss*520});
-		//alert(currentRss);
-		if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"0"})}
-		if(currentRss == totalRssItems){$(".soonCalendarNext").css({"opacity":"0"})}
 		
+		if(currentRss == totalRssItems){ currentRss = -1;}
+		var position = (currentRss*40);
+		currentRss--;
+		alert(currentRss);
+		position = position + (currentRss*520);
+		//alert(position)
+		sCC.css({"left": position});
 	});
 	$(".soonCalendarBack").click(function(){
-		if(currentRss == 0){$(".soonCalendarNext").css({"opacity":"1"})}
-		if(currentRss < 0){
-			currentRss++;
-			sCC.css({"left":currentRss*520});
-			//alert(currentRss);
-		}
-		if(currentRss == 0){$(".soonCalendarBack").css({"opacity":"0"})}
-		if(currentRss == totalRssItems){$(".soonCalendarNext").css({"opacity":"0"})}
-
+		//if(currentRss == 0){ currentRss = (totalRssItems+1);}		
+		var position = (currentRss*40);
+		currentRss++;
+		alert(currentRss+"|back");
+		position = position - (currentRss*520);
+		sCC.css({"left": position});
 	});	
 };
 
