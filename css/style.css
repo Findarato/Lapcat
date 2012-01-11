@@ -189,6 +189,7 @@ h4 {
  */
 
 a,a:hover,a:visited,a:focus { color: #000; text-decoration:none; }
+a:hover{text-decoration: underline;}
 
 
 .downloadsNav{
