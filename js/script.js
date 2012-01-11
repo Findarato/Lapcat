@@ -268,7 +268,7 @@ function get_rss_feed() {
 		var position = 0
 		position = (560*currentRss)+40;
 		currentRss++;
-		sCC.css({"left": position});
+		sCC.css({"left": position}); 
 	});	
 };
 
