@@ -258,16 +258,15 @@ function get_rss_feed() {
 		});
 	});
 	$(".soonCalendarNext").click(function(){
-//		if(currentRss == totalRssItems){ currentRss = -1;}
 		var position = 0
-		position = (560*currentRss)+40;
 		currentRss--;
+		position = (560*currentRss)+40;
 		sCC.css({"left": position});
 	});
 	$(".soonCalendarBack").click(function(){
 		var position = 0
-		position = (560*currentRss)+40;
 		currentRss++;
+		position = (560*currentRss)+40;
 		sCC.css({"left": position}); 
 	});	
 };

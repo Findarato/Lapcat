@@ -28,6 +28,7 @@
 			<div class="mainArea" id="main" role="main">
 				{include file="mainNavagation.tpl"}
 				{include file="soonCalendar.tpl"}
+				{include file="countDown.tpl"}
 			</div>
 			<footer>
 				<!--{include file="footer.tpl"}-->
