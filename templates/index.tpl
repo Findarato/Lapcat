@@ -14,8 +14,9 @@
 
 		<!-- CSS concatenated and minified via ant build script-->
 		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/oldStyle.css">
-		<link rel="stylesheet" href="css/roundCorners.css">
+		<!--<link rel="stylesheet" href="css/oldStyle.css">-->
+		<link rel="stylesheet" href="js/libs/twitter/jquery.tweet.css">
+		
 		<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Buda:light' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css' />
@@ -28,7 +29,17 @@
 			<div class="mainArea" id="main" role="main">
 				{include file="mainNavagation.tpl"}
 				{include file="soonCalendar.tpl"}
-				{include file="countDown.tpl"}
+				{* {include file="countDown.tpl"} *}
+				<section class="centerBox">
+					<div class="t centerBox">
+						<div class="td seventyPercent">
+							{include file="mainContent.tpl"}
+						</div>
+						<div class="td thirtyPercent">
+							{include file="twitter.tpl"}
+						</div>
+					</div>
+				</section>
 			</div>
 			<footer>
 				<!--{include file="footer.tpl"}-->
@@ -38,9 +49,9 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 		<!-- scripts concatenated and minified via ant build script-->
+		<script src="js/libs/twitter/jquery.tweet.js" type="text/javascript"></script> 
 		<script defer src="js/plugins.js"></script>
 		<script defer src="js/script.js"></script>
-		
 		<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	
 
