@@ -193,6 +193,22 @@ h4 {
 .catalogNav{
 	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
 }
+.researchNav{
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+}
+.genealogyNav{
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+}
+.eventsNav{
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+}
+.hoursNav{
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+}
+.greatPicksNav{
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+}
+
 .firstNav{
 	background: rgb(192,251,254);
 }

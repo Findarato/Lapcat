@@ -9,13 +9,13 @@
 				</div>
 			</div>
 			<div class="smallSection">
-				<a class="downloadsNav smoothAnimate" href="greatpicks.php" style="position:absolute;top:-3px;left:-3px;"></a>
+				<a class="greatPicksNav smoothAnimate" href="greatpicks.php" style="position:absolute;top:-3px;left:-3px;"></a>
 				<div class="sectionText">
 					Great Picks!
 				</div>
 			</div>
 			<div class="smallSection">
-				<a class="downloadsNav smoothAnimate" href="reasearch.php" style="position:absolute;top:-3px;left:-3px;"></a>
+				<a class="researchNav smoothAnimate" href="reasearch.php" style="position:absolute;top:-3px;left:-3px;"></a>
 				<div class="sectionText">
 					Research
 				</div>
@@ -41,19 +41,19 @@
 		<div class="td" style="width:250px">
 			<!-- Right Colmn -->
 			<div class="smallSection">
-				<a class="downloadsNav smoothAnimate" href="genealogy.php" style="position:absolute;top:-3px;left:-3px;"></a>
+				<a class="genealogyNav smoothAnimate" href="genealogy.php" style="position:absolute;top:-3px;left:-3px;"></a>
 				<div class="sectionText">
 					Genealogy
 				</div>
 			</div>
 			<div class="smallSection">
-				<a class="downloadsNav smoothAnimate" href="http://engagedpatrons.org/Events.cfm?SiteID=9267" style="position:absolute;top:-3px;left:-3px;"></a>
+				<a class="eventsNav smoothAnimate" href="http://engagedpatrons.org/Events.cfm?SiteID=9267" style="position:absolute;top:-3px;left:-3px;"></a>
 				<div class="sectionText">
 					Events
 				</div>
 			</div>
 			<div class="smallSection">
-				<a class="downloadsNav smoothAnimate" href="hours.html" style="position:absolute;top:-3px;left:-3px;"></a>
+				<a class="hoursNav smoothAnimate" href="hours.html" style="position:absolute;top:-3px;left:-3px;"></a>
 				<div class="sectionText">
 					Hours
 				</div>
