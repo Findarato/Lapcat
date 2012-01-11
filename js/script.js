@@ -240,16 +240,16 @@ function get_rss_feed() {
 				.html(
 					$("<div/>",{css:{"overflow":"hidden","width":"510px"}})
 						.html(
-						$("<div/>",{html:title,"class":"rssTitle"})
+							$("<div/>",{"class":"rssTitle"})
+								.html(
+									$("<a/>",{"href":link,"html":title,"target":"_blank"})
+								)
 						)
 						.append(
 							$("<date/>",{"class":"rssDate",html:pubDate})
 						)
 						.append(
-							$("<span/>",{"class":"rssDescription",html:description})
-						)
-						.append(
-							$("<a/>",{"class":"rssReadMore",html:"Read More >>","href":link,"target":"_blank"})
+							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
 						)
 				)
 				
