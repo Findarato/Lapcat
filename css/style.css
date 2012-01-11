@@ -224,6 +224,9 @@ a:hover{text-decoration: underline;}
 	background: #BDE1BD;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
+.secondNav a:hover,.firstNav a:hover{
+	text-decoration:none;
+}
 .insideBoxShadow{
 	-moz-box-shadow: inset 0 0 1px 1px #888;
 	-webkit-box-shadow: inset 0 0 1px 1px#888;
