@@ -271,7 +271,24 @@ function get_rss_feed() {
 	});	
 };
 
-
+function twitter(){
+	var tweetUsers = ['tutorialzine','TechCrunch','smashingmag','mashable'];
+	var buildString = "";
+	$('#twitter-ticker').slideDown('slow');
+	
+	for(var i=0;i<tweetUsers.length;i++)
+	{
+		if(i!=0) buildString+='+OR+';
+		buildString+='from:'+tweetUsers[i];
+	}
+	
+	var fileref = document.createElement('script');
+	
+	fileref.setAttribute("type","text/javascript");
+	fileref.setAttribute("src", "http://search.twitter.com/search.json?q="+buildString+"&callback=TweetTick&rpp=50");
+	
+	document.getElementsByTagName("head")[0].appendChild(fileref);
+}
 
 $(document).ready(function(){
 	//$(".shadowBox").css("display","block"); 
@@ -287,6 +304,9 @@ $(document).ready(function(){
 			}
 		);
 		if($("#soonCalendarContainer")){get_rss_feed();}
+		
+		
+		twitter();
 		
 	//This makes sure something is being shown
 	
