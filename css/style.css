@@ -453,21 +453,7 @@ b{font-weight:normal;}
 .seventyPercent{
 	width:587.6px;
 }
-.countDownBox{
-	height:150px;
-	background-image:url("/images/the-hunger-games-book-cover2.jpg");
-	background-size:100% 100%;
-}
-.countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
-	margin-left:62%;
-	padding:5px;
-	color:#FFF;
-	white-space:nowrap;
-	font-family: 'Hunger Games' , arial, serif; 
-}
-.countDownDays{
-	padding-top:10px;
-}
+
 /* ==|== media queries ====================================================== */
 
 @media only screen and (min-width: 480px) {
