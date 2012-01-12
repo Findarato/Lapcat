@@ -431,6 +431,7 @@ li{
 	right:525px;
 	top:-5px;
 }
+.mainContentTitle a:hover,.twitterFeedTitle a:hover{text-decoration:none;}
 .rssItem{
 	padding:3px 40px 3px 10px;
 	height:120px;
@@ -451,6 +452,18 @@ b{font-weight:normal;}
 }
 .seventyPercent{
 	width:587.6px;
+}
+.countDownBox{
+	height:150px;
+	background-image:url("/images/the-hunger-games-book-cover2.jpg");
+	background-size:100% 100%;
+}
+.countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
+	margin-left:65%;
+	padding:3px;
+	color:#FFF;
+	white-space:nowrap;
+	font-family: 'Hunger Games' , arial, serif; 
 }
 /* ==|== media queries ====================================================== */
 

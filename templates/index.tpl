@@ -29,7 +29,19 @@
 			<div class="mainArea" id="main" role="main">
 				{include file="mainNavagation.tpl"}
 				{include file="soonCalendar.tpl"}
-				{* {include file="countDown.tpl"} *}
+				
+				<section class="centerBox">
+					<div class="t centerBox">
+						<div class="td seventyPercent">
+							{include file="mainContent.tpl"}
+						</div>
+						<div class="td thirtyPercent">
+							{include file="countDown.tpl"}
+							<img class="thirtyPercent insideBoxShadow" src="http://www.laportelibrary.org/images/geek/week2.png" style="margin:10px 0 10px 0;">
+						</div>
+					</div>
+				</section>
+
 				<section class="centerBox">
 					<div class="t centerBox">
 						<div class="td seventyPercent">

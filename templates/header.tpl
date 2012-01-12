@@ -35,11 +35,6 @@
 			<div class="td "></div>
 			<div class="td ">
 				<div class="menuSelect">
-					<a href="http://laportelibrary.blogspot.com/">Blog</a>
-				</div>
-			</div>
-			<div class="td ">
-				<div class="menuSelect">
 					<a href="../sitemap.php">Site Map</a>
 				</div>
 			</div>
