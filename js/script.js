@@ -150,7 +150,7 @@ function displayLocation(locationCode,domElementSelector){
 	domElementSelector
 		.empty()
 		.append(
-			$("<div/>",{css:{"text-align":"left","width":"250px", "height":"150px", "float":"left"}})
+			$("<div/>",{css:{"text-align":"left","width":"200px", "height":"auto", "float":"left"}})
 			.append(
 				$("<div/>")
 					.html(
@@ -285,7 +285,7 @@ $(document).ready(function(){
 			}
 		);
 		if($("#soonCalendarContainer")){get_rss_feed();}
-		
+		$("#MA").trigger("mouseenter");
 		
         $(".twitterContainer").tweet({
             "username": "lpcpls",
