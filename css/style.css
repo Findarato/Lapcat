@@ -446,7 +446,7 @@ li{
 	left:40px;
 	display:table;	
 }
-.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.twitterFeedTitle2{
+.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle{
 	cursor:pointer;
 	color: #5F3E12;
 	padding:6px;
@@ -480,17 +480,35 @@ li{
 .soonCalendarBack{
 	right:636px;
 }
-.twitterFeedTitle{
-	right:198px;
+.twitterFeedTitle,.deliciousFeedTitle{
+	right:181px;
 	top:-5px;
+}
+.deliciousFeedTittle:before{
+	font-size:12px;
+	content:"B ";
+	font-family: 'WebSymbolsRegular';
+	color:#000;
+}
+.twitterFeedTitle:before{
+	font-size:12px;
+	content:"t ";
+	font-family: 'WebSymbolsRegular';
+	color:#000;
 }
 .mainContentTitle{
 	right:525px;
 	top:-5px;
 }
 .blogTitle{
-	right:525px;
+	right:509px;
 	top:-5px;
+}
+.blogTitle:before{
+	font-size:12px;
+	content:"v ";
+	font-family: 'WebSymbolsRegular';
+	color:#000;
 }
 .blogTitle a:hover,.twitterFeedTitle a:hover{text-decoration:none;}
 .rssItem{
