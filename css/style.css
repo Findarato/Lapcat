@@ -459,11 +459,14 @@ b{font-weight:normal;}
 	background-size:100% 100%;
 }
 .countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
-	margin-left:65%;
-	padding:3px;
+	margin-left:62%;
+	padding:5px;
 	color:#FFF;
 	white-space:nowrap;
 	font-family: 'Hunger Games' , arial, serif; 
+}
+.countDownDays{
+	padding-top:10px;
 }
 /* ==|== media queries ====================================================== */
 
