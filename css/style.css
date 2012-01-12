@@ -194,7 +194,21 @@ h4 {
 
 a,a:hover,a:visited,a:focus { color: #000; text-decoration:none; }
 a:hover{text-decoration: underline;}
-
+.roundAll2 {
+border-radius:2px;
+-moz-border-radius:2px;
+webkit-border-radius:2px;
+}
+.roundAll3 {
+border-radius:3px;
+-moz-border-radius:3px;
+webkit-border-radius:3px;
+}
+.roundAll4 {
+border-radius:4px;
+-moz-border-radius:4px;
+webkit-border-radius:4px;
+}
 .mobileSchedule{
 	background:url("/images/mobilelibraryschedule.png") no-repeat scroll 50% 50% transparent;
 	display:block;
@@ -233,6 +247,20 @@ a:hover{text-decoration: underline;}
 	font-size:15px;
 	background: #BDE1BD;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+.subPageHeader{
+	background: #BDE1BD;
+	box-shadow:none;
+	font-size:50px;
+	height:90px;
+	padding:3px 3px 3px 10px;
+}
+.subPageHeader div{
+	display:table-cell;
+	vertical-align:middle;
+	white-space:nowrap;
+	height:90px;
+	width:100%;
 }
 .secondNav a:hover,.firstNav a:hover{
 	text-decoration:none;
@@ -418,7 +446,7 @@ li{
 	left:40px;
 	display:table;	
 }
-.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle{
+.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.twitterFeedTitle2{
 	cursor:pointer;
 	color: #5F3E12;
 	padding:6px;
@@ -435,6 +463,19 @@ li{
 	background: -ms-linear-gradient(top, #06d6dd 0%,#6ff7fc 0%,#06d6dd 100%); /* IE10+ */
 	background: linear-gradient(top, #06d6dd 0%,#6ff7fc 0%,#06d6dd 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#06d6dd', endColorstr='#06d6dd',GradientType=0 ); /* IE6-9 */
+}
+.twitterFeedTitle2{
+	width:262px;
+	right:1px;
+	top:0px;
+}
+.twitterFeedTitle2:after{
+	content:"";
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid red;
 }
 .soonCalendarBack{
 	right:636px;

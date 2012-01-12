@@ -25,7 +25,7 @@ CountActive = true;
 CountStepper = -1;
 LeadingZero = true;
 FinishMessage = "It is finally here!";
-DisplayFormat = "<div class='thirtyPercent countDownBox insideBoxShadow'><div class='countDownDays'>%%D%% Days</div><div class='countDownHours'>%%H%% Hours</div><div class='countDownMinutes'>%%M%% Minutes</div><div class='countDownSeconds'>%%S%% Seconds</div><div>";
+DisplayFormat = "<div class='thirtyPercent countDownBox insideBoxShadow roundAll3'><div class='countDownDays'>%%D%% Days</div><div class='countDownHours'>%%H%% Hours</div><div class='countDownMinutes'>%%M%% Minutes</div><div class='countDownSeconds'>%%S%% Seconds</div><div>";
 </script>
 
-<div class="thirtyPercent" id="cntdwn"></div>
+<div class="thirtyPercent roundAll3" id="cntdwn"></div>

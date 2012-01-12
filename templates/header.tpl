@@ -39,7 +39,7 @@
 			</div>
 			<div class="td ">
 				<div class="menuSelect">
-					<a href="../teens.html">Teens</a>
+					<a href="../teens.php">Teens</a>
 				</div>
 			</div>
 			<div class="td ">
