@@ -45,17 +45,17 @@
 				<section class="centerBox">
 					<div class="t centerBox">
 						<div class="td seventyPercent">
-							{include file="mainContent.tpl"}
+							{include file="blog.tpl"}
 						</div>
 						<div class="td thirtyPercent">
 							{include file="twitter.tpl"}
 						</div>
 					</div>
 				</section>
-			</div>
-			<footer>
-				<!--{include file="footer.tpl"}-->
+			<footer class="centerBox" style="margin-top:10px;margin-right:auto;">
+				{include file="footer.tpl"}
 			</footer>
+			</div>
 		</div>
 		<!--! end of #container -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>

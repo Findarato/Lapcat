@@ -182,7 +182,11 @@ h4 {
 .clearfix { zoom: 1; }
 
 
-
+.locationHover{
+	display:block;
+	text-align:left;
+	cursor:pointer;
+}
 /*
  * All layouts
  *  
@@ -191,7 +195,13 @@ h4 {
 a,a:hover,a:visited,a:focus { color: #000; text-decoration:none; }
 a:hover{text-decoration: underline;}
 
-
+.mobileSchedule{
+	background:url("/images/mobilelibraryschedule.png") no-repeat scroll 50% 50% transparent;
+	display:block;
+	height:121px;
+	width:176px;
+	text-indent:-99999px;
+}
 .downloadsNav{
 	background:url("/images/download.jpg") no-repeat scroll 50% 50% transparent;
 }
@@ -371,6 +381,12 @@ li{
 }
 .mainContentBox{
 	position:relative;
+	height:436px;
+	background:#FFF;
+	margin-right:10px;
+}
+.blogBox{
+	position:relative;
 	height:300px;
 	background:#FFF;
 	margin-right:10px;
@@ -402,7 +418,7 @@ li{
 	left:40px;
 	display:table;	
 }
-.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle{
+.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle{
 	cursor:pointer;
 	color: #5F3E12;
 	padding:6px;
@@ -431,7 +447,11 @@ li{
 	right:525px;
 	top:-5px;
 }
-.mainContentTitle a:hover,.twitterFeedTitle a:hover{text-decoration:none;}
+.blogTitle{
+	right:525px;
+	top:-5px;
+}
+.blogTitle a:hover,.twitterFeedTitle a:hover{text-decoration:none;}
 .rssItem{
 	padding:3px 40px 3px 10px;
 	height:120px;

@@ -722,11 +722,7 @@ float: right;
 }
 
  
-.locationHover{
-	display:block;
-	text-align:left;
-	cursor:pointer;
-}
+
 .sitemap {
 	text-align: left;
 }
