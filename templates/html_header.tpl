@@ -21,6 +21,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Buda:light' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css' />
 		<link rel="stylesheet" href="css/fonts/iconic/iconic_fill.css">
+		<link rel="stylesheet" href="css/fonts/websymbols/stylesheet.css">
 		<!-- end CSS-->
 		<script src="js/libs/modernizr-2.0.6.min.js"></script>
 	</head>
