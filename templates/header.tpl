@@ -32,10 +32,19 @@
 					<a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a>
 				</div>
 			</div>
-			<div class="td "></div>
 			<div class="td ">
 				<div class="menuSelect">
 					<a href="../sitemap.php">Site Map</a>
+				</div>
+			</div>
+			<div class="td ">
+				<div class="menuSelect">
+					<a href="../teens.html">Teens</a>
+				</div>
+			</div>
+			<div class="td ">
+				<div class="menuSelect">
+					<a href="../sitemap.php">Children</a>
 				</div>
 			</div>
 		</div>
