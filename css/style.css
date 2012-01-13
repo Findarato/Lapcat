@@ -72,11 +72,10 @@ body,html {
 	padding:0px;
 	height:100%;
 	color:#000;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 }
-
+ul,li{
+	display:inline-block;
+}
 
 .t{display:table; width:100%;}
 .td{display:table-cell;vertical-align: top;}
@@ -262,7 +261,7 @@ webkit-border-radius:4px;
 	height:90px;
 	width:100%;
 }
-.secondNav a:hover,.firstNav a:hover{
+.secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
 	text-decoration:none;
 }
 .insideBoxShadow{
@@ -321,11 +320,12 @@ li{
 	list-style: none outside none;
 }
 .mainArea{
-	margin:0 auto;
-	width:1000px;
-	padding:125px 2px 20px 2px;
+	padding-top:125px;
+	padding-bottom:20px;
 	background-color:rgb(220,220,220);
-	height:101%;
+}
+aside div,section div,.smallSection,.middleSection{
+	margin-bottom:10px;
 }
 .sectionText{
 	position:absolute;
@@ -333,6 +333,13 @@ li{
 	right:0px;
 	background:#FFF;
 	padding:3px;
+}
+.geekOfTheWeek{
+	background:url("http://www.laportelibrary.org/images/geek/week2.png");
+	margin:10px 0 10px 0;
+	text-indent:-99999px;
+	width:310px;
+	height:310px;
 }
 .smallSection,.mediumSection,.middleSection{
 	display:block;
@@ -348,20 +355,22 @@ li{
 }
 .smallSection,.smallSection a{
 	height:100px;
-	width:250px;
-	margin:3px;
-	background-size:250px 100px;
+	width:100%;
+	background-size:100% 100px;
 }
 .mediumSection,.mediumSection a{
 	height:150px;
-	width:250px;
-	margin:3px;
+	width:100%;
 }
 .middleSection,.middleSection form{
-	height:306px;
-	width:400px;
-	margin:3px;
-	background-size:400px 306px;
+	height:320px;
+	width:470px;
+	background-size:100% 470px;
+}
+.fixMargin{
+	position:absolute;
+	top:0;
+	left:0;
 }
 .middleSection form:hover,.smallSection:hover a{
 	opacity:1;
@@ -377,13 +386,6 @@ li{
 	-o-transition: .5s ease-in;
 	transition: .5s ease-in;
 }
-.soonCalendar{
-	position:relative;
-	margin:0 auto;
-	margin-top:20px;
-	width:918px;
-}
-
 .soonCalnedarInfoTriangle{
 	content:"";
 	width: 0;
@@ -401,28 +403,25 @@ li{
 	padding:0px;
 }
 
-.twitterBox{
+.twitterBox,.twitterContainer{
 	position:relative;
-	height:300px;
 	width:100%;
 	background:#FFF;
 }
 .mainContentBox{
 	position:relative;
 	height:436px;
+	width:100%;
 	background:#FFF;
 	margin-right:10px;
 }
-.blogBox{
+.blogBox,.blogContainerBox{
 	position:relative;
-	height:300px;
 	background:#FFF;
-	margin-right:10px;
+	width:630px;
+	min-height:400px;
 }
-.twitterContainer{
-	height:300px;
-	overflow:auto;
-}
+
 .soonCalendar ul{
 	margin:15px;
 }
@@ -436,7 +435,7 @@ li{
 	position:relative;
 	margin:15px;
 	height:120px;
-	width:600px;
+	width:100%;
 	background:#FFF;
 	overflow:hidden;
 }
@@ -446,15 +445,15 @@ li{
 	left:40px;
 	display:table;	
 }
-.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle{
+.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle,.eventFeedTitle{
 	cursor:pointer;
 	color: #5F3E12;
 	padding:6px;
 	position:absolute;
 	top:60px;
-	right:70px;
+	right:18px;
 	white-space: nowrap;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 	background: #06d6dd; /* Old browsers */
 	background: -moz-linear-gradient(top, #06d6dd 0%, #6ff7fc 0%, #06d6dd 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#06d6dd), color-stop(0%,#6ff7fc), color-stop(100%,#06d6dd)); /* Chrome,Safari4+ */
@@ -463,6 +462,7 @@ li{
 	background: -ms-linear-gradient(top, #06d6dd 0%,#6ff7fc 0%,#06d6dd 100%); /* IE10+ */
 	background: linear-gradient(top, #06d6dd 0%,#6ff7fc 0%,#06d6dd 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#06d6dd', endColorstr='#06d6dd',GradientType=0 ); /* IE6-9 */
+	z-index:5;
 }
 .twitterFeedTitle2{
 	width:262px;
@@ -478,11 +478,20 @@ li{
 	border-top: 100px solid red;
 }
 .soonCalendarBack{
-	right:636px;
+	right:800px;
 }
-.twitterFeedTitle,.deliciousFeedTitle{
-	right:181px;
+.twitterFeedTitle,.deliciousFeedTitle,.blogTitle{
+	left:0px;
+	right:auto;
 	top:-5px;
+	width:auto;
+}
+.eventFeedTitle{
+	left:350px;
+	right:350px;
+	width:auto;
+	top:3px;
+	text-align:center;
 }
 .deliciousFeedTittle:before{
 	font-size:12px;
@@ -496,20 +505,17 @@ li{
 	font-family: 'WebSymbolsRegular';
 	color:#000;
 }
-.mainContentTitle{
-	right:525px;
-	top:-5px;
-}
-.blogTitle{
-	right:509px;
-	top:-5px;
-}
 .blogTitle:before{
 	font-size:12px;
 	content:"v ";
 	font-family: 'WebSymbolsRegular';
 	color:#000;
 }
+.mainContentTitle{
+	right:525px;
+	top:-5px;
+}
+
 .blogTitle a:hover,.twitterFeedTitle a:hover{text-decoration:none;}
 .rssItem{
 	padding:3px 40px 3px 10px;
@@ -526,12 +532,6 @@ li{
 	right:3px;
 }
 b{font-weight:normal;}
-.thirtyPercent{
-	width:276.4px;
-}
-.seventyPercent{
-	width:587.6px;
-}
 
 /* ==|== media queries ====================================================== */
 

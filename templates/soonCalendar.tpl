@@ -1,8 +1,7 @@
-<section class="soonCalendar">
-	<ul>
-		<li class="firstNav soonCalnedarInfo"><div class="insideBorder"><h3>Events Happening Soon</h3></div></li><li class="soonCalnedarInfoTriangle"></li>
-	</ul>
-	<div class="soonCalendarDisplay insideBoxShadow roundAll3" style="display:inline-block;overflow:hidden;">
+<section class="grid_22 push_1">
+	<div class="eventFeedTitle roundAll3"><a href="http://twitter.com/lpcpls/" style="height:100%;width:100%">Events Happening Now</a></div>
+	<div class="soonCalendarDisplay insideBoxShadow roundAll3 grid_20 push_1">
+		
 		<div id="soonCalendarContainer" class="soonCalendarContainer smoothAnimate"></div>
 	</div>
 	<div class="soonCalendarNext roundAll3">Next</div>

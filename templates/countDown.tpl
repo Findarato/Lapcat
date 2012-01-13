@@ -2,6 +2,7 @@
 <style>
 .countDownBox{
 	height:150px;
+	width:310px;
 	background-image:url("/images/the-hunger-games-book-cover2.jpg");
 	background-size:100% 100%;
 }
@@ -25,7 +26,7 @@ CountActive = true;
 CountStepper = -1;
 LeadingZero = true;
 FinishMessage = "It is finally here!";
-DisplayFormat = "<div class='thirtyPercent countDownBox insideBoxShadow roundAll3'><div class='countDownDays'>%%D%% Days</div><div class='countDownHours'>%%H%% Hours</div><div class='countDownMinutes'>%%M%% Minutes</div><div class='countDownSeconds'>%%S%% Seconds</div><div>";
+DisplayFormat = "<div class='countDownBox insideBoxShadow roundAll3'><div class='countDownDays'>%%D%% Days</div><div class='countDownHours'>%%H%% Hours</div><div class='countDownMinutes'>%%M%% Minutes</div><div class='countDownSeconds'>%%S%% Seconds</div><div>";
 </script>
 
 <div class="thirtyPercent roundAll3" id="cntdwn"></div>

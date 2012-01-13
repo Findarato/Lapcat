@@ -238,7 +238,7 @@ function get_rss_feed() {
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"rssItem",css:{}})
 				.html(
-					$("<div/>",{css:{"overflow":"hidden","width":"510px"}})
+					$("<div/>",{css:{"overflow":"hidden","width":"690px"}})
 						.html(
 							$("<div/>",{"class":"rssTitle"})
 								.html(
@@ -260,13 +260,13 @@ function get_rss_feed() {
 	$(".soonCalendarNext").click(function(){
 		var position = 0
 		currentRss--;
-		position = (560*currentRss)+40;
+		position = (740*currentRss)+40;
 		sCC.css({"left": position});
 	});
 	$(".soonCalendarBack").click(function(){
 		var position = 0
 		currentRss++;
-		position = (560*currentRss)+40;
+		position = (740*currentRss)+40;
 		sCC.css({"left": position}); 
 	});	
 };
@@ -291,13 +291,13 @@ $(document).ready(function(){
             "username": "lpcpls",
             "join_text": "auto",
             "avatar_size": 32,
-            "count": 3,
+            "count": 5,
             "auto_join_text_default": "",
             "auto_join_text_ed": "",
             "auto_join_text_ing": "",
             "auto_join_text_reply": "",
             "auto_join_text_url": "",
-            "loading_text": "loading tweets..."
+            "loading_text": ""
         });		
 });
 
