@@ -1,4 +1,4 @@
-<div class="mainContentBox roundAll3" style="margin-right:auto;height:140px;">
+<div class="mainContentBox roundAll3" style="height:140px;">
 	<div class="insideBoxShadow insideBorder roundAll3" style="display:inline-block;overflow:hidden;height:100%;width:100%;padding:5px;">
 		<div class="t">
 		<div class="td" style="width:200px;vertical-align:top;">
