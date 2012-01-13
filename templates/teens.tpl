@@ -3,8 +3,9 @@
 	<div id="container" style="" class="container_24">
 		{include file="header.tpl"}
 		<div class="mainArea grid_24" id="main" role="main">
-			{include file="mainNavagation.tpl"}
-			{include file="soonCalendar.tpl"} <div class="clear"></div>
+			{include file="subpage_header.tpl" pageTitle="Teens"}
+			{include file="soonCalendar.tpl"} 
+			<div class="clear"></div>
 			<section class="grid_16" style="margin-bottom:10px;">
 				{include file="blog.tpl"}
 				{include file="mainContent.tpl"}

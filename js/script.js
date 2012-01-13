@@ -270,7 +270,51 @@ function get_rss_feed() {
 		sCC.css({"left": position}); 
 	});	
 };
-
+function get_blog_feed() {
+	var blogWindow = $("#blogBox");
+	//clear the content in the div for the next feed.
+	blogWindow.empty();
+ 
+	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
+	$.get("ajax/rss.php",{"url":"http://laportelibrary.blogspot.com/feeds/posts/default"}, function(d) {
+ 
+		//find each 'item' in the file and parse it
+		$(d).find('entry').each(function() {
+ 			totalRssItems++;
+			//name the current found item this for this particular loop run
+			var $item = $(this);
+			// grab the post title
+			var title = $item.find('title').text();
+			// grab the post's URL
+			var link = $item.find('link').text();
+			// next, the description
+			var description = $item.find('description').text();
+			//don't forget the pubdate
+			var pubDate = $item.find('dc\:date').text();
+ 
+			// now create a var 'html' to store the markup we're using to output the feed to the browser window
+			html = $("<div/>",{"class":"rssItem",css:{}})
+				.html(
+					$("<div/>",{css:{"overflow":"hidden","width":"690px"}})
+						.html(
+							$("<div/>",{"class":"rssTitle"})
+								.html(
+									$("<a/>",{"href":link,"html":title,"target":"_blank"})
+								)
+						)
+						.append(
+							$("<date/>",{"class":"rssDate",html:pubDate})
+						)
+						.append(
+							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
+						)
+				)
+				
+			//put that feed content on the screen!
+			blogWindow.append(html);  
+		});
+	});	
+};
 $(document).ready(function(){
 	//$(".shadowBox").css("display","block"); 
 	$(".locationHover")
@@ -285,6 +329,7 @@ $(document).ready(function(){
 			}
 		);
 		if($("#soonCalendarContainer")){get_rss_feed();}
+		if($("#blogBox")){get_blog_feed();}
 		$("#MA").trigger("mouseenter");
 		
         $(".twitterContainer").tweet({
