@@ -7,16 +7,16 @@
 	background-size:100% 100%;
 }
 .countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
-	margin-left:60%;
+	margin-left:50%;
 	padding:3px;
 	color:#FFF;
 	white-space:nowrap;
 	font-family: 'Hunger Games' , arial, serif; 
-	font-size:16px;
+	font-size:20px;
 	font-weight:100;
 }
 .countDownDays{
-	padding-top:10px;
+	padding-top:3px;
 }
 </style>
 <script defer src="js/countdown.js"></script>
@@ -27,7 +27,7 @@ ForeColor = "navy";
 CountActive = true;
 CountStepper = -1;
 LeadingZero = true;
-FinishMessage = "It is finally here!";
+FinishMessage = "Let the Hunger Games begin!";
 DisplayFormat = "<div class='countDownBox insideBoxShadow roundAll3'><div class='countDownDays'>%%D%% Days</div><div class='countDownHours'>%%H%% Hours</div><div class='countDownMinutes'>%%M%% Minutes</div><div class='countDownSeconds'>%%S%% Seconds</div><div>";
 </script>
 
