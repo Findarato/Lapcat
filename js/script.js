@@ -287,7 +287,8 @@ function get_blog_feed() {
 			// grab the post title
 			var title = item.find('title').text();
 			// grab the post's URL
-			var link = item.find('link').text();
+			var link = item.find('link[rel=alternate]').attr("href");
+			//alert(link);
 			// next, the description
 			var description = item.find('content').text();
 			//don't forget the pubdate
