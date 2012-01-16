@@ -10,6 +10,6 @@
 	curl_setopt($session, CURLOPT_RETURNTRANSFER, true);   // Do return the contents of the call
 	$xml = curl_exec($session); 	                       // Make the call
 	header("Content-Type: text/xml");                      // Set the content type appropriately
-	echo $xml; 	      // Spit out the xml
+	echo str_replace("gd:image", "gd_image", $xml);              	      // Spit out the xml
 	curl_close($session); // And close the session
 ?>

@@ -271,47 +271,63 @@ function get_rss_feed() {
 	});	
 };
 function get_blog_feed() {
-	var blogWindow = $("#blogBox");
+	var blogWindow = $("#blogContainerBox");
 	//clear the content in the div for the next feed.
 	blogWindow.empty();
- 
+	totalDisplay = 5;
+ 	totalRssItems = 0;
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":"http://laportelibrary.blogspot.com/feeds/posts/default"}, function(d) {
  
 		//find each 'item' in the file and parse it
 		$(d).find('entry').each(function() {
- 			totalRssItems++;
+ 			if(totalRssItems == totalDisplay){return;}
 			//name the current found item this for this particular loop run
-			var $item = $(this);
+			var item = $(this);
 			// grab the post title
-			var title = $item.find('title').text();
+			var title = item.find('title').text();
 			// grab the post's URL
-			var link = $item.find('link').text();
+			var link = item.find('link').text();
 			// next, the description
-			var description = $item.find('description').text();
+			var description = item.find('content').text();
 			//don't forget the pubdate
-			var pubDate = $item.find('dc\:date').text();
+			var pubDate = new Date(item.find('published').text()).toDateString();
+			
+			var authorName = item.find("author").find("name").text();
+			
+			var authorProfile = item.find("author").find("uri").text();
+			
+			var authorImage = item.find("author").find("gd_image").attr("src");
+			
+			//alert(authorImage);
  
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
-			html = $("<div/>",{"class":"rssItem",css:{}})
+			html = $("<article/>",{"class":"blogItem",css:{}})
 				.html(
 					$("<div/>",{css:{"overflow":"hidden","width":"690px"}})
 						.html(
-							$("<div/>",{"class":"rssTitle"})
+							$("<div/>",{"class":"blogEntryTitle"})
 								.html(
 									$("<a/>",{"href":link,"html":title,"target":"_blank"})
+								)								
+						)
+						.append(
+							$("<div/>",{"class":"blogEntryAuthor"})
+								.append(
+									$("<span/>").html("By ")
+										.append($("<img/>",{"src":authorImage}))
+										.append($("<a/>",{html:authorName,"href":authorProfile}))
+										.append(" on "+ pubDate)
 								)
 						)
 						.append(
-							$("<date/>",{"class":"rssDate",html:pubDate})
-						)
-						.append(
-							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
+							$("<div/>",{"class":"blogEntryDescription",html:description})
 						)
 				)
 				
 			//put that feed content on the screen!
-			blogWindow.append(html);  
+			blogWindow.append(html);
+			totalRssItems++;
 		});
 	});	
 };

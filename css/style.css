@@ -384,7 +384,8 @@ aside div,section div,.smallSection,.middleSection{
 	-webkit-transition: .5s ease-in;
 	-moz-transition: .5s ease-in;
 	-o-transition: .5s ease-in;
-	transition: .5s ease-in;
+	transition: .5s ease-in translateZ(0);;
+	
 }
 .soonCalnedarInfoTriangle{
 	content:"";
@@ -421,7 +422,30 @@ aside div,section div,.smallSection,.middleSection{
 	width:630px;
 	min-height:400px;
 }
-
+.blogContainerBox{
+	padding:25px 3px 0 3px;
+	width:630px;
+	
+}
+.blogItem{
+	width:620px;
+	padding:3px;
+}
+.blogEntryTitle{
+	font-size:16px;
+	min-width:250px;
+	max-width:500px;
+	border-bottom:#010101 solid 1px;
+	margin-bottom:3px;
+}
+.blogEntryTitle a:hover{text-decoration:none;}
+.blogEntryAuthor{
+	font-size:10px;
+	color:#999;
+}
+.blogEntryDescription{
+	width:600px;
+}
 .soonCalendar ul{
 	margin:15px;
 }
