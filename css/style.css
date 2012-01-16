@@ -324,7 +324,7 @@ li{
 	padding-bottom:20px;
 	background-color:rgb(220,220,220);
 }
-aside div,section div,.smallSection,.middleSection{
+aside div,section div,.smallSection,.middleSection,.mediumSection{
 	margin-bottom:10px;
 }
 .sectionText{
@@ -346,11 +346,11 @@ aside div,section div,.smallSection,.middleSection{
 	background:#000 no-repeat;
 	position:relative;
 }
-.navDisplay:hover .smallSection a,.navDisplay:hover .middleSection form{
+.navDisplay:hover .smallSection a,.navDisplay:hover .middleSection form,.navDisplay:hover .mediumSection form,.navDisplay:hover .middleSection a{
 	opacity:.6;
 }
 
-.navDisplay .smallSection a:hover,.navDisplay .mediumSection a:hover,.navDisplay .middleSection form:hover{
+.navDisplay .smallSection a:hover,.navDisplay .mediumSection a:hover,.navDisplay .middleSection form:hover,.navDisplay .middleSection a:hover,.navDisplay .mediumSection form:hover{
 	opacity:1;
 }
 .smallSection,.smallSection a{
@@ -358,12 +358,13 @@ aside div,section div,.smallSection,.middleSection{
 	width:100%;
 	background-size:100% 100px;
 }
-.mediumSection,.mediumSection a{
-	height:150px;
-	width:100%;
+.mediumSection,.mediumSection a,.mediumSection form{
+	height:60px;
+	width:470px;
+	background-size:100% 470px;
 }
-.middleSection,.middleSection form{
-	height:320px;
+.middleSection,.middleSection form,.middleSection a{
+	height:250px;
 	width:470px;
 	background-size:100% 470px;
 }
@@ -372,7 +373,7 @@ aside div,section div,.smallSection,.middleSection{
 	top:0;
 	left:0;
 }
-.middleSection form:hover,.smallSection:hover a{
+.middleSection form:hover,.smallSection:hover a,.mediumSection form:hover,.mediumSection a:hover{
 	opacity:1;
 }
 .shadowBox{
@@ -384,8 +385,7 @@ aside div,section div,.smallSection,.middleSection{
 	-webkit-transition: .5s ease-in;
 	-moz-transition: .5s ease-in;
 	-o-transition: .5s ease-in;
-	transition: .5s ease-in translateZ(0);;
-	
+	transition: .5s ease-in translateZ(0);
 }
 .soonCalnedarInfoTriangle{
 	content:"";
@@ -423,20 +423,23 @@ aside div,section div,.smallSection,.middleSection{
 	min-height:400px;
 }
 .blogContainerBox{
-	padding:25px 3px 0 3px;
-	width:630px;
-	
+	padding:25px 5px 5px 5px;
+	width:620px;
 }
 .blogItem{
 	width:620px;
 	padding:3px;
 }
 .blogEntryTitle{
-	font-size:16px;
+	font-size:20px;
 	min-width:250px;
 	max-width:500px;
-	border-bottom:#010101 solid 1px;
+	border-bottom:rgba(0,0,0,.2) solid 1px;
 	margin-bottom:3px;
+	
+}
+.blogEntryTitle a{
+	color:#0C717A;
 }
 .blogEntryTitle a:hover{text-decoration:none;}
 .blogEntryAuthor{
