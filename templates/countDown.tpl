@@ -7,11 +7,13 @@
 	background-size:100% 100%;
 }
 .countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
-	margin-left:62%;
-	padding:5px;
+	margin-left:60%;
+	padding:3px;
 	color:#FFF;
 	white-space:nowrap;
 	font-family: 'Hunger Games' , arial, serif; 
+	font-size:16px;
+	font-weight:100;
 }
 .countDownDays{
 	padding-top:10px;
@@ -19,7 +21,7 @@
 </style>
 <script defer src="js/countdown.js"></script>
 <script language="JavaScript">
-TargetDate = "08/08/2012 1:52 AM";
+TargetDate = "03/23/2012 1:52 AM";
 BackColor = "palegreen";
 ForeColor = "navy";
 CountActive = true;
