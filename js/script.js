@@ -143,6 +143,9 @@ var locations={
 };
 var totalRssItems = 0;
 var currentRss = 0;
+function getDomain(url) {
+return url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/)[2];
+}
 function displayLocation(locationCode,domElementSelector){
 	var today = new Date();
 	var dayOfWeek = today.getDay();
@@ -212,7 +215,54 @@ function displayLocation(locationCode,domElementSelector){
 				);
 		}
 }
-
+function getDeliciousFeed(uri){
+	var sCC = $("#deliciousContainer")
+	$.get("ajax/rss.php",{"url":uri},function(d){
+		$(d).find('item').each(function() {
+ 			totalRssItems++;
+			//name the current found item this for this particular loop run
+			var item = $(this);
+			// grab the post title
+			var title = item.find('title').text();
+			// grab the post's URL
+			var link = item.find('link').text();
+			// next, the description
+			var description = item.find('description').text();
+			//don't forget the pubdate
+			var pubDate = item.find('dc_date').text();
+ 
+			// now create a var 'html' to store the markup we're using to output the feed to the browser window
+			html = $("<div/>",{"class":"delItem",css:{}})
+				.html(
+					$("<div/>",{css:{"width":"100%","display":"block"}})
+						.html(
+							$("<div/>",{"class":"delItem"})
+								.html(
+									$("<img/>",{"src":"http://"+getDomain(link)+"/favicon.ico",css:{"height":"16px","width":"16px","margin-right":"3px"}})
+								)
+								.append(
+									$("<a/>",{"href":link,"html":title,"target":"_blank"})
+								)
+								
+								
+						)
+		/*
+						.append(
+							$("<date/>",{"class":"rssDate",html:pubDate})
+						)
+		
+						.append(
+							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
+						)
+						*/
+				)
+				
+			//put that feed content on the screen!
+			sCC.append(html);  
+		});
+	})
+	
+}
 function get_rss_feed() {
 	var sCC = $("#soonCalendarContainer")
 	//clear the content in the div for the next feed.
@@ -347,9 +397,10 @@ $(document).ready(function(){
 		);
 		if($("#soonCalendarContainer")){get_rss_feed();}
 		if($("#blogBox")){get_blog_feed();}
+		getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
 		$("#MA").trigger("mouseenter");
 		
-        $(".twitterContainer").tweet({
+        $("#twitterContainer").tweet({
             "username": "lpcpls",
             "join_text": "auto",
             "avatar_size": 32,
@@ -360,7 +411,7 @@ $(document).ready(function(){
             "auto_join_text_reply": "",
             "auto_join_text_url": "",
             "loading_text": ""
-        });		
+        });       
 });
 
 
