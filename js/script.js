@@ -234,28 +234,21 @@ function getDeliciousFeed(uri){
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"delItem",css:{}})
 				.html(
-					$("<div/>",{css:{"width":"100%","display":"block"}})
+					$("<div/>",{css:{"display":"block"}})
 						.html(
 							$("<div/>",{"class":"delItem"})
 								.html(
-									$("<img/>",{"src":"http://"+getDomain(link)+"/favicon.ico",css:{"height":"16px","width":"16px","margin-right":"3px"}})
+									$("<img/>",{"class":"delFavIcon","src":"http://"+getDomain(link)+"/favicon.ico","alt":"Website Favorite Icon"})
+									.error(function(){
+										$(this).attr("src","http://delicious.com/favicon.ico");
+									})
 								)
 								.append(
-									$("<a/>",{"href":link,"html":title,"target":"_blank"})
+									$("<a/>",{"href":link,"html":title,"target":"_blank",css:{"height":"16px"}})
 								)
-								
-								
 						)
-		/*
-						.append(
-							$("<date/>",{"class":"rssDate",html:pubDate})
-						)
-		
-						.append(
-							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
-						)
-						*/
 				)
+				
 				
 			//put that feed content on the screen!
 			sCC.append(html);  
