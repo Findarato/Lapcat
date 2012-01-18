@@ -12,7 +12,7 @@
 			</section>
 			<aside class="grid_8">
 				{include file="twitter.tpl"}
-				{include file="countDown.tpl"}
+				{include file="delicious.tpl"}
 				<div class="geekOfTheWeek insideBoxShadow roundAll3">
 					Geek of the Week Photo
 				</div>

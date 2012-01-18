@@ -404,7 +404,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	padding:0px;
 }
 
-.twitterBox,.twitterContainer{
+.twitterBox,.twitterContainer,.deliciousBox{
 	position:relative;
 	width:100%;
 	background:#FFF;
@@ -422,7 +422,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	width:630px;
 	min-height:400px;
 }
-.blogContainerBox{
+.blogContainerBox,.deliciousContainer{
 	padding:25px 5px 5px 5px;
 	width:620px;
 }
