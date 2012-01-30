@@ -3,18 +3,19 @@
 
 
 /* TEAM */
-  <your title>: <your name>
-  Site: 
-  Twitter: 
-  Location: 
+  Network Specialist: Joseph Harry
+  Site: jharry@lapcat.org
+  Twitter: @findarato88
+  Location: La Porte Indiana, USA
 
 /* THANKS */
-  Names (& URL): 
+  Names (& URL): http://html5boilerplate.com/
 
 /* SITE */
   Standards: HTML5, CSS3
   Components: Modernizr, jQuery
-  Software:
+  Software: Aptana Studio 3
+  Last Update : Monday Jan 30, 2012
   
 
                                     
