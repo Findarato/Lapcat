@@ -318,13 +318,14 @@ function get_blog_feed() {
 	//clear the content in the div for the next feed.
 	blogWindow.empty();
 	totalDisplay = 5;
- 	totalRssItems = 0;
+ 	totalBlogItems = 0;
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":"http://laportelibrary.blogspot.com/feeds/posts/default"}, function(d) {
  
 		//find each 'item' in the file and parse it
 		$(d).find('entry').each(function() {
- 			if(totalRssItems == totalDisplay){return;}
+ 			if(totalBlogItems == totalDisplay){return false;}
+ 			
 			//name the current found item this for this particular loop run
 			var item = $(this);
 			// grab the post title
@@ -371,7 +372,7 @@ function get_blog_feed() {
 				
 			//put that feed content on the screen!
 			blogWindow.append(html);
-			totalRssItems++;
+			totalBlogItems++;
 		});
 	});	
 };
