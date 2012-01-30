@@ -426,6 +426,9 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	width:630px;
 	min-height:400px;
 }
+.blogContainerBox li{
+	display:block;
+}
 .blogContainerBox,.deliciousContainer{
 	padding:25px 5px 5px 5px;
 	width:620px;
