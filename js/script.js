@@ -368,11 +368,20 @@ function get_blog_feed() {
 						.append(
 							$("<div/>",{"class":"blogEntryDescription",html:description})
 						)
+						
 				)
 				
 			//put that feed content on the screen!
 			blogWindow.append(html);
 			totalBlogItems++;
+		});
+		
+		
+		$.each($(".blogEntryDescription").find('a>img'),function(i,item){
+			var parent =$(item).parent();
+			if($(item).attr("src")==parent.attr("href")){
+				parent.addClass("noAfterImage");
+			}
 		});
 	});	
 };
