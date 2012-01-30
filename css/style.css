@@ -438,13 +438,14 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	content:" K ";
 	font-family: 'WebSymbolsRegular';
 }
-.blogEntryDescription a[href*="cdn1.lapcat.org"]:after{content:"";}
 
 .blogEntryDescription a[href*="catalog.lapcat.org"]:after{
 	font-size:10px;
 	content:"  ";
 	font-family: 'IconicFill';
 }
+.blogEntryDescription .noAfterImage:after {content:""}
+
 .blogContainerBox,.deliciousContainer{
 	padding:25px 5px 5px 5px;
 	width:620px;
