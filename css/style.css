@@ -244,7 +244,7 @@ a:hover{text-decoration: underline;}
 .secondNav{
 	font-weight:bold;
 	font-size:15px;
-	background: #BDE1BD;
+	background: #9cbdbf;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 .subPageHeader{
@@ -323,7 +323,10 @@ li{
 .mainArea{
 	padding-top:125px;
 	padding-bottom:20px;
-	background-color:rgb(220,220,220);
+	background-color:#E0E0E0;
+    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
 aside div,section div,.smallSection,.middleSection,.mediumSection{
 	margin-bottom:10px;
@@ -475,22 +478,14 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 .soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle,.eventFeedTitle{
 	cursor:pointer;
-	color: #000;
+	color: #F1F1F1;
 	padding:6px;
 	position:absolute;
 	top:60px;
 	right:18px;
 	white-space: nowrap;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-	background: rgb(192,251,254); /* Old browsers */
-	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
-	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNjMGZiZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYThkY2RkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
-	background: -moz-linear-gradient(top, rgb(192,251,254) 50%, rgb(168,220,221) 100%); /* FF3.6+ */
-	background: -webkit-linear-gradient(top, rgb(192,251,254) 50%,rgb(168,220,221) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, rgb(192,251,254) 50%,rgb(168,220,221) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, rgb(192,251,254) 50%,rgb(168,220,221) 100%); /* IE10+ */
-	background: linear-gradient(top, rgb(192,251,254) 50%,rgb(168,220,221) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c0fbfe', endColorstr='#a8dcdd',GradientType=0 ); /* IE6-8 */
+	background: #405DA5; /* Old browsers */
 	z-index:5;
 }
 .twitterFeedTitle2{
@@ -526,19 +521,19 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	font-size:12px;
 	content:"B ";
 	font-family: 'WebSymbolsRegular';
-	color:#000;
+	color:#F1F1F1;
 }
 .twitterFeedTitle:before{
 	font-size:12px;
 	content:"t ";
 	font-family: 'WebSymbolsRegular';
-	color:#000;
+	color:#F1F1F1;
 }
 .blogTitle:before{
 	font-size:12px;
 	content:"v ";
 	font-family: 'WebSymbolsRegular';
-	color:#000;
+	color:#F1F1F1;
 }
 .mainContentTitle{
 	right:525px;
@@ -546,7 +541,8 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 
 .blogTitle a:hover,.twitterFeedTitle a:hover,.deliciousFeedTitle a:hover{text-decoration:none;}
-.secondNav a,.firstNav a,.eventFeedTitle a,.blogTitle a,.twitterFeedTitle a,.deliciousFeedTitle a{color:#000;}
+.secondNav a,.firstNav a{color:#000;}
+.eventFeedTitle a,.blogTitle a,.twitterFeedTitle a,.deliciousFeedTitle a{color:#F1F1F1;}
 
 .delItem .delFavIcon{
 	display:inline-block;
