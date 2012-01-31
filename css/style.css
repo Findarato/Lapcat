@@ -360,11 +360,17 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	left:-3px;
 }
 .smoothAnimate{
-	-webkit-transition: .5s ease-in;
-	-moz-transition: .5s ease-in;
-	-o-transition: .5s ease-in;
-	transition: .5s ease-in;
-
+	-webkit-transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	   -moz-transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	    -ms-transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	     -o-transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	        transition: all 500ms cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
+	
+	-webkit-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	   -moz-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	    -ms-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	     -o-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+	        transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
 }
 .soonCalnedarInfoTriangle{
 	content:"";

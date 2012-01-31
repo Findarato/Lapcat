@@ -304,7 +304,7 @@ function get_rss_feed() {
 		var position = 0
 		currentRss--;
 		position = (740*currentRss)+40;
-		sCC.css({"left": position});
+		sCC.css({"left": position}); 
 	});
 	$(".soonCalendarBack").click(function(){
 		var position = 0
