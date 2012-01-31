@@ -19,6 +19,8 @@ var middleSection = $("#middleSectionScrollContainer");
 var container = $("#middleScrollContainer");
 var totalLinks = 0;
 var currentLink = 0;
+var sto = 0;
+var navloop = 0;
 $.each(mainNavagationRotate.data,function(i,item){
 	var tplClone = templ.clone();
 	
@@ -29,16 +31,32 @@ $.each(mainNavagationRotate.data,function(i,item){
 	container
 		.append(
 			tplClone
-				.attr("data-move",totalLinks*-260)
+				.attr({"data-move":totalLinks*-260,"title":item.title})
 				.click(function(){
 					newTop = $(this).attr("data-move");
 					middleSection
 						.css({"top":newTop+"px"})
+					window.clearInterval(navLoop);
+					navLoop = window.setInterval(function(){runNavLoop()},10000 );
 				})
 		);
 		totalLinks ++;
 });
 
 
-$("#middleScrollContainer :first-child").trigger("click");
+$("#middleScrollContainer div :first-child ").trigger("click");
+
+//alert(totalLinks * -260)
+function runNavLoop(){
+	var oldTop = $("#middleSectionScrollContainer").position();
+	oldTop = oldTop.top;
+	var newTop = oldTop -260;
+	var startOverTop = totalLinks * -260;
+	if(newTop == startOverTop){
+		newTop = 0;
+	}
+	$("#middleSectionScrollContainer").css("top",newTop);
+}
+navLoop = window.setInterval(function(){runNavLoop()},10000 );
+
 
