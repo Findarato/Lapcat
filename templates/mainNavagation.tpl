@@ -36,8 +36,8 @@
 			</div>
 		</div>
 		<!-- Middle Colmn -->
-		<div class="middleSection" style="text-align:center;position:relative;">
-			<a id="middleSectionLink" class="smoothAnimate fixMargin" href="#" ></a>
+		<div id="middleSectionContainer" class="middleSection" style="text-align:center;position:relative;overflow:hidden;">
+			<div class="smoothAnimate" id="middleSectionScrollContainer" style="position:absolute;top:0px;left:0px;"></div>
 			<div id="middleScrollContainer" style="z-index: 10;position:absolute;bottom:1px;right:4px;"></div>
 		</div>
 	</div>

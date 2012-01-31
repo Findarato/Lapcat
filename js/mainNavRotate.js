@@ -14,21 +14,31 @@ var mainNavagationRotate = {
 };
 
 var templ = $("<div/>",{"data-link":"","class":"middleSectionScroll"})
-
 var link = $("#middleSectionLink");
-var container = $("#middleScrollContainer")
-
+var middleSection = $("#middleSectionScrollContainer");
+var container = $("#middleScrollContainer");
+var totalLinks = 0;
+var currentLink = 0;
 $.each(mainNavagationRotate.data,function(i,item){
 	var tplClone = templ.clone();
+	
+	middleSection
+		.append(
+			$("<a/>",{"class":"middleSection"}).css({"background-image":"url("+item.image+")","padding":0}).attr({"href":item.link,"title":item.title})
+		)
 	container
 		.append(
 			tplClone
-				.attr({"data-link":item.link,"data-image":item.image,"title":item.title})
+				.attr("data-move",totalLinks*-260)
 				.click(function(){
-					link.css({"background-image":"url("+item.image+")"}).attr({"href":item.link,"title":item.title})
+					newTop = $(this).attr("data-move");
+					middleSection
+						.css({"top":newTop+"px"})
 				})
 		);
+		totalLinks ++;
 });
 
 
 $("#middleScrollContainer :first-child").trigger("click");
+
