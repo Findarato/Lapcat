@@ -6,7 +6,7 @@
 var mainNavagationRotate = {
 	"config":{"time":30},
 	"data":[
-		{"image":"http://laportelibrary.org/images/geek/week1.png","link":"http://google.com","title":"this is the title of the link"},
+		{"image":"http://dev.lapcat.org/images/tree.png","link":"http://google.com","title":"this is the title of the link"},
 		{"image":"http://laportelibrary.org/images/geek/week2.png","link":"http://google.com","title":"this is the title of the link"},
 		{"image":"http://laportelibrary.org/images/geek/week03.png","link":"http://google.com","title":"this is the title of the link"},
 		{"image":"http://laportelibrary.org/images/geek/week04.png","link":"http://catalog.lapcat.org","title":"this is the title of the link 2"}
@@ -24,7 +24,7 @@ $.each(mainNavagationRotate.data,function(i,item){
 	
 	middleSection
 		.append(
-			$("<a/>",{"class":"middleSection"}).css({"background-image":"url("+item.image+")","padding":0}).attr({"href":item.link,"title":item.title})
+			$("<a/>",{"class":"middleSection smoothAnimate"}).css({"background-image":"url("+item.image+")","padding":0}).attr({"href":item.link,"title":item.title})
 		)
 	container
 		.append(
