@@ -31,6 +31,7 @@
 	<script defer src="js/plugins.js"></script>
 	<script defer src="js/script.js"></script>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+	<script src="/js/mainNavRotate.js"></script>
 	<!-- end scripts-->
 	<script>
 		// Change UA-XXXXX-X to be your site's ID
