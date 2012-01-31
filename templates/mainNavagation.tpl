@@ -37,7 +37,8 @@
 		</div>
 		<!-- Middle Colmn -->
 		<div class="middleSection" style="text-align:center;position:relative;">
-			<a class="researchNav smoothAnimate fixMargin" href="reasearch.php" ></a>
+			<a id="middleSectionLink" class="smoothAnimate fixMargin" href="#" ></a>
+			<div id="middleScrollContainer" style="z-index: 10;position:absolute;bottom:1px;right:4px;"></div>
 		</div>
 	</div>
 	<div class="grid_6" >
