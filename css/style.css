@@ -10,7 +10,7 @@ audio:not([controls]) { display: none; }
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 body { font-size: 13px; line-height: 1.231; }
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
-
+* { box-sizing: border-box; -moz-box-sizing: border-box; }
 ::-moz-selection { background: #0C717A; color: #fff; text-shadow: none; }
 ::selection { background: #0C717A; color: #fff; text-shadow: none; }
 
@@ -401,10 +401,10 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	background:#FFF;
 	margin-right:10px;
 }
-.blogBox,.blogContainerBox{
+.blogBox,.blogContainerBox,.containerBox{
 	position:relative;
 	background:#FFF;
-	width:630px;
+	width:100%;
 	min-height:400px;
 }
 .blogContainerBox li{
@@ -427,9 +427,9 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 .blogEntryDescription .noAfterImage:after {content:""}
 
-.blogContainerBox,.deliciousContainer{
+.blogContainerBox,.deliciousContainer,.containerBox{
 	padding:25px 5px 5px 5px;
-	width:620px;
+	width:100%;
 }
 .blogItem{
 	width:620px;
