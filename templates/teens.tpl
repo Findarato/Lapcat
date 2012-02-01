@@ -4,14 +4,15 @@
 		{include file="header.tpl"}
 		<div class="mainArea grid_24" id="main" role="main">
 			{include file="subpage_header.tpl" pageTitle="Teens"}
-			{include file="soonCalendar.tpl"} 
+			{* {include file="soonCalendar.tpl"} *} 
 			<div class="clear"></div>
 			<section class="grid_16">
-				{include file="blog.tpl"}
-				{include file="mainContent.tpl"}
+				{include file="flicker.tpl"}
+				{*{include file="mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
-				{include file="twitter.tpl"}
+				{include file="countDown.tpl"}
+				{*{include file="twitter.tpl"}*}
 				{include file="delicious.tpl"}
 				<div class="geekOfTheWeek insideBoxShadow roundAll3">
 					Geek of the Week Photo
