@@ -386,15 +386,15 @@ function get_blog_feed() {
 	});	
 };
 function loadFlicker( queryString ){
-	/*
-	$('#basicuse').jflickrfeed({
-		limit: 14,
+	
+	$('#flickerPictureBox').jflickrfeed({
+		limit: 15,
 		qstrings: {
 			id: queryString
 		},
 		itemTemplate: '<li><a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
 	});
-	
+	/*
 	$('#cbox').jflickrfeed({
 		limit: 14,
 		qstrings: {
@@ -410,17 +410,17 @@ function loadFlicker( queryString ){
 	});
 	*/
 	$('#flickerScrollBox').jflickrfeed({
-		limit: 14,
+		limit: 15,
 		qstrings: {
 			id: queryString
 		},
-		itemTemplate: '<li><img src="{{image}}" alt="{{title}}" /><div>{{title}}</div></li>'
+		itemTemplate: '<li><a href="{{image_b}}"><img src="{{image}}" alt="{{title}}" /></a><div class="flickrImageTitle">{{title}}</div></li>'
 	}, function(data) {
-		$('#cycle div').hide();
-		$('#cycle').cycle({
+		$('#flickerScrollBox div').hide();
+		$('#flickerScrollBox').cycle({
 			timeout: 5000
 		});
-		$('#cycle li').hover(function(){
+		$('#flickerScrollBox li').hover(function(){
 			$(this).children('div').show();
 		},function(){
 			$(this).children('div').hide();

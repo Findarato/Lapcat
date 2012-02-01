@@ -13,6 +13,7 @@
 			<aside class="grid_8">
 				{include file="countDown.tpl"}
 				{*{include file="twitter.tpl"}*}
+				{include file="topBooks_teen.tpl"}
 				{include file="delicious.tpl"}
 				<div class="geekOfTheWeek insideBoxShadow roundAll3">
 					Geek of the Week Photo
@@ -23,15 +24,22 @@
 				{include file="footer.tpl"}
 			</footer>
 		</div>
+		<nav class="grid_24" style="margin-top:10px;margin-right:auto;">
+			{include file="sitemap.tpl"}
+		</nav>
 	</div>
 	<!--! end of #container -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 	<!-- scripts concatenated and minified via ant build script-->
-	<script src="js/libs/twitter/jquery.tweet.js" type="text/javascript"></script>
+	<script src="js/libs/twitter/jquery.tweet.js"></script>
+	<script src="https://apis.google.com/js/plusone.js"></script>
+	<script src="js/libs/jflickrfeed/jflickrfeed.min.js"></script>
+	<script src="js/libs/cycle/jquery.cycle.all.min.js"></script>
 	<script defer src="js/plugins.js"></script>
 	<script defer src="js/script.js"></script>
-	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+	
+
 	<!-- end scripts-->
 	<script>
 		// Change UA-XXXXX-X to be your site's ID

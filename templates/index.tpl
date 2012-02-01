@@ -22,6 +22,9 @@
 				{include file="footer.tpl"}
 			</footer>
 		</div>
+		<nav class="grid_24" style="margin-top:10px;margin-right:auto;">
+			{include file="sitemap.tpl"}
+		</nav>	
 	</div>
 	<!--! end of #container -->
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
