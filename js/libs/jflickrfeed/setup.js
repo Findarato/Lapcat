@@ -1,5 +1,4 @@
-$(document).ready(function(){
-
+	alert(jQuery)
 	$('#basicuse').jflickrfeed({
 		limit: 14,
 		qstrings: {
@@ -22,10 +21,10 @@ $(document).ready(function(){
 		$('#cbox a').colorbox();
 	});
 	
-	$('#cycle').jflickrfeed({
+	$('#flickerScrollBox').jflickrfeed({
 		limit: 14,
 		qstrings: {
-			id: '37304598@N02'
+			id: '62092835@N08'
 		},
 		itemTemplate: '<li><img src="{{image}}" alt="{{title}}" /><div>{{title}}</div></li>'
 	}, function(data) {
@@ -50,5 +49,3 @@ $(document).ready(function(){
 			$(this).append("<li><img src='" + item.image_m + "' alt=''/></li>");
 		}
 	});
-
-});
