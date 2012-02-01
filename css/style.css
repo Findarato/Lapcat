@@ -127,16 +127,6 @@ h4 {
 .h26 { font-family: 'Love Ya Like A Sister', cursive;	font-size: 48px; text-align: center
 }	
 
-.insideBorder{
-	overflow:hidden;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-}
-
-
-
-
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
 .ir br { display: none; }
@@ -207,21 +197,35 @@ a:hover{text-decoration: underline;}
 
 
 .firstNav{
-	background: rgb(192,251,254);
+	
 }
 .secondNav{
 	font-weight:bold;
 	font-size:15px;
-	background: #9cbdbf;
+	
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 .subPageHeader{
 	background: #BDE1BD;
 	box-shadow:none;
 	font-size:50px;
-	height:90px;
+	height:120px;
 	padding:3px 3px 3px 10px;
+	margin:0 5px 10px 5px;
 }
+
+.color1{
+	background: rgb(192,251,254);	
+}
+.color2{
+	background: #9cbdbf;
+}
+.color3{
+	background: #0C717A;
+	color: #F1F1F1;
+}
+
+
 .subPageHeader div{
 	display:table-cell;
 	vertical-align:middle;
@@ -477,24 +481,18 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	left:40px;
 	display:table;	
 }
-.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle,.eventFeedTitle{
+
+.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle,.eventFeedTitle,.titleElement{
 	cursor:pointer;
-	color: #F1F1F1;
 	padding:6px;
 	position:absolute;
 	top:60px;
 	right:18px;
 	white-space: nowrap;
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-	/*background: #405DA5; */ 
-	background: #0C717A; 
 	z-index:5;
 }
-.twitterFeedTitle2{
-	width:262px;
-	right:1px;
-	top:0px;
-}
+
 .twitterFeedTitle2:after{
 	content:"";
 	width: 0;
@@ -506,11 +504,17 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .soonCalendarBack{
 	right:800px;
 }
-.twitterFeedTitle,.deliciousFeedTitle,.blogTitle{
+.twitterFeedTitle,.deliciousFeedTitle,.blogTitle,.titleElement{
 	left:0px;
 	right:auto;
 	top:-5px;
 	width:auto;
+}
+.titleElement a{
+	color: #F1F1F1;
+}
+.titleElement a:hover{
+	text-decoration:none;
 }
 .eventFeedTitle{
 	left:350px;
