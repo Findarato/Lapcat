@@ -192,7 +192,7 @@ a:hover{text-decoration: underline;}
 	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
 }
 .hoursNav{
-	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=9&size=230x100&sensor=false") no-repeat scroll 50% 50% transparent;
 }
 .greatPicksNav{
 	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
@@ -357,6 +357,25 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	width:470px;
 	background-size:100% 470px;
 }
+.mediumSection form select{
+	position:absolute;
+	bottom:15px; 
+	left:348px;
+	width:100px;
+	padding:3.5px;
+	height:30px;
+	width:100px;
+}
+.mediumSection form input{
+	position:absolute;
+	bottom:15px;
+	left:30px;
+	height:30px;
+	width:300px;
+	padding:5px;
+}
+
+
 .middleSection,.middleSection form,.middleSection a{
 	height:250px;
 	width:470px;
@@ -613,9 +632,7 @@ b{font-weight:normal;}
 
 }
 
-@media only screen and (min-width: 768px) {
 
-}
 
 
 

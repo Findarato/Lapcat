@@ -1,5 +1,5 @@
 <nav class="navDisplay">
-	<div class="grid_6" >
+	<div class="grid_6 leftNav" >
 		<!-- Left Colmn -->
 		<div class="smallSection">
 			<a class="downloadsNav smoothAnimate fixMargin" href="downloads.html" ></a>
@@ -24,13 +24,13 @@
 		<div class="mediumSection">
 			<div class="fixMargin">
 				<form method="get" action="http://catalog.lapcat.org/search/~/a?a" class="catalogNav smoothAnimate">
-					<select name="searchtype" style="position:absolute;bottom:15px; left:348px;width:100px;padding:3.5px;height:30px; width:100px;">
+					<select name="searchtype">
 						<option value="X" selected="selected">KEYWORD</option>
 						<option value="t">TITLE</option>
 						<option value="a">AUTHOR</option>
 						<option value="d">SUBJECT</option>
 					</select>
-					<input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog" style="position:absolute;bottom:15px; left:30px;height:30px;width:300px;padding:5px;">
+					<input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
 					<input type="submit" value="GO!" style="position:absolute;bottom:28px; left:348px;padding:4px;display:none;"/>
 				</form>
 			</div>
@@ -41,7 +41,7 @@
 			<div id="middleScrollContainer" style="z-index: 10;position:absolute;padding:5px;bottom:1px;right:4px;background:rgba(0,0,0,.6);text-align:right;"></div>
 		</div>
 	</div>
-	<div class="grid_6" >
+	<div class="grid_6 rightNav" >
 		<!-- Right Colmn -->
 		<div class="smallSection">
 			<a class="genealogyNav smoothAnimate fixMargin" href="genealogy.php" ></a>
@@ -56,7 +56,7 @@
 			</div>
 		</div>
 		<div class="smallSection">
-			<a class="hoursNav smoothAnimate fixMargin" href="hours.html" ></a>
+			<a class="hoursNav smoothAnimate fixMargin" href="hours.php" ></a>
 			<div class="sectionText">
 				Hours
 			</div>
