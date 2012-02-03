@@ -81,13 +81,13 @@
 			<div>{$phone}</div>
 			<div><a href="mailto:{$email}" title="Email address">{$email}</a></div>
 		<div class="">
-			<div>Sunday: {$time0}</div>
-			<div>Monday: {$time1}</div>
-			<div>Tuesday: {$time2}</div>
-			<div>Wednsday: {$time3}</div>
-			<div>Thursday: {$time4}</div>
-			<div>Friday: {$time5}</div>
-			<div>Saturday: {$time6}</div>
+			<div>Sun: {$time0}</div>
+			<div>Mon: {$time1}</div>
+			<div>Tue: {$time2}</div>
+			<div>Wed: {$time3}</div>
+			<div>Thu: {$time4}</div>
+			<div>Fri: {$time5}</div>
+			<div>Sat: {$time6}</div>
 		</div>
 		</div>
 		<div class="" style="width:60%;float:left">
