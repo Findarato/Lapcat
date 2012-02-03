@@ -20,6 +20,9 @@
 				<li>
 					<a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a>
 				</li>
+				<li>
+					<a href="/hours.php">Hours and Locations</a>
+				</li>
 			</ul>
 		</div>
 		<div class="outSideBoxShadow" style="float:left;width:0px;min-height: 150px;margin:5px;"></div>

@@ -1,0 +1,56 @@
+/* fluid layout for smaller screens */
+
+.topHeader{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	width:100%;
+	height:112px;
+	padding:2px;
+	z-index:999;
+}
+.navDisplay{
+	width:100%;
+	height:500px;
+}
+.navDisplay div{
+	float:left;
+}
+.navDisplay .grid_6,.rightNav .smallSection{
+	width:31.5%;
+}
+.mediumSection,.middleSection,.middleSection a, .middleSection form,.mediumSection form, .mediumSection a{
+	width:100%;
+}
+.mediumSection form select{
+	width:33%;
+	right:3px;
+	left:auto;
+}
+.mediumSection form input{
+	width:64%;
+}
+.navDisplay .grid_12,.grid_22{
+	width:64%;
+}
+.grid_6,.grid_12,.grid_22,section{
+	margin-left:5px;
+	margin-right:5px;
+}
+.navDisplay .rightNav{
+	float:none;
+	display:inline-block;
+	width:100%;
+}
+.rightNav .smallSection{
+	margin-left:5px;
+	margin-right:5px;
+}
+.rightNav {
+	margin:0px;
+}
+
+.grid_22{
+	display:none;
+}

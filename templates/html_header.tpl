@@ -18,7 +18,8 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="css/fonts/iconic/iconic_fill.css">
 		<link rel="stylesheet" href="css/fonts/websymbols/stylesheet.css">
-		<link rel="stylesheet" href="css/960_24_col.css">
+		<link rel="stylesheet" media="screen and (min-width: 1000px)" href="css/960_24_col.css">
+		<link rel="stylesheet" media="screen and (max-width: 999px)" href="css/fluid.css">
 		<link rel="stylesheet" href="js/libs/twitter/jquery.tweet.css">
 		<!-- end CSS-->
 		<script src="js/libs/modernizr-2.0.6.min.js"></script>
