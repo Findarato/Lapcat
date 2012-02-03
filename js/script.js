@@ -349,7 +349,7 @@ function get_blog_feed() {
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<article/>",{"class":"blogItem",css:{}})
 				.html(
-					$("<div/>",{css:{"overflow":"hidden","width":"690px"}})
+					$("<div/>",{})
 						.html(
 							$("<div/>",{"class":"blogEntryTitle"})
 								.html(

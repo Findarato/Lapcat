@@ -350,7 +350,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .smallSection,.smallSection a{
 	height:100px;
 	width:100%;
-	background-size:100% 100px;
+	background-size:cover;
 }
 .mediumSection,.mediumSection a,.mediumSection form{
 	height:60px;
@@ -379,12 +379,19 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .middleSection,.middleSection form,.middleSection a{
 	height:250px;
 	width:470px;
-	background-size:100% 470px;
+	background-size:cover;
 }
+.middleSectionScrollContainer,.middleSectionScrollContainer a{
+	width:100%;
+	background-size:cover;
+}
+
 .fixMargin{
 	position:absolute;
 	top:0;
 	left:0;
+	width:100%;
+	height:100%;
 }
 .middleSection form:hover,.smallSection:hover a,.mediumSection form:hover,.mediumSection a:hover{
 	opacity:1;
@@ -469,6 +476,10 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .blogItem{
 	width:620px;
 	padding:3px;
+}
+.blogItem div{
+	overflow: hidden; 
+	width: 100%;
 }
 .blogEntryTitle{
 	font-size:20px;
@@ -627,10 +638,7 @@ b{font-weight:normal;}
 
 /* ==|== media queries ====================================================== */
 
-@media only screen and (min-width: 480px) {
 
-
-}
 
 
 

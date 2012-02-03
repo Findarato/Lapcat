@@ -91,7 +91,7 @@
 		</div>
 		</div>
 		<div class="" style="width:60%;float:left">
-			<div class="roundAll3 color3 insideBoxShadow outsideBoxShadow" style="margin-right:5px;height:300px;width:355px;background:url('http://maps.googleapis.com/maps/api/staticmap?center={$mapLoc}&zoom=14&size=355x300&maptype=roadmap&markers=icon:http://dev.lapcat.org/mapLogo.png|label:S|{$mapLoc}&sensor=false')"></div>
+			<div class="roundAll3 color3 insideBoxShadow outsideBoxShadow map" style="background-size:cover;margin-right:5px;height:300px;width:100%;background:url('http://maps.googleapis.com/maps/api/staticmap?center={$mapLoc}&zoom=14&size=355x300&maptype=roadmap&markers=icon:http://dev.lapcat.org/mapLogo.png|label:S|{$mapLoc}&sensor=false')"></div>
 		</div>
 	</div>
 </div>

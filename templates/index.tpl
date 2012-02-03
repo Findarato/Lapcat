@@ -8,7 +8,6 @@
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="blog.tpl"}
-				{include file="mainContent.tpl"}
 			</section>
 			<aside class="grid_8">
 				{include file="twitter.tpl"}

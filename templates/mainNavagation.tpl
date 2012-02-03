@@ -37,7 +37,7 @@
 		</div>
 		<!-- Middle Colmn -->
 		<div id="middleSectionContainer" class="middleSection smoothAnimate" style="text-align:center;position:relative;overflow:hidden;">
-			<div class="smoothAnimate" id="middleSectionScrollContainer" style="position:absolute;top:0px;left:0px;"></div>
+			<div class="smoothAnimate" id="middleSectionScrollContainer" style="position:absolute;top:0px;left:0px;width:100%"></div>
 			<div id="middleScrollContainer" style="z-index: 10;position:absolute;padding:5px;bottom:1px;right:4px;background:rgba(0,0,0,.6);text-align:right;"></div>
 		</div>
 	</div>
