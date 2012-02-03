@@ -19,26 +19,9 @@
 			</div>
 			<div class="td ">
 				<div class="menuSelect smoothAnimate">
-					<a href="../ask.html">Ask a Librarian</a>
+					<a href="../ask.html">Events</a>
 				</div>
 			</div>
-			<div class="td ">
-				<div class="menuSelect smoothAnimate">
-					<a href="../requestquestion.html">Request a Purchase</a>
-				</div>
-			</div>
-			<div class="td">
-				<div class="menuSelect smoothAnimate">
-					<a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a>
-				</div>
-			</div>
-			{*
-			<div class="td ">
-				<div class="menuSelect smoothAnimate">
-					<a href="../sitemap.php">Site Map</a>
-				</div>
-			</div>
-			*}
 			<div class="td ">
 				<div class="menuSelect smoothAnimate">
 					<a href="../teens.php">Teens</a>
