@@ -70,11 +70,64 @@
     {$mapLoc = "41.491091,-86.771871"}
     {$locationLink = "http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1865eaf35b544cb"}
 {/if}
-
+{if $location=="rolling"}
+	{$location = "Rolling Prarie"}
+	{$address = "1 E Michigan St (P.O. Box 157)"}
+	{$city = "Rolling Prarie"}
+	{$state = "Indiana"}
+	{$zip = "46371"}
+	{$phone = "(219) 767-2604"}
+	{$email = "rolling@lapcat.org"}
+    {$time0="Closed"}
+    {$time1="Closed"}
+    {$time2="11:00 AM - 6:00 PM"}
+    {$time3="1:00 PM - 6:00 PM"}
+    {$time4="1:00 PM - 7:00 PM"}
+    {$time5="1:00 PM - 6:00 PM"}
+    {$time6="9:00 AM - 1:00 PM"}
+    {$mapLoc = "41.673963,-86.617124"}
+    {$locationLink = "http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f18687b088564839"}
+{/if}
+{if $location=="fish"}
+	{$location = "Fish Lake"}
+	{$address = "7981 E. St. Rd. 4"}
+	{$city = "Walkerton"}
+	{$state = "Indiana"}
+	{$zip = "46574"}
+	{$phone = "(219) 369-1337"}
+	{$email = "fishlake@lapcat.org"}
+    {$time0="Closed"}
+    {$time1="Closed"}
+    {$time2="11:00 AM - 7:00 PM"}
+    {$time3="2:00 PM - 6:00 PM"}
+    {$time4="2:00 PM - 7:00 PM"}
+    {$time5="2:00 PM - 6:00 PM"}
+    {$time6="10:00 AM - 2:00 PM"}
+    {$mapLoc = "41.565039,-86.544764"}
+    {$locationLink = "http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1867816fd79f0ce"}
+{/if}
+{if $location=="hanna"}
+	{$location = "Hanna"}
+	{$address = "202 North Thompson St."}
+	{$city = "Hanna"}
+	{$state = "Indiana"}
+	{$zip = "46340"}
+	{$phone = "(219) 797-4735"}
+	{$email = "hanna@lapcat.org"}
+    {$time0="Closed"}
+    {$time1="12:00 PM - 6:00 PM"}
+    {$time2="Closed"}
+    {$time3="1:00 PM - 7:00 PM"}
+    {$time4="1:00 PM - 6:00 PM"}
+    {$time5="1:00 PM - 6:00 PM"}
+    {$time6="9:00 AM - 1:00 PM"}
+    {$mapLoc = "41.414117,-86.780147"}
+    {$locationLink = "http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1864f5f74b3d29a"}
+{/if}
 
 <div class="blogBox roundAll3" style="min-height:310px;">
 	<div class="roundAll3 titleElement color3"><a href="{$locationLink}" title="View {$location} in Google Maps">{$location}</a></div>
-	<div id="locationContainerBox" class="insideBoxShadow roundAll3 containerBox" style="min-height:310px">
+	<div id="locationContainerBox" class="insideBoxShadow roundAll3 containerBox" style="min-height:330px">
 		<div class="" style="width:40%;float:left">
 			<div>{$address}</div>
 			<div>{$city}, {$state} {$zip}</div>

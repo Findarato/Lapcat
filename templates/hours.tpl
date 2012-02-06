@@ -11,6 +11,9 @@
 				{include file="location.tpl" location="coolspring"}
 				{include file="location.tpl" location="kingsford"}
 				{include file="location.tpl" location="union"}
+				{include file="location.tpl" location="rolling"}
+				{include file="location.tpl" location="fish"}
+				{include file="location.tpl" location="hanna"}
 				{*{include file="mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
