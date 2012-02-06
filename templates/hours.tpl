@@ -17,7 +17,7 @@
 				{*{include file="mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
-				{include file="catalogSearch.tpl"}
+				{*{include file="catalogSearch.tpl"}*}
 				{include file="twitter.tpl"}
 				{include file="delicious.tpl"}
 				<div class="geekOfTheWeek insideBoxShadow roundAll3">

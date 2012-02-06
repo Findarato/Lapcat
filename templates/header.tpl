@@ -34,7 +34,7 @@
 			</div>
 			<div class="td ">
 				<div class="menuSelect smoothAnimate">
-					<a href="../research.php">Research</a>
+					<a href="../reasearch.php">Research</a>
 				</div>
 			</div>
 		</div>
