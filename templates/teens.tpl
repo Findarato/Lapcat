@@ -11,6 +11,7 @@
 				{*{include file="mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
+				{include file="catalogSearch.tpl"}				
 				{include file="countDown.tpl"}
 				{*{include file="twitter.tpl"}*}
 				{include file="topBooks_teen.tpl"}
