@@ -154,6 +154,8 @@ h4 {
 
 a,a:hover,a:visited,a:focus { color: #0C717A; text-decoration:none; }
 a:hover{text-decoration: underline;}
+
+
 .roundAll2 {
 	border-radius:2px;
 	-moz-border-radius:2px;
@@ -206,7 +208,6 @@ a:hover{text-decoration: underline;}
 .secondNav{
 	font-weight:bold;
 	font-size:15px;
-	
 	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 .subPageHeader{
@@ -217,7 +218,19 @@ a:hover{text-decoration: underline;}
 	padding:3px 3px 3px 10px;
 	margin:0 5px 10px 5px;
 }
-
+.subPageCatalogSearch{
+	position:absolute;
+	right:6px;
+	top:1px;
+	opacity:1;
+	z-index: 10;
+	background:#E0E0E0;
+	padding:5px;
+	-moz-border-radius-topright: 3px;
+	border-top-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px;
+	border-bottom-left-radius: 3px;
+}
 .color1{
 	background: #ccffff	
 }

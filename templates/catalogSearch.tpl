@@ -1,6 +1,6 @@
 <section class="deliciousBox roundAll3">
 	<div class="catalogSearchTitle roundAll3 titleElement color3">
-		<a href="http://catalog.lapcat.org" style="height:100%;width:100%">Serch Catalog</a>
+		<a href="http://catalog.lapcat.org" style="height:100%;width:100%">Search Catalog</a>
 	</div>
 	<div style="vertical-align: top;">
 		<div id="catalogSearchBox" class=" roundAll3 containerBox smoothAnimate insideBoxShadow" style="min-height:50px;vertical-align: top;padding-top:40px;">
