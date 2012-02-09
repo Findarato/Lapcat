@@ -2,7 +2,7 @@
 <body>
 	<div id="container" style="" class="container_24">
 		{include file="header.tpl"}
-		<div class="mainArea grid_24" id="main" role="main">
+		<div class="mainArea grid_24 mainBackground" id="main" role="main">
 			{include file="subpage_header.tpl" pageTitle="Teens"}
 			{* {include file="soonCalendar.tpl"} *} 
 			<div class="clear"></div>

@@ -84,51 +84,8 @@ ul,li{
 .td{display:table-cell;vertical-align: top;}
 .tr{display:table-row;}
 
-h1 { 
-	font-family: 'Dancing Script' , arial, serif; 
-	font-size: 36px;
-	font-weight: bold;
-}
-	
-.h11 { 
-	font-family: 'Dancing Script' , arial, serif; 
-	font-size: 36px;
-	text-align: center;
-	font-weight: bold;
-}
-	
-h2 {
-	font-family: 'Buda' , sans-serif; 
-	font-size: 64px;
-	text-align: center;
-	color: #5F3E12;}
-	
-h3 {
-	font-family: 'Buda' , sans-serif;
-	font-size: 30px;
-	text-align: left;
-	text-align:center;
-	color: #5F3E12;
-	margin:2px;
-	padding:2px;
-}
-	
-h4 {
-	font-family: 'Calligraffitti', serif;
-	font-size: 24px;
-	text-align:center;
-	margin:2px;
-	padding:2px;
-}
-	
-.h24 {
-	font-family: 'Calligraffitti', serif;
-	font-size: 12px;
-	text-align: center;
-}
-	
-.h26 { font-family: 'Love Ya Like A Sister', cursive;	font-size: 48px; text-align: center
-}	
+
+
 
 /* ==|== non-semantic helper classes ======================================== */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
@@ -152,10 +109,30 @@ h4 {
  *  
  */
 
-a,a:hover,a:visited,a:focus { color: #0C717A; text-decoration:none; }
+a,a:hover,a:visited,a:focus { color: #5F3E12; text-decoration:none; font-weight:bold;}
 a:hover{text-decoration: underline;}
 
-
+h1,h2,h3{
+	margin:2px;
+	color: #5F3E12;
+	text-align: left;
+}
+h1 { 
+	font-family: 'Buda' , arial, serif; 
+	font-size: 24px;
+	font-weight: bold;
+	color:#5F3E12;
+}
+h2 {
+	font-family: 'Dancing Script' , sans-serif; 
+	font-size: 22px;
+	color: #5F3E12;
+}
+	
+h3 {
+	font-family: 'Dancing Script' , sans-serif;
+	font-size: 20px;
+}
 .roundAll2 {
 	border-radius:2px;
 	-moz-border-radius:2px;
@@ -208,7 +185,7 @@ a:hover{text-decoration: underline;}
 .secondNav{
 	font-weight:bold;
 	font-size:15px;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 }
 .subPageHeader{
 	background: #BDE1BD;
@@ -325,6 +302,9 @@ li{
     -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+}
+.mainBackground{
+	background-color:#e7f2e6;
 }
 aside div,section div,.smallSection,.middleSection,.mediumSection{
 	margin-bottom:10px;
