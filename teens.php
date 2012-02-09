@@ -1,4 +1,4 @@
 <?Php
 include "smarty.inc.php";
-$smarty -> display('teens.tpl');
+$smarty -> display('pages/teens.tpl');
 ?>
