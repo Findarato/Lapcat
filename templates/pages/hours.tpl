@@ -25,13 +25,13 @@
 				</div>
 			</aside>
 			<div class="clear"></div>
-			<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
-				{include file="../sections/footer.tpl"}
-			</footer>
+			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
+				{include file="../sections/allHours.tpl"}
+			</section>
 		</div>
-		<nav class="grid_24" style="margin-top:10px;margin-right:auto;">
+		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
 			{include file="../sections/sitemap.tpl"}
-		</nav>
+		</footer>
 	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
