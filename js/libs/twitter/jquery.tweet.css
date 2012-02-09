@@ -18,9 +18,6 @@
 	padding: 0.5em;
 	list-style-type: none;
 }
-.tweet_list li a {
-	color: #0C717A;
-}
 .tweet_list .tweet_avatar {
 	padding-right: .5em;
 	float: left;

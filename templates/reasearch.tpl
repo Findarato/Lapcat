@@ -2,12 +2,13 @@
 <body>
 	<div id="container" style="" class="container_24">
 		{include file="header.tpl"}
-		<div class="mainArea grid_24" id="main" role="main">
+		<div class="mainArea grid_24 mainBackground" id="main" role="main">
 			{include file="subpage_header.tpl" pageTitle="Research" backgroundImage=""}
 			{* {include file="soonCalendar.tpl"} *} 
 			<div class="clear"></div>
 			<section class="grid_16">
-				{include file="mainContent.tpl"}
+				{include file="research_adult.tpl"}
+				{include file="research_kids.tpl"}
 			</section>
 			<aside class="grid_8">
 				{include file="twitter.tpl"}

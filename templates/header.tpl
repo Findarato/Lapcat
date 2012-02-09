@@ -5,8 +5,8 @@
 				<a href="http://www.laportelibrary.org"><img src="images/tree.png" alt="Lpcpls" width="auto" height="75px" border="0" style="display:inline-block"></a>
 			</div>
 			<div class="td">
-				<h3><a href="http://www.laportelibrary.org">La Porte County Public Library System</a></h3>
-				<h4>learn, enrich, enjoy</h4>
+				<h1><a href="http://www.laportelibrary.org">La Porte County Public Library System</a></h1>
+				<h3>learn, enrich, enjoy</h3>
 			</div>
 		</div>
 	</nav>
