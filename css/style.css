@@ -76,7 +76,7 @@ body,html {
 ul,li{
 	display:inline-block;
 }
-.sitemap ul,.siteMap li{
+.sitemap ul,.siteMap li,#researchAdultContainerBox li{
 	display:block;
 }
 
@@ -98,7 +98,13 @@ ul,li{
 .clearfix:after { clear: both; }
 .clearfix { zoom: 1; }
 
-
+.check:before{
+	margin-right:.3em;
+	font-family: 'IconicFill';
+}
+.blackText:before{
+	color:#000;
+}
 .locationHover{
 	display:block;
 	text-align:left;
@@ -119,19 +125,19 @@ h1,h2,h3{
 }
 h1 { 
 	font-family: 'Buda' , arial, serif; 
-	font-size: 24px;
+	font-size: 30px;
 	font-weight: bold;
 	color:#5F3E12;
 }
 h2 {
 	font-family: 'Dancing Script' , sans-serif; 
-	font-size: 22px;
+	font-size: 28px;
 	color: #5F3E12;
 }
 	
 h3 {
 	font-family: 'Dancing Script' , sans-serif;
-	font-size: 20px;
+	font-size: 26px;
 }
 .roundAll2 {
 	border-radius:2px;
@@ -208,22 +214,7 @@ h3 {
 	-moz-border-radius-bottomleft: 3px;
 	border-bottom-left-radius: 3px;
 }
-.color1{
-	background: #ccffff	
-}
-.color2{
-	background: #ddeecc;
-}
-.color3{
-	background: #556644;
-	color: #F1F1F1;
-}
-.color3 a{
-	color: #F1F1F1;
-}
-.color4{
-	background:#556644;
-}
+
 
 .subPageHeader div{
 	display:table-cell;
@@ -520,7 +511,12 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	left:40px;
 	display:table;	
 }
-
+.subTitleElement a{
+	margin-left:3px;
+}
+.subTitleElement a.selected{
+	margin-left:3px;
+}
 .soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle,.eventFeedTitle,.titleElement{
 	cursor:pointer;
 	padding:6px;
@@ -552,7 +548,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .titleElement a{
 	color: #F1F1F1;
 }
-.titleElement a:hover{
+.titleElement a:hover,.subTitleElement a:hover{
 	text-decoration:none;
 }
 .eventFeedTitle{
@@ -629,6 +625,34 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	right:3px;
 }
 b{font-weight:normal;}
+
+
+/*  ==== global color definitions need to be at the ned of the CSS so that they overwrite anything else */
+.color1{
+	background: #ccffff	
+}
+.color2{
+	background: #ddeecc;
+}
+.color2 a{
+	color: #1F1F1F;
+}
+.color3{
+	background: #556644;
+	color: #F1F1F1;
+}
+.color3 a{
+	color: #F1F1F1;
+}
+.color4{
+	background:#556644;
+}
+.color5{
+	background:rgba(95, 62, 18,1);
+}
+.color560{
+	background:rgba(95, 62, 18,.6);
+}
 
 /* ==|== media queries ====================================================== */
 
