@@ -1,6 +1,5 @@
 <?Php
 include "smarty.inc.php";
- <?php
  $ip = $_SERVER['REMOTE_ADDR'];
  $valid  = false;
  
@@ -62,12 +61,18 @@ $validIp=array(
 '75.149.222.214');
 
 if(in_array($ip,$validIp)) //branches
-{$main =true;}
+{$inside = true;}
+if(substr($ip,0,12) == '165.138.238.') //main
+{$inside = true;}
+if(substr($ip,0,7) == '10.1.1.') //main
+{$inside = true;}
 
-if(substr($ip,0,12)=='165.138.238.') //main
-{$main=true;}
- 
-if(substr($ip,0,7)=='10.1.1.') //main
-{$main=true;}
+
+if($inside){
+	$smarty -> assign("inside",1);	
+}else{
+	$smarty -> assign("inside",0);	
+}
+
 $smarty -> display('pages/reasearch.tpl');
 ?>
