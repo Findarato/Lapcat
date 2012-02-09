@@ -1,4 +1,4 @@
 <?Php
 include "smarty.inc.php";
-$smarty -> display('hours.tpl');
+$smarty -> display('pages/hours.tpl');
 ?>
