@@ -6,7 +6,7 @@
 	<script src="/js/libs/jflickrfeed/jflickrfeed.min.js"></script>
 	<script src="/js/libs/cycle/jquery.cycle.all.min.js"></script>
 	<script defer src="js/plugins.js"></script>
-	<script>var inside = 0;inside = intval("{$inside}");</script>
+	<script>var inside = false;inside = "{$inside}";</script>
 	<script defer src="js/script.js"></script>
 	<!-- end scripts-->
 	<script>
