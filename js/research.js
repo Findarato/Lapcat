@@ -31,39 +31,12 @@ var adult = {
 		},
 		{
 			"image":"",
-			"link_in":"http://www.infoweb.newsbank.com/signin/LaPorteCounty/GBNL",
-			"link_out":"http://0-infoweb.newsbank.com.catalog.lapcat.org/signin/LaPorteCounty",
-			"title":"America's GenealogyBank",
-			"about":"Search for obituaries from 1977 on; find names in historical newspapers, books, and documents; and search the most comprehensive Social Security Death Index site online which is updated weekly. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
-			"category":"All History Genealogy",
-			"libraryOnly":false
-		},
-		{
-			"image":"",
-			"link_in":"http://www.infoweb.newsbank.com/signin/LaPorteCounty/NEWSBANK&s_sources=location",
-			"link_out":"http://0-infoweb.newsbank.com.catalog.lapcat.org/signin/LaPorteCounty",
-			"title":"America's Newspapers",
-			"about":"Read and search over 1,100 local, regional, and national U.S. newspapers-all in one easy-to-use database! Free, full-text daily coverage of local and regional news from all 50 states (and Puerto Rico) including politics, sports, industries, cultural activities, and people, from various perspectives. Select and browse papers by state or region, or search by headline, keywords within the text, date, author, and more. Best of all, there are no ads to page through or click away. All newspapers in the database provide a limited backlog of issues (some go back over 20 years), putting past articles at your fingertips along with the day's most current stories. America's Newspapers also provides video coverage of news stories from over 100 local and national TV stations (including WNDU in South Bend) and content from magazines, journals, and online blogs, keeping you thoroughly informed. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN. ",
-			"category":"All History Genealogy",
-			"libraryOnly":false
-		},
-		{
-			"image":"",
 			"link_in":"http://ancestrylibrary.proquest.com",
 			"link_out":"test",
 			"title":"Ancestry Library Edition",
 			"about":"Find census records; birth, marriage, and death records; genealogical records from other countries; old phone directories and public records; plus 1,000s of additional sources. This is the most comprehensive genealogical database available. New collections are added daily. This database is available to use at any of our library locations during operating hours. ",
 			"category":"All Genealogy",
 			"libraryOnly":true
-		},
-		{
-			"image":"",
-			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=CHLL",
-			"link_out":"http://0-infotrac.galegroup.com.catalog.lapcat.org/itweb/la22980?db=CHLL",
-			"title":"Auto Repair: Chilton",
-			"about":"Chilton Library provides exclusive photographs, diagnostics designed by instructors, step-by-step repair procedures, Original Equipment Manufacturer (OEM) maintenance schedules, wiring diagrams, recalls and Technical Service Bulletins (TSBs) for automobiles and light trucks. ChiltonLibrary includes current cars and many classic cars going back to 1940. ChiltonLibrary adds additional models every year. It has how-to videos and an easy-to-use interface. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
-			"category":"All Auto",
-			"libraryOnly":false
 		},
 		{
 			"image":"",
@@ -172,7 +145,106 @@ var adult = {
 			"about":"This resource provides nearly 550 scholarly full-text journals focusing on many medical disciplines. Coverage of nursing and allied health is particularly strong, including full text from Creative Nursing, Issues in Comprehensive Pediatric Nursing, Issues in Mental Health Nursing, Journal of Advanced Nursing, Journal of Child & Adolescent Psychiatric Nursing, Journal of Clinical Nursing, Journal of Community Health Nursing, Journal of Nursing Management, Nursing Ethics, Nursing Forum, Nursing Inquiry, and many more.",
 			"category":"All Health",
 			"libraryOnly":false
-		},		
+		},
+		{
+			"image":"",
+			"link_in":"http://www.heritagequestonline.com/refurl",
+			"link_out":"http://0-www.heritagequestonline.com.catalog.lapcat.org/refurl",
+			"title":"Heritage Quest",
+			"about":"Find census records; information about people and places in family history and local history books and articles; Revolutionary War records; Freedman's Bank, serving African Americans; and individuals mentioned in Memorials, Petitions, and Relief Acts of the U.S. Congress; and more. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN. ",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://www.inspire.in.gov",
+			"link_out":"http://www.inspire.in.gov",
+			"title":"INSPIRE",
+			"about":"This resource is Indiana's Virtual Library. It offers access to over 40 databases covering subjects like biographies, magazine and scholarly journal articles, newspapers articles (most recent 30 days), poetry, and short stories. The Testing & Education Reference Center (TERC) has a career interest test, practice tests for SAT, GED, AP, LSAT, GRE, GMAT and other tests for high school, college, and graduate school. Biography Resource Center allows searching for many short biographies. Litfinder finds full text of many poems and stories. Other resources include Kids Search, What Tree Is That?, and Indiana Memory. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN. ",
+			"category":"All Literature News History",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=IFME",
+			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=IFME",
+			"title":"Informe",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://libraries.mangolanguages.com/la-porte/start",
+			"link_out":"http://0-libraries.mangolanguages.com.catalog.lapcat.org/la-porte/start",
+			"title":"Mango Languages ",
+			"about":"Interested in learning a new language? Recently moved here and want to learn English? Mango Languages is for you! It walks you through conversations between two native speakers. After the conversation is over, choose to hear/read parts of it again. The Voice Comparison feature helps you with pronunciation. You can create a profile in Mango to track your progress as well. Mango currently offers language instruction in Arabic, Dari, French, German, Greek, Hebrew, Hindi, Irish, Italian, Japanese, Korean, Mandarin Chinese, Pashto, Persian, Portuguese, Russian, Spanish, Tagalog, Thai, Turkish, Urdu, and Vietnamese. There is also English instruction for native speakers of Chinese (both Mandarin and Cantonese), Egyptian, French, German, Greek, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, and Vietnamese. New languages and features are added regularly. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
+			"category":"All Languages",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=lxh",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=lxh",
+			"title":"Library, Information Science &amp; Technology Abstracts (Ebsco)",
+			"about":"",
+			"category":"All Technology",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=LITF",
+			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=LITF",
+			"title":"Litfinder (Gale)",
+			"about":"",
+			"category":"All Literature",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=ulh",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=ulh",
+			"title":"MAS Ultra: School Edition (Ebsco)",
+			"about":"This comprehensive database, designed specifically for high school libraries, contains full text for nearly 500 popular high school magazines including America's Civil War, American Heritage, American History, Archaeology, Astronomy, Bioscience, Careers & Colleges, Civil War Times, Congressional Digest, Discover, History Today, Nation, National Review, New Republic, New Scientist, Popular Science, Science News, Scientific American, Smithsonian, World War II, etc. <br>All full-text articles are assigned a reading level indicator (Lexiles). Full text is also available for 85,670 biographies and over 107,000 primary source documents. MAS Ultra™ – School Edition also contains more than 360 reference books (including the Columbia Encyclopedia, the CIA World Fact Book and World Almanac & Book of Facts); an Image Collection of over 592,000 photos, maps & flags, color PDFs; and expanded full-text backfiles (back to 1975) for key magazines.",
+			"category":"All Education",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=f5h",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=f5h",
+			"title":"MasterFile Premier (Ebsco)",
+			"about":"Designed specifically for public libraries, MasterFILE™ Premier contains full text for nearly 1,700 periodicals covering general reference, business, health, education, general science, multicultural issues and much more. This database also contains full text more than 500 reference books, over 107,000 primary source documents, and an Image Collection of over 510,000 photos, maps & flags. <br>MasterFILE Premier offers PDF backfiles* (as far back as 1975) for key publications including American Libraries, Foreign Affairs, History Today, Judaism, Library Journal, National Review, Saturday Evening Post, etc.",
+			"category":"All News Literature Business",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=krh",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=krh",
+			"title":"McClatchy-Tribune Collection (Ebsco)",
+			"about":"The McClatchy-Tribune Collection includes a 90-day archive of nearly 300 newspapers from the McClatchy-Tribune wire service. The data is updated daily.",
+			"category":"All News",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=cmedm",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=cmedm",
+			"title":"MEDLINE (Ebsco)",
+			"about":"",
+			"category":"All Health",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=mth",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=mth",
+			"title":"Military &amp; Government Collection (Ebsco)",
+			"about":"",
+			"category":"All Government",
+			"libraryOnly":false
+		},
 	]
 }
 
