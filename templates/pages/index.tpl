@@ -18,7 +18,7 @@
 			</aside>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
-				{include file="../sections/allHours.tpl"}
+				{*{include file="../sections/allHours.tpl"}*}
 			</section>
 		</div>
 		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">

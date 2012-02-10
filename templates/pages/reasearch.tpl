@@ -11,15 +11,15 @@
 				{include file="../sections/research_kids.tpl"}
 			</section>
 			<aside class="grid_8">
-				{include file="../sections/twitter.tpl"}
 				{include file="../sections/delicious.tpl"}
+				{include file="../sections/twitter.tpl"}
 				<div class="geekOfTheWeek insideBoxShadow roundAll3">
 					Geek of the Week Photo
 				</div>
 			</aside>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
-				{include file="../sections/allHours.tpl"}
+				{*{include file="../sections/allHours.tpl"}*}
 			</section>
 		</div>
 		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
