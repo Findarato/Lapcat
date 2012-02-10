@@ -4,7 +4,7 @@
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24" id="main" role="main">
 			{include file="../sections/mainNavagation.tpl"}
-			{include file="../sections/soonCalendar.tpl"} 
+			{*{include file="../sections/soonCalendar.tpl"}*} 
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/blog.tpl"}

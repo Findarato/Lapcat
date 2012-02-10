@@ -179,7 +179,7 @@ var adult = {
 			"link_out":"http://0-libraries.mangolanguages.com.catalog.lapcat.org/la-porte/start",
 			"title":"Mango Languages ",
 			"about":"Interested in learning a new language? Recently moved here and want to learn English? Mango Languages is for you! It walks you through conversations between two native speakers. After the conversation is over, choose to hear/read parts of it again. The Voice Comparison feature helps you with pronunciation. You can create a profile in Mango to track your progress as well. Mango currently offers language instruction in Arabic, Dari, French, German, Greek, Hebrew, Hindi, Irish, Italian, Japanese, Korean, Mandarin Chinese, Pashto, Persian, Portuguese, Russian, Spanish, Tagalog, Thai, Turkish, Urdu, and Vietnamese. There is also English instruction for native speakers of Chinese (both Mandarin and Cantonese), Egyptian, French, German, Greek, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, and Vietnamese. New languages and features are added regularly. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
-			"category":"All Languages",
+			"category":"All Education",
 			"libraryOnly":false
 		},
 		{
@@ -188,7 +188,7 @@ var adult = {
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=lxh",
 			"title":"Library, Information Science &amp; Technology Abstracts (Ebsco)",
 			"about":"",
-			"category":"All Technology",
+			"category":"All Science",
 			"libraryOnly":false
 		},
 		{
@@ -273,7 +273,8 @@ $.each(adult.data,function(i,item){
 								.html($("<span/>",{"class":"iconic book"}))
 								.append("<span/>",{html:item.title})
 						}
-						return $("<div/>").html(
+						return $("<div/>")
+						.html(
 							function(){
 								if(item.libraryOnly){
 									return $("<span/>",{"class":"iconic book",css:{"margin-right":"3px","cursor":"help"},"title":"Available at the library only"})
@@ -291,6 +292,9 @@ $.each(adult.data,function(i,item){
 									}
 								}})
 								.html(item.title)
+							)
+							.append(
+								$("<span/>",{"html":"more info",css:{"margin-left":"3px","font-size":".7em","cursor":"help"},"data-info":item.about})
 							)
 					}
 				)
