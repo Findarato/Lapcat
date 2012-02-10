@@ -31,8 +31,7 @@
 	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
-	<script src="/js/libs/jflickrfeed/jflickrfeed.min.js"></script>
-	<script src="/js/libs/cycle/jquery.cycle.all.min.js"></script>
-	<script src="js/teen.js"></script>
+	<script src="js/libs/countdown/jquery.countdown.js"></script>
+	<script defer src="js/teen.js"></script>
 </body>
 </html> 
