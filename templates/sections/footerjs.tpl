@@ -3,11 +3,10 @@
 	<!-- scripts concatenated and minified via ant build script-->
 	<script src="/js/libs/twitter/jquery.tweet.js"></script>
 	<script src="https://apis.google.com/js/plusone.js"></script>
-	<script src="/js/libs/jflickrfeed/jflickrfeed.min.js"></script>
-	<script src="/js/libs/cycle/jquery.cycle.all.min.js"></script>
-	<script defer src="js/plugins.js"></script>
+
+	<script src="js/plugins.js"></script>
 	<script>var inside = false;inside = "{$inside}";</script>
-	<script defer src="js/script.js"></script>
+	<script src="js/script.js"></script>
 	<!-- end scripts-->
 	<script>
 		// Change UA-XXXXX-X to be your site's ID

@@ -1,6 +1,6 @@
-<div class=" " style="width:100%;height:100%;position:relative">
+<div class=" " style="width:100%;height:100%;position:relative" title="Subpage Header">
 	<div class="roundAll3 insideBoxShadow subPageHeader secondNav" style="background:url({$backgroundImage}) no-repeat scroll,rgba(0,0,0,.6) 100% 100% ;opacity:.75"></div>
-	<h2 style="position:absolute;left:100px;right:100px;top:10px;opacity:1;z-index: 10">{$pageTitle}</h2>
+	<h1 class="floatingHeader">{$pageTitle}</h1>
 	<div class="subPageCatalogSearch outSideBoxShadow mainBackground" style="">
 		<form method="get" action="http://catalog.lapcat.org/search/~/a?a" class="smoothAnimate">
 			<select name="searchtype">

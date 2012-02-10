@@ -12,7 +12,6 @@ var mainNavagationRotate = {
 		{"image":"http://laportelibrary.org/images/geek/week04.png","link":"http://catalog.lapcat.org","title":"this is the title of the link 2"}
 	]
 };
-
 var templ = $("<div/>",{"data-link":"","class":"middleSectionScroll"})
 var link = $("#middleSectionLink");
 var middleSection = $("#middleSectionScrollContainer");
