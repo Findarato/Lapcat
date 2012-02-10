@@ -2,7 +2,7 @@
 	<nav title="top Navagation" class="firstNav color1 " style="text-align: center;margin:0;margin-bottom:10px;top:0;left:0;">
 		<div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">
 			<div class="td">
-				<a href="/"><img src="images/tree.png" alt="Lpcpls" width="auto" height="75px" border="0" style="display:inline-block"></a>
+				<a href="/"><img src="images/tree.png" alt="Lpcpls" width="68px" height="75px" border="0" style="display:inline-block"></a>
 			</div>
 			<div class="td">
 				<h1><a href="/">La Porte County Public Library System</a></h1>
