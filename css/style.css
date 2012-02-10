@@ -173,25 +173,25 @@ h3 {
 	text-indent:-99999px;
 }
 .downloadsNav{
-	background:url("/images/download.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("/images/download.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .catalogNav{
-	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .researchNav{
-	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("/images/research.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .genealogyNav{
-	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("/images/genealogy.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .eventsNav{
-	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .hoursNav{
-	background:url("http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=9&size=230x100&sensor=false") no-repeat scroll 50% 50% transparent;
+	background:url("http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=9&size=230x100&sensor=false") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .greatPicksNav{
-	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 
 .topNav{
