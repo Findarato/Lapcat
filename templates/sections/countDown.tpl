@@ -19,16 +19,4 @@
 	padding-top:3px;
 }
 </style>
-<script defer src="js/countdown.js"></script>
-<script language="JavaScript">
-TargetDate = "03/23/2012 1:52 AM";
-BackColor = "palegreen";
-ForeColor = "navy";
-CountActive = true;
-CountStepper = -1;
-LeadingZero = true;
-FinishMessage = "Let the Hunger Games begin!";
-DisplayFormat = "<div class='countDownBox insideBoxShadow roundAll3'><div class='countDownDays'>%%D%% Days</div><div class='countDownHours'>%%H%% Hours</div><div class='countDownMinutes'>%%M%% Minutes</div><div class='countDownSeconds'>%%S%% Seconds</div><div>";
-</script>
-
-<div class="thirtyPercent roundAll3" id="cntdwn"></div>
+<div class="countDownBox insideBoxShadow roundAll3" id="cntDwn"></div>

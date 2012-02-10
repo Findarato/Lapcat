@@ -8,3 +8,14 @@ $("#cntDwn")
 		}
 	);
 	
+$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+  {
+	id: '62092835@N08',
+    format: "json"
+  },
+  function(data) {
+  	$.each(data.items, function(i,item){
+      $("<a/>").css({"background-image":"url("+item.media.m+")"}).attr("href", item.link).appendTo("#flickerPictureBox");
+      if ( i == 14 ) return false;
+    });
+  });

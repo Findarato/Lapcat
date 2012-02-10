@@ -7,11 +7,12 @@
 		width:100%;
 		padding:5px;
 	}
-	.flickerPictureBox img{
+	.flickerPictureBox a{
 		margin:5px;
 		padding:3px;
 		height:100px;
 		width:100px;
+		display:inline-block;
 		-moz-box-shadow: inset 0 0 1px 1px #888;
 		-webkit-box-shadow: inset 0 0 1px 1px#888;
 		box-shadow: inset 0 0 1px 1px #888;
@@ -20,7 +21,7 @@
 		-o-transition: .3s ease-in;
 		transition: .3s ease-in;
 	}
-	.flickerPictureBox img:hover{
+	.flickerPictureBox a:hover{
 		-moz-box-shadow: inset 0 0 5px 5px #0C717A;
 		-webkit-box-shadow: inset 0 0 5px 5px #0C717A;
 		box-shadow: inset 0 0 5px 5px #0C717A;
