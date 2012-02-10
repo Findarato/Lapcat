@@ -26,6 +26,8 @@
 		</footer>	
 	</div>
 	<!--! end of #container -->
+	
 	{include file="../sections/footerjs.tpl"}
+	<script defer src="js/mainNavRotate.js"></script>
 </body>
 </html> 

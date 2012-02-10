@@ -396,60 +396,7 @@ function get_blog_feed() {
 		});
 	});	
 };
-function loadFlicker( queryString ){
-	
-	$('#flickerPictureBox').jflickrfeed({
-		limit: 15,
-		qstrings: {
-			id: queryString
-		},
-		itemTemplate: '<li><a href="{{image_b}}"><img src="{{image_s}}" alt="{{title}}" /></a></li>'
-	});
-	/*
-	$('#cbox').jflickrfeed({
-		limit: 14,
-		qstrings: {
-			id: queryString
-		},
-		itemTemplate: '<li>'+
-						'<a rel="colorbox" href="{{image}}" title="{{title}}">' +
-							'<img src="{{image_s}}" alt="{{title}}" />' +
-						'</a>' +
-					  '</li>'
-	}, function(data) {
-		$('#cbox a').colorbox();
-	});
-	*/
-	$('#flickerScrollBox').jflickrfeed({
-		limit: 15,
-		qstrings: {
-			id: queryString
-		},
-		itemTemplate: '<li><a href="{{image_b}}"><img src="{{image}}" alt="{{title}}" /></a><div class="flickrImageTitle">{{title}}</div></li>'
-	}, function(data) {
-		$('#flickerScrollBox div').hide();
-		$('#flickerScrollBox').cycle({
-			timeout: 5000
-		});
-		$('#flickerScrollBox li').hover(function(){
-			$(this).children('div').show();
-		},function(){
-			$(this).children('div').hide();
-		});
-	});
-	/*
-	$('#nocallback').jflickrfeed({
-		limit: 4,
-		qstrings: {
-			id: queryString
-		},
-		useTemplate: false,
-		itemCallback: function(item){
-			$(this).append("<li><img src='" + item.image_m + "' alt=''/></li>");
-		}
-	});
-*/
-}
+
 
 $(document).ready(function(){
 	//$(".shadowBox").css("display","block"); 
@@ -481,7 +428,7 @@ $(document).ready(function(){
             "auto_join_text_url": "",
             "loading_text": ""
         });
-        loadFlicker("62092835@N08");     
+            
 });
 
 

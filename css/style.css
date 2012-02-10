@@ -139,6 +139,17 @@ h3 {
 	font-family: 'Dancing Script' , sans-serif;
 	font-size: 26px;
 }
+.floatingHeader{
+	position:absolute;
+	left:100px;
+	right:100px;
+	top:10px;
+	opacity:1;
+	z-index: 10;
+	color:#1f1f1f;
+	font-size:40px;
+	text-shadow: black 0em 0em 0.1em;
+}
 .roundAll2 {
 	border-radius:2px;
 	-moz-border-radius:2px;
@@ -289,7 +300,7 @@ li{
 .mainArea{
 	padding-top:125px;
 	padding-bottom:20px;
-	background-color:#E0E0E0;
+	background-color:#E5EFDC;
     -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
@@ -512,6 +523,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	display:table;	
 }
 .subTitleElement a{
+	display:inline-block;
 	margin-left:3px;
 }
 .subTitleElement a.selected{
@@ -558,7 +570,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	top:3px;
 	text-align:center;
 }
-.deliciousFeedTittle:before{
+.deliciousFeedTitle:before{
 	font-size:12px;
 	content:"B ";
 	font-family: 'WebSymbolsRegular';
@@ -648,11 +660,17 @@ b{font-weight:normal;}
 	background:#556644;
 }
 .color5{
+	color:#F1F1F1;
 	background:rgba(95, 62, 18,1);
 }
 .color560{
+	color:#F1F1F1;
 	background:rgba(95, 62, 18,.6);
 }
+.color560 a:hover,.color5 a:hover,.color560:hover,.color5:hover{
+	color:#F1F1F1;
+}
+
 
 /* ==|== media queries ====================================================== */
 
