@@ -28,7 +28,6 @@
 	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
-	<script defer src="js/libs/jquery.hovercard.min.js"></script>
 	<script defer src="js/research.js"></script>
 </body>
 </html> 

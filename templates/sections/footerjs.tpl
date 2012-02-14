@@ -1,5 +1,6 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+	<script defer src="js/libs/jquery.hovercard.min.js"></script>
 	<!-- scripts concatenated and minified via ant build script-->
 	<script src="/js/libs/twitter/jquery.tweet.js"></script>
 	<script src="https://apis.google.com/js/plusone.js"></script>

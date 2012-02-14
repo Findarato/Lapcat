@@ -14,7 +14,7 @@
 			</div>
 		</div>
 		<div class="smallSection">
-			<a class="researchNav smoothAnimate fixMargin" href="reasearch.php" ></a>
+			<a class="researchNav smoothAnimate fixMargin" href="research.php" ></a>
 			<div class="sectionText">
 				Research
 			</div>

@@ -11,7 +11,11 @@
 		<meta name="description" content="La Porte County Public Library">
 		<meta name="author" content="La Porte County Public Library">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-
+	    <meta property="og:title" content="{$title}"/>
+	    <meta property="og:url" content="http://laportelibrary.org"/>
+	    <meta property="og:image" content="http://laportelibrary.org/images/tree.png"/>
+	    <meta property="og:site_name" content="La Porte Library"/>
+	    <meta property="fb:admins" content="joseph.harry"/>
 		<link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Buda:light' rel='stylesheet' type='text/css' />
 		<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css' />

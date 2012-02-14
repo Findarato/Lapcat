@@ -7,13 +7,13 @@
 			{* {include file="../sections/soonCalendar.tpl"} *} 
 			<div class="clear"></div>
 			<section class="grid_16">
-				{include file="../sections/location.tpl" location="main"}
 				{include file="../sections/location.tpl" location="coolspring"}
-				{include file="../sections/location.tpl" location="kingsford"}
-				{include file="../sections/location.tpl" location="union"}
-				{include file="../sections/location.tpl" location="rolling"}
 				{include file="../sections/location.tpl" location="fish"}
 				{include file="../sections/location.tpl" location="hanna"}
+				{include file="../sections/location.tpl" location="kingsford"}
+				{include file="../sections/location.tpl" location="main"}
+				{include file="../sections/location.tpl" location="rolling"}
+				{include file="../sections/location.tpl" location="union"}
 				{*{include file="../sections/mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
