@@ -245,6 +245,150 @@ var adult = {
 			"category":"All Government",
 			"libraryOnly":false
 		},
+		{
+			"image":"",
+			"link_in":"http://library.morningstar.com",
+			"link_out":"http://0-library.morningstar.com.catalog.lapcat.org",
+			"title":"Morningstar",
+			"about":"",
+			"category":"All Business",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=nfh",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=nfh",
+			"title":"Newspaper Source (Ebsco)",
+			"about":"",
+			"category":"All News",
+			"libraryOnly":false
+		},	
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
+			"title":"NoveList (Ebsco)",
+			"about":"",
+			"category":"All Literature",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
+			"link_out":"http://0-search.ebscohost.com.catalog.lapcat.org/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
+			"title":"NoveList Plus (Ebsco)",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novpk8",
+			"link_out":"http://0-search.ebscohost.com.catalog.lapcat.org/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novpk8",
+			"title":"NoveList K thru 8 (Ebsco)",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://www.p4aantiquesreference.com/netlogin.asp",
+			"link_out":"http://0-www.p4aantiquesreference.com.catalog.lapcat.org/netlogin.asp",
+			"title":"P4A Antiques",
+			"about":"",
+			"category":"All History",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=prh",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=prh",
+			"title":"Professional Development Collection (Ebsco)",
+			"about":"",
+			"category":"All Buisness",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bwh",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bwh",
+			"title":"Regional Business News (Ebsco)",
+			"about":"",
+			"category":"All Buisness",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://health.salempress.com",
+			"link_out":"http://0-health.salempress.com.catalog.lapcat.org",
+			"title":"Salem Health",
+			"about":"",
+			"category":"All Health",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=SBRC",
+			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=SBRC",
+			"title":"Small Business Resource Center (Gale)",
+			"about":"",
+			"category":"All Buisness",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=TERC",
+			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=TERC",
+			"title":"Testing & Education Resource Center (Gale)",
+			"about":"",
+			"category":"All Education",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=tth",
+			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=tth",
+			"title":"TOPICsearch (Ebsco)",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra",
+			"link_out":"http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra",
+			"title":"Tumblebooks Library",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://www.valueline.com/secure/vlrc/research.aspx",
+			"link_out":"http://0-www3.valueline.com.catalog.lapcat.org/secure/vlrc/research.aspx",
+			"title":"Value Line",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://www.worldbookonline.com?subacct=8225",
+			"link_out":"http://0-www.worldbookonline.com.catalog.lapcat.org?subacct=8225",
+			"title":"World Book",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
+		{
+			"image":"",
+			"link_in":"http://firstsearch.oclc.org/fsip/",
+			"link_out":"http://0-firstsearch.oclc.org.catalog.lapcat.org/fsip",
+			"title":"World Cat",
+			"about":"",
+			"category":"All",
+			"libraryOnly":false
+		},
 	]
 }
 
@@ -294,7 +438,13 @@ $.each(adult.data,function(i,item){
 								.html(item.title)
 							)
 							.append(
-								$("<span/>",{"html":"more info",css:{"margin-left":"3px","font-size":".7em","cursor":"help"},"data-info":item.about})
+								function(){
+									if(item.about.length >1)
+										return $("<span/>",{"html":"more info",css:{"margin-left":"3px","font-size":".7em","cursor":"help"},"data-info":item.about});	
+									else
+										return $("<span/>");
+								}
+								
 							)
 					}
 				)
