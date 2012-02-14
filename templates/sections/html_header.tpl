@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title></title>
+		<title>{$title}</title>
 		<meta name="description" content="La Porte County Public Library">
 		<meta name="author" content="La Porte County Public Library">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
