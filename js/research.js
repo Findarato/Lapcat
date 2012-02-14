@@ -12,7 +12,7 @@ var adult = {
 		},
 */ //template
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=aph",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=aph",
 			"title":"Academic Search Premier",
@@ -21,7 +21,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://www.americanancestors.com",
 			"link_out":"",
 			"title":"American Ancestors",
@@ -30,7 +30,7 @@ var adult = {
 			"libraryOnly":true
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://ancestrylibrary.proquest.com",
 			"link_out":"test",
 			"title":"Ancestry Library Edition",
@@ -39,7 +39,7 @@ var adult = {
 			"libraryOnly":true
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=BioRC",
 			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=BioRC",
 			"title":"Biography In Context (Gale)",
@@ -48,7 +48,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bmh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bmh",
 			"title":"Biomedical reference collection (Ebsco)",
@@ -57,7 +57,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=buh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=buh",
 			"title":"Business Source Premier (Ebsco)",
@@ -66,7 +66,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=CA",
 			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=CA",
 			"title":"Contemporary Authors (Gale)",
@@ -75,7 +75,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=crh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=crh",
 			"title":"Corporate ResourceNet (Ebsco)",
@@ -84,7 +84,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=eric",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=eric",
 			"title":"ERIC (Ebsco)",
@@ -93,7 +93,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=funk",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=funk",
 			"title":"Funk & Wagnalls new world encyclopedia",
@@ -102,7 +102,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=8gh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=8gh",
 			"title":"Greenfile (Ebsco)",
@@ -111,7 +111,7 @@ var adult = {
 			"libraryOnly":false
 		},		
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://infotrac.galegroup.com/itweb/la22980/",
 			"link_out":"http://0-infotrac.galegroup.com.catalog.lapcat.org/itweb/la22980/",
 			"title":"Gale Virtual Reference Library",
@@ -120,7 +120,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=hbh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=hbh",
 			"title":"Health Business FULLTEXT (Ebsco)",
@@ -129,7 +129,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=hxh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=hxh",
 			"title":"Health Source: Consumer Edition (Ebsco)",
@@ -138,7 +138,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=hch",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=hch",
 			"title":"Health Source: Nursing/Academic Edition (Ebsco)",
@@ -147,7 +147,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://www.heritagequestonline.com/refurl",
 			"link_out":"http://0-www.heritagequestonline.com.catalog.lapcat.org/refurl",
 			"title":"Heritage Quest",
@@ -156,7 +156,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://www.inspire.in.gov",
 			"link_out":"http://www.inspire.in.gov",
 			"title":"INSPIRE",
@@ -165,7 +165,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=IFME",
 			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=IFME",
 			"title":"Informe",
@@ -174,7 +174,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://libraries.mangolanguages.com/la-porte/start",
 			"link_out":"http://0-libraries.mangolanguages.com.catalog.lapcat.org/la-porte/start",
 			"title":"Mango Languages ",
@@ -183,7 +183,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=lxh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=lxh",
 			"title":"Library, Information Science &amp; Technology Abstracts (Ebsco)",
@@ -192,7 +192,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=LITF",
 			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=LITF",
 			"title":"Litfinder (Gale)",
@@ -201,7 +201,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=ulh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=ulh",
 			"title":"MAS Ultra: School Edition (Ebsco)",
@@ -210,7 +210,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=f5h",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=f5h",
 			"title":"MasterFile Premier (Ebsco)",
@@ -219,7 +219,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=krh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=krh",
 			"title":"McClatchy-Tribune Collection (Ebsco)",
@@ -228,7 +228,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=cmedm",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=cmedm",
 			"title":"MEDLINE (Ebsco)",
@@ -237,7 +237,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=mth",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=mth",
 			"title":"Military &amp; Government Collection (Ebsco)",
@@ -246,7 +246,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://library.morningstar.com",
 			"link_out":"http://0-library.morningstar.com.catalog.lapcat.org",
 			"title":"Morningstar",
@@ -255,7 +255,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=nfh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=nfh",
 			"title":"Newspaper Source (Ebsco)",
@@ -264,7 +264,7 @@ var adult = {
 			"libraryOnly":false
 		},	
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
 			"title":"NoveList (Ebsco)",
@@ -273,7 +273,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
 			"link_out":"http://0-search.ebscohost.com.catalog.lapcat.org/login.aspx?authtype=ip,cpid&custid=s9072770&profile=novplus",
 			"title":"NoveList Plus (Ebsco)",
@@ -291,7 +291,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://www.p4aantiquesreference.com/netlogin.asp",
 			"link_out":"http://0-www.p4aantiquesreference.com.catalog.lapcat.org/netlogin.asp",
 			"title":"P4A Antiques",
@@ -300,7 +300,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=prh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=prh",
 			"title":"Professional Development Collection (Ebsco)",
@@ -309,7 +309,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bwh",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bwh",
 			"title":"Regional Business News (Ebsco)",
@@ -318,7 +318,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://health.salempress.com",
 			"link_out":"http://0-health.salempress.com.catalog.lapcat.org",
 			"title":"Salem Health",
@@ -327,7 +327,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=SBRC",
 			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=SBRC",
 			"title":"Small Business Resource Center (Gale)",
@@ -336,7 +336,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://infotrac.galegroup.com/itweb/la22980?db=TERC",
 			"link_out":"http://infotrac.galegroup.com/itweb/la22980?db=TERC",
 			"title":"Testing & Education Resource Center (Gale)",
@@ -345,7 +345,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=tth",
 			"link_out":"http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=tth",
 			"title":"TOPICsearch (Ebsco)",
@@ -354,7 +354,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra",
 			"link_out":"http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra",
 			"title":"Tumblebooks Library",
@@ -363,7 +363,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://www.valueline.com/secure/vlrc/research.aspx",
 			"link_out":"http://0-www3.valueline.com.catalog.lapcat.org/secure/vlrc/research.aspx",
 			"title":"Value Line",
@@ -372,7 +372,7 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://www.worldbookonline.com?subacct=8225",
 			"link_out":"http://0-www.worldbookonline.com.catalog.lapcat.org?subacct=8225",
 			"title":"World Book",
@@ -381,14 +381,14 @@ var adult = {
 			"libraryOnly":false
 		},
 		{
-			"image":"",
+			"image":"/images/tree.png",
 			"link_in":"http://firstsearch.oclc.org/fsip/",
 			"link_out":"http://0-firstsearch.oclc.org.catalog.lapcat.org/fsip",
 			"title":"World Cat",
 			"about":"Search the collections of over 10,000 libraries worldwide! Find that book, CD, movie, or other resource at a library nearby. If it's available locally, a link to the La Porte County Library catalog makes it easy to check availability, learn more about the item, or place a hold. If it's not, a librarian can request your item through interlibrary loan-just ask for details. If you're not sure what you want to check out next, WorldCat even offers a list of \"Hot Topics\" to search, putting the newest and most-requested items from all WorldCat member libraries right at your fingertips. You can set up an account, save your searches and item records, and let WorldCat keep track of what's next on your reading list! Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
 			"category":"All",
 			"libraryOnly":false
-		},
+		}
 	]
 }
 
@@ -439,17 +439,30 @@ $.each(adult.data,function(i,item){
 							)
 							.append(
 								function(){
-									if(item.about.length >1)
-										return $("<span/>",{"html":"more info",css:{"margin-left":"3px","font-size":".7em","cursor":"help"},"data-info":item.about});	
-									else
-										return $("<span/>");
+									if(item.about.length>1){
+										var link = "";
+										if(inside)
+											link = item.link_in;
+										else
+										 	link = item.link_out;
+										
+										return $("<label/>",{"html":"more info",css:{"margin-left":"3px","font-size":".7em"},"class":"hoverCard","data-image":item.image,"data-info":item.about,"data-link":link})	
+									}
 								}
 								
 							)
 					}
 				)
-		) 
+		)
+		//alert(container.find("label.hoverCard").attr("data-info"))
+		
+	//container.find(".hoverCard")		
 });
+	//alert($(".hoverCard").attr("data-info"))
+	$.each($(".hoverCard"),function(h,card){
+		me=$(card)
+		me.hovercard({"detailsHTML":me.attr("data-info")+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.attr("data-image")});
+	})
 adultCategories.sort();
 adultCategories = adultCategories.getUnique();
 
