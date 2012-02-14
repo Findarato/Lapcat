@@ -1,4 +1,4 @@
-{include file="../sections/html_header.tpl"}
+{include file="../sections/html_header.tpl" title="La Porte County Public Library (Research)"}
 <body>
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
@@ -8,10 +8,10 @@
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/research_adult.tpl"}
-				{include file="../sections/research_kids.tpl"}
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/delicious.tpl"}
+				{include file="../sections/research_kids.tpl"}
 				{include file="../sections/twitter.tpl"}
 				<div class="geekOfTheWeek insideBoxShadow roundAll3">
 					Geek of the Week Photo
@@ -28,6 +28,7 @@
 	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
+	<script defer src="js/libs/jquery.hovercard.min.js"></script>
 	<script defer src="js/research.js"></script>
 </body>
 </html> 
