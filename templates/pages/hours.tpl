@@ -1,4 +1,4 @@
-{include file="../sections/html_header.tpl"}
+{include file="../sections/html_header.tpl"  title="La Porte County Public Library (Hours and Locations)"}
 <body>
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
