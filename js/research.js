@@ -393,8 +393,7 @@ var adult = {
 }
 
 var adultContainer = $("#researchAdultContainerBox");
-adultContainer
-.html($("<div/>").html(container = $("<ul/>")));
+adultContainer.html($("<div/>").html(container = $("<ul/>")));
 var adultCategories = new Array();
 $.each(adult.data,function(i,item){
 	if(item.category.indexOf(" ")){ // we have more than one category

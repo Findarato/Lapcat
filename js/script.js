@@ -328,7 +328,7 @@ function get_blog_feed() {
 	var blogWindow = $("#blogContainerBox");
 	//clear the content in the div for the next feed.
 	blogWindow.empty();
-	totalDisplay = 5;
+	totalDisplay = 3;
  	totalBlogItems = 0;
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":"http://laportelibrary.blogspot.com/feeds/posts/default"}, function(d) {
@@ -387,14 +387,32 @@ function get_blog_feed() {
 			totalBlogItems++;
 		});
 		
-		
+		$(".blogEntryDescription a").css({"display":"inline"})
 		$.each($(".blogEntryDescription").find('a>img'),function(i,item){
 			var parent =$(item).parent();
 			if($(item).attr("src")==parent.attr("href")){
 				parent.addClass("noAfterImage");
 			}
 		});
-	});	
+
+		$.each($(".blogEntryDescription").find('a[href*="catalog.lapcat.org"]'),function(h,card){
+			me = $(card);
+			dataHtml = $("<div/>",{"id":"catalogHtmlResponse","html":"<a href='http://catalog.lapcat.org'>Find more on the catalog</a>"});
+			//alert(dataHtml.find("#topLogohead").html())
+			var dataImg;
+			$.post("ajax/catalogLoad.php",{"url":me.attr("href")},function(data){
+				dataHtml.append(data);
+			},"html");
+			
+			//alert(typeof dataHtml)
+			if(dataHtml.html() == "" || dataHtml.html() == null){dataHtml = "There was an error parsing the catalog details"}
+			if(dataImg == "" || dataImg == null){dataImg = "images/tree.png";}
+			me.hovercard({"detailsHTML":dataHtml.html(),"width":"400px","cardImgSrc":dataImg})
+			//html.load("ajax/catalogLoad.php",{"url":"http://catalog.lapcat.org"});
+			
+			//
+		});		
+	});
 };
 
 

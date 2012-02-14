@@ -443,7 +443,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	position:relative;
 	background:#FFF;
 	width:100%;
-	min-height:400px;
+	min-height:100px;
 }
 .blogContainerBox li{
 	display:block;
@@ -474,7 +474,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	padding:3px;
 }
 .blogItem div{
-	overflow: hidden; 
 	width: 100%;
 }
 .blogEntryTitle{

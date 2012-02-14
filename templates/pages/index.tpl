@@ -29,5 +29,6 @@
 	
 	{include file="../sections/footerjs.tpl"}
 	<script defer src="js/mainNavRotate.js"></script>
+	<script defer src="js/index.js"></script>
 </body>
 </html> 
