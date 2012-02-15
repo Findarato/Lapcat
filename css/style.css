@@ -330,7 +330,11 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	background:#000 no-repeat;
 	position:relative;
 }
-.navDisplay:hover .smallSection a,.navDisplay:hover .middleSection form,.navDisplay:hover .mediumSection form,.navDisplay:hover .middleSection a{
+.navDisplay:hover .smallSection a,
+.navDisplay:hover .middleSection form,
+.navDisplay:hover .mediumSection form,
+.navDisplay:hover .middleSection a,
+.navDisplay:hover .middleScrollContainer div{
 	opacity:.6;
 }
 
@@ -339,7 +343,8 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .navDisplay .middleSection form:hover,
 .navDisplay .middleSection a:hover,
 .navDisplay .mediumSection form:hover,
-.navDisplay .middleSectionScroll:hover .middleSection 
+.navDisplay .middleSectionScroll:hover .middleSection ,
+.navDisplay .middleSectionScroll:hover div
 {
 	opacity:1;
 }
@@ -410,6 +415,37 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	     -o-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
 	        transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
 }
+
+/*	rotating middle section code Start*/
+
+.fluxslider{
+	height:!important auto; 
+}
+.pagination{
+	position:absolute;
+	bottom:5px;
+	right:10px;
+	width:auto;
+	z-index:101;
+}
+.pagination li{
+	height:15px;
+	width:15px;
+	text-indent:-9999px;
+	border:white solid 1px;
+	border:rgba(209,214,204,.7) solid 1px;
+	background:#ccc;
+	background:rgba(209,214,204,.6)
+}
+.pagination li.current{
+	border:rgb(255,255,255) solid 1px;
+	border:rgba(174,224,127,.7) solid 1px;
+	background:#ccc;
+	background:rgba(174,224,127,.6)
+}
+
+/*	rotating middle section code End */
+
 .soonCalnedarInfoTriangle{
 	content:"";
 	width: 0;

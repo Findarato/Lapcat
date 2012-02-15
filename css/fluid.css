@@ -66,7 +66,19 @@
 .blogItem{
 	width:100%;
 }
-@media only screen and (max-width: 700px) {
+
+/*	rotating middle section code Start*/
+
+.surface .image1,.surface .image2{
+	height:100%;
+	width:100%;
+	background-size:100% 100%;
+}
+
+/*	rotating middle section code End*/
+
+
+@media only screen and (max-width: 734px) {
 	.topNav h3{
 		font-size:20px;
 	}

@@ -419,7 +419,12 @@ function get_blog_feed() {
 };
 
 
+
 $(document).ready(function(){
+$("body").resize(function(){
+	console.log($(this).width())
+	alert($(this).width())
+})
 	//$(".shadowBox").css("display","block"); 
 	$(".locationHover")
 		.mouseenter(
