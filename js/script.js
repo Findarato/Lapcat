@@ -394,25 +394,28 @@ function get_blog_feed() {
 				parent.addClass("noAfterImage");
 			}
 		});
-
+/*
 		$.each($(".blogEntryDescription").find('a[href*="catalog.lapcat.org"]'),function(h,card){
 			me = $(card);
-			dataHtml = $("<div/>",{"id":"catalogHtmlResponse","html":"<a href='http://catalog.lapcat.org'>Find more on the catalog</a>"});
-			//alert(dataHtml.find("#topLogohead").html())
+			newData = "";
+			dataHtml = $("<div/>")
+			//dataHtml = '<div>This is default text<div><a href="http://catalog.lapcat.org">more info</a></div></div>'
 			var dataImg;
-			$.post("ajax/catalogLoad.php",{"url":me.attr("href")},function(data){
-				dataHtml.append(data);
-			},"html");
+			dataHtml.load("ajax/catalogLoad.php",{"url":me.attr("href")})
+			//$.getJSON("ajax/catalogLoad.php",{"url":me.attr("href")},function(json){
+			//	dataHtml = json[0]+dataHtml
+			//});
+			//if(dataHtml === "" || dataHtml === null){dataHtml = "There was an error parsing the catalog details"}
 			
-			//alert(typeof dataHtml)
-			if(dataHtml.html() == "" || dataHtml.html() == null){dataHtml = "There was an error parsing the catalog details"}
 			if(dataImg == "" || dataImg == null){dataImg = "images/tree.png";}
 			me.hovercard({"detailsHTML":dataHtml.html(),"width":"400px","cardImgSrc":dataImg})
 			//html.load("ajax/catalogLoad.php",{"url":"http://catalog.lapcat.org"});
 			
 			//
-		});		
+		});
+		*/		
 	});
+	
 };
 
 
