@@ -368,7 +368,7 @@ var adult = {
 			"link_out":"http://0-www3.valueline.com.catalog.lapcat.org/secure/vlrc/research.aspx",
 			"title":"Value Line",
 			"about":"This database is a comprehensive investment research tool. You can conduct custom investment searches for stocks, mutual funds, options, and convertibles. You can find reviews of individual mutual funds and stocks, with concise reports on the performance of each and rankings of each investment for timeliness and safety. Value Line has investor education, too. The list of online editions of their monthly periodicals you can find here include The Value Line Investment Survey-Standard Edition, -Plus Edition, and -Small and Mid-Cap Edition; The Value Line Convertibles Survey; The Value Line Special Situations Service; The Value Line Fund Advisor; and The Value Line Daily Options Survey. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
-			"category":"All",
+			"category":"All Business",
 			"libraryOnly":false
 		},
 		{
