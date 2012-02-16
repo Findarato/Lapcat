@@ -1,4 +1,4 @@
-/* Author: 
+/* Author: Joseph Harry
 
 */
 // Just because I know people are going to ask for it
@@ -227,10 +227,13 @@ function displayLocation(locationCode,domElementSelector){
 		}
 }
 function getDeliciousFeed(uri,target){
-	var sCC = $("#deliciousContainer")
+	if(target===undefined)
+		var sCC = $("#deliciousContainer")
+	else
+		var sCC = target;
+	
 	$.get("ajax/rss.php",{"url":uri},function(d){
 		$(d).find('item').each(function() {
- 			totalRssItems++;
 			//name the current found item this for this particular loop run
 			var item = $(this);
 			// grab the post title
@@ -267,13 +270,19 @@ function getDeliciousFeed(uri,target){
 	})
 	
 }
-function get_rss_feed() {
-	var sCC = $("#soonCalendarContainer")
+function get_rss_feed(uri,target) {
+	if(target===undefined)
+		var sCC = $("#soonCalendarContainer")
+	else
+		var sCC = target;
+
 	//clear the content in the div for the next feed.
 	sCC.empty();
- 
+ 	if(uri===undefined){
+ 		uri="http://engagedpatrons.org/RSS4LE.cfm?SiteID=9267&BranchID=";
+ 	}
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
-	$.get("ajax/rss.php",{"url":"http://engagedpatrons.org/RSS4LE.cfm?SiteID=9267&BranchID="}, function(d) {
+	$.get("ajax/rss.php",{"url":uri}, function(d) {
  
 		//find each 'item' in the file and parse it
 		$(d).find('item').each(function() {
@@ -288,11 +297,18 @@ function get_rss_feed() {
 			var description = $item.find('description').text();
 			//don't forget the pubdate
 			var pubDate = $item.find('dc\:date').text();
- 
+			
+ 			var contentEncoded = $item.find('content_encoded').text();
+ 			
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"rssItem",css:{}})
 				.html(
-					$("<div/>",{css:{"overflow":"hidden","width":"690px"}})
+					function(){
+						if(contentEncoded.length>1){
+							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
+							
+						}else{
+							return 	$("<div/>",{css:{"overflow":"hidden"}})
 						.html(
 							$("<div/>",{"class":"rssTitle"})
 								.html(
@@ -305,24 +321,16 @@ function get_rss_feed() {
 						.append(
 							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
 						)
+						}
+						
+					}
+					
 				)
 				
 			//put that feed content on the screen!
 			sCC.append(html);  
 		});
 	});
-	$(".soonCalendarNext").click(function(){
-		var position = 0
-		currentRss--;
-		position = (740*currentRss)+40;
-		sCC.css({"left": position}); 
-	});
-	$(".soonCalendarBack").click(function(){
-		var position = 0
-		currentRss++;
-		position = (740*currentRss)+40;
-		sCC.css({"left": position}); 
-	});	
 };
 function get_blog_feed() {
 	var blogWindow = $("#blogContainerBox");
@@ -418,17 +426,26 @@ function get_blog_feed() {
 	
 };
 
-
-
 $(document).ready(function(){
-$("body").resize(function(){
-	console.log($(this).width())
-	alert($(this).width())
-})
-	//$(".shadowBox").css("display","block"); 
-//		if($("#soonCalendarContainer")){get_rss_feed();}
 		if($("#blogBox")){get_blog_feed();}
-		getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
+		uri = window.location.toString();
+		if(uri.search(/research/i)>0){// this is the research page
+			getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
+		}else{
+			if(uri.search(/teens/i)>0){// this is the teens page
+				getDeliciousFeed("http://www.delicious.com/v2/rss/laportecoteens");
+			}else{
+				if(uri.search(/greatpicks/i)>0){// this is the teens page
+					get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"))
+					getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
+				}else{//if all else fails lets just load a local rss feed
+					getDeliciousFeed("http://www.delicious.com/v2/rss/laportelocal");	
+					
+				}
+					
+			}
+				
+		}
 		$("#MA").trigger("mouseenter");
 		
         $("#twitterContainer").tweet({

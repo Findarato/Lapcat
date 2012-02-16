@@ -150,6 +150,48 @@ h3 {
 	font-size:40px;
 	text-shadow: black 0em 0em 0.1em;
 }
+.color3Circle{
+	border:2px solid rgba(85, 102, 68,.6);
+	height:20px;
+	width:20px;
+	content:"?";
+	text-align:center;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+}
+
+.color1{
+	background: #ccffff	
+}
+.color2{
+	background: #ddeecc;
+}
+.color2 a{
+	color: #1F1F1F;
+}
+.color3{
+	background: #556644;
+	color: #F1F1F1;
+}
+.color3 a{
+	color: #F1F1F1;
+}
+.color4{
+	background:#556644;
+}
+.color5{
+	color:#F1F1F1;
+	background:rgba(95, 62, 18,1);
+}
+.color560{
+	color:#F1F1F1;
+	background:rgba(95, 62, 18,.6);
+}
+.color560 a:hover,.color5 a:hover,.color560:hover,.color5:hover{
+	color:#F1F1F1;
+}
+
 .roundAll2 {
 	border-radius:2px;
 	-moz-border-radius:2px;
@@ -475,7 +517,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	background:#FFF;
 	margin-right:10px;
 }
-.blogBox,.blogContainerBox,.containerBox{
+.blogBox,.blogContainerBox,.containerBox,.bookBox{
 	position:relative;
 	background:#FFF;
 	width:100%;
@@ -658,11 +700,10 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 .rssItem{
 	padding:3px 40px 3px 10px;
-	height:120px;
-	display:table-cell;
+
 }
 
-.rssTitle{
+.rssTitle,.NUTITLE{
 	font-size:16px;
 	width:510px;
 }
@@ -674,37 +715,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 b{font-weight:normal;}
 
 
-/*  ==== global color definitions need to be at the ned of the CSS so that they overwrite anything else */
-.color1{
-	background: #ccffff	
-}
-.color2{
-	background: #ddeecc;
-}
-.color2 a{
-	color: #1F1F1F;
-}
-.color3{
-	background: #556644;
-	color: #F1F1F1;
-}
-.color3 a{
-	color: #F1F1F1;
-}
-.color4{
-	background:#556644;
-}
-.color5{
-	color:#F1F1F1;
-	background:rgba(95, 62, 18,1);
-}
-.color560{
-	color:#F1F1F1;
-	background:rgba(95, 62, 18,.6);
-}
-.color560 a:hover,.color5 a:hover,.color560:hover,.color5:hover{
-	color:#F1F1F1;
-}
 
 
 /* ==|== media queries ====================================================== */
