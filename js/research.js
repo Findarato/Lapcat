@@ -32,7 +32,7 @@ var adult = {
 		{
 			"image":"/images/tree.png",
 			"link_in":"http://ancestrylibrary.proquest.com",
-			"link_out":"test",
+			"link_out":"",
 			"title":"Ancestry Library Edition",
 			"about":"Find census records; birth, marriage, and death records; genealogical records from other countries; old phone directories and public records; plus 1,000s of additional sources. This is the most comprehensive genealogical database available. New collections are added daily. This database is available to use at any of our library locations during operating hours. ",
 			"category":"All History",
@@ -413,14 +413,14 @@ $.each(adult.data,function(i,item){
 					function(){
 						if(item.libraryOnly && !inside){// its a library only item and the user is not inside
 							return $("<div/>")
-								.html($("<span/>",{"class":"iconic book"}))
+								.html($("<span/>",{"class":"iconic lock_fill",css:{"color":"red"}}))
 								.append("<span/>",{html:item.title})
 						}
 						return $("<div/>")
 						.html(
 							function(){
 								if(item.libraryOnly){
-									return $("<span/>",{"class":"iconic book",css:{"margin-right":"3px","cursor":"help"},"title":"Available at the library only"})
+									return $("<span/>",{"class":"iconic lock_fill",css:{"margin-right":"3px","cursor":"help"},"title":"Available at the library only"})
 								}else{
 									return $("<span/>",{"class":"iconic",css:{"margin-right":"3px"}})
 								}
@@ -445,7 +445,7 @@ $.each(adult.data,function(i,item){
 										else
 										 	link = item.link_out;
 										
-										return $("<label/>",{"html":"more info",css:{"margin-left":"3px","font-size":".7em"},"class":"hoverCard","data-image":item.image,"data-info":item.about,"data-link":link})	
+										return $("<label/>",{"html":"?",css:{"margin-left":"3px","font-size":"1em","color":"rgba(85, 102, 68,.6)"},"class":"hoverCard color3Circle","data-image":item.image,"data-info":item.about,"data-link":link})	
 									}
 								}
 								
@@ -453,11 +453,7 @@ $.each(adult.data,function(i,item){
 					}
 				)
 		)
-		//alert(container.find("label.hoverCard").attr("data-info"))
-		
-	//container.find(".hoverCard")		
 });
-	//alert($(".hoverCard").attr("data-info"))
 	$.each($(".hoverCard"),function(h,card){
 		me=$(card)
 		me.hovercard({"detailsHTML":me.attr("data-info")+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.attr("data-image")});
