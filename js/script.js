@@ -226,7 +226,7 @@ function displayLocation(locationCode,domElementSelector){
 				);
 		}
 }
-function getDeliciousFeed(uri){
+function getDeliciousFeed(uri,target){
 	var sCC = $("#deliciousContainer")
 	$.get("ajax/rss.php",{"url":uri},function(d){
 		$(d).find('item').each(function() {
@@ -426,18 +426,7 @@ $("body").resize(function(){
 	alert($(this).width())
 })
 	//$(".shadowBox").css("display","block"); 
-	$(".locationHover")
-		.mouseenter(
-			function(){
-				displayLocation($(this).attr("id"),$("#locationDisplay"));
-			}
-		)
-		.mouseleave(
-			function(){
-				displayLocation("MA",$("#locationDisplay"));
-			}
-		);
-		if($("#soonCalendarContainer")){get_rss_feed();}
+//		if($("#soonCalendarContainer")){get_rss_feed();}
 		if($("#blogBox")){get_blog_feed();}
 		getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
 		$("#MA").trigger("mouseenter");
