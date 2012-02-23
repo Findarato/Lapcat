@@ -140,14 +140,44 @@ h3 {
 /*  End of theme related CSS */
 
 
+.siteMap{
+	height:200px;
+	overflow:auto;
+	
+}
 
-
-ul,li{
+.siteMap a{
 	display:inline-block;
+	padding:3px;
+	margin:5px;
+	border: solid 1px #000;
+	white-space: nowrap;
 }
-.sitemap ul,.siteMap li,#researchAdultContainerBox li{
-	display:block;
+
+
+@media only screen and (min-width: 400px) { /* this is for browsers that are cool */
+	.siteMap{
+		-moz-column-count: 4; 
+		-moz-column-gap: 1em; 
+		-moz-column-rule: 4px groove rgba(0,0,0,.2); 
+		-webkit-column-count: 4; 
+		-webkit-column-gap: 1em; 
+		-webkit-column-rule: 4px groove rgba(0,0,0,.2);
+		column-count: 4; 
+		column-gap: 1em; 
+		column-rule: 4px groove rgba(0,0,0,.2);
+	}
+	.siteMap a{
+		display:block;
+		padding:auto;
+		margin:auto;
+		border: none;
+	}
+	
 }
+
+
+
 
 .t{display:table; width:100%;}
 .td{display:table-cell;vertical-align: top;}
@@ -498,7 +528,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .blogBox,.blogContainerBox,.containerBox,.bookBox{
 	position:relative;
 	background:#FFF;
-	width:100%;
 	min-height:100px;
 }
 .blogContainerBox li{
@@ -523,7 +552,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 
 .blogContainerBox,.deliciousContainer,.containerBox{
 	padding:25px 5px 5px 5px;
-	width:100%;
 }
 .blogItem{
 	width:620px;
