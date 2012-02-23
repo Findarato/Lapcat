@@ -283,7 +283,7 @@ function get_rss_feed(uri,target) {
  	}
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":uri}, function(d) {
- 
+ 		
 		//find each 'item' in the file and parse it
 		$(d).find('item').each(function() {
  			totalRssItems++;
@@ -305,6 +305,11 @@ function get_rss_feed(uri,target) {
 				.html(
 					function(){
 						if(contentEncoded.length>1){
+							contentEncoded = $(contentEncoded)
+							contentEncoded.find(".NUBUTTON").removeClass("NUBUTTON").addClass("roundAll3 insideBoxShadow color560").css({"text-decoration":"none","display":"inline-block","margin":"2px","padding":"5px"})
+							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("")
+							
+
 							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
 							
 						}else{
