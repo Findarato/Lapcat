@@ -115,30 +115,6 @@ ul,li{
  *  
  */
 
-a,a:hover,a:visited,a:focus { color: #5F3E12; text-decoration:none; font-weight:bold;}
-a:hover{text-decoration: underline;}
-
-h1,h2,h3{
-	margin:2px;
-	color: #5F3E12;
-	text-align: left;
-}
-h1 { 
-	font-family: 'Buda' , arial, serif; 
-	font-size: 30px;
-	font-weight: bold;
-	color:#5F3E12;
-}
-h2 {
-	font-family: 'Dancing Script' , sans-serif; 
-	font-size: 28px;
-	color: #5F3E12;
-}
-	
-h3 {
-	font-family: 'Dancing Script' , sans-serif;
-	font-size: 26px;
-}
 .floatingHeader{
 	position:absolute;
 	left:100px;
@@ -161,11 +137,24 @@ h3 {
 	-webkit-border-radius:10px;
 }
 
+body,html {
+	margin:0px;
+	padding:0px;
+	height:100%;
+	color:#000;
+	background-color:#FFF;
+}
+a,a:hover,a:visited,a:focus { color: #5F3E12; text-decoration:none; font-weight:bold;}
+a:hover{text-decoration: underline;}
 .color1{
 	background: #ccffff	
 }
 .color2{
-	background: #ddeecc;
+	background: rgb(221, 238, 204);
+}
+.color260{
+	background: rgba(221, 238, 204);
+	background: rgba(221, 238, 204,.60);
 }
 .color2 a{
 	color: #1F1F1F;
@@ -180,18 +169,76 @@ h3 {
 .color4{
 	background:#556644;
 }
+.color4Border1{
+	border:1px solid #556644;
+}
 .color5{
 	color:#F1F1F1;
-	background:rgba(95, 62, 18,1);
+	background:rgb(95, 62, 18);
 }
 .color560{
 	color:#F1F1F1;
+	background:rgb(95, 62, 18);
 	background:rgba(95, 62, 18,.6);
 }
-.color560 a:hover,.color5 a:hover,.color560:hover,.color5:hover{
+.color560 a:hover,.color5 a:hover,.color560:hover,.color5:hover,.color560 a{
 	color:#F1F1F1;
 }
+.color5Soft{
+	background: rgba(95, 62, 18,1); /* Old browsers */
+	background: -moz-linear-gradient(left,  rgb(38,24,6) 5%, rgb(95,62,18) 20%, rgb(95,62,18) 60%, rgb(95,62,18) 80%, rgb(38,24,6) 95%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(5%,rgb(38,24,6)), color-stop(20%,rgb(95,62,18)), color-stop(60%,rgb(95,62,18)), color-stop(80%,rgb(95,62,18)), color-stop(95%,rgb(38,24,6))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  rgb(38,24,6) 5%,rgb(95,62,18) 20%,rgb(95,62,18) 60%,rgb(95,62,18) 80%,rgb(38,24,6) 95%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  rgb(38,24,6) 5%,rgb(95,62,18) 20%,rgb(95,62,18) 60%,rgb(95,62,18) 80%,rgb(38,24,6) 95%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  rgb(38,24,6) 5%,rgb(95,62,18) 20%,rgb(95,62,18) 60%,rgb(95,62,18) 80%,rgb(38,24,6) 95%); /* IE10+ */
+	background: linear-gradient(left,  rgb(38,24,6) 5%,rgb(95,62,18) 20%,rgb(95,62,18) 60%,rgb(95,62,18) 80%,rgb(38,24,6) 95%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#261806', endColorstr='#261806',GradientType=1 ); /* IE6-9 */
 
+/* http://www.colorzilla.com/gradient-editor/#261806+5,5f3e12+20,5f3e12+60,5f3e12+80,261806+95;Custom */
+}
+
+
+h1,h2,h3{
+	margin:2px;
+	color: #5F3E12;
+	text-align: left;
+}
+h1 { 
+	font-family: 'Buda' , arial, serif; 
+	font-size: 30px;
+	font-weight: bold;
+	color:#5F3E12;
+}
+h2 {
+	font-family: 'Dancing Script' , sans-serif; 
+	font-size: 28px;
+	color: #5F3E12;
+}
+	
+h3 {
+	font-family: 'Dancing Script' , sans-serif;
+	font-size: 26px;
+}
+.pageBranding{
+	position:absolute;
+	color:rgb(0,0,0);
+	top:14px;
+	left:-22px;
+	font-weight:bold;
+	height:18px;
+	width:90px;
+	text-shadow: rgba(100,100,100,0.5) 0px 1px 0px;
+}
+
+.pageBranding a,.pageBranding a:hover{
+	color:rgb(255,255,255);
+	height:14px;
+	font-size: 12px;
+	text-align:center;
+	margin:2px;
+	display:block;
+	text-decoration:none;
+}
 .roundAll2 {
 	border-radius:2px;
 	-moz-border-radius:2px;
@@ -536,7 +583,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	font-family: 'WebSymbolsRegular';
 }
 
-.blogEntryDescription a[href*="catalog.lapcat.org"]:after{
+.blogEntryDescription a[href*="catalog.lapcat.org"]:after,.rssDescription a[href*="catalog.lapcat.org"]:after{
 	font-size:10px;
 	content:"  ";
 	font-family: 'IconicFill';
@@ -704,8 +751,9 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 
 .rssTitle,.NUTITLE{
-	font-size:16px;
-	width:510px;
+	font-size:18px;
+	display:block;
+	margin-bottom:5px;
 }
 .rssDate{
 	position:absolute;
