@@ -13,6 +13,15 @@
 			<aside class="grid_8">
 				{include file="../sections/topBooks_teen.tpl"}
 				{include file="../sections/delicious.tpl"}
+					<a href="../about/meetingroomform.pdf">meeting room reservation form</a>
+	<a href="../about/mission.html">mission statement</a>
+	<a href="about/mobilelibraryschedule.pdf">mobile library</a>
+	<a href="../about/vision.html">vision</a>
+	<a href="../about/librarybrochure.pdf">welcome brochure</a>
+		<a href="../about/Meeting.pdf">meeting room policy</a>
+			<a href="../about/applicationform.pdf">employment application form</a>
+	<a href="../about/membership form.pdf">friends application form</a>
+	<a href="../about/material.html">material selection policy</a>
 				<div class="geekOfTheWeek insideBoxShadow roundAll3">
 					Geek of the Week Photo
 				</div>
