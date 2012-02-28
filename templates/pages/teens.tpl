@@ -32,6 +32,7 @@
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
 	<script src="js/libs/countdown/jquery.countdown.js"></script>
+	<script src="js/libs/Flux-Slider/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
 	<script defer src="js/teen.js"></script>
 </body>
 </html> 

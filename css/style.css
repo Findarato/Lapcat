@@ -151,7 +151,13 @@ h3 {
 
 /*  End of theme related CSS */
 
+#topBooksTeenContainer img{
+	width:300px;
+}
 
+#topBooksTeenContainer .fluxslider .image1,#topBooksTeenContainer .fluxslider .image2,#topBooksTeenContainer .fluxslider .image1 div{
+	background-size:300px 400px;
+}
 .siteMap{
 	height:200px;
 	overflow:auto;
@@ -424,18 +430,15 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 .mediumSection form select{
 	position:absolute;
-	bottom:15px; 
-	left:348px;
-	width:100px;
-	padding:3.5px;
-	height:30px;
-	width:100px;
+	top:10px; 
+	left:335px;
+	padding:5px;
+	
 }
 .mediumSection form input{
 	position:absolute;
-	bottom:15px;
-	left:30px;
-	height:30px;
+	top:10px;
+	left:5px;
 	width:300px;
 	padding:5px;
 }
