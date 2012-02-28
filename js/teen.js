@@ -19,3 +19,16 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
       if ( i == 14 ) return false;
     });
   });
+
+
+
+
+window.f = new flux.slider('#topBooksTeenContainer', {
+					autoplay: true,
+					pagination: true,
+					captions:false,
+					height:400,
+					width:300,
+					transitions:["dissolve","blocks","swipe","blocks2"]
+				});		
+

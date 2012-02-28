@@ -270,17 +270,16 @@ function getDeliciousFeed(uri,target){
 	})
 	
 }
-function get_rss_feed(uri,target) {
+function wowbraryImageLinks(url,target){
+	
 	if(target===undefined)
-		var sCC = $("#soonCalendarContainer")
-	else
-		var sCC = target;
+		return -1;
 
-	//clear the content in the div for the next feed.
-	sCC.empty();
- 	if(uri===undefined){
- 		uri="http://engagedpatrons.org/RSS4LE.cfm?SiteID=9267&BranchID=";
- 	}
+ 	if(uri===undefined)
+ 		uri="http://www.wowbrary.org/rss.aspx?l=8711&c=GEN";
+
+
+	target.empty();
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":uri}, function(d) {
  		
@@ -303,13 +302,145 @@ function get_rss_feed(uri,target) {
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"rssItem",css:{}})
 				.html(
-					function(){
+					function(){ 
 						if(contentEncoded.length>1){
-							contentEncoded = $(contentEncoded)
-							contentEncoded.find(".NUBUTTON").removeClass("NUBUTTON").addClass("roundAll3 insideBoxShadow color560").css({"text-decoration":"none","display":"inline-block","margin":"2px","padding":"5px"})
-							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("")
+							contentEncoded = $(contentEncoded);
+							contentEncoded.find(".NUBUTTON").removeClass("NUBUTTON").addClass("roundAll3 insideBoxShadow color560").css({"text-decoration":"none","display":"inline-block","margin":"2px","padding":"5px"});
+							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("");
 							
+							contentEncoded.find('a').find("img").each(function(i,links){
+								alert(links.src)
+							/*
+								links = $(links)
+								if(links.find("img")){
+									alert(links.find("img").attr("src"))
+								}
+							*/	
+							})
+							
+							
+							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
+							
+						}else{
+							return 	$("<div/>",{css:{"overflow":"hidden"}})
+						.html(
+							$("<div/>",{"class":"rssTitle"})
+								.html(
+									$("<a/>",{"href":link,"html":title,"target":"_blank"})
+								)
+						)
+						.append(
+							$("<date/>",{"class":"rssDate",html:pubDate})
+						)
+						.append(
+							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
+						)
+						}
+						
+					}
+					
+				)
+				
+			//put that feed content on the screen!
+			sCC.append(html);  
+		});
+	});
+	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
+	$.get("ajax/rss.php",{"url":uri}, function(d) {
+ 		
+		//find each 'item' in the file and parse it
+		$(d).find('item').each(function() {
+ 			totalRssItems++;
+			//name the current found item this for this particular loop run
+			var $item = $(this);
+			// grab the post title
+			var title = $item.find('title').text();
+			// grab the post's URL
+			var link = $item.find('link').text();
+			// next, the description
+			var description = $item.find('description').text();
+			//don't forget the pubdate
+			var pubDate = $item.find('dc\:date').text();
+			
+ 			var contentEncoded = $item.find('content_encoded').text();
+ 			
+			// now create a var 'html' to store the markup we're using to output the feed to the browser window
+			html = $("<div/>",{"class":"rssItem",css:{}})
+				.html(
+					function(){ 
+						if(contentEncoded.length>1){
+							contentEncoded = $(contentEncoded);
+							contentEncoded.find(".NUBUTTON").removeClass("NUBUTTON").addClass("roundAll3 insideBoxShadow color560").css({"text-decoration":"none","display":"inline-block","margin":"2px","padding":"5px"});
+							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("");
+							
+							contentEncoded.find('a').find("img").each(function(i,links){
+								alert(links.src)
+							/*
+								links = $(links)
+								if(links.find("img")){
+									alert(links.find("img").attr("src"))
+								}
+							*/	
+							})
+							
+							
+							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
+							
+						}else{
+							return 	$("<div/>",{css:{"overflow":"hidden"}})
+						.html(
+							$("<div/>",{"class":"rssTitle"})
+								.html(
+									$("<a/>",{"href":link,"html":title,"target":"_blank"})
+								)
+						)
+						.append(
+							$("<date/>",{"class":"rssDate",html:pubDate})
+						)
+						.append(
+							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
+						)
+						}
+						
+					}
+					
+				)
+				
+			//put that feed content on the screen!
+			sCC.append(html);  
+		});
+	});
+}
+function get_rss_feed(uri,target) {
+	if(target===undefined)
+		var sCC = $("#soonCalendarContainer")
+	else
+		var sCC = target;
 
+	//clear the content in the div for the next feed.
+	sCC.empty();
+ 	if(uri===undefined){
+ 		uri="http://engagedpatrons.org/RSS4LE.cfm?SiteID=9267&BranchID=";
+ 	}
+	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
+	$.get("ajax/rss.php",{"url":uri}, function(d) {
+ 		
+		//find each 'item' in the file and parse it
+		$(d).find('item').each(function() {
+ 			
+			//name the current found item this for this particular loop run
+			var $item = $(this);
+ 			var contentEncoded = $item.find('content_encoded').text();
+ 			
+			// now create a var 'html' to store the markup we're using to output the feed to the browser window
+			html = $("<div/>",{"class":"rssItem",css:{}})
+				.html(
+					function(){ 
+						if(contentEncoded.length>1){
+							contentEncoded = $(contentEncoded);
+							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("");
+													
+							
 							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
 							
 						}else{

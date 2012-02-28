@@ -2,7 +2,7 @@
 	<div class="grid_6 leftNav" >
 		<!-- Left Colmn -->
 		<div class="smallSection">
-			<a class="downloadsNav smoothAnimate fixMargin" href="downloads.html" ></a>
+			<a class="downloadsNav smoothAnimate fixMargin" href="downloads.php" ></a>
 			<div class="sectionText">
 				Downloads
 			</div>
