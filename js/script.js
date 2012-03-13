@@ -533,8 +533,10 @@ function get_blog_feed() {
 		
 		$(".blogEntryDescription a").css({"display":"inline"})
 		$.each($(".blogEntryDescription").find('a>img'),function(i,item){
-			var parent =$(item).parent();
-			if($(item).attr("src")==parent.attr("href")){
+			me = $(item);
+			var parent = me.parent();
+			me.css("margin","5px")
+			if(me.attr("src")==parent.attr("href")){
 				parent.addClass("noAfterImage");
 			}
 		});
