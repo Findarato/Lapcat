@@ -500,12 +500,6 @@ function get_blog_feed() {
 $(document).ready(function(){
 		if($("#blogBox")){get_blog_feed();}
 		uri = window.location.toString();
-		newWidth = $(".mediumSection").width();
-		$(".surface .images,.images .images1,.images .images2,.fluxslider").css({"width":newWidth,"background-size":"cover"});
-		$(window).resize(function(){
-			newWidth = $(".mediumSection").width();
-			$(".surface .images,.images .images1,.images .images2,.fluxslider").css({"width":newWidth,"background-size":"cover"});
-		})
 		if(uri.search(/research/i)>0){// this is the research page
 			getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
 		}else{

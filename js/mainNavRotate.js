@@ -3,9 +3,11 @@
  * 
  */
 
-window.f = new flux.slider('#middleScrollContainer', {
-					autoplay: true,
-					pagination: true,
-					captions:false,
-					transitions:["dissolve","blocks","swipe","blocks2"]
-				});		
+newWidth = $(".mediumSection").width();
+$(window).load(function(){
+	$('.flexslider').flexslider({
+		controlNav: true,
+		directionNav: false,
+		controlsContainer: ".flexControll",
+	});
+});
