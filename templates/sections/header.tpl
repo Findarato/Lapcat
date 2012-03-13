@@ -12,32 +12,32 @@
 	</nav>
 	<nav class="secondNav color2" style="width:100%">
 		<div class="t topNav" style="text-align:center;margin:0 auto;">
-			<div class="td ">
+			<div class="td  ">
 				<div class="menuSelect smoothAnimate">
 					<a href="https://catalog.lapcat.org/patroninfo">My Account</a>
 				</div>
 			</div>
-			<div class="td ">
+			<div class="td  ">
 				<div class="menuSelect smoothAnimate">
 					<a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
 				</div>
 			</div>
-			<div class="td ">
+			<div class="td largeNav">
 				<div class="menuSelect smoothAnimate">
 					<a href="../teens.php">Teens</a>
 				</div>
 			</div>
-			<div class="td ">
+			<div class="td largeNav">
 				<div class="menuSelect smoothAnimate">
 					<a href="../sitemap.php">Children</a>
 				</div>
 			</div>
-			<div class="td ">
+			<div class="td  ">
 				<div class="menuSelect smoothAnimate">
 					<a href="../research.php">Research</a>
 				</div>
 			</div>
-			<div class="td ">
+			<div class="td  ">
 				<div class="menuSelect smoothAnimate">
 					<a href="../hours.php">Hours</a>
 				</div>
