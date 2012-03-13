@@ -162,29 +162,26 @@ h3 {
 	background-size:300px 400px;
 }
 .siteMap{
-	height:200px;
-	overflow:auto;
-	
+	height:auto;
 }
 
 .siteMap a{
-	display:inline-block;
+	display:block;
 	padding:3px;
 	margin:5px;
-	border: solid 1px #000;
 	white-space: nowrap;
 }
 
 
-@media only screen and (min-width: 400px) { /* this is for browsers that are cool */
+@media only screen and (min-width: 600px) { /* this is for browsers that are cool */
 	.siteMap{
-		-moz-column-count: 4; 
+		-moz-column-count:3;
 		-moz-column-gap: 1em; 
 		-moz-column-rule: 4px groove rgba(0,0,0,.2); 
-		-webkit-column-count: 4; 
+		-webkit-column-count: 3; 
 		-webkit-column-gap: 1em; 
 		-webkit-column-rule: 4px groove rgba(0,0,0,.2);
-		column-count: 4; 
+		column-count: 3; 
 		column-gap: 1em; 
 		column-rule: 4px groove rgba(0,0,0,.2);
 	}
@@ -531,23 +528,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 
 /*	rotating middle section code End */
-
-.soonCalnedarInfoTriangle{
-	content:"";
-	width: 0;
-	height: 0;
-	border-top: 60px solid transparent;
-	border-left: 15px solid rgb(192,251,254);
-	border-bottom: 60px solid transparent;
-}
-.soonCalendar ul li,.soonCalendar ul{
-	list-style: none outside none;
-	list-style-position:inside;
-	display:inline-block;
-	vertical-align:top;
-	margin:0px;
-	padding:0px;
-}
 
 .twitterBox,.twitterContainer,.deliciousBox{
 	position:relative;

@@ -149,12 +149,15 @@
 	.surface .image1,.surface .image2{
 		height:100px;
 		width:100px;
-		background-size:100% 100%;
+		background-size:cover;
 		overflow:hidden;
 	}
 	.surface .images{
 		overflow:hidden;
 		width:98%;
+	}
+	.surface .images,.images .images1,.images .images2,.fluxslider{
+		width:200px;
 	}
 	
 }

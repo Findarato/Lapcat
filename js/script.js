@@ -252,10 +252,13 @@ function getDeliciousFeed(uri,target){
 						.html(
 							$("<div/>",{"class":"delItem"})
 								.html(
+									$("<img/>",{"class":"delFavIcon","src":"http://delicious.com/favicon.ico","alt":"Website Favorite Icon"})
+									/*
 									$("<img/>",{"class":"delFavIcon","src":"http://"+getDomain(link)+"/favicon.ico","alt":"Website Favorite Icon"})
 									.error(function(){
 										$(this).attr("src","http://delicious.com/favicon.ico");
 									})
+									*/
 								)
 								.append(
 									$("<a/>",{"href":link,"html":title,"target":"_blank",css:{"height":"16px"}})
@@ -310,77 +313,7 @@ function wowbraryImageLinks(url,target){
 							
 							contentEncoded.find('a').find("img").each(function(i,links){
 								alert(links.src)
-							/*
-								links = $(links)
-								if(links.find("img")){
-									alert(links.find("img").attr("src"))
-								}
-							*/	
-							})
-							
-							
-							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
-							
-						}else{
-							return 	$("<div/>",{css:{"overflow":"hidden"}})
-						.html(
-							$("<div/>",{"class":"rssTitle"})
-								.html(
-									$("<a/>",{"href":link,"html":title,"target":"_blank"})
-								)
-						)
-						.append(
-							$("<date/>",{"class":"rssDate",html:pubDate})
-						)
-						.append(
-							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
-						)
-						}
-						
-					}
-					
-				)
-				
-			//put that feed content on the screen!
-			sCC.append(html);  
-		});
-	});
-	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
-	$.get("ajax/rss.php",{"url":uri}, function(d) {
- 		
-		//find each 'item' in the file and parse it
-		$(d).find('item').each(function() {
- 			totalRssItems++;
-			//name the current found item this for this particular loop run
-			var $item = $(this);
-			// grab the post title
-			var title = $item.find('title').text();
-			// grab the post's URL
-			var link = $item.find('link').text();
-			// next, the description
-			var description = $item.find('description').text();
-			//don't forget the pubdate
-			var pubDate = $item.find('dc\:date').text();
-			
- 			var contentEncoded = $item.find('content_encoded').text();
- 			
-			// now create a var 'html' to store the markup we're using to output the feed to the browser window
-			html = $("<div/>",{"class":"rssItem",css:{}})
-				.html(
-					function(){ 
-						if(contentEncoded.length>1){
-							contentEncoded = $(contentEncoded);
-							contentEncoded.find(".NUBUTTON").removeClass("NUBUTTON").addClass("roundAll3 insideBoxShadow color560").css({"text-decoration":"none","display":"inline-block","margin":"2px","padding":"5px"});
-							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("");
-							
-							contentEncoded.find('a').find("img").each(function(i,links){
-								alert(links.src)
-							/*
-								links = $(links)
-								if(links.find("img")){
-									alert(links.find("img").attr("src"))
-								}
-							*/	
+
 							})
 							
 							
@@ -568,10 +501,10 @@ $(document).ready(function(){
 		if($("#blogBox")){get_blog_feed();}
 		uri = window.location.toString();
 		newWidth = $(".mediumSection").width();
-		$(".surface .images,.images .images1,.images .images2,.fluxslider").css("width",newWidth);
+		$(".surface .images,.images .images1,.images .images2,.fluxslider").css({"width":newWidth,"background-size":"cover"});
 		$(window).resize(function(){
 			newWidth = $(".mediumSection").width();
-			$(".surface .images,.images .images1,.images .images2,.fluxslider").css("width",newWidth);
+			$(".surface .images,.images .images1,.images .images2,.fluxslider").css({"width":newWidth,"background-size":"cover"});
 		})
 		if(uri.search(/research/i)>0){// this is the research page
 			getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
@@ -590,7 +523,6 @@ $(document).ready(function(){
 			}
 				
 		}
-		$("#MA").trigger("mouseenter");
 		
         $("#twitterContainer").tweet({
             "username": "lpcpls",
