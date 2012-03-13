@@ -1,19 +1,19 @@
 <nav class="navDisplay">
 	<div class="grid_6 leftNav" >
 		<!-- Left Colmn -->
-		<div class="smallSection">
-			<a class="downloadsNav smoothAnimate fixMargin" href="downloads.php" ></a>
+		<div class="smallSection events">
+			<a class="eventsNav smoothAnimate fixMargin" href="http://engagedpatrons.org/Events.cfm?SiteID=9267" ></a>
 			<div class="sectionText">
-				Downloads
+				Events
 			</div>
 		</div>
-		<div class="smallSection">
-			<a class="greatPicksNav smoothAnimate fixMargin" href="greatpicks.php"></a>
+		<div class="smallSection hours">
+			<a class="hoursNav smoothAnimate fixMargin" href="hours.php" ></a>
 			<div class="sectionText">
-				Great Picks!
+				Hours
 			</div>
 		</div>
-		<div class="smallSection">
+		<div class="smallSection research">
 			<a class="researchNav smoothAnimate fixMargin" href="research.php" ></a>
 			<div class="sectionText">
 				Research
@@ -50,24 +50,24 @@
 	</div>
 	<div class="grid_6 rightNav" >
 		<!-- Right Colmn -->
-		<div class="smallSection">
+		<div class="smallSection genealogy">
 			<a class="genealogyNav smoothAnimate fixMargin" href="genealogy.php" ></a>
 			<div class="sectionText">
 				Genealogy
 			</div>
 		</div>
-		<div class="smallSection">
-			<a class="eventsNav smoothAnimate fixMargin" href="http://engagedpatrons.org/Events.cfm?SiteID=9267" ></a>
+		<div class="smallSection Downloads">
+			<a class="downloadsNav smoothAnimate fixMargin" href="downloads.php" ></a>
 			<div class="sectionText">
-				Events
+				Downloads
 			</div>
 		</div>
-		<div class="smallSection">
-			<a class="hoursNav smoothAnimate fixMargin" href="hours.php" ></a>
+		<div class="smallSection greatPicks">
+			<a class="greatPicksNav smoothAnimate fixMargin" href="greatpicks.php"></a>
 			<div class="sectionText">
-				Hours
+				Great Picks!
 			</div>
-		</div>
+		</div>		
 	</div>
 </nav>
 

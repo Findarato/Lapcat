@@ -35,7 +35,7 @@
 	left:auto;
 }
 .mediumSection form input{
-	width:62%;
+	width:60%;
 }
 .navDisplay .grid_12,.grid_22{
 	width:64%;
@@ -124,7 +124,7 @@
 /*	rotating middle section code End*/
 
 
-@media only screen and (max-width: 734px) {
+@media only screen and (max-width: 734px) { /* This seems to be the size of my phone*/
 	.topNav h1{
 		font-size:22px;
 	}	
@@ -137,7 +137,26 @@
 	.subPageCatalogSearch{
 		display:none;
 	}
-
+	.research,.events,.hours{
+		display:none;
+	}
+	.navDisplay .grid_12{
+		width:98%;
+	}
+	.mediumSection form input,.mediumSection form select{
+		width:45%;
+	}
+	.surface .image1,.surface .image2{
+		height:100px;
+		width:100px;
+		background-size:100% 100%;
+		overflow:hidden;
+	}
+	.surface .images{
+		overflow:hidden;
+		width:98%;
+	}
+	
 }
 @media only screen and (max-width: 400px) {
 	
