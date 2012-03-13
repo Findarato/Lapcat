@@ -9,5 +9,6 @@ $(window).load(function(){
 		controlNav: true,
 		directionNav: false,
 		controlsContainer: ".flexControll",
+		slideshowSpeed: 7000
 	});
 });

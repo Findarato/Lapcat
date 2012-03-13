@@ -122,7 +122,13 @@
 }
 
 /*	rotating middle section code End*/
-
+.flexslider img{
+	width:100%;
+	height:250px;
+}
+.flexslider{
+	overflow:hidden;
+}
 
 @media only screen and (max-width: 734px) { /* This seems to be the size of my phone*/
 	.topNav h1{

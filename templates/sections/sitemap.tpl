@@ -3,24 +3,22 @@
 	<a href="about.html">About</a>
 	<a href="teens.php">Teens</a>
 	<a href="ask.html">Ask a Librarian</a>
+	<a href="greatpicks.php">Great Picks</a>
 	<a href="/requestquestion.html">Request a Purchase</a>
 	<a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a>
 	<a href="/hours.php">Hours and Locations</a>
-	<a href="../about/board.html">board of trustees</a>
-	<a href="../about/doorstepdeliveryflier.pdf">doorstep delivery</a>
-	<a href="https://catalog.lapcat.org/selfreg~S12">ecards</a>
+	<a href="../about/board.html">Board of Trustees</a>
+	<a href="../about/doorstepdeliveryflier.pdf">Doorstep Delivery</a>
+	<a href="https://catalog.lapcat.org/selfreg~S12">Ecards</a>
 	<a href="../employment.html">Jobs</a>
 	<a href="ask.html">Ask a Librarian</a>
 	<a href="http://laportelibrary.blogspot.com/">Blog</a>
 	<a href="http://catalog.lapcat.org/">Catalog</a>
 	<a href="http://catalog.lapcat.org:2090/">Childrens</a>
-	<a href="edresearch.php">educators</a>
-	<a href="../kidsfun.php">fun</a>
-	<a href="../kidsresearch.php">research</a>
-	<a href="../about/friends.html">friends of the library</a>
-	
-
-
+	<a href="edresearch.php">Educators</a>
+	<a href="../kidsfun.php">Fun</a>
+	<a href="../kidsresearch.php">Research</a>
+	<a href="../about/friends.html">Friends of The Library</a>
 </div>
 <div class="clear"></div>
 <p class="copyright">

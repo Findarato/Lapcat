@@ -29,7 +29,7 @@ window.f = new flux.slider('#topBooksTeenContainer', {
 					pagination: true,
 					captions:false,
 					height:400,
-					width:300,
+					width:295,
 					transitions:["dissolve","blocks","swipe","blocks2"]
 				});		
 
