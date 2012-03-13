@@ -128,12 +128,14 @@
 <div class="blogBox roundAll3" style="min-height:310px;">
 	<div class="roundAll3 titleElement color3"><a href="{$locationLink}" title="View {$location} in Google Maps">{$location}</a></div>
 	<div id="locationContainerBox" class="insideBoxShadow roundAll3 containerBox" style="min-height:330px">
-		<div class="" style="width:40%;float:left">
-			<div>{$address}</div>
-			<div>{$city}, {$state} {$zip}</div>
-			<div>{$phone}</div>
-			<div><a href="mailto:{$email}" title="Email address">{$email}</a></div>
-		<div class="">
+		<div class="locationBoxInfo">
+			<div class="locationBoxInfoLocation">
+				<div>{$address}</div>
+				<div>{$city}, {$state} {$zip}</div>
+				<div>{$phone}</div>
+				<div><a href="mailto:{$email}" title="Email address">{$email}</a></div>
+			</div>
+		<div class="locationBoxInfoHours">
 			<div>Sun: {$time0}</div>
 			<div>Mon: {$time1}</div>
 			<div>Tue: {$time2}</div>
@@ -143,8 +145,8 @@
 			<div>Sat: {$time6}</div>
 		</div>
 		</div>
-		<div class="" style="width:60%;float:left">
-			<a href="{$locationLink}" class="roundAll3 color3 insideBoxShadow outsideBoxShadow map" style="display:block;background-size:cover;margin-right:5px;height:300px;width:100%;background:url('http://maps.googleapis.com/maps/api/staticmap?center={$mapLoc}&zoom=14&size=355x300&maptype=roadmap&markers=icon:http://dev.lapcat.org/mapLogo.png|label:S|{$mapLoc}&sensor=false')" title="View {$location} in Google Maps"></a>
+		<div class="locationBoxMap">
+			<a href="{$locationLink}" class="roundAll3 color3 insideBoxShadow outsideBoxShadow map" style="max-width:400px;display:block;background-size:cover;margin-right:5px;height:300px;width:100%;background:url('http://maps.googleapis.com/maps/api/staticmap?center={$mapLoc}&zoom=14&size=400x300&maptype=roadmap&markers=icon:http://dev.lapcat.org/mapLogo.png|label:S|{$mapLoc}&sensor=false')" title="View {$location} in Google Maps"></a>
 		</div>
 	</div>
 </div>

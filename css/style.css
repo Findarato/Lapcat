@@ -60,6 +60,9 @@ a:hover{text-decoration: underline;}
 	color:#F1F1F1;
 	background:rgb(95, 62, 18);
 }
+.color5TextGlow{
+	text-shadow: rgb(95, 62, 18) 0em 0em 0.1em;
+}
 .color560{
 	color:#F1F1F1;
 	background:rgb(95, 62, 18);
@@ -221,13 +224,12 @@ h3 {
 .floatingHeader{
 	position:absolute;
 	left:100px;
-	right:100px;
 	top:10px;
 	opacity:1;
 	z-index: 10;
 	color:#1f1f1f;
 	font-size:40px;
-	text-shadow: black 0em 0em 0.1em;
+	font-weight:bold;
 }
 
 .roundAll2 {
@@ -290,6 +292,7 @@ h3 {
 	height:120px;
 	padding:3px 3px 3px 10px;
 	margin:0 5px 10px 5px;
+	background-size:cover;
 }
 .subPageCatalogSearch{
 	position:absolute;
@@ -320,6 +323,34 @@ h3 {
 
 /* Full Screen */
 
+/* Teen Section */
+
+.countDownBox{
+	height:150px;
+	width:310px;
+	margin-bottom:10px;
+	background-image:url("/images/the-hunger-games-book-cover2.jpg");
+	background-size:100% 100%;
+}
+.countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
+	margin-left:50%;
+	padding:3px;
+	color:#FFF;
+	white-space:nowrap;
+	font-family: 'Hunger Games' , arial, serif; 
+	font-size:19px;
+}
+.countDownDays{
+	padding-top:3px;
+}
+.locationBoxInfo{
+	width:40%;
+	float:left
+}
+.locationBoxMap{
+	width:60%;
+	float:left
+}
 .fLeft{
 	float:left;
 }
@@ -559,7 +590,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	padding:30px 5px 5px 5px;
 }
 .blogItem{
-	width:620px;
+	width:100%;
 	padding:3px;
 }
 .blogItem div{
@@ -583,6 +614,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 .blogEntryDescription{
 	width:600px;
+	overflow:hidden;
 }
 .soonCalendar ul{
 	margin:15px;

@@ -43,6 +43,7 @@
 .grid_6,.grid_12,.grid_22,.grid_8,.grid_16{
 	margin-left:1%;
 	margin-right:1%;
+	width:98%;
 }
 .navDisplay .rightNav{
 	float:none;
@@ -82,6 +83,22 @@
 	float:left;
 }
 
+/* Hours and Locations */
+
+.locationBoxInfo{
+	width:100%;
+	float:none;
+}
+.locationBoxInfoLocation,.locationBoxInfoHours{
+	display:inline-block;
+	vertical-align:top;
+	margin:3px;
+}
+.locationBoxMap{
+	width:100%;
+	float:none;
+}
+
 /*	rotating middle section code Start*/
 
 .surface .image1,.surface .image2{
@@ -90,7 +107,19 @@
 	background-size:100% 100%;
 }
 
-
+.floatingHeader{
+	position:absolute;
+	left:10%;
+	top:10px;
+	opacity:1;
+	z-index: 10;
+	color:#1f1f1f;
+	font-size:40px;
+}
+.countDownBox{
+	width:100%;
+	max-width:350px;
+}
 
 /*	rotating middle section code End*/
 
@@ -105,12 +134,16 @@
 	.topNav h4{
 		font-size:18px;
 	}
+	.subPageCatalogSearch{
+		display:none;
+	}
+
 }
 @media only screen and (max-width: 400px) {
 	
 	.grid_6,.grid_12,.grid_22,section{
-		width:100%;
-		margin-left:5px;
-		margin-right:5px;
+		width:98%;
+		margin-left:1%;
+		margin-right:1%;
 	}	
 }

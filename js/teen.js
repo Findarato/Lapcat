@@ -11,7 +11,8 @@ $("#cntDwn")
 $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
   {
 	id: '62092835@N08',
-    format: "json"
+    format: "json",
+    tags:"teens"
   },
   function(data) {
   	$.each(data.items, function(i,item){
