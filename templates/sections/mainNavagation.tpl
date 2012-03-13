@@ -36,15 +36,17 @@
 			</div>
 		</div>
 		<!-- Middle Colmn -->
-		<div id="middleSectionContainer" class="middleSection " style="text-align:center;position:relative;">
+		<div id="middleSectionContainer" class="middleSection " style="position:relative;">
 			<div class="" id="middleSectionScrollContainer" style="position:absolute;top:0px;left:0px;width:100%"></div>
 			<div class="smoothAnimate flexslider" id="middleScrollContainer">
 				<ul class="slides">
 					<li>
-						<a href="http://laportelibrary.org"><img src="/images/rotate1.jpg" alt="" title="Cool 1"/></a>		
+						<a href="http://laportelibrary.org"><img src="/images/rotate1.jpg" alt="" title="Cool 1"/></a>
+						 <p class="flex-caption">Let the Dark Side control you!</p>
 					</li>
 					<li>
-						<a href="http://laportelibrary.org"><img src="/images/rotate2.jpg" alt="" title="Cool 2"/></a>		
+						<a href="http://laportelibrary.org"><img src="/images/rotate2.jpg" alt="" title="Cool 2"/></a>
+						<p class="flex-caption">Caption 2!</p>		
 					</li>
 					<li>
 						<a href="http://laportelibrary.org"><img src="/images/rotate3.jpg" alt="" title="Cool 3"/></a>		
