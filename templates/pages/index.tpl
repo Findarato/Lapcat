@@ -28,7 +28,8 @@
 	<!--! end of #container -->
 	
 	{include file="../sections/footerjs.tpl"}
-	<script src="js/libs/Flux-Slider/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/js/libs/FlexSlider/flexslider.css" type="text/css">
+	<script src="js/libs/FlexSlider/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
 	<script defer src="js/mainNavRotate.js"></script>
 
 </body>

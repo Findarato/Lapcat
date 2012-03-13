@@ -417,11 +417,11 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	padding:3px;
 }
 .geekOfTheWeek{
-	background:url("http://www.laportelibrary.org/images/geek/week04.png");
+	background:url("http://www.laportelibrary.org/images/geek/week04.png") no-repeat;
 	margin:10px 0 10px 0;
 	text-indent:-99999px;
-	width:310px;
 	height:310px;
+	max-width:100%;
 }
 .smallSection,.mediumSection,.middleSection{
 	display:block;
@@ -540,6 +540,9 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	width:100%;
 	background:#FFF;
 	margin-right:10px;
+}
+#greatPicksContainerBox .rssItem img{
+	width:100px;
 }
 .blogBox,.blogContainerBox,.containerBox,.bookBox{
 	position:relative;
