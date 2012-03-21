@@ -1,4 +1,4 @@
-@import url("reset.css")
+@import url("reset.css");
 
 /*  Start of theme related CSS 
  This is the css that will flow around all of the projects to keep them feeling like they are part of a larger collection
@@ -72,7 +72,7 @@ a:hover{text-decoration: underline;}
 	color:#F1F1F1;
 }
 .color5Soft{
-	background: rgba(95, 62, 18,1); /* Old browsers */
+	background: rgb(95, 62, 18); /* Old browsers */
 	background: -moz-linear-gradient(left,  rgb(38,24,6) 5%, rgb(95,62,18) 20%, rgb(95,62,18) 60%, rgb(95,62,18) 80%, rgb(38,24,6) 95%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, right top, color-stop(5%,rgb(38,24,6)), color-stop(20%,rgb(95,62,18)), color-stop(60%,rgb(95,62,18)), color-stop(80%,rgb(95,62,18)), color-stop(95%,rgb(38,24,6))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(left,  rgb(38,24,6) 5%,rgb(95,62,18) 20%,rgb(95,62,18) 60%,rgb(95,62,18) 80%,rgb(38,24,6) 95%); /* Chrome10+,Safari5.1+ */
@@ -555,6 +555,9 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 
 .blogEntryDescription a{
 	white-space:nowrap;
+}
+.blogEntryDescription iframe{
+	display:none;
 }
 .blogEntryDescription a:after{
 	font-size:10px;
