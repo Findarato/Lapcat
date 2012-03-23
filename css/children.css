@@ -1,0 +1,53 @@
+.wholePage{
+	background: rgb(38,163,255); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: -moz-radial-gradient(88% 11%, circle cover,  rgb(255,255,255) 10%, rgb(38,163,255) 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, 88% 11% center, 0px, center center, 100%, color-stop(10%,rgb(255,255,255)), color-stop(100%,rgb(38,163,255))); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(88% 11%, circle cover,  rgb(255,255,255) 10%,rgb(38,163,255) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(88% 11%, circle cover,  rgb(255,255,255) 10%,rgb(38,163,255) 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(88% 11%, circle cover,  rgb(255,255,255) 10%,rgb(38,163,255) 100%); /* IE10+ */
+	background: radial-gradient(88% 11%, circle cover,  rgb(255,255,255) 10%,rgb(38,163,255) 100%); /* W3C */
+}
+
+.childrenSun{
+	position:absolute;
+	background: url('/images/img.png') no-repeat -63px -4px;
+	left:75%;
+	top:36px;
+	width: 470px;
+	height: 415px;
+	-webkit-animation: spinSun 240s infinite linear;
+	-moz-animation: spinSun 240s infinite linear;
+	-ms-animation: spinSun 240s infinite linear;
+	animation: spinSun 240s infinite linear;
+}
+.childrenGrass{
+	background: url('/images/img.png') 0 -427px;
+	height:130px;
+	width:100%;
+	z-index:1;
+}
+
+.mainArea{
+	position:relative;
+}
+
+@keyframes spinSun {  
+	0% { transform: rotate(0) ;}
+	100% {transform: rotate(360deg) ; }
+}
+
+@-ms-keyframes spinSun {  
+	0% { transform: rotate(0) ;}
+	100% {transform: rotate(360deg) ; }
+}
+
+@-moz-keyframes spinSun {  
+	0% { -moz-transform: rotate(0) ;}
+	100% {-moz-transform: rotate(360deg) ; }
+}
+
+@-webkit-keyframes spinSun {
+	0% { -webkit-transform: rotate(0) ;}
+	100% {-webkit-transform: rotate(360deg) ; }
+}
