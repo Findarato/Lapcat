@@ -1,6 +1,6 @@
 {include file="../sections/html_header.tpl"  title="La Porte County Public Library (Teens)"}
 <body>
-	<div class="wholePage">
+	<div class="wholePage" style="overflow: hidden;">
 		<div class="childrenSun"></div>
 		<div id="container" style="z-index:10" class="container_24">
 			{include file="../sections/header.tpl"}
@@ -11,7 +11,6 @@
 				<section class="grid_16">
 					{include file="../sections/childrenMainSection.tpl"}
 					{include file="../sections/flicker.tpl"}
-					
 				</section>
 				<aside class="grid_8">
 					{*{include file="../sections/catalogSearch.tpl"}*}				
