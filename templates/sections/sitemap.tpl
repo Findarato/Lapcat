@@ -1,4 +1,4 @@
-<div class="roundAll3 siteMap" style="width:100%;margin-bottom:20px;" title="Site Map">
+<div class="roundAll3 siteMap" style="width:100%;margin-bottom:20px;z-index:5;position:relative;" title="Site Map">
 	<a href="https://catalog.lapcat.org/patroninfo">My Account</a>
 	<a href="about.html">About</a>
 	<a href="teens.php">Teens</a>
