@@ -29,7 +29,7 @@
 			</div>
 			<div class="td largeNav">
 				<div class="menuSelect smoothAnimate">
-					<a href="../sitemap.php">Children</a>
+					<a href="../children.php">Children</a>
 				</div>
 			</div>
 			<div class="td  ">
