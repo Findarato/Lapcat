@@ -326,16 +326,24 @@ h3 {
 	height:150px;
 	width:310px;
 	margin-bottom:10px;
-	background-image:url("/images/the-hunger-games-book-cover2.jpg");
+	background-image:url("/images/avengers-cartoon.jpg");
 	background-size:100% 100%;
 }
-.countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
+.countDownContainer{
+	background:rgb(0,0,0);
+	background:rgba(0,0,0,.6);
 	margin-left:50%;
+	height:100%;
+}
+.countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
+	
 	padding:3px;
 	color:#FFF;
 	white-space:nowrap;
-	font-family: 'Hunger Games' , arial, serif; 
+	font-family: '' , arial, serif; 
 	font-size:19px;
+	font-weight:bold;
+
 }
 .countDownDays{
 	padding-top:3px;
