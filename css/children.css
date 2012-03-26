@@ -27,7 +27,15 @@
 	width:100%;
 	z-index:1;
 }
-
+.childrenTree{
+	z-index:2;
+	background:url("/images/tree.png");
+	background: none, url('/images/tree.svg');
+	position:absolute;
+	bottom:30px;
+	left:-50px;
+	height:400px;
+}
 .mainArea{
 	position:relative;
 }

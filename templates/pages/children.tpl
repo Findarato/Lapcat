@@ -14,7 +14,7 @@
 				</section>
 				<aside class="grid_8">
 					{*{include file="../sections/catalogSearch.tpl"}*}				
-					{include file="../sections/countDown.tpl"}
+					{*{include file="../sections/countDown.tpl"}*}
 					{*{include file="../sections/twitter.tpl"}*}
 					{include file="../sections/research_kids.tpl"}
 					{*{include file="../sections/topBooks_teen.tpl"}*}
@@ -29,6 +29,7 @@
 				{include file="../sections/sitemap.tpl"}
 			</footer>
 		</div>
+		<div class="childrenTree"></div>
 		<div class="childrenGrass"></div>
 	</div>
 	<!--! end of #container -->
