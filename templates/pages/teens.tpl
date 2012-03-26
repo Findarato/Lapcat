@@ -7,7 +7,7 @@
 			{* {include file="../sections/soonCalendar.tpl"} *} 
 			<div class="clear"></div>
 			<section class="grid_16">
-				{include file="../sections/flicker.tpl"}
+				{include file="../sections/flicker.tpl" flickerTitle="Community Art" flickerLink="http://www.flickr.com/photos/laportelibrary/tags/teens/"}
 				{*{include file="../sections/mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
