@@ -12,9 +12,6 @@
 			<aside class="grid_8">
 				{include file="../sections/twitter.tpl"}
 				{include file="../sections/delicious.tpl"}
-				<div class="geekOfTheWeek insideBoxShadow roundAll3">
-					Geek of the Week Photo
-				</div>
 			</aside>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
