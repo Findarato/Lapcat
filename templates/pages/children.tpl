@@ -10,7 +10,7 @@
 				<div class="clear"></div>
 				<section class="grid_16">
 					{include file="../sections/childrenMainSection.tpl"}
-					{include file="../sections/flicker.tpl"}
+					{include file="../sections/flicker.tpl" flickerTitle="Community Fun" flickerLink="http://www.flickr.com/photos/laportelibrary/tags/children/"}
 				</section>
 				<aside class="grid_8">
 					{*{include file="../sections/catalogSearch.tpl"}*}				

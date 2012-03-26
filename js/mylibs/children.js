@@ -16,8 +16,21 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   },
   function(data) {
   	$.each(data.items, function(i,item){
-      $("<a/>").css({"background-image":"url("+item.media.m+")"}).attr("href", item.link).appendTo("#flickerPictureBox");
-      if ( i == 29 ) return false;
+      $("<div/>",{"class":"flickrPicture",css:{"display":"inline-block","position":"relative"}})
+      	.html(
+      		$("<div/>",{
+      		"class":"flickrPictureOutline insideBoxShadow",
+      	})
+      			.html(
+      				$("<a/>",{"html":"&nbsp;"})
+      					.css({"background-image":"url("+item.media.m+")"})
+      					.attr({"href":item.link,"title":item.title})	
+      			)
+      			.append(
+      				$("<div/>",{"html":item.title,"css":{"position":"relative","top":"106px","left":"3px","background-color":"white","width":"96%","font-size":"1em","color":"#000","margin-left:":"2%","vertical-align":"middle"}})		
+      			)
+      	)
+      	.appendTo("#flickerPictureBox");
     });
   });
 
