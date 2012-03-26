@@ -25,7 +25,11 @@
 		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
 			{include file="../sections/sitemap.tpl"}
 		</footer>
+
 	</div>
+		<div class="childrenGrass">
+			<div class="childrenTree linearAnimate"></div>
+		</div>	
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
 	<script src="js/libs/countdown/jquery.countdown.js"></script>

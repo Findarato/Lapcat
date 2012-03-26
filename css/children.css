@@ -28,14 +28,6 @@
 	z-index:1;
 	position: relative;
 }
-.childrenTree{
-	z-index:1;
-	
-	background-size:contain;
-	position:absolute;
-	bottom:30px;
-	right:-5%;
-}
 .mainArea{
 	position:relative;
 }
