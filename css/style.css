@@ -189,9 +189,9 @@ h3 {
 	height:400px;
 	width:400px;
 }
-@media only screen and (min-width: 1170px) { /* Large window browsers */
+@media only screen and (min-width: 1170px)  { /* Large window browsers */
 	.childrenTree{
-		background: none, url('/images/tree.svg') no-repeat;
+		background: none,url('/images/tree.svg') no-repeat;
 		height:400px;
 		width:400px;
 	}
@@ -214,6 +214,13 @@ h3 {
 		border: none;
 	}
 	
+}
+@media only screen and (min-width: 1600px) { /* VERY Large window browsers */
+	.childrenTree{
+		background: none,url('/images/tree.svg') no-repeat;
+		height:600px;
+		width:600px;
+	}
 }
 @media only screen and (max-width: 400px) { /* Portrait Phones */
 	.siteMap{
@@ -273,6 +280,7 @@ h3 {
 	.childrenTree{
 		height:350px;
 		width:350px;
+		background: none, url('/images/tree.svg') no-repeat;
 	}
 	.siteMap{
 		width:80%;
