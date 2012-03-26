@@ -19,9 +19,6 @@
 					{include file="../sections/research_kids.tpl"}
 					{*{include file="../sections/topBooks_teen.tpl"}*}
 					{include file="../sections/delicious.tpl"}
-					<div class="geekOfTheWeek insideBoxShadow roundAll3">
-						Geek of the Week Photo
-					</div>
 				</aside>
 				<div class="clear"></div>
 				<section class="grid_24" style="margin-top:10px;margin-right:auto;">
