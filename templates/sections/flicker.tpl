@@ -13,23 +13,22 @@
 		height:100px;
 		width:100px;
 		display:inline-block;
-		-moz-box-shadow: inset 0 0 1px 1px #888;
-		-webkit-box-shadow: inset 0 0 1px 1px#888;
-		box-shadow: inset 0 0 1px 1px #888;
-		-webkit-transition: .3s ease-in;
-		-moz-transition: .3s ease-in;
-		-o-transition: .3s ease-in;
-		transition: .3s ease-in;
+		-webkit-transition: .4s ease;
+		-moz-transition: .4s ease;
+		-o-transition: .4s ease;
+		transition: .4s ease;
 	}
 	.flickerPictureBox a:hover{
-		-moz-box-shadow: inset 0 0 5px 5px #0C717A;
-		-webkit-box-shadow: inset 0 0 5px 5px #0C717A;
-		box-shadow: inset 0 0 5px 5px #0C717A;
+		-webkit-transform:scale(1.5,1.5);
+		-moz-transform:scale(1.5,1.5);
+		-o-transform:scale(1.5,1.5);
+		-ms-transform:scale(1.5,1.5);
+		transform:scale(1.5,1.5);
 	}
 }
 </style>
 <div class="blogBox roundAll3">
-	<div class="flickerTitle roundAll3 titleElement color3"><a href="http://www.flickr.com/photos/62092835@N08" style="height:100%;width:100%">Community Art</a></div>
+	<div class="flickerTitle roundAll3 titleElement color3"><a href="http://www.flickr.com/photos/62092835@N08" style="height:100%;width:100%">Community Interaction</a></div>
 	<div id="flickerContainerBox" class="insideBoxShadow roundAll3 containerBox" >
 		<div id="flickerScrollBox" style="margin:0 auto"></div>
 		<div class="flickerPictureBox" id="flickerPictureBox" style="text-align:center"></div>

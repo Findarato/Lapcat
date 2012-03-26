@@ -17,7 +17,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   function(data) {
   	$.each(data.items, function(i,item){
       $("<a/>").css({"background-image":"url("+item.media.m+")"}).attr("href", item.link).appendTo("#flickerPictureBox");
-      if ( i == 14 ) return false;
+      if ( i == 29 ) return false;
     });
   });
 
