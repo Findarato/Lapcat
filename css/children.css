@@ -26,15 +26,15 @@
 	height:130px;
 	width:100%;
 	z-index:1;
+	position: relative;
 }
 .childrenTree{
-	z-index:2;
-	background:url("/images/tree.png");
-	background: none, url('/images/tree.svg');
+	z-index:1;
+	
+	background-size:contain;
 	position:absolute;
 	bottom:30px;
-	left:-50px;
-	height:400px;
+	right:-5%;
 }
 .mainArea{
 	position:relative;

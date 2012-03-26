@@ -3,7 +3,7 @@
  * 
  */
 
-newWidth = $(".mediumSection").width();
+//newWidth = $(".mediumSection").width();
 $(window).load(function(){
 	$('.flexslider').flexslider({
 		controlNav: true,
