@@ -2,7 +2,7 @@
 <body>
 	<div class="wholePage" style="overflow: hidden;">
 		<div class="childrenSun"></div>
-		<div id="container" style="z-index:10" class="container_24">
+		<div id="container" style="z-index:10;position: relative" class="container_24">
 			{include file="../sections/header.tpl"}
 			<div class="mainArea grid_24 mainBackground" id="main" role="main">
 				{include file="../sections/subpage_header.tpl" pageTitle="Children" backgroundImage="images/teen.png"}
@@ -29,8 +29,10 @@
 				{include file="../sections/sitemap.tpl"}
 			</footer>
 		</div>
-		<div class="childrenTree"></div>
-		<div class="childrenGrass"></div>
+		
+		<div class="childrenGrass">
+			<div class="childrenTree linearAnimate"></div>
+		</div>
 	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
