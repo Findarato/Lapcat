@@ -21,10 +21,10 @@
 		height:100px;
 		width:100px;
 		overflow:hidden;
-		-webkit-transition: .4s ease;
-		-moz-transition: .4s ease;
-		-o-transition: .4s ease;
-		transition: .4s ease;		
+		-webkit-transition: .2s ease-in-out;
+		-moz-transition: .2s ease-in-out;
+		-o-transition: .2s ease-in-out;
+		transition: .2s ease-in-out;		
 		
 	}
 	.flickrPictureOutline{
