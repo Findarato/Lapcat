@@ -16,7 +16,7 @@ $(".researchList").each(function(i,item){
 $.each($(".hoverCard"),function(h,card){
 	me=$(card)
 	me.show();
-	me.hovercard({"detailsHTML":me.next().next().text()+"<br><a href='"+me.next().attr("src")+"'> even more info</a>","width":"400px","cardImgSrc":me.attr("data-image")});
+	me.hovercard({"detailsHTML":me.next().next().text()+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.next().attr("src")});
 })
 adultCategories.sort();
 adultCategories = adultCategories.getUnique();

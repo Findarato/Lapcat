@@ -21,7 +21,11 @@
 							<a href="{$item.link_out}">{$item.title}</a>
 						{/if}
 					{/if}
-					<label data-link="{$link}" class="hoverCard color3Circle" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
+					{if $inside eq true}
+						<label data-link="{$item.link_in}" class="hoverCard color3Circle" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
+					{else}
+						<label data-link="{$item.link_out}" class="hoverCard color3Circle" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
+					{/if}
 					<img class="researchInfoBasic" src="{$item.image}" style="align:left;height:100px;width:100px;">
 					<div class="researchInfoBasic">{$item.about}</div>
 				</li>

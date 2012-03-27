@@ -25,6 +25,6 @@
 	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
-	<script defer src="js/research.js"></script>
+	<script defer src="js/mylibs/research.js"></script>
 </body>
 </html> 
