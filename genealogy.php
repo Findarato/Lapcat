@@ -64,18 +64,15 @@ if(in_array($ip,$validIp)) //branches
 {$inside = true;}
 if(substr($ip,0,12) == '165.138.238.') //main
 {$inside = true;}
-if(substr($ip,0,7) == '10.1.1.') //main  
+if(substr($ip,0,7) == '10.1.1.') //main
 {$inside = true;}
 
-$databasesObj = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/js/mylibs/databases.json"),true);
 
 if($inside){
-	$smarty -> assign("inside",TRUE);	
+	$smarty -> assign("inside",1);	
 }else{
-	$smarty -> assign("inside",FALSE);	
+	$smarty -> assign("inside",0);	
 }
 
-
-$smarty -> assign("dbObjects",$databasesObj["data"]);
 $smarty -> display('pages/research.tpl');
 ?>
