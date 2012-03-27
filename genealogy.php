@@ -64,15 +64,26 @@ if(in_array($ip,$validIp)) //branches
 {$inside = true;}
 if(substr($ip,0,12) == '165.138.238.') //main
 {$inside = true;}
-if(substr($ip,0,7) == '10.1.1.') //main
+if(substr($ip,0,7) == '10.1.1.') //main  
 {$inside = true;}
 
+$databasesObj = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/js/mylibs/databases.json"),true);
+$tempArray = array();
+$databasesObj = $databasesObj["data"];
+foreach ($databasesObj as $k=>$value){
+	if(strpos(strtolower($value["category"]), "history")){
+		$tempArray[$k] = $value;
+	}
+	
+}
+$databasesObj = $tempArray;
 
 if($inside){
-	$smarty -> assign("inside",1);	
+	$smarty -> assign("inside",TRUE);	
 }else{
-	$smarty -> assign("inside",0);	
+	$smarty -> assign("inside",FALSE);	
 }
 
-$smarty -> display('pages/research.tpl');
-?>
+
+$smarty -> assign("dbObjects",$databasesObj);
+$smarty -> display('pages/genealogy.tpl');
