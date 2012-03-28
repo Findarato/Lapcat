@@ -7,6 +7,9 @@
 		width:100%;
 		padding:5px;
 	}
+	.flickerPicture{
+
+	}
 	.flickrPicture a{
 		height:100px;
 		width:100px;
@@ -37,6 +40,9 @@
 		overflow:hidden;
 		top:-4px;
 		left:-4px;
+		-webkit-box-shadow: 3px 3px 24px 10px rgba(88, 88, 88, .6);
+		-moz-box-shadow: 3px 3px 24px 10px rgba(88, 88, 88, .6);
+		box-shadow: 3px 3px 24px 10px rgba(88, 88, 88, .6);
     }
 	.flickerPictureBox{
 		display:inline-block;

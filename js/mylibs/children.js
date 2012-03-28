@@ -19,7 +19,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
       $("<div/>",{"class":"flickrPicture",css:{"display":"inline-block","position":"relative"}})
       	.html(
       		$("<div/>",{
-      		"class":"flickrPictureOutline",
+      		"class":"flickrPictureOutline roundAll4",
       	})
       			.html(
       				$("<a/>",{"html":"&nbsp;"})

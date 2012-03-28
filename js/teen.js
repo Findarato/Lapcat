@@ -19,7 +19,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
       $("<div/>",{"class":"flickrPicture",css:{"display":"inline-block","position":"relative"}})
       	.html(
       		$("<div/>",{
-      		"class":"flickrPictureOutline insideBoxShadow",
+      		"class":"flickrPictureOutline roundAll4",
       	})
       			.html(
       				$("<a/>",{"html":"&nbsp;"})
@@ -27,7 +27,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
       					.attr({"href":item.link,"title":item.title})	
       			)
       			.append(
-      				$("<div/>",{"html":item.title,"css":{"position":"relative","top":"106px","left":"3px","background-color":"white","width":"96%","font-size":"1em","color":"#000","margin-left:":"2%"}})		
+      				$("<div/>",{"html":item.title,"css":{"position":"relative","top":"106px","left":"3px","width":"96%","font-size":"1em","color":"#000","margin-left:":"2%"}})		
       			)
       	)
       	.appendTo("#flickerPictureBox");
