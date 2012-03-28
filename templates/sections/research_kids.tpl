@@ -14,8 +14,8 @@
 							<div style="padding-top:5px;">
 					<span style="font-weight:bold;">Find Your Next Great Read:</span>
 					<div>
-						<input id="ebscohostsearchtext" name="ebscohostsearchtext" type="text" size="23" style="font-size:9pt;padding-left:5px;margin-left:0px;" />
-						<input type="submit" value="Search" style="font-size:9pt;padding-left:5px;" />
+						<input id="ebscohostsearchtext" name="ebscohostsearchtext" placeholder="Search NoveList K-8 Plus" type="search" size="23" style="font-size:1.3em;padding:5px;margin-left:0px;border:none;" class="insideBoxShadow roundAll3"/>
+						<input type="submit" value="Search" style="margin-left:100px; auto;font-size:1.3em;padding:5px;" />
 						<div id="includeFT"></div>
 					</div>
 				</div>

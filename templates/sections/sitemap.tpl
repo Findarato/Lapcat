@@ -2,7 +2,7 @@
 	<a href="https://catalog.lapcat.org/patroninfo">My Account</a>
 	<a href="about.html">About</a>
 	<a href="teens.php?sitemap=1">Teens</a>
-	<a href="ask.html">Ask a Librarian</a>
+	<a href="ask.php">Ask a Librarian</a>
 	<a href="greatpicks.php?sitemap=1">Great Picks</a>
 	<a href="children.php?sitemap=1">Childrens</a>
 	<a href="genealogy.php?sitemap=1">Genealogy</a>

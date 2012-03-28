@@ -24,14 +24,14 @@
 		<div class="mediumSection">
 			<div class="fixMargin">
 				<form method="get" action="http://catalog.lapcat.org/search/~/a?a" class="catalogNav smoothAnimate">
-					<select name="searchtype">
+					<select class="insideBoxShadow" name="searchtype">
 						<option value="X" selected="selected">KEYWORD</option>
 						<option value="t">TITLE</option>
 						<option value="a">AUTHOR</option>
 						<option value="d">SUBJECT</option>
 					</select>
 					<input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
-					<input type="submit" value="GO!" style="position:absolute;bottom:28px; left:348px;padding:4px;display:none;"/>
+					<input class="insideBoxShadow" type="submit" value="GO!" style="position:absolute;bottom:28px; left:348px;padding:4px;display:none;"/>
 				</form>
 			</div>
 		</div>
@@ -41,8 +41,8 @@
 			<div class="smoothAnimate flexslider" id="middleScrollContainer">
 				<ul class="slides">
 					<li>
-						<a href="http://laportelibrary.org"><img src="/images/rotate1.jpg" alt="" title="Cool 1"/></a>
-						 <p class="flex-caption">Let the Dark Side control you!</p>
+						<a href="/ask.php"><img src="/images/ConanTheLibrarian.jpg" alt="" title="Ask a Librarian"/></a>
+						 <p class="flex-caption">Have a question? Ask a Librarian!</p>
 					</li>
 					<li>
 						<a href="http://laportelibrary.org"><img src="/images/rotate2.jpg" alt="" title="Cool 2"/></a>
@@ -53,9 +53,6 @@
 					</li>
 					<li>
 						<a href="http://www.google.com"><img src="/images/rotate4.jpg" alt="" title="Cool 4"/></a>		
-					</li>
-					<li>
-						<a href="http://www.google.com"><img src="/images/rotate5.jpg" alt="" title="Cool 5"/></a>		
 					</li>
 				</ul>
 				<div id="flexControlls" class="flexControlls"></div>				
