@@ -38,11 +38,7 @@ $catalogTemplate =
  * The main amazon parsing function 
  */
 function awsRequest($searchIndex, $keywords, $responseGroup = false, $operation = "ItemSearch", $pageNumber = 1){
-	$service_url = "http://ecs.amazonaws.com/onca/xml?Service=AWSECommerceService";
-	$associate_tag = "your-associate-tag";
-	$secret_key = "+NfwKQ51CjlkMc+IR7XR1PVLYpTIi+ND9TCSPaW1";
-	$access_key = "AKIAINWTFGNW25U2G4MA";
-
+	include_once("key.php");
 	// build initial request uri
 	$request = "$service_url&Operation=$operation&VariationPage=1&ResponseGroup=Large&AssociateTag=$associate_tag&SearchIndex=$searchIndex&Keywords=".urlencode($keywords)."&ItemPage=$pageNumber";
 
