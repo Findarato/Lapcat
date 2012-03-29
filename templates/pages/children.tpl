@@ -1,4 +1,4 @@
-{include file="../sections/html_header.tpl"  title="La Porte County Public Library (Teens)"}
+{include file="../sections/html_header.tpl"  title="La Porte County Public Library (Children)"}
 <body>
 	<div class="wholePage" style="overflow: hidden;">
 		<div class="childrenSun"></div>
