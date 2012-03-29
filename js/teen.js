@@ -16,10 +16,10 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
   },
   function(data) {
   	$.each(data.items, function(i,item){
-      $("<div/>",{"class":"flickrPicture",css:{"display":"inline-block","position":"relative"}})
+      $("<div/>",{"class":"flickrPicture linearAnimate",css:{"display":"inline-block","position":"relative"}})
       	.html(
       		$("<div/>",{
-      		"class":"flickrPictureOutline roundAll4",
+      		"class":"flickrPictureOutline roundAll3 linearAnimate",
       	})
       			.html(
       				$("<a/>",{"html":"&nbsp;"})
@@ -36,7 +36,7 @@ $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?
 
 
 
-
+/*
 window.f = new flux.slider('#topBooksTeenContainer', {
 					autoplay: true,
 					pagination: true,
@@ -46,3 +46,4 @@ window.f = new flux.slider('#topBooksTeenContainer', {
 					transitions:["dissolve","blocks","swipe","blocks2"]
 				});		
 
+*/
