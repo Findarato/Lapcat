@@ -273,74 +273,58 @@ function getDeliciousFeed(uri,target){
 	})
 	
 }
-function wowbraryImageLinks(url,target){
+function wowbraryImageLinks(uri,target){
 	
-	if(target===undefined)
+	if(target==undefined)
 		return -1;
 
- 	if(uri===undefined)
+ 	if(uri==undefined)
  		uri="http://www.wowbrary.org/rss.aspx?l=8711&c=GEN";
 
 
 	target.empty();
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":uri}, function(d) {
- 		
+ 		me = $(d);
+ 		var feedTitle = me.find("channel").find("title:first").text();
 		//find each 'item' in the file and parse it
-		$(d).find('item').each(function() {
- 			totalRssItems++;
-			//name the current found item this for this particular loop run
+		me.find('item').each(function() {
 			var $item = $(this);
 			// grab the post title
 			var title = $item.find('title').text();
-			// grab the post's URL
-			var link = $item.find('link').text();
-			// next, the description
-			var description = $item.find('description').text();
-			//don't forget the pubdate
-			var pubDate = $item.find('dc\:date').text();
-			
  			var contentEncoded = $item.find('content_encoded').text();
  			
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"rssItem",css:{}})
 				.html(
 					function(){ 
+						var returnHtml = $("<span/>");
+						var linkCode = $("<a/>");
 						if(contentEncoded.length>1){
 							contentEncoded = $(contentEncoded);
-							contentEncoded.find(".NUBUTTON").removeClass("NUBUTTON").addClass("roundAll3 insideBoxShadow color560").css({"text-decoration":"none","display":"inline-block","margin":"2px","padding":"5px"});
 							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("");
-							
-							contentEncoded.find('a').find("img").each(function(i,links){
-								alert(links.src)
-
-							})
-							
-							
-							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
-							
-						}else{
-							return 	$("<div/>",{css:{"overflow":"hidden"}})
-						.html(
-							$("<div/>",{"class":"rssTitle"})
-								.html(
-									$("<a/>",{"href":link,"html":title,"target":"_blank"})
-								)
-						)
-						.append(
-							$("<date/>",{"class":"rssDate",html:pubDate})
-						)
-						.append(
-							$("<span/>",{"class":"rssDescription",html:description.replace(/<(a|img){1}.*>/i,'')})
-						)
+							contentEncoded
+								.find('a')
+									.find("img")
+										.each(function(i,links){
+											var links = $(links);
+											var parent =  links.parent();
+											var isbn = parent.attr("href").match(/\d{10,13}/); 
+											linkCode
+												.attr({"href":parent.attr("href"),"title":parent.text()})
+												.html(
+													$("<img/>",{"src":"http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn="+isbn+"&size=L"})
+													
+												)
+											returnHtml.append(linkCode);
+										});
+						return returnHtml;
 						}
-						
 					}
-					
 				)
 				
 			//put that feed content on the screen!
-			sCC.append(html);  
+			target.append(html);  
 		});
 	});
 }

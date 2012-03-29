@@ -25,7 +25,7 @@
 		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
 			{include file="../sections/sitemap.tpl"}
 		</footer>
-
+		<div id="testStuff"></div>
 	</div>
 		<div class="childrenGrass">
 			<div class="childrenTree linearAnimate"></div>
