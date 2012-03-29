@@ -1,6 +1,6 @@
-<?
+<?Php
 function awsRequest($searchIndex, $keywords, $responseGroup = false, $operation = "ItemSearch", $pageNumber = 1){
-	include_once("key.php");
+	include("key.php");
 
   // build initial request uri
   $request = "$service_url&Operation=$operation&VariationPage=1&ResponseGroup=Large&AssociateTag=$associate_tag&SearchIndex=$searchIndex&Keywords=".urlencode($keywords)."&ItemPage=$pageNumber";
@@ -37,36 +37,14 @@ function awsRequest($searchIndex, $keywords, $responseGroup = false, $operation 
 
 
 // make the request
-//$xml = simplexml_load_file(awsRequest("DVD", "883929059065",false, "ItemSearch", "1"));
-//$xml = simplexml_load_file(awsRequest("VideoGames", "B000P46NMK",false, "ItemSearch", "1"));
-//echo awsRequest("DVD", "883929059065",false, "ItemSearch", "1");
-//$xml = simplexml_load_file(awsRequest("DVD", "043396239043",false, "ItemSearch", "1")); 
-//$xml = simplexml_load_file(awsRequest("Music", "886976095222",false, "ItemSearch", "1"));
-//$xml = simplexml_load_file(awsRequest("All", "9781428143135",false, "ItemSearch", "1"));
+
 $xml = simplexml_load_file(awsRequest("All", "9781401211929",false, "ItemSearch", "1"));
-//$xml = simplexml_load_file(awsRequest("Books", "9781602525467",false, "ItemSearch", "1"));
-//$xml = simplexml_load_file(awsRequest("Books", "1599505177",false, "ItemSearch", "1"));
-//$xml = simplexml_load_file(awsRequest("Books", "067102423X",false, "ItemSearch", "1"));
-//$xml = awsRequest("Music", "5099921235825",false, "ItemSearch", "1");
-//$xml = simplexml_load_file(awsRequest("Music", "B0011V7OQA",false, "ItemSearch", "1"));
-//$xml = simplexml_load_file(awsRequest("Music", "5099921235825", "false", "ItemSearch", "1"));
 
-//echo $xml;die();
-// now retrieve some data
-//$totalPages = $xml->Items->TotalPages;
-//echo "<p>There are $totalPages pages in the XML results.</p>";
+$smallImage = (string)$xml->Items->Item->SmallImage->URL;
+$mediumImage = (string)$xml->Items->Item->MediumImage->URL;
+$largeImage = (string)$xml->Items->Item->LargeImage->URL;
 
-// retrieve data in a loop
-
-echo "<img src='";
-print_r((string)$xml->Items->Item->SmallImage->URL);
-echo "'>";
-echo "<img src='";
-print_r((string)$xml->Items->Item->MediumImage->URL);
-echo "'>";
-echo "<img src='";
-print_r((string)$xml->Items->Item->LargeImage->URL);
-echo "'>";
+/*
 echo "<br>Item info:<br>";
 echo "Label: ".(string)$xml->Items->Item->ItemAttributes->Label."<br>"; //assoc
 echo "Studio: ".(string)$xml->Items->Item->ItemAttributes->Studio."<br>";  //assoc
@@ -117,9 +95,9 @@ if((string)$xml->Items->Request->ItemSearchRequest->SearchIndex=="Music"){
   } 
 }
 
-
+/*
 echo "<pre>";
 print_r($xml);
 echo "</pre>";
-
+*/
 ?>
