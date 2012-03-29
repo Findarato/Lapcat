@@ -8,31 +8,8 @@ $("#cntDwn")
 		}
 	);
 	
-$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
-  {
-	id: '62092835@N08',
-    format: "json",
-    tags:"teens"
-  },
-  function(data) {
-  	$.each(data.items, function(i,item){
-      $("<div/>",{"class":"flickrPicture linearAnimate",css:{"display":"inline-block","position":"relative"}})
-      	.html(
-      		$("<div/>",{
-      		"class":"flickrPictureOutline roundAll3 linearAnimate",
-      	})
-      			.html(
-      				$("<a/>",{"html":"&nbsp;"})
-      					.css({"background-image":"url("+item.media.m+")"})
-      					.attr({"href":item.link,"title":item.title})	
-      			)
-      			.append(
-      				$("<div/>",{"html":item.title,"css":{"position":"relative","top":"106px","left":"3px","width":"96%","font-size":"1em","color":"#000","margin-left:":"2%"}})		
-      			)
-      	)
-      	.appendTo("#flickerPictureBox");
-    });
-  });
+	displayFlickr("teens",'62092835@N08');
+	
 
 
 
