@@ -36,18 +36,23 @@
 /*sprite Code*/
 .sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
 .sprite-Discovery_Kids_logo{ background-position: 0 0; width: 100px; height: 100px; } 
-.sprite-NGLittleKids{ background-position: 0 -105px; width: 100px; height: 100px; } 
-.sprite-NickJrLogo{ background-position: 0 -210px; width: 100px; height: 100px; } 
-.sprite-PBS_Kids{ background-position: 0 -315px; width: 100px; height: 100px; } 
-.sprite-TumbleBook_icon{ background-position: 0 -420px; width: 100px; height: 100px; } 
-.sprite-Yahookids{ background-position: 0 -525px; width: 100px; height: 100px; } 
-.sprite-barbie{ background-position: 0 -630px; width: 100px; height: 100px; } 
-.sprite-cartoon_network{ background-position: 0 -735px; width: 100px; height: 100px; } 
-.sprite-coloring_com{ background-position: 0 -840px; width: 100px; height: 100px; } 
-.sprite-disneygames{ background-position: 0 -945px; width: 104px; height: 104px; } 
-.sprite-funbrain{ background-position: 0 -1054px; width: 100px; height: 100px; } 
-.sprite-sesamestreet{ background-position: 0 -1159px; width: 100px; height: 100px; } 
-.sprite-youtube{ background-position: 0 -1264px; width: 115px; height: 50px; }  
+.sprite-Disneydigitalbooks{ background-position: 0 -105px; width: 100px; height: 100px; } 
+.sprite-Lego{ background-position: 0 -210px; width: 100px; height: 100px; } 
+.sprite-NGLittleKids{ background-position: 0 -315px; width: 100px; height: 100px; } 
+.sprite-NickJrLogo{ background-position: 0 -420px; width: 100px; height: 100px; } 
+.sprite-PBS_Kids{ background-position: 0 -525px; width: 100px; height: 100px; } 
+.sprite-Starfall{ background-position: 0 -630px; width: 100px; height: 100px; } 
+.sprite-TumbleBook{ background-position: 0 -735px; width: 100px; height: 98px; } 
+.sprite-TumbleBook_icon{ background-position: 0 -838px; width: 100px; height: 100px; } 
+.sprite-Yahookids{ background-position: 0 -943px; width: 100px; height: 100px; } 
+.sprite-barbie{ background-position: 0 -1048px; width: 100px; height: 100px; } 
+.sprite-cartoon_network{ background-position: 0 -1153px; width: 100px; height: 100px; } 
+.sprite-chugginton{ background-position: 0 -1258px; width: 100px; height: 100px; } 
+.sprite-coloring_com{ background-position: 0 -1363px; width: 100px; height: 100px; } 
+.sprite-disneygames{ background-position: 0 -1468px; width: 104px; height: 104px; } 
+.sprite-funbrain{ background-position: 0 -1577px; width: 100px; height: 100px; } 
+.sprite-sesamestreet{ background-position: 0 -1682px; width: 100px; height: 100px; } 
+.sprite-youtube{ background-position: 0 -1787px; width: 115px; height: 50px; } 
 
 #MainContainerBox li{display:inline-block;}
 #MainContainerBox li a {
