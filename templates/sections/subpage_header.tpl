@@ -1,5 +1,5 @@
 <div class=" " style="margin-bottom:10px;width:100%;height:100%;position:relative" title="Subpage Header">
-	<div class="roundAll3 insideBoxShadow subPageHeader" style="{if $backgroundImage ne ""}background:url({$backgroundImage}) no-repeat scroll{/if};opacity:.75"></div>
+	<div class="roundAll3 insideBoxShadow subPageHeader color5Soft" style="{if $backgroundImage ne ""}background:url({$backgroundImage}) no-repeat scroll{/if};opacity:.75"></div>
 	<h1 class="floatingHeader color1TextGlow">{$pageTitle}</h1>
 	<div class="subPageCatalogSearch outSideBoxShadow mainBackground" style="">
 		<form method="get" action="http://catalog.lapcat.org/search/~/a?a" class="smoothAnimate">

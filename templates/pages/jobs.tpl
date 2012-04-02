@@ -3,15 +3,13 @@
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground" id="main" role="main">
-			{include file="../sections/subpage_header.tpl" pageTitle="Research" backgroundImage="images/LaPorte_County_Public_Library.png"}
-			{* {include file="../sections/soonCalendar.tpl"} *} 
+			{include file="../sections/subpage_header.tpl" pageTitle="Employment" backgroundImage="images/LaPorte_County_Public_Library.png"}
 			<div class="clear"></div>
 			<section class="grid_16">
-				{include file="../sections/research_adult.tpl"}
+				{include file="../sections/mainContent.tpl" sectionTitle="Employment"}
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/delicious.tpl"}
-				{include file="../sections/research_kids.tpl"}
 				{include file="../sections/twitter.tpl"}
 			</aside>
 			<div class="clear"></div>
@@ -25,6 +23,6 @@
 	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
-	<script defer src="js/mylibs/research.js"></script>
+	<script defer src="js/mylibs/jobs.js"></script>
 </body>
 </html> 
