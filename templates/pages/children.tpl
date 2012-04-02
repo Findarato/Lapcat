@@ -5,7 +5,7 @@
 		<div id="container" style="z-index:10;position: relative" class="container_24">
 			{include file="../sections/header.tpl"}
 			<div class="mainArea grid_24 mainBackground" id="main" role="main">
-				{include file="../sections/subpage_header.tpl" pageTitle="Children" backgroundImage="images/teen.png"}
+				{include file="../sections/subpage_header.tpl" pageTitle="Children"}
 				<div class="clear"></div>
 				<section class="grid_16">
 					{include file="../sections/childrenMainSection.tpl"}
