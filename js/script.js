@@ -454,9 +454,7 @@ function get_blog_feed() {
 						.append(
 							$("<div/>",{"class":"blogEntryDescription",html:description})
 						)
-						
 				)
-				
 			//put that feed content on the screen!
 			blogWindow.append(html);
 			totalBlogItems++;
@@ -471,28 +469,7 @@ function get_blog_feed() {
 				parent.addClass("noAfterImage");
 			}
 		});
-/*
-		$.each($(".blogEntryDescription").find('a[href*="catalog.lapcat.org"]'),function(h,card){
-			me = $(card);
-			newData = "";
-			dataHtml = $("<div/>")
-			//dataHtml = '<div>This is default text<div><a href="http://catalog.lapcat.org">more info</a></div></div>'
-			var dataImg;
-			dataHtml.load("ajax/catalogLoad.php",{"url":me.attr("href")})
-			//$.getJSON("ajax/catalogLoad.php",{"url":me.attr("href")},function(json){
-			//	dataHtml = json[0]+dataHtml
-			//});
-			//if(dataHtml === "" || dataHtml === null){dataHtml = "There was an error parsing the catalog details"}
-			
-			if(dataImg == "" || dataImg == null){dataImg = "images/tree.png";}
-			me.hovercard({"detailsHTML":dataHtml.html(),"width":"400px","cardImgSrc":dataImg})
-			//html.load("ajax/catalogLoad.php",{"url":"http://catalog.lapcat.org"});
-			
-			//
-		});
-		*/		
 	});
-	
 };
 function displayFlickr(flickrTag,flickrId){
 	// lets make sure we have some defaults in so that if the user just calls the function it works
@@ -528,22 +505,25 @@ function displayFlickr(flickrTag,flickrId){
 $(document).ready(function(){
 		if($("#blogBox")){get_blog_feed();}
 		uri = window.location.toString();
+		
+		/* Lets load the correct delicious feed */
 		if(uri.search(/research/i)>0){// this is the research page
 			getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
 		}else{
 			if(uri.search(/teens/i)>0){// this is the teens page
 				getDeliciousFeed("http://www.delicious.com/v2/rss/laportecoteens");
 			}else{
-				if(uri.search(/greatpicks/i)>0){// this is the teens page
-					get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"))
-					getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
-				}else{//if all else fails lets just load a local rss feed
-					getDeliciousFeed("http://www.delicious.com/v2/rss/laportelocal");	
-					
-				}
-					
+				if(uri.search(/children/i)>0){// this is the teens page
+					getDeliciousFeed("http://www.delicious.com/v2/rss/laportecochild");
+				}else{
+					if(uri.search(/greatpicks/i)>0){// this is the teens page
+						get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"))
+						getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
+					}else{//if all else fails lets just load a local rss feed
+						getDeliciousFeed("http://www.delicious.com/v2/rss/laportelocal");	
+					}
+				}	
 			}
-				
 		}
 		
         $("#twitterContainer").tweet({
