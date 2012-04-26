@@ -7,9 +7,10 @@
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/mainContent.tpl" sectionTitle="Employment"}
+				{include file="../sections/jobsLocalResources.tpl"}
 			</section>
 			<aside class="grid_8">
-				{include file="../sections/delicious.tpl"}
+				{include file="../sections/jobsResources.tpl"}
 				{include file="../sections/twitter.tpl"}
 			</aside>
 			<div class="clear"></div>
