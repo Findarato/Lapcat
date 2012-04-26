@@ -1,5 +1,17 @@
 /* Start of the less*/
 /* Standard CSS */
+
+@shadow:rgba(136, 136, 136,.6);
+@borderColor: rgb(170,170,170);
+@borderColor60: rgba(170,170,170,.6);
+
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+
 @white:rgb(255,255,255);
 @color1:rgb(204,255,255);
 
@@ -22,7 +34,7 @@
 
 
 /* Winter CSS */
-
+/*
 @color1:rgb(204,238,255);
 
 @color2:rgb(205,227,238);
@@ -42,16 +54,10 @@
 @colorDark60:rgba(31,31,31,.6);
 @colorLight: rgb(250,250,250);
 @colorLight60: rgba(250,250,250,.6);
+*/
 
-@shadow:rgba(136, 136, 136,.6);
-@borderColor: rgb(170,170,170);
-@borderColor60: rgba(170,170,170,.6);
 
-.rounded-corners (@radius: 5px) {
-  border-radius: @radius;
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-}
+
 
 /* End of the less*/
 
@@ -156,20 +162,31 @@ h1,h2,h3{
 }
 h1 { 
   font-family: 'Buda' , arial, serif; 
-  font-size: 30px;
+  font-size: 2.5em;
   font-weight: bold;
   color:@color5;
 }
 h2 {
   font-family: 'Dancing Script' , sans-serif; 
-  font-size: 28px;
+  font-size: 2.2em;
   color: @color5;
 }
   
 h3 {
   font-family: 'Dancing Script' , sans-serif;
-  font-size: 26px;
+  font-size: 2em;
 }
+
+@media only screen and (max-width: 734px) {
+  h3{
+    font-size:2em;
+  }
+  h4{
+    font-size:1.5em;
+  }
+}
+
+
 .pageBranding{
   position:absolute;
   color:rgb(0,0,0);
