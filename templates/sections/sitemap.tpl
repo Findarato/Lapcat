@@ -1,4 +1,4 @@
-<div class="roundAll3 siteMap linearAnimate" style="margin-bottom:20px;z-index:5;position:relative;" title="Site Map">
+<div class="roundAll3 siteMap linearAnimate" id="siteMap" style="margin-bottom:20px;z-index:5;" title="Site Map">
 	<a href="https://catalog.lapcat.org/patroninfo">My Account</a>
 	<a href="about.html">About</a>
 	<a href="teens.php?sitemap=1">Teens</a>
@@ -16,7 +16,6 @@
 	<a href="jobs.php">Jobs</a>
 	<a href="http://laportelibrary.blogspot.com/">Blog</a>
 	<a href="http://catalog.lapcat.org/">Catalog</a>
-	
 	<a href="edresearch.php">Educators</a>	
 </div>
 <div class="clear"></div>

@@ -5,11 +5,17 @@
 
 //newWidth = $(".mediumSection").width();
 $(window).load(function(){
-	$('.flexslider').flexslider({
-		controlNav: true,
-		directionNav: false,
-		controlsContainer: ".flexControll",
-		animationLoop: true,
-		slideshowSpeed: 7000
-	});
+  var width = $(this).width()
+  if(width < 600){
+    
+  }else{
+    $('.flexslider').flexslider({
+      controlNav: true,
+      directionNav: false,
+      controlsContainer: ".flexControll",
+      animationLoop: true,
+      slideshowSpeed: 7000
+    });    
+  } 
+
 });
