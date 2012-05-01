@@ -155,7 +155,7 @@ var locations={
 var totalRssItems = 0;
 var currentRss = 0;
 function getDomain(url) {
-return url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/)[2];
+  return url.match(/:\/\/(www[0-9]?\.)?(.[^/:]+)/)[2];
 }
 function displayLocation(locationCode,domElementSelector){
 	var today = new Date();
@@ -503,6 +503,12 @@ function displayFlickr(flickrTag,flickrId){
 	});
 }
 $(document).ready(function(){
+//  $("a[href^=#]").on("click", function(e) {
+//    e.preventDefault();
+//    history.pushState({}, "", this.href);
+//  });
+  
+  localStorage.clear();
 		if($("#blogBox")){get_blog_feed();}
 		uri = window.location.toString();
 		
