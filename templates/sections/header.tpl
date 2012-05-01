@@ -1,4 +1,4 @@
-<header class="topHeader" style="background-color:#FFF;margin:0;padding:0;">
+<header class="topHeader" style="margin:0;padding:0;">
 	<nav title="top Navagation" class="firstNav color1 " style="text-align: center;margin:0;margin-bottom:10px;top:0;left:0;position:relative">
 		<div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">
 			<div class="td">
@@ -9,7 +9,7 @@
 				<h3 class="logoSubtitle">learn, enrich, enjoy</h3>
 			</div>
 		</div>
-    <div style="position:absolute;right:20px;bottom:5px" class="menuDropDown"><a href="#siteMap">Menu!</a></div>
+    <div style="position:absolute;right:20px;bottom:5px" class=""><a class="iconic cog menuDropDown" href="#siteMap"></a></div>
 	</nav>
 	<nav class="secondNav color2" style="width:100%">
 		<div class="t topNav" style="text-align:center;margin:0 auto;">
