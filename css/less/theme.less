@@ -1,7 +1,7 @@
 /* Start of the less*/
 /* Standard CSS */
 
-@shadow:rgba(136, 136, 136,.6);
+@shadow:rgba(36, 36, 36,.8);
 @borderColor: rgb(170,170,170);
 @borderColor60: rgba(170,170,170,.6);
 
@@ -31,6 +31,23 @@
   background: -ms-linear-gradient(top, @color 0%,darken(saturate(@color,16%),.6%) 100%); /* IE10+ */
   background: linear-gradient(top, @color 0%,darken(saturate(@color,16%),.6%) 100%); /* W3C */
 }
+.downShadow(@color){
+  -webkit-box-shadow: 0 6px 7px -3px @color;
+  box-shadow: 0 6px 7px -3px @color;
+}
+.dropShadow(@color){
+  -webkit-box-shadow: -4px 7px 6px 0px @color;
+  box-shadow: -4px 7px 6px 0px @color;
+}
+
+.oneEdgeShadow(@color){
+  -webkit-box-shadow: 0 8px 6px -6px @color;
+  box-shadow: 0 8px 6px -6px @color;
+}
+.textShadowIndent(@color){
+  text-shadow: 0 1px 1px @color;
+}
+
 
 @white:rgb(255,255,255);
 @color1:rgb(204,255,255);
@@ -255,5 +272,5 @@ h3 {
   border-right: 3px solid @borderColor60;
 }
 .dropDown{
-  border: 1px solid #AAA;
+  border: 1px solid @shadow;
 }
