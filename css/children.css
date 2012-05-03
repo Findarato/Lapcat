@@ -9,21 +9,6 @@
 	background: radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* W3C */
 }
 
-/*
-.childrenSun{
-	position:absolute;
-	background: url('/images/img.png') no-repeat -63px -4px;
-	left:-155px;
-	top:36px;
-	width: 470px;
-	height: 415px;
-	-webkit-animation: spinSun 30s infinite linear;
-	-moz-animation: spinSun 30s infinite linear;
-	-ms-animation: spinSun 30s infinite linear;
-	animation: spinSun 30s infinite linear;
-}
-*/
-
 .childrenSun{
 	position:absolute;
 	background: url('/images/sun.svg') no-repeat;
