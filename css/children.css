@@ -20,6 +20,7 @@
 	-webkit-animation: spinSun 30s infinite linear;
 	-moz-animation: spinSun 30s infinite linear;
 	-ms-animation: spinSun 30s infinite linear;
+	-o-animation: spinSun 30s infinite linear;
 	animation: spinSun 30s infinite linear;
 }
 
@@ -64,26 +65,28 @@
     
 }
 
-
-
 /*end of sprite*/
 
 @keyframes spinSun {  
-	0% { transform: rotate(0) ;}
-	100% {transform: rotate(360deg) ; }
+	0% { transform: rotate(0)}
+	100% {transform: rotate(360deg)}
 }
 
 @-ms-keyframes spinSun {  
-	0% { transform: rotate(0) ;}
-	100% {transform: rotate(360deg) ; }
+	0% { transform: rotate(0)}
+	100% {transform: rotate(360deg)}
 }
 
 @-moz-keyframes spinSun {  
-	0% { -moz-transform: rotate(0) ;}
-	100% {-moz-transform: rotate(360deg) ; }
+	0% { -moz-transform: rotate(0)}
+	100% {-moz-transform: rotate(360deg)}
 }
 
 @-webkit-keyframes spinSun {
-	0% { -webkit-transform: rotate(0) ;}
-	100% {-webkit-transform: rotate(360deg) ; }
+	0% { -webkit-transform: rotate(0)}
+	100% {-webkit-transform: rotate(360deg)}
+}
+@-o-keyframes spinSun {
+  0% { -webkit-transform: rotate(0)}
+  100% {-webkit-transform: rotate(360deg)}
 }
