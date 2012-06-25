@@ -507,6 +507,13 @@ $(document).ready(function(){
 //    e.preventDefault();
 //    history.pushState({}, "", this.href);
 //  });
+
+$("a[href^='http'] .outSide").each(function() {
+    $(this).css({
+        background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
+        "padding-left": "20px"
+    });
+});
   
   localStorage.clear();
 		if($("#blogBox")){get_blog_feed();}
