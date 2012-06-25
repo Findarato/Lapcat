@@ -15,9 +15,7 @@
 		</div>
 		<div class="smallSection research">
 			<a class="researchNav smoothAnimate fixMargin" href="research.php" ></a>
-			<div class="sectionText">
-				Research
-			</div>
+			<div class="sectionText">	Research</div>
 		</div>
 	</div>
 	<div class="grid_12">

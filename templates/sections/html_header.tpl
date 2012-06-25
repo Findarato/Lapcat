@@ -14,9 +14,7 @@
     <meta property="og:site_name" content="La Porte Library"/>
     <meta property="fb:admins" content="Joseph.Harry"/>
     <meta property="fb:admins" content="Rebecca.Tomerlin"/>
-    <link href='http://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css' />
-    <link href='http://fonts.googleapis.com/css?family=Buda:light' rel='stylesheet' type='text/css' />
-    <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Dancing+Script|Buda:300|Overlock' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/fonts/iconic/iconic_fill.css">
     <link rel="stylesheet" href="css/fonts/websymbols/stylesheet.css">
     {*
