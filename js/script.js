@@ -248,16 +248,12 @@ function getDeliciousFeed(uri,target){
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"delItem",css:{}})
 				.html(
-					$("<div/>",{css:{"display":"block"}})
-						.html(
+					
 							$("<div/>",{"class":"delItem"})
 								.html(
-									$("<img/>",{"class":"delFavIcon","src":"http://delicious.com/favicon.ico","alt":"Website Favorite Icon"})
-								)
-								.append(
 									$("<a/>",{"href":link,"html":title,"target":"_blank",css:{"height":"16px"}})
 								)
-						)
+					
 				)
 				
 				
@@ -508,7 +504,7 @@ $(document).ready(function(){
 //    history.pushState({}, "", this.href);
 //  });
 
-$("a[href^='http'] .outSide").each(function() {
+$(".containerBox a[href^='http']").each(function() {
     $(this).css({
         background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
         "padding-left": "20px"

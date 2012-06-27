@@ -17,12 +17,12 @@
 .textShadowIndent(@color){
   text-shadow: 0 1px 1px @color;
 }
-.shadowIn (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: #000) {
+.shadowIn (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
   box-shadow:inset @arguments;
   -moz-box-shadow:inset @arguments;
   -webkit-box-shadow:inset @arguments;
 }
-.shadowOut (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: #000) {
+.shadowOut (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
   box-shadow: @arguments;
   -moz-box-shadow: @arguments;
   -webkit-box-shadow: @arguments;
@@ -37,12 +37,12 @@
 
 .softColor(@color){
   background: @color; /* Old browsers */
-  background: -moz-linear-gradient(top, @color 0%, darken(saturate(@color,16%),.6%) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color), color-stop(100%,darken(saturate(@color,16%),.6%))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, @color 0%,darken(saturate(@color,16%),.6%) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, @color 0%,darken(saturate(@color,16%),.6%) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, @color 0%,darken(saturate(@color,16%),.6%) 100%); /* IE10+ */
-  background: linear-gradient(top, @color 0%,darken(saturate(@color,16%),.6%) 100%); /* W3C */
+  background: -moz-linear-gradient(top, @color 0%, darken(saturate(@color,16%),5%) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@color), color-stop(100%,darken(saturate(@color,16%),5%))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* IE10+ */
+  background: linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* W3C */
 }
 .rotate(@deg){
   -webkit-transform: rotate(@deg); 

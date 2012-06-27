@@ -462,9 +462,9 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 .smallSection,.mediumSection,.middleSection{
 	display:block;
-	background:#000 no-repeat;
 	position:relative;
 	overflow:hidden;
+  .softColor(@color4);
 }
 /*
 .navDisplay:hover .smallSection a,
@@ -549,30 +549,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .fluxslider{
 	height:!important auto; 
 }
-.pagination{
-	position:absolute;
-	bottom:5px;
-	right:10px;
-	width:auto;
-	z-index:101;
-}
-.pagination li{
-	height:15px;
-	width:15px;
-	text-indent:-9999px;
-	border:white solid 1px;
-	border:rgba(209,214,204,.7) solid 1px;
-	background:#ccc;
-	background:rgba(209,214,204,.6)
-}
-.pagination li.current{
-	border:rgb(255,255,255) solid 1px;
-	border:rgba(174,224,127,.7) solid 1px;
-	background:#ccc;
-	background:rgba(174,224,127,.6)
-}
-
-/*	rotating middle section code End */
 
 .twitterBox,.twitterContainer,.deliciousBox{
 	position:relative;
@@ -612,7 +588,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 
 .blogEntryDescription a[href*="catalog.lapcat.org"]:after,.rssDescription a[href*="catalog.lapcat.org"]:after{
 	font-size:10px;
-	content:" ��������� ";
+	content:"";
 	font-family: 'IconicFill';
 }
 .blogEntryDescription .noAfterImage:after {content:""}
