@@ -1,22 +1,22 @@
 <nav class="navDisplay">
   <div class="grid_6 leftNav" >
     <!-- Left Colmn -->
-    <div class="smallSection genealogy">
-      <a class="genealogyNav smoothAnimate fixMargin" href="genealogy.php" ></a>
+    <div class="smallSection hours">
+      <a class="hoursNav smoothAnimate fixMargin" href="hours.php" ></a>
       <div class="sectionText">
-        Genealogy
-      </div>
-    </div>
-    <div class="smallSection Downloads">
-      <a class="downloadsNav smoothAnimate fixMargin" href="downloads.php" ></a>
-      <div class="sectionText">
-        Downloads
+        Hours
       </div>
     </div>
     <div class="smallSection greatPicks">
       <a class="greatPicksNav smoothAnimate fixMargin" href="greatpicks.php"></a>
       <div class="sectionText">
         Great Picks!
+      </div>
+    </div>
+    <div class="smallSection genealogy">
+      <a class="genealogyNav smoothAnimate fixMargin" href="genealogy.php" ></a>
+      <div class="sectionText">
+        Genealogy
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
             <option value="d">SUBJECT</option>
           </select>
           <input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
-          <input class="insideBoxShadow" type="submit" value="GO!" style="position:absolute;bottom:28px; left:348px;padding:4px;display:none;"/>
+          <input class="insideBoxShadow" type="submit" value="GO!">
         </form>
       </div>
     </div>
@@ -71,19 +71,19 @@
         Events
       </div>
     </div>
-    <div class="smallSection hours">
-      <a class="hoursNav smoothAnimate fixMargin" href="hours.php" ></a>
+    
+    <div class="smallSection research">
+      <a class="aboutNav smoothAnimate fixMargin" href="about.php" ></a>
       <div class="sectionText">
-        Hours
+        About Us
       </div>
     </div>
     <div class="smallSection research">
-      <a class="researchNav smoothAnimate fixMargin" href="research.php" ></a>
+      <a class="employmentNav smoothAnimate fixMargin" href="jobs.php" ></a>
       <div class="sectionText">
-        Research
+        Employment
       </div>
     </div>
-
   </div>
 </nav>
 

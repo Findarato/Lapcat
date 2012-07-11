@@ -18,11 +18,21 @@
 					<a href="https://catalog.lapcat.org/patroninfo">My Account</a>
 				</div>
 			</div>
+      <div class="td  ">
+        <div class="menuSelect smoothAnimate">
+          <a href="downloads.php">Downloads</a>
+        </div>
+      </div>
 			<div class="td  ">
 				<div class="menuSelect smoothAnimate">
 					<a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
 				</div>
 			</div>
+    <div class="td  ">
+        <div class="menuSelect smoothAnimate">
+          <a href="../research.php">Research</a>
+        </div>
+      </div>
 			<div class="td largeNav">
 				<div class="menuSelect smoothAnimate">
 					<a href="../teens.php">Teens</a>
@@ -33,16 +43,6 @@
 					<a href="../children.php">Children</a>
 				</div>
 			</div>
-			<div class="td  ">
-				<div class="menuSelect smoothAnimate">
-					<a href="../research.php">Research</a>
-				</div>
-			</div>
-			<div class="td  ">
-				<div class="menuSelect smoothAnimate">
-					<a href="../hours.php">Hours</a>
-				</div>
-			</div>			
 		</div>
 	</nav>
 </header>

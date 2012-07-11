@@ -249,9 +249,10 @@ function getDeliciousFeed(uri,target){
 			html = $("<div/>",{"class":"delItem",css:{}})
 				.html(
 					
-							$("<div/>",{"class":"delItem"})
+							$("<div/>",{"class":"delItem linkIcon"})
 								.html(
-									$("<a/>",{"href":link,"html":title,"target":"_blank",css:{"height":"16px"}})
+									$("<a/>",{"class":"linkIcon","href":link,"html":title,"target":"_blank",css:{"height":"16px"}})
+									 .css({background: "url(http://g.etfv.co/" + link + ") left center no-repeat","padding-left": "20px"})
 								)
 					
 				)
@@ -503,15 +504,6 @@ $(document).ready(function(){
 //    e.preventDefault();
 //    history.pushState({}, "", this.href);
 //  });
-
-$(".containerBox a[href^='http']").each(function() {
-    $(this).css({
-        background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
-        "padding-left": "20px"
-    });
-});
-  
-  localStorage.clear();
 		if($("#blogBox")){get_blog_feed();}
 		uri = window.location.toString();
 		
@@ -550,14 +542,9 @@ $(".containerBox a[href^='http']").each(function() {
             
 });
 
-
-
-
-
-
-
-
-
-
-
-
+$(".linkIcon a[href^='http'] ").each(function() {
+    $(this).css({
+        background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
+        "padding-left": "20px"
+    });
+});
