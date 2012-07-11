@@ -11,7 +11,7 @@
     <a href="" style="height:100%;width:100%">Local Resources</a>
   </div>
   <div style="vertical-align: top;min-height:200px;">
-    <div id="localContainer" class=" roundAll3 containerBox smoothAnimate insideBoxShadow" style="min-height:200px;vertical-align: top;">
+    <div id="localContainer" class="linkIcon roundAll3 containerBox smoothAnimate insideBoxShadow" style="min-height:200px;vertical-align: top;">
       <ul>
         <li>
           Newspapers

@@ -284,7 +284,7 @@ h3 {
 .sectionText{
   position:absolute;
   top:0;
-  right:-95px;
+  right:-70px;
   height:100px;
   font-size:1.3em;
   font-weight:bold;
@@ -294,13 +294,9 @@ h3 {
   padding-top:5px;
   color:fadeout(@colorDark,20%);
   text-shadow:1px 1px 0 0 @shadow;
-  .linearAnimate();
   .shadowOut(-1px,-4px,2px,-1px, @shadow);
   .softColor(@color4);
   .rotate(-90deg);  
-}
-.smallSection:hover .sectionText{
-  right:-70px;
 }
 .downloadsNav{
   background:url("/images/download.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
@@ -315,13 +311,19 @@ h3 {
 	background:url("/images/genealogy.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .eventsNav{
-	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
+	background:url("/images/events.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .hoursNav{
 	background:url("http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=9&size=230x100&sensor=false") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 .greatPicksNav{
 	background:url("/images/cardCatalog.jpg") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
+}
+.aboutNav{
+  background:url("/images/LPCPLsmall.png") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
+}
+.employmentNav{
+  background:url("/images/employment.png") no-repeat scroll 50% 50% transparent;background-size:230px 100px;
 }
 
 .topNav{
@@ -466,26 +468,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	overflow:hidden;
   .softColor(@color4);
 }
-/*
-.navDisplay:hover .smallSection a,
-.navDisplay:hover .middleSection form,
-.navDisplay:hover .mediumSection form,
-.navDisplay:hover .middleSection a,
-.navDisplay:hover .middleScrollContainer div{
-	opacity:.6;
-}
 
-.navDisplay .smallSection a:hover,
-.navDisplay .mediumSection a:hover,
-.navDisplay .middleSection form:hover,
-.navDisplay .middleSection a:hover,
-.navDisplay .mediumSection form:hover,
-.navDisplay .middleSectionScroll:hover .middleSection ,
-.navDisplay .middleSectionScroll:hover div
-{
-	opacity:1;
-}
-*/
 .smallSection,.smallSection a{
 	height:100px;
 	width:100%;
@@ -496,21 +479,24 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	width:470px;
 	background-size:100% 470px;
 }
+.mediumSection form input, .mediumSection form select{
+  top:15px;
+  height:35px;
+  padding:5px;
+  position:absolute;
+}
 .mediumSection form select{
-	position:absolute;
-	top:10px; 
-	left:335px;
-	padding:5px;
-	
+	left:270px;
+	width:120px;
 }
-.mediumSection form input{
-	position:absolute;
-	top:10px;
+.mediumSection form input[type="text"]{
 	left:5px;
-	width:300px;
-	padding:5px;
+	width:250px;
 }
-
+.mediumSection form input[type="submit"]{
+  left:405px;
+  width:40px;
+}
 #container{
 	position:relative;
 	z-index:10;
