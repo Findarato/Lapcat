@@ -397,10 +397,11 @@ function get_rss_feed(uri,target) {
 	});
 };
 function get_blog_feed() {
+	/*
 	var blogWindow = $("#blogContainerBox");
 	//clear the content in the div for the next feed.
 	blogWindow.empty();
-	totalDisplay = 3;
+  totalDisplay = 3;
  	totalBlogItems = 0;
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":"http://laportelibrary.blogspot.com/feeds/posts/default"}, function(d) {
@@ -415,6 +416,22 @@ function get_blog_feed() {
 			var title = item.find('title').text();
 			// grab the post's URL
 			var link = item.find('link[rel=alternate]').attr("href");
+			$(".fb-like").attr("data-href",link)
+			var FB = $("<iframe/>")
+			FB
+        .attr({
+			    "scrolling":"no",
+			    "frameborder":0,
+			    "allowTransparency":true,
+			    "src":"//www.facebook.com/plugins/like.php?href="+escape(link)+"&amp;send=false&amp;layout=button_count&amp;width=200&amp;show_faces=false&amp;action=recommend&amp;colorscheme=light&amp;font=arial&amp;height=21"
+			   })
+			  .css({
+          "border":"none",
+          "overflow":"hidden",
+          "width":"200px",
+          "height":"21px"
+			 })
+      var GP = '<div id="plusOneDiv'+totalBlogItems+'"  class="g-plusone" data-size="small" data-href="'+link+'">test</div>';
 			//alert(link);
 			// next, the description
 			var description = item.find('content').text();
@@ -432,7 +449,7 @@ function get_blog_feed() {
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<article/>",{"class":"blogItem",css:{}})
 				.html(
-					$("<div/>",{})
+					$("<div/>")
 						.html(
 							$("<div/>",{"class":"blogEntryTitle"})
 								.html(
@@ -451,12 +468,21 @@ function get_blog_feed() {
 						.append(
 							$("<div/>",{"class":"blogEntryDescription",html:description})
 						)
+						.append(
+						  $("<div/>",{"id":"socialMediaContainer"})
+						    .append(FB)
+                .append(GP)    
+						)
+						
 				)
 			//put that feed content on the screen!
 			blogWindow.append(html);
 			totalBlogItems++;
+			
 		});
-		
+		//for(a=0;a<totalBlogItems;a++){
+		  //gapi.plusone.go("plusOneDiv"+a);  
+		//}
 		$(".blogEntryDescription a").css({"display":"inline"})
 		$.each($(".blogEntryDescription").find('a>img'),function(i,item){
 			me = $(item);
@@ -467,7 +493,8 @@ function get_blog_feed() {
 			}
 		});
 	});
-};
+	*/
+}
 function displayFlickr(flickrTag,flickrId){
 	// lets make sure we have some defaults in so that if the user just calls the function it works
 	if(flickrTag == undefined)
@@ -500,13 +527,9 @@ function displayFlickr(flickrTag,flickrId){
 	});
 }
 $(document).ready(function(){
-//  $("a[href^=#]").on("click", function(e) {
-//    e.preventDefault();
-//    history.pushState({}, "", this.href);
-//  });
-		if($("#blogBox")){get_blog_feed();}
+		//if($("#blogBox")){get_blog_feed();}
 		uri = window.location.toString();
-		
+		gapi.plusone.render();
 		/* Lets load the correct delicious feed */
 		if(uri.search(/research/i)>0){// this is the research page
 			getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
@@ -539,7 +562,7 @@ $(document).ready(function(){
             "auto_join_text_url": "",
             "loading_text": ""
         });
-            
+        gapi.plusone.go();
 });
 
 $(".linkIcon a[href^='http'] ").each(function() {
@@ -547,4 +570,5 @@ $(".linkIcon a[href^='http'] ").each(function() {
         background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
         "padding-left": "20px"
     });
+    
 });
