@@ -10,12 +10,12 @@
 				{*{include file="../sections/mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
+			  {include file="../sections/downloadLinks.tpl"}
 				{include file="../sections/newBooks.tpl"}
 				{include file="../sections/delicious.tpl"}
 			</aside>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
-				{*{include file="../sections/allHours.tpl"}*}
 			</section>
 		</div>
 		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
