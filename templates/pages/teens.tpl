@@ -9,7 +9,6 @@
 				{include file="../sections/flicker.tpl" flickerTitle="Community Art" flickerLink="http://www.flickr.com/photos/laportelibrary/tags/teens/"}
 			</section>
 			<aside class="grid_8">
-				{include file="../sections/countDown.tpl"}
 				{include file="../sections/newBooks.tpl"}
 				{include file="../sections/delicious.tpl"}
 			</aside>
