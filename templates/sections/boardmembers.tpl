@@ -3,7 +3,6 @@
     Board Members
   </div>
   <div id="" class="insideBoxShadow roundAll3 containerBox" >
-
     <div class="boardMember" style="display:table">
       <!-- Container for board member -->
       <div style="display:table-cell">

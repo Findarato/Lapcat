@@ -10,6 +10,7 @@
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/boardmembers.tpl"}
+				{include file="../sections/closedDates.tpl"}
 			</aside>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
