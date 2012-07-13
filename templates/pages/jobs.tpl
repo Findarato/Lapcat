@@ -4,6 +4,7 @@
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground" id="main" role="main">
 			{include file="../sections/subpage_header.tpl" pageTitle="Employment" backgroundImage="images/LaPorte_County_Public_Library.png"}
+			<a href="/downloads/applicationform.pdf">employment application form</a>
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/mainContent.tpl" sectionTitle="Employment"}
