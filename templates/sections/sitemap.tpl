@@ -16,7 +16,7 @@
 	<a href="../about/friends.html">Friends of The Library</a>
 	<a href="https://catalog.lapcat.org/selfreg~S12">Ecards</a>
 	<a href="jobs.php">Jobs</a>
-	<a href="about.html">About</a>
+	<a href="about.php">About</a>
 	<a href="http://laportelibrary.blogspot.com/">Blog</a>
 	<a href="http://catalog.lapcat.org/">Catalog</a>
 	<a href="edresearch.php">Educators</a>	
