@@ -63,8 +63,14 @@ a:hover{text-decoration: underline;}
   .rounded-corners(10px);
 }
 /* Color 4 related items */
-.color4{
+.color4,.mainBackground{
   background:@color4;
+}
+.color460{
+  background:@color460;
+}
+.color4Soft{
+  .softColor(@color4);
 }
 .color4TextGlow{
   text-shadow: @color4 0 0 2px;
@@ -152,7 +158,7 @@ h3 {
        -o-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
           transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
 }
-.linearAnimate{
+h1,.linearAnimate{
   -webkit-transition: all 300ms linear;
      -moz-transition: all 300ms linear;
       -ms-transition: all 300ms linear;
@@ -176,9 +182,6 @@ h3 {
     -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
-}
-.mainBackground{
-  background-color:@color4;
 }
 .mainBorder,.mainBorder60{
   border: 1px solid @borderColor;
