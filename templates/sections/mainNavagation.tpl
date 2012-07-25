@@ -30,7 +30,7 @@
             <option value="a">AUTHOR</option>
             <option value="d">SUBJECT</option>
           </select>
-          <input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
+          <input type="search" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog" style="width:250px;margin-left:10px;;">
           <input class="insideBoxShadow" type="submit" value="GO!">
         </form>
       </div>

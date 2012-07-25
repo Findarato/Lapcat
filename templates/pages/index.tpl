@@ -11,6 +11,7 @@
 			<aside class="grid_8">
 				{include file="../sections/twitter.tpl"}
 				{include file="../sections/socialMedia.tpl"}
+				{include file="../sections/searchSite.tpl"}
 			</aside>
 			<div class="clear"></div>
 		</div>

@@ -13,6 +13,7 @@
 			<aside class="grid_8">
 				{include file="../sections/topBooks_teen.tpl"}
 				{include file="../sections/delicious.tpl"}
+				{include file="../sections/searchSite.tpl"}
 			</aside>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">

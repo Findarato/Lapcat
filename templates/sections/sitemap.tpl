@@ -25,4 +25,3 @@
 <p class="copyright">
 	Copyright &copy; 2012 La Porte County Public Library System
 </p>
-<br />

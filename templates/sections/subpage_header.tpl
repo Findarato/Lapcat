@@ -12,7 +12,7 @@
 				<option value="a">AUTHOR</option>
 				<option value="d">SUBJECT</option>
 			</select>
-			<input type="text" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
+			<input type="search" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
 			<input type="submit" value="GO!" style="position:absolute;bottom:28px; left:348px;padding:4px;display:none;"/>
 		</form>
 	</div>
