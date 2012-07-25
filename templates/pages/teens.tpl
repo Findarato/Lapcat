@@ -1,5 +1,6 @@
 {include file="../sections/html_header.tpl"  title="La Porte County Public Library (Teens)"}
 <body>
+  <div class="wholePage" style="overflow: hidden;">
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground" id="main" role="main">
@@ -11,7 +12,7 @@
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/newBooks.tpl"}
-				{include file="../sections/delicious.tpl"}
+				{*{include file="../sections/delicious.tpl"}*}
 				{include file="../sections/searchSite.tpl"}
 			</aside>
 			<div class="clear"></div>
@@ -23,7 +24,8 @@
 	</div>
 		<div class="childrenGrass">
 			<div class="childrenTree linearAnimate"></div>
-		</div>	
+		</div>
+	</div>
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
 	<script src="js/libs/countdown/jquery.countdown.js"></script>
