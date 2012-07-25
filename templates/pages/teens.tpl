@@ -6,6 +6,7 @@
 			{include file="../sections/subpage_header.tpl" pageTitle="Teens" backgroundImage="images/teen.png"}
 			<div class="clear"></div>
 			<section class="grid_16">
+				{include file="../sections/blog.tpl"}
 				{include file="../sections/flicker.tpl" flickerTitle="Community Art" flickerLink="http://www.flickr.com/photos/laportelibrary/tags/teens/"}
 			</section>
 			<aside class="grid_8">
