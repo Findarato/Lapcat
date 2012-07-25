@@ -13,6 +13,7 @@
 				{include file="../sections/delicious.tpl"}
 				{include file="../sections/research_kids.tpl"}
 				{include file="../sections/twitter.tpl"}
+				{include file="../sections/searchSite.tpl"}
 			</aside>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">

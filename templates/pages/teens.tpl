@@ -11,10 +11,11 @@
 			<aside class="grid_8">
 				{include file="../sections/newBooks.tpl"}
 				{include file="../sections/delicious.tpl"}
+				{include file="../sections/searchSite.tpl"}
 			</aside>
 			<div class="clear"></div>
 		</div>
-		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
+		<footer class="grid_24" style="margin-top:10px;">
 			{include file="../sections/sitemap.tpl"}
 		</footer>
 		<div id="testStuff"></div>

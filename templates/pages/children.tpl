@@ -15,6 +15,7 @@
 					{include file="../sections/research_kids.tpl"}
 					{include file="../sections/newBooks.tpl"}
 					{include file="../sections/delicious.tpl"}
+					{include file="../sections/searchSite.tpl"}
 				</aside>
 				<div class="clear"></div>
 			</div>
