@@ -4,7 +4,7 @@
   </div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
     {foreach from=$blog item=b}
-    <article class="blogItem">
+    <article class="blogItem" style="position:relative">
       <div>
         <div class="blogEntryTitle">
           <a href="{$b.link}" target="_blank">{$b.title}</a>
@@ -15,14 +15,13 @@
         <div class="blogEntryDescription">
           {$b.contents}
         </div>
-        <div id="socialMediaContainer" style="width:25%;">
+        <div id="socialMediaContainer" style="width:20%;position:absolute;right:5px;top:5px;">
           <div style="display:table-cell">
             <div data-href="{$b.link}" data-size="small" class="g-plusone"></div>  
           </div>
           <div style="display:table-cell">
             <div class="fb-like" data-href="{$b.link}?spref=fb" data-send="false" data-layout="button_count" data-width="200" data-show-faces="false" data-font="arial"></div>
           </div>
-          
         </div>
       </div>
     </article>
