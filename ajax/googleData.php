@@ -10,8 +10,7 @@
 	Zend_Loader::loadClass('Zend_Gdata_Docs');
 	 
 	// User whose calendars you want to access
-	$user = 'jharry@lapcat.org';
-	$pass = 'jh82drys';
+	include "googleLogin.inc";
     
     $service = Zend_Gdata_Docs::AUTH_SERVICE_NAME;
     $client = Zend_Gdata_ClientLogin::getHttpClient($user, $pass, $service);
