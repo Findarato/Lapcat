@@ -24,14 +24,13 @@
     $rows = $wsEntry->getContentsAsRows();
     if(isset($_GET["type"])){
       if($_GET["type"] == (string)$title){ // we are only going to return what is requested
-        $json[] = $rows;
+        $json = $rows;
+        echo json_encode($json);
         return;
       }
     }else{ // we are just returning everything
       $json[(string)$title] = $rows;  
     }
-     
   }
-   
   echo json_encode($json)
 ?>
