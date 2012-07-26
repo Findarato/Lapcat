@@ -254,15 +254,33 @@ function getDeliciousFeed(uri,target){
 									$("<a/>",{"class":"linkIcon","href":link,"html":title,"target":"_blank",css:{"height":"16px"}})
 									 .css({background: "url(http://g.etfv.co/" + link + ") left center no-repeat","padding-left": "20px"})
 								)
-					
 				)
-				
-				
 			//put that feed content on the screen!
 			sCC.append(html);  
 		});
 	})
 	
+}
+function getSpreadSheetFeed(area,target){
+  if(target===undefined)
+    var sCC = $("#deliciousContainer")
+  else
+    var sCC = target;
+  if(area == undefined) area = "adult";
+  $.getJSON("ajax/googleDataLinks.php",{"type":area},function(data){
+    $.each(data,function(i,item){
+        html = $("<div/>",{"class":"delItem",css:{}})
+        .html(
+              $("<div/>",{"class":"delItem linkIcon"})
+                .html(
+                  $("<a/>",{"class":"linkIcon","href":item.url,"html":item.title,"target":"_blank",css:{"height":"16px"}})
+                   .css({background: "url(http://g.etfv.co/" + item.url + ") left center no-repeat","padding-left": "20px"})
+                )
+        )
+      //put that feed content on the screen!
+      sCC.append(html);
+    });
+  });
 }
 function wowbraryImageLinks(uri,target,slider,title,count){
 	var amount = 0;
@@ -532,19 +550,21 @@ $(document).ready(function(){
 		gapi.plusone.render();
 		/* Lets load the correct delicious feed */
 		if(uri.search(/research/i)>0){// this is the research page
-			getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
+			//getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
+			getSpreadSheetFeed("research");
 		}else{
 			if(uri.search(/teens/i)>0){// this is the teens page
 				getDeliciousFeed("http://www.delicious.com/v2/rss/laportecoteens");
 			}else{
 				if(uri.search(/children/i)>0){// this is the teens page
-					getDeliciousFeed("http://www.delicious.com/v2/rss/laportecochild");
+					//getDeliciousFeed("http://www.delicious.com/v2/rss/laportecochild");
+					getSpreadSheetFeed("kids");
 				}else{
 					if(uri.search(/greatpicks/i)>0){// this is the teens page
 						get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"))
 						getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
 					}else{//if all else fails lets just load a local rss feed
-						getDeliciousFeed("http://www.delicious.com/v2/rss/laportelocal");	
+						getSpreadSheetFeed("adult");
 					}
 				}	
 			}
