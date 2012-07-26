@@ -1,21 +1,29 @@
-<?Php
-	$path = $_SERVER["DOCUMENT_ROOT"].'/libraries/';
-	// Append the library path to existing paths
-	$oldPath = set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-	
-	
-	require_once 'Zend/Loader.php';
-	Zend_Loader::loadClass('Zend_Gdata');
-	Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
-	Zend_Loader::loadClass('Zend_Gdata_Docs');
-	 
-	// User whose calendars you want to access
-	include "googleLogin.inc.php";
-    
-    $service = Zend_Gdata_Docs::AUTH_SERVICE_NAME;
-    $client = Zend_Gdata_ClientLogin::getHttpClient($user, $pass, $service);
-    $docs = new Zend_Gdata_Docs($client);
-    $feed = $docs->getDocumentListFeed('http://docs.google.com/feeds/documents/private/full/-/spreadsheet');
-    
-    print_r($feed->entries);
+<?php
+  
+  // load Zend Gdata libraries
+  require_once $_SERVER["DOCUMENT_ROOT"].'/libs/ZendGdata/Zend/Loader.php';
+  Zend_Loader::loadClass('Zend_Gdata_Spreadsheets');
+  Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
+  // set credentials for ClientLogin authentication
+  include "googleLogin.inc.php";
 
+  try {  
+      // connect to API
+    $service = Zend_Gdata_Spreadsheets::AUTH_SERVICE_NAME;
+    $client = Zend_Gdata_ClientLogin::getHttpClient($user, $pass, $service);
+    $service = new Zend_Gdata_Spreadsheets($client);
+    $ssEntry = $service->getSpreadsheetEntry('https://spreadsheets.google.com/feeds/spreadsheets/0AiS5uo8R9Z4RdDRRRU1ZcGZ0RW5sbTFzNVVBZFRvdFE');
+      // get worksheets in this spreadsheet
+    $wsFeed = $ssEntry->getWorksheets();
+    $json = array();
+  } catch (Exception $e) {
+      die('ERROR: ' . $e->getMessage());
+  }
+  foreach($wsFeed as $wsEntry){
+    $title =  $wsEntry->getTitle();
+    $rows = $wsEntry->getContentsAsRows();
+    $json[(string)$title] = $rows; 
+  }
+   
+  echo json_encode($json)
+?>
