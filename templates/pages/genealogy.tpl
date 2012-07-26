@@ -3,7 +3,7 @@
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground" id="main" role="main">
-			{include file="../sections/subpage_header.tpl" pageTitle="Genealogy" backgroundImage="images/research.jpg"}
+			{include file="../sections/subpage_header.tpl" pageTitle="Genealogy" backgroundImage="images/LaPorte_County_Public_Library.jpg"}
 			{* {include file="../sections/soonCalendar.tpl"} *} 
 			<div class="clear"></div>
 			<section class="grid_16">

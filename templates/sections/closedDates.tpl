@@ -21,7 +21,7 @@
     <div class="boardMember" style="display:table">
       <!-- Container for date -->
       <div style="display:table-cell">
-        <div class="sprite sprite-calendar-blue" style="height:32px;width:32px;"></div>
+        
       </div>
       <div style="display:table-cell;vertical-align: top;">
         <div style="width:100%">

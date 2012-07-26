@@ -5,8 +5,8 @@
   <div id="" class="insideBoxShadow roundAll3 containerBox" >
     <div style="display:table;width:100%">
       <div  style="display:table-cell">
-        <div class="hoverCard" style=";">Meeting Minuites
-          <label class="color3Circle" style="width:2em;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
+        <div class="hoverCard" style=";">
+          Meeting Minuites <label class="color3Circle" style="width:2em;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
         </div>
         <div class="" id="minuitesHover" style="display:block;">
           <a style="display:block;" href="minutes/Minutes May 31-2.pdf">May 31, 2012</a>
@@ -25,8 +25,8 @@
         </div>
       </div>
       <div  style="display:table-cell">
-        <div class="hoverCard" style="cursor:help;">Agenda
-          <label class="color3Circle" style="margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
+        <div class="hoverCard" style="cursor:help;">
+          Agenda <label class="color3Circle" style="margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
         </div>
         <div class="" id="agendaHover" style="display:block;">
           <a style="display:block;" href="agendas/AGENDA June 2012.pdf">June 28, 2012</a>
@@ -37,13 +37,12 @@
           <a style="display:block;" href="agendas/AGENDA February 2012.pdf">February 23, 2012</a>
           <a style="display:block;" href="agendas/AGENDA January 2012.pdf">January 26, 2012 </a>
           <a style="display:block;" href="agendas/Board of Finance Agenda.pdf">January 26, 2012 board of finance agenda</a>
-        </div>        
+        </div>
       </div>
     </div>
     <div class="boardMember" style="display:table">
       <!-- Container for board member -->
       <div style="display:table-cell">
-        
       </div>
       <div style="display:table-cell;vertical-align: top;">
         <div style="width:100%">
@@ -56,7 +55,6 @@
     </div>
     <div class="boardMember" style="display:table">
       <div style="display:table-cell">
-        
       </div>
       <div style="display:table-cell;vertical-align: top;">
         <div style="width:100%">
@@ -69,7 +67,6 @@
     </div>
     <div class="boardMember" style="display:table">
       <div style="display:table-cell;vertical-align: top;">
-        
       </div>
       <div style="display:table-cell">
         <div style="width:100%">
@@ -82,7 +79,6 @@
     </div>
     <div class="boardMember" style="display:table">
       <div style="display:table-cell;vertical-align: top;">
-        
       </div>
       <div style="display:table-cell">
         <div style="width:100%">
@@ -95,7 +91,6 @@
     </div>
     <div class="boardMember" style="display:table">
       <div style="display:table-cell;vertical-align: top;">
-        
       </div>
       <div style="display:table-cell">
         <div style="width:100%">
@@ -108,7 +103,6 @@
     </div>
     <div class="boardMember" style="display:table">
       <div style="display:table-cell;vertical-align: top;">
-        
       </div>
       <div style="display:table-cell">
         <div style="width:100%">
@@ -121,7 +115,6 @@
     </div>
     <div class="boardMember" style="display:table">
       <div style="display:table-cell;vertical-align: top;">
-        
       </div>
       <div style="display:table-cell">
         <div style="width:100%">
@@ -132,6 +125,13 @@
         </div>
       </div>
     </div>
-    
+    <div style="display:table;width:100%">
+      <div  style="display:table-cell">
+        <a href="downloads/boardbylaws.pdf">Library Board bylaws</a>
+      </div>
+      <div  style="display:table-cell">
+
+      </div>
+    </div>
   </div>
 </div>
