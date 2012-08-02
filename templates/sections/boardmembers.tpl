@@ -6,7 +6,7 @@
     <div style="display:table;width:100%">
       <div  style="display:table-cell">
         <div class="hoverCard" style=";">
-          Meeting Minuites <label class="color3Circle" style="width:2em;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
+          Meeting Minuites <label class="color3Circle" style="margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
         </div>
         <div class="" id="minuitesHover" style="display:block;">
           <a style="display:block;" href="minutes/Minutes May 31-2.pdf">May 31, 2012</a>
@@ -25,7 +25,7 @@
         </div>
       </div>
       <div  style="display:table-cell">
-        <div class="hoverCard" style="cursor:help;">
+        <div class="hoverCard">
           Agenda <label class="color3Circle" style="margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
         </div>
         <div class="" id="agendaHover" style="display:block;">
