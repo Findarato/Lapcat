@@ -14,21 +14,6 @@
   }
   .siteMap{
     width:100%;
-    -moz-column-count:3;
-    -moz-column-gap: 1em; 
-    -moz-column-rule: 4px groove rgba(0,0,0,.2); 
-    -webkit-column-count: 3; 
-    -webkit-column-gap: 1em; 
-    -webkit-column-rule: 4px groove rgba(0,0,0,.2);
-    column-count: 3; 
-    column-gap: 1em; 
-    column-rule: 4px groove rgba(0,0,0,.2);
-  }
-  .siteMap a{
-    display:block;
-    padding:auto;
-    margin:auto;
-    border: none;
   }
   .rightNav{display:none;}
 }
@@ -45,21 +30,6 @@
   }
   .siteMap{
     width:80%;
-    -moz-column-count:3;
-    -moz-column-gap: 1em; 
-    -moz-column-rule: 4px groove rgba(0,0,0,.2); 
-    -webkit-column-count: 3; 
-    -webkit-column-gap: 1em; 
-    -webkit-column-rule: 4px groove rgba(0,0,0,.2);
-    column-count: 3; 
-    column-gap: 1em; 
-    column-rule: 4px groove rgba(0,0,0,.2);
-  }
-  .siteMap a{
-    display:block;
-    padding:auto;
-    margin:auto;
-    border: none;
   }
   .navDisplay .grid_12,.grid_22{
     width:64%;
@@ -100,15 +70,6 @@
   }  
   .siteMap{
     width:80%;
-    -moz-column-count:2;
-    -moz-column-gap: 1em; 
-    -moz-column-rule: 4px groove rgba(0,0,0,.2); 
-    -webkit-column-count: 2; 
-    -webkit-column-gap: 1em; 
-    -webkit-column-rule: 4px groove rgba(0,0,0,.2);
-    column-count: 2; 
-    column-gap: 1em; 
-    column-rule: 4px groove rgba(0,0,0,.2);
   }
   .middleSection{
     height:250px;
@@ -154,12 +115,6 @@
     background: none, url('/images/tree.svg') no-repeat;
     background-size:contain;
   }
-  .siteMap a{
-    display:block;
-    padding:auto;
-    margin:auto;
-    border: none;
-  } 
   .navDisplay .grid_12{
     width:98%;
   }
@@ -181,7 +136,6 @@
   }
 }
 @media only screen and (max-width: 400px) { /* Portrait Phones */
-  .secondNav{display:none;}
   .subPageCatalogSearch{
     display:none;
   }
@@ -196,15 +150,10 @@
   }
   .siteMap{
     width:50%;
-    -moz-column-count:1;
-    -moz-column-gap: 1em; 
-    -moz-column-rule: 4px groove rgba(0,0,0,.2); 
-    -webkit-column-count: 1; 
-    -webkit-column-gap: 1em; 
-    -webkit-column-rule: 4px groove rgba(0,0,0,.2);
-    column-count: 1; 
-    column-gap: 1em; 
-    column-rule: 4px groove rgba(0,0,0,.2);
+  }
+  .siteMap a{
+    display:block;
+    width:100%;
   }
   nav h1{
     font-size: 1em;
@@ -236,7 +185,18 @@
   }
 }
 
-
+@media only screen and (min-width:200px){ /*everything should be here*/
+  .siteMap{
+    width:100%;
+    .secondNav{
+      width:100%;
+      display:inline-block;
+    }
+    a{
+      display:block;
+    }  
+  } 
+}
 /* ==|== print styles ======================================================= */
  
 @media print {
