@@ -27,12 +27,12 @@
   -moz-box-shadow: @arguments;
   -webkit-box-shadow: @arguments;
 }
-.linearAnimate(@time:300ms){
-  -webkit-transition: all @time linear;
-     -moz-transition: all @time linear;
-      -ms-transition: all @time linear;
-       -o-transition: all @time linear;
-          transition: all @time linear;
+.Animate(@time:300ms){
+  -webkit-transition: all @time ease;
+     -moz-transition: all @time ease;
+      -ms-transition: all @time ease;
+       -o-transition: all @time ease;
+          transition: all @time ease;
 }
 
 .softColor(@color){

@@ -1,4 +1,6 @@
 <?php
+  header('Content-type: text/json');
+  header('Content-type: application/json');
   
   // load Zend Gdata libraries
   require_once $_SERVER["DOCUMENT_ROOT"].'/libs/ZendGdata/Zend/Loader.php';

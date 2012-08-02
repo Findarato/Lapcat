@@ -518,31 +518,31 @@ function displayFlickr(flickrTag,flickrId){
 	if(flickrTag == undefined)
 		flickrTag = "teen";
 	if(flickrId == undefined)
-		flickrId = "62092835@N08";
+		flickrId = '62092835@N08';
 		
-	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
-	{
-		id: flickrId,
-    	format: "json",
-    	tags:flickrTag
-	},
-	function(data) {
-	  	$.each(data.items, function(i,item){
-	    	$("<div/>",{"class":"flickrPicture linearAnimate",css:{"display":"inline-block","position":"relative"}})
-	      		.html(
-	      			$("<div/>",{"class":"flickrPictureOutline roundAll3 linearAnimate"})
-	      				.html(
-		      				$("<a/>",{"html":"&nbsp;"})
-	    	  					.css({"background-image":"url("+item.media.m+")"})
-	      						.attr({"href":item.link,"title":item.title})	
-	      				)
-	      				.append(
-	      					$("<div/>",{"html":item.title,"css":{"position":"relative","top":"106px","left":"3px","width":"96%","font-size":"1em","color":"#000","margin-left:":"2%"}})		
-	      				)
-	      		)
-	      		.appendTo("#flickerPictureBox");
-	    });
-	});
+  	$.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+      {
+        id: flickrId,
+        tags: flickrTag,
+        format: "json"
+      },
+  	function(data) {
+  	  	$.each(data.items, function(i,item){
+  	    	$("<div/>",{"class":"flickrPicture linearAnimate",css:{"display":"inline-block","position":"relative"}})
+  	      		.html(
+  	      			$("<div/>",{"class":"flickrPictureOutline roundAll3 linearAnimate"})
+  	      				.html(
+  		      				$("<a/>",{"html":"&nbsp;"})
+  	    	  					.css({"background-image":"url("+item.media.m+")"})
+  	      						.attr({"href":item.link,"title":item.title})	
+  	      				)
+  	      				.append(
+  	      					$("<div/>",{"html":item.title,"css":{"position":"relative","top":"106px","left":"3px","width":"96%","font-size":"1em","color":"#000","margin-left:":"2%"}})		
+  	      				)
+  	      		)
+  	      		.appendTo("#flickerPictureBox");
+  	    });
+  	});
 }
 $(document).ready(function(){
 		//if($("#blogBox")){get_blog_feed();}
@@ -554,7 +554,8 @@ $(document).ready(function(){
 			getSpreadSheetFeed("research");
 		}else{
 			if(uri.search(/teens/i)>0){// this is the teens page
-				getDeliciousFeed("http://www.delicious.com/v2/rss/laportecoteens");
+				//getDeliciousFeed("http://www.delicious.com/v2/rss/laportecoteens");
+				getSpreadSheetFeed("teens");
 			}else{
 				if(uri.search(/children/i)>0){// this is the teens page
 					//getDeliciousFeed("http://www.delicious.com/v2/rss/laportecochild");
@@ -562,7 +563,8 @@ $(document).ready(function(){
 				}else{
 					if(uri.search(/greatpicks/i)>0){// this is the teens page
 						get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"))
-						getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
+						//getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
+						getSpreadSheetFeed("readers");
 					}else{//if all else fails lets just load a local rss feed
 						getSpreadSheetFeed("adult");
 					}

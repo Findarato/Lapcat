@@ -7,9 +7,6 @@
 		width:100%;
 		padding:5px;
 	}
-	.flickerPicture{
-
-	}
 	.flickrPicture a{
 		height:100px;
 		width:100px;
@@ -54,15 +51,14 @@
 
 	}
 	.flickerPictureBox .flickrPicture:hover .flickrPictureOutline{
-				-webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
-		-moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
-		box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
+    -webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
+    box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
 	}
 	.flickerPictureBox .flickrPicture:hover a{
 		border:rgb(0,0,0) solid 1px;
 		border:rgba(0,0,0,.6) solid 1px;	
 	}
-	
 </style>
 <div class="blogBox roundAll3">
 	<div class="flickerTitle roundAll3 titleElement color3"><a href="{if $flickerLink ne ""} {$flickerLink}{/if}" style="height:100%;width:100%">{if $flickerTitle ne ""}{$flickerTitle}{/if}</a></div>
