@@ -3,16 +3,14 @@
   -webkit-border-radius: @radius;
 }
 .downShadow(@color){
-  -webkit-box-shadow: 0 6px 7px -3px @color;
-  box-shadow: 0 6px 7px -3px @color;
+  .shadowOut(0,6px,7px,-3px,@color);
 }
 .dropShadow(@color){
   -webkit-box-shadow: -4px 7px 6px 0px @color;
   box-shadow: -4px 7px 6px 0px @color;
 }
 .oneEdgeShadow(@color){
-  -webkit-box-shadow: 0 8px 6px -6px @color;
-  box-shadow: 0 8px 6px -6px @color;
+  .shadowOut(0,8px,6px,-6px,@color);
 }
 .textShadowIndent(@color){
   text-shadow: 0 1px 1px @color;
