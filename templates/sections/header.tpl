@@ -9,7 +9,6 @@
 				<h3 class="logoSubtitle">learn, enrich, enjoy</h3>
 			</div>
 		</div>
-    <div style="position:absolute;right:20px;bottom:5px" class=""><a class="iconic cog menuDropDown" href="#siteMap"></a></div>
 	</nav>
 	<nav class="secondNav color2" style="width:100%">
 		<div class="t topNav" style="text-align:center;margin:0 auto;">
