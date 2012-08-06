@@ -11,11 +11,12 @@ $feed -> init();
 $feed -> handle_content_type();
 $count = 0;
 foreach($feed->get_items(0,0) as $item) {
-  if($count == 2) break;
+  if($count == 3) break;
   $categories = $item -> get_categories();
-  foreach($categories as $cate){
+  foreach($categories as $cate){ //lets assign them to the specific item.
     $b[$count]["cate"][] = $cate ->get_term();
   }
+  //print_r($b[$count]["cate"]);
   if(!in_array("teen",$b[$count]["cate"])){
     $b[$count]["contents"] = $item -> get_content();
     $b[$count]["link"] = $item -> get_link();
@@ -25,9 +26,11 @@ foreach($feed->get_items(0,0) as $item) {
     $b[$count]["author"]["name"] = $tempAuthor[0]->get_name();
     $b[$count]["author"]["link"] = $tempAuthor[0]->get_link();
     $count++;  
+  }else{
+    unset($b[$count]["cate"]);
   }
 }
-
+//die();
 $smarty -> assign("blog" , $b);
 $smarty -> display('pages/index.tpl');
 ?>

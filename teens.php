@@ -24,6 +24,8 @@ $categories = $item -> get_categories();
     $b[$count]["author"]["name"] = $tempAuthor[0]->get_name();
     $b[$count]["author"]["link"] = $tempAuthor[0]->get_link();  
     $count++;
+  }else{
+    unset($b[$count]["cate"]);
   }
 }
 
