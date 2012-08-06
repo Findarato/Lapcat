@@ -10,11 +10,13 @@ $feed -> init();
 $feed -> handle_content_type();
 $count = 0;
 foreach($feed->get_items(0,10) as $item) {
-  if($count ==2) return;
-$categories = $item -> get_categories();
+  if($count == 2) return;  
+  
+  $categories = $item -> get_categories();
   foreach($categories as $cate){
     $b[$count]["cate"][] = $cate ->get_term();
   }
+  //print_r($b);
   if(in_array("teen",$b[$count]["cate"])){
     $b[$count]["contents"] = $item -> get_content();
     $b[$count]["link"] = $item -> get_link();
@@ -22,13 +24,17 @@ $categories = $item -> get_categories();
     $b[$count]["date"] = $item->get_date($date_format = 'j F Y, g:i a');
     $tempAuthor = $item->get_authors();
     $b[$count]["author"]["name"] = $tempAuthor[0]->get_name();
-    $b[$count]["author"]["link"] = $tempAuthor[0]->get_link();  
+    $b[$count]["author"]["link"] = $tempAuthor[0]->get_link();
     $count++;
   }else{
-    unset($b[$count]["cate"]);
+    unset($b[$count]);
+    
   }
+  //if($b[$count])
+  
 }
-
+//print_r($b);
+//die();
 $smarty -> assign("blog" , $b);
 $smarty -> display('pages/teens.tpl');
 ?>

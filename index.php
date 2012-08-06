@@ -27,7 +27,7 @@ foreach($feed->get_items(0,0) as $item) {
     $b[$count]["author"]["link"] = $tempAuthor[0]->get_link();
     $count++;  
   }else{
-    unset($b[$count]["cate"]);
+    unset($b[$count]);
   }
 }
 //die();
