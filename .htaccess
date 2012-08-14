@@ -533,4 +533,8 @@ AddCharset utf-8 .css .js .xml .json .rss .atom
 # Increase cookie security
 <IfModule php5_module>
   php_value session.cookie_httponly true
+  php_value include_path        ".:/www/dev/libs/"
 </IfModule>
+
+
+
