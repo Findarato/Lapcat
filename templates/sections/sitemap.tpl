@@ -1,5 +1,5 @@
 <div class="siteMap roundAll3  linearAnimate" id="siteMap" style="margin-bottom:20px;" title="Site Map">
-  <section class="grid_8">
+  <section class="five columns">
     <div class="secondNav" style="text-align: center;">
       Website
     </div>
@@ -14,7 +14,7 @@
     <a href="genealogy.php?sitemap=1">Genealogy</a>
     <a href="downloads.php?sitemap=1">Downloads</a>
   </section>
-  <section class="grid_8">
+  <section class="five columns">
     <div class="secondNav" style="text-align: center;">
       Library
     </div>
@@ -25,7 +25,7 @@
     <a href="../about/doorstepdeliveryflier.pdf">Doorstep Delivery</a>
     <a href="https://catalog.lapcat.org/selfreg~S12">Ecards</a>
   </section>
-  <section class="grid_8">
+  <section class="five columns">
     <div class="secondNav" style="text-align: center;">
       External
     </div>
@@ -36,7 +36,3 @@
   </section>
 </div>
 
-<div class="clear"></div>
-<p class="copyright">
-  Copyright &copy; 2012 La Porte County Public Library System
-</p>

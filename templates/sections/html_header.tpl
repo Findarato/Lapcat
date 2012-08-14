@@ -14,15 +14,15 @@
     <meta property="og:site_name" content="La Porte Library"/>
     <meta property="fb:admins" content="Joseph.Harry"/>
     <meta property="fb:admins" content="Rebecca.Tomerlin"/>
-    <!-- Update your html tag to include the itemscope and itemtype attributes -->
+    <meta itemprop="description" content="La Porte County Public Library">
     <meta itemprop="name" content="{$title}">
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script|Buda:300|Overlock' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/fonts/iconic/iconic_fill.css">
     <link rel="stylesheet" href="css/fonts/websymbols/stylesheet.css">
+    <link rel="stylesheet" media="screen" href="css/gumby/gumby.css">
     <link rel="stylesheet/less" href="css/less/style.less">
     <script src="js/libs/less-1.3.0.min.js"></script>
-    <link rel="stylesheet" media="screen and (min-width: 1000px)" href="css/960_24_col.css">
-    <link rel="stylesheet" media="screen and (max-width: 999px)" href="css/fluid.css">
+    
     <link rel="stylesheet" href="js/libs/twitter/jquery.tweet.css">
     <!--end CSS--><script src="js/libs/modernizr-2.0.6.min.js"></script>
   </head>

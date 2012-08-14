@@ -1,6 +1,5 @@
-<nav class="navDisplay">
-  <div class="grid_6 leftNav" >
-    <!-- Left Colmn -->
+<nav class=" row">
+  <div class="four columns" >
     <div class="smallSection hours">
       <a class="hoursNav smoothAnimate fixMargin" href="hours.php" ></a>
       <div class="sectionText">
@@ -20,7 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="grid_12">
+  <div class="eight columns">
     <div class="mediumSection">
       <div class="fixMargin">
         <form method="get" action="http://catalog.lapcat.org/search/X?" class="catalogNav smoothAnimate">
@@ -63,7 +62,7 @@
       </div>
     </div>
   </div>
-  <div class="grid_6 rightNav" >
+  <div class="four columns" >
     <!-- Right Colmn -->
     <div class="smallSection events">
       <a class="eventsNav smoothAnimate fixMargin" href="http://engagedpatrons.org/Events.cfm?SiteID=9267" ></a>
@@ -86,9 +85,3 @@
     </div>
   </div>
 </nav>
-
-{*
-<div class="t navDisplay" style="width:auto;height:300px;margin:0 auto;">
-  <div class="tr"></div>
-</div>
-*}
