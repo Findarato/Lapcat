@@ -37,15 +37,8 @@
     </div>
     <!-- Middle Colmn -->
     <div id="middleSectionContainer" class="middleSection " style="position:relative;">
-      <div class="" id="middleSectionScrollContainer" style="position:absolute;top:0px;left:0px;width:100%"></div>
       <div class="smoothAnimate flexslider" id="middleScrollContainer">
         <ul class="slides">
-          <li>
-            <a href="/ask.php"><img src="/images/ConanTheLibrarian.jpg" alt="" title="Ask a Librarian"/></a>
-            <p class="flex-caption">
-              Have a question? Ask a Librarian!
-            </p>
-          </li>
           <li>
             <a href="http://laportelibrary.org"><img src="/images/rotate2.jpg" alt="" title="Cool 2"/></a>
             <p class="flex-caption">
