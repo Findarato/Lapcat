@@ -34,14 +34,7 @@
 {
   width:100%;
 }
-.mediumSection form select{
-	width:33%;
-	right:3px;
-	left:auto;
-}
-.mediumSection form input{
-	width:60%;
-}
+
 
 .grid_6,.grid_12,.grid_22,.grid_8,.grid_16{
 	margin-left:1%;
@@ -133,4 +126,6 @@
 .flexslider{
 	overflow:hidden;
 }
-
+.mediumSection input[type=text]{
+  background:blue;
+}
