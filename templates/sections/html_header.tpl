@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/fonts/iconic/iconic_fill.css">
     <link rel="stylesheet" href="css/fonts/websymbols/stylesheet.css">
     <link rel="stylesheet/less" href="css/less/style.less">
+    <script type="text/javascript">less = { env: 'development' }; </script>
     <script src="js/libs/less-1.3.0.min.js"></script>
     <link rel="stylesheet" media="screen and (min-width: 1000px)" href="css/960_24_col.css">
     <link rel="stylesheet" media="screen and (max-width: 999px)" href="css/fluid.css">
