@@ -3,7 +3,7 @@
   <div class="wholePage" style="overflow: hidden;">
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
-		<div class="mainArea grid_24 mainBackground" id="main" role="main">
+		<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
 			{include file="../sections/subpage_header.tpl" pageTitle="Teens" backgroundImage="images/teen.png"}
 			<div class="clear"></div>
 			<section class="grid_16">

@@ -9,6 +9,7 @@
 				{include file="../sections/missionVision.tpl"}
 				<section class="grid_8" style="margin-left:0px;">
 				  {include file="../sections/publicWorkshops.tpl"}
+				  {include file="../sections/libraryDownloads.tpl"}
 				</section>
 				<section class="grid_8 " style="margin-right:0px;">
 				  {include file="../sections/closedDates.tpl"}
@@ -16,7 +17,7 @@
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/boardmembers.tpl"}
-				{include file="../sections/closedDates.tpl"}
+				{*{include file="../sections/closedDates.tpl"}*}
 				{include file="../sections/searchSite.tpl"}
 			</aside>
 			<div class="clear"></div>

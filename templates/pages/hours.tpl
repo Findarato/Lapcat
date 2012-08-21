@@ -2,7 +2,7 @@
 <body>
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
-		<div class="mainArea grid_24 mainBackground" id="main" role="main">
+		<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
 			{include file="../sections/subpage_header.tpl" pageTitle="Locations" backgroundImage="http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=10&size=560x85&scale=2&sensor=false"}
 			{* {include file="../sections/soonCalendar.tpl"} *} 
 			<div class="clear"></div>

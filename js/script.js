@@ -292,11 +292,8 @@ function wowbraryImageLinks(uri,target,slider,title,count){
 		count=20;
 
  	if(uri==undefined)
- 		uri="http://www.wowbrary.org/rss.aspx?l=8711&c=GEN";
-	
-	
-	target.empty();
-	
+    uri="http://www.wowbrary.org/rss.aspx?l=8711&c=GEN";
+  target.empty();
 	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":uri}, function(d) {
  		me = $(d);
@@ -306,7 +303,6 @@ function wowbraryImageLinks(uri,target,slider,title,count){
 		me.find('item').each(function() {
 			if(amount == count)
 				return -1;
-			
 			amount++;
 			var $item = $(this);
 			// grab the post title
@@ -333,14 +329,13 @@ function wowbraryImageLinks(uri,target,slider,title,count){
 												.attr({"href":parent.attr("href"),"title":parent.text()})
 												.html(
 													$("<img/>",{"src":"http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn="+isbn+"&size=L"})
-													
 												)
 											returnHtml.append(linkCode);
 										});
-						return returnHtml;
+						  return returnHtml;
 						}
 					}
-				)
+				);
 				
 			//put that feed content on the screen!
 			target.append(html.html());  
@@ -349,7 +344,10 @@ function wowbraryImageLinks(uri,target,slider,title,count){
 			$(".flexslider").flexslider({
 				animation:"slide",
 				controlNav: true,
+				useCSS: true,
+				touch: true,
 				directionNav: false,
+				maxItems: 10,
 				controlsContainer: ".flexControll",
 				animationLoop: true,
 				slideshowSpeed: 5000

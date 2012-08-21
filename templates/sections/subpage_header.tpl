@@ -1,9 +1,8 @@
 <div class=" " style="margin-bottom:10px;width:100%;height:100%;position:relative;overflow:hidden" title="Subpage Header">
 	<div class="roundAll3 insideBoxShadow subPageHeader color5Soft" style="{if $backgroundImage ne ""}background:url({$backgroundImage}) no-repeat scroll{/if};opacity:.75;background-position: 0"></div>
-	<div class="color4Soft roundRight4 insideBoxShadow" style="position: absolute;top:25%; left:5px;auto;">
-	   <h1 class="" style="text-align:right;padding:0 10px 0 5px;height:100%;width:100%">{$pageTitle}</h1>
+	<div class="color4 roundRight4 outSideBoxShadow" style="position: absolute;top:25%; left:5px;auto;">
+	   <h1 style="text-align:right;padding:0 10px 0 5px;height:100%;width:100%">{$pageTitle}</h1>
 	</div>
-
 	<div class="subPageCatalogSearch outSideBoxShadow mainBackground" style="">
 		<form method="get" action="http://catalog.lapcat.org/search/~/a?a" class="smoothAnimate">
 			<select name="searchtype">

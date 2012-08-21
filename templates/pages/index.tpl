@@ -2,7 +2,7 @@
 <body>
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
-		<div class="mainArea grid_24" id="main" role="main">
+		<div class="mainArea grid_24 roundAll3" id="main" role="main">
 			{include file="../sections/mainNavagation.tpl"}
 			<div class="clear"></div>
 			<section class="grid_16">

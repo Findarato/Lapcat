@@ -1,6 +1,6 @@
-<div class="siteMap roundAll3  linearAnimate" id="siteMap" style="margin-bottom:20px;" title="Site Map">
+<div class="siteMap roundAll3  linearAnimate" id="siteMap"  title="Site Map">
   <section class="grid_8">
-    <div class="secondNav" style="text-align: center;">
+    <div class="secondNav insideBoxShadow roundAll3" style="text-align: center;">
       Website
     </div>
     <a href="jobs.php">Jobs</a>
@@ -15,7 +15,7 @@
     <a href="downloads.php?sitemap=1">Downloads</a>
   </section>
   <section class="grid_8">
-    <div class="secondNav" style="text-align: center;">
+    <div class="secondNav insideBoxShadow roundAll3" style="text-align: center;">
       Library
     </div>
     <a href="http://catalog.lapcat.org/">Catalog</a>
@@ -26,7 +26,7 @@
     <a href="https://catalog.lapcat.org/selfreg~S12">Ecards</a>
   </section>
   <section class="grid_8">
-    <div class="secondNav" style="text-align: center;">
+    <div class="secondNav insideBoxShadow roundAll3" style="text-align: center;">
       External
     </div>
     <a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>

@@ -2,9 +2,8 @@
 <body>
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
-		<div class="mainArea grid_24 mainBackground" id="main" role="main">
+		<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
 			{include file="../sections/subpage_header.tpl" pageTitle="Downloads" backgroundImage="images/LaPorte_County_Public_Library.jpg"}			
-			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/newestDownloads.tpl"}
 				{*{include file="../sections/mainContent.tpl"}*}
@@ -15,9 +14,7 @@
 				{include file="../sections/delicious.tpl"}
 				{include file="../sections/searchSite.tpl"}
 			</aside>
-			<div class="clear"></div>
-			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
-			</section>
+			<section class="grid_24" style="margin-top:10px;margin-right:auto;"></section>
 		</div>
 		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
 			{include file="../sections/sitemap.tpl"}

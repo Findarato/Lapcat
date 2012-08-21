@@ -164,22 +164,26 @@ h1,.linearAnimate{
   .Animate(200ms);
 }
 .insideBoxShadow{
-  -moz-box-shadow: inset 0 0 1px 1px @shadow;
   -webkit-box-shadow: inset 0 0 1px 1px @shadow;
   box-shadow: inset 0 0 1px 1px @shadow;
 }
+.insideBoxShadow ul{
+  margin:0px;
+  padding-left:3px;
+}
+.insideBoxShadow ul li{
+  padding:3px;
+}
 .outSideBoxShadow{
-  -moz-box-shadow: 0 0 1px 1px @shadow;
-  -webkit-box-shadow: 0 0 1px 1px @shadow;
-  box-shadow: 0 0 1px 1px @shadow;
+  -webkit-box-shadow: 6px 0 4px 4px @shadow;
+  box-shadow:  6px 0 4px 4px @shadow;
 }
 .mainArea{
   padding-top:125px;
   padding-bottom:20px;
   background-color:@color4;
-    -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: inset 0 0 1px 1px @shadow;
+  box-shadow: inset 0 0 1px 1px @shadow;
 }
 .mainBorder,.mainBorder60{
   border: 1px solid @borderColor;
@@ -311,9 +315,12 @@ h1,.linearAnimate{
 	font-size:15px;
 	position:relative;
 	height:24px;
-	.oneEdgeShadow(@shadow);
+	
 }
-.siteMap .secondNav{background:rgba(255,255,255,.6);height:20px;}
+.siteMap .secondNav{
+  background:@color4;
+  height:20px;
+}
 
 .logoTree{
   max-height:75px;
@@ -346,7 +353,6 @@ h1,.linearAnimate{
 }
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
 	color:@colorDark;
-	text-decoration:none;
 }
 
 /* Teen Section */
@@ -365,17 +371,12 @@ h1,.linearAnimate{
 	height:100%;
 }
 .countDownDays,.countDownHours,.countDownMinutes,.countDownSeconds{
-	
 	padding:3px;
 	color:#FFF;
 	white-space:nowrap;
 	font-family: '' , arial, serif; 
 	font-size:19px;
 	font-weight:bold;
-
-}
-.countDownDays{
-	padding-top:3px;
 }
 .locationBoxInfo{
 	width:40%;
@@ -389,7 +390,6 @@ h1,.linearAnimate{
 	margin:0 auto;
 	width:918px;
 }
-
 .topHeader{
 	position:fixed;
 	top:0;
@@ -522,19 +522,12 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 .blogContainerBox li{
 	display:block;
 }
-
 .blogEntryDescription a{
 	white-space:nowrap;
 }
 .blogEntryDescription iframe{
 	display:none;
 }
-.blogEntryDescription a:after{
-	font-size:10px;
-	content:" K ";
-	font-family: 'WebSymbolsRegular';
-}
-
 .blogEntryDescription a[href*="catalog.lapcat.org"]:after,.rssDescription a[href*="catalog.lapcat.org"]:after{
 	font-size:10px;
 	content:"";
@@ -686,19 +679,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	padding:3px 40px 3px 10px;
 
 }
-
-.rssTitle,.NUTITLE{
-	font-size:18px;
-	display:block;
-	margin-bottom:5px;
-}
-.rssDate{
-	position:absolute;
-	top:3px;
-	right:3px;
-}
-b{font-weight:normal;}
-
 .menuDropDown a{content:"Menu";font-size:1.5em;}
 /* ==|== media queries ====================================================== */
 @import url("mediaQueries.less");
@@ -706,4 +686,5 @@ b{font-weight:normal;}
 /*sprite Code*/
 .sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
 .sprite-06-magnify{ background-position: 0 0; width: 24px; height: 24px; } 
-.sprite-calendar-blue{ background-position: 0 -1182px; width: 32px; height: 32px; } 
+.sprite-calendar-blue{ background-position: 0 -1182px; width: 32px; height: 32px; }
+ 

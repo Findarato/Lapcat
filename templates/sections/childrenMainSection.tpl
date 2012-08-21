@@ -47,7 +47,7 @@
 				<a class="sprite sprite-Starfall" href=" http://www.starfall.com/">Starfall</a>
 			</li>
 			<li>
-				<a class="sprite sprite-TumbleBook" href="http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&amp;P=libra">Tumble Books</a>
+				<a class="sprite sprite-TumbleBook" href="http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra">Tumble Books</a>
 			</li>
 			<li>
 				<a class="sprite sprite-Yahookids" href="http://kids.yahoo.com/games">Yahoo Kids</a>

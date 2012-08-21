@@ -4,7 +4,7 @@
 		<div class="childrenSun"></div>
 		<div id="container" style="z-index:10;position: relative" class="container_24">
 			{include file="../sections/header.tpl"}
-			<div class="mainArea grid_24 mainBackground" id="main" role="main">
+			<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
 				{include file="../sections/subpage_header.tpl" pageTitle="Books about Stars"}
 				<div class="clear"></div>
 				<section style="width:100%">
