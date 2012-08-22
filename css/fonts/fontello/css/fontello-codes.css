@@ -7,10 +7,11 @@
 .icon-th:before { content: '\268f'; } /* '⚏' */
 .icon-help:before { content: '\2753'; } /* '❓' */
 .icon-th-large:before { content: '\e708'; } /* '' */
-.icon-facebook:before { content: '\f300'; } /* '' */
-.icon-twitter:before { content: '\f302'; } /* '' */
+.icon-facebook-rect:before { content: '\f301'; } /* '' */
+.icon-twitter-bird:before { content: '\f303'; } /* '' */
 .icon-github-text:before { content: '\f307'; } /* '' */
 .icon-googleplus-rect:before { content: '\f309'; } /* '' */
+.icon-vkontakte-rect:before { content: '\f30a'; } /* '' */
 .icon-doc-text:before { content: '📄'; } /* '\1f4c4' */
 .icon-book-open:before { content: '📖'; } /* '\1f4d6' */
 .icon-search:before { content: '🔍'; } /* '\1f50d' */

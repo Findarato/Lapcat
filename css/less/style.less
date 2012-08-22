@@ -283,9 +283,9 @@ h1,.linearAnimate{
   text-align:center;
   padding:3px;
   color:@colorDark;
-  text-shadow:1px 1px 0 0 @shadow;
-  .shadowOut(-3px,-4px,2px,-1px, @shadow);
-  .softColor(fadeout(@color4,30%));
+  text-shadow:1px 1px 1px @shadow;
+  .shadowOut(-2px,-2px,2px,-1px, @shadow);
+  background:fadeout(@color4,5%);
   
 }
 .aboutNav{
@@ -615,21 +615,6 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 	width:auto;
 	top:3px;
 	text-align:center;
-}
-.deliciousFeedTitle:before{
-	font-size:12px;
-	content:"B ";
-	font-family: 'WebSymbolsRegular';
-}
-.twitterFeedTitle:before{
-	font-size:12px;
-	content:"t ";
-	font-family: 'WebSymbolsRegular';
-}
-.blogTitle:before{
-	font-size:12px;
-	content:"v ";
-	font-family: 'WebSymbolsRegular';
 }
 .mainContentTitle{
 	right:525px;

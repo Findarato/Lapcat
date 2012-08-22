@@ -7,6 +7,7 @@
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/blog.tpl"}
+				{include file="../sections/quickHours.tpl"}
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/twitter.tpl"}
