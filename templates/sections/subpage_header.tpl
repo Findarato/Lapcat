@@ -4,25 +4,28 @@
     <h1 style="text-align:right;padding:0 10px 0 5px;height:100%;width:100%">{$pageTitle}</h1>
   </div>
   <div class="subPageCatalogSearch outSideBoxShadow mainBackground">
-    <div class="search" >
-    <div style="height:20px;width:20px">
-        <input type="checkbox" id="searchBoxToggle" style="display:none;">
-        <label class="sprite sprite-06-magnify" for="searchBoxToggle"style="text-indent: -9999px;" >
-          search
-        </label>  
-      </div>
-      <div style="height:20px">
-        <form method="get" action="http://catalog.lapcat.org/search/~/a?a" class="smoothAnimate">
-          <select name="searchtype">
-            <option value="X" selected="selected">KEYWORD</option>
-            <option value="t">TITLE</option>
-            <option value="a">AUTHOR</option>
-            <option value="d">SUBJECT</option>
-          </select>
-          <input type="search" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog">
-          <input type="submit" value="GO!" style="position:absolute;bottom:28px; left:348px;padding:4px;display:none;"/>
-        </form>
-      </div>
+    <input type="checkbox" id="searchBoxToggle" style="display:none;">
+    <div class="catalog"  style="display:inline-block">
+      <form method="get" action="http://catalog.lapcat.org/search/~/a?a">
+        <div style="display:table">
+          <div style="display:table-cell">
+            <select name="searchtype">
+              <option value="X" selected="selected">KEYWORD</option>
+              <option value="t">TITLE</option>
+              <option value="a">AUTHOR</option>
+              <option value="d">SUBJECT</option>
+            </select>
+          </div>
+          <div style="display:table-cell">
+            <input type="search" name="searcharg" size="20" maxlength="75" placeholder="Search the Catalog">
+            <input type="submit" value="GO!" style="display:none;"/>
+          </div>
+        </div>
+      </form>
+    </div>
+    {*<label for="searchBoxToggle" class="icon-search" style="font-size:1.2rem"></label>*}
+    <div style="display:inline-block;vertical-align: top;">
+      <a alt="Need Help? Ask a librarian" class="icon-help" href="/ask.php"  style="font-size:1.2rem"></a>
     </div>
   </div>
 </div>

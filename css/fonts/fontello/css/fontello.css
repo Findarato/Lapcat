@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot");
+  src: url("../font/fontello.eot?#iefix") format('embedded-opentype'), url("../font/fontello.woff") format('woff'), url("../font/fontello.ttf") format('truetype'), url("../font/fontello.svg#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.7;
+/* Uncomment for 3D effect */
+/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+/* fix buttons height */
+  line-height: 1em;
+/* you can be more comfortable with increased icons size */
+/* font-size: 120%; */
+}
+[class^="icon-"]:hover{text-decoration:none;}
+.icon-info:before { content: '\2139'; } /* 'ℹ' */
+.icon-star:before { content: '\2605'; } /* '★' */
+.icon-star-empty:before { content: '\2606'; } /* '☆' */
+.icon-th:before { content: '\268f'; } /* '⚏' */
+.icon-help:before { content: '\2753'; } /* '❓' */
+.icon-th-large:before { content: '\e708'; } /* '' */
+.icon-facebook:before { content: '\f300'; } /* '' */
+.icon-twitter:before { content: '\f302'; } /* '' */
+.icon-github-text:before { content: '\f307'; } /* '' */
+.icon-googleplus-rect:before { content: '\f309'; } /* '' */
+.icon-doc-text:before { content: '📄'; } /* '\1f4c4' */
+.icon-book-open:before { content: '📖'; } /* '\1f4d6' */
+.icon-search:before { content: '🔍'; } /* '\1f50d' */

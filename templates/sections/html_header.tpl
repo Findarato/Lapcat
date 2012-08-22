@@ -17,7 +17,7 @@
     <!-- Update your html tag to include the itemscope and itemtype attributes -->
     <meta itemprop="name" content="{$title}">
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script|Buda:300|Overlock' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/fonts/websymbols/stylesheet.css">
+    <link rel="stylesheet" href="css/fonts/fontello/css/fontello.css">
     <link rel="stylesheet/less" href="css/less/style.less">
     <script type="text/javascript">less = { env: 'development' }; </script>
     <script src="js/libs/less-1.3.0.min.js"></script>

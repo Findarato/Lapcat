@@ -11,7 +11,7 @@ $feed -> init();
 $feed -> handle_content_type();
 $count = 0;
 foreach($feed->get_items(0,0) as $item) {
-  if($count == 3) break;
+  if($count == 2) break;
   $categories = $item -> get_categories();
   foreach($categories as $cate){ //lets assign them to the specific item.
     $b[$count]["cate"][] = $cate ->get_term();

@@ -41,9 +41,7 @@
         <ul class="slides">
           <li>
             <a href="http://laportelibrary.org"><img src="/images/rotate2.jpg" alt="" title="Cool 2"/></a>
-            <p class="flex-caption">
-              Caption 2!
-            </p>
+            <p class="flex-caption">Caption 2!</p>
           </li>
           <li>
             <a href="http://laportelibrary.org"><img src="/images/rotate3.jpg" alt="" title="Cool 3"/></a>
@@ -59,9 +57,9 @@
   <div class="grid_6 rightNav" >
     <!-- Right Colmn -->
     <div class="smallSection events">
-      <a class="eventsNav smoothAnimate fixMargin" href="http://engagedpatrons.org/Events.cfm?SiteID=9267" ></a>
+      <a class="askNav smoothAnimate fixMargin" href="/ask.php" ></a>
       <div class="sectionText">
-        Events
+        Ask A Librarain
       </div>
     </div>
     
