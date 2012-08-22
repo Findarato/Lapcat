@@ -104,28 +104,31 @@ a:hover{text-decoration: underline;}
   /* http://www.colorzilla.com/gradient-editor/#261806+5,5f3e12+20,5f3e12+60,5f3e12+80,261806+95;Custom */
 }
 
-h1,h2,h3{
+h1,h2,h3,h4{
   margin:2px;
   color: @color5;
   text-align: left;
 }
 h1 { 
-  font-family: 'Buda' , arial, serif; 
+  font-family: 'Buda' ,Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif; 
   font-size: 2.5em;
   font-weight: bold;
   color:@color5;
 }
 h2 {
-  font-family: 'Dancing Script' , sans-serif; 
+  font-family: 'Dancing Script' , Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif; 
   font-size: 2.2em;
   color: @color5;
 }
   
 h3 {
-  font-family: 'Dancing Script' , sans-serif;
+  font-family: 'Dancing Script' , Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif;
   font-size: 2em;
 }
-
+h4 {
+  font-family: 'Buda' Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif;
+  font-size: 1.8em;
+}
 .pageBranding{
   position:absolute;
   color:rgb(0,0,0);
@@ -343,6 +346,16 @@ h1,.linearAnimate{
 	padding:5px;
 	border-top-right-radius: 3px;
 	border-bottom-left-radius: 3px;
+}
+.subPageCatalogSearch > .search{
+  width:20px;
+  overflow:hidden;
+  height:20px;
+   .Animate(200ms);
+}
+.subPageCatalogSearch > input[type=checkbox]:checked ~ div{
+  width:auto;
+  background:red;
 }
 .subPageHeader div{
 	display:table-cell;

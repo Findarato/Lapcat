@@ -6,22 +6,19 @@
 			{include file="../sections/subpage_header.tpl" pageTitle="Locations" backgroundImage="http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=10&size=560x85&scale=2&sensor=false"}
 			{* {include file="../sections/soonCalendar.tpl"} *} 
 			<div class="clear"></div>
-			<section class="grid_16">
+			<section class="grid_12">
 				{include file="../sections/location.tpl" location="main"}
 				{include file="../sections/location.tpl" location="coolspring"}
 				{include file="../sections/location.tpl" location="fish"}
-				{include file="../sections/location.tpl" location="hanna"}
-				{include file="../sections/location.tpl" location="kingsford"}
-				{include file="../sections/location.tpl" location="rolling"}
-				{include file="../sections/location.tpl" location="union"}
-				{*{include file="../sections/mainContent.tpl"}*}
+				
 			</section>
-			<aside class="grid_8">
-				{*{include file="../sections/catalogSearch.tpl"}*}
-				{include file="../sections/twitter.tpl"}
-				{include file="../sections/delicious.tpl"}
-				{include file="../sections/searchSite.tpl"}
-			</aside>
+      <section class="grid_12">
+        {include file="../sections/location.tpl" location="hanna"}
+        {include file="../sections/location.tpl" location="kingsford"}
+        {include file="../sections/location.tpl" location="rolling"}
+        {include file="../sections/location.tpl" location="union"}
+        
+      </section>
 			<div class="clear"></div>
 			<section class="grid_24" style="margin-top:10px;margin-right:auto;">
 				{*{include file="../sections/allHours.tpl"}*}

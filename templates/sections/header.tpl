@@ -14,32 +14,32 @@
 		<div class="t topNav" style="text-align:center;margin:0 auto;">
 			<div class="td  ">
 				<div class="menuSelect smoothAnimate">
-					<a href="https://catalog.lapcat.org/patroninfo">My Account</a>
+					<a alt="Login to make a hold" href="https://catalog.lapcat.org/patroninfo">My Account</a>
 				</div>
 			</div>
       <div class="td  ">
         <div class="menuSelect smoothAnimate">
-          <a href="downloads.php">Downloads</a>
+          <a alt="Access all of the electronic resources the library has to offer" href="downloads.php">Downloads</a>
         </div>
       </div>
 			<div class="td  ">
 				<div class="menuSelect smoothAnimate">
-					<a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
+					<a alt="What is happening at the Library" href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
 				</div>
 			</div>
     <div class="td  ">
         <div class="menuSelect smoothAnimate">
-          <a href="../research.php">Research</a>
+          <a alt="Looking for that hard to find information?" href="research.php">Research</a>
         </div>
       </div>
 			<div class="td largeNav">
 				<div class="menuSelect smoothAnimate">
-					<a href="../teens.php">Teens</a>
+					<a alt="All of our teen activities" href="teens.php">Teens</a>
 				</div>
 			</div>
 			<div class="td largeNav">
 				<div class="menuSelect smoothAnimate">
-					<a href="../children.php">Children</a>
+					<a alt="See what we offer our youngest members" href="children.php">Childrens</a>
 				</div>
 			</div>
 		</div>

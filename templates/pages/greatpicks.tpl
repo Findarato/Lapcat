@@ -24,6 +24,7 @@
 			{include file="../sections/sitemap.tpl"}
 		</footer>
 	</div>
+	http://www.wowbrary.org/nu.aspx?p=8711--GEN&more
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
 	<script src="js/libs/Flux-Slider/js/flux.min.js" type="text/javascript" charset="utf-8"></script>

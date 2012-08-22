@@ -4,8 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{$title}</title>
-    <meta name="description" content="La Porte County Public Library">
+    <title>La Porte County Public Library System - {$title}</title>
+    <meta name="description" content="Your source for all things La Porte County Public Library. ">
     <meta name="author" content="La Porte County Public Library">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta property="og:title" content="{$title}"/>
@@ -17,7 +17,6 @@
     <!-- Update your html tag to include the itemscope and itemtype attributes -->
     <meta itemprop="name" content="{$title}">
     <link href='http://fonts.googleapis.com/css?family=Dancing+Script|Buda:300|Overlock' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/fonts/iconic/iconic_fill.css">
     <link rel="stylesheet" href="css/fonts/websymbols/stylesheet.css">
     <link rel="stylesheet/less" href="css/less/style.less">
     <script type="text/javascript">less = { env: 'development' }; </script>
@@ -25,5 +24,6 @@
     <link rel="stylesheet" media="screen and (min-width: 1000px)" href="css/960_24_col.css">
     <link rel="stylesheet" media="screen and (max-width: 999px)" href="css/fluid.css">
     <link rel="stylesheet" href="js/libs/twitter/jquery.tweet.css">
-    <!--end CSS--><script src="js/libs/modernizr-2.0.6.min.js"></script>
+    <!--end CSS-->
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
   </head>

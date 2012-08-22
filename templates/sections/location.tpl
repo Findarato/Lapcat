@@ -124,7 +124,7 @@
     {$mapLoc = "41.414117,-86.780147"}
     {$locationLink = "http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1864f5f74b3d29a"}
 {/if}
-
+10px
 <div class="blogBox roundAll3" style="min-height:310px;">
 	<div class="roundAll3 titleElement color3"><a href="{$locationLink}" title="View {$location} in Google Maps">{$location}</a></div>
 	<div id="locationContainerBox" class="insideBoxShadow roundAll3 containerBox" style="min-height:330px">
