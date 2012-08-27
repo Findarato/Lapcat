@@ -6,53 +6,53 @@
         "link_out" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=aph",
         "title" : "Academic Search Premier"
       },
-      { "about" : "Are you interested in finding early records of your ancestors? This resource is for you! You can get access to over 350 databases filled with records (1600-1800s) from various places in New England. They contain data on subjects such as birth, church, city, death, marriage, and vital records; will abstracts; probate record abstracts; family genealogies; colonial collegians; diaries and journals; passengers lists, and tax lists. This database is available to use only at the Main Library location during operating hours. ",
+      { "title" : "American Ancestors", 
+        "about" : "Are you interested in finding early records of your ancestors? This resource is for you! You can get access to over 350 databases filled with records (1600-1800s) from various places in New England. They contain data on subjects such as birth, church, city, death, marriage, and vital records; will abstracts; probate record abstracts; family genealogies; colonial collegians; diaries and journals; passengers lists, and tax lists. This database is available to use only at the Main Library location during operating hours. ",
         "category" : "All History",
         "image" : "/images/tree.png",
         "libraryOnly" : true,
         "link_in" : "http://www.americanancestors.com",
-        "link_out" : "",
-        "title" : "American Ancestors"
+        "link_out" : ""
       },
-      { "about" : "Find census records; birth, marriage, and death records; genealogical records from other countries; old phone directories and public records; plus 1,000s of additional sources. This is the most comprehensive genealogical database available. New collections are added daily. This database is available to use at any of our library locations during operating hours. ",
+      { "title" : "Ancestry Library Edition",
+        "about" : "Find census records; birth, marriage, and death records; genealogical records from other countries; old phone directories and public records; plus 1,000s of additional sources. This is the most comprehensive genealogical database available. New collections are added daily. This database is available to use at any of our library locations during operating hours. ",
         "category" : "All History",
         "image" : "/images/tree.png",
         "libraryOnly" : true,
         "link_in" : "http://ancestrylibrary.proquest.com",
-        "link_out" : "",
-        "title" : "Ancestry Library Edition"
+        "link_out" : ""
       },
-      { "about" : "Biography in Context, a next-generation online portal, is built on a foundation of more than 600,000 biographies on more than 500,000 people gathered from more than 170 award-winning Gale reference sources.Biography in Context (based on the acclaimed Biography Resource Center) delivers Gale's authoritative reference content integrated with the most in-demand resources - video, audio, podcasts, interactives and more - through a Web-like experience that meets the needs of today's Internet-savvy users.",
+      { "title" : "Biography In Context (Gale)", 
+        "about" : "Biography in Context, a next-generation online portal, is built on a foundation of more than 600,000 biographies on more than 500,000 people gathered from more than 170 award-winning Gale reference sources.Biography in Context (based on the acclaimed Biography Resource Center) delivers Gale's authoritative reference content integrated with the most in-demand resources - video, audio, podcasts, interactives and more - through a Web-like experience that meets the needs of today's Internet-savvy users.",
         "category" : "All History ",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://infotrac.galegroup.com/itweb/la22980?db=BioRC",
-        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=BioRC",
-        "title" : "Biography In Context (Gale)"
+        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=BioRC"
       },
-      { "about" : "This database provides access to more than 100 full-text journals covering such disciplines as clinical medicine, dentistry, veterinary medicine, pre-clinical sciences and the health care system. Designed for doctors, research scientists, students and clinical specialists, this collection can be searched independently, but also allows users from subscribing institutions to conveniently link to full text from citations within MEDLINE®. When these citations are viewed via EBSCOhost®, there is the ability to link to full text for articles contained within the Biomedical Reference Collection<sup>TM</sup>. Most of the journals covered are available in cover-to-cover PDF.",
+      { "title" : "Biomedical reference collection (Ebsco)",
+        "about" : "This database provides access to more than 100 full-text journals covering such disciplines as clinical medicine, dentistry, veterinary medicine, pre-clinical sciences and the health care system. Designed for doctors, research scientists, students and clinical specialists, this collection can be searched independently, but also allows users from subscribing institutions to conveniently link to full text from citations within MEDLINE®. When these citations are viewed via EBSCOhost®, there is the ability to link to full text for articles contained within the Biomedical Reference Collection<sup>TM</sup>. Most of the journals covered are available in cover-to-cover PDF.",
         "category" : "All Science",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bmh",
-        "link_out" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bmh",
-        "title" : "Biomedical reference collection (Ebsco)"
+        "link_out" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=bmh"
       },
-      { "about" : "Business Source® Premier, the industry's most popular business research database, features the full text for more than 2,100 journals. Full text is provided back to 1965, and searchable cited references back to 1998. Journal ranking studies reveal that Business Source Premier's full-text coverage outshines its competitors in all business disciplines, including marketing, management, MIS, POM, accounting, finance and economics. Additional full text, non-journal content includes market research reports, industry reports, country reports, company profiles and SWOT analyses. ",
+      { "title" : "Business Source Premier (Ebsco)",
+        "about" : "Business Source® Premier, the industry's most popular business research database, features the full text for more than 2,100 journals. Full text is provided back to 1965, and searchable cited references back to 1998. Journal ranking studies reveal that Business Source Premier's full-text coverage outshines its competitors in all business disciplines, including marketing, management, MIS, POM, accounting, finance and economics. Additional full text, non-journal content includes market research reports, industry reports, country reports, company profiles and SWOT analyses. ",
         "category" : "All Business",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=buh",
-        "link_out" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=buh",
-        "title" : "Business Source Premier (Ebsco)"
+        "link_out" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=buh"
       },
-      { "about" : "",
+      { "title" : "Contemporary Authors (Gale)",
+        "about" : "",
         "category" : "All Literature",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://infotrac.galegroup.com/itweb/la22980?db=CA",
-        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=CA",
-        "title" : "Contemporary Authors (Gale)"
+        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=CA"
       },
       { "about" : "Corporate ResourceNet is designed to meet the diverse information needs of today's companies. This database contains full text articles from nearly 1,200 quality magazines and journals. The database includes full text sources ranging from general publications such as Fortune and Money to trade publications such as American Demographics, Chemical Week, Electronic Business and Restaurant Hospitality. The collection of titles also includes top management journals such as Academy of Management Executive, California Management Review and Harvard Business Review. Many full text titles are available in native (searchable) PDF, or scanned-in-color. In addition, this database also includes 10,000 extensive company profiles. ",
         "category" : "All Business",
@@ -278,60 +278,52 @@
         "link_out" : "http://0-health.salempress.com.catalog.lapcat.org",
         "title" : "Salem Health"
       },
-      { "about" : "Small Business Resource Center offers users complete small business management resources via a combination of unparalleled periodicals and reference content. From conducting industry research to financial planning, to marketing a product and franchising a business, the Small Business Resource Center provides users with all the information they need to succeed. ",
+      { "title" : "Small Business Resource Center (Gale)", 
+        "about" : "Small Business Resource Center offers users complete small business management resources via a combination of unparalleled periodicals and reference content. From conducting industry research to financial planning, to marketing a product and franchising a business, the Small Business Resource Center provides users with all the information they need to succeed. ",
         "category" : "All Business",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://infotrac.galegroup.com/itweb/la22980?db=SBRC",
-        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=SBRC",
-        "title" : "Small Business Resource Center (Gale)"
+        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=SBRC"
       },
-      { "about" : "<p><em>Testing & Education  Reference Center</em> (<em>TERC</em>) —   the online resource used by millions of people looking for help in   making confident decisions that will shape their  future — has been   updated with new features, a more user friendly interface and  enhanced   functionality. Plus <em>TERC</em> now  offers additional certifications   from Delmar — one of the premier sources for career readiness —   providing access to career certifications focusing on rapidly  expanding   careers such as:</p><ul><li>Medical  Assisting</li><li>Cosmetology — 6 subjects, in both English and Spanish</li><li>Auto  Repair — (ASE) with 9 exams both in English and Spanish</li><li>Medium/Heavy Truck Repair — with 8 exams </li><li>Collision Repair — with 5 exams both in English and Spanish</li></ul><p><strong>A single source that helps meet multiple goals</strong><br/>Whether  searching for undergraduate and graduate school programs,   finding tuition  assistance providers, or using the many career   exploration tools, students and  their parents, as well as adults   exploring new career paths, will find the  newly enhanced <em>TERC</em> — now with  value-added content from Delmar — the most complete online resource for  improving future success.</p>",
+      { "title" : "Testing & Education Resource Center (Gale)", 
+        "about" : "<p><em>Testing & Education  Reference Center</em> (<em>TERC</em>) —   the online resource used by millions of people looking for help in   making confident decisions that will shape their  future — has been   updated with new features, a more user friendly interface and  enhanced   functionality. Plus <em>TERC</em> now  offers additional certifications   from Delmar — one of the premier sources for career readiness —   providing access to career certifications focusing on rapidly  expanding   careers such as:</p><ul><li>Medical  Assisting</li><li>Cosmetology — 6 subjects, in both English and Spanish</li><li>Auto  Repair — (ASE) with 9 exams both in English and Spanish</li><li>Medium/Heavy Truck Repair — with 8 exams </li><li>Collision Repair — with 5 exams both in English and Spanish</li></ul><p><strong>A single source that helps meet multiple goals</strong><br/>Whether  searching for undergraduate and graduate school programs,   finding tuition  assistance providers, or using the many career   exploration tools, students and  their parents, as well as adults   exploring new career paths, will find the  newly enhanced <em>TERC</em> — now with  value-added content from Delmar — the most complete online resource for  improving future success.</p>",
         "category" : "All Education",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://infotrac.galegroup.com/itweb/la22980?db=TERC",
-        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=TERC",
-        "title" : "Testing & Education Resource Center (Gale)"
+        "link_out" : "http://infotrac.galegroup.com/itweb/la22980?db=TERC"
       },
-      { "about" : "This current events database allows researchers to explore social, political & economic issues, scientific discoveries and other popular topics discussed in today's classrooms including controversial opinions and viewpoints. TOPICsearch™ contains full text for over 60,000 articles from 399 diverse sources including international and regional newspapers, EBSCO's unparalleled collection of periodicals, biographies, public opinion polls, book reviews, pamphlets, and government information. ",
+      { "title" : "TOPICsearch (Ebsco)",
+        "about" : "This current events database allows researchers to explore social, political & economic issues, scientific discoveries and other popular topics discussed in today's classrooms including controversial opinions and viewpoints. TOPICsearch™ contains full text for over 60,000 articles from 399 diverse sources including international and regional newspapers, EBSCO's unparalleled collection of periodicals, biographies, public opinion polls, book reviews, pamphlets, and government information. ",
         "category" : "All",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=tth",
-        "link_out" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=tth",
-        "title" : "TOPICsearch (Ebsco)"
+        "link_out" : "http://search.ebscohost.com/login.aspx?authtype=ip,cpid&custid=s9072770&profile=ehost&defaultdb=tth"
       },
-      { "about" : "The TumbleBookLibrary is a collection of TumbleBooks (animated, talking picture books) with fiction, non-fiction and foreign language titles, Read-Alongs (chapter books with sentence highlighting and narration but no animation), Ebooks and Audio Books which may be viewed online or downloaded for 90 days, and Tumble Puzzles & Games",
+      { "title" : "Tumblebooks Library",
+        "about" : "The TumbleBookLibrary is a collection of TumbleBooks (animated, talking picture books) with fiction, non-fiction and foreign language titles, Read-Alongs (chapter books with sentence highlighting and narration but no animation), Ebooks and Audio Books which may be viewed online or downloaded for 90 days, and Tumble Puzzles & Games",
         "category" : "All Literature Education",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra",
-        "link_out" : "http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra",
-        "title" : "Tumblebooks Library"
+        "link_out" : "http://www.tumblebooks.com/library/auto_login.asp?U=laportecounty&P=libra"
       },
-      { "about" : "This database is a comprehensive investment research tool. You can conduct custom investment searches for stocks, mutual funds, options, and convertibles. You can find reviews of individual mutual funds and stocks, with concise reports on the performance of each and rankings of each investment for timeliness and safety. Value Line has investor education, too. The list of online editions of their monthly periodicals you can find here include The Value Line Investment Survey-Standard Edition, -Plus Edition, and -Small and Mid-Cap Edition; The Value Line Convertibles Survey; The Value Line Special Situations Service; The Value Line Fund Advisor; and The Value Line Daily Options Survey. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
+      { "title" : "Value Line",
+        "about" : "This database is a comprehensive investment research tool. You can conduct custom investment searches for stocks, mutual funds, options, and convertibles. You can find reviews of individual mutual funds and stocks, with concise reports on the performance of each and rankings of each investment for timeliness and safety. Value Line has investor education, too. The list of online editions of their monthly periodicals you can find here include The Value Line Investment Survey-Standard Edition, -Plus Edition, and -Small and Mid-Cap Edition; The Value Line Convertibles Survey; The Value Line Special Situations Service; The Value Line Fund Advisor; and The Value Line Daily Options Survey. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
         "category" : "All Business",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://www.valueline.com/secure/vlrc/research.aspx",
-        "link_out" : "http://0-www3.valueline.com.catalog.lapcat.org/secure/vlrc/research.aspx",
-        "title" : "Value Line"
+        "link_out" : "http://0-www3.valueline.com.catalog.lapcat.org/secure/vlrc/research.aspx"
       },
-      { "about" : "A terrific beginning research tool for all ages. The Online Reference Center not only contains articles on thousands of subject, but it has Computer and Web Tutorials, links to government sites, and How-to-Guides on topics like credit and debit cards. You can also discover how to do research and how to build a citation for your paper. There's even interactive maps to explore. The Info Finder section has a biography center and world newspapers. You can choose Enciclopedia Estudiantil Hallazgos if you need research in the Spanish language. The Discover section has Life Skills topics like financial questions and health issues along with Educator topics like curriculum correlations. The For Kids section has games and science projects in addition to traditional encyclopedia articles. Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
-        "category" : "All",
-        "image" : "/images/tree.png",
-        "libraryOnly" : false,
-        "link_in" : "http://www.worldbookonline.com?subacct=8225",
-        "link_out" : "http://0-www.worldbookonline.com.catalog.lapcat.org?subacct=8225",
-        "title" : "World Book"
-      },
-      { "about" : "Search the collections of over 10,000 libraries worldwide! Find that book, CD, movie, or other resource at a library nearby. If it's available locally, a link to the La Porte County Library catalog makes it easy to check availability, learn more about the item, or place a hold. If it's not, a librarian can request your item through interlibrary loan-just ask for details. If you're not sure what you want to check out next, WorldCat even offers a list of \"Hot Topics\" to search, putting the newest and most-requested items from all WorldCat member libraries right at your fingertips. You can set up an account, save your searches and item records, and let WorldCat keep track of what's next on your reading list! Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
+      { "title" : "World Cat",
+        "about" : "Search the collections of over 10,000 libraries worldwide! Find that book, CD, movie, or other resource at a library nearby. If it's available locally, a link to the La Porte County Library catalog makes it easy to check availability, learn more about the item, or place a hold. If it's not, a librarian can request your item through interlibrary loan-just ask for details. If you're not sure what you want to check out next, WorldCat even offers a list of \"Hot Topics\" to search, putting the newest and most-requested items from all WorldCat member libraries right at your fingertips. You can set up an account, save your searches and item records, and let WorldCat keep track of what's next on your reading list! Access this database 24/7 from wherever you have Internet access, at no cost, as long as you have your library card barcode number and PIN.",
         "category" : "All",
         "image" : "/images/tree.png",
         "libraryOnly" : false,
         "link_in" : "http://firstsearch.oclc.org/fsip/",
-        "link_out" : "http://0-firstsearch.oclc.org.catalog.lapcat.org/fsip",
-        "title" : "World Cat"
+        "link_out" : "http://0-firstsearch.oclc.org.catalog.lapcat.org/fsip"
       }
-    ] }
+    ] };
