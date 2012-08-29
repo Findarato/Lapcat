@@ -69,6 +69,15 @@ if(substr($ip,0,7) == '10.1.1.') //main
 
 
 $databasesObj = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/js/mylibs/databases.json"),true);
+$tempArray = array();
+$databasesObj = $databasesObj["data"];
+foreach ($databasesObj as $k=>$value){
+  if(strpos(strtolower($value["category"]), "education")){
+    $tempArray[$k] = $value;
+  }
+  
+}
+$databasesObj["data"] = $tempArray;
 if($inside){
 	$smarty -> assign("inside",TRUE);	
 }else{
@@ -77,5 +86,5 @@ if($inside){
 
 
 $smarty -> assign("dbObjects",$databasesObj["data"]);
-$smarty -> display('pages/research.tpl');
+$smarty -> display('pages/educators.tpl');
 ?>

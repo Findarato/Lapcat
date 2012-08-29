@@ -17,7 +17,6 @@ body,html {
   font: Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif; 
 }
 a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:bold;}
-a:hover{text-decoration: underline;}
 /* Color 1 related items */
 .color1{
   background: @color1;  
@@ -178,8 +177,8 @@ h1,.linearAnimate{
   padding:3px;
 }
 .outSideBoxShadow{
-  -webkit-box-shadow: 6px 0 4px 4px @shadow;
-  box-shadow:  6px 0 4px 4px @shadow;
+  -webkit-box-shadow: 0 0 1px 1px @shadow;
+  box-shadow:  0 0 1px 1px @shadow;
 }
 .mainArea{
   padding-top:125px;
@@ -304,13 +303,13 @@ h1,.linearAnimate{
 	background:url("http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=9&size=230x100&sensor=false") no-repeat scroll 50% 50% transparent;
 }
 .greatPicksNav{
-	background:url("/images/stock-illustration-10486612-girl-and-books.jpg") no-repeat scroll 50% 50% transparent;
+	background:url("/images/stock-illustration-18812296-green-book-stack.jpg") no-repeat scroll 50% 50% transparent;
 }
 .employmentNav{
   background:url("/images/stock-illustration-8034749-job-searching-effects.jpg") no-repeat scroll 50% 50% transparent;background-position: 0 -25px;
 }
 .askNav{
-  background:url("/images/stock-illustration-10384986-cute-customer-service-woman-with-computer-monitor-and-phone.jpg") no-repeat scroll 50% 50% transparent;background-position: 0 -25px;
+  background:url("/images/stock-photo-14816819-internet-reservation.jpg") no-repeat scroll 50% 50% transparent;background-position: 0 -25px;
 }
 .topNav{
 	width:940px;
@@ -349,10 +348,7 @@ h1,.linearAnimate{
 	border-top-right-radius: 3px;
 	border-bottom-left-radius: 3px;
 }
-.subPageCatalogSearch  .catalog{
-  display:inline-block;
-  width:245px;
-}
+.subPageCatalogSearch  .catalog{display:inline-block;}
 /*
 .subPageCatalogSearch > input[type=checkbox]:checked ~ div{
 
@@ -401,9 +397,6 @@ h1,.linearAnimate{
 }
 .menuSelect a{
 	white-space:nowrap;
-}
-.menuSelect:hover{
-	background:rgba(255,255,255,.7);
 }
 .topMenu {
 	text-align:left;

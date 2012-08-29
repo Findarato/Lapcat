@@ -415,7 +415,12 @@ $(document).ready(function(){
 						//getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
 						getSpreadSheetFeed("readers");
 					}else{//if all else fails lets just load a local rss feed
-						getSpreadSheetFeed("adult");
+						if(uri.search(/educators/i)>0){// this is the teens page
+              //getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
+              getSpreadSheetFeed("educators");
+              }else{//if all else fails lets just load a local rss feed
+                getSpreadSheetFeed("adult");
+              }
 					}
 				}	
 			}

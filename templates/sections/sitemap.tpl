@@ -15,7 +15,7 @@
   <section class="grid_8">
     <a alt="Interested in helping out?" href="../about/friends.html">Friends of The Library</a>
     <a alt="Direct from the Librarians, our Blog." href="http://laportelibrary.blogspot.com/">Blog</a>
-    <a alt="Need help incorporating the library in your Class room?" href="edresearch.php">Educators</a>
+    <a alt="Need help incorporating the library in your Class room?" href="educators.php">Educators</a>
   </section>
 </div>
 <div class="clear copyright">  Copyright &copy; 2012 La Porte County Public Library System</div>
