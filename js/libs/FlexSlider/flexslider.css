@@ -40,7 +40,7 @@ html[xmlns] .slides {display: block;}
 /* FlexSlider Default Theme
 *********************************/
 .flexslider {background: #fff; border: 4px solid #fff; position: relative; -webkit-border-radius: 4px; -moz-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px;  zoom: 1;}
-.flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;}
+.flex-viewport {max-height: 2000px; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; transition: all 1s ease;margin-bottom:3px;}
 .loading .flex-viewport {max-height: 300px;}
 .flexslider .slides {zoom: 1;}
 
@@ -59,7 +59,7 @@ html[xmlns] .slides {display: block;}
 
 /* Control Nav */
 .flex-control-nav {width: 100%; position: absolute; bottom:0px;right:3px;}
-.flex-control-nav li {margin: 0 6px; display: inline-block; zoom: 1; *display: inline;}
+.flex-control-nav li {margin: 0 4px; display: inline-block; zoom: 1; *display: inline;}
 
 .flex-control-paging li a {width: 11px; height: 11px; display: block; background: #666; background: rgba(0,0,0,0.5); cursor: pointer; text-indent: -9999px;  box-shadow: inset 0 0 3px rgba(0,0,0,0.3);}
 .flex-control-paging li a:hover { background: #333; background: rgba(0,0,0,0.7); }
@@ -74,8 +74,8 @@ html[xmlns] .slides {display: block;}
 /*custon joe*/
 .flex-control-nav{position:absolute;bottom:5px;right:10px;width:auto;z-index:101;}
 .flex-control-nav li a{
-  height:15px;
-  width:15px;
+  height:20px;
+  width:20px;
   text-indent:-9999px;
   border:white solid 1px;
   border:rgba(209,214,204,.7) solid 1px;
@@ -89,6 +89,20 @@ html[xmlns] .slides {display: block;}
   background:rgba(174,224,127,.6)
 }
 
+.flex-caption{
+  position:absolute;
+  bottom:0px;
+  height:2em;
+  width:100%;
+  left:0px;
+  color:white;
+  background:rgba(0,0,0,.6);
+  margin:0px;
+  line-height:1.2em;
+  padding:3px 5px 3px 3px;
+  font-size:1.2em;
+  
+}
 
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev {opacity: 1; left: 0;}

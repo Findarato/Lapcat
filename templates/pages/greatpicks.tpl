@@ -4,15 +4,13 @@
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
 			{include file="../sections/subpage_header.tpl" pageTitle="Great Picks"}
-			{* {include file="../sections/soonCalendar.tpl"} *} 
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/newestItems.tpl"}
 				{*{include file="../sections/mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
-				{include file="../sections/topBooks_teen.tpl"}
-				{include file="../sections/delicious.tpl"}
+				{include file="../sections/newBooks.tpl"}
 				{include file="../sections/searchSite.tpl"}
 			</aside>
 			<div class="clear"></div>
@@ -27,6 +25,12 @@
 	http://www.wowbrary.org/nu.aspx?p=8711--GEN&more
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
-	<script src="js/libs/Flux-Slider/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/js/libs/FlexSlider/flexslider.css" type="text/css">
+  <script src="js/libs/FlexSlider/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	  $(window).load(function(){
+      wowbraryImageLinks("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#topBooks").find(".slides"),true,"New This Week",10); 
+    });
+	</script>
 </body>
 </html> 
