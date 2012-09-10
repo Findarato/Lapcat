@@ -226,34 +226,25 @@ function getSpreadSheetFeed(area,target){
     });
   });
 }
-function wowbraryImageLinks(uri,target,slider,title,count){
+function wowbraryImageLinks(uri,target,slider,sectionTitle,count){
 	var amount = 0;
-		
-	if(target==undefined)
-		return -1;
-
-	if(count==undefined)
-		count=20;
-
- 	if(uri==undefined)
-    uri="http://www.wowbrary.org/rss.aspx?l=8711&c=GEN";
+	if(target==undefined)return -1;
+	if(count==undefined)count=20;
+ 	if(uri==undefined) uri="http://www.wowbrary.org/rss.aspx?l=8711&c=GEN";
+  
+  $(".bookTitle").html(sectionTitle);
   target.empty();
-	//use the JQuery get to grab the URL from the selected item, put the results in to an argument for parsing in the inline function called when the feed retrieval is complete
 	$.get("ajax/rss.php",{"url":uri}, function(d) {
  		me = $(d);
  		var feedTitle = me.find("channel").find("title:first").text();
- 		$(".newBooksTitle").text(title);
-		//find each 'item' in the file and parse it
+		//find each 'item' in the file and parse it 
 		me.find('item').each(function() {
 			if(amount == count)
 				return -1;
-			amount++;
+			amount++; 
 			var $item = $(this);
-			// grab the post title
 			var title = $item.find('title').text();
  			var contentEncoded = $item.find('content_encoded').text();
-
-			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>")
 				.html(
 					function(){ 
