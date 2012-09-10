@@ -108,7 +108,7 @@ function displayLocation(locationCode,domElementSelector){
 	domElementSelector
 		.empty()
 		.append(
-			$("<div/>",{css:{"text-align":"left","width":"250px", "height":"auto", "float":"left"}})
+			$("<div/>",{css:{"text-align":"left", "height":"auto", "float":"left"}})
 			.append(
 				$("<div/>",{css:{margin:0}})
 					.html(
@@ -128,7 +128,7 @@ function displayLocation(locationCode,domElementSelector){
 						)
 				)
 				.append(
-					$("<div/>",{css:{margin:0}})
+					$("<span/>",{css:{margin:0}})
 						.html(
 							$("<span/>",{title:"zip code"}).html(locations[locationCode].zip)	
 						)
@@ -148,27 +148,14 @@ function displayLocation(locationCode,domElementSelector){
 		)
 		
 		
-		for(var a=0;a<7;a++){
-			domElementSelector
-				.append(
-					$("<div/>",{css:{"text-align":"left","width":"300px","float":"left"}})
-					.append(
-						function(){
-							if(dayOfWeek == a){
-								return $("<div/>",{css:{margin:0}})
-									.html(
-										$("<span/>",{title:"Hours"}).html(weekday[a]+" "+locations[locationCode]["time"+a]).css("font-weight","bold")
-									)
-							}else{
-								return $("<div/>",{css:{margin:0}})
-									.html(
-										$("<span/>",{title:"Hours"}).html(weekday[a]+" "+locations[locationCode]["time"+a])	
-									)
-							}
-						}
-					)
-				);
+		for(var a=1;a<6;a++){
+		  var timeHolder = $("#timeContainer"+a)
+		  timeHolder.html(locations[locationCode]["time"+a])
+        if(dayOfWeek == a){
+          $("#dayBox"+a).addClass("color1").removeClass("color4")
+        }
 		}
+		
 }
 function getDeliciousFeed(uri,target){
 	if(target===undefined)
@@ -432,7 +419,7 @@ $(document).ready(function(){
         gapi.plusone.go();
   $(".locationHover")
     .mouseenter(function(){displayLocation($(this).attr("id"),$("#locationDisplay"));})
-    .mouseleave(function(){displayLocation("MA",$("#locationDisplay"));});
+    .mouseleave(function(){});
   //This makes sure something is being shown
   
   displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));

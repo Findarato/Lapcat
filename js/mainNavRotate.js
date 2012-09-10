@@ -14,8 +14,11 @@ $(window).load(function(){
       directionNav: false,
       controlsContainer: ".flexControll",
       animationLoop: true,
-      slideshowSpeed: 7000
-    });    
+      slideshowSpeed: 7000,
+      userCss:true,
+      touch:true,
+      itemWidth:"100%"
+    });
   } 
 
 });

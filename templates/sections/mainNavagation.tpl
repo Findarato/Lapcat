@@ -45,7 +45,6 @@
           </li>
           <li>
             <a href="http://laportelibrary.org"><img src="/images/rotate3.jpg" alt="" title="Cool 3"/></a>
-            <p class="flex-caption">Cool 3</p>
           </li>
           <li>
             <a href="http://www.google.com"><img src="/images/rotate4.jpg" alt="" title="Cool 4"/></a>
