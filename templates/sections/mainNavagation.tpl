@@ -4,19 +4,19 @@
     <div class="smallSection hours">
       <a class="hoursNav smoothAnimate fixMargin" href="hours.php" ></a>
       <div class="sectionText">
-        Hours
+        <a href="hours.php">Hours</a>
       </div>
     </div>
     <div class="smallSection greatPicks">
       <a class="greatPicksNav smoothAnimate fixMargin" href="greatpicks.php"></a>
       <div class="sectionText">
-        Great Picks!
+        <a href="greatpicks.php">Great Picks!</a>
       </div>
     </div>
     <div class="smallSection genealogy">
       <a class="genealogyNav smoothAnimate fixMargin" href="genealogy.php" ></a>
       <div class="sectionText">
-        Genealogy
+        <a href="genealogy.php">Genealogy</a>
       </div>
     </div>
   </div>
@@ -59,22 +59,21 @@
   <div class="grid_6 rightNav" >
     <!-- Right Colmn -->
     <div class="smallSection events">
-      <a class="askNav smoothAnimate fixMargin" href="/ask.php" ></a>
+      <a class="askNav smoothAnimate fixMargin" href="ask.php" ></a>
       <div class="sectionText">
-        Ask A Librarain
+        <a href="ask.php">Ask A Librarain</a>
       </div>
     </div>
-    
     <div class="smallSection research">
       <a class="aboutNav smoothAnimate fixMargin" href="about.php" ></a>
       <div class="sectionText">
-        About Us
+        <a href="about.php"> About Us</a>
       </div>
     </div>
     <div class="smallSection research">
       <a class="employmentNav smoothAnimate fixMargin" href="jobs.php" ></a>
       <div class="sectionText">
-        Employment
+        <a href="jobs.php">Employment</a>
       </div>
     </div>
   </div>
