@@ -3,7 +3,7 @@
     <a alt="Job oppertunities at the Library" href="jobs.php?s=1">Employment</a>
     <a alt="Infromation about the Library" href="about.php?s=1">About</a>
     <a alt="When and where you can visit the Library" href="/hours.php?s=1">Hours and Locations</a>
-    <a alt="Got a question, just ask." href="ask.php?s=1">Ask a Librarian</a>
+    <a alt="Got a question, just ask." href="ask.php?s=1">Help</a>
     <a alt="See our newest items" href="greatpicks.php?s=1">Great Picks</a>
     <a alt="Find out about your own history" href="genealogy.php?s=1">Genealogy</a>
   </section>
