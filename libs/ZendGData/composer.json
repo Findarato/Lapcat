@@ -1,0 +1,32 @@
+{
+    "name": "zendframework/zendgdata",
+    "description": "provide programmatic interface to some of Google's online services",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "zf2",
+        "gdata"
+    ],
+    "homepage": "http://packages.zendframework.com/",
+    "autoload": {
+        "psr-0": {
+            "ZendGData": "library/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.zendframework.com/"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zend-http": ">=2.0.0rc4",
+        "zendframework/zend-stdlib": ">=2.0.0rc4",
+        "zendframework/zend-version": ">=2.0.0rc4"
+    },
+    "require-dev": {
+        "zendframework/zend-i18n": ">=2.0.0rc4"
+    }
+}
