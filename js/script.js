@@ -393,7 +393,7 @@ $(document).ready(function(){
       getSpreadSheetFeed("educators");
 		}
     if(uri.search(/help/i)>0){// this is the teens page
-      getSpreadSheetFeed("educators");
+      getSpreadSheetFeed("help");
     }	
 		
     $("#twitterContainer").tweet({

@@ -23,7 +23,7 @@
       </form>
     </div>
     <div style="display:inline-block;vertical-align: top;">
-      <a alt="Need Help? Ask a librarian" class="icon-help" href="/ask.php"  style="font-size:1.2rem"></a>
+      <a alt="Need Help?" class="icon-help" href="/help.php"  style="font-size:1.2rem"></a>
     </div>
   </div>
 </div>
