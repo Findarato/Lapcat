@@ -18,7 +18,7 @@
 		<footer class="grid_24" style="margin-top:10px;margin-right:auto;">
 			{include file="../sections/sitemap.tpl"}
 		</footer>
-	</div>
+	</div> 
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"} <script src="js/libs/Flux-Slider/js/flux.min.js" type="text/javascript" charset="utf-8"></script>
 	<script defer src="js/downloads.js"></script>
