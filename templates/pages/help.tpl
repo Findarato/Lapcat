@@ -3,11 +3,10 @@
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
-			{include file="../sections/subpage_header.tpl" pageTitle="Ask A Librarian"}
+			{include file="../sections/subpage_header.tpl" pageTitle="Help"}
 			{* {include file="../sections/soonCalendar.tpl"} *} <div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/askALibrarian.tpl"}
-				{*{include file="../sections/mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/twitter.tpl"}
