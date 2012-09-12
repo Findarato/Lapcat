@@ -3,7 +3,7 @@
   header('Content-type: application/json');
   
   // load Zend Gdata libraries
-  require_once $_SERVER["DOCUMENT_ROOT"].'/libs/ZendGdata/Zend/Loader.php';
+  require_once $_SERVER["DOCUMENT_ROOT"].'/libs/ZendGData/library/ZendGData/Zend/Loader.php';
   Zend_Loader::loadClass('Zend_Gdata_Spreadsheets');
   Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
   // set credentials for ClientLogin authentication
