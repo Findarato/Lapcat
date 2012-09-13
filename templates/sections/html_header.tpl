@@ -16,7 +16,7 @@
     <meta property="fb:admins" content="Rebecca.Tomerlin"/>
     <!-- Update your html tag to include the itemscope and itemtype attributes -->
     <meta itemprop="name" content="{$title}">
-    <link href='http://fonts.googleapis.com/css?family=Dancing+Script|Buda:300|Overlock' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro|Inconsolata' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/fonts/fontello/css/fontello.css">
     <link rel="stylesheet/less" href="css/less/style.less">
     <script type="text/javascript">less = { env: 'development' }; </script>

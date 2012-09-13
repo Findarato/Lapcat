@@ -15,6 +15,7 @@
     $client = Zend_Gdata_ClientLogin::getHttpClient($user, $pass, $service);
     $service = new Zend_Gdata_Spreadsheets($client);
     $ssEntry = $service->getSpreadsheetEntry('https://spreadsheets.google.com/feeds/spreadsheets/0AiS5uo8R9Z4RdDRRRU1ZcGZ0RW5sbTFzNVVBZFRvdFE');
+    //print_r(serialize($ssEntry));die();
       // get worksheets in this spreadsheet
     $wsFeed = $ssEntry->getWorksheets();
     $json = array();
