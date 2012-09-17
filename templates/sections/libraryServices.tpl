@@ -6,9 +6,6 @@
     </ul>
   </div>
 </div>
-
-
-          
 <div class="bookBox roundAll3">
   <div class="titleElement roundAll3 titleElement color3">Other Services</div>
   <div id="" class="insideBoxShadow roundAll3 containerBox" >
