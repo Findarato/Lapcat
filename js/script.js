@@ -252,7 +252,13 @@ function wowbraryImageLinks(uri,target,slider,sectionTitle,count){
 												.html(
 													$("<img/>",{"src":"http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn="+isbn+"&size=L"})
 												)
-											returnHtml.append(linkCode);
+											returnHtml.append(linkCode)
+											.append(
+											  $("<div/>",{
+											    class:"flex-caption",
+											    html:"This is stuff This is stuff This is stuff <br>This is stuff This is stuff This is stuff <br>This is stuff This is stuff This is stuff <br>"
+											  })
+											);
 										});
 						  return returnHtml;
 						}

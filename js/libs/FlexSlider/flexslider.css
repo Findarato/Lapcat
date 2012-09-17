@@ -92,9 +92,9 @@ html[xmlns] .slides {display: block;}
 .flex-caption{
   position:absolute;
   bottom:0px;
-  height:2em;
+  height:auto;
   width:100%;
-  left:0px;
+  /*left:0px;*/
   color:white;
   background:rgba(0,0,0,.6);
   margin:0px;
