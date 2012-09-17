@@ -16,7 +16,7 @@ body,html {
   background-color:@colorLight;
   font: Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif; 
 }
-a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:bold;}
+a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none;}
 /* Color 1 related items */
 .color1{
   background: @color1;  
@@ -103,24 +103,22 @@ a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:
   /* http://www.colorzilla.com/gradient-editor/#261806+5,5f3e12+20,5f3e12+60,5f3e12+80,261806+95;Custom */
 }
 
-h1,h2,h3,h4{
+h1,h2,h3,h4,h5{
   margin:2px;
-  color: @color5;
+  color: @colorDark;
   text-align: left;
+  text-shadow: 1px 1px @textShadow;
 }
+.fontShadow{text-shadow: 1px 1px @textShadow;}
 
-h1,h4,.font1{font-family: Candara,'Jacques Francois',"DejaVu Sans","Trebuchet MS", sans-serif;}
-h2,h3,.font2,.secondNav,.sectionText{font-family: 'Orienta',"DejaVu Sans","Trebuchet MS", sans-serif;}
-
-/*
-h1,h4,.font1{font-family: 'Inconsolata' ,Candara,"DejaVu Sans","Trebuchet MS", sans-serif;}
-h2,h3,.font2,.secondNav,.sectionText{font-family: 'Source Sans Pro',Candara,"DejaVu Sans","Trebuchet MS", sans-serif;}
- */
+h1,.font1{font-family: Candara,'Jacques Francois',"DejaVu Sans","Trebuchet MS", sans-serif;}
+h2,.font2,.secondNav,.sectionText{font-family: 'Orienta',"DejaVu Sans","Trebuchet MS", sans-serif;}
 
 h1{font-size: 2.5em;}
 h2 {font-size: 2.2em;}
 h3 {font-size: 2em;}
 h4 {font-size: 1.8em;}
+h5 {font-size: 1.3em;font-weight:normal;}
 
 .pageBranding{
   position:absolute;
@@ -272,7 +270,7 @@ h1,.linearAnimate{
   height:1.8em;
   font-size:1.1em;
   font-weight:bold;
-  width:50%;
+  width:48%;
   white-space:nowrap;
   text-align:center;
   padding:3px;
@@ -338,7 +336,7 @@ h1,.linearAnimate{
 	top:0;
 	opacity:1;
 	z-index: 10;
-	background:#E0E0E0;
+	background:@color4;
 	padding:3px;
 	border-top-right-radius: 3px;
 	border-bottom-left-radius: 3px;

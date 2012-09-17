@@ -1,5 +1,5 @@
 <div class="blogBox roundAll3" style="height:auto;">
-	<div class="roundAll3 titleElement color3">
+	<div class="roundAll3 titleElement color3 font1">
 		Search the Site
 	</div>
 	<div id="containerBox" class="insideBoxShadow roundAll3 containerBox" >

@@ -1,6 +1,6 @@
 <script src="/js/mylibs/locations.json"></script>
 <div class="blogBox roundAll3">
-  <div class="MainTitle roundAll3 titleElement color3">
+  <div class="MainTitle roundAll3 titleElement color3 font1">
     <a href="/hours.php">Hours</a>
   </div>
   <div id="MainContainerBox" class="insideBoxShadow roundAll3 containerBox" >
@@ -33,7 +33,7 @@
         <div>
           <div style="width:auto;display:block">
         <div style="display:inline-block">
-          <div class="insideBoxShadow color4 dayBox" id="dayBox1">
+          <div class="insideBoxShadow color4 dayBox roundAll3" id="dayBox1">
             <span class="font1" style="font-size:1.8em">M</span><span  class="font1" style="font-size:1.3em">o</span>
             <div class="timeContainer"  id="timeContainer1">
               9 - 8pm

@@ -3,7 +3,7 @@
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
-			{include file="../sections/subpage_header.tpl" pageTitle="Employment" backgroundImage="images/LaPorte_County_Public_Library.png"}
+			{include file="../sections/subpage_header.tpl" pageTitle="Employment" backgroundImage="/images/stock-illustration-8034749-job-searching-effects.jpg"}
 			<a href="/downloads/applicationform.pdf">employment application form</a>
 			<div class="clear"></div>
 			<section class="grid_16">

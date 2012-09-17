@@ -58,9 +58,9 @@
   <div class="grid_6 rightNav" >
     <!-- Right Colmn -->
     <div class="smallSection events">
-      <a class="askNav smoothAnimate fixMargin" href="ask.php" ></a>
+      <a class="askNav smoothAnimate fixMargin" href="help.php" ></a>
       <div class="sectionText">
-        <a href="ask.php">Ask A Librarain</a>
+        <a href="help.php">Help</a>
       </div>
     </div>
     <div class="smallSection research">
