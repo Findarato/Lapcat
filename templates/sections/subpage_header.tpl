@@ -1,5 +1,5 @@
 <div class=" " style="margin-bottom:10px;width:100%;height:100%;position:relative;overflow:hidden">
-  <div class="roundAll3 insideBoxShadow subPageHeader" style="{if $backgroundImage ne ""}background:#fff url({$backgroundImage}) no-repeat scroll{/if};opacity:.75;background-position: 0"></div>
+  <div class="roundAll3 insideBoxShadow subPageHeader" style="{if $backgroundImage ne ""}background:#fff url({$backgroundImage}) no-repeat scroll{/if};opacity:.75;background-position: 50%"></div>
   <div class="color4 roundRight4 outSideBoxShadow" style="position: absolute;top:25%; left:5px;auto;">
     <h1 style="text-align:right;padding:0 10px 0 5px;height:100%;width:100%">{$pageTitle}</h1>
   </div>

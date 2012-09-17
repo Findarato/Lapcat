@@ -41,14 +41,14 @@
         <ul class="slides">
           <li>
             <a href="http://laportelibrary.org"><img src="/images/rotate2.jpg" alt="" title="Cool 2"/></a>
-            <p class="flex-caption">Caption 2!</p>
+            <div class="flex-caption">Caption 2!</div>
           </li>
           <li>
             <a href="http://laportelibrary.org"><img src="/images/rotate3.jpg" alt="" title="Cool 3"/></a>
           </li>
           <li>
             <a href="http://www.google.com"><img src="/images/rotate4.jpg" alt="" title="Cool 4"/></a>
-            <p class="flex-caption">Cool 4</p>
+            <div class="flex-caption">Cool 4</div>
           </li>
         </ul>
         <div id="flexControlls" class="flexControlls"></div>

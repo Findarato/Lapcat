@@ -224,12 +224,15 @@ function wowbraryImageLinks(uri,target,slider,sectionTitle,count){
 	$.get("ajax/rss.php",{"url":uri}, function(d) {
  		me = $(d);
  		var feedTitle = me.find("channel").find("title:first").text();
+ 		
 		//find each 'item' in the file and parse it 
-		me.find('item').each(function() {
+		me.find('item').each(function(i,book) {
+		  
 			if(amount == count)
 				return -1;
 			amount++; 
 			var $item = $(this);
+			var description = $item.find('description').text();
 			var title = $item.find('title').text();
  			var contentEncoded = $item.find('content_encoded').text();
 			html = $("<div/>")
@@ -256,7 +259,7 @@ function wowbraryImageLinks(uri,target,slider,sectionTitle,count){
 											.append(
 											  $("<div/>",{
 											    class:"flex-caption",
-											    html:"This is stuff This is stuff This is stuff <br>This is stuff This is stuff This is stuff <br>This is stuff This is stuff This is stuff <br>"
+											    html:description
 											  })
 											);
 										});
@@ -278,7 +281,10 @@ function wowbraryImageLinks(uri,target,slider,sectionTitle,count){
 				maxItems: 10,
 				controlsContainer: ".flexControll",
 				animationLoop: true,
-				slideshowSpeed: 5000
+				slideshowSpeed: 5000,
+				smoothHeight: false,
+				pauseOnAction: true,
+        pauseOnHover: false
 			});
 		}
 	});
