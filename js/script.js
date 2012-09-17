@@ -273,7 +273,7 @@ function wowbraryImageLinks(uri,target,slider,sectionTitle,count){
 		});
 		if(slider){
 			$(".flexslider").flexslider({
-				animation:"slide",
+				animation:"fade",
 				controlNav: true,
 				useCSS: true,
 				touch: true,
