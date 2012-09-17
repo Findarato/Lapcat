@@ -34,7 +34,7 @@
           <div style="width:auto;display:block">
         <div style="display:inline-block">
           <div class="insideBoxShadow color4 dayBox" id="dayBox1">
-            <span style="font-size:1.8em">M</span><span  style="font-size:1.3em">o</span>
+            <span class="font1" style="font-size:1.8em">M</span><span  class="font1" style="font-size:1.3em">o</span>
             <div class="timeContainer"  id="timeContainer1">
               9 - 8pm
             </div>
@@ -43,7 +43,7 @@
 
         <div style="display:inline-block">
           <div class="insideBoxShadow color4 dayBox roundAll3"  id="dayBox2">
-            <span style="font-size:1.8em">T</span><span  style="font-size:1.3em">u</span>
+            <span class="font1"  style="font-size:1.8em">T</span><span  class="font1" style="font-size:1.3em">u</span>
             <div class="timeContainer"  id="timeContainer2">
               9 - 8pm
             </div>
@@ -52,7 +52,7 @@
 
         <div style="display:inline-block">
           <div class="insideBoxShadow color4 dayBox roundAll3"  id="dayBox3">
-            <span style="font-size:1.8em">W</span><span  style="font-size:1.3em">e</span>
+            <span class="font1"  style="font-size:1.8em">W</span><span class="font1" style="font-size:1.3em">e</span>
             <div class="timeContainer" id="timeContainer3">
               9 - 8pm
             </div>
@@ -61,7 +61,7 @@
 
         <div style="display:inline-block">
           <div class="insideBoxShadow color4 dayBox roundAll3"  id="dayBox4">
-            <span style="font-size:1.8em">T</span><span  style="font-size:1.3em">r</span>
+            <span class="font1" style="font-size:1.8em">T</span><span class="font1" style="font-size:1.3em">r</span>
             <div class="timeContainer"  id="timeContainer4">
               9 - 8pm
             </div>
@@ -70,7 +70,7 @@
 
         <div style="display:inline-block">
           <div class="insideBoxShadow color4 dayBox roundAll3"  id="dayBox5">
-            <span style="font-size:1.8em">F</span><span  style="font-size:1.3em">r</span>
+            <span class="font1" style="font-size:1.8em">F</span><span class="font1" style="font-size:1.3em">r</span>
             <div class="timeContainer"  id="timeContainer5">
               9 - 8pm
             </div>
@@ -79,7 +79,7 @@
 
         <div style="display:inline-block">
           <div class="insideBoxShadow color4 dayBox roundAll3"  id="dayBox6">
-            <span style="font-size:1.8em">S</span><span  style="font-size:1.3em">a</span>
+            <span class="font1" style="font-size:1.8em">S</span><span class="font1" style="font-size:1.3em">a</span>
             <div class="timeContainer"  id="timeContainer6">
               9 - 8pm
             </div>
