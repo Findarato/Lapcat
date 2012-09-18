@@ -3,11 +3,10 @@
 	<div id="container" style="" class="container_24">
 		{include file="../sections/header.tpl"}
 		<div class="mainArea grid_24 mainBackground roundAll3" id="main" role="main">
-			{include file="../sections/subpage_header.tpl" pageTitle="Great Picks"}
+			{include file="../sections/subpage_header.tpl" pageTitle="Great Picks" backgroundImage="/images/stock-illustration-18812296-green-book-stack.jpg"}
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/newestItems.tpl"}
-				{*{include file="../sections/mainContent.tpl"}*}
 			</section>
 			<aside class="grid_8">
 				{include file="../sections/newBooks.tpl"}
@@ -22,7 +21,6 @@
 			{include file="../sections/sitemap.tpl"}
 		</footer>
 	</div>
-	http://www.wowbrary.org/nu.aspx?p=8711--GEN&more
 	<!--! end of #container -->
 	{include file="../sections/footerjs.tpl"}
 	<link rel="stylesheet" href="/js/libs/FlexSlider/flexslider.css" type="text/css">

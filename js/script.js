@@ -310,14 +310,16 @@ function get_rss_feed(uri,target) {
 			var $item = $(this);
  			var contentEncoded = $item.find('content_encoded').text();
  			
+ 			  
 			// now create a var 'html' to store the markup we're using to output the feed to the browser window
 			html = $("<div/>",{"class":"rssItem",css:{}})
 				.html(
 					function(){ 
 						if(contentEncoded.length>1){
 							contentEncoded = $(contentEncoded);
-							contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("");
-													
+							contentEncoded.find(".NUBUTTON").replaceWith("");
+							//contentEncoded.find('a').not('a[href^="http:"],a[href^="https:"]').replaceWith("");
+              
 							
 							return $("<span/>",{"class":"rssDescription",html:contentEncoded})
 							
@@ -400,6 +402,7 @@ $(document).ready(function(){
 		}
 		if(uri.search(/greatpicks/i)>0){// this is the teens page
       getSpreadSheetFeed("readers");
+      get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"));
 		}
 		if(uri.search(/educators/i)>0){// this is the teens page
       getSpreadSheetFeed("educators");
