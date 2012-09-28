@@ -7,7 +7,7 @@
   Zend_Loader::loadClass('Zend_Gdata_Spreadsheets');
   Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
   // set credentials for ClientLogin authentication
-  include "googleLogin.inc.php";
+  include "googleLogin.inc";
 
   try {  
       // connect to API
