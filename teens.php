@@ -28,13 +28,8 @@ foreach($feed->get_items(0,10) as $item) {
     $count++;
   }else{
     unset($b[$count]);
-    
   }
-  //if($b[$count])
-  
 }
-//print_r($b);
-//die();
 $smarty -> assign("blog" , $b);
 $smarty -> display('pages/teens.tpl');
 ?>
