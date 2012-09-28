@@ -13,22 +13,26 @@ foreach($feed->get_items(0,10) as $item) {
   if($count == 2) return;  
   
   $categories = $item -> get_categories();
-  foreach($categories as $cate){
-    $b[$count]["cate"][] = $cate ->get_term();
+  if(count($categories)>1){
+    foreach($categories as $cate){
+      $b[$count]["cate"][] = $cate ->get_term();
+    }
   }
-  //print_r($b);
-  if(in_array("teen",$b[$count]["cate"])){
-    $b[$count]["contents"] = $item -> get_content();
-    $b[$count]["link"] = $item -> get_link();
-    $b[$count]["title"] = $item -> get_title();
-    $b[$count]["date"] = $item->get_date($date_format = 'j F Y, g:i a');
-    $tempAuthor = $item->get_authors();
-    $b[$count]["author"]["name"] = $tempAuthor[0]->get_name();
-    $b[$count]["author"]["link"] = $tempAuthor[0]->get_link();
-    $count++;
-  }else{
-    unset($b[$count]);
+  if(isset($b[$count]) && is_array($b[$count])){
+    if(in_array("teen",$b[$count]["cate"])){
+      $b[$count]["contents"] = $item -> get_content();
+      $b[$count]["link"] = $item -> get_link();
+      $b[$count]["title"] = $item -> get_title();
+      $b[$count]["date"] = $item->get_date($date_format = 'j F Y, g:i a');
+      $tempAuthor = $item->get_authors();
+      $b[$count]["author"]["name"] = $tempAuthor[0]->get_name();
+      $b[$count]["author"]["link"] = $tempAuthor[0]->get_link();
+      $count++;
+    }else{
+      unset($b[$count]);
+    }  
   }
+  
 }
 $smarty -> assign("blog" , $b);
 $smarty -> display('pages/teens.tpl');
