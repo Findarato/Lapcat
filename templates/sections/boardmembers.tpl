@@ -1,5 +1,5 @@
 <div class="bookBox roundAll3">
-  <div class="bookTitle roundAll3 titleElement color3">
+  <div class=" roundAll3 titleElement color3">
     Board Members
   </div>
   <div id="" class="insideBoxShadow roundAll3 containerBox" >

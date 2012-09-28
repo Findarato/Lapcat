@@ -7,6 +7,7 @@
 			<div class="clear"></div>
 			<section class="grid_16">
 				{include file="../sections/missionVision.tpl"}
+				{include file="../sections/boardmembers.tpl"}
 				<section class="grid_8" style="margin-left:0px;">
 				  {include file="../sections/libraryServices.tpl"}
 				</section>

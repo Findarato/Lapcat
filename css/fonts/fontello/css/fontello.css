@@ -38,6 +38,8 @@
 .icon-github-text:before { content: '\f307'; } /* '' */
 .icon-googleplus-rect:before { content: '\f309'; } /* '' */
 .icon-vkontakte-rect:before { content: '\f30a'; } /* '' */
+.icon-picture:before { content: '🌄'; } /* '\1f304' */
 .icon-doc-text:before { content: '📄'; } /* '\1f4c4' */
 .icon-book-open:before { content: '📖'; } /* '\1f4d6' */
+.icon-download:before { content: '📥'; } /* '\1f4e5' */
 .icon-search:before { content: '🔍'; } /* '\1f50d' */

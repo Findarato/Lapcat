@@ -5,7 +5,7 @@
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
     {foreach from=$blog item=b}
     <div style="display:table">
-      <article class="blogItem" style="display:table-cell">
+      <article class="blogItem" style="display:table-cell;vertical-align: top;">
         <div>
           <div class="blogEntryTitle">
             <a href="{$b.link}" target="_blank">{$b.title}</a>
@@ -23,7 +23,6 @@
           <div data-href="{$b.link}" data-size="tall" class="g-plusone"></div>
         </div>
         <div>
-          {*<div class="fb-like" data-href="{$b.link}?spref=fb" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-font="arial"></div>*}
           <div class="fb-like" data-href="{$b.link}?spref=fb" data-send="false" data-layout="box_count" data-width="50" data-show-faces="false"></div>
         </div>
       </div>

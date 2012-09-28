@@ -1,6 +1,6 @@
 <div class="blogBox roundAll3">
 	<div class="MainTitle roundAll3 titleElement color3">
-		Games
+		Links
 	</div>
 	<div id="MainContainerBox" class="insideBoxShadow roundAll3 containerBox" >
 		<ul>

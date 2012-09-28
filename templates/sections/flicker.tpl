@@ -43,17 +43,11 @@
 		padding-bottom:30px;
 		z-index:999;
 		overflow:visible;
-		-webkit-transform:scale(1.3,1.3);
-		-moz-transform:scale(1.3,1.3);
-		-o-transform:scale(1.3,1.3);
-		-ms-transform:scale(1.3,1.3);
-		transform:scale(1.3,1.3);
-
 	}
 	.flickerPictureBox .flickrPicture:hover .flickrPictureOutline{
-    -webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
-    box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 8px 6px -6px rgba(0,0,0,.8);
+     -moz-box-shadow: 0 8px 6px -6px rgba(0,0,0,.8);
+          box-shadow: 0 8px 6px -6px rgba(0,0,0,.8);
 	}
 	.flickerPictureBox .flickrPicture:hover a{
 		border:rgb(0,0,0) solid 1px;
