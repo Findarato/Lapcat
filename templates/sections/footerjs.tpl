@@ -1,3 +1,4 @@
+{literal}
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 	<script defer src="js/libs/jquery.hovercard.min.js"></script>
@@ -14,10 +15,7 @@
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
-    
     <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-	
-	
 	<!-- end scripts-->
 	<script>
 		window._gaq = [['_setAccount', 'UA80672081'], ['_trackPageview'], ['_trackPageLoadTime']];
@@ -29,3 +27,4 @@
 			_gaq.push(['_trackEvent', 'pages', 'click', uri]);
 		});
 	</script>
+	{/literal}
