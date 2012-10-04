@@ -16,7 +16,7 @@
     <div class="smallSection genealogy">
       <a class="genealogyNav smoothAnimate fixMargin" href="genealogy.php" ></a>
       <div class="sectionText">
-        <a href="genealogy.php">Genealogy</a>
+        <a href="http://genealogy.lapcat.org/">Genealogy</a>
       </div>
     </div>
   </div>
