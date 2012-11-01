@@ -1,12 +1,16 @@
 name = lapcat
-description = A simple one-column, tableless, fluid width administration theme.
+description = The La Porte County Public Library theme
 package = Core
 version = VERSION
 core = 7.x
 stylesheets[screen][] = reset.css
+stylesheets[screen][] = 960_24_col.css
 stylesheets[screen][] = style.css
+
 settings[shortcut_module_link] = 1
 regions[content] = Content
+regions[mainContent] = Real Main Conent
+regions[rightSide] = side of the page
 regions[help] = Help
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
@@ -17,4 +21,3 @@ regions_hidden[] = sidebar_first
 version = "7.16"
 project = "drupal"
 datestamp = "1350508567"
-

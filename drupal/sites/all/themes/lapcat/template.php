@@ -40,6 +40,7 @@ function seven_preprocess_page(&$vars) {
  * Display the list of available node types for node creation.
  */
 function seven_node_add_list($variables) {
+  
   $content = $variables['content'];
   $output = '';
   if ($content) {

@@ -1,60 +1,8 @@
-
 /**
  * Generic elements.
  */
-body {
-  color: #000;
-  background: #fff;
-  font: normal 81.3%/1.538em "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-}
-a {
-  color: #0074BD;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
-}
-hr {
-  margin: 0;
-  padding: 0;
-  border: none;
-  height: 1px;
-  background: #cccccc;
-}
-legend {
-  font-weight: bold;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: bold;
-  margin: 10px 0;
-}
-h1 {
-  font-size: 1.538em;
-}
-h2 {
-  font-size: 1.385em;
-}
-h3 {
-  font-size: 1.231em;
-}
-h4 {
-  font-size: 1.154em;
-}
-h5,
-h6 {
-  font-size: 1.077em;
-}
-p {
-  margin: 1em 0;
-}
-dl {
-  margin: 0 0 20px;
-}
+
+@include("reset.css");
 dl dd,
 dl dl {
   margin-left: 20px; /* LTR */
@@ -992,7 +940,6 @@ div.add-or-remove-shortcuts {
 /* Joe website styles */
 
 /*@import url("../sprite.css");*/
-@import("reset.css");
 button, a.button, .button, .selectButton {
   cursor: pointer;
   padding: 3px;
@@ -2015,5 +1962,3 @@ li {
   width: 32px;
   height: 32px;
 }
-
-
