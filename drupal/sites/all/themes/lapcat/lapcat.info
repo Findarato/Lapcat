@@ -8,15 +8,11 @@ stylesheets[screen][] = 960_24_col.css
 stylesheets[screen][] = style.css
 
 settings[shortcut_module_link] = 1
+regions[pageHeader] = Page Header
 regions[content] = Content
-regions[mainContent] = Real Main Conent
-regions[rightSide] = side of the page
+regions[rightSide] = Side Content
 regions[help] = Help
-regions[page_top] = Page top
 regions[page_bottom] = Page bottom
-regions[sidebar_first] = First sidebar
-regions_hidden[] = sidebar_first
-
 ; Information added by drupal.org packaging script on 2012-10-17
 version = "7.16"
 project = "drupal"
