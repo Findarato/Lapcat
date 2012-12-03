@@ -56,14 +56,10 @@ ul,
 .item-list .pager li {
   padding: 0.5em;
 }
-.item-list ul li,
-li.leaf,
-ul.menu li {
-  list-style-type: disc;
-  list-style-image: none;
-}
 ul.menu li {
   margin: 0;
+  display:inline;
+  list-style-type: none;
 }
 ol {
   list-style-type: decimal;
@@ -1205,7 +1201,7 @@ h2, .font2, .secondNav, .sectionText {
   font-family: 'Orienta', "DejaVu Sans", "Trebuchet MS", sans-serif;
 }
 h1 {
-  font-size: 2.5em;
+  font-size: 2.15em;
 }
 h2 {
   font-size: 2.0em;
@@ -1722,7 +1718,10 @@ li {
   bottom: 2px;
   left: 10px;
   margin-bottom: 0px;
-}/* ==|== media queries ====================================================== */
+}
+
+
+/* ==|== media queries ====================================================== */
 @media only screen and (min-width: 1600px) {/* VERY Large window browsers */
   .childrenTree {
     background: none, url('/images/tree.svg') no-repeat;

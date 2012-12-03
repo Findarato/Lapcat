@@ -15,11 +15,7 @@
     </div>
   </nav>
   <nav class="secondNav color2" style="width:100%">
-    <div class="topNav" style="text-align:center;margin:0 auto;">
-      <?php if ($page['menuHeader']): ?>
-          <div id="menuHeader"><?php print render($page['menuHeader']); ?></div>
-        <?php endif; ?>
-<!--
+    <div class="t topNav" style="text-align:center;margin:0 auto;">
       <div class="td  ">
         <div class="menuSelect smoothAnimate">
           <a alt="Login to make a hold" href="https://catalog.lapcat.org/patroninfo">My Account</a>
@@ -50,11 +46,10 @@
           <a alt="See what we offer our youngest members" href="children">Childrens</a>
         </div>
       </div>
-    -->
     </div>
-    
   </nav>
-</header>  
+</header>
+research?
   <div id="" style="" class="container_24">
     <div class="mainArea grid_24 roundAll3" id="main" role="main">
         <?php if ($page['pageHeader']): ?>
@@ -78,14 +73,12 @@
             <?php print render($page['help']); ?>
           </div>
         <?php endif; ?>
-        
-        <?php print $feed_icons; ?>
       </aside>
        <div class="clear"></div>
     </div> <!-- end of main content-->
     <footer class="grid_24" style="margin-top:10px;margin-right:auto;">
       <div id="footer">
-        
+        <?php print $feed_icons; ?>
       </div>
     </footer> 
   </div>
