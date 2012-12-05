@@ -2,16 +2,24 @@
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
     <div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">
       <div class="td">
-        <a href="/"><img src="images/tree.png" class="logoTree" alt="Lpcpls" border="0" style="display:inline-block"></a>
+        <a href="/">
+           <?php if ($logo): ?>
+              <img height=75px width=68px src="<?php print $logo ?>" alt="learn, enrich, enjoy" title="learn, enrich, enjoy" id="logo" />
+            <?php endif; ?>
+         </a>
       </div>
       <div class="td">
         <h1><a href="/" class="logoTitle">La Porte County Public Library System</a></h1>
-        <h3 class="logoSubtitle">learn, enrich, enjoy</h3>
+        <h3 class="logoSubtitle">learn, enrich, enjoy</h3> 
       </div>
     </div>
   </nav>
   <nav class="secondNav color2" style="width:100%">
-    <div class="t topNav" style="text-align:center;margin:0 auto;">
+    <div class="topNav" style="text-align:center;margin:0 auto;">
+      <?php if ($page['menuHeader']): ?>
+          <div id="menuHeader"><?php print render($page['menuHeader']); ?></div>
+        <?php endif; ?>
+<!--
       <div class="td  ">
         <div class="menuSelect smoothAnimate">
           <a alt="Login to make a hold" href="https://catalog.lapcat.org/patroninfo">My Account</a>
@@ -29,20 +37,22 @@
       </div>
     <div class="td  ">
         <div class="menuSelect smoothAnimate">
-          <a alt="Looking for that hard to find information?" href="research.php">Research</a>
+          <a alt="Looking for that hard to find information?" href="research">Research</a>
         </div>
       </div>
       <div class="td largeNav">
         <div class="menuSelect smoothAnimate">
-          <a alt="All of our teen activities" href="teens.php">Teens</a>
+          <a alt="All of our teen activities" href="teens">Teens</a>
         </div>
       </div>
       <div class="td largeNav">
         <div class="menuSelect smoothAnimate">
-          <a alt="See what we offer our youngest members" href="children.php">Childrens</a>
+          <a alt="See what we offer our youngest members" href="children">Childrens</a>
         </div>
       </div>
+    -->
     </div>
+    
   </nav>
 </header>  
   <div id="" style="" class="container_24">
@@ -57,7 +67,12 @@
           <div id="console" class="clearfix"><?php print $messages; ?></div>
           <?php endif; ?>
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-          <?php print render($page['content']); ?>
+            <div class="box blogBox roundAll3">
+              <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1"><span style="padding-left:3px;height:100%;width:100%">Blog</span></div>
+              <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
+                <?php print render($page['content']); ?>      
+              </div>
+            </div>
       </section>
       <aside id="side" class="grid_8">
         <?php if ($page['rightSide']): ?>
@@ -68,12 +83,14 @@
             <?php print render($page['help']); ?>
           </div>
         <?php endif; ?>
+        
+        <?php print $feed_icons; ?>
       </aside>
        <div class="clear"></div>
     </div> <!-- end of main content-->
     <footer class="grid_24" style="margin-top:10px;margin-right:auto;">
       <div id="footer">
-        <?php print $feed_icons; ?>
+        
       </div>
     </footer> 
   </div>

@@ -1,5 +1,5 @@
 <div class="box blogBox roundAll3">
-  <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1"><a href="http://twitter.com/lpcpls/" style="padding-left:3px;height:100%;width:100%">News</a></div>
+  <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1"><a href="http://twitter.com/lpcpls/" style="padding-left:3px;height:100%;width:100%">Blog1</a></div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
       <div id="" class="clearfix">
         <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>

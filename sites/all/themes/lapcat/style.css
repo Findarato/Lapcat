@@ -1559,47 +1559,34 @@ li {
 #greatPicksContainerBox .rssItem img {
   width: 100px;
 }
-.blogBox, .blogContainerBox, .containerBox, .bookBox {
+.blogBox, .blogContainerBox, .containerBox, .bookBox,.blogEntry {
   position: relative;
   background: #FFF;
   min-height: 100px;
 }
-.blogContainerBox li {
-  display: block;
-}
-.blogEntryDescription a {
-  white-space: nowrap;
-}
-.blogEntryDescription iframe {
-  display: none;
-}
-.blogEntryDescription a[href*="catalog.lapcat.org"]:after, .rssDescription a[href*="catalog.lapcat.org"]:after {
-  font-size: 10px;
-  content: "";
-  font-family: 'IconicFill';
-}
-.blogEntryDescription .noAfterImage:after {
-  content: "";
-}
 .blogContainerBox, .deliciousContainer, .containerBox {
   padding: 30px 5px 5px 5px;
 }
-.blogItem {
-  width: 100%;
-  padding: 3px;
+.insideBoxShadow .blogEntry{
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
-.blogItem div {
-  width: 100%;
-}
-.blogEntryTitle {
-  font-size: 20px;
-  min-width: 250px;
-  max-width: 500px;
-  border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
-  margin-bottom: 3px;
+
+.blogEntry{
+  padding:5px;
+  -webkit-box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
+  box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
 }
 .blogEntryTitle a {
   color: #0C717A;
+}
+.blogEntryTitle{
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  border-bottom: rgba(0, 0, 0, 0.2) solid 1px;
+  font-size: 1.5em;
+  padding-left:3px;
 }
 .blogEntryTitle a:hover {
   text-decoration: none;
@@ -1607,10 +1594,6 @@ li {
 .blogEntryAuthor {
   font-size: 10px;
   color: #999;
-}
-.blogEntryAuthor img {
-  height: 24px;
-  width: 24px;
 }
 .blogEntryDescription {
   width: 600px;
