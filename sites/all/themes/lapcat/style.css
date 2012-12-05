@@ -1626,6 +1626,16 @@ li {
 .subTitleElement a.selected {
   margin-left: 3px;
 }
+
+.twitterImage{
+  height:100%;
+  float:left;
+  margin:0 3px 0 0 ;
+}
+.twitterItem:hover{
+  
+}
+
 .twitterFeedTitle, .mainContentTitle, .blogTitle, .deliciousFeedTitle, .eventFeedTitle, .titleElement {
   cursor: pointer;
   padding: 6px;
@@ -1636,14 +1646,7 @@ li {
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   z-index: 5;
 }
-.twitterFeedTitle2:after {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 50px solid transparent;
-  border-right: 50px solid transparent;
-  border-top: 100px solid red;
-}
+
 .soonCalendarBack {
   right: 800px;
 }
