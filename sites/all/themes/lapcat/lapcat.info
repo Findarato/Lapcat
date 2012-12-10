@@ -13,7 +13,7 @@ regions[menuHeader] = Header Menu
 regions[content] = Content
 regions[rightSide] = Side Content
 regions[help] = Help
-regions[page_bottom] = Page bottom
+regions[pageFooter] = Page Footer
 ; Information added by drupal.org packaging script on 2012-10-17
 version = "7.16"
 project = "drupal"

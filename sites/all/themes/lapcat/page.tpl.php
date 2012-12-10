@@ -84,9 +84,9 @@
        <div class="clear"></div>
     </div> <!-- end of main content-->
     <footer class="grid_24" style="margin-top:10px;margin-right:auto;">
-      <div id="footer">
-        
-      </div>
+      <?php if ($page['pageFooter']): ?>
+        <div id="pageFooter"><?php print render($page['pageFooter']); ?></div>
+      <?php endif; ?>
     </footer> 
   </div>
   <link rel="stylesheet" href="/js/libs/FlexSlider/flexslider.css" type="text/css">
