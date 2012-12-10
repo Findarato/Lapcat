@@ -6,11 +6,11 @@
            <?php if ($logo): ?>
               <img height=75px width=68px src="<?php print $logo ?>" alt="learn, enrich, enjoy" title="learn, enrich, enjoy" id="logo" />
             <?php endif; ?>
-         </a>
+         </a> 
       </div>
       <div class="td">
         <h1><a href="/" class="logoTitle">La Porte County Public Library System</a></h1>
-        <h3 class="logoSubtitle">learn, enrich, enjoy</h3> 
+        <h3 class="logoSubtitle">learn, enrich, enjoy stuff</h3> 
       </div>
     </div>
   </nav>
@@ -24,36 +24,9 @@
 </header>  
   <div id="" style="" class="container_24">
     <div class="mainArea grid_24 roundAll3" id="main" role="main">
-      <!--Page Header-->
-      <nav class="navDisplay">
-        <div class="grid_24">
-          <div class="mediumSection">
-            <div class="fixMargin">
-              <form method="get" action="http://catalog.lapcat.org/search/X?" class="catalogNav smoothAnimate">
-                <select class="" name="searchtype">
-                  <option value="X" selected="selected">KEYWORD</option>
-                  <option value="t">TITLE</option>
-                  <option value="a">AUTHOR</option>
-                  <option value="d">SUBJECT</option>
-                </select>
-                <input type="search" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog" >
-                <input class="insideBoxShadow" type="submit" value="GO!">
-              </form>
-            </div>
-          </div>
-          <!-- Middle Colmn -->
-          <div id="middleSectionContainer" class="middleSection " style="position:relative;">
-             <?php if ($page['featured_slider']): ?>
-              <div id="featured-slider">
-                <?php print render($page['featured_slider']); ?>
-              </div> <!-- End Featured Slider-->
-            <?php endif; ?>
-          </div>
-        </div>
-        
-      </nav>  
-      <!--/Page Header-->
-
+        <?php if ($page['pageHeader']): ?>
+          <div id="pageHeader"><?php print render($page['pageHeader']); ?></div>
+        <?php endif; ?>
         <div class="clear"></div>   
       <section id="mainContent" class="grid_16">
         <div class="element-invisible"><a id="main-content"></a></div>
@@ -74,7 +47,7 @@
         <?php endif; ?>
         <?php if ($page['help']): ?>
           <div id="help">
-            <?php print render($page['help']); ?>
+            <?php print render($page['help']); ?>test
           </div>
         <?php endif; ?>
         
@@ -84,9 +57,9 @@
     </div> <!-- end of main content-->
     <footer class="grid_24" style="margin-top:10px;margin-right:auto;">
       <?php if ($page['pageFooter']): ?>
-        <div id="pageFooter"><?php print render($page['pageFooter']); ?></div>
+        <div id="pageFooter"><?php print render($page['pageFooter']); ?>FOOTY!</div>
       <?php endif; ?>
-    </footer> 
+    </footer>  
   </div>
   <link rel="stylesheet" href="/js/libs/FlexSlider/flexslider.css" type="text/css">
   <script src="js/libs/FlexSlider/jquery.flexslider-min.js" type="text/javascript" charset="utf-8"></script>

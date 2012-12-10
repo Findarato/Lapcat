@@ -10,6 +10,7 @@ stylesheets[screen][] = style.css
 settings[shortcut_module_link] = 1
 regions[pageHeader] = Page Header
 regions[menuHeader] = Header Menu
+regions[featured_slider] = Featured Slider
 regions[content] = Content
 regions[rightSide] = Side Content
 regions[help] = Help
