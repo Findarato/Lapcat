@@ -1323,6 +1323,7 @@ h1, .linearAnimate {
   right: -5%;
   height: 100px;
   width: 100px;
+  background: none, url('/images/tree.svg') no-repeat;
 }
 .t {
   display: table;
@@ -1483,33 +1484,36 @@ li {
 .bookTitle {
   margin-bottom: 0px;
 }
-.smallSection, .mediumSection, .middleSection {
-  display: block;
-  position: relative;
-  overflow: hidden;
-  background: #e7f2e6; /* Old browsers */
-  background: -moz-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e7f2e6), color-stop(100%, #d3eed0)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* IE10+ */
-  background: linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* W3C */
+.banner,.navBoxes {
+  display:          block;
+  position:         relative;
+  background:       #e7f2e6; /* Old browsers */
+  background:       -moz-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* FF3.6+ */
+  background:       -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e7f2e6), color-stop(100%, #d3eed0)); /* Chrome,Safari4+ */
+  background:       -webkit-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* Chrome10+,Safari5.1+ */
+  background:       linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* W3C */
 }
-.smallSection, .smallSection a {
-  height: 100px;
-  width: 100%;
-  background-size: cover;
+.banner{
+  height:           60px;
+  width:            465px;
+  background-size:  100% 100%;
 }
-.mediumSection, .mediumSection a, .mediumSection form {
-  height: 60px;
-  width: 465px;
-  background-size: 100% 470px;
+.navBoxes{
+  height:           50px;
+  width:            auto;
+  margin:           1px;
+  background:       no-repeat scroll 50% 50% transparent;
 }
+.navDisplay{
+  margin-bottom:    10px;
+  height:           307px
+}
+
 .mediumSection form input, .mediumSection form select {
   top: 15px;
   height: 35px;
   padding: 5px;
-  position: absolute;
+  position: absolute; 
   left: 1%;
   width: 55%;
 }
@@ -1525,15 +1529,7 @@ li {
   position: relative;
   z-index: 10;
 }
-.middleSection, .middleSection form, .middleSection a {
-  height: 250px;
-  width: 950px;
-  background-size: cover;
-}
-.middleSectionScrollContainer, .middleSectionScrollContainer a {
-  width: 100%;
-  background-size: cover;
-}
+
 .fixMargin {
   position: absolute;
   top: 0;
@@ -1697,7 +1693,6 @@ li {
 /* ==|== media queries ====================================================== */
 @media only screen and (min-width: 1600px) {/* VERY Large window browsers */
   .childrenTree {
-    background: none, url('/images/tree.svg') no-repeat;
     height: 600px;
     width: 600px;
     background-size: contain;
@@ -1705,7 +1700,6 @@ li {
 }
 @media only screen and (min-width: 1170px) {/* Large window browsers */
   .childrenTree {
-    background: none, url('/images/tree.svg') no-repeat;
     height: 400px;
     width: 400px;
   }
@@ -1717,7 +1711,6 @@ li {
   .childrenTree {
     height: 350px;
     width: 350px;
-    background: none, url('/images/tree.svg') no-repeat;
     background-size: contain;
   }
   .topHeader {
@@ -1797,7 +1790,6 @@ li {
   .childrenTree {
     height: 300px;
     width: 300px;
-    background: none, url('/images/tree.svg') no-repeat;
     background-size: contain;
   }
   .navDisplay .grid_12 {

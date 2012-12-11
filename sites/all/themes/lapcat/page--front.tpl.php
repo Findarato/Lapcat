@@ -26,23 +26,9 @@
     <div class="mainArea grid_24 roundAll3" id="main" role="main">
       <!--Page Header-->
       <nav class="navDisplay">
-        <div class="grid_24">
-          <div class="mediumSection">
-            <div class="fixMargin">
-              <form method="get" action="http://catalog.lapcat.org/search/X?" class="catalogNav smoothAnimate">
-                <select class="" name="searchtype">
-                  <option value="X" selected="selected">KEYWORD</option>
-                  <option value="t">TITLE</option>
-                  <option value="a">AUTHOR</option>
-                  <option value="d">SUBJECT</option>
-                </select>
-                <input type="search" name="searcharg" size="20" maxlength="75" value="" placeholder="Search the Catalog" >
-                <input class="insideBoxShadow" type="submit" value="GO!">
-              </form>
-            </div>
-          </div>
+        <div class="grid_20">
           <!-- Middle Colmn -->
-          <div id="middleSectionContainer" class="middleSection " style="position:relative;">
+          <div id="middleSectionContainer" class="banner " style="position:relative;">
              <?php if ($page['featured_slider']): ?>
               <div id="featured-slider">
                 <?php print render($page['featured_slider']); ?>
@@ -50,11 +36,37 @@
             <?php endif; ?>
           </div>
         </div>
-        
+        <div class="grid_4" >
+          <!-- Right Colmn -->
+          <div class="navBoxes" style="background-image: url(<?php print $base_path . $directory .'/images/stock-photo-14816819-internet-reservation.jpg'; ?>)">
+            <a class="askNav smoothAnimate fixMargin" href="help" ></a>
+            <a href="help">Help</a>
+          </div>
+          <div class="navBoxes research" style="background-image: url(<?php print $base_path . $directory .'/images/stock-illustration-19686860-calendar-icon.jpg'; ?>)">
+            <a class="aboutNav smoothAnimate fixMargin" href="about" ></a>
+            <a href="about"> About Us</a>
+          </div>
+          <div class="navBoxes research" style="background-image: url(<?php print $base_path . $directory .'/images/stock-illustration-8034749-job-searching-effects.jpg'; ?>)">
+            <a class="employmentNav smoothAnimate fixMargin" href="employment" ></a>
+            <a href="employment">Employment</a>
+          </div>
+          <div class="navBoxes hours" style="background-image: url(http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=9&size=230x100&sensor=false)">
+            <a class="hoursNav smoothAnimate fixMargin" href="hours" ></a>
+            <a href="hours">Hours</a>
+          </div>
+          <div class="navBoxes greatPicks" style="background-image: url(<?php print $base_path . $directory .'/images/stock-illustration-18812296-green-book-stack.jpg'; ?>)">
+            <a class="greatPicksNav smoothAnimate fixMargin" href="greatpicks"></a>
+            <a href="greatpicks">Great Picks!</a>
+          </div>
+          <div class="navBoxes genealogy" style="background-image: url(<?php print $base_path . $directory .'/images/stock-illustration-5700289-green-man.jpg'; ?>)">
+            <a class="genealogyNav smoothAnimate fixMargin" href="http://genealogy.lapcat.org"></a>
+            <a href="http://genealogy.lapcat.org/">Genealogy</a>
+          </div>
+        </div>
       </nav>  
       <!--/Page Header-->
 
-        <div class="clear"></div>   
+      <div class="clear"></div>   
       <section id="mainContent" class="grid_16">
         <div class="element-invisible"><a id="main-content"></a></div>
           <?php if ($messages): ?>
