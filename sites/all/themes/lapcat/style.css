@@ -1232,16 +1232,19 @@ h4 {
   text-decoration: none;
 }
 .smoothAnimate {
-  -webkit-transition: all 300ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -moz-transition: all 300ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -ms-transition: all 300ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -o-transition: all 300ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition: all 300ms cubic-bezier(0.895, 0.03, 0.685, 0.22); /* easeInQuart */
-  -webkit-transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -moz-transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -ms-transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  -o-transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22);
-  transition-timing-function: cubic-bezier(0.895, 0.03, 0.685, 0.22); /* easeInQuart */
+-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+    -ms-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+    -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
 }
 h1, .linearAnimate {
   -webkit-transition: all 200ms ease;
@@ -1478,67 +1481,93 @@ li {
 .smallSection, .middleSection, .mediumSection,.blogBox {
   margin-bottom: 10px;
 }
-.middleSection .flexslider {
-  border: none;
-}
 .bookTitle {
   margin-bottom: 0px;
 }
-.banner,.navBoxes {
-  display:          block;
-  position:         relative;
-  background:       #e7f2e6; /* Old browsers */
-  background:       -moz-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* FF3.6+ */
-  background:       -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e7f2e6), color-stop(100%, #d3eed0)); /* Chrome,Safari4+ */
-  background:       -webkit-linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* Chrome10+,Safari5.1+ */
-  background:       linear-gradient(top, #e7f2e6 0%, #d3eed0 100%); /* W3C */
-}
 .banner{
-  height:           60px;
-  width:            465px;
-  background-size:  100% 100%;
+  height:           300px;
+  width:            790px;
+  overflow:         hidden;
+  display:          block;
 }
 .navBoxes{
-  height:           50px;
+  height:           48px;
   width:            auto;
-  margin:           1px;
-  background:       no-repeat scroll 50% 50% transparent;
+  margin:           2.5px 0 2.5px 0;
+  background:       white no-repeat 140px;
+  position:         relative;
+  border-radius:    3px;
+  -webkit-border-radius:     3px;
+}
+.navBoxes:nth-child(1){
+  margin-top:       0px;
+}
+.navBoxes:nth-last-child(1){
+  margin-bottom:    0;
+}
+.navBoxes:before{
+  content:'';
+  height:48px;
+  width:20px;
+  position:absolute;
+  left:-2px;
+  top:0;
+}
+.navBoxes:hover{
+  /*background-position:60px;
+ text-shadow:      rgb(85, 102, 68) 0px 0px 2px;
+ */
+}
+.navBoxes a{
+  padding:          12px;
+  font-size:        1.5em;
+  height:           48px;
+  width:            100%;
+  display:          block;
+}
+.twitterImage{
+  display:          inline-block;
+  float:            left;
 }
 .navDisplay{
   margin-bottom:    10px;
   height:           307px
 }
+.region-menuheader ul{
+  width:            100%;
+}
+.region-menuheader .leaf{
+  width:            15%;
+  display:          inline-block;
+}
+.views-slideshow-cycle-main-frame-row *{
+  border-radius:          3px;
+  -webkit-border-radius:  3px;
+}
+.mainCatalogSearch{
+  position:         absolute;
+  top:              2px;
+  right:            2px;
+  z-index:          5;
+}
 
-.mediumSection form input, .mediumSection form select {
-  top: 15px;
-  height: 35px;
-  padding: 5px;
-  position: absolute; 
-  left: 1%;
-  width: 55%;
+.mainCatalogSearch form *{
+  border:           none;
+  padding:          3px;
+  height:           25px;
+  position:         relative;
 }
-.mediumSection form select {
-  left: 57%;
-  width: 31%;
+.mainCatalogSearch input[type="submit"],.mainCatalogSearch select{
+  opacity:          .85;
 }
-.mediumSection form input[type="submit"] {
-  left: 89%;
-  width: 10%;
+
+.mainCatalogSearch:hover input,.mainCatalogSearch:hover select{
+  opacity:          .9;
 }
+
 #container {
-  position: relative;
-  z-index: 10;
-}
-
-.fixMargin {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}/* rotating middle section code Start*/
-.fluxslider {
-  height:  !important auto;
+  position:         relative;
+  z-index:          10;
 }
 .twitterBox, .twitterContainer, .deliciousBox {
   position: relative;
@@ -1595,9 +1624,6 @@ li {
   width: 600px;
   overflow: hidden;
 }
-.soonCalendar ul {
-  margin: 15px;
-}/** * Title and Button elements   * */
 .subTitleElement a {
   display: inline-block;
   margin-left: 3px;
@@ -1606,17 +1632,7 @@ li {
   margin-left: 3px;
 }
 
-.twitterImage{
-  height:100%;
-  float:left;
-  margin:0 3px 0 0 ;
-}
-.twitterItem:hover{
-  
-}
-
 .twitterFeedTitle, .mainContentTitle, .blogTitle, .deliciousFeedTitle, .eventFeedTitle, .titleElement {
-  cursor: pointer;
   padding: 6px;
   position: absolute;
   top: 60px;
@@ -1671,23 +1687,8 @@ li {
 .rssItem {
   padding: 3px 40px 3px 10px;
 }
-.menuDropDown a {
-  content: "Menu";
-  font-size: 1.5em;
-}
-.dayBox {
-  width: 3.5 rem;
-  height: 3.5 rem;
-  padding: 1.1em;
-  position: relative;
-}
-.dayBox .timeContainer {
-  font-size: .7em;
-  position: absolute;
-  bottom: 2px;
-  left: 10px;
-  margin-bottom: 0px;
-}
+
+
 
 
 /* ==|== media queries ====================================================== */
