@@ -2,7 +2,6 @@
  * Generic elements.
  */
 
-@include("reset.css");
 dl dd,
 dl dl {
   margin-left: 20px; /* LTR */
@@ -1548,7 +1547,7 @@ li {
   position:         absolute;
   top:              2px;
   right:            2px;
-  z-index:          5;
+  z-index:          10;
 }
 
 .mainCatalogSearch form *{
@@ -1562,7 +1561,7 @@ li {
 }
 
 .mainCatalogSearch:hover input,.mainCatalogSearch:hover select{
-  opacity:          .9;
+  opacity:          .95;
 }
 
 #container {

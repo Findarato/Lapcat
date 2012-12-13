@@ -1,0 +1,672 @@
+@import url("../reset.css");
+
+/*  Start of theme related CSS 
+ This is the css that will flow around all of the projects to keep them feeling like they are part of a larger collection
+ * */
+/*@import url("../sprite.css");*/
+
+@import url("theme.less");
+@import url("buttons.less");
+@import url("roundCorners.less");
+body,html {
+  margin:0px;
+  padding:0px;
+  height:100%;
+  color:@colorDark;
+  background-color:@colorLight;
+  font: Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif; 
+}
+a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:bold;}
+/* Color 1 related items */
+.color1{
+  background: @color1;  
+}
+.color1TextGlow{
+  text-shadow: @color5 2px 2px 2px;
+}
+.color1toWhite{
+  background: @color1; /* Old browsers */
+  background: -moz-linear-gradient(left, @color1 45%, @white 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(45%,@color1), color-stop(100%,@white)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, @color1 45%,@white 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, @color1 45%,@white 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, @color1 45%,@white 100%); /* IE10+ */
+  background: linear-gradient(left, @color1 45%,@white 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 */
+}
+/* Color 2 related items */
+.color2,.color260{
+  background: @color2;
+  a{
+   color: @colorLight;  
+  }
+}
+.color260{
+  background: @color260;
+}
+
+/* Color 3 related items */
+.color3{
+  background: @color3;
+  color: @colorLight;
+  a{
+    color: @colorLight;
+  }
+}
+
+.color3Circle{
+  border:2px solid @color360;
+  display:inline-block;
+  padding-bottom:3px;
+  height:20px;
+  width:20px;
+  text-align:center;
+  .rounded-corners(10px);
+}
+/* Color 4 related items */
+.color4,.mainBackground{
+  background:@color4;
+}
+.color460{
+  background:@color460;
+}
+.color4Soft{
+  .softColor(@color4);
+}
+.color4TextGlow{
+  text-shadow: @color4 0 0 2px;
+}
+.color4Border1{
+  border:1px solid @color4;
+}
+/* Color 5 related items */
+.color5{
+  color:@colorLight;
+  background:@color5;
+}
+.color5TextGlow{
+  text-shadow: @color5 0 0 2px;
+}
+.color560{
+  color:@colorLight;
+  background:@color5;
+  background:@color560;
+}
+.color560 a:hover,.color5 a:hover,.color560:hover,.color5:hover,.color560 a{
+  color:@colorLight;
+}
+.color5Soft{
+  .softColor(@color5);
+}
+.color5Ribbon{
+  .ribbon(@color5)
+  /* http://www.colorzilla.com/gradient-editor/#261806+5,5f3e12+20,5f3e12+60,5f3e12+80,261806+95;Custom */
+}
+
+h1,h2,h3,h4{
+  margin:2px;
+  color: @color5;
+  text-align: left;
+}
+h1 { 
+  font-family: 'Buda' ,Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif; 
+  font-size: 2.5em;
+  font-weight: bold;
+  color:@color5;
+}
+h2 {
+  font-family: 'Dancing Script' , Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif; 
+  font-size: 2.2em;
+  color: @color5;
+}
+  
+h3 {
+  font-family: 'Dancing Script' , Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif;
+  font-size: 2em;
+}
+h4 {
+  font-family: 'Buda' Constantia, 'Hoefler Text',  "Adobe Caslon Pro", Baskerville, Georgia, Times, serif;
+  font-size: 1.8em;
+}
+.pageBranding{
+  position:absolute;
+  color:rgb(0,0,0);
+  top:14px;
+  left:-22px;
+  font-weight:bold;
+  height:18px;
+  width:90px;
+  text-shadow: @shadow 0px 1px 0px;
+}
+
+.pageBranding a,.pageBranding a:hover{
+  color:@white;
+  height:14px;
+  font-size: 12px;
+  text-align:center;
+  margin:2px;
+  display:block;
+  text-decoration:none;
+}
+
+.smoothAnimate{
+  -webkit-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+     -moz-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+      -ms-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+       -o-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
+          transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
+  
+  -webkit-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+     -moz-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+      -ms-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+       -o-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
+          transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
+}
+h1,.linearAnimate{
+  .Animate(200ms);
+}
+.insideBoxShadow{
+  -webkit-box-shadow: inset 0 0 1px 1px @shadow;
+  box-shadow: inset 0 0 1px 1px @shadow;
+}
+.insideBoxShadow ul{
+  margin:0px;
+  padding-left:3px;
+}
+.insideBoxShadow ul li{
+  padding:3px;
+}
+.outSideBoxShadow{
+  -webkit-box-shadow: 0 0 1px 1px @shadow;
+  box-shadow:  0 0 1px 1px @shadow;
+}
+
+.mainArea{
+  padding-top:125px;
+  padding-bottom:20px;
+  background-color:@color4;
+  -webkit-box-shadow: inset 0 0 1px 1px @shadow;
+  box-shadow: inset 0 0 1px 1px @shadow;
+}
+.mainBorder,.mainBorder60{
+  border: 1px solid @borderColor;
+}
+.mainBorder60{
+  border: 1px solid @borderColor60;
+}
+.ticket-divider{
+  border-right: 3px solid @borderColor;
+  border-right: 3px solid @borderColor60;
+}
+.dropDown{
+  border: 1px solid @shadow;
+}
+
+::-moz-selection { background: @color1; color: @colorDark; text-shadow: none; }
+::selection { background: @color1; color: @colorDark; text-shadow: none; }
+
+
+#topBooksTeenContainer img{
+	width:300px;
+}
+
+#topBooksTeenContainer .fluxslider .image1,#topBooksTeenContainer .fluxslider .image2,#topBooksTeenContainer .fluxslider .image1 div{
+	background-size:300px 400px;
+}
+.siteMap{
+	height:auto;
+}
+
+.siteMap a{
+	display:block;
+	padding:3px;
+	margin:5px;
+	white-space: nowrap;
+}
+
+.childrenGrass{
+	height:130px;
+	width:100%;
+	z-index:1;
+	position: relative;
+}
+
+.childrenTree{
+	z-index:1;
+	background-size:contain;
+	position:absolute;
+	bottom:30px;
+	right:-5%;
+	height:100px;
+	width:100px;
+}
+.t{display:table; width:100%;}
+.td{display:table-cell;vertical-align: top;}
+.tr{display:table-row;}
+
+.check:before{
+	margin-right:.3em;
+	font-family: 'IconicFill';
+}
+.blackText:before{
+	color:@colorDark;
+}
+.locationHover{
+	display:block;
+	text-align:left;
+	cursor:pointer;
+}
+/*
+ * All layouts
+ *  
+ */
+
+.floatingHeader{
+	position:absolute;
+	left:100px;
+	top:10px;
+	opacity:1;
+	z-index: 10;
+	color:@colorDark;
+	font-size:40px;
+	font-weight:bold;
+}
+.sectionText{
+  position:absolute;
+  bottom:0;
+  right:0;
+  height:1.8em;
+  font-size:1.1em;
+  font-weight:bold;
+  width:50%;
+  white-space:nowrap;
+  text-align:center;
+  padding:3px;
+  color:@colorDark;
+  text-shadow:1px 1px 1px @shadow;
+  .shadowOut(-2px,-2px,2px,-1px, @shadow);
+  background:fadeout(@color4,5%);
+  
+}
+.aboutNav{
+  background:url("/images/stock-photo-20194301-tablet-pc-with-books.jpg") no-repeat scroll 50% 50% transparent;
+}
+.catalogNav{
+	background:url("/images/stock-illustration-14872119-bookshelf-pattern.jpg") no-repeat scroll 50% 50% transparent;
+}
+.genealogyNav{
+	background:url("/images/stock-illustration-5700289-green-man.jpg") no-repeat scroll 50% 50% transparent;
+}
+.eventsNav{
+	background:url("/images/stock-illustration-19686860-calendar-icon.jpg") no-repeat scroll 50% 50% transparent;
+}
+.hoursNav{
+	background:url("http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=9&size=230x100&sensor=false") no-repeat scroll 50% 50% transparent;
+}
+.greatPicksNav{
+	background:url("/images/stock-illustration-18812296-green-book-stack.jpg") no-repeat scroll 50% 50% transparent;
+}
+.employmentNav{
+  background:url("/images/stock-illustration-8034749-job-searching-effects.jpg") no-repeat scroll 50% 50% transparent;background-position: 0 -25px;
+}
+.askNav{
+  background:url("/images/stock-photo-14816819-internet-reservation.jpg") no-repeat scroll 50% 50% transparent;background-position: 0 -25px;
+}
+.topNav{
+	width:940px;
+}
+.secondNav{
+	font-weight:bold;
+	font-size:15px;
+	position:relative;
+	height:24px;
+	
+}
+.siteMap .secondNav{
+  background:@color4;
+  height:20px;
+}
+
+.logoTree{
+  max-height:75px;
+  max-width:68px;
+}
+.subPageHeader{
+	font-size:50px;
+	height:120px;
+	padding:3px 3px 3px 10px;
+	margin:0 5px 10px 5px;
+	background-size:cover;
+}
+.subPageCatalogSearch{
+	position:absolute;
+	right:5px;
+	top:0;
+	opacity:1;
+	z-index: 10;
+	background:#E0E0E0;
+	padding:3px;
+	border-top-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+.subPageCatalogSearch  .catalog{display:inline-block;}
+/*
+.subPageCatalogSearch > input[type=checkbox]:checked ~ div{
+
+}
+*/
+.subPageHeader div{
+	display:table-cell;
+	vertical-align:middle;
+	white-space:nowrap;
+	height:90px;
+	width:100%;
+}
+.secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
+	color:@colorDark;
+}
+
+/* Teen Section */
+.locationBoxInfo{
+	width:40%;
+	float:left
+}
+.locationBoxMap{
+	width:60%;
+	float:left
+}
+.centerBox{
+	margin:0 auto;
+	width:918px;
+}
+.topHeader{
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	width:100%;
+	height:112px;
+	padding:2px;
+	z-index:999;
+}
+.menuSelect{
+	width:160px;
+	overflow:hidden;
+	height:25px;
+	line-height:25px;
+	text-align:center;
+}
+.menuSelect a{
+	white-space:nowrap;
+}
+.topMenu {
+	text-align:left;
+	margin:0 auto;
+	width:684px;
+	background-position: center;
+	font-family:sans-serif;
+	font-weight: bold;
+	line-height:19px;
+	font-size:16px;
+}
+li{
+	list-style: none outside none;
+}
+
+aside div,section div,.smallSection,.middleSection,.mediumSection{
+	margin-bottom:10px;
+}
+.middleSection .flexslider{border:none;}
+.bookTitle{
+  margin-bottom:0px;
+}
+
+.smallSection,.mediumSection,.middleSection{
+	display:block;
+	position:relative;
+	overflow:hidden;
+  .softColor(@color4);
+}
+
+.smallSection,.smallSection a{
+	height:100px;
+	width:100%;
+	background-size:cover;
+}
+.mediumSection,.mediumSection a,.mediumSection form{
+	height:60px;
+	width:470px;
+	background-size:100% 470px;
+}
+.mediumSection form input, .mediumSection form select{
+  top:15px;
+  height:35px;
+  padding:5px;
+  position:absolute;
+  left:1%;
+  width:55%;
+}
+.mediumSection form select{
+	left:57%;
+	width:31%;
+}
+.mediumSection form input[type="submit"]{
+  left:89%;
+  width:10%;
+}
+#container{
+	position:relative;
+	z-index:10;
+}
+.middleSection,.middleSection form,.middleSection a{
+	height:250px;
+	width:470px;
+	background-size:cover;
+}
+.middleSectionScrollContainer,.middleSectionScrollContainer a{
+	width:100%;
+	background-size:cover;
+}
+
+.fixMargin{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+
+/*	rotating middle section code Start*/
+
+.fluxslider{
+	height:!important auto; 
+}
+
+.twitterBox,.twitterContainer,.deliciousBox{
+	position:relative;
+	width:100%;
+	background:#FFF;
+}
+.mainContentBox{
+	position:relative;
+	height:436px;
+	width:100%;
+	background:#FFF;
+	margin-right:10px;
+}
+#greatPicksContainerBox .rssItem img{
+	width:100px;
+}
+.blogBox,.blogContainerBox,.containerBox,.bookBox{
+	position:relative;
+	background:#FFF;
+	min-height:100px;
+}
+.blogContainerBox li{
+	display:block;
+}
+.blogEntryDescription a{
+	white-space:nowrap;
+}
+.blogEntryDescription iframe{
+	display:none;
+}
+.blogEntryDescription a[href*="catalog.lapcat.org"]:after,.rssDescription a[href*="catalog.lapcat.org"]:after{
+	font-size:10px;
+	content:"";
+	font-family: 'IconicFill';
+}
+.blogEntryDescription .noAfterImage:after {content:""}
+
+.blogContainerBox,.deliciousContainer,.containerBox{
+	padding:30px 5px 5px 5px;
+}
+.blogItem{
+	width:100%;
+	padding:3px;
+}
+.blogItem div{
+	width: 100%;
+}
+.blogEntryTitle{
+	font-size:20px;
+	min-width:250px;
+	max-width:500px;
+	border-bottom:rgba(0,0,0,.2) solid 1px;
+	margin-bottom:3px;
+	
+}
+.blogEntryTitle a{
+	color:#0C717A;
+}
+.blogEntryTitle a:hover{text-decoration:none;}
+.blogEntryAuthor{
+	font-size:10px;
+	color:#999;
+	img{
+	  height:24px;
+	  width:24px;
+	}
+}
+.blogEntryDescription{
+	width:600px;
+	overflow:hidden;
+}
+.soonCalendar ul{
+	margin:15px;
+}
+/**
+ * Title and Button elements	
+ * 
+ */
+.subTitleElement a{
+	display:inline-block;
+	margin-left:3px;
+}
+.subTitleElement a.selected{
+	margin-left:3px;
+}
+.soonCalendarNext,.soonCalendarBack,.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle,.eventFeedTitle,.titleElement{
+	cursor:pointer;
+	padding:6px;
+	position:absolute;
+	top:60px;
+	right:18px;
+	white-space: nowrap;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+	z-index:5;
+}
+
+.twitterFeedTitle2:after{
+	content:"";
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 100px solid red;
+}
+.soonCalendarBack{
+	right:800px;
+}
+.twitterFeedTitle,.deliciousFeedTitle,.blogTitle,.titleElement{
+	left:0px;
+	right:auto;
+	top:-5px;
+	width:auto;
+}
+.titleElement a{
+	color: #F1F1F1;
+}
+.titleElement a:hover,.subTitleElement a:hover{
+	text-decoration:none;
+}
+.eventFeedTitle{
+	left:350px;
+	right:350px;
+	width:auto;
+	top:3px;
+	text-align:center;
+}
+.mainContentTitle{
+	right:525px;
+	top:-5px;
+}
+.middleSectionScroll{
+	display:inline-block;
+	width:10px;
+	height:10px;
+	background-color:rgba(255,255,255,.4);
+	border:solid 1px rgba(255,255,255,.6);
+	cursor: pointer;
+	margin:2px;
+	/*
+	border-radius:5px;
+	-moz-border-radius:5px;
+	webkit-border-radius:5px;
+	*/	
+}
+.middleSectionScroll:hover{
+	background-color:rgba(132,185,189,.4);
+	border:solid 1px rgba(132,185,189,.6);
+}
+
+.blogTitle a:hover,.twitterFeedTitle a:hover,.deliciousFeedTitle a:hover{text-decoration:none;}
+.secondNav a,.firstNav a{color:#000;}
+
+.delItem .delFavIcon{
+	display:inline-block;
+	height:16px;
+	width:16px;
+	margin-right:3px;
+}
+.deliciousContainer{
+	padding:25px 5px 5px 5px; 
+	width:300px;
+}
+.rssItem{
+	padding:3px 40px 3px 10px;
+
+}
+.menuDropDown a{content:"Menu";font-size:1.5em;}
+
+.dayBox {
+  width: 3.5rem; 
+  height: 3.5rem;
+  padding: 1.1em;
+  position: relative;
+}
+.dayBox .timeContainer {
+  font-size: .7em;
+  position: absolute;
+  bottom: 2px;
+  left: 10px;
+  margin-bottom: 0px;
+}
+/* ==|== media queries ====================================================== */
+@import url("mediaQueries.less");
+
+/*sprite Code*/
+.sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
+.sprite-06-magnify{ background-position: 0 0; width: 24px; height: 24px; } 
+.sprite-calendar-blue{ background-position: 0 -1182px; width: 32px; height: 32px; }
+ 
