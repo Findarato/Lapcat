@@ -1,22 +1,22 @@
-<!--Children Page-->
+<!--Teens Page-->
 
 <style>
+  .childrenGrass{
+  height:130px;
+  width:100%;
+  z-index:1;
+  position: relative;
+}
+
 .childrenTree{
-  background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
-  background-repeat:no-repeat;
+  z-index:1;
+  background-size:contain;
+  position:absolute;
+  bottom:30px;
+  right:-5%;
+  height:100px;
+  width:100px;
 }
-.childrenSun{
-  background-image: url('<?php print $base_path . $directory .'/images/sun.svg'; ?>');
-  background-repeat:no-repeat;
-}
-.childrenGrass{
-  background-image: url('<?php print $base_path . $directory .'/images/img.png'; ?>');
-  background-position: 0 -427px;
-}
-.subPageHeader{
-  background:rgba(250,250,250,.6); 
-}
-  
 </style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
@@ -42,7 +42,7 @@
     </div>
   </nav>
 </header>
-  <div class="childWholePage" style="overflow: hidden;">
+  <div class="wholePage" style="overflow: hidden;">
     <div class="childrenSun"></div>
     <div id="" style="" class="container_24">
       <div class="mainArea grid_24 roundAll3" id="main" role="main">
@@ -76,9 +76,8 @@
           <div id="pageFooter"><?php print render($page['pageFooter']); ?></div>
         <?php endif; ?>
       </footer>
-
-    </div>
-          <div class="childrenGrass">
+      <div class="childrenGrass">
         <div class="childrenTree linearAnimate"></div>
       </div>
+    </div>
   </div>

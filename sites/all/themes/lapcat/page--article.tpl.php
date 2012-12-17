@@ -19,40 +19,7 @@
       <?php if ($page['menuHeader']): ?>
           <div id="menuHeader"><?php print render($page['menuHeader']); ?></div>
         <?php endif; ?>
-<!--
-      <div class="td  ">
-        <div class="menuSelect smoothAnimate">
-          <a alt="Login to make a hold" href="https://catalog.lapcat.org/patroninfo">My Account</a>
-        </div>
-      </div>
-      <div class="td  ">
-        <div class="menuSelect smoothAnimate">
-          <a alt="Access all of the electronic resources the library has to offer" href="downloads.php">Downloads</a>
-        </div>
-      </div>
-      <div class="td  ">
-        <div class="menuSelect smoothAnimate">
-          <a alt="What is happening at the Library" href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
-        </div>
-      </div>
-    <div class="td  ">
-        <div class="menuSelect smoothAnimate">
-          <a alt="Looking for that hard to find information?" href="research">Research</a>
-        </div>
-      </div>
-      <div class="td largeNav">
-        <div class="menuSelect smoothAnimate">
-          <a alt="All of our teen activities" href="teens">Teens</a>
-        </div>
-      </div>
-      <div class="td largeNav">
-        <div class="menuSelect smoothAnimate">
-          <a alt="See what we offer our youngest members" href="children">Childrens</a>
-        </div>
-      </div>
-    -->
     </div>
-    
   </nav>
 </header>  
   <div id="" style="" class="container_24">
