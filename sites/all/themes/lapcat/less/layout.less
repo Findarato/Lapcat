@@ -199,6 +199,7 @@ li {
 .views-slideshow-cycle-main-frame-row *{
   border-radius:          3px;
   -webkit-border-radius:  3px;
+  display:relative;
 }
 .mainCatalogSearch{
   position:         absolute;
@@ -220,6 +221,29 @@ li {
 .mainCatalogSearch:hover input,.mainCatalogSearch:hover select{
   opacity:          .95;
 }
+.sliderInfoBox{
+  position:absolute;
+  bottom:0;
+  left:0;
+  background:fadeout(@colorDark,60%);
+  overflow:hidden;
+  color:@colorLight;
+  width:100%;
+  max-height:7em;
+  
+  a{
+    color:@colorLight;  
+  }
+}
+
+
+/* Articles */
+
+.user-picture img{
+  height:40px;
+  width:40px;
+}
+
 
 
 
