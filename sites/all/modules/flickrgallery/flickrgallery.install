@@ -1,0 +1,29 @@
+<?php
+/*
+ * @file
+ * Install and uninstall hooks
+ * Remove variables from table while uninstalling
+ */
+/**
+ * Implementation of hook_uninstall().
+ */
+function flickrgallery_uninstall() {
+  // Remove cache dir and it's contents if exists
+  file_unmanaged_delete_recursive(variable_get('flickrgallery_cach_dir'));
+  
+  // Remove variables
+  variable_del('flickrgallery_apikey');
+  variable_del('flickrgallery_secretkey');
+  variable_del('flickrgallery_userID');
+  variable_del('flickrgallery_title');
+  variable_del('flickrgallery_description');
+  variable_del('flickrgallery_lightbox_type');
+  variable_del('flickrgallery_albums');
+  variable_del('flickrgallery_thumb');
+  variable_del('flickrgallery_large');
+  variable_del('flickrgallery_private_pictures');
+  variable_del('flickrgallery_token');
+  variable_del('flickrgallery_caching');
+  variable_del('flickrgallery_cach_dir');
+  variable_del('flickrgallery_override');
+}
