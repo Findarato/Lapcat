@@ -1,3 +1,13 @@
+<style>
+  .bookCoverImage a{
+    min-width:75px;
+    min-height:100px;
+    background: url(<?php print $base_path . $directory .'/images/tree.svg'; ?>) no-repeat;
+    background-size: contain;
+    display:inline-block;  
+  }
+  
+</style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
     <div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">

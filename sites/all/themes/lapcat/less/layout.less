@@ -244,7 +244,54 @@ li {
   width:40px;
 }
 
+  .articleBox,.articleContainerBox,.containerBox,.bookBox{
+  position:relative;
+  background:#FFF;
+  min-height:100px;
+}
+.articleContainerBox li{
+  display:block;
+}
+.articleEntryDescription a{
+  white-space:nowrap;
+}
+.articleEntryDescription iframe{
+  display:none;
+}
+.articleEntryDescription a[href*="catalog.lapcat.org"]:after,.rssDescription a[href*="catalog.lapcat.org"]:after{
+  font-size:10px;
+  content:"";
+  font-family: 'IconicFill';
+}
+.articleEntryDescription .noAfterImage:after {content:""}
 
+.articleContainerBox,.deliciousContainer,.containerBox{
+  padding:30px 5px 5px 5px;
+}
+.articleEntryTitle{
+  font-size:20px;
+  min-width:250px;
+  max-width:500px;
+  border-bottom:rgba(0,0,0,.2) solid 1px;
+  margin-bottom:3px;
+  
+}
+.articleEntryTitle a{
+  color:#0C717A;
+}
+.articleEntryTitle a:hover{text-decoration:none;}
+.articleEntryAuthor{
+  font-size:10px;
+  color:#999;
+  img{
+    height:24px;
+    width:24px;
+  }
+}
+.articleEntryDescription{
+  width:600px;
+  overflow:hidden;
+}
 
 
 .topNav{
