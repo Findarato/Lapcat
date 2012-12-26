@@ -89,7 +89,7 @@
           <?php endif; ?>
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
             <div class="box blogBox roundAll3">
-              <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1"><span style="padding-left:3px;height:100%;width:100%">Blog</span></div>
+              <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1"><span style="padding-left:3px;height:100%;width:100%">Newst Material</span></div>
               <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
                 <?php print render($page['content']); ?>      
               </div>

@@ -32,12 +32,12 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
               <div >
                 <?php print $fields["field_description"]->content; ?>
                 <br>
-                
               </div>  
             </div>
           </div>
         </div>
       </article>
+      
       <div id="socialMediaContainer" style="width:50px;right:5px;top:5px;display:table-cell">
         <div >
           <div data-href="{$b.link}" data-size="small" class="g-plusone"></div>

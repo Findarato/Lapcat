@@ -6,11 +6,13 @@ core = 7.x
 stylesheets[screen][] = reset.css
 stylesheets[screen][] = 960_24_col.css
 ;stylesheets[screen][] = style.css
-
-
 stylesheets[all][] = less/layout.less
 stylesheets[all][] = less/mediaQueries.less
 
+
+scripts[] = js/libs/jquery-1.7.1.min.js
+scripts[] = js/libs/jquery.hovercard.min.js
+scripts[] = js/libs/modernizr-2.0.6.min.js
 
 settings[shortcut_module_link] = 1
 regions[pageHeader] = Page Header

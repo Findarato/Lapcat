@@ -27,8 +27,6 @@
  * @ingroup views_templates
  */
 ?>
-
-
     <?php if ($rows): ?>
       <div class="view-content">
         <?php print $rows; ?>
@@ -38,3 +36,6 @@
         <?php print $empty; ?>
       </div>
     <?php endif; ?>
+<?php if ($pager): ?>
+    <?php print $pager; ?>
+  <?php endif; ?>
