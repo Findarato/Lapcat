@@ -121,13 +121,15 @@ if(substr($ip,0,7) == '10.1.1.') //main
             <?Php /*{if $item.libraryOnly eq true}*/?>
               <span class="iconic lock_fill" style="margin-right:3px;cursor:help" title="Available at the library only"></span>
               <a href="<?Php print $fields["field_inside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
-            <?Php /*{else}*/?>
-              <a href="<?Php print $fields["field_inside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
+          <?Php else: ?>
+            <?Php if($fields["field_outside_link"]->content == ""): ?>
+              <?Php print $fields["title"]->content;?>
+            <?Php else: ?>
+              <a href="<?Php print $fields["field_outside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
+            <?Php endif; ?>
           <?Php endif; ?>
-          
-          <label data-link="<?Php if($inside==true){print $fields["field_inside_link"]->content;}else{print $fields["field_outside_link"]->content;} ?>" class="hoverCard color3Circle" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">?</label>
+          <label data-link="<?Php if($inside==true){print $fields["field_inside_link"]->content;}else{print $fields["field_outside_link"]->content;} ?>" class="hoverCard color3Circle" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)">i</label>
           <?php print $fields["field_research_image"]->content ?>
-          <!--<img class=researchInfoBasic src="{$item.image}" style="align:left;height:100px;width:100px">-->
           <div class=researchInfoBasic>
             <?php print $fields["body"]->content ?>
           </div>

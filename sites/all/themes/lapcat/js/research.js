@@ -9,11 +9,12 @@ $(".researchList").each(function(i,item){
     $.each(tempArray,function(i2,item2){
       if(item2 !="researchList")
         adultCategories.push(item2);
-    })
+    });
   }else{
     adultCategories.push(item.className);
   }
 });
+
 $.each($(".hoverCard"),function(h,card){
   me=$(card);
   me.show();
@@ -41,5 +42,3 @@ $.each(adultCategories,function(i,item){
   }
 });
 adultContainer.prepend(categoryBox);
-
-alert("research!");
