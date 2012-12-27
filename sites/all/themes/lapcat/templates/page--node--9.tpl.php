@@ -17,6 +17,10 @@
   height:100px;
   width:100px;
 }
+  .subPageHeader{
+    background-image: url('<?php print $base_path . $directory .'/images/teen.png'; ?>');
+    background-repeat:no-repeat;
+  }
 </style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">

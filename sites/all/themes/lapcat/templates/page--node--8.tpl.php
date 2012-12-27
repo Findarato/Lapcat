@@ -23,7 +23,7 @@
     </div>
   </nav>
 </header>
-  <div class="childWholePage" style="overflow: hidden;">
+  <div class="researchWholePage" style="overflow: hidden;">
     <div id="" style="" class="container_24">
       <div class="mainArea grid_24 roundAll3" id="main" role="main">
           <?php if ($page['pageHeader']): ?>

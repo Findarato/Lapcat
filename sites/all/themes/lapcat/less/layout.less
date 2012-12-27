@@ -135,7 +135,7 @@ h4 {
 li {
   list-style: none outside none;
 }
-..banner{
+.banner{
   height:           300px;
   width:            790px;
   overflow:         hidden;
@@ -149,7 +149,23 @@ li {
   position:         relative;
   border-radius:    3px;
   -webkit-border-radius:     3px;
+  vertical-align:   middle;
+  a{
+    .shadowIn(0,0,2px,1px,fadeout(@color5,100%));
+    text-align:       center;
+    line-height:      48px;
+    font-size:        1.5em;
+    height:           48px;
+    width:            100%;
+    display:          block;
+    &:hover{
+      .shadowIn(0,0,3em,1px,fadeout(@color5,80%))
+    }
+  }
+  
+  
 }
+
 .navBoxes:nth-child(1){
   margin-top:       0px;
 }
@@ -164,18 +180,7 @@ li {
   left:-2px;
   top:0;
 }
-.navBoxes:hover{
-  /*background-position:60px;
- text-shadow:      rgb(85, 102, 68) 0px 0px 2px;
- */
-}
-.navBoxes a{
-  padding:          12px;
-  font-size:        1.5em;
-  height:           48px;
-  width:            100%;
-  display:          block;
-}
+
 .twitterImage{
   display:          inline-block;
   float:            left;
