@@ -39,7 +39,7 @@
         <div class="grid_4" style="" >
           <!-- Right Colmn -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="askNav " href="help" >Help</a>
+            <a class="askNav smoothAnimate" href="help" >Help</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="aboutNav smoothAnimate" href="about" >About Us</a>

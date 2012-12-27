@@ -158,7 +158,6 @@ li {
      .FancyAnimate();
      .downShadow();
      .rounded-corners(3px);
-     
      display:block;
      a{
       color:         @colorLight;
@@ -194,6 +193,12 @@ li {
     opacity:        1; 
     .Translate(3px);    
 }
+.navBoxes:nth-child(1){
+  margin-top:       0px;
+}
+.navBoxes:nth-last-child(1){
+  margin-bottom:    0;
+}
 .navBoxes{
   height:           48px;
   width:            auto;
@@ -219,20 +224,6 @@ li {
   
 }
 
-.navBoxes:nth-child(1){
-  margin-top:       0px;
-}
-.navBoxes:nth-last-child(1){
-  margin-bottom:    0;
-}
-.navBoxes:before{
-  content:'';
-  height:48px;
-  width:20px;
-  position:absolute;
-  left:-2px;
-  top:0;
-}
 
 .twitterImage{
   display:          inline-block;
