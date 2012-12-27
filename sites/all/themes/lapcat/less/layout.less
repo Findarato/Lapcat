@@ -36,7 +36,7 @@ h4 {
   font-size: 1.8em;
 }
 
-.smoothAnimate{
+.FancyAnimate(){
   -webkit-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
      -moz-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
       -ms-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
@@ -47,7 +47,11 @@ h4 {
      -moz-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
       -ms-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
        -o-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-          transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
+          transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */  
+}
+
+.smoothAnimate{
+  .FancyAnimate();
 }
 
 .insideBoxShadow{
@@ -147,14 +151,19 @@ li {
      height:        15%;
      width:         2em;
      background:    @colorDark60;
-     z-index:       100;
+     z-index:       5;
      opacity:       0;
-     text-indent:   -9999px;
-     .Animate();
+     white-space:   nowrap;
+     overflow:      hidden;
+     .FancyAnimate();
      .downShadow();
      .rounded-corners(3px);
+     
+     display:block;
      a{
-      color:         @colorLight;  
+      color:         @colorLight;
+      display:block;
+      text-indent:-200%;
      }
   }
   .views-slideshow-controls-text-next{
@@ -164,10 +173,10 @@ li {
      height:        15%;
      width:         2em;
      background:    @colorDark60;
-     z-index:       100;
+     z-index:       5;
      opacity:       0;
-     text-indent:   -9999px;
-     .Animate();
+     text-indent:   100%;
+     .FancyAnimate();
      .downShadow();
      .rounded-corners(3px);
      a{
@@ -203,7 +212,7 @@ li {
     width:            100%;
     display:          block;
     &:hover{
-      .shadowIn(0,0,3em,1px,fadeout(@color5,80%))
+      .shadowIn(0,0,20px,10px,fadeout(@color5,80%))
     }
   }
   
