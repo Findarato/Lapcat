@@ -2,17 +2,17 @@
   border-radius: @radius;
   -webkit-border-radius: @radius;
 }
-.downShadow(@color){
+.downShadow(@color:@shadow){
   .shadowOut(0,6px,7px,-3px,@color);
 }
-.dropShadow(@color){
+.dropShadow(@color:@shadow){
   -webkit-box-shadow: -4px 7px 6px 0px @color;
   box-shadow: -4px 7px 6px 0px @color;
 }
-.oneEdgeShadow(@color){
+.oneEdgeShadow(@color:@shadow){
   .shadowOut(0,8px,6px,-6px,@color);
 }
-.textShadowIndent(@color){
+.textShadowIndent(@color:@shadow){
   text-shadow: 0 1px 1px @color;
 }
 .shadowIn (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
@@ -32,7 +32,13 @@
        -o-transition: all @time ease;
           transition: all @time ease;
 }
-
+.Translate(@x:0,@y:0){
+  transform:translate(@x,@y);
+  -ms-transform:translate(@x,@y); /* IE 9 */
+  -moz-transform:translate(@x,@y); /* Firefox */
+  -webkit-transform:translate(@x,@y); /* Safari and Chrome */
+  -o-transform:translate(@x,@y); /* Opera */
+}
 .softColor(@color){
   background: @color; /* Old browsers */
   background: -moz-linear-gradient(top, @color 0%, darken(saturate(@color,16%),5%) 100%); /* FF3.6+ */

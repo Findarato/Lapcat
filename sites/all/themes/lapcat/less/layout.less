@@ -138,8 +138,52 @@ li {
 .banner{
   height:           300px;
   width:            790px;
-  overflow:         hidden;
   display:          block;
+  position:         relative;
+  .views-slideshow-controls-text-previous{
+     position:      absolute;
+     left:          -1%;
+     top:           50%;
+     height:        15%;
+     width:         2em;
+     background:    @colorDark60;
+     z-index:       100;
+     opacity:       0;
+     text-indent:   -9999px;
+     .Animate();
+     .downShadow();
+     .rounded-corners(3px);
+     a{
+      color:         @colorLight;  
+     }
+  }
+  .views-slideshow-controls-text-next{
+     position:      absolute;
+     right:         -1%;
+     top:           50%;
+     height:        15%;
+     width:         2em;
+     background:    @colorDark60;
+     z-index:       100;
+     opacity:       0;
+     text-indent:   -9999px;
+     .Animate();
+     .downShadow();
+     .rounded-corners(3px);
+     a{
+      color:         @colorLight;  
+     }
+  }
+}
+
+.banner:hover .views-slideshow-controls-text-next{
+    opacity:        1;
+    .Translate(-3px);
+
+}
+.banner:hover .views-slideshow-controls-text-previous{
+    opacity:        1; 
+    .Translate(3px);    
 }
 .navBoxes{
   height:           48px;
