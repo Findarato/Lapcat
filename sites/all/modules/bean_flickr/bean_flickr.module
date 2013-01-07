@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Code for Bean: Flickr Integration.
+ */
+
+/**
+ * Implements hook_bean_types_api_info().
+ */
+function bean_flickr_bean_types_api_info() {
+  return array('api' => 4);
+}
+
+/**
+ * Implements hook_bean_types().
+ */
+function bean_flickr_bean_types() {
+  $plugins = array();
+  $plugin_path = drupal_get_path('module', 'bean_flickr') . '/plugins/bean';
+  $plugins['bean_flickr'] = array(
+    'label' => t('Flickr Bean'),
+    'description' => t('Flickr beans'),
+    'handler' => array(
+      'class' => 'FlickrBean',
+      'parent' => 'bean',
+    ),
+    'path' => $plugin_path,
+    'file' => 'bean_flickr.inc',
+  );
+  return $plugins;
+}

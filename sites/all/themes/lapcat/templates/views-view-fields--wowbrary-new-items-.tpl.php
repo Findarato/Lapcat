@@ -27,7 +27,9 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
             </div>
             <div " class="td">
               <div class="articleEntryTitle">
+                <a style="margin-right:10px;display:inline-block;" href="<?php print $wowbraryClickThough; ?>" title="View Catalog record">
                 <?php print $fields["title"]->content; ?>
+                </a>
               </div>
               <div >
                 <?php print $fields["field_description"]->content; ?>
