@@ -1,25 +1,50 @@
 <!--Teens Page-->
 
 <style>
-  .childrenGrass{
-  height:130px;
-  width:100%;
-  z-index:1;
-  position: relative;
-}
-
-.childrenTree{
-  z-index:1;
-  background-size:contain;
-  position:absolute;
-  bottom:30px;
-  right:-5%;
-  height:100px;
-  width:100px;
-}
   .subPageHeader{
     background-image: url('<?php print $base_path . $directory .'/images/teen.png'; ?>');
     background-repeat:no-repeat;
+  }
+  
+  .flickrImageTitle{
+    position:absolute;
+    bottom:0px;
+    background-color:rgba(0,0,0,.6);
+    color:#F1F1F1;
+    width:100%;
+    padding:5px;
+  }
+
+  .flickrPicture a{
+    height:100px;
+    width:100px;
+    display:block;
+  }
+  .flickrPicture{
+    margin:5px;
+    padding:3px;
+    display:inline-block;
+    height:100px;
+    width:100px;
+    background:#fff;
+    font-size:.8em;
+    color:#000;
+    position:absolute;
+    -webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .0);
+    -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .0);
+    box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .0);
+  }
+  .flickrPicture:hover{
+    z-index:999;
+    overflow:visible;
+    -webkit-transform:scale(1.5);
+    -moz-transform:scale(1.5);
+    -o-transform:scale(1.5);
+    -ms-transform:scale(1.5);
+    transform:scale(1.5);
+    -webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
+    box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
   }
 </style>
 <header class="topHeader" style="margin:0;padding:0;">
