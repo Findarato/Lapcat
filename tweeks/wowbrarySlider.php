@@ -2,21 +2,21 @@
   echo '<?xml version="1.0" encoding="UTF-8"?>';
 ?>
 
-<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0">
-   <channel>
-      <title>Parsed Wowbrary items to make sence</title>
-      <link>http://www.wowbrary.org/nu.aspx?p=8711--TEE</link>
-      <description>This feed shows you each week's teen books in the La Porte County Public Library</description>
-      <copyright>(c) 2013, Wowbrary. All rights reserved.</copyright>
-      <ttl>0</ttl>
-      <image>
-         <title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title>
-         <url>http://www.wowbrary.org/images/wowlogob.gif</url>
-         <link>http://www.wowbrary.org/nu.aspx?p=8711--TEE</link>
-         <width>154</width>
-         <height>57</height>
-         <description>Click here to provide feedback and ask questions about this RSS feed</description>
-      </image>
+<rss xmlns:book="http://catalog.lapcat.org/books">
+  <channel>
+    <title>Parsed Wowbrary items to make sence</title>
+    <link>http://www.wowbrary.org/nu.aspx?p=8711--TEE</link>
+    <description>This feed shows you each week's teen books in the La Porte County Public Library</description>
+    <copyright>(c) 2013, Wowbrary. All rights reserved.</copyright>
+    <ttl>0</ttl>
+    <image>
+       <title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title>
+       <url>http://www.wowbrary.org/images/wowlogob.gif</url>
+       <link>http://www.wowbrary.org/nu.aspx?p=8711--TEE</link>
+       <width>154</width>
+       <height>57</height>
+       <description>Click here to provide feedback and ask questions about this RSS feed</description>
+   </image>
 <?Php
 //http://www.wowbrary.org/rss.aspx?l=8711&c=TEE
 
@@ -31,7 +31,7 @@ function wowbraryUrlParse($field){
     $elems_ar = explode('&', $url);
     for ($i = 0; $i < count($elems_ar); $i++) {
       if(isset($elems_ar[$i])){
-        list($key, $val) = explode('=', $elems_ar[$i]);
+        @list($key, $val) = explode('=', $elems_ar[$i]);
         $ret_ar[urldecode($key)] = urldecode($val);
       }
     }
@@ -58,27 +58,25 @@ foreach($feed->get_items(0) as $item) {
   $b[$count]["title"] = $item -> get_title();
   $b[$count]["description"] = str_replace(array("&rsquo;","&mdash"),array("'","-"),html_entity_decode(strip_tags($item -> get_description())));
   $b[$count]["link"] = $item -> get_link();
-  $b[$count]["itemRecord"] = $parsedLink["amp;c"];
-  $b[$count]["sn"] = $parsedLink["amp;i"];
+  $b[$count]["book:itemRecord"] = $parsedLink["amp;c"];
+  $b[$count]["book:sn"] = $parsedLink["amp;i"];
 
   //Place your own cover image solution here
-  $b[$count]["image"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["sn"]."&size=S");
-  $b[$count]["images"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["sn"]."&size=S");
-  $b[$count]["imagel"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["sn"]."&size=L");
+  $b[$count]["book:image"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
+  $b[$count]["book:images"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
+  $b[$count]["book:imagel"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=L");
   $b[$count]["category"] = $item->get_category();
   $b[$count]["pubdate"] = $item->get_date();
   $count++; 
  
 }
 header("Content-Type: text/xml");                      // Set the content type appropriately
-foreach($b as $key => $item){
-  echo "<item>\n";
+foreach($b as $item){
+  echo "<item>";
     foreach($item as $k=>$i){
-      echo "  <".$k.">".$i."</".$k.">\n";
+      echo "<".$k.">".$i."</".$k.">";
     }
-  echo "</item>\n";
+  echo "</item>";
 }
 ?>
-
-   </channel>
-</rss>
+</channel></rss>
