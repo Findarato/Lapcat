@@ -65,6 +65,7 @@ foreach($feed->get_items(0) as $item) {
   $b[$count]["book:image"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
   $b[$count]["book:images"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
   $b[$count]["book:imagel"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=L");
+  $b[$count]["book:imagem"] = urlencode("http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M");
   $b[$count]["category"] = $item->get_category();
   $b[$count]["pubdate"] = $item->get_date();
   $count++; 
