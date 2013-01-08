@@ -152,6 +152,9 @@ class FeedsSimplePieParser extends FeedsParser {
       if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'imagem')){
         $item['bookImageM'] = html_entity_decode($value[0]["data"]); 
       }  
+      if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'images')){
+        $item['bookImageS'] = html_entity_decode($value[0]["data"]); 
+      } 
       // Allow parsing to be extended.
       $this->parseExtensions($item, $simplepie_item);
       $item['raw'] = $simplepie_item->data;
@@ -176,6 +179,10 @@ class FeedsSimplePieParser extends FeedsParser {
    */
   public function getMappingSources() {
     return array(
+      'bookImageS' => array(
+        'name' => t('book:imageS'),
+        'description' => t('Small Book image from the item'),
+      ),
       'bookImageM' => array(
         'name' => t('book:imageM'),
         'description' => t('Medium Book image from the item'),
