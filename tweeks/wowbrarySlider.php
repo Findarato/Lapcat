@@ -68,25 +68,9 @@ foreach($feed->get_items(0) as $item) {
   $b[$count]["category"] = $item->get_category();
   $b[$count]["pubdate"] = $item->get_date();
   $count++; 
-  /*
-  
-  $b[]["contents"] = $item -> get_content();
-  $b[]["link"] = $item -> get_link();
-  $b[]["title"] = $item -> get_title();
-  $b[]["date"] = $item->get_date($date_format = 'j F Y, g:i a');
-  $tempAuthor = $item->get_authors();
-  $b[]["author"]["name"] = $tempAuthor[0]->get_name();
-  $b[]["author"]["link"] = $tempAuthor[0]->get_link();
-    */
-
-  //if($b[])
-  
+ 
 }
 header("Content-Type: text/xml");                      // Set the content type appropriately
-//echo "<pre>";
-//print_r($b);
-
-
 foreach($b as $key => $item){
   echo "<item>\n";
     foreach($item as $k=>$i){
