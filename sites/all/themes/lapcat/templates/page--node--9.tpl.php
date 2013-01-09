@@ -37,11 +37,11 @@
   .flickrPicture:hover{
     z-index:999;
     overflow:visible;
-    -webkit-transform:scale(1.5);
-    -moz-transform:scale(1.5);
-    -o-transform:scale(1.5);
-    -ms-transform:scale(1.5);
-    transform:scale(1.5);
+    -webkit-transform:scale(1.1);
+    -moz-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    -ms-transform:scale(1.1);
+    transform:scale(1.1);
     -webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
     -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
     box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);

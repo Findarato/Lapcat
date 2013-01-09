@@ -1,18 +1,22 @@
 <?Php
   echo '<?xml version="1.0" encoding="UTF-8"?>';
+  $c="TEE";//Default value to get 
+  if(isset($_GET["c"])){
+    $c=$_GET["c"];
+  }
 ?>
 
 <rss xmlns:book="http://catalog.lapcat.org/books">
   <channel>
     <title>Parsed Wowbrary items to make sence</title>
-    <link>http://www.wowbrary.org/nu.aspx?p=8711--TEE</link>
+    <link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link>
     <description>This feed shows you each week's teen books in the La Porte County Public Library</description>
     <copyright>(c) 2013, Wowbrary. All rights reserved.</copyright>
     <ttl>0</ttl>
     <image>
        <title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title>
        <url>http://www.wowbrary.org/images/wowlogob.gif</url>
-       <link>http://www.wowbrary.org/nu.aspx?p=8711--TEE</link>
+       <link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link>
        <width>154</width>
        <height>57</height>
        <description>Click here to provide feedback and ask questions about this RSS feed</description>
@@ -39,10 +43,7 @@ function wowbraryUrlParse($field){
    $returnVal = $ret_ar;
   return $returnVal;  
 }
-$c="TEE";//Default value to get 
-if(isset($_GET["c"])){
-  $c=$_GET["c"];
-}
+
 date_default_timezone_set('America/Chicago');
 include "simplepie.php";
 $feed = new SimplePie();
@@ -56,7 +57,7 @@ foreach($feed->get_items(0) as $item) {
   //the right set
   $parsedLink = wowbraryUrlParse($item -> get_link());
   $b[$count]["title"] = $item -> get_title();
-  $b[$count]["description"] = str_replace(array("&rsquo;","&mdash"),array("'","-"),html_entity_decode(strip_tags($item -> get_description())));
+  $b[$count]["description"] = str_replace(array("&rsquo;","&mdash;","&ldquo;","&rdquo;","&"),array("'","-",'"','"',"&amp;"),html_entity_decode(strip_tags($item -> get_description())));
   $b[$count]["link"] = $item -> get_link();
   $b[$count]["book:itemRecord"] = $parsedLink["amp;c"];
   $b[$count]["book:sn"] = $parsedLink["amp;i"];
