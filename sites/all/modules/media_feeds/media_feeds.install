@@ -7,8 +7,6 @@
 
 /**
  * Rebuild the class registry.
- *
- * Implements hook_update_n().
  */
 function media_feeds_update_7100() {
   registry_rebuild();

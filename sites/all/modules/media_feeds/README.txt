@@ -1,3 +1,5 @@
+Media Feeds
+-----------
 
 The Media Feeds module integrates Media into Feeds. That means you can map any
 supported source to a media field.
@@ -8,6 +10,8 @@ Installation
 Media and Feeds module are required. You can also install media_internet
 provider modules, if you need more sources than the basic ones. For example
 media_youtube.
+
+You have to use the 7.x-2.x branch of Media.
 
 Note that there are also parsers for feeds that might be useful. For example
 feeds_youtube.

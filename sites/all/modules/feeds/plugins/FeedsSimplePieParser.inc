@@ -142,7 +142,10 @@ class FeedsSimplePieParser extends FeedsParser {
       $item['domains'] = $domains;
       $item['tags'] = $tags;
 
-
+/* added by jharry*/
+      if($value = $simplepie_item->get_item_tags('http://search.yahoo.com/mrss/', 'thumbnail')){
+        $item['ytThumbnail'] = html_entity_decode($value[0]["data"]); 
+      }
       if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'image')){
         $item['bookImage'] = html_entity_decode($value[0]["data"]); 
       }
@@ -179,6 +182,10 @@ class FeedsSimplePieParser extends FeedsParser {
    */
   public function getMappingSources() {
     return array(
+      'ytThumbnail' => array(
+        'name' => t('youTube:thumbnail'),
+        'description' => t('Small Book image from the item'),
+      ),
       'bookImageS' => array(
         'name' => t('book:imageS'),
         'description' => t('Small Book image from the item'),
