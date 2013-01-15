@@ -246,8 +246,34 @@ li {
     color:@colorLight;  
   }
 }
+.list {
+  a{
+    display:block;
+  }
+}
 
-
+/* Locations  */
+.locationHover{
+  cursor:         help;
+  &:hover{
+      background:@color460;
+    }
+}
+.dayBox {
+  width: 2.4em;
+  height: 2.4em;
+  padding: 1em;
+  position: relative;
+  font-size:.8em;
+  .timeContainer {
+    font-size: 1em;
+    position: absolute;
+    bottom: 2px;
+    left: 10px;
+    margin-bottom: 0px;
+  }
+}
+.dayBox 
 /* Articles */
 
 .user-picture img{
@@ -558,19 +584,7 @@ aside div,section div,.smallSection,.middleSection,.mediumSection{
 }
 .menuDropDown a{content:"Menu";font-size:1.5em;}
 
-.dayBox {
-  width: 3.5rem; 
-  height: 3.5rem;
-  padding: 1.1em;
-  position: relative;
-}
-.dayBox .timeContainer {
-  font-size: .7em;
-  position: absolute;
-  bottom: 2px;
-  left: 10px;
-  margin-bottom: 0px;
-}
+
 /*sprite Code*/
 .sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
 .sprite-06-magnify{ background-position: 0 0; width: 24px; height: 24px; } 

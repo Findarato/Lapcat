@@ -66,9 +66,32 @@
       </aside>
        <div class="clear"></div>
     </div> <!-- end of main content-->
-    <footer class="grid_24" style="margin-top:10px;margin-right:auto;">
+    <footer class="grid_24" style="margin-top:10px;margin-right:0px">
       <?php if ($page['pageFooter']): ?>
         <div id="pageFooter"><?php print render($page['pageFooter']); ?></div>
       <?php endif; ?>
+        <div id="MainContainerBox" class="t" >
+          <div class="td">
+            <div class="t">
+              <div class="list td">
+                <a href="/employment">Employment</a>
+                <a href="/about">About</a>
+                <a href="/hours">Hours and Locations</a>
+                <a href="/help">Ask a Librarian</a>
+                <a href="greatpicks.php">Great Picks</a>
+                <a href="http://genealogy.lapcat.org">Genealogy</a>
+                <a href="http://catalog.lapcat.org/">Catalog</a>
+                <a href="/request">Request a Purchase</a>
+                <a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a>
+                <a href="/friends">Friends of The Library</a>
+                <a href="/educators">Educators</a>
+                <div class="copyright">Copyright © 2012 La Porte County Public Library System</div>
+              </div>
+            </div>
+          </div>
+          <div class="td">
+            
+          </div>
+        </div>
     </footer> 
   </div>

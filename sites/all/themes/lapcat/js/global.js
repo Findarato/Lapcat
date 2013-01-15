@@ -9,6 +9,61 @@ Array.prototype.getUnique = function(){
    return a;
 }
 
+function displayLocation(locationCode,domElementSelector){
+  var today = new Date();
+  var dayOfWeek = today.getDay();
+  domElementSelector
+    .empty()
+    .append(
+      $("<div/>",{css:{"text-align":"left", "height":"auto", "float":"left"}})
+      .append(
+        $("<div/>",{css:{margin:0}})
+          .html(
+            $("<span/>",{title:locations[locationCode].name}).html(locations[locationCode].name)  
+          )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"address"}).html(locations[locationCode].street) 
+            )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"city state"}).html(locations[locationCode].cityState) 
+            )
+        )
+        .append(
+          $("<span/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"zip code"}).html(locations[locationCode].zip) 
+            )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"phone number"}).html(locations[locationCode].phone) 
+            )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"email address"}).html(locations[locationCode].email)  
+            )
+        )
+    )
+    
+    
+    for(var a=1;a<=6;a++){
+      var timeHolder = $("#timeContainer"+a);
+      timeHolder.html(locations[locationCode]["time"+a]);
+        if(dayOfWeek == a){
+          $("#dayBox"+a).addClass("color1").removeClass("color4")
+        }
+    }
+    
+}
 function displayFlickr(flickrTag,flickrId){
   // lets make sure we have some defaults in so that if the user just calls the function it works
   if(flickrTag == undefined)
@@ -33,8 +88,45 @@ function displayFlickr(flickrTag,flickrId){
         });
     });
 }
-if($("#flickerPictureBox").html()){
- displayFlickr("teens"); 
-}
 
-displayFlickr("teens");
+$(document).ready(function(){
+    //if($("#blogBox")){get_blog_feed();}
+    uri = window.location.toString();
+    //gapi.plusone.render();
+    /* Lets load the correct delicious feed */
+    if(uri.search(/research/i)>0){// this is the research page
+      //getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
+      //getSpreadSheetFeed("research");
+    }else{
+      if(uri.search(/teens/i)>0){// this is the teens page
+        displayFlickr("teens");
+      }else{
+        if(uri.search(/children/i)>0){// this is the teens page
+          //getDeliciousFeed("http://www.delicious.com/v2/rss/laportecochild");
+          //getSpreadSheetFeed("kids");
+        }else{
+          if(uri.search(/greatpicks/i)>0){// this is the teens page
+            //get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"))
+            //getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
+            //getSpreadSheetFeed("readers");
+          }else{//if all else fails lets just load a local rss feed
+            if(uri.search(/educators/i)>0){// this is the teens page
+              //getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
+              //getSpreadSheetFeed("educators");
+              }else{//if all else fails lets just load a local rss feed
+                //getSpreadSheetFeed("adult");
+              }
+          }
+        } 
+      }
+    }
+    
+  $(".locationHover")
+    .mouseenter(function(){displayLocation($(this).attr("id"),$("#locationDisplay"));})
+    .mouseleave(function(){});
+  //This makes sure something is being shown
+  
+  displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));
+});
+
+
