@@ -39,8 +39,8 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
           </div>
         </div>
       </article>
-      
-      <div class="td" id="socialMediaContainer" style="width:50px;right:5px;top:5px;">
+      <!--
+      <div class="td" id="socialMediaContainer" style="width:50px;right:5px;top:5px;opacity:0">
         <div >
           <div data-href="http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>?spref=gp" data-size="small" class="g-plusone"></div>
         </div>
@@ -48,4 +48,5 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
           <div class="fb-like" data-href="http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>?spref=fb" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-font="arial"></div>
         </div>
       </div>
+      -->
     </div>
