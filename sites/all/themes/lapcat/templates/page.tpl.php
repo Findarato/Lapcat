@@ -12,8 +12,6 @@
     background-repeat:no-repeat;
   }
 </style>
-
-
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
     <div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">
@@ -50,7 +48,10 @@
           <div id="console" class="clearfix"><?php print $messages; ?></div>
           <?php endif; ?>
           <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-          <?php print render($page['content']); ?>
+          <?php
+            if(drupal_is_front_page()) {unset($page['content']['system_main']['default_message']);}
+            print render($page['content']);
+          ?>
       </section>
       <aside id="side" class="grid_8">
         <?php if ($page['rightSide']): ?>
@@ -70,28 +71,5 @@
       <?php if ($page['pageFooter']): ?>
         <div id="pageFooter"><?php print render($page['pageFooter']); ?></div>
       <?php endif; ?>
-        <div id="MainContainerBox" class="t" >
-          <div class="td">
-            <div class="t">
-              <div class="list td">
-                <a href="/employment">Employment</a>
-                <a href="/about">About</a>
-                <a href="/hours">Hours and Locations</a>
-                <a href="/help">Ask a Librarian</a>
-                <a href="greatpicks.php">Great Picks</a>
-                <a href="http://genealogy.lapcat.org">Genealogy</a>
-                <a href="http://catalog.lapcat.org/">Catalog</a>
-                <a href="/request">Request a Purchase</a>
-                <a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a>
-                <a href="/friends">Friends of The Library</a>
-                <a href="/educators">Educators</a>
-                <div class="copyright">Copyright © 2012 La Porte County Public Library System</div>
-              </div>
-            </div>
-          </div>
-          <div class="td">
-            
-          </div>
-        </div>
     </footer> 
-  </div>
+  </div>   

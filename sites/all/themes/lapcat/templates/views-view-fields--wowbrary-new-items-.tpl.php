@@ -16,8 +16,8 @@
 $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"]."&i=".$linkArray["i"]."&u=".$linkArray["u"]."&t=".$linkArray["t"]."&website";
 ?>
 
-    <div style="display:table">
-      <article class="articleItem" style="display:table-cell">
+    <div class="t">
+      <article class="articleItem" class="td">
         <div>
           <div>
             <div class="bookCoverImage td">
@@ -40,7 +40,7 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
         </div>
       </article>
       
-      <div id="socialMediaContainer" style="width:50px;right:5px;top:5px;display:table-cell">
+      <div class="td" id="socialMediaContainer" style="width:50px;right:5px;top:5px;">
         <div >
           <div data-href="http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>?spref=gp" data-size="small" class="g-plusone"></div>
         </div>

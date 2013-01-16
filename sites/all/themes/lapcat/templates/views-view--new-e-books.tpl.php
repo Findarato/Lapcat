@@ -28,12 +28,7 @@
  */
 ?>
 <div class="box blogBox roundAll3">
-  <div class="boxTitle roundAll3 titleElement color3">
-    Newest Teen Books 
-    <?php if ($title): ?>
-      <?php print $title; ?>
-    <?php endif; ?>
-  </div>
+  <div class="boxTitle roundAll3 titleElement color3">Newest eBooks</div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" style="padding-left:10px;padding-bottom:0;">
     <?php if ($rows): ?>
       <div class="view-content">
