@@ -72,13 +72,6 @@ h4 {
 	height:auto;
 }
 
-aside div,section div,.smallSection,.middleSection,.mediumSection{
-  margin-bottom:10px;
-}
-.region div *{
-  margin-bottom:0px;
-}
-
 .t{display:table; width:100%;margin-bottom:2em;}
 .td{display:table-cell;vertical-align: top;}
 .tr{display:table-row;}
@@ -269,8 +262,6 @@ li {
   position:absolute;
   top:2px;
   right:3px;
-  width:5.1em;
-  height:1.4em;
   opacity:.1;
   .Animate();
   .facebook{
@@ -290,7 +281,7 @@ li {
   } 
 }
   
-  .facebook,.twitter,.googleplus{
+.facebook,.twitter,.googleplus{
     padding:0;
     a{
       line-height:16px;
@@ -299,7 +290,7 @@ li {
       transform-origin: 8px 16px;
       -webkit-transform-origin: 8px 16px;
       &:hover{
-        .grow(1.5);
+        .grow(11);
         
     }
     
@@ -308,6 +299,19 @@ li {
 }
 .articleItem{
   position:relative;
+  width:100%;
+  padding:3px;
+  margin-bottom:10px;
+}
+.field-content a[property*="label"]{/*These are tags on items*/
+  padding:2px;
+  margin:2px;
+  .rounded-corners(3px);
+  border:1px solid @color4;
+  .Animate();
+  &:hover{
+    background:@color4;
+  }
 }
 .articleItem:hover .socialMediaContainer{
   opacity:1;
@@ -332,12 +336,6 @@ li {
 .articleEntryDescription iframe{
   display:none;
 }
-.articleEntryDescription a[href*="catalog.lapcat.org"]:after,.rssDescription a[href*="catalog.lapcat.org"]:after{
-  font-size:10px;
-  content:"";
-  font-family: 'IconicFill';
-}
-.articleEntryDescription .noAfterImage:after {content:""}
 
 .articleContainerBox,.deliciousContainer,.containerBox{
   padding:30px 5px 5px 5px;
@@ -685,6 +683,10 @@ li{
   z-index:1;
   position: relative;
 }
- .osmplayer-default-playlist{
-   display:none;
- }
+/*Global tweeks*/
+aside div,section div,.smallSection,.middleSection,.mediumSection{
+  margin-bottom:10px;
+}
+.region div *:not(article){
+  margin-bottom:0px;
+}
