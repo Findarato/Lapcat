@@ -36,24 +36,6 @@ h4 {
   font-size: 1.8em;
 }
 
-.FancyAnimate(){
-  -webkit-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
-     -moz-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
-      -ms-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
-       -o-transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220);
-          transition: all 300ms cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */
-  
-  -webkit-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-     -moz-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-      -ms-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-       -o-transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-          transition-timing-function: cubic-bezier(0.895, 0.030, 0.685, 0.220); /* easeInQuart */  
-}
-
-.smoothAnimate{
-  .FancyAnimate();
-}
-
 .insideBoxShadow{
   -webkit-box-shadow: inset 0 0 1px 1px @shadow;
   box-shadow: inset 0 0 1px 1px @shadow;
@@ -275,6 +257,40 @@ li {
   }
 }
 /* Articles */
+
+.socialLinks{ 
+  height:20px;
+  li{
+    display:inline-block;
+  }
+}
+.socialMediaContainer{
+  position:absolute;
+  top:2px;
+  right:3px;
+  width:5.1em;
+  height:1.4em;
+  opacity:1;
+  .Animate();
+  
+  
+  .facebook{
+    background:blue;
+    a{
+      height:20px;
+      width:20px;
+      color:@colorLight;  
+    }
+    
+  }
+  
+}
+.articleItem{
+  position:relative;
+}
+.articleItem:hover .socialMediaContainer{
+  opacity:1;
+}
 
 .user-picture img{
   height:40px;

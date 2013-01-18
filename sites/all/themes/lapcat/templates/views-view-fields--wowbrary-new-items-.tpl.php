@@ -16,37 +16,32 @@
 $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"]."&i=".$linkArray["i"]."&u=".$linkArray["u"]."&t=".$linkArray["t"]."&website";
 ?>
 
-    <div class="t">
-      <article class="articleItem" class="td">
-        <div>
-          <div>
-            <div class="bookCoverImage td">
+    
+      <article class="articleItem">
+        <div class="t">
+          <div class="bookCoverImage td">
+            <a style="margin-right:10px;display:inline-block;" href="<?php print $wowbraryClickThough; ?>" title="View Catalog record">
+              <img alt="coverImage" style="border:none;" src="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?php print $isbn; ?>&size=S">
+            </a>
+          </div>
+          <div class="td">
+            <div class="articleEntryTitle">
               <a style="margin-right:10px;display:inline-block;" href="<?php print $wowbraryClickThough; ?>" title="View Catalog record">
-                <img alt="coverImage" style="border:none;" src="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?php print $isbn; ?>&size=S">
+              <?php print $fields["title"]->content; ?>
               </a>
             </div>
-            <div " class="td">
-              <div class="articleEntryTitle">
-                <a style="margin-right:10px;display:inline-block;" href="<?php print $wowbraryClickThough; ?>" title="View Catalog record">
-                <?php print $fields["title"]->content; ?>
-                </a>
-              </div>
-              <div >
-                <?php print $fields["field_description"]->content; ?>
-                <br>
-              </div>  
-            </div>
+            <div >
+              <?php print $fields["field_description"]->content; ?>
+              <br>
+            </div>  
           </div>
         </div>
-      </article>
-      <!--
-      <div class="td" id="socialMediaContainer" style="width:50px;right:5px;top:5px;opacity:0">
-        <div >
-          <div data-href="http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>?spref=gp" data-size="small" class="g-plusone"></div>
+        <div class="socialMediaContainer" id="socialMediaContainer">
+          <ul class="socialLinks webSymbols" data-url="http://laportelibrary.org" data-counts="true" data-share-text="Google is a search engine">
+            <li class="facebook "><a href="https://www.facebook.com/sharer/sharer.php?u=http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>" title="Share on Facebook">f</a></li>
+            <li class="twitter "><a href="https://twitter.com/intent/tweet?text=http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>" title="Share on Twitter">t</a></li>
+            <li class="googleplus"><a href="https://plus.google.com/share?url=http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>" title="Share on Google Plus">g</a></li>
+          </ul>
         </div>
-        <div>
-          <div class="fb-like" data-href="http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>?spref=fb" data-send="false" data-layout="button_count" data-width="50" data-show-faces="false" data-font="arial"></div>
-        </div>
-      </div>
-      -->
-    </div>
+      </article>    
+    
