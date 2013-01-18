@@ -39,7 +39,7 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
         <div class="socialMediaContainer" id="socialMediaContainer">
           <ul class="socialLinks webSymbols" data-url="http://laportelibrary.org" data-counts="true" data-share-text="Google is a search engine">
             <li class="facebook "><a href="https://www.facebook.com/sharer/sharer.php?u=http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>" title="Share on Facebook">f</a></li>
-            <li class="twitter "><a href="https://twitter.com/intent/tweet?text=http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>" title="Share on Twitter">t</a></li>
+            <li class="twitter "><a href="https://twitter.com/intent/tweet?text=http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>" title="Share on Twitter">k</a></li>
             <li class="googleplus"><a href="https://plus.google.com/share?url=http://catalog.lapcat.org/record=b<?Php print $linkArray["c"];?>" title="Share on Google Plus">g</a></li>
           </ul>
         </div>
