@@ -36,27 +36,7 @@
     <div class="mainArea grid_24 roundAll3" id="main" role="main">
       <!--Page Header-->
       <nav class="navDisplay">
-        <div class="grid_4" style="" >
-          <!-- Right Colmn -->
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="askNav smoothAnimate" href="help" >Help</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="aboutNav smoothAnimate" href="about" >About Us</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="hoursNav smoothAnimate" href="hours" >Hours</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="greatPicksNav smoothAnimate" href="greatpicks">Great Picks!</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="genealogyNav smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="genealogyNav smoothAnimate" href="http://genealogy.lapcat.org">Newsletter</a>
-          </div>        </div>
-        <div class="grid_20" style="position:relative">
+        <div class="grid_20 push_4" style="position:relative">
           <div class="mainCatalogSearch">
             <form method="get" action="http://catalog.lapcat.org/search/X?" class="catalogNav smoothAnimate">
                 <select class="smoothAnimate" name="searchtype">
@@ -78,6 +58,27 @@
             <?php endif; ?>
           </div>
         </div>
+        <div class="navBoxGroup grid_4 pull_20" style="" >
+          <!-- Right Colmn -->
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="askNav smoothAnimate" href="help" >Help</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="aboutNav smoothAnimate" href="about" >About Us</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="hoursNav smoothAnimate" href="hours" >Hours</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="greatPicksNav smoothAnimate" href="greatpicks">Great Picks!</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="genealogyNav smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="genealogyNav smoothAnimate" href="http://genealogy.lapcat.org">Newsletter</a>
+          </div>        
+        </div>        
       </nav>  
       <!--/Page Header-->
 

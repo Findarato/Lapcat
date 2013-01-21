@@ -171,6 +171,15 @@ function file_entity_menu() {
     'context' => MENU_CONTEXT_PAGE,
     'file' => 'file_entity.pages.inc',
   );
+  $items['file/%file/download'] = array(
+    'title' => 'Download',
+    'page callback' => 'file_entity_download_page',
+    'page arguments' => array(1),
+    'access callback' => 'file_entity_access',
+    'access arguments' => array('download', 1),
+    'file' => 'file_entity.pages.inc',
+    'type' => MENU_CALLBACK,
+  );
   $items['file/%file/edit'] = array(
     'title' => 'Edit',
     'page callback' => 'drupal_get_form',
@@ -356,6 +365,12 @@ function file_entity_permission() {
     'create files' => array(
       'title' => t('Add and upload files'),
     ),
+    'download own files' => array(
+      'title' => t('Download own files'),
+    ),
+    'download any files' => array(
+      'title' => t('Download any files'),
+    ),
     'edit own files' => array(
       'title' => t('Edit own files'),
     ),
@@ -439,19 +454,17 @@ function file_entity_entity_info_alter(&$entity_info) {
   $entity_info['file']['bundle keys']['bundle'] = 'type';
   $entity_info['file']['bundles'] = array();
   $entity_info['file']['uri callback'] = 'file_entity_uri';
-  $entity_info['file']['view modes'] += array(
-    'teaser' => array(
-      'label' => t('Teaser'),
-      'custom settings' => TRUE,
-    ),
-    'full' => array(
-      'label' => t('Full content'),
-      'custom settings' => FALSE,
-    ),
-    'preview' => array(
-      'label' => t('Preview'),
-      'custom settings' => TRUE,
-    ),
+  $entity_info['file']['view modes']['teaser'] = array(
+    'label' => t('Teaser'),
+    'custom settings' => TRUE,
+  );
+  $entity_info['file']['view modes']['full'] = array(
+    'label' => t('Full content'),
+    'custom settings' => FALSE,
+  );
+  $entity_info['file']['view modes']['preview'] = array(
+    'label' => t('Preview'),
+    'custom settings' => TRUE,
   );
 
   foreach (file_type_get_enabled_types() as $type) {
@@ -1145,6 +1158,7 @@ function file_entity_ctools_plugin_api($owner, $api) {
  * @param $op
  *   The operation to be performed on the file. Possible values are:
  *   - "view"
+ *   - "download"
  *   - "update"
  *   - "delete"
  *   - "create"
@@ -1161,7 +1175,7 @@ function file_entity_ctools_plugin_api($owner, $api) {
 function file_entity_access($op, $file = NULL, $account = NULL) {
   $rights = &drupal_static(__FUNCTION__, array());
 
-  if (!$file && !in_array($op, array('view', 'update', 'delete', 'create'), TRUE)) {
+  if (!$file && !in_array($op, array('view', 'download', 'update', 'delete', 'create'), TRUE)) {
     // If there was no file to check against, and the $op was not one of the
     // supported ones, we return access denied.
     return FALSE;
@@ -1241,6 +1255,12 @@ function file_entity_file_entity_access($op, $file, $account) {
 
   if ($op == 'create') {
     if (user_access('create files')) {
+      return FILE_ENTITY_ACCESS_ALLOW;
+    }
+  }
+
+  if ($op == 'download') {
+    if (user_access('download any files', $account) || (is_object($file) && user_access('download own files', $account) && ($account->uid == $file->uid))) {
       return FILE_ENTITY_ACCESS_ALLOW;
     }
   }

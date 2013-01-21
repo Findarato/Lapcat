@@ -91,7 +91,6 @@ class FeedsSimplePieParser extends FeedsParser {
     for ($i = 0; $i < $items_num; $i++) {
       $item = array();
       $simplepie_item = $parser->get_item($i);
-
       $item['title'] = html_entity_decode(($title = $simplepie_item->get_title()) ? $title : $this->createTitle($simplepie_item->get_content()));
       $item['description'] = $simplepie_item->get_content();
       $item['url'] = html_entity_decode($simplepie_item->get_link());
@@ -142,28 +141,11 @@ class FeedsSimplePieParser extends FeedsParser {
       $item['domains'] = $domains;
       $item['tags'] = $tags;
 
-/* added by jharry*/
-      if($value = $simplepie_item->get_item_tags('http://search.yahoo.com/mrss/', 'thumbnail')){
-        $item['ytThumbnail'] = html_entity_decode($value[0]["data"]); 
-      }
-      if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'image')){
-        $item['bookImage'] = html_entity_decode($value[0]["data"]); 
-      }
-      if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'imagel')){
-        $item['bookImageL'] = html_entity_decode($value[0]["data"]); 
-      }      
-      if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'imagem')){
-        $item['bookImageM'] = html_entity_decode($value[0]["data"]); 
-      }  
-      if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'images')){
-        $item['bookImageS'] = html_entity_decode($value[0]["data"]); 
-      } 
       // Allow parsing to be extended.
       $this->parseExtensions($item, $simplepie_item);
       $item['raw'] = $simplepie_item->data;
 
       $result->items[] = $item;
-      
     }
     // Release parser.
     unset($parser);
@@ -182,26 +164,6 @@ class FeedsSimplePieParser extends FeedsParser {
    */
   public function getMappingSources() {
     return array(
-      'ytThumbnail' => array(
-        'name' => t('youTube:thumbnail'),
-        'description' => t('Small Book image from the item'),
-      ),
-      'bookImageS' => array(
-        'name' => t('book:imageS'),
-        'description' => t('Small Book image from the item'),
-      ),
-      'bookImageM' => array(
-        'name' => t('book:imageM'),
-        'description' => t('Medium Book image from the item'),
-      ),
-      'bookImageL' => array(
-        'name' => t('book:imageL'),
-        'description' => t('Large Book image from the item'),
-      ),
-      'bookImage' => array(
-        'name' => t('book:image'),
-        'description' => t('Book image from the item'),
-      ),
       'title' => array(
         'name' => t('Title'),
         'description' => t('Title of the feed item.'),

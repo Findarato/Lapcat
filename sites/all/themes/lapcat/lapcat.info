@@ -4,8 +4,8 @@ package = Core
 version = VERSION
 core = 7.x
 stylesheets[screen][] = reset.css
-stylesheets[screen and (min-width: 970px)][] = 960_24_col.css
-stylesheets[screen and (min-width: 950px)][] = less/mediaQueries.less
+stylesheets[screen and (min-width: 960px)][] = 960_24_col.css
+stylesheets[screen and (max-width: 960px)][] = less/mediaQueries.less
 stylesheets[screen][] = less/layout.less
 
 scripts[] = js/libs/jquery-1.7.1.min.js

@@ -12,6 +12,7 @@ files[] = views/views_handler_filter_file_type.inc
 files[] = views/views_handler_field_file_link.inc
 files[] = views/views_handler_field_file_link_edit.inc
 files[] = views/views_handler_field_file_link_delete.inc
+files[] = views/views_handler_field_file_link_download.inc
 files[] = views/views_plugin_row_file_view.inc
 files[] = tests/file_entity.test
 configure = admin/structure/file-types
@@ -19,9 +20,9 @@ configure = admin/structure/file-types
 ; We have to add a fake version so Git checkouts do not fail Media dependencies
 version = 7.x-2.x-dev
 
-; Information added by drupal.org packaging script on 2013-01-14
-version = "7.x-2.0-unstable7+12-dev"
+; Information added by drupal.org packaging script on 2013-01-17
+version = "7.x-2.0-unstable7+15-dev"
 core = "7.x"
 project = "file_entity"
-datestamp = "1358124969"
+datestamp = "1358385329"
 

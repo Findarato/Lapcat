@@ -6,9 +6,9 @@ core = 7.x
 files[] = feeds_test.module
 hidden = TRUE
 
-; Information added by drupal.org packaging script on 2012-12-27
-version = "7.x-2.0-alpha7+19-dev"
+; Information added by drupal.org packaging script on 2013-01-19
+version = "7.x-2.0-alpha7+28-dev"
 core = "7.x"
 project = "feeds"
-datestamp = "1356569930"
+datestamp = "1358556815"
 

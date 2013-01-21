@@ -1,24 +1,4 @@
-@media only screen and (min-width: 1600px) { /* VERY Large window browsers */
-  .childrenTree{
-    background: none,url('/images/tree.svg') no-repeat;
-    height:600px;
-    width:600px;
-    background-size:contain;
-  }
-}
-@media only screen and (min-width: 1170px)  { /* Large window browsers */
-  .childrenTree{
-    background: none,url('/images/tree.svg') no-repeat;
-    height:400px;
-    width:400px;
-  }
-  .siteMap{
-    width:100%;
-  }
-  .rightNav{display:none;}
-}
 @media only screen and (min-width:960px) { /* this is for browsers that are cool */
-  
   .childrenTree{
     height:350px;
     width:350px;
@@ -37,8 +17,15 @@
   .firstNav{
     margin:0 0 10px 0;
   }
+  .navDisplay{
+    height:auto;
+  }
 }
 @media only screen and (max-width: 800px) { /* middle width */
+  .navBoxGroup{
+    display:inline-block;
+    width:100%;
+  }
   .rightNav{display:none;background:#f00;}
   :target{
     display:block;
@@ -60,23 +47,10 @@
   }
   .topHeader{height:50px;}
   .mainArea{
-    padding-top:65px;
+    padding-top:72px;
   }  
   .siteMap{
     width:80%;
-  }
-  .middleSection{
-    height:250px;
-    width:100%;
-  }
-  .smallSection{display:none}
-  .mediumSection,.middleSection,.middleSection a, .middleSection form,.mediumSection form, .mediumSection a{
-    width:100%;
-  }
-  .mediumSection,.mediumSection a,.mediumSection form{
-    height:60px;
-    width:100%;
-    background-size:100% 470px;
   }
   nav h1{
     font-size: 1.2em;
@@ -95,35 +69,16 @@
     background: none, url('/images/tree.svg') no-repeat;
     background-size:contain;
   }
-  .navDisplay .grid_12{
-    width:98%;
-  }
-  .surface .image1,.surface .image2{
-    height:100px;
-    width:100px;
-    background-size:cover;
-    overflow:hidden;
-  }
-  .surface .images{
-    overflow:hidden;
-    width:98%;
-  }
-  .surface .images,.images .images1,.images .images2,.fluxslider{
-    width:200px;
+  .navDisplay{
+    height:auto;
   }
 }
 @media only screen and (max-width: 400px) { /* Portrait Phones */
-  .subPageCatalogSearch{
+  .banner{
     display:none;
   }
-  .research,.events,.hours{
+  .subPageCatalogSearch{
     display:none;
-  }  
-  :target{
-    right:5px;
-    margin-top:43px;
-    z-index:1000;
-    background:@white;
   }
   .siteMap{
     width:50%;
@@ -172,6 +127,9 @@
     a{
       display:block;
     }  
+  }
+  .navDisplay{
+    height:auto;
   } 
 }
 /* ==|== print styles ======================================================= */
