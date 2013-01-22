@@ -7,7 +7,7 @@ body,html {
   padding:0px; 
   height:100%;
   color:@colorDark;
-  background:@colorLight url("images/cream_dust.png");
+  background:@colorLight ;
   font-size:13px;
 }
 a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:normal;}
@@ -147,7 +147,7 @@ li {
   height:           48px;
   width:            auto;
   margin:           2.5px 0 2.5px 0;
-  background:       white no-repeat 140px;
+  background:       @colorLight;
   position:         relative;
   border-radius:    3px;
   -webkit-border-radius:     3px;
@@ -342,15 +342,6 @@ li {
   background:#FFF;
   min-height:100px;
 }
-.articleContainerBox li{
-  display:block;
-}
-.articleEntryDescription a{
-  white-space:nowrap;
-}
-.articleEntryDescription iframe{
-  display:none;
-}
 
 .articleContainerBox,.deliciousContainer,.containerBox{
   padding:30px 5px 5px 5px;
@@ -359,17 +350,17 @@ li {
   font-size:20px;
   min-width:250px;
   max-width:500px;
-  border-bottom:rgba(0,0,0,.2) solid 1px;
+  border-bottom:@colorDark solid 1px;
   margin-bottom:3px;
   
 }
 .articleEntryTitle a{
-  color:#0C717A;
+  color:@color3;
 }
 .articleEntryTitle a:hover{text-decoration:none;}
 .articleEntryAuthor{
   font-size:10px;
-  color:#999;
+  color:@colorDark;
   img{
     height:24px;
     width:24px;
@@ -537,7 +528,7 @@ li{
 }
 .blogBox,.blogContainerBox,.containerBox,.bookBox{
 	position:relative;
-	background:#FFF;
+	background:@colorLight;
 	min-height:100px;
 }
 .blogContainerBox, .deliciousContainer, .containerBox {

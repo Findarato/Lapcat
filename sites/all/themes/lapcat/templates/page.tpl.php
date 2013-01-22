@@ -18,13 +18,13 @@
       <div class="td">
         <a href="/">
            <?php if ($logo): ?>
-              <img height=75px width=68px src="<?php print $logo ?>" alt="learn, enrich, enjoy" title="learn, enrich, enjoy" id="logo" />
+              <img height=75px width=68px src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" />
             <?php endif; ?>
          </a>
       </div>
       <div class="td">
         <h1><a href="/" class="logoTitle">La Porte County Public Library System</a></h1>
-        <h3 class="logoSubtitle">learn, enrich, enjoy</h3> 
+        <h3 class="logoSubtitle"><?php if ($site_slogan): ?><?Php print $site_slogan;?><?php endif; ?></h3>
       </div>
     </div>
   </nav>

@@ -11,7 +11,7 @@
       </div>
       <div class="td">
         <h1><a href="/" class="logoTitle">La Porte County Public Library System</a></h1>
-        <h3 class="logoSubtitle">learn, enrich, enjoy stuff</h3> 
+        <h3 class="logoSubtitle"><?php if ($site_slogan): ?><?Php print $site_slogan;?><?php endif; ?></h3>
       </div>
     </div>
   </nav>
