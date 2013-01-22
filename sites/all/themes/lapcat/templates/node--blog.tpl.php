@@ -11,7 +11,6 @@
       </style>
       
       <div id="node-<?php print $node -> nid; ?>" class="blogEntry roundAll3 <?php print $classes; ?>"<?php print $attributes; ?>>
-        
         <div class="t">
           <div class="td" style="height:64px;width:64px;">
             <div class="userImage" style="width:100%;height:100%;border:none;"><?php print $user_picture; ?></div>
