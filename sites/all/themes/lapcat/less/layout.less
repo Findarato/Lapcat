@@ -92,6 +92,7 @@ h4 {
   z-index: 50;
 }
 
+.flexslider{border:none; .roundAll(3px);} 
 .flex-direction-nav li .next{
   right:-5px;
 }
@@ -168,7 +169,6 @@ li {
   
 }
 
-
 .twitterImage{
   display:          inline-block;
   float:            left;
@@ -223,7 +223,6 @@ li {
   color:@colorLight;
   width:100%;
   max-height:7em;
-  
   a{
     color:@colorLight;  
   }
@@ -265,6 +264,11 @@ li {
     white-space:nowrap;
   }
 }
+.socialContainer .socialLinks a{
+  font-size:3em;
+  color:@colorDark;
+}
+
 /* Articles */
 
 .socialLinks{
@@ -308,7 +312,6 @@ li {
       z-index:50;
       &:hover{
         .grow(1.5);
-        
     }
   }
 }
@@ -317,6 +320,7 @@ li {
   width:100%;
   padding:3px;
   margin-bottom:10px;
+  min-height:150px;
 }
 .field-content a[property*="label"]{/*These are tags on items*/
   padding:2px;
@@ -444,68 +448,14 @@ li {
 	padding:2px;
 	z-index:100;
 }
-.menuSelect{
-	width:160px;
-	overflow:hidden;
-	height:25px;
-	line-height:25px;
-	text-align:center;
-}
-.menuSelect a{
-	white-space:nowrap;
-}
-.topMenu {
-	text-align:left;
-	margin:0 auto;
-	width:684px;
-	background-position: center;
-	font-family:sans-serif;
-	font-weight: bold;
-	line-height:19px;
-	font-size:16px;
-}
 li{
 	list-style: none outside none;
 }
 
-.middleSection .flexslider{border:none;}
 .bookTitle{
   margin-bottom:0px;
 }
 
-.smallSection,.mediumSection,.middleSection{
-	display:block;
-	position:relative;
-	overflow:hidden;
-  .softColor(@color4);
-}
-
-.smallSection,.smallSection a{
-	height:100px;
-	width:100%;
-	background-size:cover;
-}
-.mediumSection,.mediumSection a,.mediumSection form{
-	height:60px;
-	width:470px;
-	background-size:100% 470px;
-}
-.mediumSection form input, .mediumSection form select{
-  top:15px;
-  height:35px;
-  padding:5px;
-  position:absolute;
-  left:1%;
-  width:55%;
-}
-.mediumSection form select{
-	left:57%;
-	width:31%;
-}
-.mediumSection form input[type="submit"]{
-  left:89%;
-  width:10%;
-}
 #container{
 	position:relative;
 	z-index:10;
@@ -563,6 +513,14 @@ li{
 	right:auto;
 	top:-5px;
 	width:auto;
+}
+.twitterList{
+  width:100%;
+  li{
+    width:100%;
+    display:block;
+    height:50px;
+  }
 }
 .titleElement a{
 	color: #F1F1F1;
@@ -690,7 +648,6 @@ li{
   position: relative;
 }
 /*Global tweeks*/
-aside{margin-top:10px;}
 aside div,section div,.smallSection,.middleSection,.mediumSection{
   margin-bottom:10px;
 }
