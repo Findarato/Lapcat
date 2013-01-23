@@ -519,7 +519,7 @@ li{
   li{
     width:100%;
     display:block;
-    height:50px;
+    min-height:50px;
   }
 }
 .titleElement a{
@@ -648,9 +648,14 @@ li{
   position: relative;
 }
 /*Global tweeks*/
+#pageHeader{
+  margin-bottom:15px;
+}
+.node:not(.node-article){display:none;}
+.element-invisible{display:none;}
 aside div,section div,.smallSection,.middleSection,.mediumSection{
   margin-bottom:10px;
 }
-.region div *:not(article),.region div *:not(.blogBox){
+.region div *:not(article),.region div *:not(.blogBox),.element-invisible{
   margin-bottom:0px;
 }

@@ -2,11 +2,8 @@
   .bookCoverImage a{
     min-width:75px;
     min-height:100px;
-    background: url(<?php print $base_path . $directory .'/images/tree.svg'; ?>) no-repeat;
-    background-size: contain;
     display:inline-block;  
   }
-  
 </style>
 
 <header class="topHeader" style="margin:0;padding:0;">
@@ -85,17 +82,16 @@
 
       <div class="clear"></div>   
       <section id="mainContent" class="grid_16">
-        <div class="element-invisible"><a id="main-content"></a></div>
-          <?php if ($messages): ?>
-          <div id="console" class="clearfix"><?php print $messages; ?></div>
-          <?php endif; ?>
-          <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-            <div class="box blogBox roundAll3">
-              <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1"><span style="padding-left:3px;height:100%;width:100%">Newst Material</span></div>
-              <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
-                <?php print render($page['content']); ?>      
-              </div>
-            </div>
+        <?php if ($messages): ?>
+        <div id="console" class="clearfix"><?php print $messages; ?></div>
+        <?php endif; ?>
+        <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+        <div class="box blogBox roundAll3">
+          <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1"><span style="padding-left:3px;height:100%;width:100%">Newst Material</span></div>
+          <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
+            <?php print render($page['content']); ?>      
+          </div>
+        </div>
       </section>
       <aside id="side" class="grid_8">
         <?php if ($page['rightSide']): ?>

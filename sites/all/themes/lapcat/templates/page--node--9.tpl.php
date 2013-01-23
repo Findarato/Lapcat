@@ -75,13 +75,12 @@
     <div class="childrenSun"></div>
     <div id="" style="" class="container_24">
       <div class="mainArea grid_24 roundAll3" id="main" role="main">
-          <?php if ($page['pageHeader']): ?>
-            <div id="pageHeader"><?php print render($page['pageHeader']); ?></div>
-          <?php endif; ?>
-          <div class="clear"></div>   
+        <?php if ($page['pageHeader']): ?>
+          <div id="pageHeader"><?php print render($page['pageHeader']); ?></div>
+        <?php endif; ?>
+        <div class="clear"></div>   
         <section id="mainContent" class="grid_16">
-          <div class="element-invisible"><a id="main-content"></a></div>
-            <?php print render($page['content']); ?>      
+          <?php print render($page['content']); ?>      
         </section>
         <aside id="side" class="grid_8">
           <?php if ($page['rightSide']): ?>
@@ -89,12 +88,10 @@
           <?php endif; ?>
           <?php if ($page['help']): ?>
             <div id="help">
-              <?php print render($page['help']); ?>test
+              <?php print render($page['help']); ?>
             </div>
           <?php endif; ?>
-          <?php print $feed_icons; ?>
         </aside>
-         <div class="clear"></div>
       </div> <!-- end of main content-->
       <footer class="grid_24" style="margin-top:10px;margin-right:auto;">
         <?php if ($page['pageFooter']): ?>
