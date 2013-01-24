@@ -68,7 +68,7 @@
             <a class="hoursNav smoothAnimate" href="hours" >Hours</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="greatPicksNav smoothAnimate" href="greatpicks">Great Picks!</a>
+            <a class="greatPicksNav smoothAnimate" href="http://catalog.lapcat.org">Catalog</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="genealogyNav smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
