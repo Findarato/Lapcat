@@ -5,6 +5,10 @@
     background-image: url('<?php print $base_path . $directory .'/images/teen.png'; ?>');
     background-repeat:no-repeat;
   }
+  .childrenTree{
+    background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
+    background-repeat:no-repeat;
+  }  
   
   .flickrImageTitle{
     position:absolute;
@@ -71,7 +75,7 @@
     </div>
   </nav>
 </header>
-  <div class="wholePage" style="overflow: hidden;">
+<div class="teenWholePage" style="overflow: hidden;">
     <div class="childrenSun"></div>
     <div id="" style="" class="container_24">
       <div class="mainArea grid_24 roundAll3" id="main" role="main">
@@ -98,8 +102,9 @@
           <div id="pageFooter"><?php print render($page['pageFooter']); ?></div>
         <?php endif; ?>
       </footer>
-      <div class="childrenGrass">
-        <div class="childrenTree linearAnimate"></div>
-      </div>
+
     </div>
+   <div class="childrenGrass">
+      <div class="childrenTree linearAnimate"></div>
+   </div>
   </div>

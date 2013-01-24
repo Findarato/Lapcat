@@ -95,7 +95,7 @@
       </footer>
 
     </div>
-          <div class="childrenGrass">
-        <div class="childrenTree linearAnimate"></div>
-      </div>
+   <div class="childrenGrass">
+      <div class="childrenTree linearAnimate"></div>
+   </div>
   </div>

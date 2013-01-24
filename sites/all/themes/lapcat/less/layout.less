@@ -7,7 +7,6 @@ body,html {
   padding:0px; 
   height:100%;
   color:@colorDark;
-  background:@colorLight ;
   font-size:13px;
 }
 a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:normal;}
@@ -92,7 +91,7 @@ h4 {
   z-index: 50;
 }
 
-.flexslider{border:none; .roundAll(3px);} 
+.flexslider{border:none; .rounded-corners(3px);} 
 .flex-direction-nav li .next{
   right:-5px;
 }
@@ -476,9 +475,9 @@ li{
 #greatPicksContainerBox .rssItem img{
 	width:100px;
 }
-.blogBox,.blogContainerBox,.containerBox,.bookBox{
+.blogBox,.blogContainerBox,.containerBox,.bookBox,.box,body{
 	position:relative;
-	background:@colorLight;
+	background:@colorLight url("images/grey.png");
 	min-height:100px;
 }
 .blogContainerBox, .deliciousContainer, .containerBox {
@@ -653,6 +652,7 @@ li{
 }
 .node:not(.node-article){display:none;}
 .element-invisible{display:none;}
+
 aside div,section div,.smallSection,.middleSection,.mediumSection{
   margin-bottom:10px;
 }
