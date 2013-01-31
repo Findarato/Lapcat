@@ -6,7 +6,7 @@
   </div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" style="padding-left:10px;padding-bottom:0;">
     <?php if ($rows): ?>
-      <div class="view-content">
+      <div class="view-content <?php print $classes; ?>">
         <?php print $rows; ?>
       </div>
     <?php elseif ($empty): ?>

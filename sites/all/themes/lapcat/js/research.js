@@ -1,4 +1,5 @@
-var adultContainer = $("#researchAdultContainerBox");
+//$("#blogContainerBox").append($("</div>",{"id":"researchAdultContainerBox"}));
+var adultContainer = $(".view-research");
 var adultCategories = new Array();
 $(".researchInfoBasic").hide();
 $(".researchList").find("img").hide();
