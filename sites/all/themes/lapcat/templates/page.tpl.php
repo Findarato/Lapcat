@@ -1,17 +1,3 @@
-<style>
-  .subPageHeader{
-    background-image: url('<?php print $base_path . $directory .'/images/LaPorte_County_Public_Library.jpg'; ?>');
-    background-repeat:no-repeat;
-  }
-  .helpHeader{
-    background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
-    background-repeat:no-repeat;
-  }
-  .hoursHeader{
-    background-image:url(http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=10&size=560x85&scale=2&sensor=false);
-    background-repeat:no-repeat;
-  }
-</style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
     <div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">

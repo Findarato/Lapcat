@@ -46,10 +46,17 @@ h4 {
 .insideBoxShadow ul li{
   padding:3px;
 }
-.outSideBoxShadow{
+.outSideBoxShadow,.divider{
   -webkit-box-shadow: 0 0 1px 1px @shadow;
   box-shadow:  0 0 1px 1px @shadow;
 }
+.divider{
+  width:85%;
+  height:1px;
+  margin:0 auto;
+  background:@shadow;
+}
+
 
 .mainArea{
   padding:125px 5px 20px 5px;
@@ -399,8 +406,24 @@ li {
 	height:120px;
 	padding:3px 3px 3px 10px;
 	margin:0 5px 10px 5px;
-	background-size:cover;
+  background: url('/sites/all/themes/lapcat/images/LaPorte_County_Public_Library.jpg') no-repeat;
+  background-size:cover;
+  background-position:0px;
+  div{
+    display:table-cell;
+    vertical-align:middle;
+    white-space:nowrap;
+    height:90px;
+    width:100%;
+  }
 }
+.subPageHeader.Hours{
+  background:url('http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=10&size=560x85&scale=2&sensor=false') no-repeat;
+}
+.subPageHeader.Downloads{
+  background:url('/sites/all/themes/lapcat/images/download.jpg') no-repeat;
+}
+
 .subPageCatalogSearch{
 	position:absolute;
 	right:5px;
@@ -413,13 +436,6 @@ li {
 	border-bottom-left-radius: 3px;
 }
 .subPageCatalogSearch  .catalog{display:inline-block;}
-.subPageHeader div{
-	display:table-cell;
-	vertical-align:middle;
-	white-space:nowrap;
-	height:90px;
-	width:100%;
-}
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
 	color:@colorDark;
 }
@@ -654,6 +670,9 @@ li{
 aside div,section div,.smallSection,.middleSection,.mediumSection{
   margin-bottom:10px;
 }
-.region div *:not(article),.region div *:not(.blogBox),.element-invisible{
+.region div *:not(article),
+.region div *:not(.blogBox),
+.region div *:not(.divider),
+.element-invisible{
   margin-bottom:0px;
 }

@@ -92,29 +92,24 @@ function displayFlickr(flickrTag,flickrId){
 $(document).ready(function(){
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();
+  if(title = $("#page-title").text()){
+    $(".subPageHeader").addClass(title.replace(/ /g,""));
+  }
+
     //gapi.plusone.render();
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0){// this is the research page
-      //getDeliciousFeed("http://www.delicious.com/v2/rss/laportecolibrary");
-      //getSpreadSheetFeed("research");
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page
         displayFlickr("teens");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
-          //getDeliciousFeed("http://www.delicious.com/v2/rss/laportecochild");
-          //getSpreadSheetFeed("kids");
         }else{
           if(uri.search(/greatpicks/i)>0){// this is the teens page
-            //get_rss_feed("http://www.wowbrary.org/rss.aspx?l=8711&c=GEN",$("#greatPicksContainerBox"))
-            //getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
-            //getSpreadSheetFeed("readers");
           }else{//if all else fails lets just load a local rss feed
             if(uri.search(/educators/i)>0){// this is the teens page
-              //getDeliciousFeed("http://www.delicious.com/v2/rss/laportereaders");
-              //getSpreadSheetFeed("educators");
               }else{//if all else fails lets just load a local rss feed
-                //getSpreadSheetFeed("adult");
+
               }
           }
         } 
