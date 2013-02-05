@@ -16,6 +16,7 @@ scripts[] = js/global.js
 
 settings[shortcut_module_link] = 1
 regions[pageHeader] = Page Header
+regions[pageTitle] = Page Title
 regions[menuHeader] = Header Menu
 regions[featured_slider] = Featured Slider
 regions[content] = Content
