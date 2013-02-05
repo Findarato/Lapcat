@@ -10,7 +10,7 @@
   // maintenance-page.tpl.php template. So, to have what's done in
   // seven_preprocess_html() also happen on the maintenance page, it has to be
   // called here.
-  seven_preprocess_html($vars);
+ // seven_preprocess_html($vars);
 }
 
 /**
