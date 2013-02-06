@@ -89,7 +89,7 @@ function theme_blockify_page_title($variables) {
     );
     $title_attributes = drupal_attributes($title_attributes_array);
 
-    return '<h1' . $title_attributes . '>' . $variables['page_title'] . '</h1>';
+    return $variables['page_title'];
   }
 }
 

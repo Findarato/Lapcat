@@ -92,9 +92,9 @@ function displayFlickr(flickrTag,flickrId){
 $(document).ready(function(){
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();
-  if(title = $("#page-title").text()){
-    $(".subPageHeader").addClass(title.replace(/ /g,""));
-  }
+  //if(title = $("#page-title").text()){
+  //  $(".subPageHeader").addClass(title.replace(/ /g,""));
+ // }
 
     //gapi.plusone.render();
     /* Lets load the correct delicious feed */

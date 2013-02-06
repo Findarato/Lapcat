@@ -29,9 +29,9 @@
         <?php endif; ?>
         <!-- cool stuff testing-->
         <div class=" " style="margin-bottom:10px;width:100%;height:100%;position:relative;overflow:hidden">
-          <div class="roundAll3 insideBoxShadow subPageHeader" ></div>
-          <div class="color4 roundRight4 outSideBoxShadow" style="position: absolute;top:25%; left:5px;padding-right:5px;">
-            <?php if ($page['pageTitle']): ?><?php print render($page['pageTitle']); ?><?php endif; ?>
+          <div class="roundAll3 insideBoxShadow subPageHeader <?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?>" ></div>
+          <div class="color4 roundRight4 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
+            <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>
           </div>
           <div class="subPageCatalogSearch insideBoxShadow">
             <div class="catalog ">
@@ -47,13 +47,13 @@
                   </div>
                   <div style="display:table-cell">
                     <input type="search" name="searcharg" size="20" maxlength="75" placeholder="Search the Catalog">
-                    <input type="submit" value="GO!" style="display:none;"/>
+                    <input type="submit" value="GO!"/>
                   </div>
                 </div>
               </form>
             </div>
             <div style="display:inline-block;vertical-align: top;">
-              <a alt="Need Help?" class="icon-help fontShadow" href="/help.php"  style="font-size:1.2rem"></a>
+              <a alt="Need Help?" class="hoverGlow color3Circle" href="/help" title="Need Help?" style="font:1.4em bold">?</a>
             </div>
           </div>
         </div>

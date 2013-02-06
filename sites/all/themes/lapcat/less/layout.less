@@ -47,8 +47,7 @@ h4 {
   padding:3px;
 }
 .outSideBoxShadow,.divider{
-  -webkit-box-shadow: 0 0 1px 1px @shadow;
-  box-shadow:  0 0 1px 1px @shadow;
+  .shadowOut(0,0,1px,1px,@shadow);
 }
 .divider{
   width:85%;
@@ -439,6 +438,11 @@ li {
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
 	color:@colorDark;
 }
+.hoverGlow{.Animate(300ms)}
+.hoverGlow:hover{
+  .shadowOut(0,0,2px,2px,@color5);
+}
+
 
 /* Teen Section */
 .locationBoxInfo{
