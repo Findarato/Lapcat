@@ -2,7 +2,6 @@
     display:inline-block;
     width:100%;
   }
-
 @media only screen and (min-width:60em) { /* this is for browsers that are cool */
   .childrenTree{
     height:350px;
@@ -26,17 +25,17 @@
     height:auto;
   }
 }
-@media only screen and (max-width: 50em) { /* middle width */
+
+@media only screen and (min-width: 50em) { /* middle width */
   .secondNav{
     display:block;
   }
   .firstNav{
-    height:44px;
     margin:0;
   }
   .topHeader{height:50px;}
   .mainArea{
-    padding-top:72px;
+    padding-top:2em;
   }  
   .siteMap{
     width:80%;
@@ -62,24 +61,18 @@
     height:auto;
   }
 }
-@media only screen and (max-width: 25em) { /* Portrait Phones */
+@media only screen and (min-width: 25em) { /* Portrait Phones */
   .subPageCatalogSearch{
     display:none;
   }
-  .siteMap{
-    width:50%;
-  }
-  .siteMap a{
-    display:block;
-    width:100%;
-  }
+
   nav h1{
-    font-size: 1em;
+    font-size: 1.5em;
     text-align:left;
     white-space:nowrap;
   }
   nav h3{
-    font-size: 1em;
+    font-size: 1.2em;
     text-align:left;
   }
   .copyright{
@@ -101,9 +94,49 @@
     width:0px;
     height:0px;
   }
+  .region-menuheader{
+    display:block;
+    float:left;
+    width:100%;
+    .leaf{
+      width:14%;
+      white-space:nowrap;
+    }
+  }
+  .helpLink{
+    position:relative;
+    top:-.8em;
+    float:right;
+  }
 }
-
 @media only screen and (min-width:12.5em){ /*everything should be here*/
+  .mainArea{
+    padding-top:.5em;
+  }    
+  .region-menuheader{
+    display:block;
+    .leaf{
+      width:14%;
+      white-space:nowrap;
+    }
+  }
+  .topHeader{
+    position:relative;
+    height:6.5em;
+  }
+  .logoImage{
+    height:4em;
+    width:3.8em;
+  }
+  .topNav{
+    width:100%;
+  }
+  .helpLink{
+    position:absolute;
+    top:-1.5em;
+    right:1em;
+    font-size:1.5em;
+  }
   .siteMap{
     width:100%;
     .secondNav{
@@ -118,6 +151,7 @@
     height:auto;
   } 
 }
+
 /* ==|== print styles ======================================================= */
  
 @media print {

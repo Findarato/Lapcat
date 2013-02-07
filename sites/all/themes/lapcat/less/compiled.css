@@ -119,7 +119,8 @@ input[type="submit"]{font-size:1em;height:1.6em;}
 .articleEntryAuthor{font-size:10px;color:#1d1d1d;}.articleEntryAuthor img{height:24px;width:24px;}
 .articleEntryDescription{width:600px;overflow:hidden;}
 .topNav{width:940px;}
-.secondNav{font-weight:bold;font-size:1.2em;position:relative;height:24px;}
+.logoImage{height:75px;width:68px;}
+.secondNav{font-weight:bold;font-size:1.2em;position:relative;height:1.4em;}
 .siteMap .secondNav{background:#e7f2e6;height:20px;}
 .logoTree{max-height:75px;max-width:68px;}
 .subPageHeader{font-size:50px;height:120px;padding:3px 3px 3px 10px;margin:0 5px 10px 5px;background:url('/sites/all/themes/lapcat/images/LaPorte_County_Public_Library.jpg') no-repeat;background-size:cover;background-position:0px;}.subPageHeader div{display:table-cell;vertical-align:middle;white-space:nowrap;height:90px;width:100%;}

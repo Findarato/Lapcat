@@ -4,7 +4,7 @@
       <div class="td">
         <a href="/">
            <?php if ($logo): ?>
-              <img height=75px width=68px src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" />
+              <img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" />
             <?php endif; ?>
          </a>
       </div>
@@ -19,8 +19,8 @@
       <?php if ($page['menuHeader']): ?>
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
-        <div style="display:inline-block;vertical-align: top;">
-          <a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">?</a>
+        <div class="helpLink" style="display:inline-block;vertical-align: top;">
+          <a alt="Need Help?" class=" hoverGlowText" href="/help" title="Need Help?">?</a>
         </div>
       </div>
       <?php endif; ?>
