@@ -59,23 +59,23 @@
         <div class="navBoxGroup grid_4 pull_20" style="" >
           <!-- Right Colmn -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="askNav smoothAnimate" href="help" >Help</a>
+            <a class="smoothAnimate" href="downloads">Downloads</a>
+          </div>  
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="smoothAnimate" href="children" >Children</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="aboutNav smoothAnimate" href="about" >About Us</a>
+            <a class="smoothAnimate" href="teens" >Teens</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="hoursNav smoothAnimate" href="hours" >Hours</a>
+            <a class="smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="greatPicksNav smoothAnimate" href="http://catalog.lapcat.org">Catalog</a>
+            <a class="smoothAnimate" href="greatpicks" >Great Picks</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="genealogyNav smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
+            <a class="smoothAnimate" href="help">Help</a>
           </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="genealogyNav smoothAnimate" href="http://genealogy.lapcat.org">Newsletter</a>
-          </div>        
         </div>        
       </nav>  
       <!--/Page Header-->

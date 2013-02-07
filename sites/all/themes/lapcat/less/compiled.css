@@ -89,7 +89,8 @@ li{list-style:none outside none;}
 .region-menuheader .first{margin:3px 0 0 8px;}
 .views-slideshow-cycle-main-frame-row *{border-radius:3px;-webkit-border-radius:3px;display:relative;}
 .mainCatalogSearch{position:absolute;top:2px;right:2px;z-index:10;}
-.mainCatalogSearch form *{border:none;padding:3px;height:25px;position:relative;}
+form *{border:none;padding:.1em;height:1.4em;font-size:1em;position:relative;margin:0 3px;}
+input[type="submit"]{font-size:1em;height:1.6em;}
 .mainCatalogSearch input[type="submit"],.mainCatalogSearch select{opacity:.85;}
 .mainCatalogSearch:hover input,.mainCatalogSearch:hover select{opacity:.95;}
 .sliderInfoBox{position:absolute;bottom:0;left:0;background:rgba(29, 29, 29, 0.4);overflow:hidden;color:#f1f1f1;width:100%;max-height:7em;}.sliderInfoBox a{color:#f1f1f1;}
