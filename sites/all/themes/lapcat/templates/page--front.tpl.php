@@ -25,8 +25,13 @@
   <nav class="secondNav color2" style="width:100%">
     <div class="topNav" style="text-align:center;margin:0 auto;">
       <?php if ($page['menuHeader']): ?>
-          <div id="menuHeader"><?php print render($page['menuHeader']); ?></div>
-        <?php endif; ?>
+      <div id="menuHeader">
+        <?php print render($page['menuHeader']); ?>
+        <div style="display:inline-block;vertical-align: top;">
+          <a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">?</a>
+        </div>
+      </div>
+      <?php endif; ?>
     </div>
   </nav>
 </header>  
@@ -59,7 +64,7 @@
         <div class="navBoxGroup grid_4 pull_20" style="" >
           <!-- Right Colmn -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="downloads">Downloads</a>
+            <a class="smoothAnimate" href="Downloads">Downloads</a>
           </div>  
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="children" >Children</a>

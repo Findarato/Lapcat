@@ -178,7 +178,7 @@ li {
   height:           307px
 }
 .region-menuheader{
-  width:960px;
+  display:inline-block;
   ul{
     width:            100%;
   }
@@ -191,6 +191,9 @@ li {
   .first{
   margin:3px 0 0 8px;
   }
+}
+.helpLink{
+  font-size:1.3em;
 }
 
 .views-slideshow-cycle-main-frame-row *{
@@ -399,7 +402,7 @@ input[type="submit"]{
 }
 .secondNav{
 	font-weight:bold;
-	font-size:15px;
+	font-size:1.2em;
 	position:relative;
 	height:24px;
 	
@@ -451,11 +454,13 @@ input[type="submit"]{
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
 	color:@colorDark;
 }
-.hoverGlow{.Animate(300ms)}
+.hoverGlow,.hoverGlowText{.Animate(300ms)}
 .hoverGlow:hover{
   .shadowOut(0,0,2px,2px,@color5);
 }
-
+.hoverGlowText:hover{
+  .shadowOutText(0,0,4px,@color5);
+}
 
 /* Teen Section */
 .locationBoxInfo{

@@ -70,8 +70,13 @@
   <nav class="secondNav color2" style="width:100%">
     <div class="topNav" style="text-align:center;margin:0 auto;">
       <?php if ($page['menuHeader']): ?>
-          <div id="menuHeader"><?php print render($page['menuHeader']); ?></div>
-        <?php endif; ?>
+      <div id="menuHeader">
+        <?php print render($page['menuHeader']); ?>
+        <div style="display:inline-block;vertical-align: top;">
+          <a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">?</a>
+        </div>
+      </div>
+      <?php endif; ?>
     </div>
   </nav>
 </header>
@@ -106,9 +111,6 @@
                   </div>
                 </div>
               </form>
-            </div>
-            <div style="display:inline-block;vertical-align: top;">
-              <a alt="Need Help?" class="hoverGlow color3Circle" href="/help" title="Need Help?" style="font:1.4em bold">?</a>
             </div>
           </div>
         </div>

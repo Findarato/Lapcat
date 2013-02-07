@@ -20,11 +20,17 @@
   -moz-box-shadow:inset @arguments;
   -webkit-box-shadow:inset @arguments;
 }
+.shadowOutText (@x: 0, @y: 0, @blur: 1px, @color: rgba(0,0,0,.8)) {
+  text-shadow: @arguments;
+  -moz-text-shadow: @arguments;
+  -webkit-text-shadow: @arguments;
+}
 .shadowOut (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
   box-shadow: @arguments;
   -moz-box-shadow: @arguments;
   -webkit-box-shadow: @arguments;
 }
+
 .Animate(@time:500ms){
   -webkit-transition: all @time linear;
      -moz-transition: all @time linear;
