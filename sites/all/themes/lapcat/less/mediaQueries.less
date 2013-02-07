@@ -9,9 +9,6 @@
     background: none, url('/images/tree.svg') no-repeat;
     background-size:contain;
   }
-  .topHeader{
-    background: #fff;
-  }
   .siteMap{
     width:80%;
   }
@@ -31,6 +28,7 @@
     display:block;
   }
   .firstNav{
+    height:44px;
     margin:0;
   }
   .topHeader{height:50px;}
@@ -118,18 +116,29 @@
     .leaf{
       width:14%;
       white-space:nowrap;
+      a{
+        text-align:center;
+        width:100%;
+      }
     }
   }
-  .topHeader{
-    position:relative;
-    height:6.5em;
-  }
-  .logoImage{
+  .logoImage,.logoBlock{
     height:4em;
     width:3.8em;
   }
   .topNav{
     width:100%;
+  }
+  .topHeader{
+    width:100%;
+    position:relative;
+    height:6.4em;
+    h1{
+      font-size:1.1em;
+    }
+    h3{
+      font-size:1.2em;
+    }
   }
   .helpLink{
     position:absolute;

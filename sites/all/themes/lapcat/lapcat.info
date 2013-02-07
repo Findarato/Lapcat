@@ -4,8 +4,8 @@ package = Core
 version = VERSION
 core = 7.x
 stylesheets[screen][] = reset.css
-stylesheets[all and (min-width: 60em)][] = 960_24_col.css
-stylesheets[all and (max-width: 60em)][] = less/mq.css
+stylesheets[all and (min-width: 960px)][] = 960_24_col.css
+stylesheets[all and (max-width: 959px)][] = less/mq.css
 stylesheets[screen][test] = less/compiled.css
 
 scripts[] = js/libs/jquery-1.7.1.min.js
@@ -26,4 +26,4 @@ regions[pageFooter] = Page Footer
 ; Information added by drupal.org packaging script on 2012-10-17
 version = "7.16"
 project = "drupal"
-datestamp = "1350508567"
+datestamp = "1350508567" 
