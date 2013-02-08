@@ -13,6 +13,8 @@
 .color4Border1{border:1px solid #e7f2e6;}
 .color5{color:#f1f1f1;background:#5f3e12;}
 .color5TextGlow{text-shadow:#5f3e12 0 0 2px;}
+.color5Circle{border:2px solid rgba(95, 62, 18, 0.6);display:inline-block;height:1.1em;width:1.1em;text-align:center;color:#5f3e12;border-radius:10px;-webkit-border-radius:10px;}
+.color5Circle:hover{box-shadow:0 0 0.2em 0em #5f3e12;-moz-box-shadow:0 0 0.2em 0em #5f3e12;-webkit-box-shadow:0 0 0.2em 0em #5f3e12;}
 .color560{color:#f1f1f1;background:#5f3e12;background:rgba(95, 62, 18, 0.6);}
 .color560 a:hover,.color5 a:hover,.color560:hover,.color5:hover,.color560 a{color:#f1f1f1;}
 .color5Soft{background:#5f3e12;background:-moz-linear-gradient(top, #5f3e12 0%, #513107 100%);background:-webkit-gradient(linear, left top, left bottom, color-stop(0%, #5f3e12), color-stop(100%, #513107));background:-webkit-linear-gradient(top, #5f3e12 0%, #513107 100%);background:-o-linear-gradient(top, #5f3e12 0%, #513107 100%);background:-ms-linear-gradient(top, #5f3e12 0%, #513107 100%);background:linear-gradient(top, #5f3e12 0%, #513107 100%);}

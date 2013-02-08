@@ -225,6 +225,20 @@
 .color5TextGlow{
   text-shadow: @color5 0 0 2px;
 }
+.color5Circle{
+  border:2px solid @color560;
+  display:inline-block;
+  height:1.1em;
+  width:1.1em;
+  text-align:center;
+  color:@color5;
+  .rounded-corners(10px);
+}
+.color5Circle:hover{
+ .shadowOut (0,0,.2em,0em,@color5);  
+}
+
+
 .color560{
   color:@colorLight;
   background:@color5;
