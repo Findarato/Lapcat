@@ -123,11 +123,27 @@
           <?php endif; ?>
         </aside>
       </div> <!-- end of main content-->
-      <footer class="grid_24" style="margin-top:10px;margin-right:auto;">
-        <?php if ($page['pageFooter']): ?>
-          <div id="pageFooter"><?php print render($page['pageFooter']); ?></div>
-        <?php endif; ?>
-      </footer>
+    <footer class="grid_24" style="margin-top:10px;margin-right:0px">
+      <div class="outSideBoxShadow color4" style="width:100%;display:table;bottom:0px;position:relative">
+        <div style="display:table-cell;width:33%;"> <!--Links-->
+          <div>
+            <?php if ($page['pageLinks']): ?>
+              <div id="pageLinks"><?php print render($page['pageLinks']); ?></div>
+            <?php endif; ?>
+          </div>
+        </div>
+        <div style="display:table-cell;width:33%;">
+          <?php if ($page['contact']): ?>
+            <div id="contact"><?php print render($page['contact']); ?></div>
+          <?php endif; ?>          
+        </div>
+        <div style="display:table-cell;width:33%;">
+          <?php if ($page['search']): ?>
+            <div id="search"><?php print render($page['search']); ?></div>
+          <?php endif; ?> 
+        </div>
+      </div>
+    </footer> 
 
     </div>
    <div class="childrenGrass">
