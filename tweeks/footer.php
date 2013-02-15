@@ -28,7 +28,7 @@
         <!--Content-->
         <div  style="border-spacing: .2em;">
           <div class="linearAnimate td" style="width: 150px; vertical-align: top; font-size: 1.1em;">
-            <div id="MA" class="locationHover smoothAnimate">
+            <div id="MA" class="smoothAnimate">
               Main
             </div>
             <div class="locationBoxInfoLocation">
@@ -38,7 +38,7 @@
             <div><a title="Email address" href="mailto:reference@lapcat.org">reference@lapcat.org</a></div>
             </div>
           </div>
-          <div id="locationDisplay" class="td" style="height: 145px; font-size: 1em;width:100%">
+          <div class="td" style="height: 145px; font-size: 1em;width:100%">
             <div class="locationBoxMap" style="width:100%">
               <a title="View Main Library in Google Maps" style="max-width:400px;display:block;background-size:cover;margin-right:5px;height:200px;width:100%;background:url('http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&amp;zoom=14&amp;size=400x300&amp;maptype=roadmap&amp;markers=icon:http://dev.lapcat.org/mapLogo.png|label:S|41.609126,-86.721036&amp;sensor=false') 50%" class="roundAll3 color3 insideBoxShadow outsideBoxShadow map" href="http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&amp;msa=0&amp;iwloc=00049f186aedafe3350d0"></a>
             </div>

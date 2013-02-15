@@ -64,6 +64,9 @@
         <div class="navBoxGroup grid_4 pull_20" style="" >
           <!-- Right Colmn -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="smoothAnimate" href="research">Research</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="Downloads">Downloads</a>
           </div>  
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
@@ -76,10 +79,7 @@
             <a class="smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="greatpicks" >Great Picks</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="help">Help</a>
+            <a class="smoothAnimate" href="hours" >Hours</a>
           </div>
         </div>        
       </nav>  
@@ -108,7 +108,7 @@
        <div class="clear"></div>
     </div> <!-- end of main content-->
   </div>
-  <footer style="margin-top:30px;margin-right:0px">
+  <footer class="container_24" style="margin-top:150px;" align="center">
     <div class="outSideBoxShadow color160" style="width:100%;display:table;bottom:0px;position:relative">
       <div style="display:table-cell;width:33%;"> <!--Links-->
         <div>

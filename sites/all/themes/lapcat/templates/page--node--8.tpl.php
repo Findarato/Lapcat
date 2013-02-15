@@ -78,27 +78,27 @@
           <?php endif; ?>
         </aside>
       </div> <!-- end of main content-->
-    <footer class="grid_24" style="margin-top:10px;margin-right:0px">
-      <div class="outSideBoxShadow color4" style="width:100%;display:table;bottom:0px;position:relative">
-        <div style="display:table-cell;width:33%;"> <!--Links-->
-          <div>
-            <?php if ($page['pageLinks']): ?>
-              <div id="pageLinks"><?php print render($page['pageLinks']); ?></div>
-            <?php endif; ?>
-          </div>
-        </div>
-        <div style="display:table-cell;width:33%;">
-          <?php if ($page['contact']): ?>
-            <div id="contact"><?php print render($page['contact']); ?></div>
-          <?php endif; ?>          
-        </div>
-        <div style="display:table-cell;width:33%;">
-          <?php if ($page['search']): ?>
-            <div id="search"><?php print render($page['search']); ?></div>
-          <?php endif; ?> 
+    </div>
+    <footer class="container_24 " style="margin-top:150px;" align="center">
+    <div class="outSideBoxShadow color1  grid_24" style="width:100%;display:table;bottom:0px;position:relative;padding-left:5px;padding-right:5px;">
+      <div style="display:table-cell;width:33%;"> <!--Links-->
+        <div>
+          <?php if ($page['pageLinks']): ?>
+            <div id="pageLinks"><?php print render($page['pageLinks']); ?></div>
+          <?php endif; ?>
         </div>
       </div>
-    </footer> 
+      <div style="display:table-cell;width:33%;">
+        <?php if ($page['contact']): ?>
+          <div id="contact"><?php print render($page['contact']); ?></div>
+        <?php endif; ?>          
+      </div>
+      <div style="display:table-cell;width:33%;">
+        <?php if ($page['search']): ?>
+          <div id="search"><?php print render($page['search']); ?></div>
+        <?php endif; ?> 
+      </div>
     </div>
+  </footer>   
   </div>
 <script src="<?php print $base_path . $directory .'/js/research.js'; ?>" type="text/javascript"></script>

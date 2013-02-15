@@ -87,7 +87,9 @@
       </aside>
        <div class="clear"></div>
     </div> <!-- end of main content-->
-    <footer class="grid_24" style="margin-top:10px;margin-right:0px">
+  </div>
+  
+    <footer class="" style="margin-top:150px;margin-right:0px">
       <div class="outSideBoxShadow color4" style="width:100%;display:table;bottom:0px;position:relative">
         <div style="display:table-cell;width:33%;"> <!--Links-->
           <div>
@@ -107,5 +109,4 @@
           <?php endif; ?> 
         </div>
       </div>
-    </footer> 
-  </div>   
+    </footer>
