@@ -61,7 +61,6 @@
             </div>
           </div>
         </div>
-        
         <!--end of cool testing stuff-->      
         <div class="clear"></div>   
         <section id="mainContent" class="grid_16">
