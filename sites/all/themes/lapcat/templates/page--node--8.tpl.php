@@ -79,7 +79,7 @@
       </div> <!-- end of main content-->
     </div>
     <footer class="container_24 " style="margin-top:150px;" align="center">
-    <div class="outSideBoxShadow color1  grid_24" style="width:100%;display:table;bottom:0px;position:relative;padding-left:5px;padding-right:5px;">
+    <div class="outSideBoxShadow color1 grid_24" style="width:100%;display:table;bottom:0px;position:relative;padding-left:5px;padding-right:5px;">
       <div style="display:table-cell;width:33%;"> <!--Links-->
         <div>
           <?php if ($page['pageLinks']): ?>

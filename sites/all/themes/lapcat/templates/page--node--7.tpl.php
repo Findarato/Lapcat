@@ -4,6 +4,23 @@
 .childrenTree{
   background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
   background-repeat:no-repeat;
+  bottom:-59px;
+  z-index:3; 
+}
+.treeShadow{
+  width:10em;
+  height:25px;
+  position: absolute;
+  bottom:44px;
+  right:25px;
+  z-index:2;
+  border-radius: 50%;
+  background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%, rgba(0,0,0,0.45) 36%, rgba(0,0,0,0) 77%, rgba(0,0,0,0) 97%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(0,0,0,0.45)), color-stop(36%,rgba(0,0,0,0.45)), color-stop(77%,rgba(0,0,0,0)), color-stop(97%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* IE10+ */
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* W3C */
 }
 .childrenSun{
   background-image: url('<?php print $base_path . $directory .'/images/sun.svg'; ?>');
@@ -12,7 +29,6 @@
 }
 .childrenGrass{
   background-image: url('<?php print $base_path . $directory .'/images/img.png'; ?>');
-  background-position: 0 -427px;
 }
 .subPageHeader{ 
   background:rgba(250,250,250,.6); 
@@ -42,6 +58,13 @@
 .sprite-sesamestreet{ background-position: 0 -1888px; width: 100px; height: 100px; } 
 .sprite-youtube{ background-position: 0 -1993px; width: 115px; height: 50px; } 
   
+  
+  
+  #pageLinks li{
+    display:inline-block;
+    font-size:1.3em;
+    padding:3px;
+  }
 </style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
@@ -126,22 +149,33 @@
     </div>
   <div class="childrenGrass" style="margin-top:150px;">
     <div class="childrenTree linearAnimate"></div>
-  </div>
-  <footer style="margin-top:0px;margin-right:0px;background-color:#bcd754">
+    <div class="treeShadow"></div>
+  </div> 
+  <footer class="color5" style="margin-top:0px;margin-right:0px;">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">
-      <div style="display:table-cell;width:33%;"> <!--Links-->
+      <div style="width:67%;"> <!--Links-->
         <div>
+          
           <?php if ($page['pageLinks']): ?>
-            <div id="pageLinks"><?php print render($page['pageLinks']); ?></div>
+            <div id="pageLinks" ><?php //print render($page['pageLinks']); ?>
+            <ol>
+              <li><a href="/children">Children</a></li>
+              <li><a href="/teens">Teens</a></li>
+              <li><a href="/research">Research</a></li>
+              <li><a href="/employment">Employment</a></li>
+              <li><a href="/hours">Hours</a></li> 
+              <li><a href="/greatpicks">Great Picks</a></li>
+              <li><a href="http://genealogy.lapcat.org">Genealogy</a></li>
+              <li><a href="/request">Request a Purchase</a></li>
+              <li><a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a></li>
+              <li><a href="/friends">Friends of The Library</a></li>
+              <li><a href="/educators">Educators</a></li>
+            </ol>
+            </div>
           <?php endif; ?>
         </div>
       </div>
-      <div style="display:table-cell;width:33%;">
-        <?php if ($page['contact']): ?>
-          <div id="contact"><?php print render($page['contact']); ?></div>
-        <?php endif; ?>          
-      </div>
-      <div style="display:table-cell;width:33%;">
+      <div style="width:33%;">
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 

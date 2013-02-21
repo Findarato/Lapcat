@@ -96,6 +96,15 @@ $(document).ready(function(){
   //  $(".subPageHeader").addClass(title.replace(/ /g,""));
  // }
 
+
+  $(".linkIcon a[href^='http'] ").each(function() {
+      $(this).css({
+          background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
+          "padding-left": "20px"
+      });
+  });
+
+
     //gapi.plusone.render();
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0){// this is the research page
