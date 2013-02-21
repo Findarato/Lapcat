@@ -57,14 +57,6 @@
 .sprite-funbrain{ background-position: 0 -1783px; width: 100px; height: 100px; } 
 .sprite-sesamestreet{ background-position: 0 -1888px; width: 100px; height: 100px; } 
 .sprite-youtube{ background-position: 0 -1993px; width: 115px; height: 50px; } 
-  
-  
-  
-  #pageLinks li{
-    display:inline-block;
-    font-size:1.3em;
-    padding:3px;
-  }
 </style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
@@ -151,13 +143,13 @@
     <div class="childrenTree linearAnimate"></div>
     <div class="treeShadow"></div>
   </div> 
-  <footer class="color5" style="margin-top:0px;margin-right:0px;">
+  <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">
-      <div style="width:67%;"> <!--Links-->
+      <div style="width:80%;float:left;"> <!--Links-->
         <div>
-          
           <?php if ($page['pageLinks']): ?>
             <div id="pageLinks" ><?php //print render($page['pageLinks']); ?>
+              <h2>Site Links</h2>
             <ol>
               <li><a href="/children">Children</a></li>
               <li><a href="/teens">Teens</a></li>
@@ -175,7 +167,8 @@
           <?php endif; ?>
         </div>
       </div>
-      <div style="width:33%;">
+      <div style="width:20%;float:right;text-align:left;">
+        <h2>Social Library</h2>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 

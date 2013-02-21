@@ -294,6 +294,19 @@ input[type="submit"]{
   color:@colorDark;
 }
 
+  
+#pageLinks li{
+  display:inline-block;
+  font-size:1.3em;
+  padding:3px;
+  a{
+    color:@colorLight60;    
+  }
+}  
+  
+
+
+
 /* Articles */
 
 .socialLinks{
@@ -303,21 +316,6 @@ input[type="submit"]{
     display:inline-block;
     position:relative;
     top:-6px;
-  }
-  .facebook{
-    a{
-      color:blue;
-    }
-  }  
-  .twitter{
-    a{
-        color:#00C8FA;
-      }
-  }
-  .googleplus{
-    a{
-      color:red;
-    }
   }
 }
 
@@ -696,24 +694,13 @@ li{
 
 
 footer {
+  z-index:20;
   .socialLinks{
     opacity:.9;
     font-size:3em;    
   }
-  .facebook{
-    a{
-      color:blue;
-    }
-  }  
-  .twitter{
-    a{
-      color:#00C8FA;
-    }
-  }
-  .googleplus{
-    a{
-      color:red;
-    }
+  a{
+    color:@colorDark;
   }
   *{
   vertical-align:top;
