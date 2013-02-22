@@ -89,24 +89,18 @@
     </div> <!-- end of main content-->
   </div>
   
-    <footer class="" style="margin-top:150px;margin-right:0px">
-      <div class="outSideBoxShadow color4" style="width:100%;display:table;bottom:0px;position:relative">
-        <div style="display:table-cell;width:33%;"> <!--Links-->
-          <div>
-            <?php if ($page['pageLinks']): ?>
-              <div id="pageLinks"><?php print render($page['pageLinks']); ?></div>
-            <?php endif; ?>
-          </div>
-        </div>
-        <div style="display:table-cell;width:33%;">
-          <?php if ($page['contact']): ?>
-            <div id="contact"><?php print render($page['contact']); ?></div>
-          <?php endif; ?>          
-        </div>
-        <div style="display:table-cell;width:33%;">
-          <?php if ($page['search']): ?>
-            <div id="search"><?php print render($page['search']); ?></div>
-          <?php endif; ?> 
-        </div>
+  <footer class="color5" style="margin-top:150px;margin-right:0px;z-index: 10;"> 
+    <div class="" style="width:100%;bottom:0px;position:relative">
+      <div class="footerLeft"> <!--Links-->
+        <?php if ($page['pageLinks']): ?>
+          <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
+        <?php endif; ?>
       </div>
-    </footer>
+      <div class="footerRight">
+        <h2>Social Library</h2>
+        <?php if ($page['search']): ?>
+          <div id="search"><?php print render($page['search']); ?></div>
+        <?php endif; ?> 
+      </div>
+    </div>
+  </footer>

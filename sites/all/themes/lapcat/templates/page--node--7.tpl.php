@@ -4,7 +4,6 @@
 .childrenTree{
   background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
   background-repeat:no-repeat;
-  bottom:-59px;
   z-index:3; 
 }
 .treeShadow{
@@ -145,29 +144,14 @@
   </div> 
   <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">
-      <div style="width:80%;float:left;"> <!--Links-->
+      <div class="footerLeft"> <!--Links-->
         <div>
           <?php if ($page['pageLinks']): ?>
-            <div id="pageLinks" ><?php //print render($page['pageLinks']); ?>
-              <h2>Site Links</h2>
-            <ol>
-              <li><a href="/children">Children</a></li>
-              <li><a href="/teens">Teens</a></li>
-              <li><a href="/research">Research</a></li>
-              <li><a href="/employment">Employment</a></li>
-              <li><a href="/hours">Hours</a></li> 
-              <li><a href="/greatpicks">Great Picks</a></li>
-              <li><a href="http://genealogy.lapcat.org">Genealogy</a></li>
-              <li><a href="/request">Request a Purchase</a></li>
-              <li><a href="https://catalog.lapcat.org/webapp/iii/ecom/donate.do">Donate</a></li>
-              <li><a href="/friends">Friends of The Library</a></li>
-              <li><a href="/educators">Educators</a></li>
-            </ol>
-            </div>
+            <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
           <?php endif; ?>
         </div>
       </div>
-      <div style="width:20%;float:right;text-align:left;">
+      <div class="footerRight">
         <h2>Social Library</h2>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>

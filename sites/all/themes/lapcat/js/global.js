@@ -124,13 +124,6 @@ $(document).ready(function(){
         } 
       }
     }
-    
-  $(".locationHover")
-    .mouseenter(function(){displayLocation($(this).attr("id"),$("#locationDisplay"));})
-    .mouseleave(function(){});
-  //This makes sure something is being shown
-  
-  displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));
 });
 
 

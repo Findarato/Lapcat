@@ -106,6 +106,7 @@
     top:-.8em;
     float:right;
   }
+
 }
 @media only screen and (min-width:12.5em){ /*everything should be here*/
   .mainArea{
@@ -153,19 +154,23 @@
     right:1em;
     font-size:1.5em;
   }
-  .siteMap{
-    width:100%;
-    .secondNav{
-      width:100%;
-      display:inline-block;
-    }
-    a{
-      display:block;
-    }  
-  }
   .navDisplay{
     height:auto;
   } 
+  footer {
+    height:auto;
+    .footerLeft{
+      width:100%;
+      float:none;
+      display:inline-block;
+    }
+    .footerRight{
+      width:100%;
+      float:none; 
+      display:inline-block;
+    }
+  } 
+
 }
 
 /* ==|== print styles ======================================================= */

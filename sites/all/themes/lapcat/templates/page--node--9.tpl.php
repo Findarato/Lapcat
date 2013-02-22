@@ -8,6 +8,7 @@
   .childrenTree{
     background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
     background-repeat:no-repeat;
+    bottom:33px;
   }  
   
   .flickrImageTitle{
@@ -51,6 +52,11 @@
     box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
   }
   .mainArea{z-index: 10;position:relative;}
+  .childrenGrass{
+    background-image: url('<?php print $base_path . $directory .'/images/lowResGrass.png'; ?>');
+    background-size:contain;
+    height:100px;
+  }
 </style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
@@ -136,25 +142,21 @@
    <div class="childrenGrass" style="margin-top:150px;">
       <div class="childrenTree linearAnimate"></div>
    </div>
-  <footer style="margin-top:0px;margin-right:0px;">
+  <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">
-      <div style="display:table-cell;width:33%;"> <!--Links-->
+      <div class="footerLeft"> <!--Links-->
         <div>
           <?php if ($page['pageLinks']): ?>
-            <div id="pageLinks"><?php print render($page['pageLinks']); ?></div>
+            <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div> 
           <?php endif; ?>
         </div>
       </div>
-      <div style="display:table-cell;width:33%;">
-        <?php if ($page['contact']): ?>
-          <div id="contact"><?php print render($page['contact']); ?></div>
-        <?php endif; ?>          
-      </div>
-      <div style="display:table-cell;width:33%;">
+      <div class="footerRight">
+        <h2>Social Library</h2>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 
       </div>
     </div>
-  </footer>     
+  </footer>  
   </div>
