@@ -30,7 +30,7 @@ button,a.button,.button,.selectButton{cursor:pointer;padding:3px;white-space:now
 .roundTop3{border-top-left-radius:3px;border-top-right-radius:3px;-webkit-border-top-left-radius:3px;-webkit-border-top-right-radius:3px;}
 .corners-top-left-3{border-top-left-radius:4px;-webkit-border-top-left-radius:4px;}
 .corners-top-right-3{border-top-right-radius:4px;-webkit-border-top-right-radius:4px;}
-body,html{margin:0px;padding:0px;height:100%;color:#1d1d1d;font-size:13px;}
+body,html{margin:0px;padding:0px;height:105%;color:#1d1d1d;font-size:13px;}
 a,a:hover,a:visited,a:focus{color:#5f3e12;text-decoration:none;font-weight:normal;}
 h1,h2,h3,h4{margin:2px;color:#5f3e12;text-align:left;font-family:sans-serif;}
 h1{font-size:2.5em;font-weight:bold;color:#1d1d1d;}
@@ -151,7 +151,7 @@ li{list-style:none outside none;}
 @keyframes spinSun{0%{transform:rotate(0);} 100%{transform:rotate(360deg);}}@-ms-keyframes spinSun{0%{transform:rotate(0);} 100%{transform:rotate(360deg);}}@-moz-keyframes spinSun{0%{-moz-transform:rotate(0);} 100%{-moz-transform:rotate(360deg);}}@-webkit-keyframes spinSun{0%{-webkit-transform:rotate(0);} 100%{-webkit-transform:rotate(360deg);}}.childrenGrass{width:100%;z-index:1;position:relative;background-position-y:0;height:98px;}
 #pageHeader{margin-bottom:15px;}
 .element-invisible{display:none;}
-footer{z-index:20;height:16em;}footer .socialLinks{opacity:.9;font-size:3em;height:1.3em;}footer .socialLinks a{text-shadow:0px 2px 4px #5f3e12,0 0 0 #000000,0px 2px 4px #5f3e12;color:rgba(0, 0, 0, 0.3);}
+footer{z-index:20;height:16em;position:absolute;width:100%;}footer .socialLinks{opacity:.9;font-size:3em;height:1.3em;}footer .socialLinks a{text-shadow:0px 2px 4px #5f3e12,0 0 0 #000000,0px 2px 4px #5f3e12;color:rgba(0, 0, 0, 0.3);}
 footer *{vertical-align:top;}
 footer .footerLeft{width:80%;float:left;}
 footer .footerRight{width:20%;float:right;}
@@ -160,4 +160,4 @@ footer #search-block-form .form-text{width:10em;}
 footer #search-block-form input{color:#1d1d1d;height:1.5em;background:rgba(255, 255, 255, 0.3);border-radius:3px;-webkit-border-radius:3px;}
 #pageLinks li{font-size:1.3em;padding:3px;}#pageLinks li a{color:rgba(241, 241, 241, 0.6);}
 aside div,section div,.smallSection,.middleSection,.mediumSection{margin-bottom:10px;}
-.region div *:not(article),.region div *:not(.blogBox),.region div *:not(.divider),.element-invisible{margin-bottom:0px;}
+.region div:not(article),.region div:not(".blogBox"),.region div *:not(.divider),.element-invisible{margin-bottom:0px;}

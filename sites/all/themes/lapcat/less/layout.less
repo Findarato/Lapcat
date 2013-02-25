@@ -5,7 +5,7 @@
 body,html {
   margin:0px;
   padding:0px; 
-  height:100%;
+  height:105%;
   color:@colorDark;
   font-size:13px;
 }
@@ -690,6 +690,8 @@ li{
 footer {
   z-index:20;
   height:16em;
+  position:absolute;
+  width:100%;
   .socialLinks{
     opacity:.9;
     font-size:3em;
@@ -748,8 +750,8 @@ footer {
 aside div,section div,.smallSection,.middleSection,.mediumSection{
   margin-bottom:10px;
 }
-.region div *:not(article),
-.region div *:not(.blogBox),
+.region div:not(article),
+.region div:not(".blogBox"),
 .region div *:not(.divider),
 .element-invisible{
   margin-bottom:0px;
