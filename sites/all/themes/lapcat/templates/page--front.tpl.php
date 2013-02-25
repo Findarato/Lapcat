@@ -64,9 +64,6 @@
         <div class="navBoxGroup grid_4 pull_20" style="" >
           <!-- Right Colmn -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="research">Research</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="Downloads">Downloads</a>
           </div>  
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
@@ -80,6 +77,9 @@
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="hours" >Hours</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="smoothAnimate" href="greatpicks">Great Picks</a>
           </div>
         </div>        
       </nav>  

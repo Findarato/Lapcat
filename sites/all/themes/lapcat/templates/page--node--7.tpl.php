@@ -32,7 +32,8 @@
   height:130px;
 }
 .subPageHeader{ 
-  background:rgba(250,250,250,.6); 
+  background:rgba(250,250,250,.6);
+  background-image: url('<?php print $base_path . $directory .'/images/kidsHeader.png'; ?>');  
 }
  .childrenLinks ul li{display:inline-block;}
  .mainArea{z-index: 10;position:relative;}
