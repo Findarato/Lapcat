@@ -5,13 +5,14 @@
   background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
   background-repeat:no-repeat;
   z-index:3; 
+  right:-93px;
 }
 .treeShadow{
   width:10em;
   height:25px;
   position: absolute;
   bottom:44px;
-  right:25px;
+  right:22px;
   z-index:2;
   border-radius: 50%;
   background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%, rgba(0,0,0,0.45) 36%, rgba(0,0,0,0) 77%, rgba(0,0,0,0) 97%); /* FF3.6+ */
@@ -28,6 +29,7 @@
 }
 .childrenGrass{
   background-image: url('<?php print $base_path . $directory .'/images/img.png'; ?>');
+  height:130px;
 }
 .subPageHeader{ 
   background:rgba(250,250,250,.6); 
@@ -136,7 +138,7 @@
             </div>
           <?php endif; ?>
         </aside>
-      </div> <!-- end of main content-->
+      </div> <!-- end of main content--> 
     </div>
   <div class="childrenGrass" style="margin-top:150px;">
     <div class="childrenTree linearAnimate"></div>
