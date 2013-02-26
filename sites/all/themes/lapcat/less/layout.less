@@ -502,21 +502,22 @@ li{
 	background:#FFF;
 }
 .mainContentBox{
+  background:#FFF;
+  height:436px;
+  margin-right:10px;
 	position:relative;
-	height:436px;
 	width:100%;
-	background:#FFF;
-	margin-right:10px;
 }
 #greatPicksContainerBox .rssItem img{
 	width:100px;
 }
 .blogBox,.blogContainerBox,.containerBox,.bookBox,.box,body{
-	position:relative;
-	background:@colorLight url("images/grey.png");
-	min-height:100px;
+  background:        @colorLight url("images/grey.png");
+  min-height:        100px;
+	position:          relative;
 }
-.blogContainerBox, .deliciousContainer, .containerBox {
+.blogContainerBox,.containerBox {
+  margin-bottom:    1em;
   padding:          30px 5px 5px 5px;
 }
 
@@ -532,7 +533,7 @@ li{
 .subTitleElement a.selected{
 	margin-left:3px;
 }
-.twitterFeedTitle,.mainContentTitle,.blogTitle,.deliciousFeedTitle,.eventFeedTitle,.titleElement{
+.twitterFeedTitle,.mainContentTitle,.blogTitle,.eventFeedTitle,.titleElement{
 	cursor:pointer;
 	padding:6px;
 	position:absolute;
@@ -543,7 +544,7 @@ li{
 	z-index:5;
 }
 
-.twitterFeedTitle,.deliciousFeedTitle,.blogTitle,.titleElement{
+.twitterFeedTitle,.blogTitle,.titleElement{
 	left:0px;
 	right:auto;
 	top:-5px;
@@ -743,16 +744,4 @@ footer {
   a{
     color:@colorLight60;    
   }
-}
-
-
-
-aside div,section div,.smallSection,.middleSection,.mediumSection{
-  margin-bottom:10px;
-}
-.region div:not(article),
-.region div:not(".blogBox"),
-.region div *:not(.divider),
-.element-invisible{
-  margin-bottom:0px;
 }

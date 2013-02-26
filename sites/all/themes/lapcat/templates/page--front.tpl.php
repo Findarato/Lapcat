@@ -41,7 +41,7 @@
       <nav class="navDisplay">
         <div class="grid_20 push_4" style="position:relative">
           <div class="mainCatalogSearch">
-            <form method="get" action="http://catalog.lapcat.org/search/X?" class="catalogNav smoothAnimate">
+            <form method="get" action="https://catalog.lapcat.org:444/search/X?" class="catalogNav smoothAnimate">
                 <select class="smoothAnimate" name="searchtype">
                   <option value="X" >KEYWORD</option>
                   <option value="t" selected="selected">TITLE</option>

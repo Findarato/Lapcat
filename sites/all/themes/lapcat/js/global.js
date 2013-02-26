@@ -95,21 +95,21 @@ $(document).ready(function(){
   //if(title = $("#page-title").text()){
   //  $(".subPageHeader").addClass(title.replace(/ /g,""));
  // }
-
-
-  $(".linkIcon a[href^='http'] ").each(function() {
-      $(this).css({
-          background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
-          "padding-left": "20px"
-      });
-  });
-
-
-    //gapi.plusone.render();
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0){// this is the research page
+      $.getScript("/sites/all/themes/lapcat/js/research.js", function(data, textStatus, jqxhr) {
+      });
+      $(".linkIcon a[href^='http'] ").each(function() {
+          $(this)
+          .css({
+              background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
+              "padding-left": "20px",
+              "background-size":"16px 16px"
+          });
+      });
+
     }else{
-      if(uri.search(/teens/i)>0){// this is the teens page
+      if(uri.search(/teens/i)>0){// this is the teens page 
         displayFlickr("teens");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page

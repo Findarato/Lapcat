@@ -130,5 +130,66 @@ var locations={
       }
 };
 
+function displayLocation(locationCode,domElementSelector){
+  var today = new Date();
+  var dayOfWeek = today.getDay();
+  domElementSelector
+    .empty()
+    .append(
+      $("<div/>",{css:{"text-align":"left", "height":"auto", "float":"left"}})
+      .append(
+        $("<div/>",{css:{margin:0}})
+          .html(
+            $("<span/>",{title:locations[locationCode].name}).html(locations[locationCode].name)  
+          )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"address"}).html(locations[locationCode].street) 
+            )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"city state"}).html(locations[locationCode].cityState) 
+            )
+        )
+        .append(
+          $("<span/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"zip code"}).html(locations[locationCode].zip) 
+            )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"phone number"}).html(locations[locationCode].phone) 
+            )
+        )
+        .append(
+          $("<div/>",{css:{margin:0}})
+            .html(
+              $("<span/>",{title:"email address"}).html(locations[locationCode].email)  
+            )
+        )
+    )
+    
+    
+    for(var a=1;a<=6;a++){
+      var timeHolder = $("#timeContainer"+a);
+      timeHolder.html(locations[locationCode]["time"+a]);
+        if(dayOfWeek == a){
+          $("#dayBox"+a).addClass("color1").removeClass("color4")
+        }
+    }
+    
+}
 
-
+$(document).ready(function(){
+  $(".locationHover")
+    .mouseenter(function(){displayLocation($(this).attr("id"),$("#locationDisplay"));})
+    .mouseleave(function(){});
+  //This makes sure something is being shown
+  displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));
+});

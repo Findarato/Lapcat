@@ -104,7 +104,7 @@
           </div>
           <div class="subPageCatalogSearch insideBoxShadow">
             <div class="catalog ">
-              <form method="get" action="http://catalog.lapcat.org/search/~/a?a">
+              <form method="get" action="https://catalog.lapcat.org:444/search/~/a?a">
                 <div style="display:table">
                   <div style="display:table-cell">
                     <select name="searchtype">
