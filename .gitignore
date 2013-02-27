@@ -7,3 +7,4 @@ sites/*/private
 sites/default/settings.php
 settings.php
 *.sh
+.settings/*

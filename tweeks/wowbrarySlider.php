@@ -1,3 +1,4 @@
+header("Content-Type: text/xml");                      // Set the content type appropriately
 <?Php
   echo '<?xml version="1.0" encoding="UTF-8"?>';
   $c="TEE";//Default value to get 
@@ -21,7 +22,7 @@
        <height>57</height>
        <description>Click here to provide feedback and ask questions about this RSS feed</description>
    </image>
-<?Php
+<?Php 
 //http://www.wowbrary.org/rss.aspx?l=8711&c=TEE
 
 
@@ -72,7 +73,6 @@ foreach($feed->get_items(0) as $item) {
   $count++; 
  
 }
-header("Content-Type: text/xml");                      // Set the content type appropriately
 foreach($b as $item){
   echo "<item>";
     foreach($item as $k=>$i){
