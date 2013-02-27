@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="navBoxGroup grid_4 pull_20" style="" >
-          <!-- Right Colmn -->
+          <!-- Right Column -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="Downloads">Downloads</a>
           </div>  
