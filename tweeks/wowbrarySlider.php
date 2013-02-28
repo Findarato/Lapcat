@@ -1,5 +1,5 @@
-header("Content-Type: text/xml");                      // Set the content type appropriately
 <?Php
+  header("Content-Type: text/xml");                      // Set the content type appropriately
   echo '<?xml version="1.0" encoding="UTF-8"?>';
   $c="TEE";//Default value to get 
   if(isset($_GET["c"])){
