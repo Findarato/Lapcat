@@ -99,15 +99,6 @@ $(document).ready(function(){
     if(uri.search(/research/i)>0){// this is the research page
       $.getScript("/sites/all/themes/lapcat/js/research.js", function(data, textStatus, jqxhr) {
       });
-      $(".linkIcon a[href^='http'] ").each(function() {
-          $(this)
-          .css({
-              background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
-              "padding-left": "20px",
-              "background-size":"16px 16px"
-          });
-      });
-
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
         displayFlickr("teens");
@@ -124,6 +115,19 @@ $(document).ready(function(){
         } 
       }
     }
+    
+    //Getting fav icons for all the links that have the class linkIcon
+  $(".linkIcon a[href^='http'] ").each(function() {
+      $(this)
+      .css({
+          background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
+          "padding-left": "20px",
+          "background-size":"16px 16px"
+      });
+  });
+
+
+
 });
 
 

@@ -44,7 +44,7 @@ h4{font-size:1.8em;}
 .outSideBoxShadow,.divider{box-shadow:0 0 1px 1px rgba(36, 36, 36, 0.3);-moz-box-shadow:0 0 1px 1px rgba(36, 36, 36, 0.3);-webkit-box-shadow:0 0 1px 1px rgba(36, 36, 36, 0.3);}
 .divider{width:85%;height:1px;margin:0 auto;background:rgba(36, 36, 36, 0.3);}
 .boardMember{padding:5px;}.boardMember .name{font-size:1.2em;font-weight:bold;}
-.mainArea{padding:125px 5px 20px 5px;background-color:#e7f2e6;-webkit-box-shadow:inset 0 0 1px 1px rgba(36, 36, 36, 0.3);box-shadow:inset 0 0 1px 1px rgba(36, 36, 36, 0.3);}
+.mainArea{padding:125px 5px 20px 5px;background-color:#e7f2e6;-webkit-box-shadow:inset 0 0 1px 1px rgba(36, 36, 36, 0.3);box-shadow:inset 0 0 1px 1px rgba(36, 36, 36, 0.3);min-height:600px;}
 .mainBorder,.mainBorder60{border:1px solid #aaaaaa;}
 .mainBorder60{border:1px solid rgba(170, 170, 170, 0.6);}
 ::-moz-selection{background:#ccffff;color:#1d1d1d;text-shadow:none;}
