@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * This module add's an addition field to your display and gives you the unique possibility to re-use views templates
+ *
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function views_custom_template_views_api() {
+  return array(
+    'version' => 3,
+  );
+}
+
+/**
+ * Preprocess function to render certain elements into the view.
+ */
+function template_preprocess_views_custom_template(&$vars) {
+  // Current theme hook pattern (from the theme registry alter).
+  if (isset($vars['views_custom_template_theme_hook_pattern'])) {
+    $view = $vars['view'];
+    $pattern = $vars['views_custom_template_theme_hook_pattern'];
+
+    // Template suggestion added in the display settings.
+    $template_suggestion = $view->display_handler->get_option('template_suggestion');
+    if ($template_suggestion && trim($template_suggestion)) {
+      $template_suggestion = _format_views_custom_template_suggestion($template_suggestion);
+
+      // Might be overridden already.
+      $is_overridden = !empty($vars['theme_hook_suggestion']);
+
+      // Only change the template if it's not overridden already.
+      if (!$is_overridden) {
+        $vars['theme_hook_suggestion'] = $pattern . $template_suggestion;
+      }
+    }
+  }
+}
+
+/**
+ * Helper function for filtering suggestion
+ */
+function _format_views_custom_template_suggestion($template_suggestion) {
+  return trim(preg_replace('/[^a-z0-9_]+/', '_', strtolower(trim((string) $template_suggestion))), '_');
+}
+
+/**
+ * Implementation of hook_theme_registry_alter().
+ */
+function views_custom_template_theme_registry_alter(&$theme_registry) {
+  // Find interesting Views 'templates'.
+  foreach ($theme_registry as $hook => &$info) {
+    // Must be views, but only unspecific/default.
+    if (0 === strpos($hook, 'views_view') && !is_int(strpos($hook, '__'))) {
+      // Must be extensible.
+      if (!empty($info['pattern']) && !empty($info['template'])) {
+        $info['preprocess functions'][] = 'template_preprocess_views_custom_template';
+        $info['variables']['views_custom_template_theme_hook_pattern'] = $info['pattern'];
+      }
+    }
+    unset($info);
+  }
+
+}

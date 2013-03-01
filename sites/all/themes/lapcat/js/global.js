@@ -96,9 +96,8 @@ $(document).ready(function(){
   //  $(".subPageHeader").addClass(title.replace(/ /g,""));
  // }
     /* Lets load the correct delicious feed */
-    if(uri.search(/research/i)>0){// this is the research page
-      $.getScript("/sites/all/themes/lapcat/js/research.js", function(data, textStatus, jqxhr) {
-      });
+    if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
+      $.getScript("/sites/all/themes/lapcat/js/research.js");
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
         displayFlickr("teens");
@@ -108,9 +107,8 @@ $(document).ready(function(){
           if(uri.search(/greatpicks/i)>0){// this is the teens page
           }else{//if all else fails lets just load a local rss feed
             if(uri.search(/educators/i)>0){// this is the teens page
-              }else{//if all else fails lets just load a local rss feed
-
-              }
+            }else{//if all else fails lets just load a local rss feed
+            }
           }
         } 
       }
