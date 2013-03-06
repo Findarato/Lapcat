@@ -214,3 +214,8 @@ ul.inline:after {
 *:first-child + html .clearfix {
   min-height: 1%;
 }
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
