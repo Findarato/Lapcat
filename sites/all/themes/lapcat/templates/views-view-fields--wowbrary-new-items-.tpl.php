@@ -15,13 +15,11 @@
 
 $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"]."&i=".$linkArray["i"]."&u=".$linkArray["u"]."&t=".$linkArray["t"]."&website";
 ?>
-
-    
       <article class="articleItem">
         <div class="t">
           <div class="bookCoverImage td">
             <a style="margin-right:10px;display:inline-block;" href="<?php print $wowbraryClickThough; ?>" title="View Catalog record">
-              <img alt="coverImage" style="border:none;" src="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?php print $isbn; ?>&size=S">
+              <img alt="coverImage" height=120 width=80 style="border:none;" src="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?php print $isbn; ?>&size=S">
             </a>
           </div>
           <div class="td">
