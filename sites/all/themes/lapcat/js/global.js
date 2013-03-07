@@ -89,15 +89,16 @@ function displayFlickr(flickrTag,flickrId){
     });
 }
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();
   //if(title = $("#page-title").text()){
   //  $(".subPageHeader").addClass(title.replace(/ /g,""));
  // }
+    jQuery.getScript("/sites/all/themes/lapcat/js/locations.js");
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
-      $.getScript("/sites/all/themes/lapcat/js/research.js");
+      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
         displayFlickr("teens");
@@ -115,8 +116,8 @@ $(document).ready(function(){
     }
     
     //Getting fav icons for all the links that have the class linkIcon
-  $(".linkIcon a[href^='http'] ").each(function() {
-      $(this)
+  jQuery(".linkIcon a[href^='http'] ").each(function() {
+      jQuery(this)
       .css({
           background: "url(http://g.etfv.co/" + this.href + ") left center no-repeat",
           "padding-left": "20px",
