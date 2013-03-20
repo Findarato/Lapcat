@@ -6,6 +6,7 @@
 .color2,.color260{background:#ddeecc;}.color2 a,.color260 a{color:#f1f1f1;}
 .color260{background:rgba(221, 238, 204, 0.6);}
 .color3{background:#556644;color:#f1f1f1;}.color3 a{color:#f1f1f1;}
+.color3Border1{border:1px solid #556644;}
 .color3Circle{border:2px solid rgba(85, 102, 68, 0.6);display:inline-block;height:1.1em;width:1.1em;text-align:center;color:#556644;border-radius:10px;-webkit-border-radius:10px;}
 .color4,.mainBackground{background:#e7f2e6;}
 .color460{background:rgba(231, 242, 230, 0.6);}
