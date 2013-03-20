@@ -130,52 +130,51 @@ var locations={
       }
 };
 
-function displayLocation(locationCode,domElementSelector){
+function displayLocation(me,domElementSelector){
   var today = new Date();
   var dayOfWeek = today.getDay();
+  locationCode = me.attr("id"); 
   domElementSelector
     .empty()
     .append(
-      jQuery("<div/>",{css:{"text-align":"left", "height":"auto", "float":"left"}})
+      jQuery("<div/>",{"class":"locationDisplay",css:{"text-align":"left", "height":"auto", "float":"left"}})
       .append(
-        jQuery("<div/>",{css:{margin:0}})
+        jQuery("<div/>")
           .html(
             jQuery("<span/>",{title:locations[locationCode].name}).html(locations[locationCode].name)  
           )
         )
         .append(
-          jQuery("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
               jQuery("<span/>",{title:"address"}).html(locations[locationCode].street) 
             )
         )
         .append(
-          jQuery("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
               jQuery("<span/>",{title:"city state"}).html(locations[locationCode].cityState) 
             )
         )
         .append(
-          jQuery("<span/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
               jQuery("<span/>",{title:"zip code"}).html(locations[locationCode].zip) 
             )
         )
         .append(
-          jQuery("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
               jQuery("<span/>",{title:"phone number"}).html(locations[locationCode].phone) 
             )
         )
         .append(
-          jQuery("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
               jQuery("<span/>",{title:"email address"}).html(locations[locationCode].email)  
             )
         )
-    )
-    
-    
+    );
     for(var a=1;a<=6;a++){
       var timeHolder = jQuery("#timeContainer"+a);
       timeHolder.html(locations[locationCode]["time"+a]);
@@ -183,13 +182,15 @@ function displayLocation(locationCode,domElementSelector){
           jQuery("#dayBox"+a).addClass("color1").removeClass("color4")
         }
     }
-    
+    var offset = me.offset();
+    $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show();
 }
 
 jQuery(document).ready(function(){
+  jQuery("body").append($("<div/>",{"class":"highlightSelect smoothAnimate insideBoxShadow roundAll3",css:{"cursor":"default","display":"none","position":"absolute","top":0,"left":0}}))
   jQuery(".locationHover")
-    .mouseenter(function(){displayLocation(jQuery(this).attr("id"),jQuery("#locationDisplay"));})
+    .mouseenter(function(){displayLocation(jQuery(this),jQuery("#locationDisplay"));})
     .mouseleave(function(){});
   //This makes sure something is being shown
-  displayLocation(jQuery(".locationHover").attr("id"),jQuery("#locationDisplay"));
+  displayLocation(jQuery(".locationHover"),jQuery("#locationDisplay"));
 });

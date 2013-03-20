@@ -262,8 +262,6 @@ form #user-login-form{
   }
 }
 
-
-
 .list {
   a{
     display:block;
@@ -273,12 +271,27 @@ form #user-login-form{
 /* Locations  */
 .locationHover{
   margin:       .3em;
-  cursor:       help;
   &:hover{
-      -webkit-box-shadow: inset 0 0 1px 1px @shadow;
-      box-shadow: inset 0 0 1px 1px @shadow;
-    }
+    cursor:default;
+  }
 }
+.highlightSelect:after{
+  content:"";
+  position:absolute;
+  background:@color3;
+  height:100%;
+  width:10px;
+  top:0;
+  right:0;
+  .shadowOut(4px,0,2px,-2px,@shadow);
+}
+.locationDisplay{
+  min-height:146px;
+  min-width:135px;
+  div{
+    margin:.3em;
+  }
+} 
 .dayBox {
   width: 2.4em;
   height: 2.4em;
