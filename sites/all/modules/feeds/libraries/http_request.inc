@@ -77,22 +77,17 @@ function http_request_get_common_syndication($url, $settings = NULL) {
  *   If the URL uses authentication, supply the password.
  * @param bool $accept_invalid_cert
  *   Whether to accept invalid certificates.
- * @param integer $timeout
- *   Timeout in seconds to wait for an HTTP get request to finish.
- *
+
  * @return stdClass
  *   An object that describes the data downloaded from $url.
  */
-function http_request_get($url, $username = NULL, $password = NULL, $accept_invalid_cert = FALSE, $timeout = NULL) {
+function http_request_get($url, $username = NULL, $password = NULL, $accept_invalid_cert = FALSE) {
   // Intra-pagedownload cache, avoid to download the same content twice within
   // one page download (it's possible, compatible and parse calls).
   static $download_cache = array();
   if (isset($download_cache[$url])) {
     return $download_cache[$url];
   }
-
-  // Determine request timeout.
-  $request_timeout = !empty($timeout) ? $timeout : variable_get('http_request_timeout', 30);
 
   if (!$username && valid_url($url, TRUE)) {
     // Handle password protected feeds.
@@ -173,7 +168,7 @@ function http_request_get($url, $username = NULL, $password = NULL, $accept_inva
       curl_setopt($download, CURLOPT_HEADER, TRUE);
       curl_setopt($download, CURLOPT_RETURNTRANSFER, TRUE);
       curl_setopt($download, CURLOPT_ENCODING, '');
-      curl_setopt($download, CURLOPT_TIMEOUT, $request_timeout);
+      curl_setopt($download, CURLOPT_TIMEOUT, variable_get('http_request_timeout', 30));
       if ($accept_invalid_cert) {
         curl_setopt($download, CURLOPT_SSL_VERIFYPEER, 0);
       }
@@ -217,7 +212,7 @@ function http_request_get($url, $username = NULL, $password = NULL, $accept_inva
     }
   }
   else {
-    $result = drupal_http_request($url, array('headers' => $headers, 'timeout' => $request_timeout));
+    $result = drupal_http_request($url, array('headers' => $headers, 'timeout' => variable_get('http_request_timeout', 30)));
   }
 
   $result->code = isset($result->code) ? $result->code : 200;
@@ -233,7 +228,7 @@ function http_request_get($url, $username = NULL, $password = NULL, $accept_inva
       // It's a tragedy, this file must exist and contain good data.
       // In this case, clear cache and repeat.
       cache_clear_all('feeds_http_download_' . md5($url), 'cache');
-      return http_request_get($url, $username, $password, $accept_invalid_cert, $request_timeout);
+      return http_request_get($url, $username, $password);
     }
   }
 

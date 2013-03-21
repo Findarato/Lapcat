@@ -9,21 +9,9 @@
  * Implements hook_rules_event_info().
  */
 function feeds_rules_event_info() {
-  // General events definitions.
-  $info = array(
-    'feeds_before_import' => array(
-      'label' => t('Before importing feed'),
-      'group' => t('Feeds'),
-      'variables' => array('source' => array('type' => 'feeds_source', 'label' => 'Feeds source')),
-    ),
-    'feeds_after_import' => array(
-      'label' => t('After importing feed'),
-      'group' => t('Feeds'),
-      'variables' => array('source' => array('type' => 'feeds_source', 'label' => 'Feeds source')),
-    ),
-  );
-  // Per importer events definitions.
+  $info = array();
   $entity_info = entity_get_info();
+
   foreach (feeds_importer_load_all() as $importer) {
     $config = $importer->getConfig();
     $processor = feeds_plugin($config['processor']['plugin_key'], $importer->id);
@@ -52,7 +40,8 @@ function feeds_rules_event_info() {
     );
     // Add bundle information if the node processor is used.
     if ($processor instanceof FeedsNodeProcessor) {
-      $info['feeds_import_'. $importer->id]['variables'][$entity_type]['bundle'] = $processor->bundle();
+      $config = $processor->getConfig();
+      $info['feeds_import_'. $importer->id]['variables'][$entity_type]['bundle'] = $config['content_type'];
     }
   }
   return $info;
@@ -71,32 +60,6 @@ function feeds_rules_action_info() {
         'entity' => array('type' => 'entity', 'label' => t('The feeds import item to be marked as skipped')),
       ),
       'access callback' => 'feeds_rules_access_callback',
-    ),
-  );
-}
-
-/**
- * Implements hook_rules_data_info().
- */
-function feeds_rules_data_info() {
-  return array(
-    'feeds_source' => array(
-      'label' => t('Feeds source'),
-      'group' => t('Feeds'),
-      'wrap' => TRUE,
-      'property info' => array(
-        'id' => array(
-          'label' => t('ID'),
-          'type' => 'text',
-          'description' => t("The machine readable name of the source importer."),
-        ),
-        'imported' => array(
-          'label' => t('Date imported'),
-          'type' => 'date',
-          'description' => t("The date the source was last imported."),
-        ),
-        // @TODO: fetcher, parser, state ...
-      ),
     ),
   );
 }

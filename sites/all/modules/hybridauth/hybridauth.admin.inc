@@ -25,13 +25,6 @@ function hybridauth_admin_settings() {
     '#theme' => 'hybridauth_admin_settings_providers_table',
   );
   foreach (hybridauth_providers_list() as $provider_id => $provider_name) {
-    $form['vtabs']['fset_providers'][$provider_id] = array(
-      '#item' => $provider_name,
-    );
-    $form['vtabs']['fset_providers'][$provider_id]['id'] = array(
-      '#type' => 'hidden',
-      '#value' => $provider_id,
-    );
     $form['vtabs']['fset_providers'][$provider_id]['icon'] = array(
       '#theme' => 'hybridauth_provider_icon',
       '#provider_id' => $provider_id,
@@ -40,11 +33,11 @@ function hybridauth_admin_settings() {
     $form['vtabs']['fset_providers'][$provider_id]['hybridauth_provider_' . $provider_id . '_enabled'] = array(
       '#type' => 'checkbox',
       '#title' => drupal_placeholder($provider_name),
-      '#default_value' => variable_get('hybridauth_provider_' . $provider_id . '_enabled', FALSE),
+      '#default_value' => variable_get('hybridauth_provider_' . $provider_id . '_enabled', 0),
     );
     $form['vtabs']['fset_providers'][$provider_id]['hybridauth_provider_' . $provider_id . '_weight'] = array(
       '#type' => 'weight',
-      '#title' => t('Weight'),
+      //'#title' => t('Weight'),
       '#delta' => 20,
       '#default_value' => variable_get('hybridauth_provider_' . $provider_id . '_weight', 0),
       '#attributes' => array('class' => array('hybridauth-provider-weight')),
@@ -320,12 +313,12 @@ function theme_hybridauth_admin_settings_providers_table($vars) {
   $header = array(
     array('data' => t('Name'), 'colspan' => 2),
     t('Weight'),
-    array('data' => t('Operations'), 'colspan' => 2),
+    t('Operations'),
   );
   $rows = array();
   
   foreach (element_children($form) as $provider_id) {
-    if (isset($form[$provider_id]['id'])) {
+    if (isset($form[$provider_id]['icon'])) {
       $row = array(
         drupal_render($form[$provider_id]['hybridauth_provider_' . $provider_id . '_enabled']),
         drupal_render($form[$provider_id]['icon']),
@@ -341,7 +334,7 @@ function theme_hybridauth_admin_settings_providers_table($vars) {
   }
   
   //Finally, output the sortable table. Make sure the id variable is the same as the table id in drupal_add_tabledrag
-  $output = theme('table', array('header' => $header, 'rows' => $rows, 'sticky' => FALSE, 'attributes' => array('id' => 'hybridauth-providers')));
+  $output = theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'hybridauth-providers')));
   $output .= drupal_render_children($form);
   
   //This function is the instantiator of the sorter. Make sure the 0th paramater is the id of your table, and the 3rd paramater is the class of your weight variable
@@ -351,11 +344,6 @@ function theme_hybridauth_admin_settings_providers_table($vars) {
 }
 
 function hybridauth_admin_provider_settings($form, &$form_state, $provider_id = NULL) {
-  if (!isset($provider_id)) {
-    drupal_not_found();
-    drupal_exit();
-  }
-  
   $form = array();
   
   switch ($provider_id) {

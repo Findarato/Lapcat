@@ -169,6 +169,12 @@ function hybridauth_schema() {
         'default' => 0,
       ),
     ),
+    'foreign keys' => array(
+      'hybridauth_session_user' => array(
+        'table' => 'users',
+        'columns' => array('uid' => 'uid'),
+      ),
+    ),
     'primary key' => array('uid'),
   );
   
@@ -179,12 +185,14 @@ function hybridauth_schema() {
  * Add hybridauth_session DB table.
  */
 function hybridauth_update_7001(&$sandbox) {
-  $schema = hybridauth_schema();
-  db_create_table('hybridauth_session', $schema['hybridauth_session']);
+  if (!db_table_exists('hybridauth_session')) {
+    $schema = hybridauth_schema();
+    db_create_table('hybridauth_session', $schema['hybridauth_session']);
+  }
 }
 
 /**
  * Set us at schema rev 7000 as a base version.
  */
-function hybridauth_update_7000() {
+function hybridauth_update_7000(&$sandbox) {
 }

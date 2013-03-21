@@ -6,6 +6,7 @@
 
 /**
  * Implements hook_rules_action_info().
+ * @ingroup rules
  */
 function hybridauth_rules_action_info() {
   return array(

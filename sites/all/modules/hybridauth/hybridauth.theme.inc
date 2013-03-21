@@ -2,8 +2,7 @@
 
 function template_preprocess_hybridauth_widget(&$vars, $hook) {
   $element = $vars['element'];
-  $vars['widget_id'] = drupal_html_id($element['#hybridauth_id']);
-  $vars['providers'] = array();
+  $providers = array();
   if ($element['#hybridauth_destination']) {
     $query = array('destination' => $element['#hybridauth_destination']);
   }
@@ -13,22 +12,25 @@ function template_preprocess_hybridauth_widget(&$vars, $hook) {
   
   if ($element['#hybridauth_widget_type'] == 'list') {
     foreach (hybridauth_get_enabled_providers() as $provider_id => $provider_name) {
-      $vars['providers'][$provider_id] = l(
+      $providers[] = l(
         theme('hybridauth_provider_icon', array('icon_pack' => $element['#hybridauth_widget_icon_pack'], 'provider_id' => $provider_id, 'provider_name' => $provider_name)),
         'hybridauth/popup/' . $provider_id,
         array(
           'html' => TRUE,
           'query' => $query,
           'attributes' => array(
-            'id' => drupal_html_id('hybridauth-widget-provider-' . $provider_id),
+            //'id' => drupal_html_id('hybridauth-widget-provider-' . $provider_id),
             'title' => $provider_name,
-            'class' => array('hybridauth-widget-provider')),
+            'class' => array('hybridauth-widget-provider'),
+            'rel' => array('nofollow'),
+          ),
         )
       );
     }
   }
   else {
     $provider_id = 'none';
+    $class = array();
     if ($element['#hybridauth_widget_use_overlay']) {
       $class = array('ctools-use-modal', 'ctools-modal-hybridauthmodal');
       ctools_include('modal');
@@ -65,7 +67,7 @@ function template_preprocess_hybridauth_widget(&$vars, $hook) {
       drupal_add_js($settings, 'setting');
     }
     
-    $vars['providers'][$provider_id] = l(
+    $providers[] = l(
       ($element['#hybridauth_widget_type'] == 'link') ?
         $element['#hybridauth_widget_link_text'] :
         theme('hybridauth_provider_icon', array('icon_pack' => $element['#hybridauth_widget_icon_pack'], 'provider_id' => $provider_id, 'provider_name' => $element['#hybridauth_widget_link_title'])),
@@ -74,13 +76,24 @@ function template_preprocess_hybridauth_widget(&$vars, $hook) {
         'html' => TRUE,
         'query' => $query,
         'attributes' => array(
-          'id' => drupal_html_id('hybridauth-widget-provider-' . $provider_id),
+          //'id' => drupal_html_id('hybridauth-widget-provider-' . $provider_id),
           'title' => $element['#hybridauth_widget_link_title'],
           'class' => $class,
+          'rel' => array('nofollow'),
         ),
       )
     );
   }
   
   _hybridauth_add_icon_pack_files($element['#hybridauth_widget_icon_pack']);
+
+  $vars['providers'] = $providers;
 }
+
+function template_preprocess_hybridauth_provider_icon(&$vars, $hook) {
+  _hybridauth_add_icon_pack_files($vars['icon_pack']);
+  if (!isset($vars['provider_name'])) {
+    $vars['provider_name'] = hybridauth_get_provider_name($vars['provider_id']);
+  }
+}
+

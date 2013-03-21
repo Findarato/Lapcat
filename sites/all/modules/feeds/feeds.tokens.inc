@@ -25,7 +25,7 @@ function feeds_token_info() {
 function feeds_tokens($type, $tokens, array $data, array $options) {
   $replacements = array();
 
-  if ($type == 'node' && !empty($data['node']) && !empty($data['node']->nid)) {
+  if ($type == 'node' && !empty($data['node'])) {
 
     $sanitize = !empty($options['sanitize']);
 
