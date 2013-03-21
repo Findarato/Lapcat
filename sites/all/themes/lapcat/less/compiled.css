@@ -149,7 +149,7 @@ li{list-style:none outside none;}
 @keyframes spinSun{0%{transform:rotate(0);} 100%{transform:rotate(360deg);}}@-ms-keyframes spinSun{0%{transform:rotate(0);} 100%{transform:rotate(360deg);}}@-moz-keyframes spinSun{0%{-moz-transform:rotate(0);} 100%{-moz-transform:rotate(360deg);}}@-webkit-keyframes spinSun{0%{-webkit-transform:rotate(0);} 100%{-webkit-transform:rotate(360deg);}}.childrenGrass{width:100%;z-index:1;position:relative;background-position-y:0;height:98px;}
 #pageHeader{margin-bottom:15px;}
 .element-invisible{display:none;}
-footer{z-index:20;height:16em;position:absolute;width:100%;}footer .socialLinks{opacity:.9;font-size:3em;height:1.3em;}footer .socialLinks a{text-shadow:0px 2px 4px #5f3e12,0 0 0 #000000,0px 2px 4px #5f3e12;color:rgba(0, 0, 0, 0.3);}
+footer{z-index:20;height:17em;position:absolute;width:100%;}footer .socialLinks{opacity:.9;font-size:3em;height:1.3em;}footer .socialLinks a{text-shadow:0px 2px 4px #5f3e12,0 0 0 #000000,0px 2px 4px #5f3e12;color:rgba(0, 0, 0, 0.3);}
 footer *{vertical-align:top;}
 footer .footerLeft{width:80%;float:left;}
 footer .footerRight{width:20%;float:right;}
