@@ -643,6 +643,7 @@ li{
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: -webkit-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* Chrome10+,Safari5.1+ */
   background: -ms-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* IE10+ */
+  background: -moz-linear-gradient(top, #ffffff 0%, #26a3ff 100%); /* FF3.6+ */
   background: radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* W3C */
 }
 .childrenTree{
@@ -656,11 +657,11 @@ li{
 }
 .childrenSun{
   position:absolute;
-  background-size:cover;
-  left:-155px;
+  background-size:contain;
+  left:-43px;
   top:36px;
-  width: 470px;
-  height: 470px;
+  width: 380px;
+  height: 380px;
   -webkit-animation: spinSun 30s infinite linear;
   -moz-animation: spinSun 30s infinite linear;
   -ms-animation: spinSun 30s infinite linear;
