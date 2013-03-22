@@ -4,6 +4,8 @@
   $c="TEE";//Default value to get 
   if(isset($_GET["c"])){
     $c=$_GET["c"];
+  }else{
+    $c=FALSE;
   }
 ?>
 
@@ -48,8 +50,12 @@ function wowbraryUrlParse($field){
 date_default_timezone_set('America/Chicago');
 include "simplepie.php";
 $feed = new SimplePie();
+if($c){
+  $feed -> set_feed_url('http://www.wowbrary.org/rss.aspx?l=8711&c='.$c);  
+}else{
+  $feed -> set_feed_url('http://www.wowbrary.org/rss.aspx?l=8711');
+}
 
-$feed -> set_feed_url('http://www.wowbrary.org/rss.aspx?l=8711&c='.$c);
 $feed -> enable_cache(false);
 $feed -> init();
 $feed -> handle_content_type();
