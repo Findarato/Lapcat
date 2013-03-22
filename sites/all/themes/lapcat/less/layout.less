@@ -358,15 +358,25 @@ form #user-login-form{
   min-height:150px;
 }
 .field-content a[property*="label"]{/*These are tags on items*/
-  padding:2px;
-  margin:2px;
+  padding:3px;
+  margin:10px 15px 0 0;
   .rounded-corners(3px);
-    border:1px solid @color4;
-  .Animate();
-  &:hover{
-    background:@color4;
+  -webkit-box-shadow: inset 0 0 1px 1px @shadow;
+  box-shadow: inset 0 0 1px 1px @shadow;
+  position:relative;
+  background:@colorLight;
+  &:after{
+    content:"";
+    position:absolute;
+    background:@color3;
+    height:100%;
+    width:10px;
+    top:0;
+    right:-.7em;
+    .shadowOut(4px,0,2px,-2px,@shadow);
   }
 }
+
 .articleItem:hover .socialLinks{
   opacity:.95;
 }
@@ -406,6 +416,7 @@ form #user-login-form{
 .articleEntryDescription{
   width:600px;
   overflow:hidden;
+  margin-bottom:10px;
 }
 
 
