@@ -28,7 +28,7 @@
  */
 ?>
 <div class="box blogBox roundAll3">
-  <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1">Child Articles</div>
+  <div class="twitterFeedTitle roundAll3 titleElement color3 icon-twitter-bird font1">Articles</div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
     <?php if ($rows): ?>
       <div class="view-content">
@@ -38,6 +38,12 @@
       <div class="view-empty">
         <?php print $empty; ?>
       </div>
+    <?php endif; ?>
+    <?php if ($pager): ?>
+      <?php print $pager; ?>
+    <?php endif; ?>
+    <?php if ($more): ?>
+      <?php print $more; ?>
     <?php endif; ?>
   </div>
 </div>

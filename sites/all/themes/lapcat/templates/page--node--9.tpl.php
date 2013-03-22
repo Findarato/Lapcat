@@ -35,16 +35,16 @@
   }
 
   .flickrPicture a{
-    height:100px;
-    width:100px;
+    height:75px;
+    width:75px;
     display:block;
   }
   .flickrPicture{
     margin:5px;
     padding:3px;
     display:inline-block;
-    height:100px;
-    width:100px;
+    height:75px;
+    width:75px;
     background:#fff;
     font-size:.8em;
     color:#000;
