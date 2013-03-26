@@ -2,7 +2,7 @@
 
 <style>
   .subPageHeader{
-    background-image: url('<?php print $base_path . $directory .'/images/teen.png'; ?>');
+    background-image: url('<?php print $base_path . $directory .'/images/teenHeader.png'; ?>');
     background-repeat:no-repeat;
   }
   .childrenTree{

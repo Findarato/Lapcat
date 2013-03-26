@@ -46,3 +46,4 @@ jQuery.each(adultCategories,function(i,item){
   }
 });
 adultContainer.prepend(categoryBox);
+$(".AllMenu").trigger("click");
