@@ -65,22 +65,22 @@
         <div class="navBoxGroup grid_4 pull_20" style="" >
           <!-- Right Column -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="adult" >Adult</a>
-          </div>
+            <a class="smoothAnimate" href="Downloads">Downloads</a>
+          </div> 
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="children" >Children</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="Downloads">Downloads</a>
-          </div>  
+            <a class="smoothAnimate" href="teens" >Teens</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="smoothAnimate" href="about" >About</a>
+          </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="greatpicks">Great Picks</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="teens" >Teens</a>
           </div>
         </div>        
       </nav>  
