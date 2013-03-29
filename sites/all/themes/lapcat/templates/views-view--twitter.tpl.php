@@ -1,6 +1,8 @@
 <div class="box blogBox roundAll3">
   <div class="boxTitle roundAll3 titleElement color3">
+    <h2>
     <a href="http://twitter.com/lpcpls">Twitter</a>
+    </h2>
   </div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" style="padding-left:10px;">
     <?php if ($rows): ?>
