@@ -65,6 +65,7 @@ function displayLocation(locationCode,domElementSelector){
     
 }
 function displayFlickr(flickrTag,flickrId){
+  var display = 9;
   // lets make sure we have some defaults in so that if the user just calls the function it works
   if(flickrTag == undefined)
     flickrTag = "teen";
@@ -78,13 +79,15 @@ function displayFlickr(flickrTag,flickrId){
       },
     function(data) {
         $.each(data.items, function(i,item){
-          $("<div/>",{"class":"flickrPicture smoothAnimate roundAll3",css:{"display":"inline-block","position":"relative"}})
-              .html(
-                  $("<a/>",{"html":"&nbsp;","class":"roundAll3"})
-                    .css({"background-image":"url("+item.media.m+")"})
-                    .attr({"href":item.link,"title":item.title})  
-              )
-              .appendTo("#flickerPictureBox");
+          if(i<display){
+            $("<div/>",{"class":"flickrPicture smoothAnimate roundAll3",css:{"display":"inline-block","position":"relative"}})
+                .html(
+                    $("<a/>",{"html":"&nbsp;","class":"roundAll3"})
+                      .css({"background-image":"url("+item.media.m+")"})
+                      .attr({"href":item.link,"title":item.title})  
+                )
+                .appendTo("#flickerPictureBox");
+          }
         });
     });
 }
