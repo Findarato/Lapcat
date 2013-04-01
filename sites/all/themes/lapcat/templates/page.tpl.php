@@ -98,7 +98,7 @@
         <?php endif; ?>
       </div>
       <div class="footerRight">
-        <h1>Social Library</h1>
+        <h3>Social Library</h3>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 
