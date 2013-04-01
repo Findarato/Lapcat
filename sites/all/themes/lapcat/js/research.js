@@ -1,7 +1,10 @@
 //jQuery("#blogContainerBox").append(jQuery("</div>",{"id":"researchAdultContainerBox"}));
-var adultContainer = jQuery(".view-research");
+var adultContainer = jQuery(".adultResearch");
 if(adultContainer.html() == null){
   var adultContainer = jQuery(".view-educators-research");
+  if(adultContainer.html() == null){
+    var adultContainer = jQuery(".view-homework-help");
+  }
 }
 var adultCategories = new Array();
 jQuery(".researchInfoBasic").hide();
