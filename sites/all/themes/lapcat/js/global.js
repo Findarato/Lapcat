@@ -103,12 +103,10 @@ jQuery(document).ready(function(){
     jQuery.getScript("/sites/all/themes/lapcat/js/locations.js");
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
-      jQuery.getScript("/sites/all/themes/lapcat/js/libs/jquery.hovercard.min.js");
       jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
         displayFlickr("teens");
-      jQuery.getScript("/sites/all/themes/lapcat/js/libs/jquery.hovercard.min.js");
       jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
@@ -116,7 +114,6 @@ jQuery(document).ready(function(){
           if(uri.search(/greatpicks/i)>0){// this is the teens page
           }else{//if all else fails lets just load a local rss feed
             if(uri.search(/educators/i)>0){// this is the teens page
-              jQuery.getScript("/sites/all/themes/lapcat/js/libs/jquery.hovercard.min.js");
               jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
             }else{//if all else fails lets just load a local rss feed
             }
