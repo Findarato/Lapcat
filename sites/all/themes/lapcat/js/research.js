@@ -1,4 +1,4 @@
-//jQuery("#blogContainerBox").append(jQuery("</div>",{"id":"researchAdultContainerBox"}));
+
 var adultContainer = jQuery(".adultResearch");
 if(adultContainer.html() == null){
   var adultContainer = jQuery(".view-educators-research");
