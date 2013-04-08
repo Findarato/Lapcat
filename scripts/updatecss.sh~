@@ -1,0 +1,6 @@
+cd ~/Documents/Aptana\ Studio\ 3\ Workspace/Lapcat/sites/all/themes/lapcat/less/
+
+lessc -x layout.less > compiled.css
+lessc -x mediaQueries.less > mq.css
+scp *.css jharry@dev:/data/www/dev/sites/all/themes/lapcat/less/
+
