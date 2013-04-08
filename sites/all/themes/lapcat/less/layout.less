@@ -14,7 +14,7 @@ a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:
 
 h1,h2,h3,h4{
   margin:2px;
-  color: @color5;
+  color:@colorDark;
   text-align: left;
   font-family:sans-serif;
 }
@@ -24,8 +24,10 @@ h1 {
   color:@colorDark;
 }
 h2 {
-  font-size: 2.2em;
-  color: @colorDark;
+  font-size: 1em;
+  color: @colorLight;
+  line-height:.8em;
+  font-weight:normal;
 }
 .adgendaLink,.linkIcon{
   font-size:1.2em;
@@ -173,7 +175,9 @@ li {
     }
   }
 }
-
+.item-list .views-row{
+ margin: 5px 0;
+}
 .twitterImage{
   display:          inline-block;
   float:            left;
@@ -262,8 +266,6 @@ form #user-login-form{
   }
 }
 
-
-
 .list {
   a{
     display:block;
@@ -272,15 +274,32 @@ form #user-login-form{
 
 /* Locations  */
 .locationHover{
-  cursor:         help;
+  margin:       .3em;
   &:hover{
-      background:@color460;
-    }
+    cursor:default;
+  }
 }
+.highlightSelect:after{
+  content:"";
+  position:absolute;
+  background:@color3;
+  height:100%;
+  width:10px;
+  top:0;
+  right:0;
+  .shadowOut(4px,0,2px,-2px,@shadow);
+}
+.locationDisplay{
+  min-height:146px;
+  min-width:135px;
+  div{
+    margin:.3em;
+  }
+} 
 .dayBox {
-  width: 2.4em;
+  width: 2.7em;
   height: 2.4em;
-  padding: 1em;
+  padding: 1em 1em 1em .7em;
   position: relative;
   font-size:.8em;
   white-space:nowrap;
@@ -341,15 +360,25 @@ form #user-login-form{
   min-height:150px;
 }
 .field-content a[property*="label"]{/*These are tags on items*/
-  padding:2px;
-  margin:2px;
+  padding:3px;
+  margin:10px 15px 0 0;
   .rounded-corners(3px);
-    border:1px solid @color4;
-  .Animate();
-  &:hover{
-    background:@color4;
+  -webkit-box-shadow: inset 0 0 1px 1px @shadow;
+  box-shadow: inset 0 0 1px 1px @shadow;
+  position:relative;
+  background:@colorLight;
+  &:after{
+    content:"";
+    position:absolute;
+    background:@color3;
+    height:100%;
+    width:10px;
+    top:0;
+    right:-.7em;
+    .shadowOut(4px,0,2px,-2px,@shadow);
   }
 }
+
 .articleItem:hover .socialLinks{
   opacity:.95;
 }
@@ -389,6 +418,7 @@ form #user-login-form{
 .articleEntryDescription{
   width:600px;
   overflow:hidden;
+  margin-bottom:10px;
 }
 
 
@@ -437,6 +467,9 @@ form #user-login-form{
 }
 .subPageHeader.Downloads{
   background:url('/sites/all/themes/lapcat/images/downloadHeader.png') no-repeat;
+}
+.subPageHeader.Research{
+  background:url('/sites/all/themes/lapcat/images/researchHeader.png') no-repeat;
 }
 
 .subPageCatalogSearch{
@@ -626,11 +659,9 @@ li{
 .childWholePage{
   background: rgb(38,163,255); /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-  background: -moz-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%, rgb(38,163,255) 100%); /* FF3.6+ */
-  background: -webkit-gradient(radial, 20px 36px center, 0px, center center, 100%, color-stop(0%,rgb(255,255,255)), color-stop(100%,rgb(38,163,255))); /* Chrome,Safari4+ */
   background: -webkit-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* Opera 12+ */
   background: -ms-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* IE10+ */
+  background: -moz-linear-gradient(top, #ffffff 0%, #26a3ff 100%); /* FF3.6+ */
   background: radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* W3C */
 }
 .childrenTree{
@@ -644,11 +675,11 @@ li{
 }
 .childrenSun{
   position:absolute;
-  background-size:cover;
-  left:-155px;
+  background-size:contain;
+  left:-43px;
   top:36px;
-  width: 470px;
-  height: 470px;
+  width: 400px;
+  height: 400px;
   -webkit-animation: spinSun 30s infinite linear;
   -moz-animation: spinSun 30s infinite linear;
   -ms-animation: spinSun 30s infinite linear;
@@ -691,9 +722,14 @@ li{
 
 footer {
   z-index:20;
-  height:16em;
+  height:17em;
   position:absolute;
   width:100%;
+  h3{
+    text-shadow:0px 2px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
+    color:@colorDark;
+    color:rgba(0,0,0,.3); 
+  }
   .socialLinks{
     opacity:.9;
     font-size:3em;

@@ -20,7 +20,8 @@
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
         <div class="helpLink" style="display:inline-block;vertical-align: top;">
-          <a alt="Need Help?" class="color5Circle hoverGlowText" href="/help" title="Need Help?">?</a>
+          <!--<a alt="Need Help?" class="color5Circle helpLink hoverGlowText" href="/help" title="Need Help?">?</a>-->
+          <!--<a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">Help</a>-->
         </div>
       </div>
       <?php endif; ?>
@@ -97,7 +98,7 @@
         <?php endif; ?>
       </div>
       <div class="footerRight">
-        <h2>Social Library</h2>
+        <h3>Social Library</h3>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 

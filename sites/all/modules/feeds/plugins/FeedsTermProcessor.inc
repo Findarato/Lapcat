@@ -38,6 +38,13 @@ class FeedsTermProcessor extends FeedsProcessor {
   }
 
   /**
+   * Loads an existing term.
+   */
+  protected function entityLoad(FeedsSource $source, $tid) {
+    return taxonomy_term_load($tid);
+  }
+
+  /**
    * Validates a term.
    */
   protected function entityValidate($term) {
@@ -86,9 +93,28 @@ class FeedsTermProcessor extends FeedsProcessor {
    * Override parent::configForm().
    */
   public function configForm(&$form_state) {
+    $options = array(0 => t('Select a vocabulary'));
+    foreach (taxonomy_get_vocabularies() as $vocab) {
+      $options[$vocab->machine_name] = $vocab->name;
+    }
     $form = parent::configForm($form_state);
-    $form['bundle']['#title'] = t('Vocabulary');
+    $form['vocabulary'] = array(
+      '#type' => 'select',
+      '#title' => t('Import to vocabulary'),
+      '#description' => t('Choose the vocabulary to import into. <strong>CAUTION:</strong> when deleting terms through the "Delete items" tab, Feeds will delete <em>all</em> terms from this vocabulary.'),
+      '#options' => $options,
+      '#default_value' => $this->config['vocabulary'],
+    );
     return $form;
+  }
+
+  /**
+   * Override parent::configFormValidate().
+   */
+  public function configFormValidate(&$values) {
+    if (empty($values['vocabulary'])) {
+      form_set_error('vocabulary', t('Choose a vocabulary'));
+    }
   }
 
   /**
@@ -176,7 +202,7 @@ class FeedsTermProcessor extends FeedsProcessor {
     try {
       self::loadMappers();
       $entity_type = $this->entityType();
-      $bundle = $this->bundle();
+      $bundle = $this->vocabulary()->machine_name;
       drupal_alter('feeds_processor_targets', $targets, $entity_type, $bundle);
     }
     catch (Exception $e) {
@@ -209,8 +235,10 @@ class FeedsTermProcessor extends FeedsProcessor {
    * Return vocabulary to map to.
    */
   public function vocabulary() {
-    if ($vocabulary = taxonomy_vocabulary_machine_name_load($this->bundle())) {
-      return $vocabulary;
+    if (isset($this->config['vocabulary'])) {
+      if ($vocabulary = taxonomy_vocabulary_machine_name_load($this->config['vocabulary'])) {
+        return $vocabulary;
+      }
     }
     throw new Exception(t('No vocabulary defined for Taxonomy Term processor.'));
   }

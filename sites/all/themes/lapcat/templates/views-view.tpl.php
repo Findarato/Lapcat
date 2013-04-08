@@ -1,8 +1,9 @@
 <div class="box blogBox roundAll3">
   <div class="boxTitle roundAll3 titleElement color3">
+    <h2>
     <?php if ($view->get_title()): ?>
       <?php print $view->get_title(); ?>
-    <?php endif; ?>
+    <?php endif; ?></h2>
   </div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" style="padding-left:10px;">
     <?php if ($rows): ?>

@@ -28,7 +28,8 @@
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
         <div class="helpLink" style="display:inline-block;vertical-align: top;">
-          <a alt="Need Help?" class="color5Circle hoverGlowText" href="/help" title="Need Help?">?</a>
+          <!--<a alt="Need Help?" class="color5Circle helpLink hoverGlowText" href="/help" title="Need Help?">?</a>-->
+          <!--<a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">Help</a>-->
         </div>
       </div>
       <?php endif; ?>
@@ -65,7 +66,7 @@
           <!-- Right Column -->
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="Downloads">Downloads</a>
-          </div>  
+          </div> 
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="children" >Children</a>
           </div>
@@ -73,13 +74,13 @@
             <a class="smoothAnimate" href="teens" >Teens</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="hours" >Hours</a>
+            <a class="smoothAnimate" href="about" >About</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
             <a class="smoothAnimate" href="greatpicks">Great Picks</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
+            <a class="smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
           </div>
         </div>        
       </nav>  
@@ -116,7 +117,7 @@
         <?php endif; ?>
       </div>
       <div class="footerRight">
-        <h2>Social Library</h2>
+        <h3>Social Library</h3>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 

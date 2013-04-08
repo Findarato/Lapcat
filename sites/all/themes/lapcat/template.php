@@ -93,20 +93,3 @@ function lapcat_tablesort_indicator($variables) {
     return theme('image', array('path' => $theme_path . '/images/arrow-desc.png', 'alt' => t('sort descending'), 'width' => 13, 'height' => 13, 'title' => t('sort descending')));
   }
 }
-
-/**
- * Implements hook_css_alter().
- */
-function lapcat_css_alter(&$css) {
-  // Use Seven's vertical tabs style instead of the default one.
-  if (isset($css['misc/vertical-tabs.css'])) {
-    $css['misc/vertical-tabs.css']['data'] = drupal_get_path('theme', 'seven') . '/vertical-tabs.css';
-  }
-  if (isset($css['misc/vertical-tabs-rtl.css'])) {
-    $css['misc/vertical-tabs-rtl.css']['data'] = drupal_get_path('theme', 'seven') . '/vertical-tabs-rtl.css';
-  }
-  // Use Seven's jQuery UI theme style instead of the default one.
-  if (isset($css['misc/ui/jquery.ui.theme.css'])) {
-    $css['misc/ui/jquery.ui.theme.css']['data'] = drupal_get_path('theme', 'seven') . '/jquery.ui.theme.css';
-  }
-}

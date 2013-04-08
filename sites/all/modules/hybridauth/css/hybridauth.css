@@ -1,10 +1,16 @@
-.hybridauth-widget li {
+.item-list ul.hybridauth-widget {
+  margin: 0;
+  padding: 0;
+}
+.item-list ul.hybridauth-widget li {
   display: inline-block;
-  margin: 2px;
+  margin: 1px;
   padding: 0;
   list-style-type: none;
+  list-style-image: none;
+  background: none;
 }
-.hybridauth-widget a {
+.item-list ul.hybridauth-widget li a {
   padding: 0;
   margin: 0;
 }

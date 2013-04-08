@@ -130,66 +130,67 @@ var locations={
       }
 };
 
-function displayLocation(locationCode,domElementSelector){
+function displayLocation(me,domElementSelector){
   var today = new Date();
   var dayOfWeek = today.getDay();
+  locationCode = me.attr("id"); 
   domElementSelector
     .empty()
     .append(
-      $("<div/>",{css:{"text-align":"left", "height":"auto", "float":"left"}})
+      jQuery("<div/>",{"class":"locationDisplay",css:{"text-align":"left", "height":"auto", "float":"left"}})
       .append(
-        $("<div/>",{css:{margin:0}})
+        jQuery("<div/>")
           .html(
-            $("<span/>",{title:locations[locationCode].name}).html(locations[locationCode].name)  
+            jQuery("<span/>",{title:locations[locationCode].name}).html(locations[locationCode].name)  
           )
         )
         .append(
-          $("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
-              $("<span/>",{title:"address"}).html(locations[locationCode].street) 
+              jQuery("<span/>",{title:"address"}).html(locations[locationCode].street) 
             )
         )
         .append(
-          $("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
-              $("<span/>",{title:"city state"}).html(locations[locationCode].cityState) 
+              jQuery("<span/>",{title:"city state"}).html(locations[locationCode].cityState) 
             )
         )
         .append(
-          $("<span/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
-              $("<span/>",{title:"zip code"}).html(locations[locationCode].zip) 
+              jQuery("<span/>",{title:"zip code"}).html(locations[locationCode].zip) 
             )
         )
         .append(
-          $("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
-              $("<span/>",{title:"phone number"}).html(locations[locationCode].phone) 
+              jQuery("<span/>",{title:"phone number"}).html(locations[locationCode].phone) 
             )
         )
         .append(
-          $("<div/>",{css:{margin:0}})
+          jQuery("<div/>")
             .html(
-              $("<span/>",{title:"email address"}).html(locations[locationCode].email)  
+              jQuery("<span/>",{title:"email address"}).html(locations[locationCode].email)  
             )
         )
-    )
-    
-    
+    );
     for(var a=1;a<=6;a++){
-      var timeHolder = $("#timeContainer"+a);
+      var timeHolder = jQuery("#timeContainer"+a);
       timeHolder.html(locations[locationCode]["time"+a]);
         if(dayOfWeek == a){
-          $("#dayBox"+a).addClass("color1").removeClass("color4")
+          jQuery("#dayBox"+a).addClass("color1").removeClass("color4")
         }
     }
-    
+    var offset = me.offset();
+    $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show();
 }
 
-$(document).ready(function(){
-  $(".locationHover")
-    .mouseenter(function(){displayLocation($(this).attr("id"),$("#locationDisplay"));})
+jQuery(document).ready(function(){
+  jQuery("body").append($("<div/>",{"class":"highlightSelect smoothAnimate insideBoxShadow roundAll3",css:{"cursor":"default","display":"none","position":"absolute","top":0,"left":0}}))
+  jQuery(".locationHover")
+    .mouseenter(function(){displayLocation(jQuery(this),jQuery("#locationDisplay"));})
     .mouseleave(function(){});
   //This makes sure something is being shown
-  displayLocation($(".locationHover").attr("id"),$("#locationDisplay"));
+  displayLocation(jQuery(".locationHover"),jQuery("#locationDisplay"));
 });

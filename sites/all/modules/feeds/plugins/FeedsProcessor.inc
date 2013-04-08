@@ -28,14 +28,6 @@ class FeedsAccessException extends Exception {}
  * Abstract class, defines interface for processors.
  */
 abstract class FeedsProcessor extends FeedsPlugin {
-
-  /**
-   * Implements FeedsPlugin::pluginType().
-   */
-  public function pluginType() {
-    return 'processor';
-  }
-
   /**
    * @defgroup entity_api_wrapper Entity API wrapper.
    */
@@ -44,37 +36,6 @@ abstract class FeedsProcessor extends FeedsPlugin {
    * Entity type this processor operates on.
    */
   public abstract function entityType();
-
-  /**
-   * Bundle type this processor operates on.
-   *
-   * Defaults to the entity type for entities that do not define bundles.
-   *
-   * @return string|NULL
-   *   The bundle type this processor operates on, or NULL if it is undefined.
-   */
-  public function bundle() {
-    return $this->config['bundle'];
-  }
-
-  /**
-   * Provides a list of bundle options for use in select lists.
-   *
-   * @return array
-   *   A keyed array of bundle => label.
-   */
-  public function bundleOptions() {
-    $options = array();
-    foreach (field_info_bundles($this->entityType()) as $bundle => $info) {
-      if (!empty($info['label'])) {
-        $options[$bundle] = $info['label'];
-      }
-      else {
-        $options[$bundle] = $bundle;
-      }
-    }
-    return $options;
-  }
 
   /**
    * Create a new entity.
@@ -97,25 +58,8 @@ abstract class FeedsProcessor extends FeedsPlugin {
    *
    * @return
    *   A new entity object.
-   *
-   * @todo We should be able to batch load these, if we found all of the
-   *   existing ids first.
    */
-  protected function entityLoad(FeedsSource $source, $entity_id) {
-    if ($this->config['update_existing'] == FEEDS_UPDATE_EXISTING) {
-      $entities = entity_load($this->entityType(), array($entity_id));
-      return reset($entities);
-    }
-
-    $info = $this->entityInfo();
-
-    $args = array(':entity_id' => $entity_id);
-
-    $table = db_escape_table($info['base table']);
-    $key = db_escape_field($info['entity keys']['id']);
-
-    return db_query("SELECT * FROM {" . $table . "} WHERE $key = :entity_id", $args)->fetchObject();
-  }
+  protected abstract function entityLoad(FeedsSource $source, $entity_id);
 
   /**
    * Validate an entity.
@@ -200,20 +144,20 @@ abstract class FeedsProcessor extends FeedsPlugin {
 
       try {
 
-        // Load an existing entity.
-        if ($entity_id) {
-          $entity = $this->entityLoad($source, $entity_id);
-
-          // The feeds_item table is always updated with the info for the most
-          // recently processed entity. The only carryover is the entity_id.
-          $this->newItemInfo($entity, $source->feed_nid, $hash);
-          $entity->feeds_item->entity_id = $entity_id;
-        }
-
         // Build a new entity.
-        else {
+        if (empty($entity_id)) {
           $entity = $this->newEntity($source);
           $this->newItemInfo($entity, $source->feed_nid, $hash);
+        }
+
+        // Load an existing entity.
+        else {
+          $entity = $this->entityLoad($source, $entity_id);
+
+          // The feeds_item table is always updated with the info for the most recently processed entity.
+          // The only carryover is the entity_id.
+          $this->newItemInfo($entity, $source->feed_nid, $hash);
+          $entity->feeds_item->entity_id = $entity_id;
         }
 
         // Set property and field values.
@@ -524,17 +468,11 @@ abstract class FeedsProcessor extends FeedsPlugin {
    * Declare default configuration.
    */
   public function configDefaults() {
-    $info = $this->entityInfo();
-    $bundle = NULL;
-    if (empty($info['entity keys']['bundle'])) {
-      $bundle = $this->entityType();
-    }
     return array(
       'mappings' => array(),
       'update_existing' => FEEDS_SKIP_EXISTING,
       'input_format' => NULL,
       'skip_hash_check' => FALSE,
-      'bundle' => $bundle,
     );
   }
 
@@ -544,25 +482,7 @@ abstract class FeedsProcessor extends FeedsPlugin {
   public function configForm(&$form_state) {
     $info = $this->entityInfo();
     $form = array();
-
-    if (!empty($info['entity keys']['bundle'])) {
-      $form['bundle'] = array(
-        '#type' => 'select',
-        '#options' => $this->bundleOptions(),
-        '#title' => t('Bundle'),
-        '#required' => TRUE,
-        '#default_value' => $this->bundle(),
-      );
-    }
-    else {
-      $form['bundle'] = array(
-        '#type' => 'value',
-        '#value' => $this->entityType(),
-      );
-    }
-
     $tokens = array('@entities' => strtolower($info['label plural']));
-
     $form['update_existing'] = array(
       '#type' => 'radios',
       '#title' => t('Update existing @entities', $tokens),
@@ -570,7 +490,6 @@ abstract class FeedsProcessor extends FeedsPlugin {
         t('Existing @entities will be determined using mappings that are a "unique target".', $tokens),
       '#options' => array(
         FEEDS_SKIP_EXISTING => t('Do not update existing @entities', $tokens),
-        FEEDS_REPLACE_EXISTING => t('Replace existing @entities', $tokens),
         FEEDS_UPDATE_EXISTING => t('Update existing @entities', $tokens),
       ),
       '#default_value' => $this->config['update_existing'],
@@ -594,7 +513,6 @@ abstract class FeedsProcessor extends FeedsPlugin {
       '#default_value' => isset($this->config['input_format']) ? $this->config['input_format'] : 'plain_text',
       '#required' => TRUE,
     );
-
     return $form;
   }
 
@@ -702,7 +620,7 @@ abstract class FeedsProcessor extends FeedsPlugin {
     $parser = feeds_importer($this->id)->parser;
     $targets = array();
     foreach ($this->config['mappings'] as $mapping) {
-      if (!empty($mapping['unique'])) {
+      if ($mapping['unique']) {
         // Invoke the parser's getSourceElement to retrieve the value for this
         // mapping's source.
         $targets[$mapping['target']] = $parser->getSourceElement($source, $result, $mapping['source']);
@@ -763,7 +681,11 @@ abstract class FeedsProcessor extends FeedsPlugin {
    *  Empty/NULL/FALSE strings return d41d8cd98f00b204e9800998ecf8427e
    */
   protected function hash($item) {
-    return hash('md5', serialize($item) . serialize($this->config['mappings']));
+    static $serialized_mappings;
+    if (!$serialized_mappings) {
+      $serialized_mappings = serialize($this->config['mappings']);
+    }
+    return hash('md5', serialize($item) . $serialized_mappings);
   }
 
   /**
@@ -781,5 +703,3 @@ abstract class FeedsProcessor extends FeedsPlugin {
     return '';
   }
 }
-
-class FeedsProcessorBundleNotDefined extends Exception {}

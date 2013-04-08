@@ -476,6 +476,7 @@ function hybridauth_openid_form_submit($form, &$form_state) {
  * Menu callback; manage HybridAuth identities for the specified user.
  */
 function hybridauth_user_identity($form, &$form_state, $account) {
+  global $user;
   drupal_set_title(format_username($account));
 
   $identities = _hybridauth_identity_load_by_uid($account->uid);
@@ -504,7 +505,7 @@ function hybridauth_user_identity($form, &$form_state, $account) {
   );
   
   // Add more identities.
-  if (user_access('use hybridauth')) {
+  if ($account->uid == $user->uid && user_access('use hybridauth')) {
     $form['hybridauth_widget'] = array(
       '#type' => 'hybridauth_widget',
       '#title' => t('Add more identities'),
@@ -514,24 +515,7 @@ function hybridauth_user_identity($form, &$form_state, $account) {
     );
   }
 
-  if ($hybridauth = hybridauth_get_instance()) {
-    $connected_providers = array();
-    try {
-      foreach ($hybridauth->getConnectedProviders() as $provider_key) {
-        $connected_providers[] = $providers[$provider_key];
-      }
-    }
-    catch (Exception $e) {
-      watchdog_exception('hybridauth', $e);
-    }
-    try {
-      $adapter = $hybridauth->getAdapter('Twitter');
-      //$adapter->setUserStatus('Testing out posting from HybridAuth #spam #test /cc @hybridauth');
-    }
-    catch (Exception $e) {
-      watchdog_exception('hybridauth', $e);
-    }
-  }
+  $connected_providers = hybridauth_get_connected_providers();
   $form['connected_providers'] = array(
     '#markup' => t('Currently connected to (session data):') . ' ' . implode(', ', $connected_providers),
     '#weight' => 15,

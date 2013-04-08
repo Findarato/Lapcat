@@ -2,7 +2,7 @@
 
 <style>
   .subPageHeader{
-    background-image: url('<?php print $base_path . $directory .'/images/teen.png'; ?>');
+    background-image: url('<?php print $base_path . $directory .'/images/teenHeader.png'; ?>');
     background-repeat:no-repeat;
   }
   .childrenTree{
@@ -35,16 +35,16 @@
   }
 
   .flickrPicture a{
-    height:100px;
-    width:100px;
+    height:75px;
+    width:75px;
     display:block;
   }
   .flickrPicture{
     margin:5px;
     padding:3px;
     display:inline-block;
-    height:100px;
-    width:100px;
+    height:75px;
+    width:75px;
     background:#fff;
     font-size:.8em;
     color:#000;
@@ -92,7 +92,8 @@
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
         <div style="display:inline-block;vertical-align: top;">
-          <a alt="Need Help?" class="color5Circle helpLink hoverGlowText" href="/help" title="Need Help?">?</a>
+          <!--<a alt="Need Help?" class="color5Circle helpLink hoverGlowText" href="/help" title="Need Help?">?</a>-->
+          <!--<a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">Help</a>-->
         </div>
       </div>
       <?php endif; ?>
@@ -165,7 +166,7 @@
         </div>
       </div>
       <div class="footerRight">
-        <h2>Social Library</h2>
+        <h3>Social Library</h3>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 

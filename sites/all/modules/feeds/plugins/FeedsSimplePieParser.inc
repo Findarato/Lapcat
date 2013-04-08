@@ -91,7 +91,6 @@ class FeedsSimplePieParser extends FeedsParser {
     for ($i = 0; $i < $items_num; $i++) {
       $item = array();
       $simplepie_item = $parser->get_item($i);
-
       $item['title'] = html_entity_decode(($title = $simplepie_item->get_title()) ? $title : $this->createTitle($simplepie_item->get_content()));
       $item['description'] = $simplepie_item->get_content();
       $item['url'] = html_entity_decode($simplepie_item->get_link());
@@ -155,12 +154,13 @@ class FeedsSimplePieParser extends FeedsParser {
       if($value = $simplepie_item->get_item_tags('http://catalog.lapcat.org/books', 'images')){
         $item['bookImageS'] = html_entity_decode($value[0]["data"]); 
       } 
+
+
       // Allow parsing to be extended.
       $this->parseExtensions($item, $simplepie_item);
       $item['raw'] = $simplepie_item->data;
 
       $result->items[] = $item;
-      
     }
     // Release parser.
     unset($parser);

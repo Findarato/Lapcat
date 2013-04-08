@@ -1,16 +1,19 @@
-//$("#blogContainerBox").append($("</div>",{"id":"researchAdultContainerBox"}));
-var adultContainer = $(".view-research");
+
+var adultContainer = jQuery(".adultResearch");
 if(adultContainer.html() == null){
-  var adultContainer = $(".view-educators-research");
+  var adultContainer = jQuery(".view-educators-research");
+  if(adultContainer.html() == null){
+    var adultContainer = jQuery(".view-homework-help");
+  }
 }
 var adultCategories = new Array();
-$(".researchInfoBasic").hide();
-$(".researchList").find("img").hide();
-$(".researchList").each(function(i,item){
-  //item = $(item);
+jQuery(".researchInfoBasic").hide();
+jQuery(".researchList").find("img").hide();
+jQuery(".researchList").each(function(i,item){
+  //item = jQuery(item);
   if(item.className.indexOf(" ")){ // we have more than one category
     tempArray = item.className.split(" ");
-    $.each(tempArray,function(i2,item2){
+    jQuery.each(tempArray,function(i2,item2){
       if(item2 !="researchList")
         adultCategories.push(item2);
     });
@@ -19,30 +22,31 @@ $(".researchList").each(function(i,item){
   }
 });
 
-$.each($(".hoverCard"),function(h,card){
-  me=$(card);
+jQuery.each(jQuery(".hoverCard"),function(h,card){
+  me=jQuery(card);
   me.show();
   me.hovercard({"detailsHTML":me.next().next().text()+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.next().attr("src")});
   
 })
 adultCategories.sort();
 adultCategories = adultCategories.getUnique();
-var categoryBox = $("<div/>",{"class":"subTitleElement",css:{"margin-top":"8px","width":"100%"}});
-$.each(adultCategories,function(i,item){
+var categoryBox = jQuery("<div/>",{"class":"subTitleElement",css:{"margin-top":"8px","width":"100%"}});
+jQuery.each(adultCategories,function(i,item){
   if(item.length>1){// lets not have random spaces or one letter categories
   categoryBox
     .append(
-      $("<a/>",{"html":item,"class":"roundAll3 insideBoxShadow color560 "+item+"Menu"})
+      jQuery("<a/>",{"html":item,"class":"roundAll3 insideBoxShadow color560 "+item+"Menu"})
         .css({"padding":"5px","margin":"2px","cursor":"pointer"})
         .click(function(){
-          var me = $(this);
-          $(".researchList").fadeOut("fast").delay("200");
-          $(".subTitleElement a.color2").removeClass("color2").addClass("color560")
+          var me = jQuery(this);
+          jQuery(".researchList").fadeOut("fast").delay("200");
+          jQuery(".subTitleElement a.color2").removeClass("color2").addClass("color560")
           me.addClass("color2").removeClass("color560");
-          $("."+item).fadeIn("fast");
+          jQuery("."+item).fadeIn("fast");
           return false;
       })
     );
   }
 });
 adultContainer.prepend(categoryBox);
+$(".AllMenu").trigger("click");

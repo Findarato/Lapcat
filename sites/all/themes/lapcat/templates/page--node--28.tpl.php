@@ -1,5 +1,11 @@
-<!--Teens Page-->
-
+<!--Hours-->
+<style>
+    .childrenTree{
+    background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
+    background-repeat:no-repeat;
+    bottom:33px;
+  }  
+</style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
     <div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">
@@ -22,14 +28,15 @@
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
         <div style="display:inline-block;vertical-align: top;">
-          <a alt="Need Help?" class="color5Circle helpLink hoverGlowText" href="/help" title="Need Help?">?</a>
+          <!--<a alt="Need Help?" class="color5Circle helpLink hoverGlowText" href="/help" title="Need Help?">?</a>-->
+          <!--<a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">Help</a>-->
         </div>
       </div>
       <?php endif; ?>
     </div>
   </nav>
 </header>
-<div class="teenWholePage" style="overflow: hidden;">
+<div class="teenWholePage" style="overflow: hidden;z-index: 5">
     <div class="childrenSun"></div>
     <div id="" style="" class="container_24">
       <div class="mainArea grid_24 roundAll3" id="main" role="main">
@@ -81,9 +88,12 @@
         </aside>
       </div> <!-- end of main content-->
     </div>
-   <div class="childrenGrass" style="margin-top:150px;">
+  </div>
+   <div class="childrenGrass" style="margin-top:150px;z-index:-1">
+      <div class="childrenTree linearAnimate"></div>
+      <div class="treeShadow"></div>
    </div>
-  <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
+    <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
         <div>
@@ -93,11 +103,10 @@
         </div>
       </div>
       <div class="footerRight">
-        <h2>Social Library</h2>
+        <h3>Social Library</h3>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 
       </div>
     </div>
-  </footer>  
-  </div>
+  </footer> 
