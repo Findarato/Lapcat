@@ -155,22 +155,6 @@
 .color1{
   background: @color1;  
 }
-.color1TextGlow{
-  text-shadow: @color5 2px 2px 2px;
-}
-.color160{
-  background: @color260;
-}
-.color1toWhite{
-  background: @color1; /* Old browsers */
-  background: -moz-linear-gradient(left, @color1 45%, @white 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(45%,@color1), color-stop(100%,@white)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, @color1 45%,@white 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, @color1 45%,@white 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, @color1 45%,@white 100%); /* IE10+ */
-  background: linear-gradient(left, @color1 45%,@white 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-8 */
-}
 /* Color 2 related items */
 .color2,.color260{
   background: @color2;
@@ -178,10 +162,6 @@
    color: @colorLight;  
   }
 }
-.color260{
-  background: @color260;
-}
-
 /* Color 3 related items */
 .color3{
   background: @color3;
@@ -189,9 +169,6 @@
   a{
     color: @colorLight;
   }
-}
-.color3Border1{
-  border:1px solid @color3;
 }
 .color3Circle{
   border:2px solid @color360;
@@ -237,18 +214,4 @@
 }
 .color5Circle:hover{
  .shadowOut (0,0,.2em,0em,@color5);  
-}
-
-
-.color560{
-  color:@colorLight;
-  background:@color5;
-  background:@color560;
-}
-.color5Soft{
-  .softColor(@color5);
-}
-.color5Ribbon{
-  .ribbon(@color5)
-  /* http://www.colorzilla.com/gradient-editor/#261806+5,5f3e12+20,5f3e12+60,5f3e12+80,261806+95;Custom */
 }
