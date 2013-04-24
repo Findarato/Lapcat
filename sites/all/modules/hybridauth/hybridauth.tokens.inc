@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Builds placeholder replacement tokens for HybridAuth-related data.
@@ -20,14 +19,14 @@ function hybridauth_token_info() {
     'description' => t('Information about the user from HybridAuth library.'),
     'needs-data' => 'user',
   );*/
-  
+
   $tokens = array();
   $tokens['user']['hybridauth'] = array(
     'name' => t('HybridAuth information'),
     'description' => t('Information from HybridAuth library.'),
     'type' => 'hybridauth',
   );
-  
+
   foreach (hybridauth_fields_list() as $key => $value) {
     $tokens['hybridauth'][$key] = array(
       'name' => $value,
@@ -45,7 +44,7 @@ function hybridauth_token_info() {
       'type' => 'hybridauth2',
     );
   }*/
-  
+
   return array(
     'types' => $types,
     'tokens' => $tokens,
@@ -58,14 +57,14 @@ function hybridauth_token_info() {
 function hybridauth_tokens($type, $tokens, array $data = array(), array $options = array()) {
   $sanitize = !empty($options['sanitize']);
   $replacements = array();
-  
+
   if ($type == 'user' && !empty($data['user'])) {
     if (!empty($data['user']->data['hybridauth'])) {
       $hybridauth_tokens = token_find_with_prefix($tokens, 'hybridauth');
       $replacements += token_generate('hybridauth', $hybridauth_tokens, array('hybridauth' => $data['user']->data['hybridauth']), $options);
     }
   }
-  
+
   if ($type == 'hybridauth' && !empty($data['hybridauth'])) {
     foreach ($tokens as $name => $original) {
       if (isset($data['hybridauth'][$name])) {
@@ -76,6 +75,6 @@ function hybridauth_tokens($type, $tokens, array $data = array(), array $options
       }
     }
   }
-  
+
   return $replacements;
 }

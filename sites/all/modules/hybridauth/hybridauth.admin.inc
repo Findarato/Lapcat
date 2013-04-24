@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Administrative pages forms and functions for the HybridAuth module.
@@ -10,7 +9,7 @@ function hybridauth_admin_settings() {
     drupal_set_message(t('Currently only administrators can create new user accounts. Either change the "Who can register accounts?" option under "Account settings" tab or at the core <a href="!link">Account settings</a>.',
       array('!link' => url('admin/config/people/accounts'))), 'warning');
   }
-  
+
   $form = array();
   $form['vtabs'] = array(
     '#type' => 'vertical_tabs',
@@ -18,7 +17,7 @@ function hybridauth_admin_settings() {
       'js' => array(drupal_get_path('module', 'hybridauth') . '/js/hybridauth.admin.js'),
     ),
   );
-  
+
   $form['vtabs']['fset_providers'] = array(
     '#type' => 'fieldset',
     '#title' => t('Authentication providers'),
@@ -35,9 +34,12 @@ function hybridauth_admin_settings() {
       '#title' => drupal_placeholder($provider_name),
       '#default_value' => variable_get('hybridauth_provider_' . $provider_id . '_enabled', 0),
     );
+    $form['vtabs']['fset_providers'][$provider_id]['file'] = array(
+      '#markup' => array_key_exists($provider_id, hybridauth_providers_files()) ? t('Yes') : t('No'),
+    );
     $form['vtabs']['fset_providers'][$provider_id]['hybridauth_provider_' . $provider_id . '_weight'] = array(
       '#type' => 'weight',
-      //'#title' => t('Weight'),
+      // '#title' => t('Weight'),
       '#delta' => 20,
       '#default_value' => variable_get('hybridauth_provider_' . $provider_id . '_weight', 0),
       '#attributes' => array('class' => array('hybridauth-provider-weight')),
@@ -54,21 +56,21 @@ function hybridauth_admin_settings() {
 
   $form['vtabs']['fset_fields'] = array(
     '#type' => 'fieldset',
-    '#title' => t('Required fields'),
+    '#title' => t('Required information'),
   );
   $form['vtabs']['fset_fields']['hybridauth_required_fields'] = array(
     '#type' => 'checkboxes',
-    '#title' => t('Required fields'),
+    '#title' => t('Required information'),
     '#options' => array(
       'email' => t('Email address'),
       'firstName' => t('First name'),
       'lastName' => t('Last name'),
       'gender' => t('Gender'),
     ),
-    '#description' => t("Select required fields. If authentication provider doesn't return them, visitor will need to fill additional form with these fields before registration."),
+    '#description' => t("If authentication provider doesn't return it, visitor will need to fill additional form before registration."),
     '#default_value' => variable_get('hybridauth_required_fields', array('email' => 'email')),
   );
-  
+
   $form['vtabs']['fset_widget'] = array(
     '#type' => 'fieldset',
     '#title' => t('Widget settings'),
@@ -91,7 +93,7 @@ function hybridauth_admin_settings() {
   );
   $form['vtabs']['fset_widget']['hybridauth_widget_use_overlay'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Display list of enabled providers in an overlay'),
+    '#title' => t('Display list of enabled providers using overlay'),
     '#default_value' => variable_get('hybridauth_widget_use_overlay', 1),
     '#states' => array(
       'invisible' => array(
@@ -136,7 +138,7 @@ function hybridauth_admin_settings() {
     '#description' => t('Determines the order of the elements on the form - heavier elements get positioned later.'),
     '#default_value' => variable_get('hybridauth_widget_weight', 100),
   );
-  
+
   $form['vtabs']['fset_account'] = array(
     '#type' => 'fieldset',
     '#title' => t('Account settings'),
@@ -204,7 +206,7 @@ function hybridauth_admin_settings() {
     '#type' => 'textfield',
     '#title' => t('Display name pattern'),
     '#default_value' => variable_get('hybridauth_display_name', '[user:hybridauth:firstName] [user:hybridauth:lastName]'),
-    '#description' => t('You can use any user tokens here.') . ' ' 
+    '#description' => t('You can use any user tokens here.') . ' '
       . t('Install !link module to get list of all available tokens.',
         array('!link' => l(t('Token'), 'http://drupal.org/project/token', array('attributes' => array('target' => '_blank'))))),
     '#required' => TRUE,
@@ -244,10 +246,32 @@ function hybridauth_admin_settings() {
     '#description' => t('Remove password fields from user account edit form for users created by HybridAuth.'),
     '#default_value' => variable_get('hybridauth_remove_password_fields', 1),
   );
-  
+
+  $form['vtabs']['fset_forms'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Drupal forms'),
+  );
+  $form['vtabs']['fset_forms']['hybridauth_forms'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Drupal forms'),
+    '#options' => hybridauth_forms_list(),
+    '#description' => t('Add HybridAuth widget to these forms.'),
+    '#default_value' => variable_get('hybridauth_forms', array('user_login', 'user_login_block')),
+  );
+
   $form['vtabs']['fset_other'] = array(
     '#type' => 'fieldset',
     '#title' => t('Other settings'),
+  );
+  $options = array(
+    'current' => t('Use the current window'),
+    'popup' => t('Use a new popup window'),
+  );
+  $form['vtabs']['fset_other']['hybridauth_window_type'] = array(
+    '#type' => 'radios',
+    '#title' => t('Authentication window type'),
+    '#options' => $options,
+    '#default_value' => variable_get('hybridauth_window_type', 'current'),
   );
   $form['vtabs']['fset_other']['hybridauth_destination'] = array(
     '#type' => 'textfield',
@@ -271,28 +295,18 @@ function hybridauth_admin_settings() {
       '#global_types' => TRUE,
     );
   }
-  $form['vtabs']['fset_other']['hybridauth_forms'] = array(
-    '#type' => 'checkboxes',
-    '#title' => t('Drupal forms'),
-    '#options' => array(
-      'user_login' => t('User login form'),
-      'user_login_block' => t('User login block'),
-      'user_register_form' => t('User registration form'),
-      'comment_form' => t('Comment form'),
-    ),
-    '#description' => t('Add default HybridAuth widget to these forms.'),
-    '#default_value' => variable_get('hybridauth_forms', array('user_login', 'user_login_block')),
+  $options = array(
+    0 => t('Allow duplicate email addresses, create new user account and login'),
+    1 => t("Don't allow duplicate email addresses, block registration and advise to login using the existing account"),
+    2 => t("Don't allow duplicate email addresses, add new identity to the existing account and login"),
   );
   $form['vtabs']['fset_other']['hybridauth_duplicate_emails'] = array(
     '#type' => 'radios',
     '#title' => t('Duplicate emails'),
-    '#options' => array(
-      0 => t('Allow duplicate email addresses, create new user account and login'),
-      1 => t("Don't allow duplicate email addresses, block registration and advise to login using the existing account"),
-      2 => t("Don't allow duplicate email addresses, add new identity to the existing account and login"),
-    ),
+    '#options' => $options,
     '#default_value' => variable_get('hybridauth_duplicate_emails', 1),
-    '#description' => t('Select how to handle duplicate email addresses. This situation occurs when the same user is trying to authenticate using different authentication providers, but with the same email address.'),
+    '#description' => t('Select how to handle duplicate email addresses. '
+      . 'This situation occurs when the same user is trying to authenticate using different authentication providers, but with the same email address.'),
   );
   $form['vtabs']['fset_other']['hybridauth_debug'] = array(
     '#type' => 'checkbox',
@@ -300,7 +314,7 @@ function hybridauth_admin_settings() {
     '#description' => t('When in debug mode, extra error information will be logged/displayed. This should be disabled when not in development.'),
     '#default_value' => variable_get('hybridauth_debug', FALSE),
   );
-  
+
   return system_settings_form($form);
 }
 
@@ -309,43 +323,48 @@ function hybridauth_admin_settings() {
  */
 function theme_hybridauth_admin_settings_providers_table($vars) {
   $form = $vars['form'];
-  
+
   $header = array(
     array('data' => t('Name'), 'colspan' => 2),
+    t('Available'),
     t('Weight'),
     t('Operations'),
   );
   $rows = array();
-  
+
   foreach (element_children($form) as $provider_id) {
     if (isset($form[$provider_id]['icon'])) {
       $row = array(
         drupal_render($form[$provider_id]['hybridauth_provider_' . $provider_id . '_enabled']),
         drupal_render($form[$provider_id]['icon']),
+        drupal_render($form[$provider_id]['file']),
         drupal_render($form[$provider_id]['hybridauth_provider_' . $provider_id . '_weight']),
         drupal_render($form[$provider_id]['settings']),
       );
-      
+
       $rows[] = array(
         'data' => $row,
         'class' => array('draggable'),
       );
     }
   }
-  
-  //Finally, output the sortable table. Make sure the id variable is the same as the table id in drupal_add_tabledrag
+
+  // Finally, output the sortable table. Make sure the id variable is the same
+  // as the table id in drupal_add_tabledrag().
   $output = theme('table', array('header' => $header, 'rows' => $rows, 'attributes' => array('id' => 'hybridauth-providers')));
   $output .= drupal_render_children($form);
-  
-  //This function is the instantiator of the sorter. Make sure the 0th paramater is the id of your table, and the 3rd paramater is the class of your weight variable
+
+  // This function is the instantiator of the sorter. Make sure the 0th
+  // parameter is the id of your table, and the 3rd parameter is the class of
+  // your weight variable.
   drupal_add_tabledrag('hybridauth-providers', 'order', 'sibling', 'hybridauth-provider-weight');
-  
+
   return $output;
 }
 
 function hybridauth_admin_provider_settings($form, &$form_state, $provider_id = NULL) {
   $form = array();
-  
+
   switch ($provider_id) {
     case 'Facebook':
       $help = t('
@@ -359,7 +378,7 @@ function hybridauth_admin_provider_settings($form, &$form_state, $provider_id = 
         )
       );
       break;
-      
+
     case 'Twitter':
       $help = t('
           <p>Enter your consumer key and private key. You can get these by creating a new application at <a href="!apps_uri">!apps_uri</a>.</p>
@@ -369,9 +388,9 @@ function hybridauth_admin_provider_settings($form, &$form_state, $provider_id = 
         )
       );
       break;
-      
+
     case 'Google':
-      $origin_uri_parts = parse_url( url('<front>', array('absolute' => TRUE)) );
+      $origin_uri_parts = parse_url(url('<front>', array('absolute' => TRUE)));
       $help = t('
           <p>Enter your application ID and private key. You can get these by creating a new application at <a href="!apps_uri">!apps_uri</a>.</p>
           <p>You must set <strong>Authorized Redirect URIs</strong> to <strong>%redirect_uri</strong>.</p>
@@ -384,12 +403,11 @@ function hybridauth_admin_provider_settings($form, &$form_state, $provider_id = 
         )
       );
       break;
-      
+
     default:
       $help = t('Enter the application ID, consumer key, and/or secret key as required.');
-      break;
   }
-  
+
   $form['keys'] = array(
     '#type' => 'fieldset',
     '#description' => $help,
@@ -412,15 +430,15 @@ function hybridauth_admin_provider_settings($form, &$form_state, $provider_id = 
     '#description' => t('The application consumer secret key'),
     '#default_value' => variable_get('hybridauth_provider_' . $provider_id . '_keys_secret', ''),
   );
-  
+
   if (in_array($provider_id, array('LinkedIn', 'MySpace', 'Twitter', 'Yahoo'))) {
     unset($form['keys']['hybridauth_provider_' . $provider_id . '_keys_id']);
   }
-  if (in_array($provider_id, array('Facebook', 'Google', 'Live'))) {
+  if (in_array($provider_id, array('Facebook', 'Google', 'Live', 'Vkontakte'))) {
     unset($form['keys']['hybridauth_provider_' . $provider_id . '_keys_key']);
   }
-  
-  if (in_array($provider_id, array('Facebook'))) {
+
+  if ($provider_id == 'Facebook') {
     $form['advanced'] = array(
       '#type' => 'fieldset',
       '#title' => 'Advanced settings',
@@ -431,62 +449,65 @@ function hybridauth_admin_provider_settings($form, &$form_state, $provider_id = 
       '#type' => 'checkboxes',
       '#title' => t('Scope - Permissions to request by default'),
       '#default_value' => variable_get('hybridauth_provider_' . $provider_id . '_scope', array(
-        'email', 'user_about_me', 'user_birthday', 'user_hometown', 'user_website', 'offline_access', 'read_stream', 'publish_stream', 'read_friendlists',
+        'email', 'user_about_me', 'user_birthday', 'user_hometown', 'user_website', 'offline_access',
       )),
       '#options' => array(
         // See http://developers.facebook.com/docs/reference/api/permissions/
-        // Regular permissions
-        'user_about_me'             => t('<strong>user_about_me</strong> -- Provides access to the "About Me" section of the profile in the about property'),
-        'user_activities'           => t('<strong>user_activities</strong> -- Provides access to the user\'s list of activities as the activities connection'),
-        'user_birthday'             => t('<strong>user_birthday</strong> -- Provides access to the birthday with year as the birthday_date property'),
-        'user_checkins'             => t('<strong>user_checkins</strong> -- Provides read access to the authorized user\'s check-ins that the user can see.'),
-        'user_education_history'    => t('<strong>user_education_history</strong> -- Provides access to education history as the education property'),
-        'user_events'               => t('<strong>user_events</strong> -- Provides access to the list of events the user is attending as the events connection'),
-        'user_groups'               => t('<strong>user_groups</strong> -- Provides access to the list of groups the user is a member of as the groups connection'),
-        'user_hometown'             => t('<strong>user_hometown</strong> -- Provides access to the user\'s hometown in the hometown property'),
-        'user_interests'            => t('<strong>user_interests</strong> -- Provides access to the user\'s list of interests as the interests connection'),
-        'user_likes'                => t('<strong>user_likes</strong> -- Provides access to the list of all of the pages the user has liked as the likes connection'),
-        'user_location'             => t('<strong>user_location</strong> -- Provides access to the user\'s current location as the location property'),
-        'user_notes'                => t('<strong>user_notes</strong> -- Provides access to the user\'s notes as the notes connection'),
-        'user_online_presence'      => t('<strong>user_online_presence</strong> -- Provides access to the user\'s online/offline presence'),
-        'user_photos'               => t('<strong>user_photos</strong> -- Provides access to the photos the user has uploaded, and photos the user has been tagged in'),
-        'user_questions'            => t('<strong>user_questions</strong> -- Provides access to the questions the user or friend has asked'),
-        'user_relationships'        => t('<strong>user_relationships</strong> -- Provides access to the user\'s family and personal relationships and relationship status'),
-        'user_relationship_details' => t('<strong>user_relationship_details</strong> -- Provides access to the user\'s relationship preferences'),
-        'user_religion_politics'    => t('<strong>user_religion_politics</strong> -- Provides access to the user\'s religious and political affiliations'),
-        'user_status'               => t('<strong>user_status</strong> -- Provides access to the user\'s most recent status message'),
-        'user_videos'               => t('<strong>user_videos</strong> -- Provides access to the videos the user has uploaded, and videos the user has been tagged in'),
-        'user_website'              => t('<strong>user_website</strong> -- Provides access to the user\'s web site URL'),
-        'user_work_history'         => t('<strong>user_work_history</strong> -- Provides access to work history as the work property'),
-        'email'                     => t('<strong>email</strong> -- Provides access to the user\'s primary email address in the email property. Do not spam users. Your use of email must comply both with Facebook policies and with the CAN-SPAM Act.'),
+        // Regular permissions.
+        'user_about_me'             => '<strong>user_about_me</strong> -- ' . t('Provides access to the "About Me" section of the profile in the about property'),
+        'user_activities'           => '<strong>user_activities</strong> -- ' . t("Provides access to the user's list of activities as the activities connection"),
+        'user_birthday'             => '<strong>user_birthday</strong> -- ' . t('Provides access to the birthday with year as the birthday_date property'),
+        'user_checkins'             => '<strong>user_checkins</strong> -- ' . t("Provides read access to the authorized user's check-ins that the user can see."),
+        'user_education_history'    => '<strong>user_education_history</strong> -- ' . t('Provides access to education history as the education property'),
+        'user_events'               => '<strong>user_events</strong> -- ' . t('Provides access to the list of events the user is attending as the events connection'),
+        'user_groups'               => '<strong>user_groups</strong> -- ' . t('Provides access to the list of groups the user is a member of as the groups connection'),
+        'user_hometown'             => '<strong>user_hometown</strong> -- ' . t("Provides access to the user's hometown in the hometown property"),
+        'user_interests'            => '<strong>user_interests</strong> -- ' . t("Provides access to the user's list of interests as the interests connection"),
+        'user_likes'                => '<strong>user_likes</strong> -- ' . t('Provides access to the list of all of the pages the user has liked as the likes connection'),
+        'user_location'             => '<strong>user_location</strong> -- ' . t("Provides access to the user's current location as the location property"),
+        'user_notes'                => '<strong>user_notes</strong> -- ' . t("Provides access to the user's notes as the notes connection"),
+        'user_online_presence'      => '<strong>user_online_presence</strong> -- ' . t("Provides access to the user's online/offline presence"),
+        'user_photos'               => '<strong>user_photos</strong> -- ' . t('Provides access to the photos the user has uploaded, and photos the user has been tagged in'),
+        'user_questions'            => '<strong>user_questions</strong> -- ' . t('Provides access to the questions the user or friend has asked'),
+        'user_relationships'        => '<strong>user_relationships</strong> -- ' . t("Provides access to the user's family and personal relationships and relationship status"),
+        'user_relationship_details' => '<strong>user_relationship_details</strong> -- ' . t("Provides access to the user's relationship preferences"),
+        'user_religion_politics'    => '<strong>user_religion_politics</strong> -- ' . t("Provides access to the user's religious and political affiliations"),
+        'user_status'               => '<strong>user_status</strong> -- ' . t("Provides access to the user's most recent status message"),
+        'user_videos'               => '<strong>user_videos</strong> -- ' . t('Provides access to the videos the user has uploaded, and videos the user has been tagged in'),
+        'user_website'              => '<strong>user_website</strong> -- ' . t("Provides access to the user's web site URL"),
+        'user_work_history'         => '<strong>user_work_history</strong> -- ' . t('Provides access to work history as the work property'),
+        'email'                     => '<strong>email</strong> -- ' . t("Provides access to the user's primary email address in the email property. Do not spam users. Your use of email must comply both with Facebook policies and with the CAN-SPAM Act."),
 
-        // Extended permissions
-        'read_friendlists'      => t('<strong>read_friendlists</strong> -- Provides access to any friend lists the user created. All user\'s friends are provided as part of basic data, this extended permission grants access to the lists of friends a user has created, and should only be requested if your application utilizes lists of friends.'),
-        'read_insights'         => t('<strong>read_insights</strong> -- Provides read access to the Insights data for pages, applications, and domains the user owns.'),
-        'read_mailbox'          => t('<strong>read_mailbox</strong> -- Provides the ability to read from a user\'s Facebook Inbox.'),
-        'read_requests'         => t('<strong>read_requests</strong> -- Provides read access to the user\'s friend requests'),
-        'read_stream'           => t('<strong>read_stream</strong> -- Provides access to all the posts in the user\'s News Feed and enables your application to perform searches against the user\'s News Feed'),
-        'xmpp_login'            => t('<strong>xmpp_login</strong> -- Provides applications that integrate with Facebook Chat the ability to log in users.'),
-        'ads_management'        => t('<strong>ads_management</strong> -- Provides the ability to manage ads and call the Facebook Ads API on behalf of a user.'),
-        'create_event'          => t('<strong>create_event</strong> -- Enables your application to create and modify events on the user\'s behalf'),
-        'manage_friendlists'    => t('<strong>manage_friendlists</strong> -- Enables your app to create and edit the user\'s friend lists.'),
-        'manage_notifications'  => t('<strong>manage_notifications</strong> -- Enables your app to read notifications and mark them as read. This permission will be required to all access to notifications after October 22, 2011.'),
-        'offline_access'        => t('<strong>offline_access</strong> -- Enables your app to perform authorized requests on behalf of the user at any time. By default, most access tokens expire after a short time period to ensure applications only make requests on behalf of the user when the are actively using the application. This permission makes the access token returned by our OAuth endpoint long-lived.'),
-        'publish_checkins'      => t('<strong>publish_checkins</strong> -- Enables your app to perform checkins on behalf of the user.'),
-        'publish_stream'        => t('<strong>publish_stream</strong> -- Enables your app to post content, comments, and likes to a user\'s stream and to the streams of the user\'s friends. With this permission, you can publish content to a user\'s feed at any time, without requiring offline_access. However, please note that Facebook recommends a user-initiated sharing model.'),
-        'rsvp_event'            => t('<strong>rsvp_event</strong> -- Enables your application to RSVP to events on the user\'s behalf'),
-        'sms'                   => t('<strong>sms</strong> -- Enables your application to send messages to the user and respond to messages from the user via text message'),
-        'publish_actions'       => t('<strong>publish_actions</strong> -- Enables your application to publish user scores and achievements.'),
+        // Extended permissions.
+        'read_friendlists'     => '<strong>read_friendlists</strong> -- ' . t("Provides access to any friend lists the user created. All user's friends are provided as part of basic data, this extended permission grants access to the lists of friends a user has created, and should only be requested if your application utilizes lists of friends."),
+        'read_insights'        => '<strong>read_insights</strong> -- ' . t('Provides read access to the Insights data for pages, applications, and domains the user owns.'),
+        'read_mailbox'         => '<strong>read_mailbox</strong> -- ' . t("Provides the ability to read from a user's Facebook Inbox."),
+        'read_requests'        => '<strong>read_requests</strong> -- ' . t("Provides read access to the user's friend requests"),
+        'read_stream'          => '<strong>read_stream</strong> -- ' . t("Provides access to all the posts in the user's News Feed and enables your application to perform searches against the user's News Feed"),
+        'xmpp_login'           => '<strong>xmpp_login</strong> -- ' . t('Provides applications that integrate with Facebook Chat the ability to log in users.'),
+        'ads_management'       => '<strong>ads_management</strong> -- ' . t('Provides the ability to manage ads and call the Facebook Ads API on behalf of a user.'),
+        'create_event'         => '<strong>create_event</strong> -- ' . t("Enables your application to create and modify events on the user's behalf"),
+        'manage_friendlists'   => '<strong>manage_friendlists</strong> -- ' . t("Enables your app to create and edit the user's friend lists."),
+        'manage_notifications' => '<strong>manage_notifications</strong> -- ' . t('Enables your app to read notifications and mark them as read. This permission will be required to all access to notifications after October 22, 2011.'),
+        'offline_access'       => '<strong>offline_access</strong> -- ' . t('Enables your app to perform authorized requests on behalf of the user at any time. By default, most access tokens expire after a short time period to ensure applications only make requests on behalf of the user when the are actively using the application. This permission makes the access token returned by our OAuth endpoint long-lived.'),
+        'publish_checkins'     => '<strong>publish_checkins</strong> -- ' . t('Enables your app to perform checkins on behalf of the user.'),
+        'publish_stream'       => '<strong>publish_stream</strong> -- ' . t("Enables your app to post content, comments, and likes to a user's stream and to the streams of the user's friends. With this permission, you can publish content to a user's feed at any time, without requiring offline_access. However, please note that Facebook recommends a user-initiated sharing model."),
+        'rsvp_event'           => '<strong>rsvp_event</strong> -- ' . t("Enables your application to RSVP to events on the user's behalf"),
+        'sms'                  => '<strong>sms</strong> -- ' . t('Enables your application to send messages to the user and respond to messages from the user via text message'),
+        'publish_actions'      => '<strong>publish_actions</strong> -- ' . t('Enables your application to publish user scores and achievements.'),
       ),
     );
   }
-  
+
   return system_settings_form($form);
 }
 
+/**
+ * Renders report on HybridAuth identities.
+ */
 function hybridauth_report() {
   $providers = hybridauth_providers_list();
-  
+
   $header = array(t('Authentication provider'), t('Users count'));
   $rows = array();
   $query = db_select('hybridauth_identity', 'ha_id');
@@ -502,14 +523,12 @@ function hybridauth_report() {
       $result['count'],
     );
   }
-  
+
   $form = array();
-  
   $form['report'] = array(
     '#theme' => 'table',
     '#header' => $header,
     '#rows' => $rows,
   );
-  
   return $form;
 }

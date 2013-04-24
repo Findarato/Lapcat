@@ -1,15 +1,14 @@
 <?php
 /**
- * 
+ * @file
+ * Admin pages for the HybridAuth uLogin module.
  */
 
 function hybridauth_ulogin_migrate_form($form, &$form_state) {
   $form = array();
-  
   $form['message'] = array(
     '#markup' => format_plural(_hybridauth_ulogin_identities_count(), 'There is 1 uLogin identity to process.', 'There are @count uLogin identities to process.'),
   );
-  
   $form['actions'] = array(
     '#type' => 'actions',
   );
@@ -22,10 +21,10 @@ function hybridauth_ulogin_migrate_form($form, &$form_state) {
 
 function hybridauth_ulogin_migrate_form_submit($form, &$form_state) {
   $batch = array(
-    //'title' => t('Processing'),
-    //'init_message' => t('Initializing.'),
-    //'progress_message' => t('Completed @current of @total.'),
-    //'error_message' => t('An error has occurred.'),
+    // 'title' => t('Processing'),
+    // 'init_message' => t('Initializing.'),
+    // 'progress_message' => t('Completed @current of @total.'),
+    // 'error_message' => t('An error has occurred.'),
     'operations' => array(
       array('_hybridauth_ulogin_batch_operation', array()),
     ),
@@ -72,7 +71,7 @@ function _hybridauth_ulogin_identities_count() {
       ->execute()
       ->fetchField();
   }
-  
+
   return $result;
 }
 
@@ -86,7 +85,7 @@ function _hybridauth_ulogin_identities($start = 0, $limit = 5) {
 }
 
 function _hybridauth_ulogin_identity_process($ulogin_identity) {
-  //if no network to provider mapping - then skip this identity
+  // If no network to provider mapping - then skip this identity.
   if ($provider = _hybridauth_ulogin_provider_convert($ulogin_identity->network)) {
     $ulogin_data = unserialize($ulogin_identity->data);
     $hybridauth_data = _hybridauth_ulogin_data_convert($ulogin_data);
@@ -95,7 +94,7 @@ function _hybridauth_ulogin_identity_process($ulogin_identity) {
     if (!($existing_identity = _hybridauth_identity_load($hybridauth_data)) || $existing_identity['uid'] == $ulogin_identity->uid) {
       _hybridauth_identity_save($hybridauth_data, $ulogin_identity->uid);
     }
-    
+
     $account = user_load($ulogin_identity->uid);
     if (!empty($account->data['ulogin'])) {
       $edit['data']['hybridauth'] = $hybridauth_data;
@@ -107,7 +106,7 @@ function _hybridauth_ulogin_identity_process($ulogin_identity) {
 function _hybridauth_ulogin_providers_map() {
   $providers_map = &drupal_static(__FUNCTION__, NULL);
   if (!isset($providers_map)) {
-    //ulogin network key => hybridauth provider key
+    // Map ulogin network key => hybridauth provider key.
     $providers_map = array(
       'vkontakte' => 'Vkontakte',
       'odnoklassniki' => 'Odnoklassniki',
@@ -134,28 +133,31 @@ function _hybridauth_ulogin_providers_map() {
 
 function _hybridauth_ulogin_provider_convert($ulogin_network_key) {
   $providers_map = _hybridauth_ulogin_providers_map();
-  
+
   if (array_key_exists($ulogin_network_key, $providers_map)) {
     return $providers_map[$ulogin_network_key];
   }
-  
+
   return FALSE;
 }
 
 function _hybridauth_ulogin_data_map() {
   $data_map = &drupal_static(__FUNCTION__, NULL);
   if (!isset($data_map)) {
-    //ulogin data key => hybridauth data key
+    // Map ulogin data key => hybridauth data key.
     $data_map = array(
-      'network' => '',  //provider, but we must convert; it is added in _hybridauth_ulogin_identity_process()
+      // Provider, but we must convert; it is added in _hybridauth_ulogin_identity_process().
+      'network' => '',
       'identity' => 'profileURL',
       'uid' => 'identifier',
       'first_name' => 'firstName',
       'last_name' => 'lastName',
       'email' => 'email',
       'nickname' => 'displayName',
-      'bdate' => '', //should convert to separate values for day, month and year
-      'sex' => '', //gender, but we should convert
+      // Should convert to separate values for day, month and year.
+      'bdate' => '',
+      // Gender, but we should convert.
+      'sex' => '',
       'photo' => 'photoURL',
       'photo_big' => 'photoURL',
       'country' => 'country',
@@ -163,20 +165,21 @@ function _hybridauth_ulogin_data_map() {
       'phone' => 'phone',
       'manual' => 'manual',
       'profile' => 'profileURL',
-      'verified_email' => '', //if it is 1 then we should assign emailVerified
+      // If it is 1 then we should assign emailVerified.
+      'verified_email' => '',
     );
   }
   return $data_map;
 }
 
 function _hybridauth_ulogin_data_convert($ulogin_data) {
-  $data_map =_hybridauth_ulogin_data_map();
-  $hybridauth_data = array();  
+  $data_map = _hybridauth_ulogin_data_map();
+  $hybridauth_data = array();
   foreach ($ulogin_data as $key => $value) {
     if (array_key_exists($key, $data_map) && $data_map[$key]) {
       $hybridauth_data[$data_map[$key]] = $value;
     }
-    
+
     if ($key == 'bdate') {
       list($day, $month, $year) = explode('.', $value);
       $hybridauth_data['birthDay'] = intval($day);
@@ -195,13 +198,13 @@ function _hybridauth_ulogin_data_convert($ulogin_data) {
       $hybridauth_data['emailVerified'] = $ulogin_data['email'];
     }
   }
-  
-  //adding empty keys - to follow HybridAuth standard
+
+  // Adding empty keys - to follow HybridAuth standard.
   foreach (hybridauth_fields_list() as $key => $value) {
     if (!array_key_exists($key, $hybridauth_data)) {
       $hybridauth_data[$key] = '';
     }
   }
-  
+
   return $hybridauth_data;
 }

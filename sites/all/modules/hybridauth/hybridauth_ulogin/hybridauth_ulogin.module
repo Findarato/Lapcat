@@ -1,6 +1,7 @@
 <?php
 /**
- * 
+ * @file
+ * Main file for the HybridAuth uLogin module.
  */
 
 /**
