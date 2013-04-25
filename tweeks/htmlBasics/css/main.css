@@ -7,7 +7,8 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+    color: #1F1F1F;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -49,20 +50,15 @@ textarea {
     resize: vertical;
 }
 
-.chromeframe {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+code{
+	font-size:.8em;	
 }
-
-
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
 
 body {
-    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    font: 16px/26px 'Ubuntu', sans-serif;
     color:#1f1f1f
 }
 
