@@ -86,6 +86,10 @@ h4 {
 ::-moz-selection { background: @color1; color: @colorDark; text-shadow: none; }
 ::selection { background: @color1; color: @colorDark; text-shadow: none; }
 
+.siteMap{
+  height:auto;
+}
+
 .t{display:table; width:100%;}
 .td{display:table-cell;vertical-align: top;}
 .tr{display:table-row;}
@@ -419,28 +423,33 @@ form #user-login-form{
 
 
 .topNav{
-	width:940px;
+  width:940px;
 }
 .logoImage{
   height:75px;
   width:68px;
 }
 .secondNav{
-	font-weight:bold;
-	font-size:1.2em;
-	position:relative;
-	height:1.4em;
-	
+  font-weight:bold;
+  font-size:1.2em;
+  position:relative;
+  height:1.4em;
+  
 }
+.siteMap .secondNav{
+  background:@color4;
+  height:20px;
+}
+
 .logoTree{
   max-height:75px;
   max-width:68px;
 }
 .subPageHeader{
-	font-size:50px;
-	height:115px;
-	padding:3px 3px 3px 10px;
-	margin:0 5px 10px 5px;
+  font-size:50px;
+  height:115px;
+  padding:3px 3px 3px 10px;
+  margin:0 5px 10px 5px;
   background: url('/sites/all/themes/lapcat/images/LaPorte_County_Public_Library.jpg') no-repeat;
   background-size:cover;
   background-position:0px;
@@ -464,18 +473,18 @@ form #user-login-form{
 }
 
 .subPageCatalogSearch{
-	position:absolute;
-	right:5px;
-	top:0;
-	opacity:1;
-	z-index: 10;
-	background:#E0E0E0;
-	padding:3px;
-	border-top-right-radius: 3px;
-	border-bottom-left-radius: 3px;
+  position:absolute;
+  right:5px;
+  top:0;
+  opacity:1;
+  z-index: 10;
+  background:#E0E0E0;
+  padding:3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
-	color:@colorDark;
+  color:@colorDark;
 }
 .hoverGlow,.hoverGlowText{.Animate(300ms)}
 .hoverGlow:hover{
@@ -487,32 +496,32 @@ form #user-login-form{
 
 /* Teen Section */
 .locationBoxInfo{
-	width:40%;
-	float:left
+  width:40%;
+  float:left
 }
 .locationBoxMap{
-	width:60%;
-	float:left;
-	a{
-	  background-position:50%;
-	}
+  width:60%;
+  float:left;
+  a{
+    background-position:50%;
+  }
 }
 .centerBox{
-	margin:0 auto;
-	width:918px;
+  margin:0 auto;
+  width:918px;
 }
 .topHeader{
-	position:fixed;
-	top:0;
-	left:0;
-	right:0;
-	width:100%;
-	height:112px;
-	padding:2px;
-	z-index:100;
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  width:100%;
+  height:112px;
+  padding:2px;
+  z-index:100;
 }
 li{
-	list-style: none outside none;
+  list-style: none outside none;
 }
 
 .bookTitle{
@@ -520,29 +529,29 @@ li{
 }
 
 #container{
-	position:relative;
-	z-index:10;
+  position:relative;
+  z-index:10;
 }
 
 .twitterBox,.twitterContainer,.deliciousBox{
-	position:relative;
-	width:100%;
-	background:#FFF;
+  position:relative;
+  width:100%;
+  background:#FFF;
 }
 .mainContentBox{
   background:#FFF;
   height:436px;
   margin-right:10px;
-	position:relative;
-	width:100%;
+  position:relative;
+  width:100%;
 }
 #greatPicksContainerBox .rssItem img{
-	width:100px;
+  width:100px;
 }
 .blogBox,.blogContainerBox,.containerBox,.bookBox,.box,body{
   background:        @colorLight url("images/grey.png");
   min-height:        100px;
-	position:          relative;
+  position:          relative;
 }
 .blogContainerBox,.containerBox {
   margin-bottom:    1em;
@@ -551,76 +560,99 @@ li{
 
 
 /**
- * Title and Button elements	
+ * Title and Button elements  
  * 
  */
 .subTitleElement a{
-	display:inline-block;
-	margin-left:3px;
+  display:inline-block;
+  margin-left:3px;
 }
 .subTitleElement a.selected{
-	margin-left:3px;
+  margin-left:3px;
 }
 .twitterFeedTitle,.mainContentTitle,.blogTitle,.eventFeedTitle,.titleElement{
-	cursor:pointer;
-	padding:6px;
-	position:absolute;
-	top:60px;
-	right:18px;
-	white-space: nowrap;
-	box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-	z-index:5;
+  cursor:pointer;
+  padding:6px;
+  position:absolute;
+  top:60px;
+  right:18px;
+  white-space: nowrap;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  z-index:5;
 }
 
 .twitterFeedTitle,.blogTitle,.titleElement{
-	left:0px;
-	right:auto;
-	top:-5px;
-	width:auto;
+  left:0px;
+  right:auto;
+  top:-5px;
+  width:auto;
+}
+.twitterList{
+  width:100%;
+  li{
+    width:100%;
+    display:block;
+    min-height:50px;
+  }
 }
 .titleElement a{
-	color: #F1F1F1;
+  color: #F1F1F1;
 }
 .titleElement a:hover,.subTitleElement a:hover{
-	text-decoration:none;
+  text-decoration:none;
 }
+.eventFeedTitle{
+  left:350px;
+  right:350px;
+  width:auto;
+  top:3px;
+  text-align:center;
+}
+
+.view-tweets ul li{display:inline-block;}
+
 .mainContentTitle{
-	right:525px;
-	top:-5px;
+  right:525px;
+  top:-5px;
 }
 .middleSectionScroll{
-	display:inline-block;
-	width:10px;
-	height:10px;
-	background-color:rgba(255,255,255,.4);
-	border:solid 1px rgba(255,255,255,.6);
-	cursor: pointer;
-	margin:2px;
-	/*
-	border-radius:5px;
-	-moz-border-radius:5px;
-	webkit-border-radius:5px;
-	*/	
+  display:inline-block;
+  width:10px;
+  height:10px;
+  background-color:rgba(255,255,255,.4);
+  border:solid 1px rgba(255,255,255,.6);
+  cursor: pointer;
+  margin:2px;
+  /*
+  border-radius:5px;
+  -moz-border-radius:5px;
+  webkit-border-radius:5px;
+  */  
 }
 .middleSectionScroll:hover{
-	background-color:rgba(132,185,189,.4);
-	border:solid 1px rgba(132,185,189,.6);
+  background-color:rgba(132,185,189,.4);
+  border:solid 1px rgba(132,185,189,.6);
 }
 
 .blogTitle a:hover,.twitterFeedTitle a:hover,.deliciousFeedTitle a:hover{text-decoration:none;}
 .secondNav a,.firstNav a{color:#000;}
 
 .delItem .delFavIcon{
-	display:inline-block;
-	height:16px;
-	width:16px;
-	margin-right:3px;
+  display:inline-block;
+  height:16px;
+  width:16px;
+  margin-right:3px;
 }
 .deliciousContainer{
-	padding:25px 5px 5px 5px; 
-	width:300px;
+  padding:25px 5px 5px 5px; 
+  width:300px;
+}
+.rssItem{
+  padding:3px 40px 3px 10px;
+
 }
 .menuDropDown a{content:"Menu";font-size:1.5em;}
+
 
 /*sprite Code*/
 .sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
@@ -628,8 +660,7 @@ li{
 /*Children*/
 
 .childWholePage{
-  backgroun
-  d: rgb(38,163,255); /* Old browsers */
+  background: rgb(38,163,255); /* Old browsers */
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
   background: -webkit-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* Chrome10+,Safari5.1+ */
   background: -ms-radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* IE10+ */
@@ -644,7 +675,7 @@ li{
   right:-5%;
   height:31em;
   width:29em;
-} 
+}
 .childrenSun{
   position:absolute;
   background-size:contain;
