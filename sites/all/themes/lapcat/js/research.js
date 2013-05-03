@@ -4,6 +4,9 @@ if(adultContainer.html() == null){
   var adultContainer = jQuery(".view-educators-research");
   if(adultContainer.html() == null){
     var adultContainer = jQuery(".view-homework-help");
+    if(adultContainer.html() == null){
+    	
+    }
   }
 }
 var adultCategories = new Array();
@@ -25,7 +28,7 @@ jQuery(".researchList").each(function(i,item){
 jQuery.each(jQuery(".hoverCard"),function(h,card){
   me=jQuery(card);
   me.show();
-  me.hovercard({"detailsHTML":me.next().next().text()+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.next().attr("src")});
+  me.hovercard({"background":"#f1f1f1 url(/sites/all/themes/lapcat/less/images/grey.png)","detailsHTML":me.next().next().text()+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.next().attr("src")});
   
 })
 adultCategories.sort();

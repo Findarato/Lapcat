@@ -9,6 +9,7 @@
 .color4TextGlow{text-shadow:#e7f2e6 0 0 2px;}
 .color4Border1{border:1px solid #e7f2e6;}
 .color5{color:#f1f1f1;background:#5f3e12;}
+.color560{color:#f1f1f1;background:rgba(95, 62, 18, 0.6);}
 .color5TextGlow{text-shadow:#5f3e12 0 0 2px;}
 .color5Circle{border:1px solid rgba(95, 62, 18, 0.6);display:inline-block;height:1.1em;width:1.1em;text-align:center;color:#5f3e12;border-radius:1.1em;-webkit-border-radius:1.1em;}
 .color5Circle:hover{box-shadow:0 0 0.2em 0em #5f3e12;-moz-box-shadow:0 0 0.2em 0em #5f3e12;-webkit-box-shadow:0 0 0.2em 0em #5f3e12;}
@@ -59,10 +60,10 @@ li{list-style:none outside none;}
 .navBoxes:nth-last-child(1){margin-bottom:0;}
 .navBoxes{height:48px;width:auto;margin:2.5px 0 2.5px 0;background:#f1f1f1;position:relative;border-radius:3px;-webkit-border-radius:3px;vertical-align:middle;}.navBoxes a{box-shadow:inset 0 0 2px 1px rgba(95, 62, 18, 0);-moz-box-shadow:inset 0 0 2px 1px rgba(95, 62, 18, 0);-webkit-box-shadow:inset 0 0 2px 1px rgba(95, 62, 18, 0);text-align:center;line-height:48px;font-size:1.5em;height:48px;width:100%;display:block;}.navBoxes a:hover{box-shadow:inset 0 0 20px 10px rgba(95, 62, 18, 0.19999999999999996);-moz-box-shadow:inset 0 0 20px 10px rgba(95, 62, 18, 0.19999999999999996);-webkit-box-shadow:inset 0 0 20px 10px rgba(95, 62, 18, 0.19999999999999996);}
 .item-list .views-row{margin:5px 0;}
-.twitterImage{display:inline-block;float:left;}
+.twitterImage{display:inline-block;float:left;height:64px;}
 .navDisplay{margin-bottom:10px;height:307px;}
-.region-menuheader{display:inline-block;}.region-menuheader ul{width:100%;}
-.region-menuheader .leaf{width:9rem;display:inline-block;padding:0;text-align:center;}
+.region-menuheader{display:inline-block;width:100%;}.region-menuheader ul{width:100%;text-align:center;}
+.region-menuheader .leaf{width:18%;display:inline-block;padding:0;text-align:center;}
 .region-menuheader .first{margin:3px 0 0 8px;}
 .helpLink{font-size:1.3em;}
 .views-slideshow-cycle-main-frame-row *{border-radius:3px;-webkit-border-radius:3px;display:relative;}

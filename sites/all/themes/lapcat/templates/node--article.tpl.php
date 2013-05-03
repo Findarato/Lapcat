@@ -1,6 +1,6 @@
       <style>
         .userImage img{
-          width:ssh px;
+          width:64px;
           height:64px;
           margin:0px;
           padding:0px;
