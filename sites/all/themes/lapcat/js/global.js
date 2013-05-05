@@ -107,7 +107,7 @@ jQuery(document).ready(function(){
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
         displayFlickr("teens");
-      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
+	      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
         }else{
@@ -116,6 +116,10 @@ jQuery(document).ready(function(){
             if(uri.search(/educators/i)>0){// this is the teens page
               jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
             }else{//if all else fails lets just load a local rss feed
+            	if(uri.search(/genealogy/i)>0){// this is the teens page
+             		jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
+            	}else{//if all else fails lets just load a local rss feed
+            	}
             }
           }
         } 

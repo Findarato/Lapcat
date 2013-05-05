@@ -10,7 +10,7 @@
         }
       </style>
 <div class="box blogBox roundAll3 <?php print $classes; ?>" id="node-<?php print $node -> nid; ?>" <?php print $attributes; ?>>
-  <div class="roundAll3 titleElement color3 font1"><span style="padding-left:3px;height:100%;width:100%">Article</span></div>
+  <div class="roundAll3 titleElement color3 font1"><h2>Articles</h2></div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
     <div class="t">
       <div class="td" style="height:64px;width:64px;">

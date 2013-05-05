@@ -126,7 +126,7 @@
                     </select>
                   </div>
                   <div style="display:table-cell">
-                    <input type="search" name="searcharg" size="20" maxlength="75" placeholder="Search the Catalog">
+                    <input type="search" name="searcharg" size="24" maxlength="75" placeholder="Search the Catalog">
                     <input type="submit" value="GO!"/>
                   </div>
                 </div>

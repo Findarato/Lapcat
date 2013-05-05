@@ -5,7 +5,7 @@ if(adultContainer.html() == null){
   if(adultContainer.html() == null){
     var adultContainer = jQuery(".view-homework-help");
     if(adultContainer.html() == null){
-    	
+//    	var adultContainer = jQuery(".view-history-research");
     }
   }
 }

@@ -28,7 +28,7 @@
  */
 ?>
 <div class="box blogBox roundAll3">
-  <div class="twitterFeedTitle roundAll3 titleElement color3">Articles</div>
+  <div class="twitterFeedTitle roundAll3 titleElement color3"><h2>Articles</h2></div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
     <?php if ($rows): ?>
       <div class="view-content">

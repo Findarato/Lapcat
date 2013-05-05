@@ -80,7 +80,7 @@
             <a class="smoothAnimate" href="greatpicks">Great Picks</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="http://genealogy.lapcat.org">Genealogy</a>
+            <a class="smoothAnimate" href="genealogy">Genealogy</a>
           </div>
         </div>        
       </nav>  
