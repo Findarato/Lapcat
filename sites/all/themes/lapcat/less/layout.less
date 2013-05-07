@@ -626,11 +626,6 @@ li{
   border:solid 1px rgba(255,255,255,.6);
   cursor: pointer;
   margin:2px;
-  /*
-  border-radius:5px;
-  -moz-border-radius:5px;
-  webkit-border-radius:5px;
-  */  
 }
 .middleSectionScroll:hover{
   background-color:rgba(132,185,189,.4);
@@ -692,6 +687,87 @@ li{
   -o-animation: spinSun 30s infinite linear;
   animation: spinSun 30s infinite linear;
 }
+
+
+.childrenGrass{
+  width:100%;
+  z-index:1;
+  position: relative;
+  background-position-y:0;
+  height:98px
+}
+/*Global tweeks*/
+#pageHeader{
+  margin-bottom:15px;
+}
+.element-invisible{display:none;}
+
+.view-genealogy-collection-links{
+  background:url("/sites/all/themes/lapcat/images/belleGunness.png") bottom right no-repeat ;
+  min-height:150px;
+}
+
+footer {
+  z-index:20;
+  height:17em;
+  position:absolute;
+  width:100%;
+  * { vertical-align:top; }
+  h3{
+    text-shadow:0px 2px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
+    color:@colorDark;
+    color:rgba(0,0,0,.3); 
+  }
+  .socialLinks{
+    opacity:.9;
+    font-size:3em;
+    height:1.3em;
+    a{
+      text-shadow:0px 2px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
+      color:rgba(0,0,0,.3);
+    }    
+  }
+  .footerLeft {
+    width:80%;
+    float:left;
+  }
+  .footerRight {
+    width:20%;
+    float:right;
+  }
+  #search-block-form{
+    -webkit-box-shadow: inset 0 0 1px 1px @shadow;
+    box-shadow: inset 0 0 1px 1px @shadow;
+    background:rgba(0,0,0,.3);
+    margin:5px;
+    margin-bottom:10px;
+    padding:.3em;
+    width:14em; 
+    .form-actions{
+      float:right;
+    }
+    .form-text{
+      width:10em;
+    }
+    .rounded-corners(3px);
+    input{
+      color:@colorDark;
+      height:1.5em;
+      background: rgba(255, 255, 255, 0.3);
+      .rounded-corners(3px);
+      border:none;
+    }
+  } 
+  #pageLinks li{
+    font-size:1.3em;
+    padding:3px;
+    a{ color:@colorLight60; }
+  }
+}
+
+
+
+/*Animations*/
 @keyframes spinSun {  
   0% { transform: rotate(0)}
   100% {transform: rotate(360deg)}
@@ -710,82 +786,4 @@ li{
 @-webkit-keyframes spinSun {
   0% { -webkit-transform: rotate(0)}
   100% {-webkit-transform: rotate(360deg)}
-}
-
-.childrenGrass{
-  width:100%;
-  z-index:1;
-  position: relative;
-  background-position-y:0;
-  height:98px
-}
-/*Global tweeks*/
-#pageHeader{
-  margin-bottom:15px;
-}
-.element-invisible{display:none;}
-
-
-footer {
-  z-index:20;
-  height:17em;
-  position:absolute;
-  width:100%;
-  h3{
-    text-shadow:0px 2px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
-    color:@colorDark;
-    color:rgba(0,0,0,.3); 
-  }
-  .socialLinks{
-    opacity:.9;
-    font-size:3em;
-    height:1.3em;
-    a{
-      text-shadow:0px 2px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
-      color:rgba(0,0,0,.3);
-    }    
-  }
-  *{
-    vertical-align:top;
-  }
-  .footerLeft{
-    width:80%;
-    float:left;
-  }
-  .footerRight{
-    width:20%;
-    float:right;
-  }
- #search-block-form{
-  -webkit-box-shadow: inset 0 0 1px 1px @shadow;
-  box-shadow: inset 0 0 1px 1px @shadow;
-  background:rgba(0,0,0,.3);
-  margin:5px;
-  margin-bottom:10px;
-  padding:.3em;
-  width:14em; 
-  .form-actions{
-    float:right;
-  }
-  .form-text{
-    width:10em;
-  }
-  .rounded-corners(3px);
-  input{
-    color:@colorDark;
-    height:1.5em;
-    background: rgba(255, 255, 255, 0.3);
-    .rounded-corners(3px);
-    border:none;
-  }
- } 
-}
-
-#pageLinks li{
-  /*display:inline-block;*/
-  font-size:1.3em;
-  padding:3px;
-  a{
-    color:@colorLight60;    
-  }
 }
