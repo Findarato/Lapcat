@@ -26,7 +26,11 @@
   -moz-box-shadow: @arguments;
   -webkit-box-shadow: @arguments;
 }
-
+.newShadow(){
+    -webkit-box-shadow: 0 5px 10px @shadow;
+    -moz-box-shadow: 0 5px 10px @shadow;
+    box-shadow: 0 5px 10px @shadow;
+}
 .Animate(@time:500ms){
   -webkit-transition: all @time linear;
      -moz-transition: all @time linear;

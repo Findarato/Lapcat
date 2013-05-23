@@ -96,10 +96,6 @@ jQuery(document).ready(function(){
   
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();
-  //if(title = $("#page-title").text()){
-  //  $(".subPageHeader").addClass(title.replace(/ /g,""));
- // }
- 
     jQuery.getScript("/sites/all/themes/lapcat/js/locations.js");
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
@@ -135,9 +131,6 @@ jQuery(document).ready(function(){
           "background-size":"16px 16px"
       });
   });
-
-
-
 });
 
 
