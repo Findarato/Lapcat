@@ -122,11 +122,20 @@ var locations={
       "ML":{
          "ID":8,
          "name":"Mobile Library",
+         "time0":" ",
+         "time1":" ",
+         "time2":" ",
+         "time3":" ",
+         "time4":" ",
+         "time5":" ",
+         "time6":" ",
          "counter":7,
-         "street":"",
-         "cityState":"",
-         "zip":"",
-         "phone":"(219) 362-6156"
+         "street":"La Porte, IN",
+         "cityState":"46350",
+         "zip":"(219) 362-6156",
+         "phone":"reference@lapcat.org",
+         "email":"<a href='/downloads/mobilelibraryschedule.pdf'>Schedule</a>"
+         
       }
 };
 
