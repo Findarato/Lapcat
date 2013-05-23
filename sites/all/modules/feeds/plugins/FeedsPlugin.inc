@@ -14,7 +14,7 @@ class FeedsResult {}
  * Implement source interface for all plugins.
  *
  * Note how this class does not attempt to store source information locally.
- * Doing this would break the model where source information is represented by
+ * Doing this would break the model where source information is represented by 
  * an object that is being passed into a Feed object and its plugins.
  */
 abstract class FeedsPlugin extends FeedsConfigurable implements FeedsSourceInterface {
