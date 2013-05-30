@@ -120,11 +120,22 @@ h4 {
   left:-5px;
 }
 
-aside .view-content .skin-default{
-  margin-left:25px;
-  img{
-    .newShadow();
+aside {
+  .video-js{
+   width:290px;
+   overflow:hidden; 
   }
+  .view-content .skin-default{
+    margin-left:25px;
+    img{
+      .newShadow();
+    }
+  } 
+}
+
+video,.video-js{
+  .rounded-corners(3px);
+  margin-bottom:10px;
 }
 
 .menuSelect {

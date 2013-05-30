@@ -132,7 +132,8 @@ VideoJS.options = {
   //   "subtitlesDisplay"/*, "replay"*/
   // ]
 };
-
+VideoJS.options.width = "";
+VideoJS.options.height = "";
 // Set CDN Version of swf
 if (CDN_VERSION != "GENERATED_CDN_VSN") {
   _V_.options.flash.swf = "http://vjs.zencdn.net/"+CDN_VERSION+"/video-js.swf"
