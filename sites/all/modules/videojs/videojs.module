@@ -35,21 +35,6 @@ function videojs_theme() {
       'template' => 'theme/videojs',
       'file' => 'includes/videojs.theme.inc',
     ),
-    'videojs_view' => array(
-      'variables' => array('items' => NULL, 'player_id' => NULL, 'attributes' => NULL),
-      'template' => 'theme/videojs',
-      'file' => 'includes/videojs.theme.inc',
-    ),
-  );
-}
-
-/**
- * Implements hook_views_api().
- */
-function videojs_views_api() {
-  return array(
-    'api' => 2,
-    'path' => drupal_get_path('module', 'videojs') . '/includes',
   );
 }
 
@@ -57,17 +42,20 @@ function videojs_views_api() {
  * Implements hook_field_formatter_info().
  */
 function videojs_field_formatter_info() {
+  module_load_include('inc', 'videojs', 'includes/videojs.utility');
+  $options = videojs_utility::getDefaultDisplaySettings();
+  foreach (array_keys($options) as $key) {
+    $options[$key] = NULL;
+  }
+  $options['posterimage_field'] = NULL;
+  $options['posterimage_style'] = NULL;
+
   return array(
     'videojs' => array(
-      'label' => t('Video.js : HTML5 Video Player'),
+      'label' => t('Video.js'),
       'field types' => array('file', 'media', 'link_field'),
-      'description' => t('Display a video file as an HTML5-compatible with Flash-fallback video player.'),
-      'settings'  => array(
-        'width' => NULL,
-        'height' => NULL,
-        'posterimage_field' => NULL,
-        'posterimage_style' => NULL,
-      ),
+      'description' => t('Display a video file as an HTML5-compatible player with Flash-fallback.'),
+      'settings'  => $options,
     ),
   );
 }
@@ -87,13 +75,12 @@ function videojs_field_formatter_view($entity_type, $entity, $field, $instance, 
     $links = $items;
     $items = array();
     foreach ($links as $link) {
+      $title = $link['title'];
+
       // Allow the user to override the mime type using the title field
-      if (!empty($link['title']) && strncmp('video/', $link['title'], 6) === 0) {
-        $mime = $link['title'];
-      }
-      // Manual override for WebM, because Drupal doesn't detect it.
-      elseif (substr($link['url'], -5) == '.webm') {
-        $mime = 'video/webm';
+      if (!empty($title) && (strncmp('video/', $title, 6) === 0 || strncmp('audio/', $title, 6) === 0 || strncmp('text/', $title, 5) === 0)) {
+        $mime = $title;
+        $title = '';
       }
       else {
         $mime = DrupalLocalStreamWrapper::getMimeType($link['url']);
@@ -108,6 +95,7 @@ function videojs_field_formatter_view($entity_type, $entity, $field, $instance, 
       $items[] = array(
         'uri' => url($link['url'], $link),
         'filemime' => $mime,
+        'description' => $title,
       );
     }
   }
@@ -117,6 +105,19 @@ function videojs_field_formatter_view($entity_type, $entity, $field, $instance, 
   if (!empty($settings['width']) && !empty($settings['height'])) {
     $attributes['width'] = intval($settings['width']);
     $attributes['height'] = intval($settings['height']);
+  }
+
+  if ($settings['autoplay'] !== NULL) {
+    $attributes['autoplay'] = $settings['autoplay'];
+  }
+  if ($settings['loop'] !== NULL) {
+    $attributes['loop'] = $settings['loop'];
+  }
+  if ($settings['hidecontrols'] !== NULL) {
+    $attributes['hidecontrols'] = $settings['hidecontrols'];
+  }
+  if ($settings['preload'] !== NULL) {
+    $attributes['preload'] = $settings['preload'];
   }
 
   // Add the poster image
@@ -157,22 +158,7 @@ function videojs_field_formatter_settings_form($field, $instance, $view_mode, $f
     '#element_validate' => array('videojs_field_formatter_settings_form_validate'),
   );
 
-  $form['width'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Width'),
-    '#default_value' => $settings['width'],
-    '#size' => 6,
-    '#maxlength' => 5,
-    '#element_validate' => array('element_validate_integer_positive'),
-  );
-  $form['height'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Height'),
-    '#default_value' => $settings['height'],
-    '#size' => 6,
-    '#maxlength' => 5,
-    '#element_validate' => array('element_validate_integer_positive'),
-  );
+  videojs_utility::getDisplaySettingsForm($form, $settings);
 
   if (!empty($imagefields)) {
     $form['posterimage_field'] = array(
@@ -257,14 +243,22 @@ function _videojs_find_image_fields($field, $entity_type, $bundle) {
   return $imagefields;
 }
 
-function videojs_field_formatter_settings_form_validate($form, $form_state) {
-  $width = $form['width']['#value'];
-  $height = $form['height']['#value'];
+function videojs_field_formatter_settings_form_validate($form, &$form_state) {
+  $value = drupal_array_get_nested_value($form_state['values'], $form['#parents']);
+  $options = videojs_utility::getDisplaySettingsFormResults($value);
+  $value = array_merge($value, $options);
 
   // The fields need to be both entered or both empty
-  if (empty($width) != empty($height)) {
-    form_error($form[empty($width) ? 'height' : 'width'], t('The width and height field need to be both set or both empty.'));
+  if (empty($value['width']) != empty($value['height'])) {
+    form_error($form[empty($value['width']) ? 'height' : 'width'], t('The width and height field need to be both set or both empty.'));
   }
+
+  if (empty($value['width'])) {
+    $value['width'] = NULL;
+    $value['height'] = NULL;
+  }
+
+  drupal_array_set_nested_value($form_state['values'], $form['#parents'], $value);
 }
 
 /**
@@ -278,6 +272,19 @@ function videojs_field_formatter_settings_summary($field, $instance, $view_mode)
   $output = t('Player dimensions: @widthxheight', array(
     '@widthxheight' => !empty($settings['width']) && !empty($settings['height']) ? $settings['width'] . 'x' . $settings['height'] : t('default'),
   ));
+
+  if ($settings['loop']) {
+    $output .= '<br/>' . t('Loop playback');
+  }
+  if ($settings['autoplay']) {
+    $output .= '<br/>' . t('Auto-play files on page load');
+  }
+  if ($settings['hidecontrols']) {
+    $output .= '<br/>' . t('Hide controls');
+  }
+  if (!empty($settings['preload'])) {
+    $output .= '<br/>' . t('Preload behavior') . ': ' . check_plain($settings['preload']);
+  }
 
   if (!empty($settings['posterimage_field'])) {
     $imageinstance = field_info_instance($instance['entity_type'], $settings['posterimage_field'], $instance['bundle']);
@@ -300,64 +307,102 @@ function videojs_field_formatter_settings_summary($field, $instance, $view_mode)
 
 /**
  * Add the Video.js library to the page.
- *
- * @param $add
- *   By default this function will add videojs to the page JavaScript array
- *   directly. If wanting to store the Video.js file as an #attached property,
- *   set this to FALSE and videojs_add() will only return the needed array
- *   suitable for use as an #attached property.
  */
 function videojs_add($add = TRUE) {
-  static $added = FALSE;
-  if (!isset($added)) {
-    $added = &drupal_static(__FUNCTION__);
+  $added = &drupal_static(__FUNCTION__);
+
+  switch (variable_get('videojs_location', 'cdn')) {
+    case 'path':
+      $path = variable_get('videojs_directory', 'sites/all/libraries/video-js');
+      $remote = strpos($path, '://') !== FALSE || strncmp('//', $path, 2) === 0;
+      break;
+
+    case 'libraries':
+      if (!module_exists('libraries')) {
+        return FALSE;
+      }
+      $path = libraries_get_path('video-js');
+      if ($path === FALSE) {
+        return FALSE;
+      }
+      $remote = FALSE;
+      break;
+
+    case 'cdn':
+    default:
+      $path = '//vjs.zencdn.net/4.0';
+      $remote = TRUE;
   }
 
-  $directory = variable_get('videojs_directory', 'sites/all/libraries/video-js');
-
-  if (!file_exists($directory . '/video.min.js')) {
-    return FALSE;
-  }
-
-  $libjs = $directory . '/video.min.js';
-  $libcss = $directory . '/video-js.min.css';
+  $jsdata = $path . '/video.js';
+  $jsopts = array('group' => JS_LIBRARY, 'preprocess' => !$remote, 'type' => $remote ? 'external' : 'file', 'weight' => 1);
+  $cssdata = $path . '/video-js.css';
+  $cssopts = array('preprocess' => !$remote, 'type' => $remote ? 'external' : 'file');
+  $swfdata = 'videojs.options.flash.swf = "' . file_create_url($path . '/video-js.swf') . '"';
+  $swfopts = array('group' => JS_LIBRARY, 'type' => 'inline', 'weight' => 5);
 
   if ($add && !$added) {
-    drupal_add_js($libjs, array('group' => JS_LIBRARY));
-    drupal_add_css($libcss);
+    drupal_add_js($jsdata, $jsopts);
+    drupal_add_css($cssdata, $cssopts);
+    drupal_add_js($swfdata, $swfopts);
+
     $added = TRUE;
   }
 
   return array(
     'js' => array(
-      $libjs => array('group' => JS_LIBRARY),
+      $jsdata => $jsopts,
+      $swfdata => $swfopts,
     ),
-    'css' => array($libcss),
+    'css' => array(
+      $cssdata => $cssopts,
+    ),
   );
 }
 
 /**
  * Return the version of Video.js installed.
  *
- * @param $directory
- *   The directory to check for a Video.js installation.
+ * @param $path
+ *   The path to check for a Video.js installation. This can be a local path
+ *   like sites/all/libraries/video-js or a remote path like
+ *   http://mycdn.com/videojs. Do not add a trailing slash.
+ *   Defaults to videojs_directory when using the local file path location
+ *   or whatever location the Libraries API determines.
+ *
+ * @return
+ *   The version found or NULL if no version found.
  */
-function videojs_get_version($directory = NULL) {
+function videojs_get_version($path = NULL) {
   $version = NULL;
 
   if (!isset($directory)) {
     $directory = variable_get('videojs_directory', 'sites/all/libraries/video-js');
   }
 
-  if (!file_exists($directory . '/video.js')) {
+  // When admins specify a protocol-relative URL, add http because file_get_contents doesn't understand it.
+  if (strncmp('//', $directory, 2) === 0) {
+    $directory = 'http:' . $directory;
+  }
+
+  // Don't use file_exists() because it doesn't work with URLs.
+  // Now admins can also refer to directories like http://mycdn.com/videojs.
+  $contents = @file_get_contents($directory . '/video.js', FALSE, NULL, 0, 400);
+
+  if (empty($contents)) {
     return NULL;
   }
 
-  $contents = file_get_contents($directory . '/video.js');
-
   $matches = array();
-  if (preg_match('/(?:v[ ]*|Version )([\d.]+)/i', $contents, $matches)) {
+  if (preg_match('/(?:v[ ]*|Version )([\d.]{2,})/i', $contents, $matches)) {
     $version = $matches[1];
+  }
+
+  // The archive containing version 4.0.0 contains no identifyable version number.
+  // @see https://github.com/videojs/video.js/issues/517
+  $devversion = @file_get_contents($directory . '/video.dev.js', FALSE, NULL, 0, 10);
+  if (!empty($devversion)) {
+    $version = '4';
   }
 
   return $version;
@@ -372,10 +417,11 @@ function videojs_libraries_info() {
   $libraries['video-js'] = array(
     'name' => 'Video.js',
     'vendor url' => 'http://videojs.com',
-    'download url' => 'https://github.com/zencoder/video-js/downloads',
+    'download url' => 'http://videojs.com',
     'version arguments' => array(
       'file' => 'video.js',
-      'pattern' => '/(?:v[ ]*|Version )([\d.]+)/i',
+      // @todo: The following pattern doesn't work for 4.0.0.
+      'pattern' => '/(?:v[ ]*|Version )([\d.]{2,})/i',
       'lines' => 10,
       'cols' => 50,
     ),
@@ -406,8 +452,48 @@ function videojs_libraries_info() {
           ),
         ),
       ),
+      '4' => array(
+        'files' => array(
+          'js' => array('video.js' => array('group' => JS_LIBRARY)),
+          'css' => array('video-js.css'),
+        ),
+        'variants' => array(
+          'source' => array(
+            'files' => array(
+              'js' => array('video.dev.js' => array('group' => JS_LIBRARY)),
+              'css' => array('video-js.css'),
+            ),
+            'minified' => array(
+              'files' => array(
+                'js' => array('video.js' => array('group' => JS_LIBRARY)),
+                'css' => array('video-js.css'),
+              ),
+            ),
+          ),
+        ),
+      ),
     ),
   );
 
   return $libraries;
+}
+
+/**
+ * Implements hook_file_mimetype_mapping_alter().
+ *
+ * Adds the vtt, webm and weba extensions.
+ */
+function videojs_file_mimetype_mapping_alter(&$mapping) {
+  if (!isset($mapping['extensions']['vtt'])) {
+    $mapping['mimetypes']['vtt'] = 'text/vtt';
+    $mapping['extensions']['vtt'] = 'vtt';
+  }
+  if (!isset($mapping['extensions']['webm'])) {
+    $mapping['mimetypes']['webm'] = 'video/webm';
+    $mapping['extensions']['webm'] = 'webm';
+  }
+  if (!isset($mapping['extensions']['weba'])) {
+    $mapping['mimetypes']['weba'] = 'audio/weba';
+    $mapping['extensions']['weba'] = 'weba';
+  }
 }

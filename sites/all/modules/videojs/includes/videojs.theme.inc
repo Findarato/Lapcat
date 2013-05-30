@@ -26,10 +26,11 @@ function videojs_preprocess_videojs(&$vars) {
     'application/vnd.apple.mpegurl' => 'application/vnd.apple.mpegurl', // .m3u8
   );
 
-  $vars['width'] = !empty($vars['attributes']['width']) ? $vars['attributes']['width'] : variable_get('videojs_width', 640);
-  $vars['height'] = !empty($vars['attributes']['height']) ? $vars['attributes']['height'] : variable_get('videojs_height', 360);
-  $vars['autoplay'] = !!variable_get('videojs_autoplay', FALSE);
+  // Add the defaults to $vars['attributes'] and merge with $vars.
+  $options = videojs_utility::getDisplaySettings($vars['attributes']);
+  $vars = array_merge($vars, $options);
   $vars['items'] = array();
+  $vars['tracks'] = array();
   $vars['poster'] = NULL;
 
   foreach ($items as $item) {
@@ -41,6 +42,30 @@ function videojs_preprocess_videojs(&$vars) {
       // check for image file and add in it as poster
       if (strncmp($item['filemime'], 'image/', 6) === 0) {
         $vars['poster'] = $item['uri'];
+      }
+
+      // Filter out tracks.
+      if (strncmp($item['filemime'], 'text/vtt', 8) === 0) {
+        $item = $item + array(
+          'default' => FALSE,
+          'kind' => 'subtitles',
+          'charset' => 'utf-8',
+          'description' => '',
+          'langcode' => '',
+        );
+
+        // Try to find the language for subtitles.
+        if (empty($item['langcode'])) {
+          $language = videojs_utility::resolveLanguage($item['description']);
+          if ($language !== NULL) {
+            $item['langcode'] = $language[0];
+            if (empty($item['description'])) {
+              $item['description'] = $language[1];
+            }
+          }
+        }
+
+        $vars['tracks'][] = $item;
       }
 
       // Skip unplayable items.
@@ -61,12 +86,4 @@ function videojs_preprocess_videojs(&$vars) {
       $vars['poster'] = image_style_url($vars['posterimage_style'], $vars['poster']);
     }
   }
-}
-
-/**
- * Preprocess function for videojs.tpl.php when displaying a view as a playlist.
- */
-function template_preprocess_videojs_view(&$vars) {
-  videojs_add();
-  $vars['player_id'] = 'videojs-view-' . str_replace('_', '-', $vars['view']->name);
 }
