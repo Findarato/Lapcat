@@ -315,6 +315,7 @@ form #user-login-form{
 .locationDisplay{
   min-height:146px;
   min-width:135px;
+  font-size:1.1rem;
   div{
     margin:.3em;
   }
@@ -360,14 +361,14 @@ form #user-login-form{
 
 .socialMediaContainer{
   position:absolute;
-  top:120px;
+  top:127px;
   left:3px;
 }
   
 .facebook,.twitter,.googleplus,.youtube{
     padding:0;
+     -moz-font-feature-settings: "calt=0,liga=0";
     a{
-      line-height:16px;
       display:block;
       .Animate();
       transform-origin: 8px 16px;
@@ -375,6 +376,7 @@ form #user-login-form{
       z-index:50;
   }
 }
+
 .articleItem{
   position:relative;
   width:100%;
@@ -803,3 +805,24 @@ footer {
   0% { -webkit-transform: rotate(0)}
   100% {-webkit-transform: rotate(360deg)}
 }
+
+
+/*Testing something*/
+
+
+[class^="icon-"], [class*=" icon-"] {font-family:'WebHostingHub-Glyphs';background:none;width:auto;height:auto;font-style:normal}
+.icon-facebook:before{content:'\f140'}
+.icon-facebookalt:before{content:'\f14b'}
+.icon-youtube:before{content:'\f142'}
+.icon-twitter:before{content:'\f16a'}
+.icon-googleplus:before{content:'\f165'}
+.icon-info-sign:before{content:'\f315';color:@color5;}
+.icon-file:before{content:'\f0d6'}
+.icon-zoom-in:before{content:'\f320';color:@color560;}
+.icon-comment:before{content:'\f12c'}
+.icon-commentout:before{content:'\f080'}
+.icon-commentround:before{content:'\f155'}
+.icon-commentroundempty:before{content:'\f156'}
+.icon-commentroundtyping:before{content:'\f157'}
+.icon-commentroundtypingempty:before{content:'\f158'}
+.icon-commenttyping:before{content:'\f12d'}
