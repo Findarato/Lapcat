@@ -96,7 +96,7 @@ jQuery(document).ready(function(){
   
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();
-    jQuery.getScript("/sites/all/themes/lapcat/js/locations.js");
+    
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
       jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
@@ -115,6 +115,11 @@ jQuery(document).ready(function(){
             	if(uri.search(/genealogy/i)>0){// this is the teens page
              		jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
             	}else{//if all else fails lets just load a local rss feed
+            		if(uri.search(/help/i)>0){// this is the about page
+             			jQuery.getScript("/sites/all/themes/lapcat/js/contactUs.js");
+            		}else{//if all else fails lets just load a local rss feed
+            			jQuery.getScript("/sites/all/themes/lapcat/js/locations.js");
+            		}
             	}
             }
           }

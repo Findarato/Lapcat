@@ -134,7 +134,7 @@ var locations={
          "cityState":"46350",
          "zip":"(219) 362-6156",
          "phone":"reference@lapcat.org",
-         "email":"<a href='/downloads/mobilelibraryschedule.pdf'>Schedule</a>"
+         "email":"<a href='/downloads/mobilelibraryschedule.pdf'><span class='icon-bus'></span> Schedule</a>"
          
       }
 };

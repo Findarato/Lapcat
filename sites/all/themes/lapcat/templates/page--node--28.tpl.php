@@ -37,7 +37,6 @@
   </nav>
 </header>
 <div class="teenWholePage" style="overflow: hidden;z-index: 5">
-    <div class="childrenSun"></div>
     <div id="" style="" class="container_24">
       <div class="mainArea grid_24 roundAll3" id="main" role="main">
         <?php if ($page['pageHeader']): ?>
