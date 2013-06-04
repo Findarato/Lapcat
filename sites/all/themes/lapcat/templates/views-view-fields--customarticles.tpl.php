@@ -18,7 +18,7 @@
       <?php print $fields["body"]->content ?>
     </div>
     <?php print $fields["field_tags"]->content ?>
-  <div class="" id="socialMediaContainer">
+  <div class="" id="socialMediaContainer" style="margin-top:10px;">
     <ul class="socialLinks webSymbols" data-url="<?php print $fields["path"]->content ?>">
       <li class="facebook "><a class="icon-facebookalt" href="https://www.facebook.com/sharer/sharer.php?u=<?php print $fields["path"]->content ?>" title="Share on Facebook"></a></li>
       <li class="twitter "><a class="icon-twitter" href="https://twitter.com/intent/tweet?text=<?php print $fields["path"]->content ?>" title="Share on Twitter"></a></li>
