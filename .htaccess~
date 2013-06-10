@@ -127,18 +127,6 @@ DirectoryIndex index.php index.html index.htm
       # Force proxies to cache gzipped & non-gzipped css/js files separately.
       Header append Vary Accept-Encoding
     </FilesMatch>
-
-  # Enable rewrite 
-  RewriteEngine On 
-  # Does browser support WebP? 
-  RewriteCond %{HTTP_ACCEPT} \bimage/webp\b 
-  # Capture image name 
-  RewriteCond %{REQUEST_URI}  (.*)\.png$ 
-  # Does WebP image exist? 
-  RewriteCond %{DOCUMENT_ROOT}%1.webp -f 
-  # Route to WebP image 
-  RewriteRule .* %1\.webp [L,T=image/webp] 
-
   </IfModule>
 </IfModule>
 
