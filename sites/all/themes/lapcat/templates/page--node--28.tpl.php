@@ -1,10 +1,5 @@
 <!--Hours-->
 <style>
-    .childrenTree{
-    background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
-    background-repeat:no-repeat;
-    bottom:33px;
-  }  
 </style>
 <header class="topHeader" style="margin:0;padding:0;">
   <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
@@ -89,8 +84,6 @@
     </div>
   </div>
    <div class="childrenGrass" style="margin-top:150px;z-index:-1">
-      <div class="childrenTree linearAnimate"></div>
-      <div class="treeShadow"></div>
    </div>
     <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">

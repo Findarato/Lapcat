@@ -2,8 +2,6 @@
 
 <style>
 .childrenTree{
-  background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
-  background-repeat:no-repeat;
   z-index:3; 
   right:-93px;
 }

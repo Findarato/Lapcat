@@ -1,15 +1,11 @@
 <!--Teens Page-->
 
 <style>
-  .subPageHeader{
-    background-image: url('<?php print $base_path . $directory .'/images/teenHeader.png'; ?>');
-    background-repeat:no-repeat;
-  }
-  .childrenTree{
-    background-image: url('<?php print $base_path . $directory .'/images/tree.svg'; ?>');
-    background-repeat:no-repeat;
-    bottom:33px;
-  }  
+.childrenTree{
+  z-index:3; 
+  right:-93px;
+  bottom:33px;
+}
   .treeShadow{
     width:10em;
     height:25px;
