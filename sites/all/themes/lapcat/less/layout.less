@@ -515,7 +515,7 @@ form #user-login-form{
 }
 /*Sub page headers*/
 .subPageHeader.Hours{
-  background:url('http://maps.googleapis.com/maps/api/staticmap?center=41.609126,-86.721036&zoom=10&size=560x85&scale=2&sensor=false') no-repeat scroll -89px center;
+  background:url('/sites/all/themes/lapcat/images/hoursHeader.png') no-repeat scroll -89px center;
 }
 .subPageHeader.Downloads{
   background:url('/sites/all/themes/lapcat/images/downloadHeader.png') no-repeat;
@@ -560,7 +560,21 @@ form #user-login-form{
   float:left;
   a{
     background-position:50%;
+    max-width:400px;
+    display:block;
+    background-size:cover;
+    margin-right:5px;
+    height:300px;
+    width:100%;
   }
+  .coolSprings{background-image:url('/sites/all/themes/lapcat/images/coolSpringMap.png');}
+  .fishLake{background-image:url('/sites/all/themes/lapcat/images/fishLakeMap.png');}
+  .hanna{background-image:url('/sites/all/themes/lapcat/images/hannaMap.png');}
+  .mainLibrary{background-image:url('/sites/all/themes/lapcat/images/mainLibraryMap.png');}
+  .kingsfordHeights{background-image:url('/sites/all/themes/lapcat/images/kingsfordHeightsMap.png');}
+  .rollingPrairie{background-image:url('/sites/all/themes/lapcat/images/rollingPrairieMap.png');}
+  .unionMills{background-image:url('/sites/all/themes/lapcat/images/unionMillsMap.png');}
+  
 }
 .centerBox{
   margin:0 auto;
@@ -772,15 +786,14 @@ footer {
   }
   .socialLinks{
     li{
-      width:1em;
+      width:3.615em;
     }
     opacity:.9;
-    font-size:3em;
-    height:1.3em;
+    height:auto;
     a{
       text-shadow:0px 5px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
       color:rgba(0,0,0,.3);
-      font-size:1.3em;
+      font-size:3.615em;
       &:hover{
         text-shadow:0px 0px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
       }
@@ -858,7 +871,7 @@ footer {
 /*Testing something*/
 
 
-[class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:1rem;height:auto;font-style:normal}
+[class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}
 .icon-facebook:before{content:'F'}
 .icon-facebookalt:before{content:'f'}
 .icon-youtube:before{content:'Y'}
