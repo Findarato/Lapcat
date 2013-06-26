@@ -195,11 +195,14 @@ function displayLocation(me,domElementSelector){
     $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show();
 }
 
-jQuery(document).ready(function(){
-  jQuery("body").append($("<div/>",{"class":"highlightSelect smoothAnimate insideBoxShadow roundAll3",css:{"cursor":"default","display":"none","position":"absolute","top":0,"left":0}}))
-  jQuery(".locationHover")
-    .mouseenter(function(){displayLocation(jQuery(this),jQuery("#locationDisplay"));})
-    .mouseleave(function(){});
-  //This makes sure something is being shown
-  displayLocation(jQuery(".locationHover"),jQuery("#locationDisplay"));
-});
+
+jQuery("body").append($("<div/>",{"class":"highlightSelect smoothAnimate insideBoxShadow roundAll3",css:{"cursor":"default","display":"none","position":"absolute","top":0,"left":0}}))
+jQuery(".locationHover")
+  .mouseenter(function(){displayLocation(jQuery(this),jQuery("#locationDisplay"));})
+  .mouseleave(function(){});
+//This makes sure something is being shown
+displayLocation(jQuery(".locationHover"),jQuery("#locationDisplay"));
+
+window.onresize = function(){
+  displayLocation(jQuery("#MA"),jQuery("#locationDisplay"));
+};

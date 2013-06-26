@@ -51,7 +51,7 @@ h4{font-size:1.8em;}
 .flexslider{border:none;border-radius:3px;-webkit-border-radius:3px;}
 .flex-direction-nav li .next{right:-5px;}
 .flex-direction-nav li .prev{left:-5px;}
-aside .video-js{width:290px;overflow:hidden;}
+aside .video-js{width:290px !important;overflow:hidden;}
 aside .view-content .skin-default{margin-left:25px;}aside .view-content .skin-default img{-webkit-box-shadow:0 5px 10px rgba(36, 36, 36, 0.3);-moz-box-shadow:0 5px 10px rgba(36, 36, 36, 0.3);box-shadow:0 5px 10px rgba(36, 36, 36, 0.3);}
 video,.video-js{border-radius:3px;-webkit-border-radius:3px;margin-bottom:10px;}
 .menuSelect{width:160px;overflow:hidden;height:25px;line-height:25px;text-align:center;}
