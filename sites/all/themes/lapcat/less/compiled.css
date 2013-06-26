@@ -172,6 +172,7 @@ footer #search-block-form .form-text{width:10em;}
 footer #search-block-form input{color:#1d1d1d;height:1.5em;background:rgba(255, 255, 255, 0.3);border-radius:3px;-webkit-border-radius:3px;border:none;}
 footer #pageLinks li{font-size:1.3em;padding:3px;}footer #pageLinks li a{color:rgba(241, 241, 241, 0.6);}
 @keyframes spinSun{0%{transform:rotate(0);} 100%{transform:rotate(360deg);}}@-ms-keyframes spinSun{0%{transform:rotate(0);} 100%{transform:rotate(360deg);}}@-moz-keyframes spinSun{0%{-moz-transform:rotate(0);} 100%{-moz-transform:rotate(360deg);}}@-webkit-keyframes spinSun{0%{-webkit-transform:rotate(0);} 100%{-webkit-transform:rotate(360deg);}}.view-new-teen-books{min-height:400px;}
+.grid_24{margin-left:0px;margin-right:0px;}
 [class^="icon-"],[class*=" icon-"]{font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal;}
 .icon-facebook:before{content:'F';}
 .icon-facebookalt:before{content:'f';}

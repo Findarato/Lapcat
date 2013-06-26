@@ -36,7 +36,7 @@
     </div>
   </nav>
 </header>  
-  <div id="" style="" class="container_24">
+  <div class="container_24">
     <main class="mainArea grid_24 roundAll3" id="main" role="main">
       <!--Page Header-->
       <nav class="navDisplay">
