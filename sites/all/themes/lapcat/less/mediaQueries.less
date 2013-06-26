@@ -58,6 +58,15 @@
   .navDisplay{
     height:auto;
   }
+  main{
+    .socialLinks{
+      width:auto;
+      [class^="icon-"], [class*=" icon-"] {font-size:2.3em;width:3.2rem;}
+      li{
+        display:inline-block;
+      }
+    }
+  }   
 }
 @media only screen and (min-width: 25em) { /* Portrait Phones */
   .subPageCatalogSearch{
@@ -100,10 +109,22 @@
     top:-.8em;
     float:right;
   }
-[class^="icon-"], [class*=" icon-"] {font-size:2em;width:3rem;}
-
+  main{
+    .socialLinks{
+      [class^="icon-"], [class*=" icon-"] {font-size:2.3em;width:3.2rem;}
+      li{
+        display:inline-block;
+      }
+    }
+  }  
 }
 @media only screen and (min-width:12.5em){ /*everything should be here*/
+  main{
+    .socialLinks{
+      width:9.23rem;
+    }
+  }
+  [class^="icon-"], [class*=" icon-"] {font-size:2em;width:3rem;}
   .mainArea{
     padding-top:.5em;
   }

@@ -12,14 +12,14 @@
 //  print "itemRecord:".$linkArray["c"];
 //  print "Isbn:".$linkArray["i"];
 //  print "SN:".$linkArray["u"];
-
+$catalogLink = "http://catalog.lapcat.org/record=b".$linkArray["c"];
 $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"]."&i=".$linkArray["i"]."&u=".$linkArray["u"]."&t=".$linkArray["t"]."&website";
 ?>
       <article class="articleItem">
         <div class="t">
           <div class="bookCoverImage td">
             <a style="margin-right:10px;display:inline-block;" href="<?php print $wowbraryClickThough; ?>" title="View Catalog record">
-              <img alt="coverImage" height=120 width=80 style="border:none;" src="http://cdn1.lapcat.org/coverCache/imageFetch.php?isbn=<?php print $isbn; ?>&size=S">
+              <img alt="coverImage" height=120 width=80 style="border:none;" src="http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=<?php print $isbn; ?>&size=S">
             </a>
           </div>
           <div class="td">
@@ -35,10 +35,10 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
           </div>
         </div>
         <div class="socialMediaContainer" id="socialMediaContainer">
-          <ul class="socialLinks webSymbols" data-url="http://laportelibrary.org" data-counts="true" data-share-text="Google is a search engine">
-		      <li class="facebook "><a class="icon-facebookalt" href="https://www.facebook.com/sharer/sharer.php?u=<?php print $fields["path"]->content ?>" title="Share on Facebook"></a></li>
-		      <li class="twitter "><a class="icon-twitter" href="https://twitter.com/intent/tweet?text=<?php print $fields["path"]->content ?>" title="Share on Twitter"></a></li>
-		      <li class="googleplus"><a class="icon-googleplus" href="https://plus.google.com/share?url=<?php print $fields["path"]->content ?>" title="Share on Google Plus"></a></li>
+          <ul class="socialLinks" data-url="http://laportelibrary.org" data-counts="true" data-share-text="Google is a search engine">
+		      <li class="facebook "><a class="icon-facebookalt" href="https://www.facebook.com/sharer/sharer.php?u=<?php print $catalogLink; ?>" title="Share on Facebook"></a></li>
+		      <li class="twitter "><a class="icon-twitter" href="https://twitter.com/intent/tweet?text=<?php print $catalogLink;?>" title="Share on Twitter"></a></li>
+		      <li class="googleplus"><a class="icon-googleplus" href="https://plus.google.com/share?url=<?php print $catalogLink; ?>" title="Share on Google Plus"></a></li>
           </ul>
         </div>
       </article>    

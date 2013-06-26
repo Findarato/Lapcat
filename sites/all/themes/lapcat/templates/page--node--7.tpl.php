@@ -91,7 +91,7 @@
   <div class="childWholePage" style="overflow: hidden;">
     <div class="childrenSun"></div>
     <div id="" style="" class="container_24">
-      <div class="mainArea grid_24 roundAll3" id="main" role="main">
+      <main class="mainArea grid_24 roundAll3" id="main" role="main">
         <?php if ($page['pageHeader']): ?>
           <div id="pageHeader"><?php print render($page['pageHeader']); ?></div>
         <?php endif; ?>
@@ -138,7 +138,7 @@
             </div>
           <?php endif; ?>
         </aside>
-      </div> <!-- end of main content--> 
+      </main> <!-- end of main content--> 
     </div>
   <div class="childrenGrass" style="margin-top:150px;">
     <div class="childrenTree linearAnimate"></div>

@@ -37,7 +37,7 @@
   </nav>
 </header>  
   <div id="" style="" class="container_24">
-    <div class="mainArea grid_24 roundAll3" id="main" role="main">
+    <main class="mainArea grid_24 roundAll3" id="main" role="main">
       <!--Page Header-->
       <nav class="navDisplay">
         <div class="grid_20 push_4" style="position:relative">
@@ -107,7 +107,7 @@
         <?php print $feed_icons; ?>
       </aside>
        <div class="clear"></div>
-    </div> <!-- end of main content-->
+    </main> <!-- end of main content-->
   </div>
   <footer class="color5" style="margin-top:150px;margin-right:0px;z-index: 10;"> 
     <div class="" style="width:100%;bottom:0px;position:relative">
