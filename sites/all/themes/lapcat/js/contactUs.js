@@ -5,61 +5,62 @@ var locations={
          "name":"Rebecca Tomerlin",
          "email":"rtomerlin@lapcat.org",
          "street":"904 Indiana Avenue",
-		 "street2":"",
+		     "street2":"",
          "cityState":"La Porte, IN",
          "zip":"46350",
-         "phone":"(219) 362-6156"
+         "phone":"(219) 362-6156 ext 349"
       },
       "Dir":{
          "ID":2,
          "name":"Fonda Owens",
          "email":"fowens@lapcat.org",
          "street":"904 Indiana Avenue",
-		 "street2":"",
+		     "street2":"",
          "cityState":"La Porte, IN",
          "zip":"46350",
-         "phone":"(219) 362-6156"
+         "phone":"(219) 362-6156 ext 316"
       },
       "AS":{
          "ID":3,
          "name":"Monicah Fratena",
          "email":"mfratena@laportelibrary.org",
          "street":"904 Indiana Avenue",
-		 "street2":"",         
+		     "street2":"",         
          "cityState":"La Porte, IN",
          "zip":"46350",
-         "phone":"(219) 362-6156"
+         "phone":"(219) 362-6156 ext 327"
       },
       "YS":{
          "ID":4,
          "name":"Susan Bannwart",
          "email":"sbannwart@lapcat.org",
          "street":"904 Indiana Avenue",
-		 "street2":"",
+		     "street2":"",
          "cityState":"La Porte, IN",
          "zip":"46350",
-         "phone":"(219) 362-6156"
+         "phone":"(219) 362-6156 ext 329"
       },
       "Ext":{
          "ID":5,
          "name":"Elizabeth Johnson",
          "email":"ejohnson@laportelibrary.org",
          "street":"904 Indiana Avenue",
-		 "street2":"",
+		     "street2":"",
          "cityState":"La Porte, IN",
          "zip":"46350",
-         "phone":"(219) 362-6156"
+         "phone":"(219) 362-6156 ext 319"
       },
       "HR":{
          "ID":6,
          "name":"Cindy Lane",
          "email":"clane@lapcat.org",
-		 "street2":"",
+		     "street2":"",
          "street":"904 Indiana Avenue",
          "cityState":"La Porte, IN",
          "zip":"46350",
-         "phone":"(219) 362-6156"
-      },
+         "phone":"(219) 362-6156 ext 322"
+      }
+     /*
       "Hours":{
          "ID":6,
          "name":"<a href='/hours#MA'>Main Library</a>",
@@ -69,7 +70,7 @@ var locations={
          "cityState":"<a href='/hours#KH'>Kingsford Heights</a>",
          "zip":"<a href='/hours#UM'>Union Mills</a>",
          "phone":"<a href='/hours#HA'>Hanna</a>",
-	  }
+	  }*/
 
 
 
