@@ -65,8 +65,8 @@ li{list-style:none outside none;}
 .item-list .views-row{margin:5px 0;}
 .twitterImage{display:inline-block;float:left;height:64px;}
 .navDisplay{margin-bottom:1em;height:307px;}
-.region-menuheader{display:inline-block;width:100%;}.region-menuheader ul{width:100%;text-align:center;}
-.region-menuheader .leaf{width:18%;display:inline-block;padding:0;text-align:center;}
+.region-menuheader{display:inline-block;width:100%;float:none;}.region-menuheader ul{width:100%;text-align:center;display:table;}
+.region-menuheader .leaf{width:17%;display:table-cell;padding:0;text-align:center;}
 .region-menuheader .first{margin:3px 0 0 8px;}
 .helpLink{font-size:1.3em;}
 .views-slideshow-cycle-main-frame-row *{border-radius:3px;-webkit-border-radius:3px;display:relative;}
