@@ -2,29 +2,22 @@
     display:inline-block;
     width:100%;
   }
-@media only screen and (min-width:60em) { /* this is for browsers that are cool */
-  .childrenTree{
-    height:350px;
-    width:350px;
-    background: none, url('/images/tree.svg') no-repeat;
-    background-size:contain;
+@media only screen and (min-width: 50em) { /* middle width */
+  
+ .navDisplay{
+    .navBoxGroup{
+      width:17%;
+    }
+    .grid_20{
+      width:82%;
+      float:right;
+    }
+  }
+  .navBoxes{
+    height:3.4em;
+    margin:2px 0;
   }
   
-  .siteMap{
-    width:80%;
-  }
-  .grid_16,.grid_22{
-    width:64%;
-  }
-  .firstNav{
-    margin:0 0 10px 0;
-  }
-  .navDisplay{
-    height:auto;
-  }
-}
-
-@media only screen and (min-width: 50em) { /* middle width */
   .secondNav{
     display:block;
   }
@@ -125,7 +118,10 @@
     }
   }  
 }
-@media only screen and (min-width:12.5em){ /*everything should be here*/
+@media only screen and (min-width:1.5em){ /*everything should be here*/
+  .subPageCatalogSearch{
+    display:none;
+  }
   main{
     .socialLinks{
       width:9.23rem;

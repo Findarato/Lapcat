@@ -117,7 +117,7 @@ jQuery(document).ready(function(){
             	}else{//if all else fails lets just load a local rss feed
             		if(uri.search(/help/i)>0){// this is the about page
              			jQuery.getScript("/sites/all/themes/lapcat/js/contactUs.js");
-            		}else{//if all else fails lets just load a local rss feed
+            		}else{
             			jQuery.getScript("/sites/all/themes/lapcat/js/locations.js");
             		}
             	}

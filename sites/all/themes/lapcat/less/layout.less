@@ -110,15 +110,7 @@ h4 {
   z-index: 50; 
 }
 
-/*Slider CSS*/
 
-.flexslider{border:none; .rounded-corners(3px);} 
-.flex-direction-nav li .next{
-  right:-5px;
-}
-.flex-direction-nav li .prev{
-  left:-5px;
-}
 
 aside {
   .video-js{
@@ -278,19 +270,38 @@ form #user-login-form{
     color:@colorLight;  
   }
 }
-/*Flex Slider */
-.flex-control-nav{
-  bottom:-.1em;
-  right:1em;
-  width:auto;
+/*Slider CSS*/
+
+.flexslider{border:none; .rounded-corners(3px);} 
+.flex-direction-nav li .next{
+  right:-5px;
 }
+.flex-direction-nav li .prev{
+  left:-5px;
+}
+/*Flex Slider */
 .flex-direction-nav{
   .prev,.next{
     background:@colorDark60;
     display:none;
   }
 }
-
+.flex-control-nav {
+  bottom:-.1em;
+  right:1em;
+  width:auto;
+ li {
+   a {
+     .smoothAnimate();
+     background:@color4;
+     height:1em;
+     width:1em;
+   }
+   a.active {
+       background:@color3;
+   }
+ } 
+}
 .list {
   a{
     display:block;
