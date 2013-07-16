@@ -9,8 +9,8 @@ body,html {
   color:@colorDark;
   font-size:13px;
 }
-a,a:hover,a:visited,a:focus { color: @color5; text-decoration:none; font-weight:normal;}
-
+a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;.FancyAnimate()}
+/*a:hover{border-bottom:solid 1px @color5}*/
 
 h1,h2,h3,h4{
   margin:2px;
@@ -111,7 +111,14 @@ h4 {
 }
 
 
-
+.view-content{
+  a{
+    
+    &:hover{
+      
+    }
+  }
+}
 aside {
   .video-js{
    width:290px;
@@ -165,6 +172,10 @@ li {
 .navBoxes:nth-last-child(1){
   margin-bottom:    0;
 }
+.bookCoverImage a:hover{
+  border-bottom:none;
+  
+}
 .navBoxes{
   height:           48px;
   width:            auto;
@@ -183,6 +194,7 @@ li {
     width:            100%;
     display:          block;
     &:hover{
+      border-bottom:none;
       .shadowIn(0,0,20px,10px,fadeout(@color5,80%))
     }
   }
@@ -320,9 +332,9 @@ form #user-login-form{
   position:absolute;
   background:@color3;
   height:100%;
-  width:10px;
+  width:.76rem;
   top:0;
-  right:0;
+  left:97%;
   .shadowOut(4px,0,2px,-2px,@shadow);
 }
 .locationDisplay{
@@ -423,10 +435,10 @@ form #user-login-form{
   margin-bottom:10px;
   min-height:150px;
 }
-.field-content a[property*="label"]{/*These are tags on items*/
+.field-content a[property*="label"],.tagStyle{/*These are tags on items*/
   padding:3px;
   margin:10px 15px 0 0;
-  .rounded-corners(3px);
+  .rounded-corners(3px 0 0 3px);
   -webkit-box-shadow: inset 0 0 1px 1px @shadow;
   box-shadow: inset 0 0 1px 1px @shadow;
   position:relative;
@@ -436,17 +448,46 @@ form #user-login-form{
     position:absolute;
     background:@color3;
     height:100%;
-    width:10px;
+    width:.76rem;
     top:0;
-    right:-.7em;
+    left:97%;
     .shadowOut(4px,0,2px,-2px,@shadow);
   }
 }
+    
 
-.articleItem:hover .socialLinks{
-  opacity:.95;
+.tagStyle{
+  background-color:@button;
+  cursor:default;
+  &:after{
+    background:@color5;
+  }
 }
 
+.articleItem{
+  .socialLinks{
+    .Animate(500ms);
+    &:hover{
+      width:10em;
+      height:24px;
+    }
+    position:absolute;
+    top:-3px;
+    width:3em;
+    opacity:1;
+    height:1.5em;
+    line-height:1;
+    overflow:hidden;
+    li{
+      line-height:1;
+      top:auto;
+      font-size:1.5em
+    }
+  }
+} 
+.articleItem .socialLinks .facebook{
+  margin-left:2.2em;
+}
 .user-picture img{
   height:40px;
   width:40px;
@@ -462,9 +503,9 @@ form #user-login-form{
   padding:30px 5px 5px 5px;
 }
 .articleEntryTitle{
-  font-size:20px;
-  width:500px;
-  border-bottom:@colorDark solid 1px;
+  font-size:1.5em;
+  width:38rem;
+  border-bottom:@colorDark60 solid 1px;
   margin-bottom:3px;
 }
 .articleEntryTitle a{
