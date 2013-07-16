@@ -43,8 +43,6 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
               <li class="googleplus"><a class="icon-googleplus" href="https://plus.google.com/share?url=<?php print $catalogLink; ?>" title="Share on Google Plus"></a></li>
             </ul>  
           </div>
-          
-          
         </div>
       </article>    
     
