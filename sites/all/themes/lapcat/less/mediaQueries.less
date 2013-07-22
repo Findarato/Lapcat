@@ -47,7 +47,7 @@
     background-size:contain;
   }
   .navDisplay{
-    height:auto;
+    height:auto; 
   }
   main{
     .socialLinks{
@@ -106,14 +106,23 @@
     top:-.8em;
     float:right;
   }
-  main{
-    .socialLinks{
-      [class^="icon-"], [class*=" icon-"] {font-size:2.3em;width:3.2rem;}
+  .articleItem{
+    .tagStyle{
+      font-size:160%;
+    }
+    .socialLinks {
+      height:2em;
+      [class^="icon-"], [class*=" icon-"] {
+        font-size:145%;width:2.2rem;
+      }
       li{
         display:inline-block;
       }
+      .facebook{
+      margin-left:3.2em;    
+      }  
     }
-  }  
+  } 
 }
 @media only screen and (min-width:1.5em){ /*everything should be here*/
   .subPageCatalogSearch{

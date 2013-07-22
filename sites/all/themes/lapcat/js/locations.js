@@ -192,11 +192,9 @@ function displayLocation(me,domElementSelector){
         }
     }
     var offset = me.offset();
-    $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show();
+    $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show(); 
 }
-
-
-jQuery("body").append($("<div/>",{"class":"highlightSelect smoothAnimate insideBoxShadow roundAll3",css:{"cursor":"default","display":"none","position":"absolute","top":0,"left":0}}))
+jQuery("body").append($("<div/>",{"class":"highlightSelect"}));
 jQuery(".locationHover")
   .mouseenter(function(){displayLocation(jQuery(this),jQuery("#locationDisplay"));})
   .mouseleave(function(){});

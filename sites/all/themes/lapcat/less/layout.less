@@ -11,7 +11,7 @@ body,html {
   height:105%;
   color:@colorDark;
 }
-a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;.FancyAnimate()}
+a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 /*a:hover{border-bottom:solid 1px @color5}*/
 
 h1,h2,h3,h4{
@@ -306,7 +306,7 @@ form #user-login-form{
   width:auto;
  li {
    a {
-     .smoothAnimate();
+     .Animate();
      background:@color4;
      height:1em;
      width:1em;
@@ -329,16 +329,7 @@ form #user-login-form{
     cursor:default;
   }
 }
-.highlightSelect:after{
-  content:"";
-  position:absolute;
-  background:@color3;
-  height:100%;
-  width:.76rem;
-  top:0;
-  left:97%;
-  .shadowOut(4px,0,2px,-2px,@shadow);
-}
+
 .locationDisplay{
   min-height:146px;
   min-width:135px;
@@ -437,14 +428,14 @@ form #user-login-form{
   margin-bottom:10px;
   min-height:150px;
 }
-.field-content a[property*="label"],.tagStyle{/*These are tags on items*/
+.field-content a[property*="label"],.tagStyle,.highlightSelect{/*These are tags on items*/
   padding:3px;
   margin:10px 15px 0 0;
   .rounded-corners(3px 0 0 3px);
   -webkit-box-shadow: inset 0 0 1px 1px @shadow;
   box-shadow: inset 0 0 1px 1px @shadow;
   position:relative;
-  background:@colorLight;
+  background:fadeout(@colorLight,95%);
   &:after{
     content:"";
     position:absolute;
@@ -457,27 +448,56 @@ form #user-login-form{
   }
 }
     
-
 .tagStyle{
-  background-color:@button;
+  background:fadeout(@colorDark,90%);
   cursor:default;
   &:after{
     background:@color5;
   }
 }
 
+.highlightSelect{
+  .Animate();
+  cursor:default;
+  display:none;
+  position:absolute;
+  top:0;
+  left:0;
+  background:fadeout(@colorLight,95%);
+  position:absolute;
+  margin:0;
+  padding:0;
+}
+.highlightSelect:after{
+  content:"";
+  position:absolute;
+  background:@color3;
+  height:100%;
+  width:.76rem;
+  top:0;
+  left:97%;
+  .shadowOut(4px,0,2px,-2px,@shadow);
+}
+
+
 .articleItem{
   .socialLinks{
-    .Animate(500ms);
     &:hover{
-      width:10em;
-      height:24px;
+      height:2rem;
+      > li {
+      .Translate(0,0);
+      }
+    }
+    > li {
+      .Animate(200ms);
+      .Translate(0,100%);
+      .shadowOutText(0, 0, 5px, @color5);
     }
     position:absolute;
     top:-3px;
-    width:3em;
+    width:10em;
     opacity:1;
-    height:1.5em;
+    height:2rem;
     line-height:1;
     overflow:hidden;
     li{
@@ -597,7 +617,7 @@ form #user-login-form{
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
   color:@colorDark;
 }
-.hoverGlow,.hoverGlowText{.Animate(300ms)}
+.hoverGlow,.hoverGlowText{.Animate(200ms)}
 .hoverGlow:hover{
   .shadowOut(0,0,2px,2px,@color5);
 }
@@ -828,7 +848,7 @@ li{
 
 
 footer {
-  .FancyAnimate();
+  .Animate();
   z-index:20;
   height:17em;
   position:absolute;
