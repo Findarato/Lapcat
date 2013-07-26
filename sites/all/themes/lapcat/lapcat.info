@@ -25,6 +25,7 @@ regions[search] = Search
 regions[contact] = Contact
 regions[pageLinks] = Page Links
 ; Information added by drupal.org packaging script on 2012-10-17
-version = "7.16"
+version = "7.x-2"
+;version = "7.22"
 project = "drupal"
 datestamp = "1350508567" 
