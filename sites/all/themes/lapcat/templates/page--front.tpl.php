@@ -64,23 +64,23 @@
         </div>
         <div class="navBoxGroup grid_4 pull_20" style="" >
           <!-- Right Column -->
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="Downloads">Downloads</a>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="Downloads">Downloads</a>
           </div> 
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="children" >Children</a>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="children" >Children</a>
           </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="teens" >Teens</a>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="teens" >Teens</a>
           </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="about" >About</a>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="about" >About</a>
           </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="greatpicks">Great Picks</a>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="greatpicks">Great Picks</a>
           </div>
-          <div class="navBoxes insideBoxShadow lifted smoothAnimate" >
-            <a class="smoothAnimate" href="genealogy">Genealogy</a>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="genealogy">Genealogy</a>
           </div>
         </div>        
       </nav>  
