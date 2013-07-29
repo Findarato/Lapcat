@@ -629,6 +629,8 @@ form #user-login-form{
   width:40%;
   float:left 
 }
+
+
 .locationBoxMap{
   width:60%;
   float:left;
@@ -937,8 +939,23 @@ footer {
 
 /*Bug fixes*/
   
+.views-view-grid{
+  position:relative;
+  [class*="col"] {
+    div{
+      height:11rem;
+      overflow:hidden;
+      margin-bottom:.4rem;  
+    }
+  }
+}
 .view-new-teen-books{
-  min-height:400px;   
+ img{
+   height:11rem;
+   .rounded-corners(.1875rem);
+   display:inline-block;
+   margin-right:.4rem;
+ }   
 }
 .grid_24{
   margin-left:0px;
