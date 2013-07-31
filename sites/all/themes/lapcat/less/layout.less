@@ -177,28 +177,7 @@ li {
   
 }
 .navBoxes{
-  height:           48px;
-  width:            auto;
-  margin:           2.5px 0 2.5px 0;
-  background:       @colorLight;
-  position:         relative;
-  border-radius:    3px;
-  -webkit-border-radius:     3px;
-  vertical-align:   middle;
-  a{
-    .Animate(300ms);
-    .shadowIn(0,0,2px,1px,fadeout(@color5,100%));
-    text-align:       center;
-    line-height:      48px;
-    font-size:        1.5em;
-    height:           48px;
-    width:            100%;
-    display:          block;
-    &:hover{
-      border-bottom:none;
-      .shadowIn(0,0,20px,10px,fadeout(@color5,80%))
-    }
-  }
+  .lp-Buttons()
 }
 .item-list .views-row{
  margin: 5px 0;
@@ -571,6 +550,7 @@ form #user-login-form{
   max-height:75px;
   max-width:68px;
 }
+
 .subPageHeader{
   font-size:50px;
   height:115px;
@@ -588,21 +568,21 @@ form #user-login-form{
   }
 }
 /*Sub page headers*/
-.subPageHeader.Hours{
-  background:url('/sites/all/themes/lapcat/images/hoursHeader.png') no-repeat scroll -89px center;
+.subPageHeader.Hours{ 
+  background:url('/sites/all/themes/lapcat/images/hoursHeader.png') scroll -89px center;
 }
 .subPageHeader.Downloads{
-  background:url('/sites/all/themes/lapcat/images/downloadHeader.png') no-repeat;
+  background:url('/sites/all/themes/lapcat/images/downloadHeader.png');
 }
 .subPageHeader.Research{
-  background:url('/sites/all/themes/lapcat/images/researchHeader.png') no-repeat;
+  background:url('/sites/all/themes/lapcat/images/researchHeader.png');
 }
 .subPageHeader.Teens{
-  background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') no-repeat white;
-  background-size:contain;
+  background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') white;
+  background-size:100% 121px;
 }
 .subPageHeader.Help{
-  background:url('/sites/all/themes/lapcat/images/helpHeader.jpg') no-repeat white;
+  background:url('/sites/all/themes/lapcat/images/helpHeader.jpg');
   background-size:100% 108%;
   background-position-y:32%;
 }
@@ -656,6 +636,37 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
     }
   }
 }
+
+div.more-link{
+  display:inline-block;
+  .lp-Buttons(2em);
+  a{
+    padding:.5em;
+    width:auto;
+    line-height:50%;
+  }
+}
+
+ul.pager{
+  display:block;
+  li.pager-current{
+    padding:0 .666em;
+    white-space:nowrap;
+  }
+  li[class*=pager]{
+    width:7em;
+    min-width:1em;
+    display:inline-block;
+    .lp-Buttons(3em);
+    margin-left:-2px; //tweek to fake a toolbar
+    margin-right:-2px;
+    a{
+      width:6em;
+    }
+  }
+}
+
+
 
 .locationBoxInfo{
   width:40%;

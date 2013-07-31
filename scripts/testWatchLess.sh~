@@ -1,0 +1,21 @@
+#!/bin/sh
+# 1. Watch ~/Pictures/PicasaWeb folder. 
+# 2. Upload new file to Picasa using Google CLI. 
+# 3. Launch the browser to the direct Picasa URL. 
+# 
+
+#change the variable below with the folder you want this script to watch for new images:
+WATCHED_DIR=~/Documents/Aptana\ Studio\ 3\ Workspace/Lapcat/sites/all/themes/lapcat/less
+
+
+while [ 1 ]
+do
+  echo 'Watching directory: '$WATCHED_DIR 'for new files'
+  while file=$(inotifywait -q "$WATCHED_DIR" --format "%f" --exclude \*.css)
+  do
+    echo 'New file to upload to PicasaWeb:' $file
+    notify-send -i "gtk-go-up" "Picasa Web Monitor" "Uploading image $file"
+    updatecss.sh
+    notify-send -i "gtk-home" "Picasa Web Monitor" "Image uploaded. Launching browser."
+  done
+done
