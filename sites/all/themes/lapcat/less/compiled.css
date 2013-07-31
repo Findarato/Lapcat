@@ -119,13 +119,14 @@ form #user-login-form{margin:1em;}
 .subPageHeader.Downloads{background:url('/sites/all/themes/lapcat/images/downloadHeader.png') no-repeat;}
 .subPageHeader.Research{background:url('/sites/all/themes/lapcat/images/researchHeader.png') no-repeat;}
 .subPageHeader.Teens{background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') no-repeat #ffffff;background-size:contain;}
+.subPageHeader.Help{background:url('/sites/all/themes/lapcat/images/helpHeader.jpg') no-repeat #ffffff;background-size:100% 108%;background-position-y:32%;}
 .subPageCatalogSearch{position:absolute;right:5px;top:0;opacity:1;z-index:10;background:#E0E0E0;padding:3px;border-top-right-radius:3px;border-bottom-left-radius:3px;}
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{color:#1d1d1d;}
 .hoverGlow,.hoverGlowText{-webkit-transition:all 200ms linear;-moz-transition:all 200ms linear;-ms-transition:all 200ms linear;-o-transition:all 200ms linear;transition:all 200ms linear;}
 .hoverGlow:hover{box-shadow:0 0 2px 2px #5f3e12;-moz-box-shadow:0 0 2px 2px #5f3e12;-webkit-box-shadow:0 0 2px 2px #5f3e12;}
 .hoverGlowText:hover{text-shadow:0 0 4px #5f3e12;-moz-text-shadow:0 0 4px #5f3e12;-webkit-text-shadow:0 0 4px #5f3e12;}
-div[class*="view-new"][class*="-books"] div{height:11rem;width:7.22rem;overflow:hidden;margin-bottom:.4rem;display:inline-block;}div[class*="view-new"][class*="-books"] div a{height:11rem;width:7.22rem;}div[class*="view-new"][class*="-books"] div a img{height:11rem;border-radius:0.1875rem;-webkit-border-radius:0.1875rem;display:inline-block;margin-right:.4rem;}
-div[class*="view-new"][class*="-books"] div .summary{display:none;}
+div[class*="view-new"][class*="-books"] div,div[class*="view-new"][class*="-slider"] div{height:11rem;width:7.22rem;overflow:hidden;margin-bottom:.4rem;display:inline-block;}div[class*="view-new"][class*="-books"] div a,div[class*="view-new"][class*="-slider"] div a{height:11rem;width:7.22rem;}div[class*="view-new"][class*="-books"] div a img,div[class*="view-new"][class*="-slider"] div a img{height:11rem;border-radius:0.1875rem;-webkit-border-radius:0.1875rem;display:inline-block;margin-right:.4rem;}
+div[class*="view-new"][class*="-books"] div .summary,div[class*="view-new"][class*="-slider"] div .summary{display:none;}
 .locationBoxInfo{width:40%;float:left;}
 .locationBoxMap{width:60%;float:left;}.locationBoxMap a{background-position:50%;max-width:400px;display:block;background-size:cover;margin-right:5px;height:300px;width:100%;}
 .locationBoxMap .coolSprings{background-image:url('/sites/all/themes/lapcat/images/coolSpringMap.png');}

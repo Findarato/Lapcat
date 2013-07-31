@@ -601,6 +601,11 @@ form #user-login-form{
   background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') no-repeat white;
   background-size:contain;
 }
+.subPageHeader.Help{
+  background:url('/sites/all/themes/lapcat/images/helpHeader.jpg') no-repeat white;
+  background-size:100% 108%;
+  background-position-y:32%;
+}
 
 .subPageCatalogSearch{
   position:absolute;
@@ -627,7 +632,9 @@ form #user-login-form{
 /* Teen Section */
 
 
-div[class*="view-new"][class*="-books"] {
+
+/*Newest Books*/
+div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"] {
   div{
     height:11rem;
     width:7.22rem;
