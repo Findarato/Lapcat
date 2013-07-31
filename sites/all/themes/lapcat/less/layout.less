@@ -598,7 +598,7 @@ form #user-login-form{
   background:url('/sites/all/themes/lapcat/images/researchHeader.png') no-repeat;
 }
 .subPageHeader.Teens{
-  background:url('/sites/all/themes/lapcat/images/teenHeader.png') no-repeat white;
+  background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') no-repeat white;
   background-size:contain;
 }
 
@@ -627,7 +627,7 @@ form #user-login-form{
 /* Teen Section */
 
 
-[class*="-books"] {
+div[class*="view-new"][class*="-books"] {
   div{
     height:11rem;
     width:7.22rem;
@@ -637,23 +637,18 @@ form #user-login-form{
     a{
       height:11rem;
       width:7.22rem;
+      img{
+       height:11rem;
+       .rounded-corners(.1875rem);
+       display:inline-block;
+       margin-right:.4rem;
+      }
     }
     .summary{
       display:none;
     }
   }
 }
-
-.view-new-teen-books{
- img{
-   height:11rem;
-   .rounded-corners(.1875rem);
-   display:inline-block;
-   margin-right:.4rem;
- }   
-}
-
-
 
 .locationBoxInfo{
   width:40%;
