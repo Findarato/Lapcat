@@ -7,6 +7,15 @@
   }else{
     $c=FALSE;
   }
+  $base64Test = false;
+  if(isset($_GET["testCover"])){
+    $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=junk&size=S";
+    $handle = fopen($fileName, "rb");
+    $contents = stream_get_contents($handle);
+    fclose($handle);
+    $base64Test = base64_encode($contents);
+  }
+  
 ?>
 
 <rss xmlns:book="http://catalog.lapcat.org/books"><channel><title>Parsed Wowbrary items to make sence</title><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><description>This feed shows you each week's teen books in the La Porte County Public Library</description><copyright>(c) 2013, Wowbrary. All rights reserved.</copyright><ttl>0</ttl><image><title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title><url>http://www.wowbrary.org/images/wowlogob.gif</url><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><width>154</width><height>57</height><description>Click here to provide feedback and ask questions about this RSS feed</description></image>
@@ -42,26 +51,36 @@ if($c){
   $feed -> set_feed_url('http://www.wowbrary.org/rss.aspx?l=8711');
 }
 
-$feed -> enable_cache(false);
+$feed -> enable_cache(false); 
 $feed -> init();
 $feed -> handle_content_type();
 $count = 0;
 foreach($feed->get_items(0) as $item) {
   //the right set
-  $parsedLink = wowbraryUrlParse($item -> get_link());
-  $b[$count]["title"] = $item -> get_title();
-  $b[$count]["description"] = str_replace(array("&rsquo;","&mdash;","&ldquo;","&rdquo;","&"),array("'","-",'"','"',"&amp;"),html_entity_decode(strip_tags($item -> get_description())));
-  $b[$count]["link"] = $item -> get_link();
-  $b[$count]["book:itemRecord"] = $parsedLink["amp;c"];
-  $b[$count]["book:sn"] = $parsedLink["amp;i"];
-
-  //Place your own cover image solution here
-  $b[$count]["book:image"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
-  $b[$count]["book:images"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
-  $b[$count]["book:imagel"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=L");
-  $b[$count]["book:imagem"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M");
-  $b[$count]["category"] = $item->get_category();
-  $b[$count]["pubdate"] = $item->get_date();
+  if($base64Test){
+    $parsedLink = wowbraryUrlParse($item -> get_link());
+    $b[$count]["book:sn"] = $parsedLink["amp;i"];
+    $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S";
+    $handle = fopen($fileName, "rb");
+    $contents = stream_get_contents($handle);
+    fclose($handle);
+  }
+  if($base64Test != base64_encode($contents) || $base64Test == false){
+    $b[$count]["title"] = $item -> get_title();
+    $b[$count]["description"] = str_replace(array("&rsquo;","&mdash;","&ldquo;","&rdquo;","&"),array("'","-",'"','"',"&amp;"),html_entity_decode(strip_tags($item -> get_description())));
+    $b[$count]["link"] = $item -> get_link();
+    $b[$count]["book:itemRecord"] = $parsedLink["amp;c"];
+  
+  
+    //Place your own cover image solution here
+    $b[$count]["book:image"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
+    $b[$count]["book:images"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
+    $b[$count]["book:imagel"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=L");
+    $b[$count]["book:imagem"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M");
+    $b[$count]["category"] = $item->get_category();
+    $b[$count]["pubdate"] = $item->get_date();
+       
+  }
   $count++; 
  
 }
