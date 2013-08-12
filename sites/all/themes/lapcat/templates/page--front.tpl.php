@@ -42,7 +42,7 @@
       <nav class="navDisplay">
         <div class="grid_20 push_4" style="position:relative">
           <div class="mainCatalogSearch">
-            <form method="get" action="https://catalog.lapcat.org:444/search/X?" class="catalogNav smoothAnimate">
+            <form method="get" action="https://catalog.lapcat.org/search/X?" class="catalogNav smoothAnimate">
                 <select class="smoothAnimate" name="searchtype">
                   <option value="X" >KEYWORD</option>
                   <option value="t" selected="selected">TITLE</option>
@@ -50,7 +50,7 @@
                   <option value="d">SUBJECT</option>
                 </select>
                 <input type="search" name="searcharg" size="24" maxlength="75" value="" placeholder="Search the Catalog" >
-                <input class="insideBoxShadow smoothAnimate" type="submit" value="GO!">
+                <input class="" type="submit" value="GO!">
               </form>
           </div>
           <!-- Middle Colmn -->

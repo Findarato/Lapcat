@@ -70,7 +70,7 @@ li{list-style:none outside none;}
 .views-slideshow-cycle-main-frame-row *{border-radius:3px;-webkit-border-radius:3px;display:relative;}
 .mainCatalogSearch{position:absolute;top:2px;right:2px;z-index:10;background:rgba(241, 241, 241, 0.6);}
 form *{border:none;font-size:1em;position:relative;margin:0;}
-input,select,input[type="submit"],input[type="text"]{color:#1d1d1d;height:18px;font-size:1em;background:rgba(255, 255, 255, 0.3);border-radius:3px;-webkit-border-radius:3px;border:1px solid #aaaaaa;vertical-align:top;line-height:normal !important;}
+input,select,input[type="submit"],input[type="text"]{color:#1d1d1d;font-size:1em;background:rgba(255, 255, 255, 0.3);border-radius:3px;-webkit-border-radius:3px;border:1px solid #aaaaaa;vertical-align:top;padding:.2em;}
 form #user-login-form{margin:1em;}
 .sliderInfoBox{position:absolute;bottom:0;left:0;background:rgba(29, 29, 29, 0.4);overflow:hidden;color:#f1f1f1;width:100%;max-height:7em;}.sliderInfoBox a{color:#f1f1f1;}
 .flexslider{border:none;border-radius:3px;-webkit-border-radius:3px;}
