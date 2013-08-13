@@ -561,45 +561,47 @@ form #user-login-form{
     height:90px;
     width:100%;
   }
-  &.Hours{
-    background:url('/sites/all/themes/lapcat/images/hoursHeader.png') scroll -89px center;  
+  /*Sub page headers*/
+  &.Articles{
+    background:url('/sites/all/themes/lapcat/images/articlesHeader.jpg');
+    background-size:100% 121%;
   }
   &.Downloads{
     background:url('/sites/all/themes/lapcat/images/downloadHeader.png');
   }
-  &.Research{
-    background:url('/sites/all/themes/lapcat/images/searchHeader.jpg');
-    background-position-y:60%;
+  &.Employment{
+    background:url('/sites/all/themes/lapcat/images/employmentHeader.jpg');
+    background-size:100% 171%;
+    background-position-y:27%;    
   }
-  &.Teens{
-    background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') white;
-    background-size:100% 121px;
+  &.Genealogy{
+    background:url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
+    background-size:100% 150%;
+    background-position-y:32%;
   }
   &.Help{
     background:url('/sites/all/themes/lapcat/images/helpHeader.jpg');
     background-size:100% 108%;
     background-position-y:32%;
   }
-  &.Employment{
-    background:url('/sites/all/themes/lapcat/images/employmentHeader.jpg');
-    background-size:100% 120%;
+  &.Hours{
+    background:url('/sites/all/themes/lapcat/images/hoursHeader.png') scroll -89px center;  
   }
   &.Request{
     background:url('/sites/all/themes/lapcat/images/requestHeader.jpg');
     background-size:100% 120%;
   }
-  &.Genealogy{
-    background:url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
-    background-size:100% 150%;
-    background-position-y:32%;
-  }  
+  &.Research{
+    background:url('/sites/all/themes/lapcat/images/searchHeader.jpg');
+    background-position-y:60%;
+    background-size: 100% 127%;
+  }
+  &.Teens{
+    background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') white;
+    background-size:100% 121px;
+  }
+  /*Sub page headers End*/
 }
-/*Sub page headers*/
-
-
-
-
-
 
 .subPageCatalogSearch{
   position:absolute;
@@ -615,17 +617,6 @@ form #user-login-form{
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
   color:@colorDark;
 }
-.hoverGlow,.hoverGlowText{.Animate(200ms)}
-.hoverGlow:hover{
-  .shadowOut(0,0,2px,2px,@color5);
-}
-.hoverGlowText:hover{
-  .shadowOutText(0,0,4px,@color5);
-}
-
-/* Teen Section */
-
-
 
 /*Newest Books*/
 div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"] {

@@ -57,9 +57,10 @@ $feed -> handle_content_type();
 $count = 0;
 foreach($feed->get_items(0) as $item) {
   //the right set
+  $parsedLink = wowbraryUrlParse($item -> get_link());
   $b[$count]["book:sn"] = $parsedLink["amp;i"];
   if($base64Test){
-    $parsedLink = wowbraryUrlParse($item -> get_link());
+    
     $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S";
     $handle = fopen($fileName, "rb");
     $contents = stream_get_contents($handle);
