@@ -122,6 +122,7 @@ form #user-login-form{margin:1em;}
 .subPageHeader.Help{background:url('/sites/all/themes/lapcat/images/helpHeader.jpg');background-size:100% 108%;background-position-y:32%;}
 .subPageHeader.Employment{background:url('/sites/all/themes/lapcat/images/employmentHeader.jpg');background-size:100% 120%;}
 .subPageHeader.Request{background:url('/sites/all/themes/lapcat/images/requestHeader.jpg');background-size:100% 120%;}
+.subPageHeader.Genealogy{background:url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');background-size:100% 150%;background-position-y:32%;}
 .subPageCatalogSearch{position:absolute;right:5px;top:0;opacity:1;z-index:10;background:#E0E0E0;padding:3px;border-top-right-radius:3px;border-bottom-left-radius:3px;}
 .secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{color:#1d1d1d;}
 .hoverGlow,.hoverGlowText{-webkit-transition:all 200ms linear;-moz-transition:all 200ms linear;-ms-transition:all 200ms linear;-o-transition:all 200ms linear;transition:all 200ms linear;}
