@@ -10,3 +10,5 @@ settings.php
 .settings/*
 db.inc
 tweeks/coverCache/db.inc
+db.inc
+key.php
