@@ -10,3 +10,4 @@ settings.php
 .settings/*
 db.inc
 tweeks/coverCache/db.inc
+key.php
