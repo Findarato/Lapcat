@@ -18,7 +18,21 @@
   
 ?>
 
-<rss xmlns:book="http://catalog.lapcat.org/books"><channel><title>Parsed Wowbrary items to make sence</title><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><description>This feed shows you each week's teen books in the La Porte County Public Library</description><copyright>(c) 2013, Wowbrary. All rights reserved.</copyright><ttl>0</ttl><image><title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title><url>http://www.wowbrary.org/images/wowlogob.gif</url><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><width>154</width><height>57</height><description>Click here to provide feedback and ask questions about this RSS feed</description></image>
+<rss xmlns:book="http://catalog.lapcat.org/books">
+  <channel>
+    <title>Parsed Wowbrary items to make sence</title>
+    <link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link>
+    <description>This feed shows you each week's teen books in the La Porte County Public Library</description>
+    <copyright>(c) 2013, Wowbrary. All rights reserved.</copyright>
+    <ttl>0</ttl>
+    <image>
+      <title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title>
+      <url>http://www.wowbrary.org/images/wowlogob.gif</url>
+      <link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link>
+      <width>154</width>
+      <height>57</height>
+      <description>Click here to provide feedback and ask questions about this RSS feed</description>
+    </image>
 <?Php 
 //http://www.wowbrary.org/rss.aspx?l=8711&c=TEE
 
@@ -61,7 +75,6 @@ foreach($feed->get_items(0) as $item) {
   
   
   if($base64Test){
-    
     $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$parsedLink["amp;i"]."&size=S";
     $handle = fopen($fileName, "rb");
     $contents = stream_get_contents($handle);
@@ -73,8 +86,7 @@ foreach($feed->get_items(0) as $item) {
     $b[$count]["description"] = str_replace(array("&rsquo;","&mdash;","&ldquo;","&rdquo;","&"),array("'","-",'"','"',"&amp;"),html_entity_decode(strip_tags($item -> get_description())));
     $b[$count]["link"] = $item -> get_link();
     $b[$count]["book:itemRecord"] = $parsedLink["amp;c"];
-  
-  
+    
     //Place your own cover image solution here
     $b[$count]["book:image"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
     $b[$count]["book:images"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
@@ -95,4 +107,5 @@ foreach($b as $item){
   echo "</item>";
 }
 ?>
-</channel></rss>
+  </channel>
+</rss>
