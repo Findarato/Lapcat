@@ -58,15 +58,17 @@ $count = 0;
 foreach($feed->get_items(0) as $item) {
   //the right set
   $parsedLink = wowbraryUrlParse($item -> get_link());
-  $b[$count]["book:sn"] = $parsedLink["amp;i"];
+  
+  
   if($base64Test){
     
-    $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S";
+    $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$parsedLink["amp;i"]."&size=S";
     $handle = fopen($fileName, "rb");
     $contents = stream_get_contents($handle);
     fclose($handle);
   }
   if($base64Test != base64_encode($contents) || $base64Test == false){
+    $b[$count]["book:sn"] = $parsedLink["amp;i"];
     $b[$count]["title"] = $item -> get_title();
     $b[$count]["description"] = str_replace(array("&rsquo;","&mdash;","&ldquo;","&rdquo;","&"),array("'","-",'"','"',"&amp;"),html_entity_decode(strip_tags($item -> get_description())));
     $b[$count]["link"] = $item -> get_link();
@@ -77,7 +79,7 @@ foreach($feed->get_items(0) as $item) {
     $b[$count]["book:image"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
     $b[$count]["book:images"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
     $b[$count]["book:imagel"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=L");
-    $b[$count]["book:imagem"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M");
+    $b[$count]["book:imagem"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M"); 
     $b[$count]["category"] = $item->get_category();
     $b[$count]["pubdate"] = $item->get_date();
        
