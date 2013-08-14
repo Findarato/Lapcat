@@ -8,3 +8,5 @@ sites/default/settings.php
 settings.php
 *.sh
 .settings/*
+db.inc
+tweeks/coverCache/db.inc
