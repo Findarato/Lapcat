@@ -28,7 +28,8 @@
 function setHeaders(){
   header("Expires: ".date(DATE_RFC822,$nextBday));
   header("Cache-Control: cache");
-  header("Pragma: cache");  
+  header("Pragma: cache");
+  header('Content-Type: image/jpeg');
 }
 /**
  * 
@@ -85,9 +86,7 @@ function updateDatabase($isbn,$size){
   print_r($db->Error);
 }
 
-$endTime = microtime();
 
-echo "time:".$end -$start;  
-  ?>
   
-<img src="data:image/jpeg;base64,<?Php print $res[0]["image"];?>">
+setHeaders();
+print base64_decode($res[0]["image"]);
