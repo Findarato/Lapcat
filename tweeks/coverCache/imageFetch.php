@@ -1,72 +1,93 @@
 <?Php
-$isbn = $_GET['isbn'];
-include_once("amazonImg.php");
-if(isset($_GET['size'])){$size = $_GET['size'];}else{$size = "S";}
-date_default_timezone_set('America/Chicago');
-
-function loadJpeg($imgname,$cache=false,$isbn=0){
-    $im = imagecreatefromJPEG($imgname);
-    if(!$im){
-        $im  = imagecreatetruecolor(1, 1);
-        $bgc = imagecolorallocate($im, 255, 255,255);
-        imagefilledrectangle($im, 0, 0, 1, 1, $bgc);
-    }
-    return $im;
-}
-function checkImage($size,$img){
-  $size = strtoupper($size);
-  $width = imagesx($img);
-  $height = imagesy($img);
-  if($width<10){
-    $img = loadJpeg("http://dev.laportelibrary.org/sites/all/themes/lapcat/images/BCNF.jpeg");
+  date_default_timezone_set('America/Chicago');
+  $startTime = microtime();
+  $nextBday = mktime(1, 52, 0, 8, 8, date("y")+1);
+  $expire = date("Y-m-d H:i:s",$nextBday);
+  if(isset($_GET["json"])){
+    $getJSON = $_GET['json'];  
+  }else{$getJSON=false;}
+  if(isset($_GET['isbn'])){
+    $getISBN = $_GET['isbn'];  
+  }else{$getISBN="blank";}
+  if(isset($_GET['size'])){
+    $getSize = $_GET['size'];  
+  }else{$getSize = "s";}
+  
+//include_once("amazonImg.php");
+  if(isset($_GET['size'])){$size = $_GET['size'];}else{$size = "S";}
+  require ("db.class.php");
+  $db = db::getInstance();
+  $res = $db->Query("SELECT * FROM covers WHERE SN=".$getISBN,false,"assoc_array");
+  if(!is_array($res)){
+    updateDatabase($getISBN,$getSize);
   }else{
-    if($width>290){
-            $newwidth=247;
-                  $newheight=381;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
-      imagecopyresized($thumb, $img, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-      return $thumb;
-    }
-
-
-    return $img;
+    //print_r($res);
   }
   
-  $newwidth=80;
-  $newheight=120;
-  $width = imagesx($img);
-  $height = imagesy($img);
-        switch($size){
-                case "S":
-      $newwidth=80;
-      $newheight=120;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
-                break;
-                case "M":
-      $newwidth=247;
-      $newheight=381;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
-                break;
 
-                case "L":
-      $newwidth=247;
-      $newheight=381;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
-                break;
-                default:
-      $img = loadJpeg("http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=LPT18968&Password=CC11787&Return=1&Type=$size&Value=$isbn",false,$isbn);
-                break;
-        }
-  imagecopyresized($thumb, $img, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-  return $thumb;
+function setHeaders(){
+  header("Expires: ".date(DATE_RFC822,$nextBday));
+  header("Cache-Control: cache");
+  header("Pragma: cache");  
 }
-header('Content-Type: image/jpeg');
-if(file_exists("./cache/".$isbn."|".$size.".jpg")){
-	$img = loadJpeg("./cache/".$isbn."|".$size.".jpg",true,$isbn);
-}else{
-	$img = checkImage($size,loadJpeg("http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=LPT18968&Password=CC11787&Return=1&Type=$size&Value=$isbn",false,$isbn));
+/**
+ * 
+ * @param string $size pass through of the size of the image
+ */
+function getDefaultImage($size){
+  $db = db::getInstance();
+  $res = $db->Query("SELECT * FROM covers WHERE SN='default' AND size='".$size."'",false,"assoc_array");
+  if(!is_array($res)){//there is no result
+    $fileName = "http://dev.laportelibrary.org/tweeks/coverCache/imageProcess.php?isbn=junk&size=".$getSize;
+    $handle = fopen($fileName, "rb");
+    $contents = stream_get_contents($handle);
+    fclose($handle);
+    $base64Image = base64_encode($contents);
+    $db->Query("INSERT INTO covers (SN,Image,defaultImage,size) VALUES(
+      '".$getISBN."',
+      '".$db->Clean($base64Image)."',
+      '1',
+      '".$getSize."'
+      )");
+    $res = $db->Query("SELECT * FROM covers WHERE SN='default' AND size='".$size."'",false,"assoc_array");
+  }
+  return $res;
 }
 
-imagejpeg($img);
-//imagejpeg($img,"./cache/".$isbn."|".$size.".jpg");
-imagedestroy($img);
+/**
+ * 
+ * @param string $isbn pass through of the isbn of the book image
+ * @param string $size pass through of the size of the image
+ */
+function updateDatabase($isbn,$size){
+  $db = db::getInstance();  
+  $defaultImage = 0;
+  $default64 = getDefaultImage($size);
+  
+  //$fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$getISBN."&size=".$getSize;
+  $fileName = "http://dev.laportelibrary.org/tweeks/coverCache/imageProcess.php?isbn=".$isbn."&size=".$size;
+  $handle = fopen($fileName, "rb");
+  $contents = stream_get_contents($handle);
+  fclose($handle); 
+  $base64Image = base64_encode($contents);
+  
+  if($base64Image["image"] == $default64){$defaultImage = 1;}
+  
+  $db->Query("INSERT INTO covers (SN,Image,defaultImage,size) VALUES(
+  '".$isbn."',
+  '".$db->Clean($base64Image)."',
+  '".$defaultImage."',
+  '".$size."'
+  )");
+  
+  
+  echo $db->Lastsql;
+  print_r($db->Error);
+}
+
+$endTime = microtime();
+
+echo "time:".$end -$start;  
+  ?>
+  
+<img src="data:image/jpeg;base64,<?Php print $res[0]["image"];?>">
