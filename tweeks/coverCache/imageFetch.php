@@ -7,10 +7,10 @@
     $getJSON = $_GET['json'];  
   }else{$getJSON=false;}
   if(isset($_GET['isbn'])){
-    $getISBN = lcase($_GET['isbn']);  
+    $getISBN = strtoupper($_GET['isbn']);  
   }else{$getISBN="blank";}
   if(isset($_GET['size'])){
-    $getSize = lcase($_GET['size']);  
+    $getSize = strtoupper($_GET['size']);  
   }else{$getSize = "s";}
   
 //include_once("amazonImg.php");
