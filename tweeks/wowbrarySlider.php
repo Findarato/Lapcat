@@ -1,23 +1,17 @@
 <?Php
   header("Content-Type: text/xml");                      // Set the content type appropriately
-  echo '<?xml version="1.0" encoding="UTF-8"?>';
   $c="TEE";//Default value to get 
   if(isset($_GET["c"])){
     $c=$_GET["c"];
   }else{
     $c=FALSE;
   }
-  $base64Test = false;
-  if(isset($_GET["testCover"])){
-    $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=junk&size=S";
-    $handle = fopen($fileName, "rb");
-    $contents = stream_get_contents($handle);
-    fclose($handle);
-    $base64Test = base64_encode($contents);
-  }
-  
+  $defaultTest = false;
+  $start=microtime();
+  require ("db.class.php");
+  $db = db::getInstance();
 ?>
-
+<xml version="1.0" encoding="UTF-8">
 <rss xmlns:book="http://catalog.lapcat.org/books">
   <channel>
     <title>Parsed Wowbrary items to make sence</title>
@@ -53,7 +47,7 @@ function wowbraryUrlParse($field){
     }
    //$returnVal = json_encode($ret_ar);
    $returnVal = $ret_ar;
-  return $returnVal;  
+  return $returnVal;
 }
 
 date_default_timezone_set('America/Chicago');
@@ -74,13 +68,19 @@ foreach($feed->get_items(0) as $item) {
   $parsedLink = wowbraryUrlParse($item -> get_link());
   
   
-  if($base64Test){
-    $fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$parsedLink["amp;i"]."&size=S";
-    $handle = fopen($fileName, "rb");
-    $contents = stream_get_contents($handle);
-    fclose($handle);
+  if(isset($_GET["testCover"]) && $_GET["testCover"] == 1){
+    $contents = $db->Query("SELECT SN,defaultImage,size FROM covers WHERE SN='".$parsedLink["amp;i"]."' AND size='S';",false,"assoc");//lets get the file from the database
+    if($contents["defaultImage"]==0){
+      $defaultTest = true; //not a default image
+    }else{
+      $defaultTest = false; // a default image
+    }
   }
-  if($base64Test != base64_encode($contents) || $base64Test == false){
+
+
+  if( (isset($_GET["testCover"]) && $_GET["testCover"] == 1) && $defaultTest==false){
+    //This nothing executes when a cover is to be skipped
+  }else{
     $b[$count]["book:sn"] = $parsedLink["amp;i"];
     $b[$count]["title"] = $item -> get_title();
     $b[$count]["description"] = str_replace(array("&rsquo;","&mdash;","&ldquo;","&rdquo;","&"),array("'","-",'"','"',"&amp;"),html_entity_decode(strip_tags($item -> get_description())));
@@ -92,13 +92,14 @@ foreach($feed->get_items(0) as $item) {
     $b[$count]["book:images"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
     $b[$count]["book:imagel"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=L");
     $b[$count]["book:imagem"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M"); 
+    $b[$count]["book:imageDefault"] = $defaultTest;
     $b[$count]["category"] = $item->get_category();
     $b[$count]["pubdate"] = $item->get_date();
-       
   }
   $count++; 
  
 }
+
 foreach($b as $item){
   echo "<item>";
     foreach($item as $k=>$i){
@@ -106,6 +107,7 @@ foreach($b as $item){
     }
   echo "</item>";
 }
+$end=microtime();
 ?>
   </channel>
 </rss>
