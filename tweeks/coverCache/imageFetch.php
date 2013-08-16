@@ -17,13 +17,17 @@
   if(isset($_GET['size'])){$size = $_GET['size'];}else{$size = "S";}
   require ("db.class.php");
   $db = db::getInstance();
-  $res = $db->Query("SELECT * FROM covers WHERE SN=".$getISBN,false,"assoc_array");
-  if(!is_array($res)){
-    updateDatabase($getISBN,$getSize);
-  }else{
-    //print_r($res);
+  $res = $db->Query("SELECT * FROM covers WHERE SN='".$getISBN."' AND size='".$getSize."';",false,"assoc_array");//lets get the file from the database
+  if(!is_array($res)){//Looks like it is not in the table.
+    updateDatabase($getISBN,$getSize); //lets update the database with the image
+    $res = $db->Query("SELECT * FROM covers WHERE SN='".$getISBN."' AND size='".$getSize."';",false,"assoc_array");//lets get the file from the database
   }
-  
+function getImage($url){
+  $handle = fopen($url, "rb");
+  $contents = stream_get_contents($handle);
+  fclose($handle); 
+  return $contents;
+}
 
 function setHeaders(){
   header("Expires: ".date(DATE_RFC822,$nextBday));
@@ -37,20 +41,17 @@ function setHeaders(){
  */
 function getDefaultImage($size){
   $db = db::getInstance();
-  $res = $db->Query("SELECT * FROM covers WHERE SN='default' AND size='".$size."'",false,"assoc_array");
+  $res = $db->Query("SELECT * FROM covers WHERE SN='bcnf' AND size='".$size."'",false,"assoc");
   if(!is_array($res)){//there is no result
-    $fileName = "http://dev.laportelibrary.org/tweeks/coverCache/imageProcess.php?isbn=junk&size=".$getSize;
-    $handle = fopen($fileName, "rb");
-    $contents = stream_get_contents($handle);
-    fclose($handle);
+    $contents = getImage("http://dev.laportelibrary.org/tweeks/coverCache/imageProcess.php?isbn=junk&size=".$size);
     $base64Image = base64_encode($contents);
     $db->Query("INSERT INTO covers (SN,Image,defaultImage,size) VALUES(
-      '".$getISBN."',
+      'bcnf',
       '".$db->Clean($base64Image)."',
       '1',
-      '".$getSize."'
+      '".$size."'
       )");
-    $res = $db->Query("SELECT * FROM covers WHERE SN='default' AND size='".$size."'",false,"assoc_array");
+    $res = $db->Query("SELECT * FROM covers WHERE SN='bcnf' AND size='".$size."'",false,"assoc");
   }
   return $res;
 }
@@ -64,26 +65,16 @@ function updateDatabase($isbn,$size){
   $db = db::getInstance();  
   $defaultImage = 0;
   $default64 = getDefaultImage($size);
-  
-  //$fileName = "http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$getISBN."&size=".$getSize;
-  $fileName = "http://dev.laportelibrary.org/tweeks/coverCache/imageProcess.php?isbn=".$isbn."&size=".$size;
-  $handle = fopen($fileName, "rb");
-  $contents = stream_get_contents($handle);
-  fclose($handle); 
+  $contents = getImage("http://dev.laportelibrary.org/tweeks/coverCache/imageProcess.php?isbn=".$isbn."&size=".$size);
   $base64Image = base64_encode($contents);
   
-  if($base64Image["image"] == $default64){$defaultImage = 1;}
-  
+  if($base64Image == $default64["image"]){$defaultImage = 1;}
   $db->Query("INSERT INTO covers (SN,Image,defaultImage,size) VALUES(
   '".$isbn."',
   '".$db->Clean($base64Image)."',
   '".$defaultImage."',
   '".$size."'
   )");
-  
-  
-  echo $db->Lastsql;
-  print_r($db->Error);
 }
 
 
