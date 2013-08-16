@@ -17,6 +17,14 @@
   if(isset($_GET['size'])){$size = $_GET['size'];}else{$size = "S";}
   require ("db.class.php");
   $db = db::getInstance();
+  if($getJSON == 1){
+    header("Expires: ".date(DATE_RFC822,$nextBday));
+    header("Cache-Control: cache");
+    header("Pragma: cache");
+    header('Content-Type: application/json');   
+    $res = $db->Query("SELECT SN,defaultImage,size FROM covers WHERE SN='".$getISBN."' AND size='".$getSize."';",false,"assoc");//lets get the file from the database
+    echo json_encode($res);die();
+  }
   $res = $db->Query("SELECT * FROM covers WHERE SN='".$getISBN."' AND size='".$getSize."';",false,"assoc_array");//lets get the file from the database
   if(!is_array($res)){//Looks like it is not in the table.
     updateDatabase($getISBN,$getSize); //lets update the database with the image
@@ -76,8 +84,5 @@ function updateDatabase($isbn,$size){
   '".$size."'
   )");
 }
-
-
-  
 setHeaders();
 print base64_decode($res[0]["image"]);
