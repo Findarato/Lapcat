@@ -108,6 +108,8 @@ jQuery(document).ready(function(){
         if(uri.search(/children/i)>0){// this is the teens page
         }else{
           if(uri.search(/greatpicks/i)>0){// this is the teens page
+            //alert("great PICKS!");
+            jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
           }else{//if all else fails lets just load a local rss feed
             if(uri.search(/educators/i)>0){// this is the teens page
               jQuery.getScript("/sites/all/themes/lapcat/js/research.js");

@@ -268,6 +268,14 @@ form #user-login-form{
 .flex-direction-nav li .prev{
   left:-5px;
 }
+
+.view-new-dvd-slider{
+  > div{
+    display:none;
+  }
+}
+
+
 /*Flex Slider */
 .flex-direction-nav{
   .prev,.next{
@@ -621,10 +629,13 @@ form #user-login-form{
 /*Newest Books*/
 div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"] {
   div{
+    /*
     height:11rem;
     width:7.22rem;
     overflow:hidden;
     margin-bottom:.4rem;
+
+    display:none;*/
     display:inline-block; 
     a{
       height:11rem;

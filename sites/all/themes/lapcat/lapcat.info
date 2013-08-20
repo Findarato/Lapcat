@@ -11,6 +11,7 @@ stylesheets[screen][less] = less/compiled.css
 scripts[] = js/libs/jquery-1.9.1.min.js
 scripts[] = js/libs/jquery.hovercard.min.js
 scripts[] = js/libs/modernizr-2.0.6.min.js
+scripts[] = js/libs/ftscroller.js
 scripts[] = js/global.js
 
 settings[shortcut_module_link] = 1
