@@ -1,31 +1,32 @@
 
-var container = $(".view-new-dvd-slider"); 
+var container = jQuery(".view-new-dvd-slider"); 
 var covers = container.children();
 var page = 6;
 var counter = 0;
 container.empty();
 container
   .append(
-    $("<div/>",{"class":"newest-SlideWrapper",css:{"display":"block"}})
+    jQuery("<div/>",{"class":"newestSlideWrapper","id":"slideWrapper"})
   );
-$.each(covers,function(i,item){
-  var newItem = $(item);
+jQuery.each(covers,function(i,item){
+  var newItem = jQuery(item);
   if(counter==0){
-    $(".newest-SlideWrapper")
+    jQuery(".newestSlideWrapper")
       .append(
-        $("<section/>",{"class":"newest-Slide"+i})
+        jQuery("<section/>",{"class":"newestSlide"+i})
      );
-    insertPoint = $(".newest-Slide"+i);
+    insertPoint = jQuery(".newestSlide"+i);
   }
-  
-  
   insertPoint.append(newItem);
-  if(page==counter){counter=0;}else{counter++;}
-  
+  if(page-1==counter){counter=0;}else{counter++;}
+   
 });
 
-var scroller = new FTScroller(document.getElementsByClassName('newest-SlideWrapper'), {
-  scrollingY: false,
-  snapping: true,
-  scrollbars: false
-});
+    var scroller = new FTScroller(document.getElementById('slideWrapper'), {
+      scrollingY: false,
+      snapping: false,
+      scrollbars: true,
+      brouncing:false,
+      alwaysScroll:false,
+      updateOnWindowResize:true
+    });

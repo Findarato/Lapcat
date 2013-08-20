@@ -269,11 +269,7 @@ form #user-login-form{
   left:-5px;
 }
 
-.view-new-dvd-slider{
-  > div{
-    display:none;
-  }
-}
+
 
 
 /*Flex Slider */
@@ -627,6 +623,18 @@ form #user-login-form{
 }
 
 /*Newest Books*/
+.newestSlideWrapper{
+  width: auto; 
+  display: block;
+  height:300px;
+  white-space: nowrap; 
+  overflow: hidden;
+  section {
+    div { overflow: hidden; white-space: normal; display:inline;}
+    width:300px; height: 300px; display: inline-block; vertical-align: top;
+  }
+}
+    
 div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"] {
   div{
     /*
@@ -636,7 +644,6 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
     margin-bottom:.4rem;
 
     display:none;*/
-    display:inline-block; 
     a{
       height:11rem;
       width:7.22rem;
@@ -644,7 +651,7 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
        height:11rem;
        .rounded-corners(.1875rem);
        display:inline-block;
-       margin-right:.4rem;
+       margin-right:.3rem;
       }
     }
     .summary{

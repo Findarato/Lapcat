@@ -55,5 +55,7 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <?php print $scripts; ?>
+<script src="/sites/all/themes/lapcat/js/libs/ftscroller.js"></script>
+              
 </body>
 </html>
