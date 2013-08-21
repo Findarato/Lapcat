@@ -57,7 +57,7 @@ function getDefaultImage($size){
       'bcnf',
       '".$db->Clean($base64Image)."',
       '1',
-      '".$size."'
+      '".strtoupper($size)."'
       )");
     $res = $db->Query("SELECT * FROM covers WHERE SN='bcnf' AND size='".$size."'",false,"assoc");
   }
@@ -81,7 +81,7 @@ function updateDatabase($isbn,$size){
   '".$isbn."',
   '".$db->Clean($base64Image)."',
   '".$defaultImage."',
-  '".$size."'
+  '".strtoupper($size)."'
   )");
 }
 setHeaders($nextBday);

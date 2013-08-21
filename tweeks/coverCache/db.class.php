@@ -26,7 +26,7 @@
     private $config = array(); //config values in associat
     private $linkid = 0; //store the link id.
     private $storeResults = array(); //Store query results for later in the rendering.
-    function getInstance(){
+    static function getInstance(){
       static $instance;
       if(!isset($instance)){
         $object= __CLASS__;
