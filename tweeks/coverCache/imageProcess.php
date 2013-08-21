@@ -7,7 +7,17 @@ $getGoogle = true; // google is always on right now
 date_default_timezone_set('America/Chicago');
 
 function getHTTPS($url){
+  $browsers = array("Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.3) Gecko/2008092510 Ubuntu/8.04 (hardy) Firefox/3.0.3", "Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1) Gecko/20060918 Firefox/2.0", "Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.0.3) Gecko/2008092417 Firefox/3.0.3", "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; Media Center PC 5.0; .NET CLR 3.0.04506)");
+  $referers = array("google.com", "yahoo.com", "msn.com", "ask.com", "live.com");
+  $choice2 = array_rand($browsers);
+  $agent = $browsers[$choice2];
+  $choice = array_rand($referers);
+  $referer = "http://" . $referers[$choice] . "";
+  
   $curl = curl_init($url); 
+  curl_setopt($curl, CURLOPT_USERAGENT, $agent);
+  curl_setopt($curl, CURLOPT_REFERER, $referer);
+  curl_setopt($curl, CURLOPT_VERBOSE, true);
   curl_setopt($curl, CURLOPT_FAILONERROR, true); 
   curl_setopt($curl, CURLOPT_FOLLOWLOCATION, true); 
   curl_setopt($curl, CURLOPT_RETURNTRANSFER, true); 
@@ -15,6 +25,7 @@ function getHTTPS($url){
   curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);   
   $result = curl_exec($curl);
   return $result;
+
 }
 function getGoogle($isbn){
 
