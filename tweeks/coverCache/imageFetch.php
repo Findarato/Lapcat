@@ -13,7 +13,7 @@
     $getSize = strtoupper($_GET['size']);  
   }else{$getSize = "s";}
   
-//include_once("amazonImg.php");
+  include_once("amazonImg.php");
   if(isset($_GET['size'])){$size = $_GET['size'];}else{$size = "S";}
   require ("db.class.php");
   $db = db::getInstance();
@@ -37,8 +37,8 @@ function getImage($url){
   return $contents;
 }
 
-function setHeaders(){
-  header("Expires: ".date(DATE_RFC822,$nextBday));
+function setHeaders($expires){
+  header("Expires: ".date(DATE_RFC822,$expires));
   header("Cache-Control: cache");
   header("Pragma: cache");
   header('Content-Type: image/jpeg');
@@ -84,5 +84,5 @@ function updateDatabase($isbn,$size){
   '".$size."'
   )");
 }
-setHeaders();
+setHeaders($nextBday);
 print base64_decode($res[0]["image"]);

@@ -1,7 +1,8 @@
 <?Php
 $isbn = $_GET['isbn'];
-include_once("amazonImg.php");
+//include_once("amazonImg.php");
 if(isset($_GET['size'])){$size = $_GET['size'];}else{$size = "S";}
+$checkGoogle = false;
 date_default_timezone_set('America/Chicago');
 
 function loadJpeg($imgname,$cache=false,$isbn=0){
@@ -21,14 +22,12 @@ function checkImage($size,$img){
     $img = loadJpeg("http://dev.laportelibrary.org/sites/all/themes/lapcat/images/BCNF.jpeg");
   }else{
     if($width>290){
-            $newwidth=247;
-                  $newheight=381;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
+      $newwidth=247;
+      $newheight=381;
+      $thumb = imagecreatetruecolor($newwidth, $newheight);
       imagecopyresized($thumb, $img, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
       return $thumb;
     }
-
-
     return $img;
   }
   
@@ -36,27 +35,27 @@ function checkImage($size,$img){
   $newheight=120;
   $width = imagesx($img);
   $height = imagesy($img);
-        switch($size){
-                case "S":
-      $newwidth=80;
-      $newheight=120;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
-                break;
-                case "M":
-      $newwidth=247;
-      $newheight=381;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
-                break;
+    switch($size){
+      case "S":
+        $newwidth=80;
+        $newheight=120;
+        $thumb = imagecreatetruecolor($newwidth, $newheight);
+      break;
+      case "M":
+        $newwidth=247;
+        $newheight=381;
+        $thumb = imagecreatetruecolor($newwidth, $newheight);
+      break;
 
-                case "L":
-      $newwidth=247;
-      $newheight=381;
-                  $thumb = imagecreatetruecolor($newwidth, $newheight);
-                break;
-                default:
-      $img = loadJpeg("http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=LPT18968&Password=CC11787&Return=1&Type=$size&Value=$isbn",false,$isbn);
-                break;
-        }
+      case "L":
+        $newwidth=247;
+        $newheight=381;
+        $thumb = imagecreatetruecolor($newwidth, $newheight);
+      break;
+      default:
+        $img = loadJpeg("http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=LPT18968&Password=CC11787&Return=1&Type=$size&Value=$isbn",false,$isbn);
+      break;
+    }
   imagecopyresized($thumb, $img, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
   return $thumb;
 }
