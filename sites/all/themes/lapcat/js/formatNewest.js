@@ -24,7 +24,7 @@ jQuery.each(covers,function(i,item){
 
     var scroller = new FTScroller(document.getElementById('slideWrapper'), {
       scrollingY: false,
-      snapping: true,
+      snapping: false,
       scrollbars: true,
       brouncing:false,
       updateOnWindowResize:true
