@@ -21,6 +21,15 @@
   <?php if ($more): ?>
     <?php print $more; ?>
   <?php endif; ?>
-  <div>BACK</div><div>NEXT</div>
+  <div class="t">
+    <div class="td">
+      <div class="scrollerBack"><a href="#">BACK</a></div>  
+    </div>
+    <div class="td" style="width:.5em;"></div>
+    <div class="td">
+      <div class="scrollerNext"><a href="#">NEXT</a></div>  
+    </div>
+  </div>
+  
   </div>
 </div>

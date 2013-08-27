@@ -18,11 +18,12 @@ button, a.button, .button,.selectButton{
   box-shadow:               inset 0 0 1px 1px @shadow;
   line-height:              @height;
   overflow:                 hidden;
+  text-align:               center;
+  font-size:                1.5em;
+  cursor:                   pointer;
   a{
     .Animate(300ms);
     .shadowIn(0,0,2px,1px,fadeout(@highLightColor,100%));
-    text-align:             center;
-    font-size:              1.5em;
     width:                  100%; 
     display:                block;
     &:hover{

@@ -29,3 +29,13 @@ jQuery.each(covers,function(i,item){
       brouncing:false,
       updateOnWindowResize:true
     });
+    
+$(".scrollerBack>a").click(function(){
+  scroller.scrollBy(-200,0,500);
+  return false;
+});
+
+$(".scrollerNext>a").click(function(){
+  scroller.scrollBy(200,0,500);
+  return false;
+});
