@@ -21,6 +21,10 @@
     background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* IE10+ */
     background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* W3C */
   }
+  
+  
+  
+ /*
   .flickrImageTitle{
     position:absolute;
     bottom:0px;
@@ -61,6 +65,7 @@
     -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
     box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
   }
+  */
   .mainArea{z-index: 10;position:relative;}
   .childrenGrass{
     background-image: url('<?php print $base_path . $directory .'/images/lowResGrass.png'; ?>');

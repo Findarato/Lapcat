@@ -67,6 +67,7 @@ foreach($feed->get_items(0) as $item) {
   //the right set
   $parsedLink = wowbraryUrlParse($item -> get_link());
   
+  
   if(isset($_GET["testCover"]) && $_GET["testCover"] == 1){
     $contents = $db->Query("SELECT SN,defaultImage,size FROM covers WHERE SN='".$parsedLink["amp;i"]."' AND size='S';",false,"assoc");//lets get the file from the database
     if($contents["defaultImage"]==0){

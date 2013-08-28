@@ -7,7 +7,7 @@ Array.prototype.getUnique = function(){
       u[this[i]] = 1;
    }
    return a;
-}
+};
 
 function displayLocation(locationCode,domElementSelector){
   var today = new Date();
@@ -52,45 +52,19 @@ function displayLocation(locationCode,domElementSelector){
               $("<span/>",{title:"email address"}).html(locations[locationCode].email)  
             )
         )
-    )
+    );
     
     
     for(var a=1;a<=6;a++){
       var timeHolder = $("#timeContainer"+a);
       timeHolder.html(locations[locationCode]["time"+a]);
         if(dayOfWeek == a){
-          $("#dayBox"+a).addClass("color1").removeClass("color4")
+          $("#dayBox"+a).addClass("color1").removeClass("color4");
         }
     }
     
 }
-function displayFlickr(flickrTag,flickrId){
-  var display = 9;
-  // lets make sure we have some defaults in so that if the user just calls the function it works
-  if(flickrTag == undefined)
-    flickrTag = "teen";
-  if(flickrId == undefined)
-    flickrId = '62092835@N08';
-    $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
-      {
-        id: flickrId,
-        tags: flickrTag,
-        format: "json"
-      },
-    function(data) {
-        $.each(data.items, function(i,item){
-          if(i<display){
-            $("<div/>",{"class":"flickrPicture smoothAnimate roundAll3",css:{"display":"inline-block","position":"relative"}})
-                .html(
-                    $("<a/>",{"html":"&nbsp;","class":"roundAll3"})
-                      .css({"background-image":"url("+item.media.m+")"})
-                      .attr({"href":item.link,"title":item.title})  
-                )
-                .appendTo("#flickerPictureBox");
-          }
-        });
-    });
-}
+
 
 jQuery(document).ready(function(){
   
@@ -102,7 +76,7 @@ jQuery(document).ready(function(){
       jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
-        displayFlickr("teens");
+        jQuery.getScript("/sites/all/themes/lapcat/js/flicker.js");
 	      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
 	      jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
       }else{
