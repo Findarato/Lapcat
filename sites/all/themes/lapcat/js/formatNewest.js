@@ -1,5 +1,5 @@
 
-var container = jQuery(".view-new-dvd-slider"); 
+var container = jQuery(".coverSlider"); 
 var covers = container.children();
 var page = 6;
 var counter = 0;

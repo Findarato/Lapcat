@@ -104,8 +104,10 @@ jQuery(document).ready(function(){
       if(uri.search(/teens/i)>0){// this is the teens page 
         displayFlickr("teens");
 	      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
+	      jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
+          jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
         }else{
           if(uri.search(/greatpicks/i)>0){// this is the teens page
             //alert("great PICKS!");
