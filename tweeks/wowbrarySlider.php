@@ -1,32 +1,16 @@
 <?Php
   header("Content-Type: text/xml");                      // Set the content type appropriately
+  echo '<?xml version="1.0" encoding="UTF-8"?>';
   $c="TEE";//Default value to get 
   if(isset($_GET["c"])){
     $c=$_GET["c"];
   }else{
     $c=FALSE;
   }
-  $defaultTest = false;
-  $start=microtime();
-  require ("db.class.php");
-  $db = db::getInstance();
+  $base64Test = false;
 ?>
-<xml version="1.0" encoding="UTF-8">
-<rss xmlns:book="http://catalog.lapcat.org/books">
-  <channel>
-    <title>Parsed Wowbrary items to make sence</title>
-    <link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link>
-    <description>This feed shows you each week's teen books in the La Porte County Public Library</description>
-    <copyright>(c) 2013, Wowbrary. All rights reserved.</copyright>
-    <ttl>0</ttl>
-    <image>
-      <title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title>
-      <url>http://www.wowbrary.org/images/wowlogob.gif</url>
-      <link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link>
-      <width>154</width>
-      <height>57</height>
-      <description>Click here to provide feedback and ask questions about this RSS feed</description>
-    </image>
+
+<rss xmlns:book="http://catalog.lapcat.org/books"><channel><title>Parsed Wowbrary items to make sence</title><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><description>This feed shows you each week's teen books in the La Porte County Public Library</description><copyright>(c) 2013, Wowbrary. All rights reserved.</copyright><ttl>0</ttl><image><title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title><url>http://www.wowbrary.org/images/wowlogob.gif</url><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><width>154</width><height>57</height><description>Click here to provide feedback and ask questions about this RSS feed</description></image>
 <?Php 
 //http://www.wowbrary.org/rss.aspx?l=8711&c=TEE
 
@@ -47,7 +31,7 @@ function wowbraryUrlParse($field){
     }
    //$returnVal = json_encode($ret_ar);
    $returnVal = $ret_ar;
-  return $returnVal;
+  return $returnVal;  
 }
 
 date_default_timezone_set('America/Chicago');
@@ -66,39 +50,26 @@ $count = 0;
 foreach($feed->get_items(0) as $item) {
   //the right set
   $parsedLink = wowbraryUrlParse($item -> get_link());
-  
-  
-  if(isset($_GET["testCover"]) && $_GET["testCover"] == 1){
-    $contents = $db->Query("SELECT SN,defaultImage,size FROM covers WHERE SN='".$parsedLink["amp;i"]."' AND size='S';",false,"assoc");//lets get the file from the database
-    if($contents["defaultImage"]==0){
-      $defaultTest = true; //not a default image
-    }else{
-      $defaultTest = false; // a default image
-    }
-  }
+  $b[$count]["book:sn"] = $parsedLink["amp;i"];
 
-  if( (isset($_GET["testCover"]) && $_GET["testCover"] == 1) && $defaultTest==false){
-    //This nothing executes when a cover is to be skipped
-  }else{
-    $b[$count]["book:sn"] = $parsedLink["amp;i"];
     $b[$count]["title"] = $item -> get_title();
     $b[$count]["description"] = str_replace(array("&rsquo;","&mdash;","&ldquo;","&rdquo;","&"),array("'","-",'"','"',"&amp;"),html_entity_decode(strip_tags($item -> get_description())));
     $b[$count]["link"] = $item -> get_link();
     $b[$count]["book:itemRecord"] = $parsedLink["amp;c"];
-    
+  
+  
     //Place your own cover image solution here
     $b[$count]["book:image"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
     $b[$count]["book:images"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=S");
     $b[$count]["book:imagel"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=L");
-    $b[$count]["book:imagem"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M"); 
-    $b[$count]["book:imageDefault"] = $defaultTest;
+    $b[$count]["book:imagem"] = urlencode("http://cdn.laportelibrary.org/coverCache/imageFetch.php?isbn=".$b[$count]["book:sn"]."&size=M");
     $b[$count]["category"] = $item->get_category();
     $b[$count]["pubdate"] = $item->get_date();
-  }
+       
+
   $count++; 
  
 }
-
 foreach($b as $item){
   echo "<item>";
     foreach($item as $k=>$i){
@@ -106,7 +77,5 @@ foreach($b as $item){
     }
   echo "</item>";
 }
-$end=microtime();
 ?>
-  </channel>
-</rss>
+</channel></rss>

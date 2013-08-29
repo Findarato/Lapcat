@@ -1,6 +1,9 @@
 <?Php
   $linkArray = array();
-  $jsonString = strip_tags(urldecode($fields["field_cataloglink"]->content));
+  $url = "http://www.wowbrary.org/l.aspx?l=8711&c=1374261&i=9781602858299&u=&t=The%20Other%20Family%20%28Premier%20Fiction%20Series%29&rss";
+  //$jsonString = strip_tags(urldecode($fields["field_catalogLink"]->content));
+  $jsonString = strip_tags(urldecode($url));
+  
 
   $url = $jsonString;
   $ret_ar = array();
@@ -24,11 +27,11 @@
   else
     $isbn = $linkArray["i"];
 
-//  $wowbraryClickThough = json_encode($linkArray);
+  $wowbraryClickThough = $linkArray;
+print_r($wowbraryClickThough);
 
-
-$catalogLink = "http://catalog.lapcat.org/record=b".$linkArray["c"];
-$wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"]."&i=".$linkArray["i"]."&u=".$linkArray["u"]."&t=".$linkArray["t"]."&website";
+//$catalogLink = "http://catalog.lapcat.org/record=b".$linkArray["c"];
+//$wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"]."&i=".$linkArray["i"]."&u=".$linkArray["u"]."&t=".$linkArray["t"]."&website";
 ?>
       <article class="articleItem">
         <div class="t">
