@@ -17,6 +17,8 @@
   if(isset($_GET['size'])){$size = $_GET['size'];}else{$size = "S";}
   require ("db.class.php");
   $db = db::getInstance();
+
+//  $db->Query("truncate table covers;");
   if($getJSON == 1){
     header("Expires: ".date(DATE_RFC822,$nextBday));
     header("Cache-Control: cache");

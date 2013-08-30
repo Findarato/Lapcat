@@ -56,25 +56,19 @@ function checkImage($size,$img){
  
   if($width<10){
     $img = loadJpeg("http://dev.laportelibrary.org/sites/all/themes/lapcat/images/BCNF.jpeg");
-  }else{//this is not a default image
-    if($width>290){
-      $newwidth=247;
-      $newheight=381;
-      $thumb = imagecreatetruecolor($newwidth, $newheight);
-      imagecopyresized($thumb, $img, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-      return $thumb;
-    }
-    //return $img;
   }
-  
   $newwidth=80;
   $newheight=120;
   $width = imagesx($img);
   $height = imagesy($img);
     switch($size){
       case "S":
-        $newwidth=80;
+        //normal 78x120
+        //cd 80x80
+        $newwidth=78;
         $newheight=120;
+        if($width == $height)$newheight=78;
+        
         $thumb = imagecreatetruecolor($newwidth, $newheight);
       break;
       case "M":
@@ -86,12 +80,14 @@ function checkImage($size,$img){
       case "L":
         $newwidth=247;
         $newheight=381;
+        if($width == $height)$newheight=247;
         $thumb = imagecreatetruecolor($newwidth, $newheight);
       break;
       default:
         $img = loadJpeg("http://contentcafe2.btol.com/ContentCafe/Jacket.aspx?UserID=LPT18968&Password=CC11787&Return=1&Type=$size&Value=$isbn",false,$isbn);
       break;
     }
+    
   imagecopyresized($thumb, $img, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
   return $thumb;
 }
