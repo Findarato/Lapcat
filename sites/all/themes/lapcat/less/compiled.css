@@ -653,6 +653,9 @@ form #user-login-form {
 .field-content a[property*="label"],
 .tagStyle,
 .highlightSelect {
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
   padding: 3px;
   margin: 10px 15px 0 0;
   border-radius: 3px 0 0 3px;
@@ -937,7 +940,6 @@ div[class*="view-new"][class*="-slider"] div a img {
   height: 11rem;
   border-radius: 0.1875rem;
   display: inline-block;
-  margin-right: .3rem;
 }
 
 div[class*="view-new"][class*="-books"] div .summary,
@@ -1125,6 +1127,9 @@ ul.pager li[class*=pager] a {
   height: 112px;
   padding: 2px;
   z-index: 100;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 li {

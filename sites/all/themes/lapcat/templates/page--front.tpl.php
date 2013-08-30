@@ -27,10 +27,6 @@
       <?php if ($page['menuHeader']): ?>
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
-        <div class="helpLink" style="display:inline-block;vertical-align: top;">
-          <!--<a alt="Need Help?" class="color5Circle helpLink hoverGlowText" href="/help" title="Need Help?">?</a>-->
-          <!--<a alt="Need Help?" class="helpLink hoverGlowText" href="/help" title="Need Help?">Help</a>-->
-        </div>
       </div>
       <?php endif; ?>
     </div>

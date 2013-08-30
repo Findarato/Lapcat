@@ -188,11 +188,12 @@ function displayLocation(me,domElementSelector){
       var timeHolder = jQuery("#timeContainer"+a);
       timeHolder.html(locations[locationCode]["time"+a]);
         if(dayOfWeek == a){
-          jQuery("#dayBox"+a).addClass("color1").removeClass("color4")
+          jQuery("#dayBox"+a).addClass("color1").removeClass("color4");
         }
     }
     var offset = me.offset();
-    $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show(); 
+    $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show();
+    //$(".highlightSelect").css({"transform":"translate("+offset.left-5+","+offset.top-5+")","height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show(); 
 }
 jQuery("body").append($("<div/>",{"class":"highlightSelect"}));
 jQuery(".locationHover")
