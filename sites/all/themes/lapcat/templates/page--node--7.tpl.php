@@ -12,13 +12,6 @@
   bottom:44px;
   right:22px;
   z-index:2;
-  border-radius: 50%;
-  background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%, rgba(0,0,0,0.45) 36%, rgba(0,0,0,0) 77%, rgba(0,0,0,0) 97%); /* FF3.6+ */
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(0,0,0,0.45)), color-stop(36%,rgba(0,0,0,0.45)), color-stop(77%,rgba(0,0,0,0)), color-stop(97%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* Chrome10+,Safari5.1+ */
-  background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* Opera 12+ */
-  background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* IE10+ */
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* W3C */
 }
 .childrenSun{
   background-image: url('<?php print $base_path . $directory .'/images/sun.svg'; ?>');

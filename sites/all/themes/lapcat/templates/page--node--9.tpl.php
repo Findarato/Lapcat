@@ -3,7 +3,7 @@
 <style>
 .childrenTree{
   z-index:3; 
-  right:-93px;
+  right:-7em;
   bottom:33px;
 }
   .treeShadow{
@@ -13,13 +13,6 @@
     bottom:26px;
     right:45px;
     z-index:0;
-    border-radius: 50%;
-    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%, rgba(0,0,0,0.45) 36%, rgba(0,0,0,0) 77%, rgba(0,0,0,0) 97%); /* FF3.6+ */
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,rgba(0,0,0,0.45)), color-stop(36%,rgba(0,0,0,0.45)), color-stop(77%,rgba(0,0,0,0)), color-stop(97%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* Chrome10+,Safari5.1+ */
-    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* Opera 12+ */
-    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* IE10+ */
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* W3C */
   }
   
   
@@ -152,6 +145,10 @@
     </div>
    <div class="childrenGrass" style="margin-top:150px;">
       <div class="childrenTree linearAnimate"></div>
+      <a href="http://www.youtube.com/watch?v=wyoNnMO3zFk" class="gitarBoy"></a>
+      <blockquote class="oval-thought-border">
+        <p>Rock On!</p>
+      </blockquote>
       <div class="treeShadow"></div>
    </div>
   <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">

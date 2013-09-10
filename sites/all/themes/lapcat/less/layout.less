@@ -545,6 +545,39 @@ form #user-login-form{
   max-height:75px;
   max-width:68px;
 }
+.gitarBoy{
+  background: url('/sites/all/themes/lapcat/images/gitarBoy.svg') no-repeat;
+  background-size: 100%;
+  height: 7em;
+  width: 3em;
+  position: absolute;
+  right: 9em;
+  bottom: 2em;
+  z-index: 10;
+}
+/*
+.gitarBoy:hover + .oval-thought-border:before{
+  animation:fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:1s;
+  animation-delay: 0.7s;
+}
+
+.gitarBoy:hover + .oval-thought-border:after{
+  animation:fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:1s;
+  animation-delay: 1.2s;
+}
+*/
+.gitarBoy:hover + .oval-thought-border{
+  /*
+  animation:fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:.3s;
+  */
+ opacity:1;
+}
 
 .subPageHeader{
   font-size:50px;
@@ -597,7 +630,7 @@ form #user-login-form{
   }
   &.Teens{
     background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') white;
-    background-size:100% 121px;
+    background-size:100% 100%;
   }
   /*Sub page headers End*/
 }
@@ -860,6 +893,92 @@ li{
 }
 .menuDropDown a{content:"Menu";font-size:1.5em;}
 
+/*Teen*/
+
+.imageGrid{
+  li{
+    display:inline-block;
+    div{
+      img{
+        height:6em;
+        display:block;
+        padding-right: .46em;
+        .rounded-corners();
+      }
+    }
+  }
+}
+
+
+
+
+.oval-thought-border {
+  .rounded-corners(2rem);
+  border: 2px solid @color2;
+  position: absolute;
+  width: 5em;
+  background: @colorLight60;
+  right: 13rem;
+  bottom: 10rem;
+  z-index: 10;
+  height: 3rem;
+  font-size: 2rem;
+  line-height: 3rem;
+  padding-left: 1em;
+  opacity:0;
+  .Animate();
+}
+
+/* creates the larger circle */
+.oval-thought-border:before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  border: 2px solid @color2;
+  background: @colorLight60;
+  .rounded-corners(7px);
+  display: block;
+  top: 1.9em;
+  right: -21px;
+  height: 15px;
+  width: 15px;
+}
+/* creates the smaller circle */
+.oval-thought-border:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  border: 2px solid @color2;
+  background: @colorLight60;
+  .rounded-corners(10px);
+  display: block;
+  top: 1em;
+  right: -9px;
+  height: 20px;
+  width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*sprite Code*/
 .sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
@@ -891,7 +1010,13 @@ li{
   animation: spinSun 30s infinite linear;
 }
 
-
+.treeShadow{
+  width:10em;
+  height:25px;
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* W3C */
+}
 .childrenGrass{
   width:100%;
   z-index:1;
@@ -981,6 +1106,9 @@ footer {
   0% { transform: rotate(0)}
   100% {transform: rotate(360deg)}
 }
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
 
 /*Bug fixes*/
   

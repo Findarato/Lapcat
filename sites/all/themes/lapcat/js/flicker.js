@@ -1,5 +1,5 @@
 function displayFlickr(flickrTag,flickrId){
-  var flickrContainer = $("<ul/>",{"class":"grid cs-style-6"});
+  var flickrContainer = $("<ul/>",{"class":"imageGrid"});
   var display = 9;
   // lets make sure we have some defaults in so that if the user just calls the function it works
   if(flickrTag == undefined)
