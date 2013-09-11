@@ -71,6 +71,19 @@ jQuery(document).ready(function(){
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();
     
+    
+    
+    
+    if(
+      uri.search(/children/i)>0 || 
+      uri.search(/greatpicks/i)>0 ||
+      uri.search(/downloads/i)>0 ||
+      uri.search(/teens/i)>0
+      ){// this is the research page
+      jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
+    }
+    
+    
     /* Lets load the correct delicious feed */
     if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
       jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
@@ -78,14 +91,10 @@ jQuery(document).ready(function(){
       if(uri.search(/teens/i)>0){// this is the teens page 
         jQuery.getScript("/sites/all/themes/lapcat/js/flicker.js");
 	      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
-	      jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
-          jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
         }else{
           if(uri.search(/greatpicks/i)>0){// this is the teens page
-            //alert("great PICKS!");
-            jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
           }else{//if all else fails lets just load a local rss feed
             if(uri.search(/educators/i)>0){// this is the teens page
               jQuery.getScript("/sites/all/themes/lapcat/js/research.js");

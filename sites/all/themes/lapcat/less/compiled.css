@@ -230,7 +230,7 @@ h4 {
 }
 
 .mainArea {
-  padding: 125px 5px 20px 5px;
+  padding: 8.4em 5px 20px 5px;
   background-color: #e7f2e6;
   box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
   min-height: 600px;
@@ -871,8 +871,6 @@ form #user-login-form {
 
 .subPageHeader.Genealogy {
   background: url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
-  background-size: 100% 150%;
-  background-position-y: 32%;
 }
 
 .subPageHeader.Help {
@@ -887,17 +885,14 @@ form #user-login-form {
 
 .subPageHeader.Request {
   background: url('/sites/all/themes/lapcat/images/requestHeader.jpg');
-  background-size: 100% 120%;
 }
 
 .subPageHeader.Research {
   background: url('/sites/all/themes/lapcat/images/searchHeader.jpg');
-  background-size: 100% 100%;
 }
 
 .subPageHeader.Teens {
   background: url('/sites/all/themes/lapcat/images/teenHeader.jpg') #ffffff;
-  background-size: 100% 100%;
 }
 
 .subPageCatalogSearch {
