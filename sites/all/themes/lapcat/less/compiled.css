@@ -936,8 +936,6 @@ form #user-login-form {
   display: inline;
 }
 
-
-
 div[class*="view-new"][class*="-books"] div a,
 div[class*="view-new"][class*="-slider"] div a {
   height: 11rem;
@@ -946,7 +944,8 @@ div[class*="view-new"][class*="-slider"] div a {
 
 div[class*="view-new"][class*="-books"] div a img,
 div[class*="view-new"][class*="-slider"] div a img {
-  height: 11rem;
+  width: 7rem;
+  verticle-align: top;
   border-radius: 0.1875rem;
   display: inline-block;
 }
