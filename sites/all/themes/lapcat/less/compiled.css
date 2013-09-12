@@ -877,8 +877,6 @@ form #user-login-form {
 
 .subPageHeader.Help {
   background: url('/sites/all/themes/lapcat/images/helpHeader.jpg');
-  background-size: 100% 108%;
-  background-position-y: 32%;
 }
 
 .subPageHeader.Hours {
