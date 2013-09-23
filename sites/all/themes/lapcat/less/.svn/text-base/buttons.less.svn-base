@@ -1,8 +1,0 @@
-button, a.button, .button,.selectButton{
-	cursor:pointer;
-	padding:3px;
-	white-space: nowrap;
-	z-index:5;
-	border: 1px solid rgb(170,170,170);
-	background-color:rgb(240,240,240)
-}
