@@ -4,6 +4,7 @@
 
 html{
   font-size:81.25%;
+  line-height:1.4em;
 }
 body,html {
   margin:0px;
@@ -12,35 +13,29 @@ body,html {
   color:@colorDark;
 }
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
-/*a:hover{border-bottom:solid 1px @color5}*/
 
 h1,h2,h3,h4{
   margin:2px;
   color:@colorDark;
   text-align: left;
   font-family:sans-serif;
+  line-height:100%;
+  font-weight: bold;
 }
 h1 { 
   font-size: 2.5em;
-  font-weight: bold;
-  color:@colorDark;
 }
 h2 {
   font-size: 1em;
-  color: @colorLight;
   line-height:.8em;
   font-weight:normal;
+  color:@colorLight;
 }
+h3 {font-size: 2em;}
+h4 {font-size: 1.8em;}
 .adgendaLink,.linkIcon{
   font-size:1.2em;
   margin-bottom:.1em;
-}
-  
-h3 {
-  font-size: 2em;
-}
-h4 {
-  font-size: 1.8em;
 }
 
 .insideBoxShadow{
@@ -233,7 +228,6 @@ form *{
 input,select,input[type="submit"], input[type="text"] {
   color:@colorDark;
   font-size:1em;
-  height:1.5em;
   background: rgba(255, 255, 255, 0.3);
   border:1px solid @buttonBorder;
   vertical-align:top;
@@ -556,25 +550,10 @@ form #user-login-form{
   z-index: 10;
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2)); 
 }
-/*
-.gitarBoy:hover + .oval-thought-border:before{
-  animation:fadeIn ease-in 1;
-  animation-fill-mode:forwards;
-  animation-duration:1s;
-  animation-delay: 0.7s;
-}
-
-.gitarBoy:hover + .oval-thought-border:after{
-  animation:fadeIn ease-in 1;
-  animation-fill-mode:forwards;
-  animation-duration:1s;
-  animation-delay: 1.2s;
-}
-*/
 .gitarBoy:hover + .oval-thought-border{
   /*
   animation:fadeIn ease-in 1;
-  animation-fill-mode:forwards;
+  animaon-fill-mode:forwards;
   animation-duration:.3s;
   */
  opacity:1;
@@ -594,7 +573,14 @@ form #user-login-form{
     white-space:nowrap;
     height:90px;
     width:100%;
-  }
+    h1{
+      position:relative;
+      &:after{
+        position:absolute;
+        top:0;bottom:0;left:0;right:0;
+        .dropShadow();
+      }
+    }
   /*Sub page headers*/
   &.Articles{
     background:url('/sites/all/themes/lapcat/images/articlesHeader.jpg');
@@ -627,6 +613,7 @@ form #user-login-form{
     background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') white;
   }
   /*Sub page headers End*/
+ }
 }
 
 .subPageCatalogSearch{
@@ -782,7 +769,7 @@ li{
   width:100px;
 }
 .blogBox,.blogContainerBox,.containerBox,.bookBox,.box,body{
-  background:        @colorLight url("images/grey.png") ;
+  background:        @globalBackground;
   min-height:        100px;
   position:          relative;
 }
@@ -976,6 +963,7 @@ li{
 .childWholePage{
   background: rgb(38,163,255); /* Old browsers */
   background: radial-gradient(20px 36px, circle cover,  rgb(255,255,255) 0%,rgb(38,163,255) 100%); /* W3C */
+  background: -moz-radial-gradient(20px 36px, ellipse cover, #ffffff 0%, #26a3ff 100%); /* FF3.6+ */
 }
 .childrenTree{
   z-index:1;
@@ -1033,6 +1021,7 @@ footer {
     color:rgba(0,0,0,.3); 
   }
   .socialLinks{
+    margin-top:2em;
     li{
       width:3.615em;
     }

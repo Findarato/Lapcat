@@ -140,6 +140,7 @@ a.button,
 
 html {
   font-size: 81.25%;
+  line-height: 1.4em;
 }
 
 body,
@@ -166,25 +167,19 @@ h4 {
   color: #1d1d1d;
   text-align: left;
   font-family: sans-serif;
+  line-height: 100%;
+  font-weight: bold;
 }
 
 h1 {
   font-size: 2.5em;
-  font-weight: bold;
-  color: #1d1d1d;
 }
 
 h2 {
   font-size: 1em;
-  color: #f1f1f1;
   line-height: .8em;
   font-weight: normal;
-}
-
-.adgendaLink,
-.linkIcon {
-  font-size: 1.2em;
-  margin-bottom: .1em;
+  color: #f1f1f1;
 }
 
 h3 {
@@ -193,6 +188,12 @@ h3 {
 
 h4 {
   font-size: 1.8em;
+}
+
+.adgendaLink,
+.linkIcon {
+  font-size: 1.2em;
+  margin-bottom: .1em;
 }
 
 .insideBoxShadow {
@@ -448,7 +449,6 @@ input[type="submit"],
 input[type="text"] {
   color: #1d1d1d;
   font-size: 1em;
-  height: 1.5em;
   background: rgba(255, 255, 255, 0.3);
   border: 1px solid #aaaaaa;
   vertical-align: top;
@@ -856,42 +856,55 @@ form #user-login-form {
   width: 100%;
 }
 
-.subPageHeader.Articles {
+.subPageHeader div h1 {
+  position: relative;
+}
+
+.subPageHeader div h1:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: -4px 7px 6px 0px rgba(36, 36, 36, 0.3);
+}
+
+.subPageHeader div.Articles {
   background: url('/sites/all/themes/lapcat/images/articlesHeader.jpg');
   background-size: 100% 121%;
 }
 
-.subPageHeader.Downloads {
+.subPageHeader div.Downloads {
   background: url('/sites/all/themes/lapcat/images/downloadHeader.png');
 }
 
-.subPageHeader.Employment {
+.subPageHeader div.Employment {
   background: url('/sites/all/themes/lapcat/images/employmentHeader.jpg');
   background-size: 100% 171%;
   background-position-y: 27%;
 }
 
-.subPageHeader.Genealogy {
+.subPageHeader div.Genealogy {
   background: url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
 }
 
-.subPageHeader.Help {
+.subPageHeader div.Help {
   background: url('/sites/all/themes/lapcat/images/helpHeader.jpg');
 }
 
-.subPageHeader.Hours {
+.subPageHeader div.Hours {
   background: url('/sites/all/themes/lapcat/images/hoursHeader.png') scroll -89px center;
 }
 
-.subPageHeader.Request {
+.subPageHeader div.Request {
   background: url('/sites/all/themes/lapcat/images/requestHeader.jpg');
 }
 
-.subPageHeader.Research {
+.subPageHeader div.Research {
   background: url('/sites/all/themes/lapcat/images/searchHeader.jpg');
 }
 
-.subPageHeader.Teens {
+.subPageHeader div.Teens {
   background: url('/sites/all/themes/lapcat/images/teenHeader.jpg') #ffffff;
 }
 
@@ -1440,6 +1453,7 @@ footer h3 {
 }
 
 footer .socialLinks {
+  margin-top: 2em;
   opacity: .9;
   height: auto;
 }

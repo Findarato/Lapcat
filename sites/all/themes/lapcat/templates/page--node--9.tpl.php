@@ -14,51 +14,6 @@
     right:45px;
     z-index:0;
   }
-  
-  
-  
- /*
-  .flickrImageTitle{
-    position:absolute;
-    bottom:0px;
-    background-color:rgba(0,0,0,.6);
-    color:#F1F1F1;
-    width:100%;
-    padding:5px;
-  }
-
-  .flickrPicture a{
-    height:75px;
-    width:75px;
-    display:block;
-  }
-  .flickrPicture{
-    margin:5px;
-    padding:3px;
-    display:inline-block;
-    height:75px;
-    width:75px;
-    background:#fff;
-    font-size:.8em;
-    color:#000;
-    position:absolute;
-    -webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .0);
-    -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .0);
-    box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .0);
-  }
-  .flickrPicture:hover{
-    z-index:999;
-    overflow:visible;
-    -webkit-transform:scale(1.1);
-    -moz-transform:scale(1.1);
-    -o-transform:scale(1.1);
-    -ms-transform:scale(1.1);
-    transform:scale(1.1);
-    -webkit-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
-    -moz-box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
-    box-shadow: 3px 3px 24px 10px rgba(0, 0, 0, .2);
-  }
-  */
   .mainArea{z-index: 10;position:relative;}
   .childrenGrass{
     background-image: url('<?php print $base_path . $directory .'/images/lowResGrass.png'; ?>');
@@ -101,7 +56,7 @@
 <!-- cool stuff testing-->
         <div class=" " style="margin-bottom:10px;width:100%;height:100%;position:relative;overflow:hidden">
           <div class="roundAll3 insideBoxShadow subPageHeader <?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?>" ></div>
-          <div class="color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
+          <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
             <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>
           </div>
           <div class="subPageCatalogSearch insideBoxShadow">
