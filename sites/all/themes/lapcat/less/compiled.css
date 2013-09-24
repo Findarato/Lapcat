@@ -838,6 +838,11 @@ form #user-login-form {
   opacity: 1;
 }
 
+.pageTitle {
+  -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+}
+
 .subPageHeader {
   font-size: 50px;
   height: 8.846rem;
@@ -856,55 +861,42 @@ form #user-login-form {
   width: 100%;
 }
 
-.subPageHeader div h1 {
-  position: relative;
-}
-
-.subPageHeader div h1:after {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  box-shadow: -4px 7px 6px 0px rgba(36, 36, 36, 0.3);
-}
-
-.subPageHeader div.Articles {
+.subPageHeader.Articles {
   background: url('/sites/all/themes/lapcat/images/articlesHeader.jpg');
   background-size: 100% 121%;
 }
 
-.subPageHeader div.Downloads {
+.subPageHeader.Downloads {
   background: url('/sites/all/themes/lapcat/images/downloadHeader.png');
 }
 
-.subPageHeader div.Employment {
+.subPageHeader.Employment {
   background: url('/sites/all/themes/lapcat/images/employmentHeader.jpg');
   background-size: 100% 171%;
   background-position-y: 27%;
 }
 
-.subPageHeader div.Genealogy {
+.subPageHeader.Genealogy {
   background: url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
 }
 
-.subPageHeader div.Help {
+.subPageHeader.Help {
   background: url('/sites/all/themes/lapcat/images/helpHeader.jpg');
 }
 
-.subPageHeader div.Hours {
+.subPageHeader.Hours {
   background: url('/sites/all/themes/lapcat/images/hoursHeader.png') scroll -89px center;
 }
 
-.subPageHeader div.Request {
+.subPageHeader.Request {
   background: url('/sites/all/themes/lapcat/images/requestHeader.jpg');
 }
 
-.subPageHeader div.Research {
+.subPageHeader.Research {
   background: url('/sites/all/themes/lapcat/images/searchHeader.jpg');
 }
 
-.subPageHeader div.Teens {
+.subPageHeader.Teens {
   background: url('/sites/all/themes/lapcat/images/teenHeader.jpg') #ffffff;
 }
 
@@ -1476,13 +1468,15 @@ footer .socialLinks a:hover {
 }
 
 footer .footerLeft {
-  width: 78%;
+  width: 21em;
   float: left;
+  margin-left: 2em;
 }
 
 footer .footerRight {
-  width: 22%;
+  width: 18em;
   float: right;
+  margin-right: 2em;
 }
 
 footer #search-block-form {
