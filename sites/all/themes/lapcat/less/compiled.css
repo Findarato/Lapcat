@@ -363,8 +363,9 @@ li {
   line-height: 3.692rem;
   overflow: hidden;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.6781818181818182rem;
   cursor: pointer;
+  font-weight: normal;
 }
 
 .navBoxes a {
@@ -374,6 +375,7 @@ li {
   box-shadow: inset 0 0 2px 1px rgba(95, 62, 18, 0);
   width: 100%;
   display: block;
+  font-size: 1.6781818181818182rem;
 }
 
 .navBoxes a:hover {
@@ -960,7 +962,7 @@ div[class*="view-new"][class*="-slider"] div .summary {
 
 .scrollerBack,
 .scrollerNext {
-  height: 2em;
+  height: 2.6em;
   width: auto;
   margin: 2.5px 0 2.5px 0;
   background: #f1f1f1;
@@ -968,11 +970,12 @@ div[class*="view-new"][class*="-slider"] div .summary {
   border-radius: 3px;
   vertical-align: middle;
   box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
-  line-height: 2em;
+  line-height: 2.6em;
   overflow: hidden;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.1818181818181817em;
   cursor: pointer;
+  font-weight: normal;
 }
 
 .scrollerBack a,
@@ -983,6 +986,7 @@ div[class*="view-new"][class*="-slider"] div .summary {
   box-shadow: inset 0 0 2px 1px rgba(95, 62, 18, 0);
   width: 100%;
   display: block;
+  font-size: 1.1818181818181817em;
 }
 
 .scrollerBack a:hover,
@@ -1004,8 +1008,9 @@ div.more-link {
   line-height: 2em;
   overflow: hidden;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 0.9090909090909091em;
   cursor: pointer;
+  font-weight: normal;
 }
 
 div.more-link a {
@@ -1015,6 +1020,7 @@ div.more-link a {
   box-shadow: inset 0 0 2px 1px rgba(95, 62, 18, 0);
   width: 100%;
   display: block;
+  font-size: 0.9090909090909091em;
 }
 
 div.more-link a:hover {
@@ -1041,7 +1047,7 @@ ul.pager li[class*=pager] {
   width: 7em;
   min-width: 1em;
   display: inline-block;
-  height: 2.5em;
+  height: 2.6rem;
   width: auto;
   margin: 2.5px 0 2.5px 0;
   background: #f1f1f1;
@@ -1049,11 +1055,12 @@ ul.pager li[class*=pager] {
   border-radius: 3px;
   vertical-align: middle;
   box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
-  line-height: 2.5em;
+  line-height: 2.6rem;
   overflow: hidden;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.1818181818181817rem;
   cursor: pointer;
+  font-weight: normal;
   margin-left: -2px;
   margin-right: -2px;
 }
@@ -1065,6 +1072,7 @@ ul.pager li[class*=pager] a {
   box-shadow: inset 0 0 2px 1px rgba(95, 62, 18, 0);
   width: 100%;
   display: block;
+  font-size: 1.1818181818181817rem;
 }
 
 ul.pager li[class*=pager] a:hover {
@@ -1468,16 +1476,19 @@ footer .socialLinks a:hover {
   text-shadow: 0px 0px 4px #5f3e12,0 0 0 #000000,0px 2px 4px #5f3e12;
 }
 
+footer .footerLeft,
+footer .footerRight {
+  margin: 0 2em;
+}
+
 footer .footerLeft {
   width: 21em;
   float: left;
-  margin-left: 2em;
 }
 
 footer .footerRight {
   width: 18em;
   float: right;
-  margin-right: 2em;
 }
 
 footer #search-block-form {

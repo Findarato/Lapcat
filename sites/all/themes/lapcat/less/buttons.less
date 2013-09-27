@@ -19,13 +19,15 @@ button, a.button, .button,.selectButton{
   line-height:              @height;
   overflow:                 hidden;
   text-align:               center;
-  font-size:                1.5em;
+  font-size:                (@height/2.2);
   cursor:                   pointer;
+  font-weight:              normal;
   a{
     .Animate(300ms);
     .shadowIn(0,0,2px,1px,fadeout(@highLightColor,100%));
     width:                  100%; 
     display:                block;
+    font-size:              (@height/2.2);
     &:hover{
       border-bottom:        none;
       .shadowIn(0,0,20px,10px,fadeout(@highLightColor,80%))

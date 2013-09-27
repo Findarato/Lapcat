@@ -258,13 +258,11 @@
   }
 
   footer .footerLeft {
-    width: 100%;
     float: none;
     display: inline-block;
   }
 
   footer .footerRight {
-    width: 100%;
     float: none;
     display: inline-block;
   }
