@@ -347,8 +347,8 @@ li {
   margin-bottom: 0;
 }
 
-.bookCoverImage a:hover {
-  border-bottom: none;
+.bookCoverImage img {
+  border-radius: 3px;
 }
 
 .navBoxes {
@@ -476,8 +476,17 @@ form #user-login-form {
   color: #f1f1f1;
 }
 
+.flexslider ui.slides {
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
 .flexslider {
   border: none;
+}
+
+.flexslider .slides {
   border-radius: 3px;
 }
 
@@ -912,12 +921,6 @@ form #user-login-form {
   padding: 3px;
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
-}
-
-.secondNav a:hover,
-.firstNav a:hover,
-.eventFeedTitle a:hover {
-  color: #1d1d1d;
 }
 
 .newestSlideWrapper {

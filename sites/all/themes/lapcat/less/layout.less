@@ -106,12 +106,6 @@ h4 {font-size: 1.8em;}
 }
 
 
-.view-content{
-  a{
-    &:hover{
-    }
-  }
-}
 aside {
   .video-js{
    width:290px;
@@ -165,9 +159,9 @@ li {
 .navBoxes:nth-last-child(1){
   margin-bottom:    0;
 }
-.bookCoverImage a:hover{
-  border-bottom:none;
-  
+.bookCoverImage {
+  img{.rounded-corners(3px);}
+  //a:hover{border:none;}
 }
 .navBoxes{
   .lp-Buttons()
@@ -200,7 +194,7 @@ li {
     text-align:center;
   }
   .first{
-  margin:3px 0 0 8px;
+    margin:3px 0 0 8px;
   }
 }
 .helpLink{
@@ -252,7 +246,15 @@ form #user-login-form{
 }
 /*Slider CSS*/
 
-.flexslider{border:none; .rounded-corners(3px);} 
+.flexslider ui.slides{
+  transform: translateZ(0);
+}
+.flexslider{
+  border:none; 
+  .slides{
+    .rounded-corners(3px);
+  }
+} 
 .flex-direction-nav li .next{
   right:-5px;
 }
@@ -622,10 +624,6 @@ form #user-login-form{
   border-top-right-radius: 3px;
   border-bottom-left-radius: 3px;
 }
-.secondNav a:hover,.firstNav a:hover,.eventFeedTitle a:hover{
-  color:@colorDark;
-}
-
 /*Newest Books*/
 .newestSlideWrapper{
   width: auto; 
@@ -1095,6 +1093,7 @@ footer {
 }
 
 /*Testing something*/
+
 
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}
