@@ -45,7 +45,9 @@
 ?><!DOCTYPE html>
 <html>
 <head profile="<?php print $grddl_profile; ?>">
-  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width">
+  <meta name=”mobile-web-app-capable” content=”yes”>
+  <link rel=”shortcut icon” sizes=”1024x1024” href=”/sites/all/themes/lapcat/images/highRezTree.png”>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>

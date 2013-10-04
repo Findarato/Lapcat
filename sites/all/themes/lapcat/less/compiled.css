@@ -98,7 +98,8 @@ a.button,
   border-radius: 2px;
 }
 
-.roundAll3 {
+.roundAll3,
+.rounded {
   border-radius: 3px;
 }
 
@@ -357,7 +358,6 @@ li {
   margin: 2.5px 0 2.5px 0;
   background: #f1f1f1;
   position: relative;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
   line-height: 3.692rem;
@@ -366,6 +366,7 @@ li {
   font-size: 1.6781818181818182rem;
   cursor: pointer;
   font-weight: normal;
+  border-radius: 3px;
 }
 
 .navBoxes a {
@@ -387,10 +388,14 @@ li {
   margin: 5px 0;
 }
 
-.twitterImage {
+.view-tweets .views-row {
+  font-size: .9em;
+}
+
+.view-tweets .twitterImage {
   display: inline-block;
   float: left;
-  height: 5.8em;
+  height: 6.2em;
 }
 
 .navDisplay {
@@ -419,10 +424,6 @@ li {
 
 .region-menuheader .first {
   margin: 3px 0 0 8px;
-}
-
-.helpLink {
-  font-size: 1.3em;
 }
 
 .views-slideshow-cycle-main-frame-row * {
@@ -514,6 +515,7 @@ form #user-login-form {
   -webkit-transition: all 200ms linear;
   -ms-transition: all 200ms linear;
   transition: all 200ms linear;
+  border-radius: 3px;
   background: #e7f2e6;
   height: 1em;
   width: 1em;
@@ -970,7 +972,6 @@ div[class*="view-new"][class*="-slider"] div .summary {
   margin: 2.5px 0 2.5px 0;
   background: #f1f1f1;
   position: relative;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
   line-height: 2.6em;
@@ -979,6 +980,7 @@ div[class*="view-new"][class*="-slider"] div .summary {
   font-size: 1.1818181818181817em;
   cursor: pointer;
   font-weight: normal;
+  border-radius: 3px;
 }
 
 .scrollerBack a,
@@ -1005,7 +1007,6 @@ div.more-link {
   margin: 2.5px 0 2.5px 0;
   background: #f1f1f1;
   position: relative;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
   line-height: 2em;
@@ -1014,6 +1015,7 @@ div.more-link {
   font-size: 0.9090909090909091em;
   cursor: pointer;
   font-weight: normal;
+  border-radius: 3px;
 }
 
 div.more-link a {
@@ -1055,7 +1057,6 @@ ul.pager li[class*=pager] {
   margin: 2.5px 0 2.5px 0;
   background: #f1f1f1;
   position: relative;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: inset 0 0 1px 1px rgba(36, 36, 36, 0.3);
   line-height: 2.6rem;
@@ -1064,6 +1065,7 @@ ul.pager li[class*=pager] {
   font-size: 1.1818181818181817rem;
   cursor: pointer;
   font-weight: normal;
+  border-radius: 3px;
   margin-left: -2px;
   margin-right: -2px;
 }
@@ -1485,7 +1487,7 @@ footer .footerRight {
 }
 
 footer .footerLeft {
-  width: 21em;
+  width: 22em;
   float: left;
 }
 
