@@ -40,7 +40,7 @@ $items = json_decode(getHTTPS($url));
     <link><? print urlencode($items->self); ?></link>
     <description>This feed shows you the La Porte County Public Library</description>
     <copyright>(c) 2013 La Porte County Public Library</copyright>
-    <ttl>0</ttl>
+    <ttl>5</ttl>
 <?Php 
 //http://www.wowbrary.org/rss.aspx?l=8711&c=TEE
 
