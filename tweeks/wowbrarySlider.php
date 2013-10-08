@@ -1,6 +1,6 @@
 <?Php
   header("Content-Type: text/xml");                      // Set the content type appropriately
-  echo '<?xml version="1.0" encoding="UTF-8"?>';
+  '<?xml version="1.0" encoding="UTF-8"?>';
   $c="TEE";//Default value to get 
   if(isset($_GET["c"])){
     $c=$_GET["c"];
@@ -9,8 +9,7 @@
   }
   $base64Test = false;
 ?>
-
-<rss xmlns:book="http://catalog.lapcat.org/books"><channel><title>Parsed Wowbrary items to make sence</title><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><description>This feed shows you each week's teen books in the La Porte County Public Library</description><copyright>(c) 2013, Wowbrary. All rights reserved.</copyright><ttl>0</ttl><image><title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title><url>http://www.wowbrary.org/images/wowlogob.gif</url><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><width>154</width><height>57</height><description>Click here to provide feedback and ask questions about this RSS feed</description></image>
+<rss xmlns:book="http://catalog.lapcat.org/books" version="2.0"><channel><title>Parsed Wowbrary items to make sence</title><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><description>This feed shows you each week's teen books in the La Porte County Public Library</description><copyright>(c) 2013, Wowbrary. All rights reserved.</copyright><ttl>0</ttl><image><title>Wowbrary: Latest Teen Books in the La Porte County Public Library</title><url>http://www.wowbrary.org/images/wowlogob.gif</url><link>http://www.wowbrary.org/nu.aspx?p=8711--<?Php print $c;?></link><width>154</width><height>57</height><description>Click here to provide feedback and ask questions about this RSS feed</description></image>
 <?Php 
 //http://www.wowbrary.org/rss.aspx?l=8711&c=TEE
 
