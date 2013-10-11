@@ -163,9 +163,21 @@ li {
   img{.rounded-corners(3px);}
   //a:hover{border:none;}
 }
-.navBoxes{
-  .lp-Buttons()
+.navDisplay{
+  margin-bottom:1em;
+  height:307px;
+  position:relative;
+  .navBoxGroup{
+    position:absolute;
+    width:12em;
+    .navBoxes{
+      .lp-Buttons() 
+    }  
+  }
 }
+
+
+
 .item-list .views-row{
  margin: 5px 0;
 }
@@ -179,10 +191,7 @@ li {
     height:           6.2em;  
   }
 }
-.navDisplay{
-  margin-bottom:    1em;
-  height:           307px
-}
+
 .region-menuheader{
   display:inline-block;
   width:100%;
@@ -252,14 +261,18 @@ form #user-login-form{
 }
 /*Slider CSS*/
 
-.flexslider ui.slides{
-  transform: translateZ(0);
-}
 .flexslider{
-  border:none; 
-  .slides{
+  border:none;
+  margin:none;
+  .rounded-corners(3px); 
+  .flexslider_views_slideshow_slide{
+    transform: translateZ(0);
     .rounded-corners(3px);
+    img{
+      .rounded-corners(3px);
+    }
   }
+
 } 
 .flex-direction-nav li .next{
   right:-5px;
@@ -267,10 +280,14 @@ form #user-login-form{
 .flex-direction-nav li .prev{
   left:-5px;
 }
-
-
-
-
+.flexslider-views-slideshow-main-frame{
+  li{
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+  }
+}
 /*Flex Slider */
 .flex-direction-nav{
   .prev,.next{
@@ -281,7 +298,9 @@ form #user-login-form{
 .flex-control-nav {
   bottom:-.1em;
   right:1em;
-  width:auto;
+  width:51px;
+  z-index:10;
+  display:block;
  li {
    a {
      .Animate();

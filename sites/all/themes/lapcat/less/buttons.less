@@ -21,16 +21,17 @@ button, a.button, .button,.selectButton{
   font-size:                (@height/2.2);
   cursor:                   pointer;
   font-weight:              normal;
+  .Animate(300ms);
+  &:hover{
+    border-bottom:        none;
+    //.shadowIn(0,0,20px,10px,fadeout(@highLightColor,80%))
+    box-shadow:            inset 0 0 1.1em 2px @highLightColor;
+  }
   .rounded;
   a{
-    .Animate(300ms);
-    .shadowIn(0,0,2px,1px,fadeout(@highLightColor,100%));
+    //.shadowIn(0,0,2px,1px,fadeout(@highLightColor,100%));
     width:                  100%; 
     display:                block;
     font-size:              (@height/2.2);
-    &:hover{
-      border-bottom:        none;
-      .shadowIn(0,0,20px,10px,fadeout(@highLightColor,80%))
-    }
   }
 }

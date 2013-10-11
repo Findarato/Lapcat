@@ -48,6 +48,7 @@
           pauseOnHover:settings.pauseOnHover,
           controlsContainer:settings.controlsContainer,
           manualControls:settings.manualControls,
+          useCSS:true,
           start: function(slider) {
             flexslider_views_slideshow_register(fullId, slider);
           }
@@ -71,19 +72,19 @@
       $(settings.targetId + " .flexslider").flexslider(settings.opts);
       settings.loaded = true;
     }
-  }
+  };
 
   // Pause mapping from Views Slideshow to FlexSlider
   Drupal.flexsliderViewsSlideshow.pause = function (options) {
     Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].pause();
     Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].manualPause = true;
-  }
+  };
 
   // Play mapping from Views Slideshow to FlexSlider
   Drupal.flexsliderViewsSlideshow.play = function (options) {
     Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].resume();
     Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].manualPause = false;
-  }
+  };
   
   Drupal.flexsliderViewsSlideshow.nextSlide = function (options) {
     var target = Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].getTarget('next');
@@ -91,13 +92,13 @@
     if (Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].canAdvance(target)) {
       Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].flexAnimate(target, Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].vars.pauseOnAction);
     }
-  }
+  };
   Drupal.flexsliderViewsSlideshow.previousSlide = function (options) {
     var target = Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].getTarget('prev');
 
     if (Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].canAdvance(target)) {
       Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].flexAnimate(target, Drupal.flexsliderViewsSlideshow.active['#flexslider_views_slideshow_main_' + options.slideshowID].vars.pauseOnAction);
     }
-  }
+  };
   // @todo add support for jquery mobile page init
 })(jQuery);

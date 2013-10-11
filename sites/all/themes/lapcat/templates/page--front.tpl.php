@@ -58,7 +58,7 @@
             <?php endif; ?>
           </div>
         </div>
-        <div class="navBoxGroup grid_4 pull_20" style="" >
+        <div class="navBoxGroup" style="" >
           <!-- Right Column -->
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="Downloads">Downloads</a>
