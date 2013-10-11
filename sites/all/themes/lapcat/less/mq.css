@@ -1,11 +1,13 @@
 .navBoxGroup {
   display: inline-block;
-  width: 100%;
+  width: 12em;
+  position: relative;
 }
 
 @media only screen and (min-width:50em) {
   .navDisplay .navBoxGroup {
     width: 17%;
+    position: relative;
   }
 
   .navDisplay .grid_20 {
@@ -253,6 +255,11 @@
     height: auto;
   }
 
+  .navBoxGroup {
+    height: auto;
+    position: relative;
+  }
+
   footer {
     height: auto;
   }
@@ -265,6 +272,27 @@
   footer .footerRight {
     float: none;
     display: inline-block;
+  }
+
+  .navDisplay .navBoxGroup {
+    width: 100%;
+    position: relative;
+  }
+
+  .navDisplay .grid_20 {
+    width: 100%;
+  }
+
+  .navBoxes {
+    height: 3.13rem;
+    line-height: 3.13rem;
+    margin: 2px 0;
+  }
+
+  .childrenSun {
+    display: none;
+    -webkit-animation: none;
+    animation: none;
   }
 }
 

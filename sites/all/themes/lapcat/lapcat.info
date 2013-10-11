@@ -5,8 +5,9 @@ version = VERSION
 core = 7.x
 stylesheets[screen][] = reset.css
 stylesheets[all and (min-width: 960px)][] = 960_24_col.css
-stylesheets[all and (max-width: 959px)][] = less/mq.css
 stylesheets[screen][less] = less/compiled.css
+stylesheets[all and (max-width: 959px)][] = less/mq.css
+
 
 scripts[] = js/libs/jquery-1.9.1.min.js
 scripts[] = js/libs/jquery.hovercard.min.js

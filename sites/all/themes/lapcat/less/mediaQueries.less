@@ -1,12 +1,14 @@
   .navBoxGroup{
     display:inline-block;
-    width:100%;
+    width:12em;
+    position:relative;
   }
 @media only screen and (min-width: 50em) { /* middle width */
   
  .navDisplay{
     .navBoxGroup{
       width:17%;
+      position:relative;
     }
     .grid_20{
       width:82%;
@@ -200,7 +202,11 @@
   }
   .navDisplay{
     height:auto;
-  } 
+  }
+  .navBoxGroup{
+    height:auto;
+    position:relative;
+  }
   footer {
     height:auto;
     .footerLeft{
@@ -212,7 +218,21 @@
       display:inline-block;
     }
   } 
-
+ .navDisplay{
+    .navBoxGroup{
+      width:100%;
+      position:relative;
+    }
+    .grid_20{
+      width:100%;
+    }
+  }
+  .navBoxes{
+    height:3.13rem;
+    line-height:3.13rem;
+    margin:2px 0;
+  }
+  .childrenSun{display:none;animation:none;}
 }
 
 /* ==|== print styles ======================================================= */
