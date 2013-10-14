@@ -6,6 +6,11 @@
     <?php endif; ?></h2>
   </div>
   <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" style="padding-left:10px;">
+    <?php if ($header): ?>
+      <div class="view-header">
+        <?php print $header; ?>
+      </div>
+    <?php endif; ?>
     <?php if ($rows): ?>
       <div class="view-content <?php print $classes; ?>">
         <?php print $rows; ?>
