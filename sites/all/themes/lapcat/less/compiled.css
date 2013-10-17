@@ -1614,6 +1614,14 @@ footer #pageLinks li a {
   margin-right: 0px;
 }
 
+.field-type-text-with-summary ul {
+  list-style-type: square;
+}
+
+.field-type-text-with-summary ul li {
+  list-style: square inside;
+}
+
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: "lpcpl";
