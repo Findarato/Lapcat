@@ -18,7 +18,7 @@
   require ("db.class.php");
   $db = db::getInstance();
 
-//  $db->Query("truncate table covers;");
+  $db->Query("truncate table covers;"); 
   if($getJSON == 1){
     header("Expires: ".date(DATE_RFC822,$nextBday));
     header("Cache-Control: cache");

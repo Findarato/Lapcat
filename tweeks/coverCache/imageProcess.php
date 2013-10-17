@@ -59,17 +59,21 @@ function checkImage($size,$img){
   }
   $newwidth=80;
   $newheight=120;
-  $width = imagesx($img);
-  $height = imagesy($img);
     switch($size){
       case "S":
         //normal 78x120
         //cd 80x80
-        $newwidth=78;
+        $newwidth=80;
         $newheight=120;
-        if($width == $height)$newheight=78;
+        if($width == $height || $width>$height){//Square CD
+          $newwidth=$width;
+          $newheight=$height;
+          $thumb = imagecreatetruecolor($width, $height);
+        }else{
+          $thumb = imagecreatetruecolor($newwidth, $newheight);
+        }
         
-        $thumb = imagecreatetruecolor($newwidth, $newheight);
+        
       break;
       case "M":
         $newwidth=247;
