@@ -1,18 +1,6 @@
 <!--Children Page-->
 
 <style>
-.childrenTree{
-  z-index:3; 
-  right:-93px;
-}
-.treeShadow{
-  width:10em;
-  height:25px;
-  position: absolute;
-  bottom:44px;
-  right:22px;
-  z-index:2;
-}
 .childrenSun{
   background-image: url('<?php print $base_path . $directory .'/images/sun.svg'; ?>');
   background-repeat:no-repeat;
@@ -132,8 +120,9 @@
       </main> <!-- end of main content--> 
     </div>
   <div class="childrenGrass" style="margin-top:150px;">
-    <div class="childrenTree linearAnimate"></div>
-    <div class="treeShadow"></div>
+    <div style="position: absolute;right: -6em;bottom:-5px;">
+      <div class="childrenTree linearAnimate"></div>  
+    </div>
   </div> 
   <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">

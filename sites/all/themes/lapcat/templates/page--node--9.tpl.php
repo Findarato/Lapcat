@@ -86,10 +86,9 @@
       </main> <!-- end of main content-->
     </div>
    <div class="childrenGrass" style="margin-top:150px;">
-      <div style="position: absolute;right: -2em;bottom:-5px;">
+      <div style="position: absolute;right: -6em;bottom:-5px;">
         <div class="childrenTree linearAnimate"></div>  
       </div>
-      
       <a href="http://www.youtube.com/watch?v=wyoNnMO3zFk" class="gitarBoy"></a>
       <blockquote class="oval-thought-border">
         <p>Rock On!</p>
