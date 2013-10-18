@@ -54,7 +54,7 @@ function checkImage($size,$img){
   $width = imagesx($img);
   $height = imagesy($img);
  
-  if($width<10){
+  if($width<10 || $height<10){
     $img = loadJpeg("http://dev.laportelibrary.org/sites/all/themes/lapcat/images/BCNF.jpeg");
   }
   $newwidth=80;

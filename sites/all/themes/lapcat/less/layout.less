@@ -613,10 +613,10 @@ form #user-login-form{
     background-size:100% 171%;
     background-position-y:27%;    
   }
-  &.Genealogy{
+  &.Genealogy,&.Belle.Gunness {
     background:url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
   }
-  &.Help{
+  &.Help,&.How.do.I{
     background:url('/sites/all/themes/lapcat/images/helpHeader.jpg');
   }
   &.Hours{
@@ -996,9 +996,9 @@ li{
   background: -moz-radial-gradient(20px 36px, ellipse cover, #ffffff 0%, #26a3ff 100%); /* FF3.6+ */
 }
 .childrenTree{
-  z-index:1;
+  z-index:-1;
   background-size:contain;
-  position:absolute;
+  position:relative;
   bottom:48px;
   right:-5%;
   height:31em;
@@ -1017,16 +1017,8 @@ li{
   animation: spinSun 30s infinite linear;
 }
 
-.treeShadow{
-  width:10em;
-  height:25px;
-  position: absolute;
-  border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.45) 1%,rgba(0,0,0,0.45) 36%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 97%); /* W3C */
-}
 .childrenGrass{
   width:100%;
-  z-index:1;
   position: relative;
   background-position-y:0;
   height:98px
