@@ -8,29 +8,3 @@ button, a.button, .button,.selectButton{
 	background-color:rgb(240,240,240)
 }
 
-.lp-Buttons(@height:@buttonHeight,@highLightColor:@color5){
-  height:                   @height;
-  width:                    auto;
-  margin:                   2.5px 0 2.5px 0;
-  background:               @colorLight;
-  position:                 relative;
-  vertical-align:           middle;
-  box-shadow:               inset 0 0 1px 1px @shadow;
-  line-height:              @height;
-  overflow:                 hidden;
-  text-align:               center;
-  font-size:                (@height/2.2);
-  cursor:                   pointer;
-  font-weight:              normal;
-  .Animate(300ms);
-  &:hover{
-    border-bottom:          none;
-    box-shadow:             inset 0 0 1.1em 2px @highLightColor;
-  }
-  .rounded;
-  a{
-    width:                  100%; 
-    display:                block;
-    font-size:              (@height/2.2);
-  }
-}

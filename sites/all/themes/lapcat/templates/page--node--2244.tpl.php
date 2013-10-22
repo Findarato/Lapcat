@@ -36,7 +36,7 @@
           <div id="pageHeader"><?php print render($page['pageHeader']); ?></div>
         <?php endif; ?>
 <!-- cool stuff testing-->
-        <div class=" " style="margin-bottom:10px;width:100%;height:100%;position:relative;overflow:hidden">
+        <div class="supPageHeader">
           <div class="roundAll3 insideBoxShadow subPageHeader <?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?>" ></div>
           <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
             <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>

@@ -25,12 +25,14 @@ jQuery(".researchList").each(function(i,item){
   }
 });
 
+
+console.log(jQuery('body').innerWidth());
 jQuery.each(jQuery(".hoverCard"),function(h,card){
   me=jQuery(card);
   me.show();
   me.hovercard({"background":"#f1f1f1 url(/sites/all/themes/lapcat/less/images/grey.png)","detailsHTML":me.next().next().text()+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.next().attr("src")});
   
-})
+});
 adultCategories.sort();
 adultCategories = adultCategories.getUnique();
 var categoryBox = jQuery("<div/>",{"class":"subTitleElement",css:{"margin-top":"8px","width":"100%"}});

@@ -38,6 +38,64 @@ h4 {font-size: 1.8em;}
   margin-bottom:.1em;
 }
 
+
+
+
+
+
+/* Color 1 related items */
+.color1{
+  background: @color1;  
+}
+/* Color 2 related items */
+.color2,.color260{
+  background: @color2;
+  a{
+   color: @colorLight;  
+  }
+}
+/* Color 3 related items */
+.color3{
+  background: @color3;
+  color: @colorLight;
+  a{
+    color: @colorLight;
+  }
+}
+.color3Circle{
+  border:2px solid @color360;
+  display:inline-block;
+  height:1.1em;
+  width:1.1em;
+  text-align:center;
+  color:@color3;
+  .rounded-corners(10px);
+}
+/* Color 4 related items */
+.color4,.mainBackground{
+  background:@color4;
+}
+.color460{
+  background:@color460;
+}
+.color4Soft{
+  .softColor(@color4);
+}
+.color4TextGlow{
+  text-shadow: @color4 0 0 2px;
+}
+.color4Border1{
+  border:1px solid @color4;
+}
+/* Color 5 related items */
+.color5{
+  color:@colorLight;
+  background:@color5;
+}
+.color560{
+  color:@colorLight;
+  background:@color560;
+}
 .insideBoxShadow{
   box-shadow: inset 0 0 1px 1px @shadow;
 }
@@ -634,17 +692,7 @@ form #user-login-form{
   /*Sub page headers End*/
 }
 
-.subPageCatalogSearch{
-  position:absolute;
-  right:5px;
-  top:0;
-  opacity:1;
-  z-index: 10;
-  background:#E0E0E0;
-  padding:3px;
-  border-top-right-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
+
 /*Newest Books*/
 .newestSlideWrapper{
   width: auto; 
@@ -968,7 +1016,6 @@ li{
 .sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
 
 /*Children*/
-
 .childWholePage{
   background: rgb(38,163,255); /* Old browsers */
   background:radial-gradient(circle at 20px 36px,  rgb(255,255,255) 5%,rgb(38,163,255) 100%)
@@ -992,24 +1039,61 @@ li{
   top:36px;
   width: 400px;
   height: 400px;
-  animation: spinSun 30s infinite linear;
+  animation: spinSun 60s infinite linear;
 }
 
 .childrenGrass{
   width:100%;
   position: relative;
   background-position-y:0;
-  height:98px
+  height:98px;
+  filter: @dropShadowFilter;
 }
 /*Global tweeks*/
 #pageHeader{
   margin-bottom:15px;
 }
 .element-invisible{display:none;}
+.supPageHeader{
+  margin-bottom:10px;
+  width:100%;
+  height:100%;
+  position:relative;
+  overflow:hidden;
+  .spc-Search{
+    width:29%;
+    position:absolute;
+    right:5px;
+    top:0;
+    opacity:1;
+    z-index: 10;
+    background:#E0E0E0;
+    padding:3px;
+    border-top-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    .Animate(1000ms);
+  }
+  .spc-SearchBox{
+    width:100%;
+    input{
+      width:100%;
+    }
+  }
+  .spc-Submit{
+    
+  }
+  .spc-SearchBox input:focus ~ .spc-Type{
+    overflow:hidden;
+    width:0;
+    display:inline-block;
+  }
+}
+
+
+
 
 
 footer {
-  
   z-index:20;
   height:17em;
   position:absolute;
@@ -1109,7 +1193,6 @@ footer {
   
 }
 /*Testing something*/
-
 
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}

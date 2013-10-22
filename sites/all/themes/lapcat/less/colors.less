@@ -124,61 +124,32 @@
   transform:rotate(@deg);
 }
 
-
-
-
-
-
-/* Color 1 related items */
-.color1{
-  background: @color1;  
-}
-/* Color 2 related items */
-.color2,.color260{
-  background: @color2;
+.lp-Buttons(@height:@buttonHeight,@highLightColor:@color5){
+  height:                   @height;
+  width:                    auto;
+  margin:                   2.5px 0 2.5px 0;
+  background:               @colorLight;
+  position:                 relative;
+  vertical-align:           middle;
+  box-shadow:               inset 0 0 1px 1px @shadow;
+  line-height:              @height;
+  overflow:                 hidden;
+  text-align:               center;
+  font-size:                (@height/2.2);
+  cursor:                   pointer;
+  font-weight:              normal;
+  .Animate(300ms);
+  &:hover{
+    border-bottom:          none;
+    box-shadow:             inset 0 0 1.1em 2px @highLightColor;
+  }
+  .rounded-corners(3px);
   a{
-   color: @colorLight;  
+    width:                  100%; 
+    display:                block;
+    font-size:              (@height/2.2);
   }
 }
-/* Color 3 related items */
-.color3{
-  background: @color3;
-  color: @colorLight;
-  a{
-    color: @colorLight;
-  }
-}
-.color3Circle{
-  border:2px solid @color360;
-  display:inline-block;
-  height:1.1em;
-  width:1.1em;
-  text-align:center;
-  color:@color3;
-  .rounded-corners(10px);
-}
-/* Color 4 related items */
-.color4,.mainBackground{
-  background:@color4;
-}
-.color460{
-  background:@color460;
-}
-.color4Soft{
-  .softColor(@color4);
-}
-.color4TextGlow{
-  text-shadow: @color4 0 0 2px;
-}
-.color4Border1{
-  border:1px solid @color4;
-}
-/* Color 5 related items */
-.color5{
-  color:@colorLight;
-  background:@color5;
-}
-.color560{
-  color:@colorLight;
-  background:@color560;
+.rounded-corners (@radius: 3px) {
+  border-radius: @radius;
 }
