@@ -6,14 +6,7 @@
 @color3:rgb(85,102,68); /*556644 hsl(90, 20%, 33%)*/
 @color4:rgb(231,242,230);/*e7f2e6 hsl(115, 32%, 93%)*/
 @color5:rgb(95,62,18);/*5f3e12 hsl(34, 68%, 22%)*/
-@colorDark: rgb(29,29,29);
-@colorLight: rgb(241,241,241);
-@shadow:rgba(36, 36, 36,.3);
-@borderColor: rgb(170,170,170);
-@button:rgb(240,240,240);
-@buttonBorder:rgb(170,170,170);
-@globalBackground:@colorLight url("images/grey.png");
-@dropShadowFilter:drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+
 
 // Winter CSS 
 //@color1:rgb(204,238,255);
@@ -56,6 +49,25 @@
 //@color5:rgb(94,147,229);
 
 
+
+
+@colorDark: rgb(29,29,29);
+@colorLight: rgb(241,241,241);
+@shadow:rgba(36, 36, 36,.3);
+@borderColor: rgb(170,170,170);
+@button:rgb(240,240,240);
+@buttonBorder:rgb(170,170,170);
+@globalBackground:@colorLight url("images/grey.png");
+@dropShadowFilter:drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
+//Global adjustments
+@color160:fadeout(@color1,40%);
+@color260:fadeout(@color2,40%);
+@color360:fadeout(@color3,40%);
+@color460:fadeout(@color4,40%);
+@color560:fadeout(@color5,40%);
+@borderColor60: fadeout(@borderColor,40%);
+@colorDark60:fadeout(@colorDark,40%);
+@colorLight60: fadeout(@colorLight,40%);
 
 
 .downShadow(@color:@shadow){
@@ -115,15 +127,7 @@
 
 
 
-//Global adjustments
-@color160:fadeout(@color1,40%);
-@color260:fadeout(@color2,40%);
-@color360:fadeout(@color3,40%);
-@color460:fadeout(@color4,40%);
-@color560:fadeout(@color5,40%);
-@borderColor60: fadeout(@borderColor,40%);
-@colorDark60:fadeout(@colorDark,40%);
-@colorLight60: fadeout(@colorLight,40%);
+
 
 /* Color 1 related items */
 .color1{
@@ -177,19 +181,4 @@
 .color560{
   color:@colorLight;
   background:@color560;
-}
-.color5TextGlow{
-  text-shadow: @color5 0 0 2px;
-}
-.color5Circle{
-  border:1px solid @color560;
-  display:inline-block;
-  height:1.1em;
-  width:1.1em;
-  text-align:center;
-  color:@color5;
-  .rounded-corners(1.1em);
-}
-.color5Circle:hover{
- .shadowOut (0,0,.2em,0em,@color5);  
 }

@@ -7,8 +7,9 @@
   z-index: 2;
 }
 .childrenGrass{
-  background-image: url('<?php print $base_path . $directory .'/images/img.png'; ?>');
-  height:130px;
+  /*background-image: url('<?php print $base_path . $directory .'/images/img.png'; ?>');*/
+  background-image: url('<?php print $base_path . $directory .'/images/lowResGrass.png'; ?>');
+  /*height:130px;*/
 }
 .subPageHeader{ 
   background:rgba(250,250,250,.6);
@@ -119,11 +120,11 @@
         </aside>
       </main> <!-- end of main content--> 
     </div>
-  <div class="childrenGrass" style="margin-top:150px;">
-    <div style="position: absolute;right: -6em;bottom:-5px;">
-      <div class="childrenTree linearAnimate"></div>  
-    </div>
-  </div> 
+   <div class="childrenGrass" style="margin-top:150px;">
+      <div style="position: absolute;right: -6em;bottom:-5px;z-index:1">
+        <div class="childrenTree linearAnimate"></div>  
+      </div>
+   </div>
   <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
