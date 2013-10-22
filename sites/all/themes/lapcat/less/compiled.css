@@ -1398,8 +1398,8 @@ body {
 
 .childWholePage {
   background: #26a3ff;
-  background: -webkit-radial-gradient(20px 36px, circle cover, #fff 0, #26a3ff 100%);
-  background: radial-gradient(20px 36px, circle cover, #fff 0, #26a3ff 100%);
+  background: -webkit-radial-gradient(circle at 20px 36px, #fff 5%, #26a3ff 100%);
+  background: radial-gradient(circle at 20px 36px, #fff 5%, #26a3ff 100%);
 }
 
 .childrenTree {
