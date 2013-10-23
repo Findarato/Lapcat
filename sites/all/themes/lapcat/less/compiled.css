@@ -1629,6 +1629,11 @@ footer #pageLinks li a {
   margin-right: 0;
 }
 
+.adultResearch img {
+  float: left;
+  height: 6em;
+}
+
 .field-type-text-with-summary ul {
   list-style-type: square;
 }
