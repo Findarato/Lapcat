@@ -10,6 +10,7 @@ if(adultContainer.html() == null){
   }
 }
 var adultCategories = new Array();
+
 if(jQuery('body').innerWidth()>960){
   jQuery(".researchInfoBasic").hide();
   jQuery(".researchList").find("img").hide();
