@@ -81,11 +81,11 @@
           <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
             <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>
           </div>
-          <div class="subPageCatalogSearch insideBoxShadow">
+          <div class="spc-Search insideBoxShadow">
             <div class="catalog ">
               <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
                 <div style="display:table">
-                  <div style="display:table-cell">
+                  <div class="spc-Type td" >
                     <select name="searchtype">
                       <option value="X" selected="selected">KEYWORD</option>
                       <option value="t">TITLE</option>
@@ -93,14 +93,17 @@
                       <option value="d">SUBJECT</option>
                     </select>
                   </div>
-                  <div style="display:table-cell">
-                    <input type="search" name="searcharg" size="24" maxlength="75" placeholder="Search the Catalog">
+                  <div class="spc-SearchBox td" >
+                    <input type="search" name="searcharg" placeholder="Search the Catalog">
+                  </div>
+                  <div class="spc-Submit td" >
                     <input type="submit" value="GO!"/>
                   </div>
                 </div>
               </form>
             </div>
           </div>
+
         </div>
         
         <!--end of cool testing stuff-->      

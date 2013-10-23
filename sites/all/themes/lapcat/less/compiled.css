@@ -55,6 +55,11 @@ a.button,
   border-top-right-radius: 4px;
 }
 
+* {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 81.25%;
   line-height: 1.4em;
@@ -367,7 +372,7 @@ li {
 
 .navDisplay .navBoxGroup .navBoxes:hover {
   border-bottom: none;
-  box-shadow: inset 0 0 1.1em 2px #5f3e12;
+  box-shadow: inset 0 0 .8em 3px #5f3e12;
 }
 
 .navDisplay .navBoxGroup .navBoxes a {
@@ -423,10 +428,9 @@ form * {
   margin: 0;
 }
 
-input,
 select,
-input[type="submit"],
-input[type="text"] {
+input[type="text"],
+input[type="search"] {
   color: #1d1d1d;
   font-size: 1em;
   background: rgba(255,255,255,0.3);
@@ -977,7 +981,7 @@ div[class*="view-new"][class*="-slider"] div .summary {
 .scrollerBack:hover,
 .scrollerNext:hover {
   border-bottom: none;
-  box-shadow: inset 0 0 1.1em 2px #5f3e12;
+  box-shadow: inset 0 0 .8em 3px #5f3e12;
 }
 
 .scrollerBack a,
@@ -1010,7 +1014,7 @@ div.more-link {
 
 div.more-link:hover {
   border-bottom: none;
-  box-shadow: inset 0 0 1.1em 2px #5f3e12;
+  box-shadow: inset 0 0 .8em 3px #5f3e12;
 }
 
 div.more-link a {
@@ -1061,7 +1065,7 @@ ul.pager li[class*=pager] {
 
 ul.pager li[class*=pager]:hover {
   border-bottom: none;
-  box-shadow: inset 0 0 1.1em 2px #5f3e12;
+  box-shadow: inset 0 0 .8em 3px #5f3e12;
 }
 
 ul.pager li[class*=pager] a {
@@ -1155,8 +1159,7 @@ li {
 }
 
 .twitterBox,
-.twitterContainer,
-.deliciousBox {
+.twitterContainer {
   position: relative;
   width: 100%;
   background: #fff;
@@ -1440,6 +1443,12 @@ body {
   overflow: hidden;
 }
 
+.supPageHeader input,
+.supPageHeader select {
+  line-height: 1.5em;
+  height: 1.7em;
+}
+
 .supPageHeader .spc-Search {
   width: 29%;
   position: absolute;
@@ -1462,6 +1471,10 @@ body {
 
 .supPageHeader .spc-SearchBox input {
   width: 100%;
+}
+
+.supPageHeader .spc-Submit input {
+  border: 1px solid #aaa;
 }
 
 .supPageHeader .spc-SearchBox input:focus~.spc-Type {

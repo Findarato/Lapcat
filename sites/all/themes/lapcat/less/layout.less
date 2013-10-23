@@ -1,7 +1,7 @@
 @import url("colors.less");
 @import url("buttons.less");
 @import url("roundCorners.less");
-
+*{box-sizing: border-box;}
 html{
   font-size:81.25%;
   line-height:1.4em;
@@ -12,6 +12,7 @@ body,html {
   height:105%;
   color:@colorDark;
 }
+
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 
 h1,h2,h3,h4{
@@ -281,7 +282,7 @@ form *{
   position:         relative;
   margin:           0;
 }
-input,select,input[type="submit"], input[type="text"] {
+select, input[type="text"] , input[type="search"]{
   color:@colorDark;
   font-size:1em;
   background: rgba(255, 255, 255, 0.3);
@@ -815,7 +816,7 @@ li{
   z-index:10;
 }
 
-.twitterBox,.twitterContainer,.deliciousBox{
+.twitterBox,.twitterContainer{
   position:relative;
   width:100%;
   background:#FFF;
@@ -1050,6 +1051,7 @@ li{
   filter: @dropShadowFilter;
 }
 /*Global tweeks*/
+
 #pageHeader{
   margin-bottom:15px;
 }
@@ -1060,6 +1062,10 @@ li{
   height:100%;
   position:relative;
   overflow:hidden;
+  input,select{
+    line-height:1.5em;
+    height:1.7em;
+  }
   .spc-Search{
     width:29%;
     position:absolute;
@@ -1080,7 +1086,9 @@ li{
     }
   }
   .spc-Submit{
-    
+    input{
+     border: 1px solid @buttonBorder;
+    }
   }
   .spc-SearchBox input:focus ~ .spc-Type{
     overflow:hidden;
@@ -1088,10 +1096,6 @@ li{
     display:inline-block;
   }
 }
-
-
-
-
 
 footer {
   z-index:20;

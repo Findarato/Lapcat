@@ -10,29 +10,29 @@ if(adultContainer.html() == null){
   }
 }
 var adultCategories = new Array();
-jQuery(".researchInfoBasic").hide();
-jQuery(".researchList").find("img").hide();
-jQuery(".researchList").each(function(i,item){
-  //item = jQuery(item);
-  if(item.className.indexOf(" ")){ // we have more than one category
-    tempArray = item.className.split(" ");
-    jQuery.each(tempArray,function(i2,item2){
-      if(item2 !="researchList")
-        adultCategories.push(item2);
-    });
-  }else{
-    adultCategories.push(item.className);
-  }
-});
+if(jQuery('body').innerWidth()>960){
+  jQuery(".researchInfoBasic").hide();
+  jQuery(".researchList").find("img").hide();
+  jQuery(".researchList").each(function(i,item){
+    //item = jQuery(item);
+    if(item.className.indexOf(" ")){ // we have more than one category
+      tempArray = item.className.split(" ");
+      jQuery.each(tempArray,function(i2,item2){
+        if(item2 !="researchList")
+          adultCategories.push(item2);
+      });
+    }else{
+      adultCategories.push(item.className);
+    }
+  });
 
+  jQuery.each(jQuery(".hoverCard"),function(h,card){
+    me=jQuery(card);
+    me.show();
+    me.hovercard({"background":"#f1f1f1 url(/sites/all/themes/lapcat/less/images/grey.png)","detailsHTML":me.next().next().text()+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.next().attr("src")});
+  });  
+}else{}
 
-console.log(jQuery('body').innerWidth());
-jQuery.each(jQuery(".hoverCard"),function(h,card){
-  me=jQuery(card);
-  me.show();
-  me.hovercard({"background":"#f1f1f1 url(/sites/all/themes/lapcat/less/images/grey.png)","detailsHTML":me.next().next().text()+"<br><a href='"+me.attr("data-link")+"'> even more info</a>","width":"400px","cardImgSrc":me.next().attr("src")});
-  
-});
 adultCategories.sort();
 adultCategories = adultCategories.getUnique();
 var categoryBox = jQuery("<div/>",{"class":"subTitleElement",css:{"margin-top":"8px","width":"100%"}});
