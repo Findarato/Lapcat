@@ -550,8 +550,8 @@ form #user-login-form {
 }
 
 .dayBox {
-  width: 2.7em;
-  height: 2.4em;
+  width: 4.4em;
+  height: 4.4em;
   padding: 1em 1em 1em .7em;
   position: relative;
   font-size: .8em;
@@ -567,19 +567,15 @@ form #user-login-form {
   white-space: nowrap;
 }
 
-.closedDate {
-  padding-left: 25px;
-}
-
-.closedDate .timerContainer {
+.closedDate padding-left:0 1% .timerContainer {
   left: 4px;
 }
 
 .closedDate .dayBox {
   display: inline-block;
-  width: 6em;
-  height: 4.8em;
-  margin-bottom: .7em;
+  width: 8.34em;
+  height: 7em;
+  margin: .2em;
 }
 
 .closedDate .dayBox span:nth-child(1) {
@@ -594,15 +590,12 @@ form #user-login-form {
   font-size: 2.3em;
 }
 
-.closedDate.catalog {
-  padding-left: .5em;
-}
-
 .closedDate.catalog .dayBox {
-  height: 3.5em;
-  width: 6.9rem;
+  height: 4.4em;
+  width: 10.9em;
   background-color: #f0f0f0;
   border: 1px solid #aaa;
+  font-size: .77em;
 }
 
 .closedDate.catalog .dayBox a {
