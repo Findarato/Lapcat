@@ -562,8 +562,6 @@ form #user-login-form {
   font-size: 1.1em;
   position: absolute;
   bottom: 2px;
-  margin-bottom: 0;
-  width: 5em;
   white-space: nowrap;
 }
 
@@ -573,7 +571,7 @@ form #user-login-form {
 
 .closedDate .dayBox {
   display: inline-block;
-  width: 8.34em;
+  width: 8em;
   height: 7em;
   margin: .2em;
 }
@@ -591,8 +589,7 @@ form #user-login-form {
 }
 
 .closedDate.catalog .dayBox {
-  height: 4.4em;
-  width: 10.9em;
+  width: 10.74em;
   background-color: #f0f0f0;
   border: 1px solid #aaa;
   font-size: .77em;
@@ -1018,8 +1015,7 @@ div.more-link a {
 
 div.more-link a {
   padding: .5em;
-  width: auto;
-  line-height: 50%;
+  line-height: 100%;
 }
 
 ul.pager {
@@ -1540,10 +1536,6 @@ footer #search-block-form {
   width: 14em;
   font-size: 1.1em;
   border-radius: 3px;
-}
-
-footer #search-block-form .form-submit {
-  height: 1.9em;
 }
 
 footer #search-block-form .form-actions {

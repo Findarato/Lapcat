@@ -19,7 +19,7 @@ if(jQuery('body').innerWidth()>960){
     if(item.className.indexOf(" ")){ // we have more than one category
       tempArray = item.className.split(" ");
       jQuery.each(tempArray,function(i2,item2){
-        if(item2 !="researchList")
+        if(item2 !="researchList" && item2 !="linkIcon")
           adultCategories.push(item2);
       });
     }else{

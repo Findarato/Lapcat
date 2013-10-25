@@ -82,25 +82,29 @@ jQuery(document).ready(function(){
       ){// this is the research page
       jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
     }
-    
-    
-    /* Lets load the correct delicious feed */
-    if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
+    if(
+      uri.search(/research/i)>0 || 
+      uri.search(/educators/i)>0 ||
+      uri.search(/genealogy/i)>0 ||
+      uri.search(/greatpicks/i)>0 ||
+      uri.search(/teens/i)>0
+      ){// this is the research page
       jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
+    }
+    
+    /*Loading Custom scripts*/
+    if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
         jQuery.getScript("/sites/all/themes/lapcat/js/flicker.js");
-	      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
         }else{
           if(uri.search(/greatpicks/i)>0){// this is the teens page
           }else{//if all else fails lets just load a local rss feed
             if(uri.search(/educators/i)>0){// this is the teens page
-              jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
             }else{//if all else fails lets just load a local rss feed
             	if(uri.search(/genealogy/i)>0){// this is the teens page
-             		jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
             	}else{//if all else fails lets just load a local rss feed
             		if(uri.search(/help/i)>0){// this is the about page
              			jQuery.getScript("/sites/all/themes/lapcat/js/contactUs.js");

@@ -116,21 +116,21 @@ if(substr($ip,0,7) == '10.1.1.') //main
 ?>
 
 
-        <li class="researchList <?php print $fields["field_tag"]->content ?>">
-          <?Php if($inside == true): ?> 
-            <?Php /*{if $item.libraryOnly eq true}*/?>
-              <span class="iconic lock_fill" style="margin-right:3px;cursor:help" title="Available at the library only"></span>
-              <a href="<?Php print $fields["field_inside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
-          <?Php else: ?>
-            <?Php if($fields["field_outside_link"]->content == ""): ?>
-              <?Php print $fields["title"]->content;?>
-            <?Php else: ?>
-              <a href="<?Php print $fields["field_outside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
-            <?Php endif; ?>
-          <?Php endif; ?>
-          <label data-link="<?Php if($inside==true){print $fields["field_inside_link"]->content;}else{print $fields["field_outside_link"]->content;} ?>" class="hoverCard icon-zoom-in" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)"></label>
-          <?php print $fields["field_research_image"]->content ?>
-          <div class=researchInfoBasic>
-            <?php print $fields["body"]->content ?>
-          </div>
-        </li>
+<li class="linkIcon researchList <?php print $fields["field_tag"]->content ?>">
+  <?Php if($inside == true): ?> 
+    <?Php /*{if $item.libraryOnly eq true}*/?>
+      <span class="iconic lock_fill" style="margin-right:3px;cursor:help" title="Available at the library only"></span>
+      <a href="<?Php print $fields["field_inside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
+  <?Php else: ?>
+    <?Php if($fields["field_outside_link"]->content == ""): ?>
+      <?Php print $fields["title"]->content;?>
+    <?Php else: ?>
+      <a href="<?Php print $fields["field_outside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
+    <?Php endif; ?>
+  <?Php endif; ?>
+  <label data-link="<?Php if($inside==true){print $fields["field_inside_link"]->content;}else{print $fields["field_outside_link"]->content;} ?>" class="hoverCard icon-zoom-in" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)"></label>
+  <?php print $fields["field_research_image"]->content ?>
+  <div class=researchInfoBasic>
+    <?php print $fields["body"]->content ?>
+  </div>
+</li>
