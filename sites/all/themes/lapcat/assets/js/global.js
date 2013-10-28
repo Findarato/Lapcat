@@ -67,20 +67,17 @@ function displayLocation(locationCode,domElementSelector){
 
 
 jQuery(document).ready(function(){
+  var jsPath = "/sites/all/themes/lapcat/assets/js/";
   
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();
-    
-    
-    
-    
     if(
       uri.search(/children/i)>0 || 
       uri.search(/greatpicks/i)>0 ||
       uri.search(/downloads/i)>0 ||
       uri.search(/teens/i)>0
       ){// this is the research page
-      jQuery.getScript("/sites/all/themes/lapcat/js/formatNewest.js");
+      jQuery.getScript(jsPath+"formatNewest.js");
     }
     if(
       uri.search(/research/i)>0 || 
@@ -89,14 +86,14 @@ jQuery(document).ready(function(){
       uri.search(/greatpicks/i)>0 ||
       uri.search(/teens/i)>0
       ){// this is the research page
-      jQuery.getScript("/sites/all/themes/lapcat/js/research.js");
+      jQuery.getScript(jsPath+"research.js");
     }
     
     /*Loading Custom scripts*/
     if(uri.search(/research/i)>0 || uri.search(/educators/i)>0){// this is the research page
     }else{
       if(uri.search(/teens/i)>0){// this is the teens page 
-        jQuery.getScript("/sites/all/themes/lapcat/js/flicker.js");
+        jQuery.getScript(jsPath+"flicker.js");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
         }else{
@@ -107,9 +104,9 @@ jQuery(document).ready(function(){
             	if(uri.search(/genealogy/i)>0){// this is the teens page
             	}else{//if all else fails lets just load a local rss feed
             		if(uri.search(/help/i)>0){// this is the about page
-             			jQuery.getScript("/sites/all/themes/lapcat/js/contactUs.js");
+             			jQuery.getScript(jsPath+"contactUs.js");
             		}else{
-            			jQuery.getScript("/sites/all/themes/lapcat/js/locations.js");
+            			jQuery.getScript(jsPath+"locations.js");
             		}
             	}
             }
