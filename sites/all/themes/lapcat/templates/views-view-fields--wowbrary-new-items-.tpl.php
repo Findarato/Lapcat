@@ -39,24 +39,19 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
           </div>
           <div class="td">
             <div class="articleEntryTitle">
-              <a style="margin-right:10px;display:inline-block;" href="<?Php print $wowbraryClickThough; ?>" title="View Catalog record">
-              <?Php print $fields["title"]->content; ?>
-              </a>
+              <a style="margin-right:10px;display:inline-block;" href="<?Php print $wowbraryClickThough; ?>" title="View Catalog record"><?Php print $fields["title"]->content; ?></a>
             </div>
-            <div >
+            <div>
               <?Php print $fields["body"]->content; ?>
-              <br>
+              <div class="socialMediaContainer" id="socialMediaContainer">
+                <ul class="socialLinks" data-url="http://laportelibrary.org" data-counts="true" data-share-text="Google is a search engine" style="">
+                  <li class="facebook "><a class="icon-facebookalt" href="https://www.facebook.com/sharer/sharer.Php?u=<?Php print $catalogLink; ?>" title="Share on Facebook"></a></li>
+                  <li class="twitter "><a class="icon-twitter" href="https://twitter.com/intent/tweet?text=<?Php print $catalogLink;?>" title="Share on Twitter"></a></li>
+                  <li class="googleplus"><a class="icon-googleplus" href="https://plus.google.com/share?url=<?Php print $catalogLink; ?>" title="Share on Google Plus"></a></li>
+                </ul>  
+              </div>
             </div>  
           </div>
         </div>
-        <div class="socialMediaContainer" id="socialMediaContainer">
-          <div style="position: relative;">
-            <span class="tagStyle">Share</span>
-            <ul class="socialLinks" data-url="http://laportelibrary.org" data-counts="true" data-share-text="Google is a search engine" style="">
-              <li class="facebook "><a class="icon-facebookalt" href="https://www.facebook.com/sharer/sharer.Php?u=<?Php print $catalogLink; ?>" title="Share on Facebook"></a></li>
-              <li class="twitter "><a class="icon-twitter" href="https://twitter.com/intent/tweet?text=<?Php print $catalogLink;?>" title="Share on Twitter"></a></li>
-              <li class="googleplus"><a class="icon-googleplus" href="https://plus.google.com/share?url=<?Php print $catalogLink; ?>" title="Share on Google Plus"></a></li>
-            </ul>  
-          </div>
-        </div>
+
       </article>
