@@ -11,3 +11,7 @@ settings.php
 db.inc
 tweeks/coverCache/db.inc
 key.php
+.DS_Store
+node_modules
+.sass-cache
+*.bak

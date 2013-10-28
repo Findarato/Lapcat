@@ -4,15 +4,15 @@ package = Core
 version = VERSION
 core = 7.x
 stylesheets[screen][] = reset.css
+stylesheets[screen][less] = assets/less/compiled.css
 stylesheets[all and (min-width: 960px)][] = 960_24_col.css
-stylesheets[screen][less] = less/compiled.css
-stylesheets[all and (max-width: 959px)][] = less/mq.css
+stylesheets[all and (max-width: 959px)][] = assets/less/mq.css
 
 
-scripts[] = js/libs/jquery-1.9.1.min.js
-scripts[] = js/libs/jquery.hovercard.min.js
-scripts[] = js/libs/modernizr-2.0.6.min.js
-scripts[] = js/global.js
+scripts[] = assets/js/libs/jquery-1.9.1.min.js
+scripts[] = assets/js/libs/jquery.hovercard.min.js
+scripts[] = assets/js/libs/modernizr-2.0.6.min.js
+scripts[] = assets/js/global.js
 
 settings[shortcut_module_link] = 1
 regions[pageHeader] = Page Header

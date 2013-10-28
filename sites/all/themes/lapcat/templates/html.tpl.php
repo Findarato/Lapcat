@@ -47,7 +47,7 @@
 <head profile="<?php print $grddl_profile; ?>">
   <meta name="viewport" content="width=device-width">
   <meta name=”mobile-web-app-capable” content=”yes”>
-  <link rel=”shortcut icon” sizes=”1024x1024” href=”/sites/all/themes/lapcat/images/highRezTree.png”>
+  <link rel=”shortcut icon” sizes=”1024x1024” href=”/sites/all/themes/lapcat/assets//images/highRezTree.png”>
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
@@ -57,7 +57,7 @@
   <?php print $page; ?>
   <?php print $page_bottom; ?>
   <?php print $scripts; ?>
-<script src="/sites/all/themes/lapcat/js/libs/ftscroller.js"></script>
+<script src="/sites/all/themes/lapcat/assets//js/libs/ftscroller.js"></script>
               
 </body>
 </html>
