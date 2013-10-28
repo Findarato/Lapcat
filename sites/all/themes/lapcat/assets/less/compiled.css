@@ -645,14 +645,6 @@ form #user-login-form {
   z-index: 50;
 }
 
-.articleItem {
-  position: relative;
-  width: 100%;
-  padding: 3px;
-  margin-bottom: 10px;
-  min-height: 150px;
-}
-
 .field-content a[property*="label"],
 .tagStyle,
 .highlightSelect {
@@ -714,24 +706,34 @@ form #user-login-form {
   box-shadow: 4px 0 2px -2px rgba(36,36,36,0.3);
 }
 
+.articleItem {
+  position: relative;
+  width: 100%;
+  padding: 3px;
+  margin-bottom: 10px;
+  min-height: 150px;
+}
+
+.articleItem .field-content {
+  width: 36em;
+  display: table-cell;
+}
+
 .articleItem .socialMediaContainer {
-  top: -1em;
-  left: 38em;
+  display: table-cell;
 }
 
 .articleItem .socialLinks {
   position: absolute;
-  height: 1.5rem;
-  opacity: 1;
   line-height: 1;
   overflow: hidden;
 }
 
 .articleItem .socialLinks li {
-  line-height: 1;
-  top: auto;
+  line-height: 1.5em;
   font-size: 1.5em;
   padding: 1px;
+  display: block;
 }
 
 .user-picture img {

@@ -468,13 +468,7 @@ form #user-login-form{
   }
 }
 
-.articleItem{
-  position:relative;
-  width:100%;
-  padding:3px;
-  margin-bottom:10px;
-  min-height:150px;
-}
+
 .field-content a[property*="label"],.tagStyle,.highlightSelect{/*These are tags on items*/
   transform: translateZ(0);
   padding:3px;
@@ -526,23 +520,28 @@ form #user-login-form{
   .shadowOut(4px,0,2px,-2px,@shadow);
 }
 
-
 .articleItem{
+  position:relative;
+  width:100%;
+  padding:3px;
+  margin-bottom:10px;
+  min-height:150px;
+  .field-content{
+    width:36em;
+    display:table-cell;
+  }
   .socialMediaContainer{
-    top: -1em;
-    left: 38em;
+    display:table-cell;
   }
   .socialLinks{
     position:absolute;
-    height:1.5rem;
-    opacity:1;
     line-height:1;
     overflow:hidden;
     li{
-      line-height:1;
-      top:auto;
+      line-height: 1.5em;
       font-size:1.5em;
       padding:1px;
+      display:block;
     }
   }
 } 
