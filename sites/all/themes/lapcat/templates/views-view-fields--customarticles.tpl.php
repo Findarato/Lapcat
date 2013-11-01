@@ -4,8 +4,8 @@
       <div class="td" style="height:30px;width:30px;padding:5px;"><?php print $fields["picture"]->content ?></div>
       <div class="td" style="width:100%;">
         <div class="articleEntryTitle" style="width:100%;"><?php print $fields["title"]->content ?></div>
-        <div class="articleEntryAuthor" style="width:100%;">
-          <span>By <?php print $fields["name"]->content ?> on <?php print $fields["created"]->content ?></span>
+        <div class="articleEntryAuthor">
+          By <?php print $fields["name"]->content ?> on <?php print $fields["created"]->content ?>
         </div>  
       </div>
     </div>
@@ -20,5 +20,4 @@
         </div>    
     </div>
     <?php print $fields["field_tags"]->content ?>
-
 </article>

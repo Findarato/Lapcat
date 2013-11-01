@@ -686,7 +686,7 @@ form #user-login-form {
   z-index: 50;
 }
 
-.articleItem {
+article {
   position: relative;
   width: 100%;
   padding: 3px;
@@ -694,25 +694,37 @@ form #user-login-form {
   min-height: 150px;
 }
 
-.articleItem .field-content {
+article .field-content {
+  display: table-cell;
+}
+
+article .bookList .field-content {
   width: 36em;
+}
+
+article .articleEntryDescription {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  display: table;
+}
+
+article .articleEntryDescription .field-content {
+  width: 95%;
+}
+
+article .socialMediaContainer {
   display: table-cell;
 }
 
-.articleItem .socialMediaContainer {
-  display: table-cell;
-  position: relative;
-  top: 8px;
-  left: 0;
-}
-
-.articleItem .socialLinks {
+article .socialLinks {
   position: absolute;
   line-height: 1;
   overflow: hidden;
+  width: 2em;
 }
 
-.articleItem .socialLinks li {
+article .socialLinks li {
   line-height: 1.5em;
   font-size: 1.5em;
   padding: 1px;
@@ -723,6 +735,7 @@ form #user-login-form {
 .user-picture img {
   height: 40px;
   width: 40px;
+  border-radius: 3px;
 }
 
 .articleBox,
@@ -751,24 +764,14 @@ form #user-login-form {
   color: #564;
 }
 
-.articleEntryTitle a:hover {
-  text-decoration: none;
-}
-
 .articleEntryAuthor {
-  font-size: 10px;
+  font-size: .9em;
   color: #1d1d1d;
+  display: table;
 }
 
-.articleEntryAuthor img {
-  height: 24px;
-  width: 24px;
-}
-
-.articleEntryDescription {
-  width: 600px;
-  overflow: hidden;
-  margin-bottom: 10px;
+.articleEntryAuthor span {
+  padding: 0 .3em;
 }
 
 .topNav {
@@ -798,7 +801,7 @@ form #user-login-form {
 }
 
 .gitarBoy {
-  background: url('/sites/all/themes/lapcat/images/gitarBoy.svg') no-repeat;
+  background: url('/sites/all/themes/lapcat/assets/images/gitarBoy.svg') no-repeat;
   background-size: 100%;
   height: 7em;
   width: 3em;
@@ -824,7 +827,7 @@ form #user-login-form {
   height: 8.846rem;
   padding: 3px 3px 3px 10px;
   margin: 0 5px 10px 5px;
-  background: url('/sites/all/themes/lapcat/images/LaPorte_County_Public_Library.jpg') no-repeat;
+  background: url('/sites/all/themes/lapcat/assets/images/LaPorte_County_Public_Library.jpg') no-repeat;
   background-size: cover;
   background-position: 0;
 }
@@ -838,44 +841,44 @@ form #user-login-form {
 }
 
 .subPageHeader.Articles {
-  background: url('/sites/all/themes/lapcat/images/articlesHeader.jpg');
+  background: url('/sites/all/themes/lapcat/assets/images/articlesHeader.jpg');
   background-size: 100% 121%;
 }
 
 .subPageHeader.Downloads {
-  background: url('/sites/all/themes/lapcat/images/downloadHeader.png');
+  background: url('/sites/all/themes/lapcat/assets/images/downloadHeader.png');
 }
 
 .subPageHeader.Employment {
-  background: url('/sites/all/themes/lapcat/images/employmentHeader.jpg');
+  background: url('/sites/all/themes/lapcat/assets/images/employmentHeader.jpg');
   background-size: 100% 171%;
   background-position-y: 27%;
 }
 
 .subPageHeader.Genealogy,
 .subPageHeader.Belle.Gunness {
-  background: url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
+  background: url('/sites/all/themes/lapcat/assets/images/genealogyHeader.jpg');
 }
 
 .subPageHeader.Help,
 .subPageHeader.How.do.I {
-  background: url('/sites/all/themes/lapcat/images/helpHeader.jpg');
+  background: url('/sites/all/themes/lapcat/assets/images/helpHeader.jpg');
 }
 
 .subPageHeader.Hours {
-  background: url('/sites/all/themes/lapcat/images/hoursHeader.png') scroll -89px center;
+  background: url('/sites/all/themes/lapcat/assets/images/hoursHeader.png') scroll -89px center;
 }
 
 .subPageHeader.Request {
-  background: url('/sites/all/themes/lapcat/images/requestHeader.jpg');
+  background: url('/sites/all/themes/lapcat/assets/images/requestHeader.jpg');
 }
 
 .subPageHeader.Research {
-  background: url('/sites/all/themes/lapcat/images/searchHeader.jpg');
+  background: url('/sites/all/themes/lapcat/assets/images//searchHeader.jpg');
 }
 
 .subPageHeader.Teens {
-  background: url('/sites/all/themes/lapcat/images/teenHeader.jpg') #fff;
+  background: url('/sites/all/themes/lapcat/assets/images//teenHeader.jpg') #fff;
 }
 
 .newestSlideWrapper {
@@ -1059,31 +1062,31 @@ ul.pager li[class*=pager] a {
 }
 
 .locationBoxMap .coolSprings {
-  background-image: url('/sites/all/themes/lapcat/images/coolSpringMap.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/coolSpringMap.png');
 }
 
 .locationBoxMap .fishLake {
-  background-image: url('/sites/all/themes/lapcat/images/fishLakeMap.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/fishLakeMap.png');
 }
 
 .locationBoxMap .hanna {
-  background-image: url('/sites/all/themes/lapcat/images/hannaMap.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/hannaMap.png');
 }
 
 .locationBoxMap .mainLibrary {
-  background-image: url('/sites/all/themes/lapcat/images/mainLibraryMap.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/mainLibraryMap.png');
 }
 
 .locationBoxMap .kingsfordHeights {
-  background-image: url('/sites/all/themes/lapcat/images/kingsfordHeightsMap.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/kingsfordHeightsMap.png');
 }
 
 .locationBoxMap .rollingPrairie {
-  background-image: url('/sites/all/themes/lapcat/images/rollingPrairieMap.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/rollingPrairieMap.png');
 }
 
 .locationBoxMap .unionMills {
-  background-image: url('/sites/all/themes/lapcat/images/unionMillsMap.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/unionMillsMap.png');
 }
 
 .centerBox {
@@ -1361,7 +1364,7 @@ body {
   right: -5%;
   height: 31em;
   width: 29em;
-  background-image: url('/sites/all/themes/lapcat/images/treeLarge.png');
+  background-image: url('/sites/all/themes/lapcat/assets/images/treeLarge.png');
   background-repeat: no-repeat;
   -webkit-filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));
   filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.2));

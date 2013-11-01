@@ -1,6 +1,7 @@
 @import url("colors.less");
 @import url("buttons.less");
 @import url("roundCorners.less");
+@imagesPath : "/sites/all/themes/lapcat/assets/images/";
 *{box-sizing: border-box;}
 html{
   font-size:81.25%;
@@ -505,26 +506,37 @@ form #user-login-form{
 
 
 
-.articleItem{
+article{
   position:relative;
   width:100%;
   padding:3px;
   margin-bottom:10px;
   min-height:150px;
   .field-content{
-    width:36em;
     display:table-cell;
+  }
+  .bookList{
+    .field-content{
+      width:36em;
+    }
+  }
+  .articleEntryDescription{
+    width:100%;
+    overflow:hidden;
+    margin-bottom:10px; 
+    display:table;   
+    .field-content{
+      width:95%;
+    }  
   }
   .socialMediaContainer{
     display:table-cell;
-    position:relative;
-    top:8px;
-    left:0;
   }
   .socialLinks{
     position:absolute;
     line-height:1;
     overflow:hidden;
+    width:2em;
     li{
       line-height: 1.5em;
       font-size:1.5em;
@@ -538,9 +550,10 @@ form #user-login-form{
 .user-picture img{
   height:40px;
   width:40px;
+  .rounded-corners(3px);
 }
 
-  .articleBox,.articleContainerBox,.containerBox,.bookBox{
+.articleBox,.articleContainerBox,.containerBox,.bookBox{
   position:relative;
   background:#FFF;
   min-height:100px;
@@ -554,26 +567,18 @@ form #user-login-form{
   width:38rem;
   border-bottom:@colorDark60 solid 1px;
   margin-bottom:3px;
-}
-.articleEntryTitle a{
-  color:@color3;
-}
-.articleEntryTitle a:hover{text-decoration:none;}
-.articleEntryAuthor{
-  font-size:10px;
-  color:@colorDark;
-  img{
-    height:24px;
-    width:24px;
+  a{
+    color:@color3;
   }
 }
-.articleEntryDescription{
-  width:600px;
-  overflow:hidden;
-  margin-bottom:10px;
+.articleEntryAuthor{
+  font-size:.9em;
+  color:@colorDark;
+  display:table;
+  span{
+    padding:0 .3em;
+  }
 }
-
-
 .topNav{
   width:940px;
 }
@@ -598,7 +603,7 @@ form #user-login-form{
   max-width:68px;
 }
 .gitarBoy{
-  background: url('/sites/all/themes/lapcat/images/gitarBoy.svg') no-repeat;
+  background: url('@{imagesPath}gitarBoy.svg') no-repeat;
   background-size: 100%;
   height: 7em;
   width: 3em;
@@ -609,23 +614,19 @@ form #user-login-form{
   filter: @dropShadowFilter; 
 }
 .gitarBoy:hover + .oval-thought-border{
-  /*
-  animation:fadeIn ease-in 1;
-  animaon-fill-mode:forwards;
-  animation-duration:.3s;
-  */
  opacity:1;
 }
 
 .pageTitle{
   filter: @dropShadowFilter;  
 } 
+
 .subPageHeader{
   font-size:50px;
   height:8.846rem;
   padding:3px 3px 3px 10px;
   margin:0 5px 10px 5px;
-  background: url('/sites/all/themes/lapcat/images/LaPorte_County_Public_Library.jpg') no-repeat;
+  background: url('@{imagesPath}LaPorte_County_Public_Library.jpg') no-repeat;
   background-size:cover;
   background-position:0px;
   div{
@@ -637,34 +638,34 @@ form #user-login-form{
   }
   /*Sub page headers*/
   &.Articles{
-    background:url('/sites/all/themes/lapcat/images/articlesHeader.jpg');
+    background:url('@{imagesPath}articlesHeader.jpg');
     background-size:100% 121%;
   }
   &.Downloads{
-    background:url('/sites/all/themes/lapcat/images/downloadHeader.png');
+    background:url('@{imagesPath}downloadHeader.png');
   }
   &.Employment{
-    background:url('/sites/all/themes/lapcat/images/employmentHeader.jpg');
+    background:url('@{imagesPath}employmentHeader.jpg');
     background-size:100% 171%;
     background-position-y:27%;    
   }
   &.Genealogy,&.Belle.Gunness {
-    background:url('/sites/all/themes/lapcat/images/genealogyHeader.jpg');
+    background:url('@{imagesPath}genealogyHeader.jpg');
   }
   &.Help,&.How.do.I{
-    background:url('/sites/all/themes/lapcat/images/helpHeader.jpg');
+    background:url('@{imagesPath}helpHeader.jpg');
   }
   &.Hours{
-    background:url('/sites/all/themes/lapcat/images/hoursHeader.png') scroll -89px center;  
+    background:url('@{imagesPath}hoursHeader.png') scroll -89px center;  
   }
   &.Request{
-    background:url('/sites/all/themes/lapcat/images/requestHeader.jpg');
+    background:url('@{imagesPath}requestHeader.jpg');
   }
   &.Research{
-    background:url('/sites/all/themes/lapcat/images/searchHeader.jpg');
+    background:url('@{imagesPath}/searchHeader.jpg');
   }
   &.Teens{
-    background:url('/sites/all/themes/lapcat/images/teenHeader.jpg') white;
+    background:url('@{imagesPath}/teenHeader.jpg') white;
   }
   /*Sub page headers End*/
 }
@@ -754,13 +755,13 @@ ul.pager{
     height:300px;
     width:100%;
   }
-  .coolSprings{background-image:url('/sites/all/themes/lapcat/images/coolSpringMap.png');}
-  .fishLake{background-image:url('/sites/all/themes/lapcat/images/fishLakeMap.png');}
-  .hanna{background-image:url('/sites/all/themes/lapcat/images/hannaMap.png');}
-  .mainLibrary{background-image:url('/sites/all/themes/lapcat/images/mainLibraryMap.png');}
-  .kingsfordHeights{background-image:url('/sites/all/themes/lapcat/images/kingsfordHeightsMap.png');}
-  .rollingPrairie{background-image:url('/sites/all/themes/lapcat/images/rollingPrairieMap.png');}
-  .unionMills{background-image:url('/sites/all/themes/lapcat/images/unionMillsMap.png');}
+  .coolSprings{background-image:url('@{imagesPath}coolSpringMap.png');}
+  .fishLake{background-image:url('@{imagesPath}fishLakeMap.png');}
+  .hanna{background-image:url('@{imagesPath}hannaMap.png');}
+  .mainLibrary{background-image:url('@{imagesPath}mainLibraryMap.png');}
+  .kingsfordHeights{background-image:url('@{imagesPath}kingsfordHeightsMap.png');}
+  .rollingPrairie{background-image:url('@{imagesPath}rollingPrairieMap.png');}
+  .unionMills{background-image:url('@{imagesPath}unionMillsMap.png');}
   
 }
 .centerBox{
@@ -1004,7 +1005,7 @@ li{
   right:-5%;
   height:31em;
   width:29em;
-  background-image: url('/sites/all/themes/lapcat/images/treeLarge.png');
+  background-image: url('@{imagesPath}treeLarge.png');
   background-repeat:no-repeat;
   filter: @dropShadowFilter;
 }  
