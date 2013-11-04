@@ -1010,6 +1010,9 @@ li{
   filter: @dropShadowFilter;
 }  
 .childrenSun{
+  background-image: url('@{imagesPath}/sun.svg');
+  background-repeat:no-repeat;
+  z-index: 2;
   position:absolute;
   background-size:contain;
   left:-43px;
@@ -1020,6 +1023,8 @@ li{
 }
 
 .childrenGrass{
+  /*background-image: url('<?php print $base_path . $directory .'/images/img.png'; ?>');*/
+  background-image: url('@{imagesPath}/lowResGrass.png');
   width:100%;
   position: relative;
   background-position-y:0;
@@ -1179,6 +1184,81 @@ footer {
   
 }
 /*Testing something*/
+/*New header*/
+
+
+
+.hd-top{
+  width:100%;
+  height:2em;
+  display:block;
+  z-index:100;
+  .shadowOut(0,2,2px,-2px,@shadow);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+.hd-bottom{
+  height:4em;
+  width:100%;
+  display:block;
+  font-family: 'Ubuntu', sans-serif;
+  z-index:8;
+  box-shadow: inset 0 2px 2px -2px #777,2px 1px #fff;
+  ul{
+    padding:0;margin:0;
+    li{
+      border-left: 1px solid fadeout(darken(@color2,20%),40%);
+      height:4em;
+      float: left;
+      list-style-image: none;
+      margin: 0;
+      text-indent: 0;
+      vertical-align: bottom;
+      a{
+        border-left: 1px solid fadeout(lighten(@color2,20%),40%);
+        display:inline-block; 
+        padding:1.4em .7em;
+        color:@colorDark;
+      } 
+    }
+  }
+}
+.hd-logo{
+  font-size: 1.8em;
+  height: 4rem;
+  width: 30rem;
+  color:#000;
+  font-family: 'Ubuntu', sans-serif;
+  .hd-logoTitle{
+    position: absolute;
+    top: 1.8em;
+    left: 2.1em;
+  }
+  a{
+    color:@colorDark;
+    display:inline-block;    
+  }
+}
+.hd-logo img{
+  height:4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}

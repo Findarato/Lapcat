@@ -1,16 +1,7 @@
 <!--Children Page-->
 
 <style>
-.childrenSun{
-  background-image: url('<?php print $base_path . $directory .'/images/sun.svg'; ?>');
-  background-repeat:no-repeat;
-  z-index: 2;
-}
-.childrenGrass{
-  /*background-image: url('<?php print $base_path . $directory .'/images/img.png'; ?>');*/
-  background-image: url('<?php print $base_path . $directory .'/images/lowResGrass.png'; ?>');
-  /*height:130px;*/
-}
+
 .subPageHeader{ 
   background:rgba(250,250,250,.6);
   background-image: url('<?php print $base_path . $directory .'/images/kidsHeader.png'; ?>');  

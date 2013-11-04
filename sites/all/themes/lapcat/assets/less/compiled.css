@@ -1371,6 +1371,9 @@ body {
 }
 
 .childrenSun {
+  background-image: url('/sites/all/themes/lapcat/assets/images//sun.svg');
+  background-repeat: no-repeat;
+  z-index: 2;
   position: absolute;
   background-size: contain;
   left: -43px;
@@ -1382,6 +1385,7 @@ body {
 }
 
 .childrenGrass {
+  background-image: url('/sites/all/themes/lapcat/assets/images//lowResGrass.png');
   width: 100%;
   position: relative;
   background-position-y: 0;
@@ -1601,6 +1605,69 @@ footer #pageLinks li a {
 
 .field-type-text-with-summary ul li {
   list-style: square inside;
+}
+
+.hd-top {
+  width: 100%;
+  height: 2em;
+  display: block;
+  z-index: 100;
+  box-shadow: 0 2 2px -2px rgba(36,36,36,0.3);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+.hd-bottom {
+  height: 4em;
+  width: 100%;
+  display: block;
+  font-family: 'Ubuntu',sans-serif;
+  z-index: 8;
+  box-shadow: inset 0 2px 2px -2px #777,2px 1px #fff;
+}
+
+.hd-bottom ul {
+  padding: 0;
+  margin: 0;
+}
+
+.hd-bottom ul li {
+  border-left: 1px solid rgba(170,213,128,0.6);
+  height: 4em;
+  float: left;
+  list-style-image: none;
+  margin: 0;
+  text-indent: 0;
+  vertical-align: bottom;
+}
+
+.hd-bottom ul li a {
+  border-left: 1px solid rgba(255,255,255,0.6);
+  display: inline-block;
+  padding: 1.4em .7em;
+  color: #1d1d1d;
+}
+
+.hd-logo {
+  font-size: 1.8em;
+  height: 4rem;
+  width: 30rem;
+  color: #000;
+  font-family: 'Ubuntu',sans-serif;
+}
+
+.hd-logo .hd-logoTitle {
+  position: absolute;
+  top: 1.8em;
+  left: 2.1em;
+}
+
+.hd-logo a {
+  color: #1d1d1d;
+  display: inline-block;
+}
+
+.hd-logo img {
+  height: 4rem;
 }
 
 [class^="icon-"],
