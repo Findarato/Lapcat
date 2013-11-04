@@ -3,6 +3,7 @@
 @import url("roundCorners.less");
 @imagesPath : "/sites/all/themes/lapcat/assets/images/";
 *{box-sizing: border-box;}
+input:focus {outline: none; }
 html{
   font-size:81.25%;
   line-height:1.4em;
@@ -1203,6 +1204,21 @@ footer {
   font-family: 'Ubuntu', sans-serif;
   z-index:8;
   box-shadow: inset 0 2px 2px -2px #777,2px 1px #fff;
+  .catalog{
+    form{
+      height:4em;
+      padding-top:.6em;
+    }
+    .spc-SearchBox input{
+      padding:.4em;
+      .shadowIn(0 2px 4px rgba(0,0,0,0.4));
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+       .rounded-corners(.5em);
+       background:darken(@color2,5%);
+       border:none;
+       font-size: 1.4em;
+    }
+  }
   ul{
     padding:0;margin:0;
     li{

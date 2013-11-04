@@ -60,6 +60,10 @@ a.button,
   box-sizing: border-box;
 }
 
+input:focus {
+  outline: none;
+}
+
 html {
   font-size: 81.25%;
   line-height: 1.4em;
@@ -1623,6 +1627,21 @@ footer #pageLinks li a {
   font-family: 'Ubuntu',sans-serif;
   z-index: 8;
   box-shadow: inset 0 2px 2px -2px #777,2px 1px #fff;
+}
+
+.hd-bottom .catalog form {
+  height: 4em;
+  padding-top: .6em;
+}
+
+.hd-bottom .catalog .spc-SearchBox input {
+  padding: .4em;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4) 0 1px 1px rgba(0,0,0,0.8);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+  border-radius: .5em;
+  background: #d0e8b9;
+  border: none;
+  font-size: 1.4em;
 }
 
 .hd-bottom ul {
