@@ -1,60 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Test of a header</title>
-  <link type="text/css" rel="stylesheet" href="http://dev.laportelibrary.org/sites/all/themes/lapcat/assets/less/compiled.css" media="all">
-  <link type="text/css" rel="stylesheet" href="http://dev.laportelibrary.org/sites/all/themes/lapcat/assets/less/mq.css" media="all">
-  <link href='http://fonts.googleapis.com/css?family=Ubuntu|Vollkorn' rel='stylesheet' type='text/css'>
-  <style>
-    body{margin:0;padding:0;
-    font-family: 'Vollkorn', serif;
-    }
-    
-  </style>
-</head>
-<body class="">
-  <nav class="hd-top color1">
-    links will go here
-  </nav>
-  <header class="hd-bottom color2">
-    <nav class="t">
-      <div class="hd-logo td">
-        <a href="/"><img class="" src="http://dev.laportelibrary.org/sites/all/themes/lapcat/logo.png" alt="logo" title="Logo" id="logo"></a>
-        <a class="hd-logoTitle" href="/">La Porte County Public Library</a>
-        
-      </div>
-      <ul class="td">
-        <li><a href="">My Account</a></li>
-        <li><a href="">Catalog</a></li>
-        <li><a href="">Events</a></li>
-        <li><a href="">Research</a></li>
-        <li><a href="">Help</a></li>
-      </ul>
-      <div class="spc-Search td">
-      <div class="catalog ">
-        <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
-          <div class="t">
-            <div class="spc-Type td" >
-              <select name="searchtype">
-                <option value="X" selected="selected">KEYWORD</option>
-                <option value="t">TITLE</option>
-                <option value="a">AUTHOR</option>
-                <option value="d">SUBJECT</option>
-              </select>
-            </div>
-            <div class="spc-SearchBox td" >
-              <input class="insideBoxShadow" type="search" name="searcharg" placeholder="Search the Catalog">
-            </div>
-            <div class="spc-Submit td" >
-              <input type="submit" value="GO!"/>
+  <head>
+    <title>Test of a header</title>
+    <link type="text/css" rel="stylesheet" href="http://dev.laportelibrary.org/sites/all/themes/lapcat/assets/less/compiled.css" media="all">
+    <link type="text/css" rel="stylesheet" href="http://dev.laportelibrary.org/sites/all/themes/lapcat/assets/less/mq.css" media="all">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu|Vollkorn' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Vollkorn', serif;
+      }
+    </style>
+  </head>
+  <body class="">
+    <div style="width:940px">
+      <nav class="hd-top color1">
+        <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a> links will go here
+      </nav>
+      <header class="hd-bottom color2">
+        <nav class="">
+          <div class="hd-logo" style="float:left;">
+            <a href="/"><img class="" src="http://dev.laportelibrary.org/sites/all/themes/lapcat/logo.png" alt="logo" title="Logo" id="logo"></a>
+          </div>
+          <ul class="" style="float:left;">
+            <li><a href="">My Account</a></li>
+            <li><a href="">Catalog</a></li>
+            <li><a href="">Events</a></li>
+            <li><a href="">Research</a></li>
+            <li><a href="">Help</a></li>
+          </ul>
+          <div class="spc-Search"  style="float:right;">
+            <div class="catalog ">
+              <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
+                <div class="t" style="width:95%;">
+                  <div class="spc-Type td" style="display:none;">
+                    <select name="searchtype" >
+                      <option value="X" selected="selected">KEYWORD</option>
+                      <option value="t">TITLE</option>
+                      <option value="a">AUTHOR</option>
+                      <option value="d">SUBJECT</option>
+                    </select>
+                  </div>
+                  <div class="spc-SearchBox td" >
+                    <input class="insideBoxShadow" type="search" name="searcharg" placeholder="Search the Catalog">
+                  </div>
+                  <div class="spc-Submit td" >
+                    <input type="submit" value="GO!"/>
+                  </div>
+                </div>
+              </form>
             </div>
           </div>
-        </form>
-      </div>
-    </div> 
-
-    </nav>
-    
-  </header>
-</body>
+        </nav>
+      </header>
+    </div>
+  </body>
 </html>

@@ -41,11 +41,6 @@ h4 {font-size: 1.8em;}
   margin-bottom:.1em;
 }
 
-
-
-
-
-
 /* Color 1 related items */
 .color1{
   background: @color1;  
@@ -126,7 +121,7 @@ h4 {font-size: 1.8em;}
 }
 
 .mainArea{
-  padding:8.4em 5px 20px 5px;
+  padding: 10px 5px 20px;
   background-color:@color4;
   box-shadow: inset 0 0 1px 1px @shadow;
   min-height:600px;
@@ -240,30 +235,6 @@ li {
  margin: 5px 0;
 }
 
-
-.region-menuheader{
-  display:inline-block;
-  width:100%;
-  float:none;
-  ul{
-    width:            100%;
-    text-align:       center;
-    display:          table;
-  }
-  .leaf{
-    width:            17%;
-    display:          table-cell;
-    padding:0;
-    text-align:center;
-  }
-  .first{
-    margin:3px 0 0 8px;
-  }
-}
-
-//.helpLink{
-//  font-size:1.3em;
-//}
 
 .views-slideshow-cycle-main-frame-row *{
   border-radius:          3px;
@@ -579,20 +550,6 @@ article{
   span{
     padding:0 .3em;
   }
-}
-.topNav{
-  width:940px;
-}
-.logoImage{
-  height:75px;
-  width:68px;
-}
-.secondNav{
-  font-weight:bold;
-  font-size:1.2em;
-  position:relative;
-  height:1.4em;
-  
 }
 .siteMap .secondNav{
   background:@color4;
@@ -1044,39 +1001,6 @@ li{
   height:100%;
   position:relative;
   overflow:hidden;
-  input,select{
-    line-height:1.5em;
-    height:1.7em;
-  }
-  .spc-Search{
-    width:29%;
-    position:absolute;
-    right:5px;
-    top:0;
-    opacity:1;
-    z-index: 10;
-    background:#E0E0E0;
-    padding:3px;
-    border-top-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    .Animate(1000ms);
-  }
-  .spc-SearchBox{
-    width:100%;
-    input{
-      width:100%;
-    }
-  }
-  .spc-Submit{
-    input{
-     border: 1px solid @buttonBorder;
-    }
-  }
-  .spc-SearchBox input:focus ~ .spc-Type{
-    overflow:hidden;
-    width:0;
-    display:inline-block;
-  }
 }
 
 footer {
@@ -1143,10 +1067,13 @@ footer {
       border:none;
     }
   } 
-  #pageLinks li{
+  #pageLinks {
+    width:26em;
+   li{
     font-size:1.3em;
     padding:3px;
     a{ color:@colorLight60; }
+    } 
   }
 }
 
@@ -1185,17 +1112,26 @@ footer {
   
 }
 /*Testing something*/
+
+
+
 /*New header*/
-
-
 
 .hd-top{
   width:100%;
   height:2em;
   display:block;
   z-index:100;
-  .shadowOut(0,2,2px,-2px,@shadow);
-  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  padding: 3px;
+  .hd-logoTitle{
+    a{display:inline;}
+    h2{
+     color:@colorDark;
+     font-weight:600;
+     display:inline;
+     font-family: 'Ubuntu', sans-serif;
+    }
+  }
 }
 .hd-bottom{
   height:4em;
@@ -1204,23 +1140,48 @@ footer {
   font-family: 'Ubuntu', sans-serif;
   z-index:8;
   box-shadow: inset 0 2px 2px -2px #777,2px 1px #fff;
+  margin-bottom:1em;
+  #menuHeader{float:left;} 
+  .spc-Search{
+   padding-right:1em;
+  }
   .catalog{
     form{
       height:4em;
       padding-top:.6em;
+      input{
+        padding:.4em;
+        border:none;
+        font-size: 1.4em;
+      }
     }
-    .spc-SearchBox input{
-      padding:.4em;
-      .shadowIn(0 2px 4px rgba(0,0,0,0.4));
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
-       .rounded-corners(.5em);
-       background:darken(@color2,5%);
-       border:none;
-       font-size: 1.4em;
+    .spc-Submit{
+      input{
+        .lp-Buttons(2.3rem);
+        //width:3rem;
+        line-height:normal;
+        margin:0;
+        height:2.7rem;
+      }
     }
+    .spc-SearchBox{
+      input{
+        .shadowIn(0 2px 4px rgba(0,0,0,0.4));
+        box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+        background:darken(@color2,5%);
+        .rounded-corners(3px);
+        margin-right: 1em;
+        width:10.2em;
+        .Animate(300ms);
+        &:focus{
+          width:12em;
+        }
+      }
+    } 
   }
   ul{
     padding:0;margin:0;
+    border-right: 1px solid fadeout(darken(@color2,20%),40%);
     li{
       border-left: 1px solid fadeout(darken(@color2,20%),40%);
       height:4em;
@@ -1229,6 +1190,10 @@ footer {
       margin: 0;
       text-indent: 0;
       vertical-align: bottom;
+      list-style:none;
+      &:last-child{
+        border-right: 1px solid fadeout(lighten(@color2,20%),40%);
+      }
       a{
         border-left: 1px solid fadeout(lighten(@color2,20%),40%);
         display:inline-block; 
@@ -1241,7 +1206,7 @@ footer {
 .hd-logo{
   font-size: 1.8em;
   height: 4rem;
-  width: 30rem;
+  width: 2.7em;
   color:#000;
   font-family: 'Ubuntu', sans-serif;
   .hd-logoTitle{
@@ -1251,15 +1216,13 @@ footer {
   }
   a{
     color:@colorDark;
-    display:inline-block;    
+    display:inline-block;
+    margin-left:.2em;  
+  }
+  img{
+    height:4rem;
   }
 }
-.hd-logo img{
-  height:4rem;
-}
-
-
-
 
 
 

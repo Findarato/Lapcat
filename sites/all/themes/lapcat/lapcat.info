@@ -14,6 +14,12 @@ scripts[] = assets/js/libs/jquery.hovercard.min.js
 scripts[] = assets/js/libs/modernizr-2.0.6.min.js
 scripts[] = assets/js/global.js
 
+
+fonts[google_fonts_api][] = "Ubuntu&subset=latin-ext#500"
+fonts[google_fonts_api][] = "Vollkorn&subset=latin#regular"
+
+
+
 settings[shortcut_module_link] = 1
 regions[pageHeader] = Page Header
 regions[pageTitle] = Page Title

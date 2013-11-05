@@ -6,49 +6,53 @@
   }
 </style>
 
-<header class="topHeader" style="margin:0;padding:0;">
-  <nav title="top Navagation" class="firstNav color1 " style="text-align: center;top:0;left:0;position:relative">
-    <div class="t topNav " style="max-width:940px;text-align:center;margin:0 auto;">
-      <div class="td logoBlock">
-        <a href="/">
-           <?php if ($logo): ?>
-              <img class="logoImage" src="<?php print $logo ?>" alt="learn, enrich, enjoy" title="learn, enrich, enjoy" id="logo" />
-            <?php endif; ?>
-         </a>
-      </div>
-      <div class="td">
-        <h1><a href="/" class="logoTitle">La Porte County Public Library System</a></h1>
-        <h3 class="logoSubtitle"><?php if ($site_slogan): ?><?Php print $site_slogan;?><?php endif; ?></h3> 
-      </div>
-    </div>
+<header class="hd-top color1" style="width:100%;">
+  <nav class=" container_24">
+    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a> links will go here
   </nav>
-  <nav class="secondNav color2" style="width:100%">
-    <div class="topNav" style="text-align:center;margin:0 auto;">
+</header>      
+<header class="hd-bottom color2" style="width:100%;">
+  <div class="container_24">
+    <nav class="">
+      <div class="hd-logo" style="float:left;">
+        <a href="/"><?php if ($logo):?><img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" /><?php endif; ?></a>
+      </div>
       <?php if ($page['menuHeader']): ?>
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
       </div>
       <?php endif; ?>
-    </div>
-  </nav>
-</header>  
+      <div class="spc-Search"  style="float:right;">
+        <div class="catalog ">
+          <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
+            <div class="t" style="width:95%;">
+              <div class="spc-Type td" style="display:none;">
+                <select name="searchtype" >
+                  <option value="X" selected="selected">KEYWORD</option>
+                  <option value="t">TITLE</option>
+                  <option value="a">AUTHOR</option>
+                  <option value="d">SUBJECT</option>
+                </select>
+              </div>
+              <div class="spc-SearchBox td" >
+                <input class="insideBoxShadow" type="search" name="searcharg" placeholder="Search the Catalog">
+              </div>
+              <div class="spc-Submit td" >
+                <input type="submit" value="GO!"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
   <div class="container_24">
     <main class="mainArea grid_24 roundAll3" id="main" role="main">
       <!--Page Header-->
       <nav class="navDisplay">
         <div class="grid_20 push_4" style="position:relative">
-          <div class="mainCatalogSearch">
-            <form method="get" action="https://catalog.lapcat.org/search/X?" class="catalogNav smoothAnimate">
-                <select class="smoothAnimate" name="searchtype">
-                  <option value="X" >KEYWORD</option>
-                  <option value="t" selected="selected">TITLE</option>
-                  <option value="a">AUTHOR</option>
-                  <option value="d">SUBJECT</option>
-                </select>
-                <input type="search" name="searcharg" size="24" maxlength="75" value="" placeholder="Search the Catalog" >
-                <input class="" type="submit" value="GO!">
-              </form>
-          </div>
+          
           <!-- Middle Colmn -->
           <div id="middleSectionContainer" class="banner roundAll3">
              <?php if ($page['featured_slider']): ?>
