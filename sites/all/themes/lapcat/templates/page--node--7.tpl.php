@@ -47,7 +47,28 @@
         <?php print render($page['menuHeader']); ?>
       </div>
       <?php endif; ?>
-      
+      <div class="spc-Search"  style="float:right;">
+        <div class="catalog ">
+          <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
+            <div class="t" style="width:95%;">
+              <div class="spc-Type td" style="display:none;">
+                <select name="searchtype" >
+                  <option value="X" selected="selected">KEYWORD</option>
+                  <option value="t">TITLE</option>
+                  <option value="a">AUTHOR</option>
+                  <option value="d">SUBJECT</option>
+                </select>
+              </div>
+              <div class="spc-SearchBox td" >
+                <input class="insideBoxShadow" type="search" name="searcharg" placeholder="Search the Catalog">
+              </div>
+              <div class="spc-Submit td" >
+                <input type="submit" value="GO!"/>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
