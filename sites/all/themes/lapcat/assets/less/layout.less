@@ -55,8 +55,6 @@ form #user-login-form{
   margin:1em;
 }
 
-
-
 .adgendaLink,.linkIcon{
   font-size:1.2em;
   margin-bottom:.1em;
@@ -482,8 +480,7 @@ li {
   }
 }
 
-
-
+ 
 /**
  * NoveList  
  * 
@@ -502,18 +499,28 @@ li {
   height:100px;
 }
 input.noveListSearch{ 
-  font-size:1.5em;
+  font-size:1.3em;
   color:@colorDark;
   height: 1.5em;
   background: @colorLight60;
   border-radius: 3px;
   border: none;
-  padding:.5em;
+  padding:.8em;
+  float:left;
+  box-shadow:inset 0 0 1px 1px @shadow;
 }
 input.noveListSubmit{
   .lp-Buttons(2em);
+  float:right;
+  margin:0 1em 0 0;
+  width:3.7em;
 }
-
+.noveListLimiter {
+  margin-left:0px; 
+  overflow: auto;
+  clear:both;
+}
+  
 
 article{
   position:relative;
@@ -568,9 +575,18 @@ article{
   min-height:100px;
 }
 
-.articleContainerBox,.deliciousContainer,.containerBox{
-  padding:30px 5px 5px 5px;
+.blogBox,.blogContainerBox,.containerBox,.bookBox,.box,body{
+  background:        @globalBackground;
+  min-height:        100px;
+  position:          relative;
 }
+.blogContainerBox,.containerBox,.articleContainerBox {
+  margin-bottom:    1em;
+  padding:          2em 1em 1em 1em;
+}
+
+
+
 .articleEntryTitle{
   font-size:1.5em;
   width:38rem;
@@ -678,7 +694,7 @@ article{
     width:300px; height: 300px; display: inline-block; vertical-align: top;
   }
 }
-    
+
 div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"] {
   div{
     a{
@@ -711,6 +727,12 @@ div.more-link{
   } 
 }
 
+.item-list {
+  text-align: center;
+  .views-row{
+    text-align:left;
+  }
+}
 ul.pager{
   display:block;
   li.pager-current{
@@ -802,15 +824,7 @@ li{
 #greatPicksContainerBox .rssItem img{
   width:100px;
 }
-.blogBox,.blogContainerBox,.containerBox,.bookBox,.box,body{
-  background:        @globalBackground;
-  min-height:        100px;
-  position:          relative;
-}
-.blogContainerBox,.containerBox {
-  margin-bottom:    1em;
-  padding:          30px 5px 5px 5px;
-}
+
 
 
 
@@ -1084,6 +1098,9 @@ footer {
     width:18em;
     float:right;
   }
+  .form-actions,.form-item{
+    display:table-cell;
+  }
   #search-block-form{
     box-shadow: inset 0 0 1px 1px @shadow;
     background:rgba(0,0,0,.3);
@@ -1091,11 +1108,9 @@ footer {
     padding:.3em;
     width:14em;
     font-size:1.1em;
-    .form-actions{
-      float:right;
-    }
     .form-text{
-      width:10em;
+      width: 9.5em;
+      margin-right: .5em;
     }
     .rounded-corners(3px);
     input{
@@ -1150,6 +1165,8 @@ footer {
   }
   
 }
+
+
 /*Testing something*/
 
 
@@ -1262,9 +1279,6 @@ footer {
     height:4rem;
   }
 }
-
-
-
 
 
 

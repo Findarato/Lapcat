@@ -5,7 +5,7 @@
       <?php print $view->get_title(); ?>
     <?php endif; ?></h2>
   </div>
-  <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" style="padding-left:10px;">
+  <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox">
     <?php if ($header): ?>
       <div class="view-header">
         <?php print $header; ?>

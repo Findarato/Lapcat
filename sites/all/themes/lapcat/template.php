@@ -93,3 +93,9 @@ function lapcat_tablesort_indicator($variables) {
     return theme('image', array('path' => $theme_path . '/images/arrow-desc.png', 'alt' => t('sort descending'), 'width' => 13, 'height' => 13, 'title' => t('sort descending')));
   }
 }
+
+function lapcat_css_alter(&$css) {
+    unset($css[drupal_get_path('module','system').'/system.theme.css']);
+    unset($css[drupal_get_path('module','system').'/system.base.css']);
+    unset($css[drupal_get_path('module','system').'/system.menus.css']);
+}
