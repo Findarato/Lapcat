@@ -54,10 +54,7 @@
           <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
             <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>
           </div>
-          
-
         </div>
-        
         <!--end of cool testing stuff-->       
         <div class="clear"></div>   
         <section id="mainContent" class="grid_12">

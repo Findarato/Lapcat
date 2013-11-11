@@ -1,4 +1,4 @@
-@import url("colors.less");
+@import url("theme.less");
 @import url("buttons.less");
 @import url("roundCorners.less");
 @imagesPath : "/sites/all/themes/lapcat/assets/images/";
@@ -36,6 +36,27 @@ h2 {
 }
 h3 {font-size: 2em;}
 h4 {font-size: 1.8em;}
+
+form *{
+  border:           none;
+  font-size:        1em;
+  position:         relative;
+  margin:           0;
+}
+select, input[type="text"] , input[type="search"]{
+  color:@colorDark;
+  font-size:1em;
+  background: rgba(255, 255, 255, 0.3);
+  border:1px solid @buttonBorder;
+  vertical-align:top;
+  padding:.4em;
+} 
+form #user-login-form{
+  margin:1em;
+}
+
+
+
 .adgendaLink,.linkIcon{
   font-size:1.2em;
   margin-bottom:.1em;
@@ -247,24 +268,10 @@ li {
   z-index:          10;
   background:@colorLight60;
 }
- 
-form *{
-  border:           none;
-  font-size:        1em;
-  position:         relative;
-  margin:           0;
-}
-select, input[type="text"] , input[type="search"]{
-  color:@colorDark;
-  font-size:1em;
-  background: rgba(255, 255, 255, 0.3);
-  border:1px solid @buttonBorder;
-  vertical-align:top;
-  padding:.2em;
-} 
-form #user-login-form{
-  margin:1em;
-}
+
+
+
+
 
 .sliderInfoBox{
   position:absolute;
@@ -476,6 +483,36 @@ form #user-login-form{
 }
 
 
+
+/**
+ * NoveList  
+ * 
+ */
+.noveList{
+  padding-top: 5px;
+  color:@colorDark;
+  form{margin-left:10px;}
+}
+.noveListImage{
+  background-image:url('http://support.ebscohost.com/eit/images/buttons/novplus200.gif'); 
+  background-repeat:no-repeat; 
+  font-family:'Ubunut',Verdana,Arial,Helvetica,sans-serif; 
+  font-size:1em; 
+  color:@colorDark;
+  height:100px;
+}
+input.noveListSearch{ 
+  font-size:1.5em;
+  color:@colorDark;
+  height: 1.5em;
+  background: @colorLight60;
+  border-radius: 3px;
+  border: none;
+  padding:.5em;
+}
+input.noveListSubmit{
+  .lp-Buttons(2em);
+}
 
 
 article{
@@ -774,6 +811,8 @@ li{
   margin-bottom:    1em;
   padding:          30px 5px 5px 5px;
 }
+
+
 
 
 /**

@@ -116,6 +116,28 @@ h4 {
   font-size: 1.8em;
 }
 
+form * {
+  border: none;
+  font-size: 1em;
+  position: relative;
+  margin: 0;
+}
+
+select,
+input[type="text"],
+input[type="search"] {
+  color: #1d1d1d;
+  font-size: 1em;
+  background: rgba(255,255,255,0.3);
+  border: 1px solid #aaa;
+  vertical-align: top;
+  padding: .4em;
+}
+
+form #user-login-form {
+  margin: 1em;
+}
+
 .adgendaLink,
 .linkIcon {
   font-size: 1.2em;
@@ -401,28 +423,6 @@ li {
   background: rgba(241,241,241,0.6);
 }
 
-form * {
-  border: none;
-  font-size: 1em;
-  position: relative;
-  margin: 0;
-}
-
-select,
-input[type="text"],
-input[type="search"] {
-  color: #1d1d1d;
-  font-size: 1em;
-  background: rgba(255,255,255,0.3);
-  border: 1px solid #aaa;
-  vertical-align: top;
-  padding: .2em;
-}
-
-form #user-login-form {
-  margin: 1em;
-}
-
 .sliderInfoBox {
   position: absolute;
   bottom: 0;
@@ -665,6 +665,65 @@ form #user-login-form {
   -ms-transform-origin: 8px 16px;
   transform-origin: 8px 16px;
   z-index: 50;
+}
+
+.noveList {
+  padding-top: 5px;
+  color: #1d1d1d;
+}
+
+.noveList form {
+  margin-left: 10px;
+}
+
+.noveListImage {
+  background-image: url('http://support.ebscohost.com/eit/images/buttons/novplus200.gif');
+  background-repeat: no-repeat;
+  font-family: 'Ubunut',Verdana,Arial,Helvetica,sans-serif;
+  font-size: 1em;
+  color: #1d1d1d;
+  height: 100px;
+}
+
+input.noveListSearch {
+  font-size: 1.5em;
+  color: #1d1d1d;
+  height: 1.5em;
+  background: rgba(241,241,241,0.6);
+  border-radius: 3px;
+  border: none;
+  padding: .5em;
+}
+
+input.noveListSubmit {
+  height: 2em;
+  width: auto;
+  margin: 2.5px 0 2.5px 0;
+  background: #f1f1f1;
+  position: relative;
+  vertical-align: middle;
+  box-shadow: inset 0 0 1px 1px rgba(36,36,36,0.3);
+  line-height: 2em;
+  overflow: hidden;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: normal;
+  -webkit-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
+  border-radius: 3px;
+}
+
+input.noveListSubmit:hover {
+  border-bottom: none;
+  box-shadow: inset 0 0 .6em 1px #5f3e12;
+}
+
+input.noveListSubmit a {
+  width: 100%;
+  display: block;
+  font-size: .9090909090909091em;
 }
 
 article {
