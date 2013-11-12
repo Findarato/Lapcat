@@ -25,8 +25,9 @@ h1,h2,h3,h4{
   line-height:100%;
   font-weight: bold;
 }
-h1 { 
+h1 {
   font-size: 2.5em;
+  @colorDark;
 }
 h2 {
   font-size: 1em;
@@ -168,18 +169,6 @@ form #user-login-form{
  *  
  */
 
-.topHeader {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 112px;
-  padding: 2px; 
-  z-index: 50; 
-}
-
-
 aside {
   .video-js{
    width:290px;
@@ -266,9 +255,6 @@ li {
   z-index:          10;
   background:@colorLight60;
 }
-
-
-
 
 
 .sliderInfoBox{
@@ -613,20 +599,7 @@ article{
   max-height:75px;
   max-width:68px;
 }
-.gitarBoy{
-  background: url('@{imagesPath}gitarBoy.svg') no-repeat;
-  background-size: 100%;
-  height: 7em;
-  width: 3em;
-  position: absolute;
-  right: 9em;
-  bottom: 2em;
-  z-index: 10;
-  filter: @dropShadowFilter; 
-}
-.gitarBoy:hover + .oval-thought-border{
- opacity:1;
-}
+
 
 .pageTitle{
   filter: @dropShadowFilter;  
@@ -785,17 +758,7 @@ ul.pager{
   margin:0 auto;
   width:918px;
 }
-.topHeader{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  width:100%;
-  height:112px;
-  padding:2px;
-  z-index:100;
-  transform: translateZ(0);
-}
+
 li{
   list-style: none outside none;
 }
@@ -951,7 +914,20 @@ li{
 }
 
 
-
+.gitarBoy{
+  background: url('@{imagesPath}gitarBoy.svg') no-repeat;
+  background-size: 100%;
+  height: 7em;
+  width: 3em;
+  position: absolute;
+  right: 9em;
+  bottom: 2em;
+  z-index: 10;
+  filter: @dropShadowFilter; 
+}
+.gitarBoy:hover + .oval-thought-border{
+ opacity:1;
+}
 
 .oval-thought-border {
   .rounded-corners(2rem);
@@ -1047,7 +1023,9 @@ li{
 #pageHeader{
   margin-bottom:15px;
 }
-.element-invisible{display:none;}
+.element-invisible{
+  display:none;
+}
 .supPageHeader{
   margin-bottom:10px;
   width:100%;
@@ -1056,81 +1034,9 @@ li{
   overflow:hidden;
 }
 
-footer {
-  z-index:20;
-  height:17em;
-  position:absolute;
-  width:100%;
-  * { vertical-align:top; }
-  h3{
-    text-shadow:0px 2px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
-    color:@colorDark;
-    color:rgba(0,0,0,.3); 
-  }
-  .socialLinks{
-    margin:2em 0 1em 0;
-    opacity:.9;
-    height:auto;
-    li{
-      width:3.615em;
-      display:inline-block;
-      position:relative;
-      top:-6px;
-    }
-    a{
-      text-shadow:0px 5px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
-      color:rgba(0,0,0,.3);
-      font-size:3.615em;
-      .Animate();
-      &:hover{
-        text-shadow:0px 0px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
-      }
-    }  
-  }
-  .footerLeft,.footerRight{
-    margin:0 2em;
-  }
-  .footerLeft {
-    width:22em;
-    float:left;
-  }
-  .footerRight {
-    width:18em;
-    float:right;
-  }
-  .form-actions,.form-item{
-    display:table-cell;
-  }
-  #search-block-form{
-    box-shadow: inset 0 0 1px 1px @shadow;
-    background:rgba(0,0,0,.3);
-    margin:5px;
-    padding:.3em;
-    width:14em;
-    font-size:1.1em;
-    .form-text{
-      width: 9.5em;
-      margin-right: .5em;
-    }
-    .rounded-corners(3px);
-    input{
-      color:@colorDark;
-      height:1.5em;
-      background: rgba(255, 255, 255, 0.3);
-      .rounded-corners(3px);
-      border:none;
-    }
-  } 
-  #pageLinks {
-    width:26em;
-   li{
-    font-size:1.3em;
-    padding:3px;
-    a{ color:@colorLight60; }
-    } 
-  }
-}
-
+/*Footer*/
+@import url("footer.less");
+@import url("header.less");
 
 
 /*Animations*/
@@ -1153,7 +1059,6 @@ footer {
       float:left;
       height:6em;
     }
-    //div:not(.subTitleElement):nth-child(2n){background:fade(@color260,40);}
   }
 //this allows for the bullet points to show on ULs
 .field-type-text-with-summary {
@@ -1165,132 +1070,7 @@ footer {
   }
   
 }
-
-
 /*Testing something*/
-
-
-
-/*New header*/
-
-.hd-top{
-  width:100%;
-  height:2em;
-  display:block;
-  z-index:100;
-  padding: 3px;
-  .hd-logoTitle{
-    a{display:inline;}
-    h2{
-     color:@colorDark;
-     font-weight:600;
-     display:inline;
-     font-family: 'Ubuntu', sans-serif;
-    }
-  }
-}
-.hd-bottom{
-  height:4em;
-  width:100%;
-  display:block;
-  font-family: 'Ubuntu', sans-serif;
-  z-index:8;
-  box-shadow: inset 0 2px 2px -2px #777,2px 1px #fff;
-  margin-bottom:1em;
-  #menuHeader{float:left;} 
-  .spc-Search{
-   padding-right:1em;
-  }
-  .catalog{
-    form{
-      height:4em;
-      padding-top:.6em;
-      input{
-        padding:.4em;
-        border:none;
-        font-size: 1.4em;
-      }
-    }
-    .spc-Submit{
-      input{
-        .lp-Buttons(2.3rem);
-        //width:3rem;
-        line-height:normal;
-        margin:0;
-        height:2.7rem;
-      }
-    }
-    .spc-SearchBox{
-      input{
-        .shadowIn(0 2px 4px rgba(0,0,0,0.4));
-        box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
-        background:darken(@color2,5%);
-        .rounded-corners(3px);
-        margin-right: 1em;
-        width:10.2em;
-        .Animate(300ms);
-        &:focus{
-          width:12em;
-        }
-      }
-    } 
-  }
-  ul{
-    padding:0;margin:0;
-    border-right: 1px solid fadeout(darken(@color2,20%),40%);
-    li{
-      border-left: 1px solid fadeout(darken(@color2,20%),40%);
-      height:4em;
-      float: left;
-      list-style-image: none;
-      margin: 0;
-      text-indent: 0;
-      vertical-align: bottom;
-      list-style:none;
-      &:last-child{
-        border-right: 1px solid fadeout(lighten(@color2,20%),40%);
-      }
-      a{
-        border-left: 1px solid fadeout(lighten(@color2,20%),40%);
-        display:inline-block; 
-        padding:1.4em .7em;
-        color:@colorDark;
-      } 
-    }
-  }
-}
-.hd-logo{
-  font-size: 1.8em;
-  height: 4rem;
-  width: 2.7em;
-  color:#000;
-  font-family: 'Ubuntu', sans-serif;
-  .hd-logoTitle{
-    position: absolute;
-    top: 1.8em;
-    left: 2.1em;
-  }
-  a{
-    color:@colorDark;
-    display:inline-block;
-    margin-left:.2em;  
-  }
-  img{
-    height:4rem;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}
@@ -1301,6 +1081,5 @@ footer {
 .icon-googleplus:before{content:'p'}
 .icon-info-sign:before{content:'\f315';color:@color5;}
 .icon-zoom-in:before{content:'z';color:@color560;}
-
 .icon-automobile-car:before{content:'e'}
 .icon-bus:before{content:'c'}

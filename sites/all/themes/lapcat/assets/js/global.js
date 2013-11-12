@@ -114,7 +114,8 @@ jQuery(document).ready(function(){
         } 
       }
     }
-    
+  
+
     //Getting fav icons for all the links that have the class linkIcon
   jQuery(".linkIcon a[href^='http'] ").each(function() {
       jQuery(this)

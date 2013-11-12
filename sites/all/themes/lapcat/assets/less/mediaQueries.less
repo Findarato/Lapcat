@@ -22,14 +22,6 @@
     margin:2px 0;
   }
   
-  .secondNav{
-    display:block;
-  }
-  .firstNav{
-    height:4em;
-    margin:0;
-  }
-  .topHeader{height:50px;}
   .mainArea{
     padding-top:2em;
   }  
@@ -40,10 +32,6 @@
     font-size:1.3em;
     white-space:nowrap;
   }
-  nav .logoTree{
-    width:40px;
-    height:40px;
-  }  
   .childrenTree{
     height:300px;
     width:300px;
@@ -60,6 +48,44 @@
   }   
 }
 @media only screen and (min-width: 25em) { /* Portrait Phones */
+  /*new header*/
+   .spc-SearchBox{
+    input{
+      width:7rem;
+      &:focus{
+        width:7rem;
+      }
+    }
+  } 
+  .hd-bottom{
+    height:4em;
+    width:100%;
+    margin-bottom:1em;
+    ul{
+      li{
+        height:3.5em;
+        font-size: 75%;
+        a{
+          padding:1.4em .7em;
+        } 
+      }
+    }
+  }
+  .hd-logo{
+    a{
+      padding:.2em;
+    }
+  }
+
+
+
+
+
+
+
+  /*End new header*/
+  
+  
   .container_24{
     margin:0 .5em;
   }
@@ -67,15 +93,6 @@
     display:none;
   }
 
-  nav h1{
-    font-size: 1.5em;
-    text-align:left;
-    white-space:nowrap;
-  }
-  nav h3{
-    font-size: 1.2em;
-    text-align:left;
-  }
   .copyright{
     width:33%;
   }
@@ -84,19 +101,6 @@
     width:200px;
     background:url("/images/tree.png") no-repeat;
     background-size:contain;
-  }
-  .logoTree{
-    width:0px;
-    height:0px;
-  }
-  .region-menuheader{
-    display:block;
-    float:left;
-    width:100%;
-    .leaf{
-      width:14%;
-      white-space:nowrap;
-    }
   }
   .helpLink{
     position:relative;
@@ -115,11 +119,32 @@
   }
 }
 @media only screen and (min-width: .1em){ /*everything should be here*/
-  .mainCatalogSearch{
-    display:none;
-  } 
-  main{
+  /*new header*/
+  .hd-bottom{
+    font-size:.9em;
+    .spc-Search{
+      position: relative;
+      top: 13.8em;      
+    }
+   }
+   .spc-SearchBox{
+    input{
+      width:17em;
+      &:focus{
+        width:17em;
+      }
+    }
   }
+  .hd-logo{
+    height:auto;width:auto;
+    img{height:3.3em;}
+    a{
+      padding:.2em;
+    }
+  }
+
+  /*End new header*/
+
   [class^="icon-"], [class*=" icon-"] {font-size:2em;width:3rem;}
   .mainArea{
     padding-top:.5em;
@@ -139,24 +164,6 @@
   }
   .bookCoverImage{
     width:80px;
-  }
-  .region-menuheader{
-    display:block;
-    .leaf{
-      width:14%;
-      white-space:nowrap;
-      a{
-        text-align:center;
-        width:100%;
-      }
-    }
-  }
-  .logoImage,.logoBlock{
-    height:4em;
-    width:3.8em;
-  }
-  .topNav{
-    width:100%;
   }
   .topHeader{
     width:100%;
@@ -252,6 +259,8 @@
   }
 
 }
+
+
 
 /* ==|== print styles ======================================================= */
  

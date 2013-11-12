@@ -6,12 +6,12 @@
   }
 </style>
 
-<header class="hd-top color1" style="width:100%;">
-  <nav class=" container_24">
-    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a> links will go here
+<header class="hd-top color1">
+  <nav class="container_24">
+    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a> <div><a href="/help">Help</a></div>
   </nav>
 </header>      
-<header class="hd-bottom color2" style="width:100%;">
+<header class="hd-bottom color2">
   <div class="container_24">
     <nav class="">
       <div class="hd-logo" style="float:left;">
@@ -65,13 +65,13 @@
         <div class="navBoxGroup" style="" >
           <!-- Right Column -->
           <div class="navBoxes insideBoxShadow lifted" >
-            <a href="Downloads">Downloads</a>
+            <a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
           </div> 
           <div class="navBoxes insideBoxShadow lifted" >
-            <a href="children" >Children</a>
+            <a href="request" >Request Items</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted" >
-            <a href="teens" >Teens</a>
+            <a href="employment" >Employment</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="about" >About</a>

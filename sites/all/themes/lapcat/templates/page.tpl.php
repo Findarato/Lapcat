@@ -1,9 +1,9 @@
-<header class="hd-top color1" style="width:100%;">
+<header class="hd-top color1">
   <nav class=" container_24">
     <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a> links will go here
   </nav>
 </header>      
-<header class="hd-bottom color2" style="width:100%;">
+<header class="hd-bottom color2">
   <div class="container_24">
     <nav class="">
       <div class="hd-logo" style="float:left;">
