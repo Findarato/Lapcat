@@ -2,9 +2,6 @@
 
 <style>
   .mainArea{z-index: 10;position:relative;}
-  .childrenGrass{
-    background-image: url('<?php print $base_path . $directory .'/images/lowResGrass.png'; ?>');
-  }
 </style>
 <header class="hd-top color1" style="width:100%;">
   <nav class=" container_24">
