@@ -184,7 +184,7 @@ aside {
 
 video,.video-js{
   .rounded-corners(3px);
-  margin-bottom:10px;
+  margin-bottom:1em;
 }
 
 .menuSelect {
@@ -484,6 +484,9 @@ li {
   color:@colorDark;
   height:100px;
 }
+.noveListImageKids{
+  background-image:url('http://support.ebscohost.com/eit/images/buttons/novk8plus200.gif');
+}
 input.noveListSearch{ 
   font-size:1.3em;
   color:@colorDark;
@@ -512,7 +515,7 @@ article{
   position:relative;
   width:100%;
   padding:3px;
-  margin-bottom:10px;
+  margin-bottom:1em;
   min-height:150px;
   .field-content{
     display:table-cell;
@@ -525,7 +528,7 @@ article{
   .articleEntryDescription{
     width:100%;
     overflow:hidden;
-    margin-bottom:10px; 
+    margin-bottom:1em; 
     display:table;   
     .field-content{
       width:95%;
@@ -559,6 +562,7 @@ article{
   position:relative;
   background:#FFF;
   min-height:100px;
+  margin-bottom:    1em;
 }
 
 .blogBox,.blogContainerBox,.containerBox,.bookBox,.box,body{
@@ -567,7 +571,6 @@ article{
   position:          relative;
 }
 .blogContainerBox,.containerBox,.articleContainerBox {
-  margin-bottom:    1em;
   padding:          2em 1em 1em 1em;
 }
 
@@ -646,10 +649,13 @@ article{
     background:url('@{imagesPath}requestHeader.jpg');
   }
   &.Research{
-    background:url('@{imagesPath}/searchHeader.jpg');
+    background:url('@{imagesPath}searchHeader.jpg');
   }
   &.Teens{
-    background:url('@{imagesPath}/teenHeader.jpg') white;
+    background:url('@{imagesPath}teenHeader.jpg') white;
+  }
+  &.Children{
+    background:url('@{imagesPath}kidsHeader.png') white;
   }
   /*Sub page headers End*/
 }
@@ -977,7 +983,28 @@ li{
 
 
 /*sprite Code*/
-.sprite{background-image:url("/images/csg-4f7079e61a6bf.png");}
+.sprite{background-image:url('@{imagesPath}/csg-511916e61907f.png'); display:block;text-indent:100%;overflow:hidden;white-space:nowrap;}
+.sprite-Discovery_Kids_logo{ background-position: 0 0; width: 100px; height: 100px; } 
+.sprite-Disneydigitalbooks{ background-position: 0 -105px; width: 100px; height: 100px; } 
+.sprite-Lego{ background-position: 0 -210px; width: 100px; height: 100px; } 
+.sprite-NGLittleKids{ background-position: 0 -315px; width: 100px; height: 100px; } 
+.sprite-NickJrLogo{ background-position: 0 -420px; width: 100px; height: 100px; } 
+.sprite-PBS_Kids{ background-position: 0 -525px; width: 100px; height: 100px; } 
+.sprite-Starfall{ background-position: 0 -630px; width: 100px; height: 100px; } 
+.sprite-TumbleBook{ background-position: 0 -735px; width: 100px; height: 98px; } 
+.sprite-TumbleBookCloud{ background-position: 0 -838px; width: 100px; height: 98px; } 
+.sprite-TumbleBookCloudjr{ background-position: 0 -941px; width: 100px; height: 98px; } 
+.sprite-TumbleBook_icon{ background-position: 0 -1044px; width: 100px; height: 100px; } 
+.sprite-Yahookids{ background-position: 0 -1149px; width: 100px; height: 100px; } 
+.sprite-barbie{ background-position: 0 -1254px; width: 100px; height: 100px; } 
+.sprite-cartoon_network{ background-position: 0 -1359px; width: 100px; height: 100px; } 
+.sprite-chugginton{ background-position: 0 -1464px; width: 100px; height: 100px; } 
+.sprite-coloring_com{ background-position: 0 -1569px; width: 100px; height: 100px; } 
+.sprite-disneygames{ background-position: 0 -1674px; width: 104px; height: 104px; } 
+.sprite-funbrain{ background-position: 0 -1783px; width: 100px; height: 100px; } 
+.sprite-sesamestreet{ background-position: 0 -1888px; width: 100px; height: 100px; } 
+.sprite-youtube{ background-position: 0 -1993px; width: 115px; height: 50px; } 
+
 
 /*Children*/
 .childWholePage{
@@ -1027,7 +1054,7 @@ li{
   display:none;
 }
 .supPageHeader{
-  margin-bottom:10px;
+  margin-bottom:1em;
   width:100%;
   height:100%;
   position:relative;
