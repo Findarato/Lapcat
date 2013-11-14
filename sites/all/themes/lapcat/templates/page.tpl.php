@@ -1,11 +1,14 @@
 <header class="hd-top color1">
   <nav class=" container_24">
-    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a> links will go here
+    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a><div><a href="/help" alt="help">Help</a></div>
   </nav>
 </header>      
 <header class="hd-bottom color2">
   <div class="container_24">
     <nav class="">
+      <div class="hd-menu" style="float:left;">
+        <a class="icon-menu" href="#menu"></a>
+      </div>
       <div class="hd-logo" style="float:left;">
         <a href="/"><?php if ($logo):?><img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" /><?php endif; ?></a>
       </div>
@@ -17,7 +20,7 @@
       <div class="spc-Search"  style="float:right;">
         <div class="catalog ">
           <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
-            <div class="t" style="width:95%;">
+            <div class="t">
               <div class="spc-Type td" style="display:none;">
                 <select name="searchtype" >
                   <option value="X" selected="selected">KEYWORD</option>

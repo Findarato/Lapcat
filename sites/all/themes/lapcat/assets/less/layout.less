@@ -3,7 +3,7 @@
 @import url("roundCorners.less");
 @imagesPath : "/sites/all/themes/lapcat/assets/images/";
 *{box-sizing: border-box;}
-input:focus {outline: none; }
+*:focus {outline: none; }
 html{
   font-size:81.25%;
   line-height:1.4em;
@@ -1005,11 +1005,14 @@ li{
 .sprite-sesamestreet{ background-position: 0 -1888px; width: 100px; height: 100px; } 
 .sprite-youtube{ background-position: 0 -1993px; width: 115px; height: 50px; } 
 
-
+.childrenLinks li{display:inline-block;}
 /*Children*/
-.childWholePage{
-  background: rgb(38,163,255); /* Old browsers */
-  background:radial-gradient(circle at 20px 36px,  rgb(255,255,255) 5%,rgb(38,163,255) 100%)
+.childColor{
+  background: rgb(38,163,255); /* Old browsers */ 
+  background:radial-gradient(circle at 20px 36px,  rgb(255,255,255) 5%,rgb(38,163,255) 100%) no-repeat fixed; 
+  //background-repeat: no-repeat;
+  //background-attachment: fixed;
+  height:100%;
 }
 .childrenTree{
   z-index:-1;
@@ -1101,12 +1104,17 @@ li{
 
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}
-.icon-facebook:before{content:'F'}
-.icon-facebookalt:before{content:'f'}
-.icon-youtube:before{content:'Y'}
-.icon-twitter:before{content:'t'}
-.icon-googleplus:before{content:'p'}
-.icon-info-sign:before{content:'\f315';color:@color5;}
-.icon-zoom-in:before{content:'z';color:@color560;}
-.icon-automobile-car:before{content:'e'}
-.icon-bus:before{content:'c'}
+.icon-googleplus:before { content: '\70'; } /* 'p' */
+.icon-menu:before { content: '\3d'; } /* '=' */
+.icon-twitter:before { content: '\74'; } /* 't' */
+.icon-drupal:before { content: '\44'; } /* 'D' */
+.icon-css3:before { content: '\33'; } /* '3' */
+.icon-html5:before { content: '\35'; } /* '5' */
+.icon-b:before { content: '\31'; } /* '1' */
+.icon-facebook:before { content: '\46'; } /* 'F' */
+.icon-k:before { content: '\68'; } /* 'h' */
+.icon-zoom:before { content: '\7a'; } /* 'z' */
+.icon-automobile-car:before { content: '\62'; } /* 'b' */
+.icon-bus:before { content: '\76'; } /* 'v' */
+.icon-youtube-play:before { content: '\59'; } /* 'Y' */
+.icon-B:before { content: '\30'; } /* '0' */

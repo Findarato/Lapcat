@@ -49,14 +49,6 @@
 }
 @media only screen and (min-width: 25em) { /* Portrait Phones */
   /*new header*/
-   .spc-SearchBox{
-    input{
-      width:7rem;
-      &:focus{
-        width:7rem;
-      }
-    }
-  } 
   .hd-bottom{
     height:4em;
     width:100%;
@@ -64,7 +56,6 @@
     ul{
       li{
         height:3.5em;
-        font-size: 75%;
         a{
           padding:1.4em .7em;
         } 
@@ -119,30 +110,43 @@
   }
 }
 @media only screen and (min-width: .1em){ /*everything should be here*/
+  
   /*new header*/
   .hd-bottom{
     font-size:.9em;
     .spc-Search{
-      position: relative;
-      top: 13.8em;      
+
+    }
+    #menuHeader{
+      left: 0;
+      position: absolute;
+      top: 4em;
+      background:@color2;
     }
    }
    .spc-SearchBox{
     input{
-      width:17em;
+      width:100%;
       &:focus{
-        width:17em;
+        width:100%;
       }
     }
+  }
+  .hd-menu{
+    padding: 1.4em 1em;
+    //border-right: 1px solid fadeout(darken(@color2,20%),40%);
+    width:3.4em;
   }
   .hd-logo{
     height:auto;width:auto;
     img{height:3.3em;}
     a{
-      padding:.2em;
+      padding:0.2em .4em
     }
   }
-
+  .spc-Search{
+    width:70%;
+  }
   /*End new header*/
 
   [class^="icon-"], [class*=" icon-"] {font-size:2em;width:3rem;}
@@ -194,6 +198,7 @@
     .footerLeft{
       float:none;
       display:inline-block;
+      display:none;
     }
     .footerRight{
       float:none; 
@@ -223,28 +228,6 @@
       line-height:2em;
       height:2.3em;
     }
-    .spc-Search{
-      top:9em;
-      right:5%;
-      width:90%;
-      background:rgba(0,0,0,0);
-      box-shadow: inset 0 0 1px 1px rgba(0,0,0,0);
-      input[type=search]{
-        width:100%;
-      }
-      .spc-SearchBox{
-        width:100%;
-      }
-      .spc-Submit{
-        width:5em;
-        input{
-          .lp-Buttons(2.2em);
-          margin:0 0 0 40%  ;
-          width:4em;
-          border:none;
-        }
-      }
-    }
   }
   .adultResearch{
     img{
@@ -257,7 +240,6 @@
   .socialLinks{
       width:auto;
   }
-
 }
 
 

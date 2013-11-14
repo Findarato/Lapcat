@@ -19,7 +19,7 @@
       <div class="spc-Search"  style="float:right;">
         <div class="catalog ">
           <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
-            <div class="t" style="width:95%;">
+            <div class="t">
               <div class="spc-Type td" style="display:none;">
                 <select name="searchtype" >
                   <option value="X" selected="selected">KEYWORD</option>

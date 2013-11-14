@@ -1,11 +1,4 @@
 <!--Children Page-->
-
-<style>
-
- .childrenLinks ul li{display:inline-block;}
- .mainArea{z-index: 10;position:relative;}
- /*sprite Code*/
-</style>
 <header class="hd-top color1" style="width:100%;">
   <nav class=" container_24">
     <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a> links will go here
@@ -47,7 +40,6 @@
     </nav>
   </div>
 </header>
-  <div class="childWholePage" style="overflow: hidden;">
     <div class="childrenSun"></div>
     <div id="" style="" class="container_24">
       <main class="mainArea grid_24 roundAll3" id="main" role="main">
@@ -60,10 +52,7 @@
           <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
             <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>
           </div>
-          
-
         </div>
-        
         <!--end of cool testing stuff-->      
         <div class="clear"></div>   
         <section id="mainContent" class="grid_16">
@@ -102,5 +91,4 @@
         <?php endif; ?> 
       </div>
     </div>
-  </footer>    
-  </div>
+  </footer>
