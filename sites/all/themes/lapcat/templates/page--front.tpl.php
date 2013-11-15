@@ -15,12 +15,13 @@
   <div class="container_24">
     <nav class="">
       <div class="hd-menu" style="float:left;">
-        <a class="icon-menu" href="#menu"></a>
+        <label class="icon-menu" for="menuToggle"></label>
       </div>
       <div class="hd-logo" style="float:left;">
         <a href="/"><?php if ($logo):?><img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" /><?php endif; ?></a>
       </div>
       <?php if ($page['menuHeader']): ?>
+      <input class="menuToggle" type="checkbox" id="menuToggle">
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
       </div>

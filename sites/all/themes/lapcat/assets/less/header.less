@@ -33,6 +33,10 @@
     overflow: hidden;
     height: 4em;
   }
+  input[type=checkbox]:checked ~ #menuHeader {
+   opacity:1;
+   height:4em;
+  }
   .Animate(300ms);
   #menuHeader{float:left;} 
   .spc-Search{
@@ -99,14 +103,27 @@
 .hd-menu{
   width:0px;
   overflow:hidden;
-  a{
+
+  label{
     display: inline-block;
     color: @colorDark;
     color:fadeout(@colorDark,70%);
-    font-size:3.4em;
+    font-size:2.4em;
     text-shadow:0px 5px 4px @color2, 0 0 0 #000, 0px 2px 4px @color2;
+    cursor:pointer;
   }
 }    
+input[type=checkbox].menuToggle {
+ position: absolute;
+ top: -9999px;
+ left: -9999px;
+ /* For mobile, it's typically better to position checkbox on top of clickable
+    area and turn opacity to 0 instead.
+    http://css-tricks.com/the-checkbox-hack/  
+ */
+}
+
+
 .hd-logo{
   height: 4rem;
   color:#000;
