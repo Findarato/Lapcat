@@ -250,10 +250,19 @@
     div:not(.subTitleElement){width:100%;display:block;min-height:7em;padding:.5em;}
     div:not(.subTitleElement):nth-child(2n){background:fade(@color260,40);}
   }
-  .socialLinks{
-      width:auto;
+
+  article {
+    .socialLinks{
+        width:auto;
+        li{
+          padding:.2em 0;
+        }
+    }
+    .articleEntryDescription .field-content {
+      width: 90%;
+    }
   }
-}
+    
   .childrenTree{
     height:200px;
     width:200px;
@@ -261,7 +270,7 @@
     background-size:contain;
   }
 
-
+}
 /* ==|== print styles ======================================================= */
  
 @media print {
