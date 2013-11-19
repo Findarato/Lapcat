@@ -8,9 +8,14 @@
 
 <header class="hd-top color1">
   <nav class=" container_24">
-    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a><div><a href="/help" alt="help">Help</a></div>
+    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a>
+    <?php if ($page['pageTopMenu']): ?>
+    <div id="pageTopMenu">
+      <?php print render($page['pageTopMenu']); ?>
+    </div>
+    <?php endif; ?>
   </nav>
-</header>      
+</header>   
 <header class="hd-bottom color2">
   <div class="container_24">
     <nav class="">
@@ -69,22 +74,22 @@
         <div class="navBoxGroup" style="" >
           <!-- Right Column -->
           <div class="navBoxes insideBoxShadow lifted" >
-            <a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
+            <a href="hours">Hours</a>
           </div> 
-          <div class="navBoxes insideBoxShadow lifted" >
-            <a href="request" >Request Items</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted" >
-            <a href="employment" >Employment</a>
-          </div>
-          <div class="navBoxes insideBoxShadow lifted" >
-            <a href="about" >About</a>
-          </div>
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="greatpicks">Great Picks</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="genealogy">Genealogy</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="employment">Employment</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="local">Community</a>
+          </div>
+          <div class="navBoxes insideBoxShadow lifted" >
+            <a href="educators">Educators</a>
           </div>
         </div>        
       </nav>  

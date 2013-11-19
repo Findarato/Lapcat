@@ -6,15 +6,20 @@
   z-index:100;
   padding: 3px;
   a{color:@colorDark}
-  div{
+  #pageTopMenu{
     float:right;
     padding-right:.2em;
     display:inline;
+    li{
+      display:inline-block;
+      padding:.2em;
+    }
   }
   .hd-logoTitle{
     a{display:inline;}
     h2{
      color:@colorDark;
+     font-size:1.1em;
      font-weight:600;
      display:inline;
     }
@@ -32,6 +37,7 @@
   nav{
     overflow: hidden;
     height: 4em;
+    width:100%;
   }
   input[type=checkbox]:checked ~ #menuHeader {
    opacity:1;
@@ -41,6 +47,7 @@
   #menuHeader{float:left;} 
   .spc-Search{
    padding-right:1em;
+   width:40%;
   }
   .catalog{
     form{
@@ -49,7 +56,7 @@
       input{
         padding:.4em;
         border:none;
-        font-size: 1.4em;
+        font-size: 1.3em;
       }
     }
     .spc-Submit{
@@ -67,7 +74,6 @@
     height:4em;
     li{
       border-left: 1px solid fadeout(darken(@color2,20%),40%);
-      height:4em;
       float: left;
       list-style-image: none;
       margin: 0;
@@ -80,7 +86,7 @@
       a{
         border-left: 1px solid fadeout(lighten(@color2,20%),40%);
         display:inline-block; 
-        padding:1.4em .7em;
+        padding:1.2em .7em;
         color:@colorDark;
       } 
     }
@@ -93,11 +99,7 @@
         background:darken(@color2,5%);
         .rounded-corners(3px);
         margin-right: 1em;
-        width:10.2em;
-        .Animate(300ms);
-        &:focus{
-          width:12em;
-        }
+        width:100%;
       }
     }
 .hd-menu{

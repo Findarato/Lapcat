@@ -2,9 +2,14 @@
 
 <header class="hd-top color1">
   <nav class=" container_24">
-    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a><div><a href="/help" alt="help">Help</a></div>
+    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a>
+    <?php if ($page['pageTopMenu']): ?>
+    <div id="pageTopMenu">
+      <?php print render($page['pageTopMenu']); ?>
+    </div>
+    <?php endif; ?>
   </nav>
-</header>      
+</header>        
 <header class="hd-bottom color2">
   <div class="container_24">
     <nav class="">
