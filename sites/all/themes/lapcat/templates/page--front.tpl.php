@@ -77,6 +77,9 @@
             <a href="hours">Hours</a>
           </div> 
           <div class="navBoxes insideBoxShadow lifted" >
+            <a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
+          </div> 
+          <div class="navBoxes insideBoxShadow lifted" >
             <a href="greatpicks">Great Picks</a>
           </div>
           <div class="navBoxes insideBoxShadow lifted" >
@@ -88,9 +91,11 @@
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="local">Community</a>
           </div>
+          <!--
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="educators">Educators</a>
           </div>
+-->
         </div>        
       </nav>  
       <!--/Page Header-->

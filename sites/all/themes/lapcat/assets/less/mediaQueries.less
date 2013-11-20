@@ -49,6 +49,18 @@
 }
 @media only screen and (min-width: 25em) { /* Portrait Phones */
   /*new header*/
+  .hd-top{
+    .hd-logoTitle{
+      h2{font-size:.9em;}
+    }
+    #pageTopMenu{
+      ul{
+        li:nth-child(1){display:none;}
+        li:nth-child(2){display:none;}
+      }
+    }
+  }
+  
   .hd-bottom{
     height:4em;
     width:100%;
@@ -57,7 +69,7 @@
       li{
         height:3.5em;
         a{
-          padding:1.4em .7em;
+          padding:1.4em .6em;
         } 
       }
     }
@@ -67,13 +79,6 @@
       padding:.2em;
     }
   }
-
-
-
-
-
-
-
   /*End new header*/
   
   
@@ -114,9 +119,6 @@
   /*new header*/
   .hd-bottom{
     font-size:.9em;
-    .spc-Search{
-
-    }
     input[type=checkbox]:checked ~ #menuHeader {
      opacity:1;
      //visibility:visible;
@@ -136,15 +138,13 @@
       .downShadow();
       .rounded-corners(0 0 3px 0);
     }
-   }
-   .spc-SearchBox{
-    input{
-      width:100%;
-      &:focus{
+    .spc-Search{
+      width:70%;
+      .catalog{
         width:100%;
       }
     }
-  }
+   }
   .hd-menu{
     padding: 1.4em 1em;
     //border-right: 1px solid fadeout(darken(@color2,20%),40%);
@@ -157,9 +157,7 @@
       padding:0.2em .4em
     }
   }
-  .spc-Search{
-    width:70%;
-  }
+
   /*End new header*/
 
   [class^="icon-"], [class*=" icon-"] {font-size:2em;width:3rem;}
