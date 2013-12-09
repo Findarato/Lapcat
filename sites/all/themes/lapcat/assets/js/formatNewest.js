@@ -28,6 +28,7 @@ jQuery.each(covers,function(i,item){
       scrollbars: true,
       brouncing:false,
       updateOnWindowResize:true
+      
     });
     
 $(".scrollerBack>a").click(function(){
@@ -39,3 +40,13 @@ $(".scrollerNext>a").click(function(){
   scroller.scrollBy(200,0,500);
   return false;
 });
+var previousLeft = 0;
+scroller.addEventListener('reachedend',function(i){
+  scroller.scrollTo(0,0,750);
+  scroller.scrollLeft = 0;
+},true);
+setInterval(function(){
+  if(!scroller.scroll){
+    scroller.scrollBy(200,0,500);
+  }
+},2000);
