@@ -96,7 +96,6 @@ jQuery(document).ready(function(){
         jQuery.getScript(jsPath+"flicker.js");
       }else{
         if(uri.search(/children/i)>0){// this is the teens page
-          $("body").addClass("childColor");
         }else{
           if(uri.search(/greatpicks/i)>0){// this is the teens page
           }else{//if all else fails lets just load a local rss feed

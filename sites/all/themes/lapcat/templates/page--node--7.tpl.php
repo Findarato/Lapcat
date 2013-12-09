@@ -1,4 +1,5 @@
 <!--Children Page-->
+<div class="childColor">
 <header class="hd-top color1">
   <nav class=" container_24">
     <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a>
@@ -101,3 +102,4 @@
       </div>
     </div>
   </footer>
+</div>  

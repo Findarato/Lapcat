@@ -14,9 +14,8 @@ body,html {
   padding:0px; 
   height:105%;
   color:@colorDark;
- 
 }
-
+body{height:auto;}
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 
 h1,h2,h3,h4{
@@ -1015,8 +1014,6 @@ li{
 .childColor{
   background: rgb(38,163,255); /* Old browsers */ 
   background:radial-gradient(circle at 20px 36px,  rgb(255,255,255) 5%,rgb(38,163,255) 100%); 
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   height:100%;
 }
 .childrenTree{
@@ -1034,7 +1031,7 @@ li{
 .childrenSun{
   background-image: url('@{imagesPath}/sun.svg');
   background-repeat:no-repeat;
-  z-index: -1;
+  z-index: 1;
   position:absolute;
   background-size:contain;
   left:-43px;
