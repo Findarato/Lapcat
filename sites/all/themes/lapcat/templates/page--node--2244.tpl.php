@@ -50,7 +50,7 @@
     </nav>
   </div>
 </header>
-<div class="teenWholePage" style="overflow: hidden;">
+<div class="" style="overflow: hidden;">
     <div id="" style="" class="container_24">
       <main class="mainArea grid_24 roundAll3" id="main" role="main">
         <?php if ($page['pageHeader']): ?>
@@ -80,7 +80,7 @@
         </aside>
       </main> <!-- end of main content-->
     </div>
-   <div class="childrenGrass" style="margin-top:150px;">
+   <div class="" style="margin-top:150px;">
    </div>
   <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">

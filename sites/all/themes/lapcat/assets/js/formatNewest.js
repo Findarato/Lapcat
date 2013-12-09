@@ -23,30 +23,33 @@ jQuery.each(covers,function(i,item){
 });
 
     var scroller = new FTScroller(document.getElementById('slideWrapper'), {
-      scrollingY: false,
-      snapping: false,
-      scrollbars: true,
-      brouncing:false,
+      scrollingY:false,
+      snapping:false,
+      scrollbars:true,
+      brouncing:true,
       updateOnWindowResize:true
-      
     });
     
 $(".scrollerBack>a").click(function(){
-  scroller.scrollBy(-200,0,500);
+  scroller.scrollBy(-300,0,500);
   return false;
 });
 
 $(".scrollerNext>a").click(function(){
-  scroller.scrollBy(200,0,500);
+  scroller.scrollBy(300,0,500);
   return false;
 });
 var previousLeft = 0;
 scroller.addEventListener('reachedend',function(i){
-  scroller.scrollTo(0,0,750);
-  scroller.scrollLeft = 0;
+  console.log("reached the end");
+  scroller.scrollTo(0,0);
+  //scroller.scrollBy(scroller.scrollLeft*-1,0,750);
+  console.log(scroller.scrollLeft);
+  setTimeout(function(){scroller.scrollLeft = 0;},800);
+  
 },true);
 setInterval(function(){
   if(!scroller.scroll){
-    scroller.scrollBy(200,0,500);
+    scroller.scrollBy(300,0,750);
   }
-},2000);
+},3000);
