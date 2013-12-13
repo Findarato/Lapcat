@@ -19,7 +19,6 @@ jQuery.each(covers,function(i,item){
   }
   insertPoint.append(newItem);
   if(page-1==counter){counter=0;}else{counter++;}
-   
 });
 
     var scroller = new FTScroller(document.getElementById('slideWrapper'), {
