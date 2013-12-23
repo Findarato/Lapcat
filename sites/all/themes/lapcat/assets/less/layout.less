@@ -342,6 +342,48 @@ li {
 }
 
 /* Locations  */
+
+.headerButton{ 
+  margin: 2px;
+  padding: 5px;
+  font-size:.68em;
+  white-space:nowrap;
+  display:inline-block;
+  &:hover{
+    background:@color2;
+    color:@color5;
+  }
+}
+.mapIcon{
+  bottom: 3.3em;
+  font-size: 1.5em;
+  position: absolute;
+  right: .5em;
+  height:1.5em;
+  width:1.5em;
+  box-shadow: inset 0 0 1px 1px @shadow;
+  .rounded-corners(3px);
+  .Animate();
+  .mapZoom{
+    display:block;
+  }
+  [class^="icon-"], [class*=" icon-"]{
+    font-size:1.5em;
+    cursor:pointer;
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+  }  
+}
+.mapIconZoom{
+  height: 145px;
+  width: calc(~"100% - 1em");  
+  [class^="icon-"], [class*=" icon-"]{
+    font-size:2em;
+    text-shadow: 0 1px 1px @shadow;
+  }
+}
 .locationHover{
   margin:       .3em;
   &:hover{
@@ -763,6 +805,9 @@ ul.pager{
   .kingsfordHeights{background-image:url('@{imagesPath}kingsfordHeightsMap.png');}
   .rollingPrairie{background-image:url('@{imagesPath}rollingPrairieMap.png');}
   .unionMills{background-image:url('@{imagesPath}unionMillsMap.png');}
+  
+  //Open Street Map Versions
+  .mainLibrary{background-image:url('http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=500x350&markers=41.6087073,-86.721373,ol-marker-green');}
   
 }
 .centerBox{

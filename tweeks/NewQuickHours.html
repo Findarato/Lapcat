@@ -13,6 +13,16 @@
         font-family: 'Vollkorn', serif;
         color:#1f1f1f;
       }
+    .headerButton{
+      margin: 2px;
+      padding: 5px;
+      color:black;
+      font-size:.6em;
+      
+    }
+    .headerButton:hover{
+      background:#DDEECC;
+    }
   </style>
 </head>
 
@@ -24,64 +34,56 @@
       </h2>
     </div>
     <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" style="padding-left: 10px; padding-bottom: .5em;">
-      <div class="linearAnimate td" style="width:100%; vertical-align: top; font-size: 1.1em;cursor:pointer">
-        <a id="MA" class="roundAll3 insideBoxShadow color560">Main</a>
-        <a id="CS" class="roundAll3 insideBoxShadow color560">Coolspring</a>
-        <a id="RP" class="roundAll3 insideBoxShadow color560">Rolling Prairie</a>
-        <a id="FL" class="roundAll3 insideBoxShadow color560">Fish Lake</a>
-        <a id="KH" class="roundAll3 insideBoxShadow color560">Kingsford Heights</a>
-        <a id="UM" class="roundAll3 insideBoxShadow color560">Union Mills</a>
-        <a id="HA" class="roundAll3 insideBoxShadow color560">Hanna</a>
-        <a id="ML" class="roundAll3 insideBoxShadow color560">Mobile Library</a>
+      <div class="linearAnimate" style="width:100%; vertical-align: top; font-size: 1.1em;cursor:pointer">
+        <a id="MA" class="headerButton roundAll3 insideBoxShadow color560">Main</a><a id="CS" class="headerButton roundAll3 insideBoxShadow color560">Coolspring</a><a id="RP" class="headerButton roundAll3 insideBoxShadow color560">Rolling Prairie</a><a id="FL" class="headerButton roundAll3 insideBoxShadow color560">Fish Lake</a><a id="KH" class="headerButton roundAll3 insideBoxShadow color560">Kingsford Heights</a><a id="UM" class="headerButton roundAll3 insideBoxShadow color560">Union Mills</a><a id="HA" class="headerButton roundAll3 insideBoxShadow color560">Hanna</a><a id="ML" class="headerButton roundAll3 insideBoxShadow color560">Mobile Library</a>
       </div>
-    </div>
     <div class="t" style="border-spacing: .2em;">
       <!-- Locations Display -->
-      <div class="t" style="border-spacing: .2em;">
-        <div class="td">
+       <div id="locationDisplay" class="td" style="display: block; height: 145px; font-size: 1em;">&nbsp;</div>
+       <div  class="td mapIcon"><a alt="Map Link" class="mapZoom" href="#" style="height:100%;width:100%;"></a><span id="mapIcon" class="icon-zoom"></span></div>
+    </div>       
+      <div class="t" style="border-spacing: .2em;left: -0.5em;position: relative;">
+        <div class="t">
+          <!-- Time Boxes-->
+          <div class="td">
           <div id="dayBox1" class="insideBoxShadow color4 dayBox roundAll3">
-            <span style="font-size: 1.8em;">M</span>
-            <span style="font-size: 1.3em;">on</span>
+            <span style="font-size: 1.8em;">M</span><span style="font-size: 1.3em;">on</span>
             <div id="timeContainer1" class="timeContainer"></div>
           </div>
-        </div>
-        <div class="td">
-          <div id="dayBox2" class="insideBoxShadow color4 dayBox roundAll3">
-            <span style="font-size: 1.8em;">T</span>
-            <span style="font-size: 1.3em;">ue</span>
-            <div id="timeContainer2" class="timeContainer"></div>
           </div>
-        </div>
-        <div class="td">
-          <div id="dayBox3" class="insideBoxShadow color4 dayBox roundAll3">
-            <span style="font-size: 1.8em;">W</span>
-            <span style="font-size: 1.3em;">ed</span>
-            <div id="timeContainer3" class="timeContainer"></div>
+            <div class="td">
+            <div id="dayBox2" class="insideBoxShadow color4 dayBox roundAll3">
+              <span style="font-size: 1.8em;">T</span><span style="font-size: 1.3em;">ue</span>
+              <div id="timeContainer2" class="timeContainer"></div>
+            </div>
           </div>
-        </div>
-        <div class="td">
-          <div id="dayBox4" class="insideBoxShadow color4 dayBox roundAll3">
-            <span style="font-size: 1.8em;">T</span>
-            <span style="font-size: 1.3em;">hr</span>
-            <div id="timeContainer4" class="timeContainer"></div>
+          <div class="td">
+            <div id="dayBox3" class="insideBoxShadow color4 dayBox roundAll3">
+              <span style="font-size: 1.8em;">W</span><span style="font-size: 1.3em;">ed</span>
+              <div id="timeContainer3" class="timeContainer"></div>
+            </div>
           </div>
-        </div>
-        <div class="td">
-          <div id="dayBox5" class="insideBoxShadow color4 dayBox roundAll3">
-            <span style="font-size: 1.8em;">F</span>
-            <span style="font-size: 1.3em;">ri</span>
-            <div id="timeContainer5" class="timeContainer"></div>
+          <div class="td">
+            <div id="dayBox4" class="insideBoxShadow color4 dayBox roundAll3">
+              <span style="font-size: 1.8em;">T</span><span style="font-size: 1.3em;">hr</span>
+              <div id="timeContainer4" class="timeContainer"></div>
+            </div>
           </div>
-        </div>
-        <div class="td">
-          <div id="dayBox6" class="insideBoxShadow color4 dayBox roundAll3">
-            <span style="font-size: 1.8em;">S</span>
-            <span style="font-size: 1.3em;">at</span>
-            <div id="timeContainer6" class="timeContainer"></div>
+          <div class="td">
+            <div id="dayBox5" class="insideBoxShadow color4 dayBox roundAll3">
+              <span style="font-size: 1.8em;">F</span><span style="font-size: 1.3em;">ri</span>
+              <div id="timeContainer5" class="timeContainer"></div>
+            </div>
+          </div>
+          <div class="td">
+            <div id="dayBox6" class="insideBoxShadow color4 dayBox roundAll3">
+              <span style="font-size: 1.8em;">S</span><span style="font-size: 1.3em;">at</span>
+              <div id="timeContainer6" class="timeContainer"></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+  </div>
   </div>
 </body>
 

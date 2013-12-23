@@ -15,6 +15,7 @@ var locations={
          "cityState":"La Porte, IN",
          "zip":"46350",
          "phone":"(219) 362-6156",
+         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=300x145&markers=41.6087073,-86.721373,ol-marker-green",
          "email":"reference@lapcat.org"
       },
       "CS":{
@@ -32,6 +33,7 @@ var locations={
          "cityState":"Michigan City, IN",
          "zip":"46360",
          "phone":"(219) 879-3272",
+         "map":"http://dev.laportelibrary.org/sites/all/themes/lapcat/assets/images/coolSpringMap.png",
          "email":"coolspring@lapcat.org"
       },
       "FL":{
@@ -49,6 +51,7 @@ var locations={
          "cityState":"Walkerton, IN",
          "zip":"46574",
          "phone":"(219) 369-1337",
+         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=500x350&markers=41.6087073,-86.721373,ol-marker-green",
          "email":"fishlake@lapcat.org"
       },
       "HA":{
@@ -66,6 +69,7 @@ var locations={
          "cityState":"Hanna, IN",
          "zip":"46340",
          "phone":"(219) 797-4735",
+         "map":"http://dev.laportelibrary.org/sites/all/themes/lapcat/assets/images/hannaMap.png",
          "email":"hanna@lapcat.org"
       },
       "KH":{
@@ -83,6 +87,7 @@ var locations={
          "cityState":"Kingsford Heights, IN",
          "zip":"46346",
          "phone":"(219) 393-3280",
+         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=500x350&markers=41.6087073,-86.721373,ol-marker-green",
          "email":"kingsford@lapcat.org"
       },
       "RP":{
@@ -100,6 +105,7 @@ var locations={
          "cityState":"Rolling Prairie, IN",
          "zip":"46371",
          "phone":"(219) 778-2390",
+         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=500x350&markers=41.6087073,-86.721373,ol-marker-green",
          "email":"rolling@lapcat.org"
       },
       "UM":{
@@ -117,6 +123,7 @@ var locations={
          "cityState":"Union Mills, IN",
          "zip":"46382",
          "phone":"(219) 767-2604",
+         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=500x350&markers=41.6087073,-86.721373,ol-marker-green",
          "email":"union@lapcat.org"
       },
       "ML":{
@@ -134,6 +141,7 @@ var locations={
          "cityState":"46350",
          "zip":"(219) 362-6156",
          "phone":"reference@lapcat.org",
+         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=500x350&markers=41.6087073,-86.721373,ol-marker-green",
          "email":"<a href='/downloads/mobilelibraryschedule.pdf'><span class='icon-bus'></span> Schedule</a>"
          
       }
@@ -142,7 +150,10 @@ var locations={
 function displayLocation(me,domElementSelector){
   var today = new Date();
   var dayOfWeek = today.getDay();
-  locationCode = me.attr("id"); 
+  locationCode = me.attr("id");
+  
+  jQuery(".mapZoom").css("background-image","url("+locations[locationCode].map+")");
+  //alert(locations[locationCode].map);
   domElementSelector
     .empty()
     .append(
@@ -192,16 +203,27 @@ function displayLocation(me,domElementSelector){
         }
     }
     var offset = me.offset();
-    $(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show();
+    //$(".highlightSelect").css({"top":offset.top-5,"left":offset.left-5,"height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show();
     //$(".highlightSelect").css({"transform":"translate("+offset.left-5+","+offset.top-5+")","height":me.outerHeight(true),"width":me.outerWidth(true)-5}).show(); 
 }
+
+
+jQuery(".headerButton").bind("click",function(){
+  me = jQuery(this);
+  jQuery(".headerButton").removeClass("color2").addClass("color560");
+  me.toggleClass("color2 color560");
+  displayLocation(me,jQuery("#locationDisplay"));
+});
+jQuery("#MA").trigger("click");
+jQuery(".mapIcon").bind("click",function(){
+  me = jQuery(this);
+  me.toggleClass("mapIconZoom");
+});
+/*
 jQuery("body").append($("<div/>",{"class":"highlightSelect"}));
 jQuery(".locationHover")
   .mouseenter(function(){displayLocation(jQuery(this),jQuery("#locationDisplay"));})
   .mouseleave(function(){});
 //This makes sure something is being shown
 displayLocation(jQuery(".locationHover"),jQuery("#locationDisplay"));
-
-window.onresize = function(){
-  displayLocation(jQuery("#MA"),jQuery("#locationDisplay"));
-};
+*/
