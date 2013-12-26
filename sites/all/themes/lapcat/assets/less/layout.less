@@ -354,18 +354,26 @@ li {
     color:@color5;
   }
 }
-.mapIcon{
+.mapDisplay{//this is the box that holds the whole thing
+  
+}
+.mapDisplay{
   bottom: 3.3em;
   font-size: 1.5em;
   position: absolute;
   right: .5em;
-  height:1.5em;
-  width:1.5em;
-  box-shadow: inset 0 0 1px 1px @shadow;
+  height:2em;
+  width:2em;
+  
+  transform: translateZ(0);
   .rounded-corners(3px);
   .Animate();
   .mapZoom{
+    .rounded-corners(3px);
+    box-shadow: inset 0 0 1px 1px @shadow;
     display:block;
+    background:@colorLight60;
+    background-size:cover;
   }
   [class^="icon-"], [class*=" icon-"]{
     font-size:1.5em;
@@ -376,7 +384,7 @@ li {
     z-index: 5;
   }  
 }
-.mapIconZoom{
+.mapDisplayZoom{
   height: 145px;
   width: calc(~"100% - 1em");  
   [class^="icon-"], [class*=" icon-"]{
@@ -1153,16 +1161,20 @@ li{
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}
 .icon-googleplus:before { content: '\70'; } /* 'p' */
-.icon-menu:before { content: '\3d'; } /* '=' */
+.icon-zoom-in:before { content: '\7a'; } /* 'z' */
+.icon-zoom-out:before { content: '\5a'; } /* 'Z' */
 .icon-twitter:before { content: '\74'; } /* 't' */
 .icon-drupal:before { content: '\44'; } /* 'D' */
 .icon-css3:before { content: '\33'; } /* '3' */
 .icon-html5:before { content: '\35'; } /* '5' */
 .icon-b:before { content: '\31'; } /* '1' */
 .icon-facebook:before { content: '\46'; } /* 'F' */
-.icon-k:before { content: '\68'; } /* 'h' */
-.icon-zoom:before { content: '\7a'; } /* 'z' */
+.icon-menu:before { content: '\3d'; } /* '=' */
 .icon-automobile-car:before { content: '\62'; } /* 'b' */
 .icon-bus:before { content: '\76'; } /* 'v' */
 .icon-youtube-play:before { content: '\59'; } /* 'Y' */
 .icon-B:before { content: '\30'; } /* '0' */
+.icon-picture:before { content: '\6d'; } /* 'm' */
+.icon-delicious:before { content: '\64'; } /* 'd' */
+
+.icon-gitHub:before { content: '\68'; } /* 'h' */ 

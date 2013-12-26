@@ -215,9 +215,11 @@ jQuery(".headerButton").bind("click",function(){
   displayLocation(me,jQuery("#locationDisplay"));
 });
 jQuery("#MA").trigger("click");
-jQuery(".mapIcon").bind("click",function(){
+jQuery("#mapIcon").bind("click",function(){
   me = jQuery(this);
-  me.toggleClass("mapIconZoom");
+  me.parent().toggleClass("mapDisplayZoom");
+  me.toggleClass("icon-zoom-in icon-zoom-out");
+  return false;
 });
 /*
 jQuery("body").append($("<div/>",{"class":"highlightSelect"}));
