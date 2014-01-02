@@ -398,7 +398,7 @@ h4 { font-family: 'Vollkorn', serif;
 }
 
 .classBanner{
-  width:400px;
+  width:300px;
   height:100px;
   background:#0000CC;
   display:inline-block;
@@ -407,12 +407,32 @@ h4 { font-family: 'Vollkorn', serif;
   border-radius:3px;
   overflow:hidden;
 }
-.classBannerContainer{
+.classBannerContainer,.classIconContainer{
   display:inline-block;
   text-align:left;
 }
+.classIconContainer h3{
+  text-align:left;
+}
+.classIcon{
+  width:80px;
+  height:60px;
+  background:#0000CC;
+  display:inline-block;
+  float: left;
+  margin: .3em;
+  border-radius:3px;
+  overflow:hidden;
+}
 .classBannerContainer h3{
   text-align:left;
+}
+.middleLeft,.middleRight{display:table-cell;vertical-align: top;}
+.middleLeft{
+  
+}
+.middleRight{
+  width:160px;
 }
 
 .h24 { font-family: 'Calligraffitti', serif;
