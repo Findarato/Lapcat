@@ -107,6 +107,8 @@ jQuery(document).ready(function(){
              			jQuery.getScript(jsPath+"contactUs.js");
             		}else{
             			jQuery.getScript(jsPath+"locations.js");
+            			jQuery.getScript(jsPath+"/libs/ftscroller.js");
+            			jQuery.getScript(jsPath+"instagram.js");
             		}
             	}
             }
