@@ -411,6 +411,18 @@ h4 { font-family: 'Vollkorn', serif;
   display:inline-block;
   text-align:left;
 }
+.apphour{
+  background-image:url('images\webbannerstext\apphour.jpg');
+}
+.excelbasics{
+  background-image:url('images\webbannerstext\excelbasics.jpg');
+}
+.gimpsoftware{
+  background-image:url('images\webbannerstext\gimpsoftware.jpg');
+}
+.classBannerContainer h3{
+  text-align:left;
+}
 .classIconContainer h3{
   text-align:left;
 }
@@ -424,9 +436,7 @@ h4 { font-family: 'Vollkorn', serif;
   border-radius:3px;
   overflow:hidden;
 }
-.classBannerContainer h3{
-  text-align:left;
-}
+
 .middleLeft,.middleRight{display:table-cell;vertical-align: top;}
 .middleLeft{
   
