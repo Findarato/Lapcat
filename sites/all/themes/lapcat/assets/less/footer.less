@@ -1,10 +1,26 @@
 footer {
   z-index:20;
-  position:absolute;
+  position:relative;
   width:100%;
   * { 
     vertical-align:top; 
   }
+  &.mainWave:before,&.childGrass:before{
+    top:-98px;
+    left:0;
+    right:0;
+    position: absolute;
+    content:'';
+    background-position-y:0;
+    height:98px;
+//    filter: @dropShadowFilter;
+    background-repeat:no-repeat;
+  }
+  &.mainWave:before{
+    background-image: url('@{imagesPath}/webfooter.svg');
+    //background-image: url('@{imagesPath}/webfooter.png');
+    background-size:contain;
+  } 
   h3{
     text-shadow:0px 2px 4px @color5, 0 0 0 #000, 0px 2px 4px @color5;
     color:@colorDark;
@@ -31,14 +47,13 @@ footer {
     }  
   }
   .footerLeft,.footerRight{
-    margin:0 2em;
+    display:table-cell;
   }
   .footerLeft {
-    float:left;
+   width:100%; 
   }
   .footerRight {
     width:18em;
-    float:right;
   }
   .form-actions,.form-item{
     display:table-cell;

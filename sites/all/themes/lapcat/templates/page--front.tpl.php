@@ -123,7 +123,7 @@
        <div class="clear"></div>
     </main> <!-- end of main content-->
   </div>
-  <footer class="color5" style="margin-top:150px;margin-right:0px;z-index: 10;"> 
+  <footer class="color5 mainWave" style="margin:10em 0 inherit inherit;z-index: 10;"> 
     <div class="" style="width:100%;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
         <?php if ($page['pageLinks']): ?>

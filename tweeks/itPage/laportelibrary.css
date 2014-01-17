@@ -399,26 +399,43 @@ h4 { font-family: 'Vollkorn', serif;
 
 .classBanner{
   width:300px;
-  height:100px;
-  background:#0000CC;
+  height:75px;
+  background:rgba(240,240,240,.6);
   display:inline-block;
   float: left;
   margin: 0 1em 1em 0;
   border-radius:3px;
   overflow:hidden;
+  background-size:contain;
 }
 .classBannerContainer,.classIconContainer{
   display:inline-block;
   text-align:left;
+  
 }
 .apphour{
-  background-image:url('images\webbannerstext\apphour.jpg');
+  background-image:url('images/webbannerstext/apphour.jpg');
 }
 .excelbasics{
-  background-image:url('images\webbannerstext\excelbasics.jpg');
+  background-image:url('images/webbannerstext/excelbasics.jpg');
 }
 .gimpsoftware{
-  background-image:url('images\webbannerstext\gimpsoftware.jpg');
+  background-image:url('images/webbannerstext/gimpsoftware.jpg');
+}
+.staysafeonline{
+  background-image:url('images/webbannerstext/gimpsoftware.jpg');
+}
+.onlinejobhunt{
+  background-image:url('images/webbannerstext/onlinejobhunt.jpg');
+}
+.tablets{
+  background-image:url('images/webbannerstext/tablets.jpg');
+}
+.apps{
+  background-image:url('images/webbannerstext/googleapps.jpg');
+}
+.GIMPCards{
+  background-image:url('images/webbannerstext/');
 }
 .classBannerContainer h3{
   text-align:left;
@@ -429,7 +446,7 @@ h4 { font-family: 'Vollkorn', serif;
 .classIcon{
   width:80px;
   height:60px;
-  background:#0000CC;
+  background:rgba(240,240,240,.6);
   display:inline-block;
   float: left;
   margin: .3em;
