@@ -42,6 +42,9 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
       </div>
       <div class="bookList">
         <?Php print $fields["body"]->content; ?>
+        <?Php
+        /*
+        <!--
         <div class="socialMediaContainer" id="socialMediaContainer">
           <ul class="socialLinks" data-url="http://laportelibrary.org" data-counts="true" data-share-text="Google is a search engine" style="">
             <li class="facebook "><a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.Php?u=<?Php print $catalogLink; ?>" title="Share on Facebook"></a></li>
@@ -49,6 +52,9 @@ $wowbraryClickThough = "http://www.wowbrary.org/l.aspx?l=8711&c=".$linkArray["c"
             <li class="googleplus"><a class="icon-googleplus" href="https://plus.google.com/share?url=<?Php print $catalogLink; ?>" title="Share on Google Plus"></a></li>
           </ul>  
         </div>
+        -->
+        */
+       ?>
       </div>  
     </div>
   </div>

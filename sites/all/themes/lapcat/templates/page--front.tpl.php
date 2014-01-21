@@ -123,8 +123,8 @@
        <div class="clear"></div>
     </main> <!-- end of main content-->
   </div>
-  <footer class="color5 mainWave" style="margin:10em 0 inherit inherit;z-index: 10;"> 
-    <div class="" style="width:100%;bottom:0px;position:relative">
+  <footer class="color5 mainWave"> 
+    <div class="t" style="width:100%;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
         <?php if ($page['pageLinks']): ?>
           <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
