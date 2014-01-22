@@ -2,9 +2,9 @@ name = Feeds Tamper PHP plugin
 description = Feeds Tamper plugin to execute php code 
 core = 7.x
 package = Feeds
-; Information added by drupal.org packaging script on 2012-12-05
-version = "7.x-1.0"
+; Information added by Drupal.org packaging script on 2014-01-13
+version = "7.x-1.1"
 core = "7.x"
 project = "feeds_tamper_php"
-datestamp = "1354717953"
+datestamp = "1389642505"
 

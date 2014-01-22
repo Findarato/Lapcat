@@ -12,6 +12,13 @@ $plugin = array(
   'category' => 'Other',
 );
 
+/**
+ * Implements hook_form().
+ * @param unknown $importer
+ * @param unknown $element_key
+ * @param unknown $settings
+ * @return multitype:multitype:string Ambigous <string, unknown> The Ambigous <The, string, A, Optional>
+ */
 function feeds_tamper_php_form($importer, $element_key, $settings) {
   $form = array();
 
@@ -24,16 +31,26 @@ function feeds_tamper_php_form($importer, $element_key, $settings) {
   return $form;
 }
 
+/**
+ * @param unknown $source
+ * @param unknown $item_key
+ * @param unknown $element_key
+ * @param unknown $field
+ * @param unknown $settings
+ */
 function feeds_tamper_php_callback($source, $item_key, $element_key, &$field, $settings) {
-  $field = feeds_tamper_php_value($settings['php'], $field);
+  $field = feeds_tamper_php_value($settings['php'], $field, $source->items[$item_key]);
 }
 
-function feeds_tamper_php_value($code, $field) {
-  ob_start(); 
+/**
+ * @param unknown $code
+ * @param unknown $field
+ * @param unknown $item
+ * @return unknown
+ */
+function feeds_tamper_php_value($code, $field, $item) {
+  ob_start();
   $code = eval($code);
   ob_end_clean(); 
   return $code;
 }
-
-
-
