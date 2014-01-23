@@ -10,7 +10,7 @@ if(render($content)!=""){
                 if(render($content)!=""){
                   print render($content);  
                 }
-              ?>          
+              ?>
             </div>
           </div>
 <?php

@@ -1,1 +1,1 @@
-<?php print $content ?>
+<?php  if(render($content)!=""){print render($content);}?>  
