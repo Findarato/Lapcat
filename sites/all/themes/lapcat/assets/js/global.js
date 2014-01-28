@@ -104,8 +104,7 @@ jQuery(document).ready(function(){
             	if(uri.search(/genealogy/i)>0){// this is the teens page
             	}else{//if all else fails lets just load a local rss feed
             		if(uri.search(/help/i)>0){// this is the about page
-             			jQuery.getScript(jsPath+"contactUs.js");
-            		}else{
+              		}else{
             			jQuery.getScript(jsPath+"locations.js");
             			jQuery.getScript(jsPath+"/libs/ftscroller.js");
             			jQuery.getScript(jsPath+"instagram.js");
