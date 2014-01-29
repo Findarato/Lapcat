@@ -9,7 +9,7 @@
     <div id="pageTopMenu">
       <?php print render($page['pageTopMenu']); ?>
     </div>
-    <?php endif; ?>
+    <?php endif; ?> 
   </nav>
 </header>    
 <header class="hd-bottom color2">
