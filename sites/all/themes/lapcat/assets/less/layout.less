@@ -1,7 +1,7 @@
+@imagesPath : "/sites/all/themes/lapcat/assets/images/";
 @import url("theme.less");
 @import url("buttons.less");
 @import url("roundCorners.less");
-@imagesPath : "/sites/all/themes/lapcat/assets/images/";
 *{box-sizing: border-box;}
 *:focus {outline: none; }
 html{
@@ -338,6 +338,14 @@ li {
 .list {
   a{
     display:block;
+  }
+}
+
+
+.geneWholePage{
+  background:url("@{imagesPath}backgrounds/oldwall_3.png"); 
+  .containerBox{
+    background:url("@{imagesPath}backgrounds/oldwall_3.png");
   }
 }
 
@@ -1108,11 +1116,12 @@ li{
 
 .childrenLinks li{display:inline-block;}
 /*Children*/
-.childColor{
+.childWholePage{
   background: rgb(38,163,255); /* Old browsers */ 
   background:radial-gradient(circle at 20px 36px,  rgb(255,255,255) 5%,rgb(38,163,255) 100%); 
   height:100%;
 }
+
 .childrenTree{
   z-index:-1;
   background-size:contain;
