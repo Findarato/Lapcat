@@ -56,7 +56,7 @@
         <!-- cool stuff testing-->
         <div class="supPageHeader">
           <div class="roundAll3 insideBoxShadow subPageHeader <?Php if ( arg(0) == 'node' && is_numeric(arg(1)) ) {$nid = arg(1);print_r($page['content']['system_main']['nodes'][$nid]['body']["#bundle"]);}else{print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);}?>"></div>
-          <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
+          <div class="pageTitle color4 roundRight3 outSideBoxShadow ">
             <h1><?Php 
                     print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]); 
                   ?>

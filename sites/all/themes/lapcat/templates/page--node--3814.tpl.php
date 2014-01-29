@@ -1,4 +1,4 @@
-<!--Teens Page-->
+<!--Genealogy Page-->
 <style>
   .mainArea{z-index: 10;position:relative;}
 </style>

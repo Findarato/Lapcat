@@ -1,7 +1,7 @@
+@imagesPath : "/sites/all/themes/lapcat/assets/images/";
 @import url("theme.less");
 @import url("buttons.less");
 @import url("roundCorners.less");
-@imagesPath : "/sites/all/themes/lapcat/assets/images/";
 *{box-sizing: border-box;}
 *:focus {outline: none; }
 html{
@@ -665,12 +665,16 @@ article{
 
 
 .pageTitle{
-  filter: @dropShadowFilter;  
+  filter: @dropShadowFilter;
+  position: absolute;
+  top:25%; 
+  left:5px;
+  padding-right:5px;
 } 
 
 .subPageHeader{
   font-size:50px;
-  height:8.846rem;
+  height:10.769230769rem;
   padding:3px 3px 3px 10px;
   margin:0 5px 10px 5px;
   background: url('@{imagesPath}headers/LaPorte_County_Public_Library.jpg') no-repeat;
