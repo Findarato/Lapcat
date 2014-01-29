@@ -1,10 +1,10 @@
 @font-face {
-  font-family: 'fontello';
-  src: url('../font/fontello.eot?48775767');
-  src: url('../font/fontello.eot?48775767#iefix') format('embedded-opentype'),
-       url('../font/fontello.woff?48775767') format('woff'),
-       url('../font/fontello.ttf?48775767') format('truetype'),
-       url('../font/fontello.svg?48775767#fontello') format('svg');
+  font-family: 'lpcpl';
+  src: url('../font/lpcpl.eot?88372869');
+  src: url('../font/lpcpl.eot?88372869#iefix') format('embedded-opentype'),
+       url('../font/lpcpl.woff?88372869') format('woff'),
+       url('../font/lpcpl.ttf?88372869') format('truetype'),
+       url('../font/lpcpl.svg?88372869#lpcpl') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -13,14 +13,14 @@
 /*
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
-    font-family: 'fontello';
-    src: url('../font/fontello.svg?48775767#fontello') format('svg');
+    font-family: 'lpcpl';
+    src: url('../font/lpcpl.svg?88372869#lpcpl') format('svg');
   }
 }
 */
  
  [class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "fontello";
+  font-family: "lpcpl";
   font-style: normal;
   font-weight: normal;
   speak: none;
@@ -51,7 +51,7 @@
 }
  
 .icon-googleplus:before { content: '\70'; } /* 'p' */
-.icon-zoom-out-1:before { content: '\7a'; } /* 'z' */
+.icon-lock:before { content: '\4c'; } /* 'L' */
 .icon-twitter:before { content: '\74'; } /* 't' */
 .icon-drupal:before { content: '\44'; } /* 'D' */
 .icon-css3:before { content: '\33'; } /* '3' */
@@ -60,10 +60,14 @@
 .icon-facebook:before { content: '\46'; } /* 'F' */
 .icon-menu:before { content: '\3d'; } /* '=' */
 .icon-automobile-car:before { content: '\62'; } /* 'b' */
-.icon-bus:before { content: '\76'; } /* 'v' */
+.icon-zoom-out:before { content: '\7a'; } /* 'z' */
 .icon-youtube-play:before { content: '\59'; } /* 'Y' */
 .icon-B:before { content: '\30'; } /* '0' */
 .icon-picture:before { content: '\6d'; } /* 'm' */
 .icon-delicious:before { content: '\64'; } /* 'd' */
-.icon-zoom-in-1:before { content: '\5a'; } /* 'Z' */
-.icon-gitHub:before { content: '\68'; } /* 'h' */
+.icon-zoom-in:before { content: '\5a'; } /* 'Z' */
+.icon-gitHub:before { content: '\e810'; } /* '' */
+.icon-search:before { content: '\73'; } /* 's' */
+.icon-comment:before { content: '\63'; } /* 'c' */
+.icon-comment-1:before { content: '\43'; } /* 'C' */
+.icon-bus:before { content: '\76'; } /* 'v' */

@@ -687,7 +687,7 @@ article{
   height:10.769230769rem;
   padding:3px 3px 3px 10px;
   margin:0 5px 10px 5px;
-  background: url('@{imagesPath}headers/LaPorte_County_Public_Library.jpg') no-repeat;
+  background: url('@{imagesPath}headers/LPCPL.jpg') no-repeat;
   background-size:cover;
   background-position:0px;
   div{
@@ -722,9 +722,9 @@ article{
   &.Request{
     background:url('@{imagesPath}headers/requestHeader.jpg');
   }
-  &.Research{
-    background:url('@{imagesPath}headers/searchHeader.jpg');
-  }
+  //&.Research{
+  //  background:url('@{imagesPath}headers/searchHeader.jpg');
+  //}
   &.Teens{
     background:url('@{imagesPath}headers/teenHeader.jpg') white;
   }
@@ -1218,8 +1218,7 @@ li{
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}
 .icon-googleplus:before { content: '\70'; } /* 'p' */
-.icon-zoom-in:before { content: '\7a'; } /* 'z' */
-.icon-zoom-out:before { content: '\5a'; } /* 'Z' */
+.icon-lock:before { content: '\4c'; } /* 'L' */
 .icon-twitter:before { content: '\74'; } /* 't' */
 .icon-drupal:before { content: '\44'; } /* 'D' */
 .icon-css3:before { content: '\33'; } /* '3' */
@@ -1228,10 +1227,14 @@ li{
 .icon-facebook:before { content: '\46'; } /* 'F' */
 .icon-menu:before { content: '\3d'; } /* '=' */
 .icon-automobile-car:before { content: '\62'; } /* 'b' */
-.icon-bus:before { content: '\76'; } /* 'v' */
+.icon-zoom-out:before { content: '\7a'; } /* 'z' */
 .icon-youtube-play:before { content: '\59'; } /* 'Y' */
 .icon-B:before { content: '\30'; } /* '0' */
 .icon-picture:before { content: '\6d'; } /* 'm' */
 .icon-delicious:before { content: '\64'; } /* 'd' */
-
-.icon-gitHub:before { content: '\68'; } /* 'h' */ 
+.icon-zoom-in:before { content: '\5a'; } /* 'Z' */
+.icon-gitHub:before { content: '\e810'; } /* '' */
+.icon-search:before { content: '\73'; } /* 's' */
+.icon-comment:before { content: '\63';font-size:.8em; } /* 'c' */
+.icon-comment-1:before { content: '\43'; font-size:.8em;color:@shadow;} /* 'C' */
+.icon-bus:before { content: '\76'; } /* 'v' */
