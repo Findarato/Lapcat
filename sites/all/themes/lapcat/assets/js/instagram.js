@@ -36,11 +36,10 @@ jQuery(function () {
     url: "https://api.instagram.com/v1/users/896925642/media/recent/?access_token=896925642.5b9e1e6.03f6c9f01b8246ee9cf61c4140dafb7e",
     success: function (data) {
       for (var i = 0; i < num_to_display; i++) {
-          jQuery(".newestSlideWrapper")
-            .append(jQuery("<section/>", {
+          jQuery(".flickr365 .newestSlideWrapper")
+            .append(insertPoint = jQuery("<section/>", {
               "class": "newestSlide" + i
             }));
-          insertPoint = jQuery(".newestSlide" + i);
           jQuery('<div><a target="_blank" href="' + data.data[i].link +'"><img height=278px width=278px src="' + data.data[i].images.low_resolution.url + '" alt="' + data.data[i].caption.text + '"></a></div>')
             .append("<div class='scollerCaption'>"+data.data[i].caption.text+"</div>")
             .appendTo(insertPoint);
