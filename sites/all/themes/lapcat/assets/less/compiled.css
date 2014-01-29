@@ -582,6 +582,14 @@ li {
   display: block;
 }
 
+.geneWholePage {
+  background: url("/sites/all/themes/lapcat/assets/images/backgrounds/oldwall_3.png");
+}
+
+.geneWholePage .containerBox {
+  background: url("/sites/all/themes/lapcat/assets/images/backgrounds/oldwall_3.png");
+}
+
 /* Locations  */
 
 .headerButton {
@@ -1727,7 +1735,7 @@ li {
 
 /*Children*/
 
-.childColor {
+.childWholePage {
   background: #26a3ff;
   /* Old browsers */
   background: -webkit-radial-gradient(20px 36px, circle, #ffffff 5%, #26a3ff 100%);

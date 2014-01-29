@@ -1,7 +1,5 @@
-<!--Genealogy Page-->
-<style>
-  .mainArea{z-index: 10;position:relative;}
-</style>
+<!--Children Page-->
+<div class="geneWholePage">
 <header class="hd-top color1">
   <nav class=" container_24">
     <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a>
@@ -9,9 +7,9 @@
     <div id="pageTopMenu">
       <?php print render($page['pageTopMenu']); ?>
     </div>
-    <?php endif; ?> 
+    <?php endif; ?>
   </nav>
-</header>    
+</header>      
 <header class="hd-bottom color2">
   <div class="container_24">
     <nav class="">
@@ -52,7 +50,6 @@
     </nav>
   </div>
 </header>
-<div class="teenWholePage" style="overflow: hidden;">
     <div id="" style="" class="container_24">
       <main class="mainArea grid_24 roundAll3" id="main" role="main">
         <?php if ($page['pageHeader']): ?>
@@ -64,11 +61,8 @@
           <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
             <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>
           </div>
-          
-
         </div>
-        
-        <!--end of cool testing stuff-->       
+        <!--end of cool testing stuff-->      
         <div class="clear"></div>   
         <section id="mainContent" class="grid_16">
           <?php print render($page['content']); ?>      
@@ -83,23 +77,19 @@
             </div>
           <?php endif; ?>
         </aside>
-      </main> <!-- end of main content-->
+      </main> <!-- end of main content--> 
     </div>
    <div class="childrenGrass" style="margin-top:150px;">
-      <div style="position: absolute;right: -6em;bottom:-5px;">
+      <div style="position: absolute;right: -6em;bottom:-5px;z-index:1">
         <div class="childrenTree linearAnimate"></div>  
       </div>
-      <a href="http://www.youtube.com/watch?v=wyoNnMO3zFk" class="gitarBoy"></a>
-      <blockquote class="oval-thought-border">
-        <p>Rock On!</p>
-      </blockquote>
    </div>
   <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
     <div class="" style="width:100%;display:table;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
         <div>
           <?php if ($page['pageLinks']): ?>
-            <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div> 
+            <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
           <?php endif; ?>
         </div>
       </div>
@@ -110,5 +100,5 @@
         <?php endif; ?> 
       </div>
     </div>
-  </footer>  
-  </div>
+  </footer>
+</div>  
