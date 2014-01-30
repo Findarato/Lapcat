@@ -2,6 +2,9 @@
 @import url("theme.less");
 @import url("buttons.less");
 @import url("roundCorners.less");
+@gMapsApi:"AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0";
+@hex5:rgb(red(@color3),green(@color3),blue(@color3));
+@gMapsColor:`"@{hex5}".replace("#",'')`;
 *{box-sizing: border-box;}
 *:focus {outline: none; }
 html{
@@ -717,7 +720,7 @@ article{
     background:url('@{imagesPath}headers/helpHeader.jpg');
   }
   &.Hours{
-    background:url('@{imagesPath}headers/hoursHeader.png') scroll -89px center;  
+    background:url('http://maps.googleapis.com/maps/api/staticmap?zoom=10&center=41.609126,-86.721036&size=920x140&sensor=false&format=jpg&scale=2&key=@{gMapsApi}') scroll center center;  
   }
   &.Request{
     background:url('@{imagesPath}headers/requestHeader.jpg');
@@ -846,7 +849,6 @@ ul.pager{
   float:left 
 }
 
-@gMapsApi:"AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0";
 .locationBoxMap{
   width:60%;
   float:left;
@@ -859,21 +861,14 @@ ul.pager{
     height:300px;
     width:100%;
   }
-  .coolSprings{background-image:url('@{imagesPath}coolSpringMap.png');}
-  .fishLake{background-image:url('@{imagesPath}fishLakeMap.png');}
-  .hanna{background-image:url('@{imagesPath}hannaMap.png');}
-  .mainLibrary{background-image:url('@{imagesPath}mainLibraryMap.png');}
-  .kingsfordHeights{background-image:url('@{imagesPath}kingsfordHeightsMap.png');}
-  .rollingPrairie{background-image:url('@{imagesPath}rollingPrairieMap.png');}
-  .unionMills{background-image:url('@{imagesPath}unionMillsMap.png');}
   //Google Maps Versions
-  .mainLibrary{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x5f3e12|41.609126,-86.721036&key=@{gMapsApi}');}
-  .coolSprings{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x5f3e12|41.665805,-86.8366276&key=@{gMapsApi}');}
-  .fishLake{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x5f3e12|41.565039,-86.544764&key=@{gMapsApi}');}
-  .hanna{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x5f3e12|41.414117,-86.780147&key=@{gMapsApi}');}
-  .kingsfordHeights{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x5f3e12|41.481936,-86.695347&key=@{gMapsApi}');}
-  .rollingPrairie{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x5f3e12|41.673963,-86.617124&key=@{gMapsApi}');}
-  .unionMills{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x5f3e12|41.491091,-86.771871&key=@{gMapsApi}');}
+  .mainLibrary{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.609126,-86.721036&key=@{gMapsApi}');}
+  .coolSprings{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.665805,-86.8366276&key=@{gMapsApi}');}
+  .fishLake{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.565039,-86.544764&key=@{gMapsApi}');}
+  .hanna{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.414117,-86.780147&key=@{gMapsApi}');}
+  .kingsfordHeights{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.481936,-86.695347&key=@{gMapsApi}');}
+  .rollingPrairie{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.673963,-86.617124&key=@{gMapsApi}');}
+  .unionMills{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.491091,-86.771871&key=@{gMapsApi}');}
 }
 .centerBox{
   margin:0 auto;
