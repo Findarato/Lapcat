@@ -15,7 +15,8 @@ var locations={
          "cityState":"La Porte, IN",
          "zip":"46350",
          "phone":"(219) 362-6156",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.609126,-86.721036&zoom=18&size=300x145&markers=41.609126,-86.721036,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.609126,-86.721036&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
+         //"map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.609126,-86.721036&zoom=18&size=300x145&markers=41.609126,-86.721036,ol-marker-green",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f186aedafe3350d0",
          "email":"reference@lapcat.org"
       },
@@ -34,7 +35,8 @@ var locations={
          "cityState":"Michigan City, IN",
          "zip":"46360",
          "phone":"(219) 879-3272",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.665805,-86.836627&zoom=18&size=500x350&markers=41.665805,-86.836627,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.665805,-86.836627&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
+//         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.665805,-86.836627&zoom=18&size=500x350&markers=41.665805,-86.836627,ol-marker-green",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1869f04a56d1f0e",
          "email":"coolspring@lapcat.org"
       },
@@ -53,7 +55,8 @@ var locations={
          "cityState":"Walkerton, IN",
          "zip":"46574",
          "phone":"(219) 369-1337",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.565039,-86.544764&zoom=18&size=500x350&markers=41.565039,-86.544764,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.565039,-86.544764&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
+         //"map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.565039,-86.544764&zoom=18&size=500x350&markers=41.565039,-86.544764,ol-marker-green",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1867816fd79f0ce",
          "email":"fishlake@lapcat.org"
       },
@@ -72,7 +75,8 @@ var locations={
          "cityState":"Hanna, IN",
          "zip":"46340",
          "phone":"(219) 797-4735",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.414117,-86.780147&zoom=18&size=500x350&markers=41.414117,-86.780147,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.414117,-86.780147&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
+         //"map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.414117,-86.780147&zoom=18&size=500x350&markers=41.414117,-86.780147,ol-marker-green",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1864f5f74b3d29a",
          "email":"hanna@lapcat.org"
       },
@@ -91,7 +95,8 @@ var locations={
          "cityState":"Kingsford Heights, IN",
          "zip":"46346",
          "phone":"(219) 393-3280",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.481936,-86.695347&zoom=18&size=500x350&markers=41.481936,-86.695347,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.481936,-86.695347&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
+         //"map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.481936,-86.695347&zoom=18&size=500x350&markers=41.481936,-86.695347,ol-marker-green",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1866d31e1acd702",
          "email":"kingsford@lapcat.org"
       },
@@ -110,7 +115,8 @@ var locations={
          "cityState":"Rolling Prairie, IN",
          "zip":"46371",
          "phone":"(219) 778-2390",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.673963,-86.617124&zoom=18&size=500x350&markers=41.673963,-86.617124,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.673963,-86.617124&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
+         //"map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.673963,-86.617124&zoom=18&size=500x350&markers=41.673963,-86.617124,ol-marker-green",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f18687b088564839",
          "email":"rolling@lapcat.org"
       },
@@ -129,7 +135,8 @@ var locations={
          "cityState":"Union Mills, IN",
          "zip":"46382",
          "phone":"(219) 767-2604",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.491091,-86.771871&zoom=18&size=500x350&markers=41.491091,-86.771871,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.491091,-86.771871&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
+         //"map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.491091,-86.771871&zoom=18&size=500x350&markers=41.491091,-86.771871,ol-marker-green",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1865eaf35b544cb",
          "email":"union@lapcat.org"
       },
@@ -148,7 +155,7 @@ var locations={
          "cityState":"46350",
          "zip":"(219) 362-6156",
          "phone":"reference@lapcat.org",
-         "map":"http://dev.laportelibrary.org/tweeks/staticmaplite/staticmap.php?center=41.6087073,-86.721373&zoom=18&size=500x350&markers=41.6087073,-86.721373,ol-marker-green",
+         "map":"http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=300x145&sensor=true&format=jpg&markers=color:0x5f3e12|41.609126,-86.721036&key=AIzaSyAJ86NxojnWWGVk6Sx8s_VKgoHEWgvmVt0",
          "mapLink":"http://maps.google.com/maps/ms?msid=214616702461070085731.00049f1861117f5fba412&msa=0&iwloc=00049f1869f04a56d1f0e",
          "email":"<a href='/downloads/mobilelibraryschedule.pdf'><span class='icon-bus'></span> Schedule</a>"
          
