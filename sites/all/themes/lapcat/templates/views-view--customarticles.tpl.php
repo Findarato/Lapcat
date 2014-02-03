@@ -27,9 +27,9 @@
  * @ingroup views_templates
  */
 ?>
-<div class="box blogBox roundAll3">
+<div class="bookBox roundAll3">
   <div class="twitterFeedTitle roundAll3 titleElement color3"><h2>Articles</h2></div>
-  <div id="blogContainerBox" class="insideBoxShadow roundAll3 containerBox" >
+  <div id="blogContainerBox" class="insideBoxShadow roundAll3 bookContainer" >
     <?php if ($rows): ?>
       <div class="view-content">
         <?php print $rows; ?>
