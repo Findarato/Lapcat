@@ -126,6 +126,14 @@ jQuery(document).ready(function(){
           "background-size":"16px 16px"
       });
   });
+  jQuery("iframe").each(function(i,item){
+    me = jQuery(item);
+    oldMe = me.clone();
+    container = jQuery("<div/>",{"class":"videoContainer"});
+    container.append(oldMe);
+    me.replaceWith(container);
+    me.show();
+  });
 });
 
 
