@@ -13,11 +13,11 @@
 <header class="hd-bottom color2">
   <div class="container_24">
     <nav class="">
-      <div class="hd-menu" style="float:left;">
-        <label class="icon-menu" for="menuToggle"></label>
-      </div>
       <div class="hd-logo" style="float:left;">
         <a href="/"><?php if ($logo):?><img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" /><?php endif; ?></a>
+      </div>
+      <div class="hd-menu" style="float:left;">
+        <label class="icon-menu" for="menuToggle"></label>
       </div>
       <?php if ($page['menuHeader']): ?>
       <input class="menuToggle" type="checkbox" id="menuToggle">
