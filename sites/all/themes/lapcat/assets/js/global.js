@@ -129,10 +129,10 @@ jQuery(document).ready(function(){
   jQuery("iframe").each(function(i,item){
     me = jQuery(item);
     oldMe = me.clone();
+    oldMe.show();
     container = jQuery("<div/>",{"class":"videoContainer"});
     container.append(oldMe);
     me.replaceWith(container);
-    me.show();
   });
 });
 
