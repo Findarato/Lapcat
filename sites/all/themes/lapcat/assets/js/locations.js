@@ -166,8 +166,10 @@ function displayLocation(me,domElementSelector){
   var today = new Date();
   var dayOfWeek = today.getDay();
   locationCode = me.attr("id");
-  
-  jQuery(".mapZoom").css("background-image","url("+locations[locationCode].map+")");
+  if(jQuery("#mapIcon").hasClass("icon-zoom-out")){
+    jQuery(".mapZoom").css("background-image","url("+locations[locationCode].map+")");;  
+  }
+  jQuery(".mapZoom").attr("data-map",locations[locationCode].map);
   mz.attr("href",locations[locationCode].mapLink);
   //alert(locations[locationCode].map);
   domElementSelector
@@ -234,7 +236,8 @@ jQuery("#MA").trigger("click");
 jQuery("#mapIcon").bind("click",function(){
   me = jQuery(this);
   me.parent().toggleClass("mapDisplayZoom");
-  
+  var MZ =jQuery(".mapZoom"); 
+  MZ.css("background-image","url("+MZ.attr("data-map")+")");
   me.toggleClass("icon-zoom-in icon-zoom-out");
   return false;
 });
