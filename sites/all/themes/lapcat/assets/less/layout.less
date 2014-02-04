@@ -865,30 +865,34 @@ ul.pager{
 
 
 .locationBoxInfo{
-  width:40%;
-  float:left 
+  width:100%;
+  display:table;
+  font-size: 1.1em;
+  .locationBoxInfoLocation,.locationBoxInfoHours{
+    display:table-cell;
+    width:50%;
+  }
 }
 
 .locationBoxMap{
-  width:60%;
-  float:left;
+  width:100%;
   a{
-    background-position:50%;
-    max-width:400px;
+    background-position:center;
     display:block;
     background-size:cover;
     margin-right:5px;
-    height:300px;
+    height:15em;
     width:100%;
   }
+  @gMapsSize:"439x195";
   //Google Maps Versions
-  .mainLibrary{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.609126,-86.721036&key=@{gMapsApi}');}
-  .coolSprings{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.665805,-86.8366276&key=@{gMapsApi}');}
-  .fishLake{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.565039,-86.544764&key=@{gMapsApi}');}
-  .hanna{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.414117,-86.780147&key=@{gMapsApi}');}
-  .kingsfordHeights{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.481936,-86.695347&key=@{gMapsApi}');}
-  .rollingPrairie{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.673963,-86.617124&key=@{gMapsApi}');}
-  .unionMills{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=400x300&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.491091,-86.771871&key=@{gMapsApi}');}
+  .mainLibrary{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.609126,-86.721036&key=@{gMapsApi}');}
+  .coolSprings{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.665805,-86.8366276&key=@{gMapsApi}');}
+  .fishLake{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.565039,-86.544764&key=@{gMapsApi}');}
+  .hanna{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.414117,-86.780147&key=@{gMapsApi}');}
+  .kingsfordHeights{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.481936,-86.695347&key=@{gMapsApi}');}
+  .rollingPrairie{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.673963,-86.617124&key=@{gMapsApi}');}
+  .unionMills{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.491091,-86.771871&key=@{gMapsApi}');}
 }
 .centerBox{
   margin:0 auto;
