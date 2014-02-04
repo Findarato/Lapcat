@@ -36,6 +36,6 @@ function displayFlickr(flickrTag,flickrId){
           }
         });
     });
-    flickrContainer.appendTo(".laporte365");
+    flickrContainer.appendTo("#flickerPictureBox");
 }
 displayFlickr("teens");
