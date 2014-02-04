@@ -110,5 +110,6 @@
         <?php endif; ?> 
       </div>
     </div>
+    <div class="copyright"><?Php print("© ".date("Y")." ");print($site_name); print(', '); print($site_slogan) ;?></div>
   </footer>  
   </div>

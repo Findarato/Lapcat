@@ -117,13 +117,12 @@
             <?php print render($page['help']); ?>
           </div>
         <?php endif; ?>
-        
         <?php print $feed_icons; ?>
       </aside>
        <div class="clear"></div>
     </main> <!-- end of main content-->
   </div>
-  <footer class="color5 mainWave"> 
+  <footer class="color5"> 
     <div class="t" style="width:100%;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
         <?php if ($page['pageLinks']): ?>
@@ -137,4 +136,5 @@
         <?php endif; ?> 
       </div>
     </div>
+    <div class="copyright"><?Php print("© ".date("Y")." ");print($site_name); print(', '); print($site_slogan) ;?></div>
   </footer>
