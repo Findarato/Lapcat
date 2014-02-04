@@ -714,9 +714,7 @@ iframe{
   max-width:930px;
   padding:3px 3px 3px 10px;
   margin:0 5px 10px 5px;
-  background: url('@{imagesPath}headers/LPCPL.jpg') no-repeat;
-  background-size:cover;
-  background-position:0px;
+  background: url('@{imagesPath}headers/LPCPL.jpg') cover none center;
   div{
     display:table-cell;
     vertical-align:middle;
@@ -726,37 +724,34 @@ iframe{
   }
   /*Sub page headers*/
   &.Articles,&.article{
-    background:url('@{imagesPath}headers/articlesHeader.jpg');
-    background-size:100% 121%;
+    background-image:url('@{imagesPath}headers/articlesHeader.jpg');
   }
   &.Downloads{
-    background:url('@{imagesPath}headers/downloadHeader.png');
+    background-image:url('@{imagesPath}headers/downloadHeader.png');
   }
   &.Employment{
-    background:url('@{imagesPath}headers/employmentHeader.jpg');
-    background-size:100% 171%;
-    background-position-y:27%;    
+    background-image:url('@{imagesPath}headers/employmentHeader.jpg');
   }
   &.Genealogy,&.Belle.Gunness {
-    background:url('@{imagesPath}headers/genealogyHeader.jpg');
+    background-image:url('@{imagesPath}headers/genealogyHeader.jpg');
   }
   &.Help,&.How.do.I{
-    background:url('@{imagesPath}headers/helpHeader.jpg');
+    background-image:url('@{imagesPath}headers/helpHeader.jpg');
   }
   &.Hours{
-    background:url('http://maps.googleapis.com/maps/api/staticmap?zoom=10&center=41.609126,-86.721036&size=920x140&sensor=false&format=jpg&scale=2&key=@{gMapsApi}') scroll center center;  
+    background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=10&center=41.609126,-86.721036&size=920x140&sensor=false&format=jpg&scale=2&key=@{gMapsApi}');  
   }
   &.Request{
-    background:url('@{imagesPath}headers/requestHeader.jpg');
+    background-image:url('@{imagesPath}headers/requestHeader.jpg');
   }
   //&.Research{
   //  background:url('@{imagesPath}headers/searchHeader.jpg');
   //}
   &.Teens{
-    background:url('@{imagesPath}headers/teenHeader.jpg') white;
+    background-image:url('@{imagesPath}headers/teenHeader.jpg');
   }
   &.Children{
-    background:url('@{imagesPath}headers/kidsHeader.jpg') white;
+    background-image:url('@{imagesPath}headers/kidsHeader.jpg');
   }
   /*Sub page headers End*/
 }
