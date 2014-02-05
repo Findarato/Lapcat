@@ -49,6 +49,7 @@
 }
 @media only screen and (min-width: 25em) { /* Portrait Phones */
   /*new header*/
+  /*
   .hd-top{
     .hd-logoTitle{
       h2{font-size:.9em;}
@@ -56,11 +57,11 @@
     #pageTopMenu{
       ul{
         li:nth-child(1){display:none;}
-        li:nth-child(2){display:none;}
+        //li:nth-child(2){display:none;}
       }
     }
   }
-  
+  */
   .hd-bottom{
     height:4em;
     width:100%;
@@ -115,7 +116,17 @@
   }
 }
 @media only screen and (min-width: .1em){ /*everything should be here*/
-  
+ .hd-top{
+    .hd-logoTitle{
+      h2{font-size:1em;}
+    }
+    #pageTopMenu{
+      ul{
+        li:nth-child(1){display:none;}
+        //li:nth-child(2){display:none;}
+      }
+    }
+  }
   /*new header*/
   .hd-bottom{
     font-size:.9em;
