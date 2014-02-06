@@ -130,21 +130,14 @@
   /*new header*/
   .hd-bottom{
     font-size:.9em;
-    input[type=checkbox]:checked ~ #menuHeader {
-     opacity:1;
-     //visibility:visible;
-     transition-delay:0s;
-     -moz-transition-delay:0s;
+    input[type=checkbox]:checked + #menuHeader{
+     left:0; //http://jsfiddle.net/NicholasRBowers/knVcn/
     }
     #menuHeader{
-      left: 0;
+      left: -99999px;
       position: absolute;
       top: 4em;
       background:@color2;
-      opacity:0;
-      //visibility:hidden;
-      transition: visibility 0s linear 0.3s,opacity 0.3s linear;
-      -moz-transition:visibility 0s linear 0.3s,opacity 0.3s linear;
       overflow:hidden;
       .downShadow();
       .rounded-corners(0 0 3px 0);

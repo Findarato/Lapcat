@@ -9,10 +9,7 @@
 <header class="hd-top color1">
   <nav class=" container_24">
     <div class="hd-logoTitle">
-      <div class="hd-logoMover">
-        <h2><a href="/" alt="Library Name"><?Php print($site_name);?></a></h2>
-        <h2><a href="/" alt="Library Slogan"><?Php print($site_slogan);?></a></h2>
-      </div>
+      <h2><a href="/" alt="Library Name"><?Php print($site_name);?></a></h2>
     </div>
     <?php if ($page['pageTopMenu']): ?>
     <div id="pageTopMenu">

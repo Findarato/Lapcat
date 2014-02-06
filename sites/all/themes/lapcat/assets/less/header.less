@@ -14,30 +14,32 @@
     li{
       display:inline-block;
       padding:.2em;
+      font-size: 1.2em;
     }
   }
   .hd-logoTitle{
     a{  }
-    height:1.6em;
+    height:2em;
     overflow:hidden;
     display:inline-block;
     .hd-logoMover{
-      animation: spinHeader 15s infinite linear;
+      //animation: spinHeader 15s infinite linear;
     }
     h2{
      color:@colorDark;
-     font-size:1.7em; //14.3px 22.1
+     font-size:2em; //14.3px 26px
      font-weight:600;
      display:block;
      padding-bottom:0.384615385em;
+     text-shadow: 0 1px 1px @shadow;
     }
   }
 }
-@keyframes spinHeader {
+/*@keyframes spinHeader {
   0%   { transform:translate3d(0,0,0); }
-  50% { transform:translate3d(0,-1.6em,0); }
+  50% { transform:translate3d(0,-1.9em,0); }
   100% { transform:translate3d(0,0,0); }
-}
+}*/
 .hd-bottom{
   .container_24{
     height:4em;
@@ -59,7 +61,6 @@
    opacity:1;
    height:4em;
   }
-  .Animate(300ms);
   #menuHeader{float:left;} 
   .spc-Search{
    padding-right:1em;
@@ -96,6 +97,7 @@
       text-indent: 0;
       vertical-align: bottom;
       list-style:none;
+      font-size: 1.1em;
       &:last-child{
         border-right: 1px solid fadeout(lighten(@color2,20%),40%);
       }
@@ -135,10 +137,17 @@ input[type=checkbox].menuToggle {
  position: absolute;
  top: -9999px;
  left: -9999px;
- /* For mobile, it's typically better to position checkbox on top of clickable
+  @media only screen and (min-width: .1em){
+  /* For mobile, it's typically better to position checkbox on top of clickable
     area and turn opacity to 0 instead.
     http://css-tricks.com/the-checkbox-hack/  
- */
+  */
+    top: 19px;
+    left: 58px;
+    z-index:9999;
+    opacity:0;
+  }
+
 }
 
 
