@@ -17,14 +17,26 @@
     }
   }
   .hd-logoTitle{
-    a{display:inline;}
+    a{  }
+    height:1.6em;
+    overflow:hidden;
+    display:inline-block;
+    .hd-logoMover{
+      animation: spinHeader 15s infinite linear;
+    }
     h2{
      color:@colorDark;
      font-size:1.7em; //14.3px 22.1
      font-weight:600;
-     display:inline;
+     display:block;
+     padding-bottom:0.384615385em;
     }
   }
+}
+@keyframes spinHeader {
+  0%   { transform:translate3d(0,0,0); }
+  50% { transform:translate3d(0,-1.6em,0); }
+  100% { transform:translate3d(0,0,0); }
 }
 .hd-bottom{
   .container_24{

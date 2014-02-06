@@ -8,7 +8,12 @@
 
 <header class="hd-top color1">
   <nav class=" container_24">
-    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a>
+    <div class="hd-logoTitle">
+      <div class="hd-logoMover">
+        <h2><a href="/" alt="Library Name"><?Php print($site_name);?></a></h2>
+        <h2><a href="/" alt="Library Slogan"><?Php print($site_slogan);?></a></h2>
+      </div>
+    </div>
     <?php if ($page['pageTopMenu']): ?>
     <div id="pageTopMenu">
       <?php print render($page['pageTopMenu']); ?>
@@ -136,5 +141,4 @@
         <?php endif; ?> 
       </div>
     </div>
-    <div class="copyright"><?Php print("© ".date("Y")." ");print($site_name); print(', '); print($site_slogan) ;?></div>
   </footer>
