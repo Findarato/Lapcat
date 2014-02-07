@@ -129,7 +129,7 @@ if(substr($ip,0,7) == '10.1.1.') //main
     <a href="<?Php print $fields["field_inside_link"]->content;?>"><?Php print $fields["title"]->content;?></a>
   <?Php endif; ?><!-- inside true/false end-->
   
-  <label data-link="<?Php if($inside==true){print $fields["field_inside_link"]->content;}else{print $fields["field_outside_link"]->content;} ?>" class="hoverCard icon-zoom-in" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)"></label>
+  <label data-link="<?Php if($inside==true){print $fields["field_inside_link"]->content;}else{print $fields["field_outside_link"]->content;} ?>" class="hoverCard icon-search" style="display:none;margin-left:3px,font-size:1em,color:rgba(85, 102, 68,.6)"></label>
   <?php print $fields["field_research_image"]->content ?>
   <div class=researchInfoBasic>
     <?php print $fields["body"]->content ?>

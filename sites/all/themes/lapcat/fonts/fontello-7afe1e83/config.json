@@ -233,7 +233,7 @@
     {
       "uid": "20663672da59d1ea2b29a261b43d7691",
       "css": "gitHub",
-      "code": 59408,
+      "code": 103,
       "src": "custom_icons",
       "selected": true,
       "svg": {
@@ -245,22 +245,10 @@
       ]
     },
     {
-      "uid": "c6344a6ed148da12354cc90705287696",
+      "uid": "9725db89b610135dc76cd8a21afffa83",
       "css": "search",
-      "code": 115,
-      "src": "iconic"
-    },
-    {
-      "uid": "2ae040a98998e1497aa0c5ddbacaf3c0",
-      "css": "comment",
       "code": 99,
-      "src": "iconic"
-    },
-    {
-      "uid": "51fb22f9ff9d7f60c95ef31e4c59502d",
-      "css": "comment-1",
-      "code": 67,
-      "src": "mfglabs"
+      "src": "linecons"
     },
     {
       "uid": "95c84da411a955a12baff8b0859c9276",
