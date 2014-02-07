@@ -697,15 +697,16 @@ iframe{
   max-width:68px;
 }
 
-
 .pageTitle{
   filter: @dropShadowFilter;  
   position: absolute;
-  top:33%; 
-  left:5px;
+  top:36%; 
+  left:.3em;
   padding-right:5px;
+  h1{
+    font-size:2em;
+  }
 } 
-
 .subPageHeader{
   font-size:50px;
   height:10.769230769rem;
@@ -743,9 +744,9 @@ iframe{
   &.Request{
     background-image:url('@{imagesPath}headers/requestHeader.jpg');
   }
-  //&.Research{
-  //  background:url('@{imagesPath}headers/searchHeader.jpg');
-  //}
+  &.Research{
+    background:url('@{imagesPath}headers/researchHeader.jpg');
+  }
   &.Teens{
     background-image:url('@{imagesPath}headers/teenHeader.jpg');
   }
