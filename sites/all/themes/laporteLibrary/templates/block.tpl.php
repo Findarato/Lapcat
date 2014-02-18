@@ -1,0 +1,1 @@
+<?php  if(render($content)!=""){print render($content);}?>  

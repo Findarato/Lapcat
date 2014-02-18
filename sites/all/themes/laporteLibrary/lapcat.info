@@ -1,0 +1,39 @@
+name = lapcat
+description = The La Porte County Public Library theme
+package = Core
+version = VERSION
+core = 7.x
+stylesheets[screen][] = reset.css
+
+stylesheets[all and (min-width: 960px)][] = 960_24_col.css
+stylesheets[all and (max-width: 959px)][] = assets/less/mq.css
+stylesheets[screen][less] = assets/less/compiled.css
+
+scripts[] = assets/js/libs/jquery-1.9.1.min.js
+scripts[] = assets/js/libs/jquery.hovercard.min.js
+scripts[] = assets/js/libs/modernizr-2.0.6.min.js
+scripts[] = assets/js/global.js
+
+
+fonts[google_fonts_api][] = "Ubuntu&subset=latin-ext#500"
+fonts[google_fonts_api][] = "Vollkorn&subset=latin#regular"
+
+
+
+settings[shortcut_module_link] = 1
+regions[pageTopMenu] = Page Top Menu
+regions[pageHeader] = Page Header
+regions[pageTitle] = Page Title
+regions[menuHeader] = Header Menu
+regions[featured_slider] = Featured Slider
+regions[content] = Content
+regions[rightSide] = Side Content
+regions[help] = Help
+regions[search] = Search
+regions[contact] = Contact
+regions[pageLinks] = Page Links
+; Information added by drupal.org packaging script on 2012-10-17
+version = "7.x-3"
+;version = "7.22"
+project = "drupal"
+datestamp = "1350508567" 
