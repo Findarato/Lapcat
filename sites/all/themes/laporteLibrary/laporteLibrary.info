@@ -5,7 +5,7 @@ version = VERSION
 core = 7.x
 stylesheets[screen][] = reset.css
 
-stylesheets[all and (min-width: 960px)][] = 960_24_col.css
+;stylesheets[all and (min-width: 960px)][] = 960_24_col.css
 stylesheets[all and (max-width: 959px)][] = assets/less/mq.css
 stylesheets[screen][less] = assets/less/compiled.css
 

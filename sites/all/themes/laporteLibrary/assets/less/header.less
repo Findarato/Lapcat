@@ -1,74 +1,44 @@
 /*New header*/
 nav{position:relative;}
-.hd-top{
-  width:100%;
-  height:3em;
-  display:block;
-  z-index:100;
-  padding: 3px;
-  position:relative;
-  a{color:@colorDark}
-  #pageTopMenu{
-    padding-right: .2em;
-    display: inline-block;
-    text-align: right;
-    vertical-align: top;
-    right: 0;
-    position: absolute;
-    li{
-      display:inline-block;
-      padding:.2em;
-      font-size: 1.2em;
-    }
-  }
-  .hd-logoTitle{
-    a{  }
-    height:3em;
-    overflow:hidden;
-    display:inline-block;
-    .hd-logoMover{
-      //animation: spinHeader 15s infinite linear;
-    }
-    h2{
-     color:@colorDark;
-     font-size:3em; //14.3px 26px
-     font-weight:600;
-     display:block;
-     padding-bottom:0.384615385em;
-     text-shadow: 0 1px 1px @shadow;
-    }
-  }
+.masterHeader{
+  
 }
-/*@keyframes spinHeader {
-  0%   { transform:translate3d(0,0,0); }
-  50% { transform:translate3d(0,-1.9em,0); }
-  100% { transform:translate3d(0,0,0); }
-}*/
-.hd-bottom{
-  .container_24{
-    height:4em;
-  }
-  height:4em;
+.masterHeaderMenu{
   width:100%;
-  display:block;
-  font-family: 'Ubuntu', sans-serif;
-  z-index:9;
-  box-shadow: inset 0 2px 2px -2px #777,2px 1px #fff;
-  margin-bottom:1em;
-  position: relative;
-  nav{
-    overflow: hidden;
-    height: 4em;
-    width:100%;
+  #menuHeader{float:right;}
+  ul{
+    li{
+      background:@colorBlue6;
+      padding:.5em;
+      margin:0;
+      display:inline-block;
+      a{color:@colorLight;}
+    }  
   }
-  input[type=checkbox]:checked ~ #menuHeader {
-   opacity:1;
-   height:4em;
-  }
-  #menuHeader{float:left;} 
-  .spc-Search{
-   padding-right:1em;
-   width:40%;
+  
+}
+.colorWave{
+  background:linear-gradient(left,@colorGreen1 10%, @colorBlue1 10%, @colorBlue1 20%, @colorRed1 20%, @colorRed1 100%) repeat-x;
+  height:20px;
+  width:100%
+}
+header{
+  margin:0 auto;
+  width:@total-width;
+  position:relative;
+}
+
+.spc-Search{
+ padding-right:1em;
+ width:40%;
+ position:absolute;
+ top:.5em;
+ right:.5em;
+ .spc-SearchBox{
+    input{
+      margin-right: 1em;
+      width:100%;
+    }
   }
   .catalog{
     form{
@@ -82,48 +52,17 @@ nav{position:relative;}
     }
     .spc-Submit{
       input{
-        .lp-Buttons(2.3rem);
         line-height:normal;
         margin:0;
         height:2.7rem;
       }
     }
   }
-  ul{
-    padding:0;margin:0;
-    border-right: 1px solid fadeout(darken(@color2,20%),40%);
-    height:4em;
-    li{
-      border-left: 1px solid fadeout(darken(@color2,20%),40%);
-      float: left;
-      list-style-image: none;
-      margin: 0;
-      text-indent: 0;
-      vertical-align: bottom;
-      list-style:none;
-      font-size: 1.1em;
-      &:last-child{
-        border-right: 1px solid fadeout(lighten(@color2,20%),40%);
-      }
-      a{
-        border-left: 1px solid fadeout(lighten(@color2,20%),40%);
-        display:inline-block; 
-        padding:1.2em .7em;
-        color:@colorDark;
-      } 
-    }
-  }
 }
-.spc-SearchBox{
-  input{
-    .shadowIn(0 2px 4px rgba(0,0,0,0.4));
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
-    background:darken(@color2,5%);
-    .rounded-corners(3px);
-    margin-right: 1em;
-    width:100%;
-  }
-}
+
+
+
+
 .hd-menu{
   width:0px;
   overflow:hidden;
@@ -153,22 +92,8 @@ input[type=checkbox].menuToggle {
   }
 
 }
-
-
-.hd-logo{
-  height: 4rem;
-  color:#000;
-  .hd-logoTitle{
-    position: absolute;
-    top: 1.8em;
-    left: 2.1em;
+  input[type=checkbox]:checked ~ #menuHeader {
+   opacity:1;
+   height:4em;
   }
-  a{
-    color:@colorDark;
-    display:inline-block;
-    padding: 0 .4em;
-  }
-  img{
-    height:4rem;
-  }
-}
+  #menuHeader{float:left;} 

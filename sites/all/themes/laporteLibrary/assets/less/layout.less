@@ -1,4 +1,5 @@
 @imagesPath : "/sites/all/themes/lapcat/assets/images/";
+@import 'grid.less';
 @import url("theme.less");
 @import url("buttons.less");
 @import url("roundCorners.less");
@@ -21,6 +22,40 @@ body,html {
 }
 body{height:auto;}
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
+
+/*Grid layout*/
+
+@column-width: 60;
+@gutter-width: 20;
+@columns: 14;
+@total-width: 1140px;
+.mainArea{
+  margin:0 auto;
+  width:@total-width;
+}
+section{
+  .column(10);
+}
+aside{
+  .column(4);
+}
+.flexslider_views_slideshow_slide{
+  a{
+    width:50%;
+  }
+  p:not(:empty){
+    width:50%;
+    height:100%;
+    top:0;
+    right:0;
+  }
+}
+ 
+
+/*Grid layout End*/
+
+
+
 
 h1,h2,h3,h4{
   margin:2px;
@@ -145,14 +180,6 @@ form #user-login-form{
   }
 }
 
-.mainArea{
-  padding: 10px 5px 20px;
-  
-  
-  min-height:600px;
-  position:relative;
-  z-index:8;
-}
 .mainBorder,.mainBorder60{
   border: 1px solid @borderColor;
 }
@@ -241,7 +268,7 @@ li {
     width: 12em;
     padding-left: 0.2em;
     .navBoxes{
-      .lp-Buttons() 
+      
     }  
   }
 }
@@ -565,7 +592,7 @@ input.noveListSearch{
   width: 15.69rem;
 }
 input.noveListSubmit{
-  .lp-Buttons(2em);
+  
   margin:0 1em 0 0;
   width:3.7em;
 }
@@ -824,12 +851,12 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
 
 
 .scrollerBack,.scrollerNext{
-  .lp-Buttons(2.6em);
+  
 }
 
 div.more-link{
   display:inline-block;
-  .lp-Buttons(2em);
+  
   a{
     padding:.5em;
     line-height:100%;
@@ -852,7 +879,7 @@ ul.pager{
     width:7em;
     min-width:1em;
     display:inline-block;
-    .lp-Buttons(2.6rem);
+    
     margin-left:-2px; //tweek to fake a toolbar
     margin-right:-2px;
     a{
@@ -902,10 +929,6 @@ li{
   list-style: none outside none;
 }
 
-.bookTitle{
-  margin-bottom:0px;
-}
-
 #container{
   position:relative;
   z-index:10;
@@ -942,26 +965,17 @@ li{
 .subTitleElement a.selected{
   margin-left:3px;
 }
-.twitterFeedTitle,.mainContentTitle,.blogTitle,.eventFeedTitle,.titleElement,.bookTitle{ 
-  cursor:pointer;
-  padding:6px;
-  top:60px;
-  right:18px;
-  white-space: nowrap;
-  z-index:5;
-  background:@color3;
-  a{color:@colorLight;}
-}
-
-.twitterFeedTitle,.blogTitle,.titleElement,.bookTitle{
+.bookTitle{ 
   left:0px;
   right:auto;
   top:0;
   width:100%;
   padding:.7em;
-} 
-
-
+  cursor:pointer;
+  white-space: nowrap;
+  background:@color3;
+  a{color:@colorLight;}
+}
 .twitterList{
   width:100%;
   li{
@@ -969,12 +983,6 @@ li{
     display:block;
     min-height:50px;
   }
-}
-.titleElement a{
-  color: #F1F1F1;
-}
-.titleElement a:hover,.subTitleElement a:hover{
-  text-decoration:none;
 }
 .eventFeedTitle{
   left:350px;
@@ -1218,10 +1226,6 @@ li{
 
 /*Bug fixes*/
   
-.grid_24{
-  margin-left:0px;
-  margin-right:0px;
-}
   .adultResearch{
     img{
       float:left;
