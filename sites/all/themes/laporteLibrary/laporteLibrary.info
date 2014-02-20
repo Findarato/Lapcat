@@ -1,5 +1,5 @@
-name = lapcat
-description = The La Porte County Public Library theme
+name = La Porte Library
+description = The La Porte County Public Library Theme 2.0
 package = Core
 version = VERSION
 core = 7.x
