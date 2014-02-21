@@ -53,9 +53,13 @@
 
 
 
-@allColors:"@{colorGreen1}";//,@colorGreen2,@colorGreen3,@colorRed1,@ColorRed2,@colorBlue1,@colorBlue2,@colorBlue3,@colorBlue4,@colorBlue5,@colorBlue6,@colorBlue7,@colorBlue8,@colorYellow1,@colorYellow2
 
 
+
+
+.rainbow(@color1,@color2,@color3,@color4,@color5,@color6,@color7,@color8){
+   background-image: linear-gradient(to right,@color1 0%, @color1 12.5%,@color2 12.5%, @color2 25%,@color3 25%, @color3 37.5%,@color4 37.5%, @color4 50%,@color5 50%, @color5 62.5%,@color6 62.5%, @color6 75%,@color7 75%, @color7 87.5%,@color8 87.5%, @color8 100%);
+}
 
 
 
