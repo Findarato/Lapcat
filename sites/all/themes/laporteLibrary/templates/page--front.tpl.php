@@ -18,10 +18,6 @@
       </div>
       <?php endif; ?>
   </nav>
-  
-      
-
-
       <div class="spc-Search">
         <div class="catalog ">
           <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
@@ -52,30 +48,23 @@
     <?php endif; ?>-->
 </header>
 <div class="colorWave"></div>
-
-
-
-
-
-
-
-
+<div class="shadowColors">
+  <div class="banner middleSectionContainer">
+   <?php if ($page['featured_slider']): ?>
+    <div id="featured-slider" class="">
+      <?php print render($page['featured_slider']); ?>
+    </div> <!-- End Featured Slider-->
+  <?php endif; ?>
+  </div>
+</div>
+<div class="colorWave"></div>
   <main class="mainArea" id="main" role="main">
     <!--Page Header-->
     <nav class="navDisplay">
-      <div class="" style="position:relative">
-        
-        <!-- Middle Colmn -->
-        <div id="middleSectionContainer" class="banner roundAll3">
-           <?php if ($page['featured_slider']): ?>
-            <div id="featured-slider" class="roundAll3">
-              <?php print render($page['featured_slider']); ?>
-            </div> <!-- End Featured Slider-->
-          <?php endif; ?>
-        </div>
-      </div>
+      
+<!--
       <div class="navBoxGroup" style="" >
-        <!-- Right Column -->
+
         <div class="navBoxes insideBoxShadow lifted" >
           <a href="hours">Hours</a>
         </div> 
@@ -94,7 +83,7 @@
         <div class="navBoxes insideBoxShadow lifted" >
           <a href="local">Community</a>
         </div>
-        <!--
+        
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="educators">Educators</a>
           </div>
@@ -122,8 +111,9 @@
       <?php endif; ?>
       <?php print $feed_icons; ?>
     </aside>
-     <div class="clear"></div>
   </main> <!-- end of main content-->
+  <div class="clear"></div>
+  <div class="colorWave"></div>
   <footer> 
     <div class="t" style="width:100%;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->

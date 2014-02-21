@@ -6,17 +6,20 @@ nav{position:relative;}
 .masterHeaderMenu{
   right: 0;
   position: absolute;
-  bottom: 0em;
+  bottom: 0;
+  .logoImage{
+    height:12em;
+  }
   #menuHeader{}
   ul{
     li{
-      background:@colorBlue6;
+      .softColor(@colorBlue6);
       padding:.5em;
       margin:0;
       display:inline-block;
       font-size:1.7em;
       &:hover{
-        background:lighten(@colorBlue6,10%);
+        .softColor(lighten(@colorBlue6,10%));
       }
       a{color:@colorLight;}
     }  
@@ -25,7 +28,7 @@ nav{position:relative;}
 }
 .colorWave{
   .rainbow(@colorGreen1,@colorRed1,@colorBlue1,@colorBlue4,@colorBlue6,@colorYellow1,@colorGreen2,@colorYellow2);
-  height:20px;
+  height:.5em;
   width:100%;
   background-size:42%;
 }
@@ -34,7 +37,6 @@ header{
   width:@total-width;
   position:relative;
 }
-
 .spc-Search{
  padding-right:1em;
  width:40%;
@@ -70,19 +72,15 @@ header{
 
 
 
-.hd-menu{
-  width:0px;
-  overflow:hidden;
-
-  label{
-    display: inline-block;
-    color: @colorDark;
-    color:fadeout(@colorDark,70%);
-    font-size:2.4em;
-    text-shadow:0px 5px 4px @color2, 0 0 0 #000, 0px 2px 4px @color2;
-    cursor:pointer;
-  }
-}    
+label{
+  display: inline-block;
+  color: @colorDark;
+  color:fadeout(@colorDark,70%);
+  font-size:2.4em;
+  text-shadow:0px 5px 4px @color2, 0 0 0 #000, 0px 2px 4px @color2;
+  cursor:pointer;
+}
+    
 input[type=checkbox].menuToggle {
  position: absolute;
  top: -9999px;
