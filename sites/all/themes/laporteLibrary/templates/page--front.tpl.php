@@ -44,11 +44,12 @@
           </form>
         </div>
       </div>
+      <!--
     <?php if ($page['pageTopMenu']): ?>
     <div id="pageTopMenu">
       <?php print render($page['pageTopMenu']); ?>
     </div>
-    <?php endif; ?>
+    <?php endif; ?>-->
 </header>
 <div class="colorWave"></div>
 
