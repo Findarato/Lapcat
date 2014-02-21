@@ -2,7 +2,6 @@
   <div>
     <div>
       <?php print $fields["field_tags"]->content ?>
-      <?php /*print $id*/ ?>
       <div class="picture">
         <?php print $fields["field_image"]->content ?>
       </div>

@@ -62,9 +62,10 @@
 <div class="colorWave"></div>
   <main class="mainArea" id="main" role="main">
     <!--Page Header-->
+<!--
     <nav class="navDisplay">
       
-<!--
+
       <div class="navBoxGroup" style="" >
 
         <div class="navBoxes insideBoxShadow lifted" >
@@ -89,13 +90,15 @@
           <div class="navBoxes insideBoxShadow lifted" >
             <a href="educators">Educators</a>
           </div>
--->
+
       </div>        
-    </nav>  
+    </nav>
+    -->  
     <!--/Page Header-->
 
     <div class="clear"></div>
-    <div>   
+    <div class="newArticles">
+      <h1>What's New @ the Library</h1> 
       <?php if ($page['articleHighlight']): ?>
          <div id="articleHighlight" class="articleHighlight"><?php print render($page['articleHighlight']); ?></div>
       <?php endif; ?>

@@ -1,16 +1,5 @@
-<div class="bookBox">
-  
-    <h2>
-    <?php if ($view->get_title()): ?>
-      <?php print $view->get_title(); ?>
-    <?php endif; ?>
-    </h2>
-    <div class="bookContainer">
-    <?php if ($header): ?>
-      <div class="view-header">
-        <?php print $header; ?>
-      </div>
-    <?php endif; ?>
+<div class="">
+    <div class="">
     <?php if ($rows): ?>
       <div class="view-content <?php print $classes; ?>">
         <?php print $rows; ?>
@@ -20,11 +9,5 @@
         <?php print $empty; ?>
       </div>
     <?php endif; ?>
-  <?php if ($pager): ?>
-    <?php print $pager; ?>
-  <?php endif; ?>    
-  <?php if ($more): ?>
-    <?php print $more; ?>
-  <?php endif; ?>
   </div>
 </div>

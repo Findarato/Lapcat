@@ -81,12 +81,32 @@
    }
  } 
 }
-
+.newArticles{
+  margin:1em 0;
+  background:@colorLight;
+  padding:1em 0;
+  &:after{
+    clear: both;
+    content: "";
+    display: block; 
+  }
+}
+.articleBlocks{
+  .views-row{
+    display:inline-block;
+  }
+}
+.articleHighlight{
+  .articleEntryDescription{
+    height: 15em;
+    display: block;
+  }
+}
 .articlePicture{
   .articleEntryDescription:empty{display:none;}
   height:165px;
   width:220px;
-  margin:1em;
+  margin:1em 0;
   display:table;
   .picture{
     height:165px;
@@ -94,12 +114,24 @@
     background:@gray;
   }
   .title{
-    color:@colorLight;
+    color:@colorDark;
+    font-size:1.2em;
   }
   a[href*="taxonomy"]{/*These are tags on items*/
     width:100%;
     display:block;
     background:@navy;
     color:@colorLight;
+    position:relative;
+    &:after{
+      content:"";
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0 0 18px 18px;
+      border-color: transparent transparent @colorYellow1 transparent;
+      position: absolute;
+      right: 0;
+    }
   }  
 }
