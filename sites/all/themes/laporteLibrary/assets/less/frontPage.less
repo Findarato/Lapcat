@@ -81,3 +81,25 @@
    }
  } 
 }
+
+.articlePicture{
+  .articleEntryDescription:empty{display:none;}
+  height:165px;
+  width:220px;
+  margin:1em;
+  display:table;
+  .picture{
+    height:165px;
+    width:220px;
+    background:@gray;
+  }
+  .title{
+    color:@colorLight;
+  }
+  a[href*="taxonomy"]{/*These are tags on items*/
+    width:100%;
+    display:block;
+    background:@navy;
+    color:@colorLight;
+  }  
+}

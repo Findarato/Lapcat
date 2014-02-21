@@ -45,7 +45,12 @@ section{
 aside{
   .column(4);
 }
- 
+.articleHighlight{
+  .column(3);
+}
+.articleBlocks{
+  .column(11);
+}
 
 /*Grid layout End*/
 
@@ -415,8 +420,8 @@ li {
 } 
 
 /* Articles */
-
-a[href*="taxonomy"]:not(#admin-menu),.tagStyle,.highlightSelect{/*These are tags on items*/
+/*
+a[href*="taxonomy"]:not([href*="admin"]),.tagStyle,.highlightSelect{
   transform: translateZ(0);
   padding:3px;
   margin:10px 15px 0 0;
@@ -435,7 +440,7 @@ a[href*="taxonomy"]:not(#admin-menu),.tagStyle,.highlightSelect{/*These are tags
     .shadowOut(4px,0,2px,-2px,@shadow);
   }
 }
-    
+  */  
 .tagStyle{
   background:fadeout(@colorDark,90%);
   cursor:default;
@@ -1025,7 +1030,7 @@ li{
   overflow:hidden;
 }
 
-@import 'flexslider.less';
+@import 'frontPage.less';
 /*Footer*/
 @import url("footer.less");
 @import url("header.less");

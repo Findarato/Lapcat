@@ -18,17 +18,16 @@ scripts[] = assets/js/global.js
 fonts[google_fonts_api][] = "Ubuntu&subset=latin-ext#500"
 fonts[google_fonts_api][] = "Vollkorn&subset=latin#regular"
 
-
-
 settings[shortcut_module_link] = 1
 regions[pageTopMenu] = Page Top Menu
 regions[pageHeader] = Page Header
 regions[pageTitle] = Page Title
 regions[menuHeader] = Header Menu
 regions[featured_slider] = Featured Slider
+regions[articleHighlight] = Article Highlight
+regions[articleBlocks] = Article Blocks
 regions[content] = Content
 regions[rightSide] = Side Content
-regions[help] = Help
 regions[search] = Search
 regions[contact] = Contact
 regions[pageLinks] = Page Links

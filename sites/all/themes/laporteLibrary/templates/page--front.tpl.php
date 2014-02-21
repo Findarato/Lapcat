@@ -8,7 +8,9 @@
 
 <header>
   <div class="masterHeader">
-    <a href="/" alt="Logo" title="La Porte County Public Library"><?php if ($logo):?><img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" /><?php endif; ?></a>
+    <a href="/" alt="Logo" title="La Porte County Public Library">
+      <img class="logoImage" src="sites/all/themes/laporteLibrary/assets/images/2014logo.svg" alt="logo" title="Logo" id="logo" />
+    </a>
   </div>
   <nav class="masterHeaderMenu">
     <?php if ($page['menuHeader']): ?>
@@ -92,7 +94,15 @@
     </nav>  
     <!--/Page Header-->
 
-    <div class="clear"></div>   
+    <div class="clear"></div>
+    <div>   
+      <?php if ($page['articleHighlight']): ?>
+         <div id="articleHighlight" class="articleHighlight"><?php print render($page['articleHighlight']); ?></div>
+      <?php endif; ?>
+      <?php if ($page['articleBlocks']): ?>
+         <div id="articleBlocks" class="articleBlocks"><?php print render($page['articleBlocks']); ?></div>
+      <?php endif; ?>
+    </div>
     <section id="mainContent" class="">
       <?php if ($messages): ?>
       <div id="console" class="clearfix"><?php print $messages; ?></div>
@@ -103,11 +113,6 @@
     <aside id="side" class="">
       <?php if ($page['rightSide']): ?>
         <div id="rightSide"><?php print render($page['rightSide']); ?></div>
-      <?php endif; ?>
-      <?php if ($page['help']): ?>
-        <div id="help">
-          <?php print render($page['help']); ?>
-        </div>
       <?php endif; ?>
       <?php print $feed_icons; ?>
     </aside>

@@ -1,15 +1,14 @@
 /*New header*/
 nav{position:relative;}
 .masterHeader{
-  
+  .logoImage{
+    height:12em;
+  }  
 }
 .masterHeaderMenu{
   right: 0;
   position: absolute;
   bottom: 0;
-  .logoImage{
-    height:12em;
-  }
   #menuHeader{}
   ul{
     li{
@@ -56,14 +55,20 @@ header{
       input{
         padding:.4em;
         border:none;
-        font-size: 1.3em;
+        font-size: 1.5em;
       }
     }
     .spc-Submit{
       input{
         line-height:normal;
         margin:0;
-        height:2.7rem;
+        height:2em;
+        color:@colorLight;
+        cursor:pointer;
+        .softColor(@colorBlue6);
+        &:hover{
+        .softColor(lighten(@colorBlue6,10%));
+        }
       }
     }
   }
