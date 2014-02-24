@@ -14,8 +14,8 @@
     width: 20%;
     left: 0;
     top: 0;
-    background: @colorDark;
-    background: linear-gradient(left, @gray 5%, rgba(87, 87, 87, 0) 100%);
+    //background: -moz-linear-gradient(to right, @gray 5%, rgba(87, 87, 87, 0) 100%);
+    background: linear-gradient(to right, @gray 5%, rgba(87, 87, 87, 0) 100%); 
     z-index:999;
    }
    &:after{ 
@@ -26,8 +26,8 @@
     width: 20%;
     right: 0;
     top: 0;
-    background: @colorDark;
-    background: linear-gradient(right, @gray 5%, rgba(87, 87, 87, 0) 100%);
+    //background: -moz-linear-gradient(to left, @gray 5%, rgba(87, 87, 87, 0) 100%);
+    background: linear-gradient(to left, @gray 5%, rgba(87, 87, 87, 0) 100%);
     z-index:999;
     visibility: visible;
    }
@@ -85,6 +85,8 @@
   margin:1em 0;
   background:@colorLight;
   padding:1em 0;
+  overflow:auto;
+  width:100%;
   &:after{
     clear: both;
     content: "";
@@ -101,26 +103,24 @@
     height: 15em;
     display: block;
   }
+  .articlePicture{
+    .picture{
+      height:220px;
+      width:274px;
+    }  
+  }
+  
 }
-.articlePicture{
-  .articleEntryDescription:empty{display:none;}
-  height:165px;
-  width:220px;
-  margin:1em 0;
-  display:table;
-  .picture{
-    height:165px;
-    width:220px;
-    background:@gray;
-  }
-  .title{
-    color:@colorDark;
-    font-size:1.2em;
-  }
+.tagRow,.articlePicture{
   a[href*="taxonomy"]{/*These are tags on items*/
     width:100%;
     display:block;
-    background:@navy;
+    .softColor(@navy);
+    padding:0 .5em;
+    .Animate(500ms);
+    &:hover{
+      .softColor(lighten(@navy,10%));
+    }
     color:@colorLight;
     position:relative;
     &:after{
@@ -133,5 +133,68 @@
       position: absolute;
       right: 0;
     }
-  }  
+  }
+  a[href*="taxonomy/term/52"]{//Adult
+    &:after{
+      border-color: transparent transparent @colorGreen1 transparent;
+    }
+  }
+  a[href*="taxonomy/term/8"]{//Children
+    &:after{
+      border-color: transparent transparent @colorRed1 transparent;
+    }
+  } 
+  a[href*="taxonomy/term/50"]{//Teens
+    &:after{
+      border-color: transparent transparent @colorBlue9 transparent;
+    }
+  }
+  a[href*="taxonomy/term/11"]{//History
+    &:after{
+      border-color: transparent transparent @colorBrown1 transparent;
+    }
+  } 
 }
+.tagRow{
+  height:1em;
+  padding:1.2em 2em;
+  clear: both;
+  display:table;
+  width:100%;
+  a[href*="taxonomy"]{
+    display:inline-block;
+    font-size:1.2em;
+    display:table-cell;
+    width:auto;
+  }
+  a[href*="taxonomy/term/52"]{//Adult
+    .softColorHover(@colorGreen1);
+  }
+  a[href*="taxonomy/term/8"]{//Children
+    .softColorHover(@colorRed1);
+  } 
+  a[href*="taxonomy/term/50"]{//Teens
+    .softColorHover(@colorBlue9);
+  }
+  a[href*="taxonomy/term/50"]{//Teens
+    .softColorHover(@colorBrown1);
+  }
+}
+.articlePicture{
+  .articleEntryDescription:empty{display:none;}
+  height:18.461538462em;
+  width:16.923076923em;
+  margin:1em 0;
+  display:table;
+  .picture{
+    height:165px;
+    width:220px;
+    background:@gray;
+  }
+  .title{
+    color:@colorDark;
+    font-size:1.2em;
+  }
+}
+  
+

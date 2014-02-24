@@ -12,16 +12,8 @@ nav{position:relative;}
   #menuHeader{}
   ul{
     li{
-      .softColor(@colorBlue6);
-      padding:.5em;
-      margin:0;
-      display:inline-block;
-      font-size:1.7em;
-      &:hover{
-        .softColor(lighten(@colorBlue6,10%));
-      }
-      a{color:@colorLight;}
-    }  
+      .headerButtons();
+    }
   }
   
 }
@@ -38,7 +30,6 @@ header{
 }
 .spc-Search{
  padding-right:1em;
- width:40%;
  position:absolute;
  top:.5em;
  right:.5em;
@@ -49,6 +40,9 @@ header{
     }
   }
   .catalog{
+    a{
+      .headerButtons();
+    }
     form{
       height:4em;
       padding-top:.6em;
@@ -60,15 +54,8 @@ header{
     }
     .spc-Submit{
       input{
-        line-height:normal;
-        margin:0;
-        height:2em;
-        color:@colorLight;
-        cursor:pointer;
-        .softColor(@colorBlue6);
-        &:hover{
-        .softColor(lighten(@colorBlue6,10%));
-        }
+        .headerButtons();
+        font-size:1.355em;
       }
     }
   }
@@ -107,3 +94,6 @@ input[type=checkbox].menuToggle {
    height:4em;
   }
   #menuHeader{} 
+ul.menu li{
+  margin:0;
+}

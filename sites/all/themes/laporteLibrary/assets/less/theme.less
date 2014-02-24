@@ -57,7 +57,7 @@
 @colorYellow1:#E4B920;
 @colorYellow2:#988234;
 
-@colorBrown1:#fca056;
+@colorBrown1:#fCA056;
 @colorBrown2:#bc7740;
 @colorBrown3:#704726;
 @colorBrown4:#70df2a;
@@ -145,7 +145,15 @@
 }
 .softColor(@color){
   background: @color; /* Old browsers */
-  background: linear-gradient(top, @color 0%,darken(saturate(@color,16%),5%) 100%); /* W3C */
+  background: linear-gradient(to top, @color 0%,darken(saturate(@color,20%),6%) 100%); /* W3C */
+}
+.softColorHover(@color){
+  background: @color; /* Old browsers */
+  background: linear-gradient(to top, @color 0%,darken(saturate(@color,20%),6%) 100%); /* W3C */
+  &:hover{
+    background: lighten(@color,10%); /* Old browsers */
+    background: linear-gradient(to top, lighten(@color,10%) 0%, darken(saturate(lighten(@color,10%),20%), 6%) 100%); /* W3C */
+  }
 }
 .rotate(@deg){
   transform:rotate(@deg);

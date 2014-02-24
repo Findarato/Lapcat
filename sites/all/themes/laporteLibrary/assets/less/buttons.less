@@ -9,3 +9,16 @@ button, a.button, .button,.selectButton{
   //.lp-Buttons(2.3rem);
 }
 
+.headerButtons(){
+  padding:.5em;
+  margin-right:.1em;
+  display:inline-block;
+  font-size:1.7em;
+  white-space:nowrap;
+  color:@colorLight;
+  .softColor(@colorBlue6);
+  &:hover{
+    .softColor(lighten(@colorBlue6,10%));
+  }
+  a{color:@colorLight;}
+}

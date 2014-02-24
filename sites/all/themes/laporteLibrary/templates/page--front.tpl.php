@@ -38,6 +38,12 @@
               <div class="spc-Submit td" >
                 <input type="submit" value="GO!"/>
               </div>
+              <div class="spc-Links td" >
+                <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
+              </div>
+              <div class="spc-Links td" >
+                <a href="help" alt="get Help">?</a>
+              </div>              
             </div>
           </form>
         </div>
@@ -105,6 +111,12 @@
       <?php if ($page['articleBlocks']): ?>
          <div id="articleBlocks" class="articleBlocks"><?php print render($page['articleBlocks']); ?></div>
       <?php endif; ?>
+      <div class="tagRow">
+        <a href="/taxonomy/term/52">Adult</a>
+        <a href="/taxonomy/term/8">Children</a>
+        <a href="/taxonomy/term/11">History</a>
+        <a href="/taxonomy/term/50">Teens</a>
+      </div>
     </div>
     <section id="mainContent" class="">
       <?php if ($messages): ?>

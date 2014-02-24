@@ -21,15 +21,21 @@ body,html {
   height:105%;
   color:@colorDark;
 }
+h1,h3{
+  font-family:"Vollkorn",sans-serif;
+}
+h2,h4,body{
+  font-family:"Ubuntu",sans;
+}
 body{height:auto;}
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 
 /*Grid layout*/
 
-@column-width: 60;
-@gutter-width: 20;
+@column-width: 4.615384615em;
+@gutter-width: 1em;
 @columns: 14;
-@total-width: 1140px;
+@total-width: 87.692307692em;
 .mainArea{
   margin:0 auto;
   width:@total-width;
@@ -46,11 +52,13 @@ aside{
   .column(4);
 }
 .articleHighlight{
-  .column(3);
-  .push(1)
+  .column(4);
+  .push(1);
+  vertical-align:top;
 }
 .articleBlocks{
   .column(9);
+  vertical-align:top;
 }
 
 /*Grid layout End*/
@@ -62,7 +70,6 @@ h1,h2,h3,h4{
   margin:2px;
   color:@colorDark;
   text-align: left;
-  font-family:sans-serif;
   line-height:100%;
   font-weight: bold;
 }
@@ -121,24 +128,12 @@ form #user-login-form{
     color: @colorLight;
   }
 }
-.color3Circle{
-  border:2px solid @color360;
-  display:inline-block;
-  height:1.1em;
-  width:1.1em;
-  text-align:center;
-  color:@color3;
-  .rounded-corners(10px);
-}
 /* Color 4 related items */
 .color4,.mainBackground{
   background:@color4;
 }
 .color460{
   background:@color460;
-}
-.color4Soft{
-  .softColor(@color4);
 }
 .color4TextGlow{
   text-shadow: @color4 0 0 2px;
@@ -230,16 +225,6 @@ video,.video-js{
 }
 .menuSelect a {
   white-space: nowrap;
-}
-.topMenu {
-  text-align: left;
-  margin: 0 auto;
-  width: 684px;
-  background-position: center;
-  font-family: sans-serif;
-  font-weight: bold;
-  line-height: 19px;
-  font-size: 16px;
 }
 li {
   list-style: none outside none;
@@ -420,36 +405,6 @@ li {
   } 
 } 
 
-/* Articles */
-/*
-a[href*="taxonomy"]:not([href*="admin"]),.tagStyle,.highlightSelect{
-  transform: translateZ(0);
-  padding:3px;
-  margin:10px 15px 0 0;
-  .rounded-corners(3px 0 0 3px);
-  box-shadow: inset 0 0 1px 1px @shadow;
-  position:relative;
-  background:fadeout(@colorLight,95%);
-  &:after{
-    content:"";
-    position:absolute;
-    background:@color3;
-    height:100%;
-    width:.76rem;
-    top:0;
-    left:97%;
-    .shadowOut(4px,0,2px,-2px,@shadow);
-  }
-}
-  */  
-.tagStyle{
-  background:fadeout(@colorDark,90%);
-  cursor:default;
-  &:after{
-    background:@color5;
-  }
-}
-
 .highlightSelect{
   .Animate();
   cursor:default;
@@ -550,22 +505,6 @@ article{
       width:95%;
     }  
   }
-  .socialMediaContainer{
-    display:table-cell;
-  }
-  .socialLinks{
-    line-height:1;
-    overflow:hidden;
-    width:2em;
-    li{
-      line-height: 1.5em;
-      font-size:1.5em;
-      padding:1px;
-      display:block;
-      opacity:1;
-
-    }
-  }
 }
 .videoContainer{
   position: relative;
@@ -586,8 +525,6 @@ article{
 iframe{
   display:none;
 }
-
-
 .user-picture img{
   height:40px;
   width:40px;
@@ -651,6 +588,7 @@ iframe{
     font-size:2em;
   }
 } 
+/*
 .subPageHeader{
   font-size:50px;
   height:10.769230769rem;
@@ -666,7 +604,7 @@ iframe{
     height:90px;
     width:100%;
   }
-  /*Sub page headers*/
+  //Sub page headers
   &.Articles,&.article{
     background-image:url('@{imagesPath}headers/articlesHeader.jpg');
   }
@@ -697,9 +635,9 @@ iframe{
   &.Children{
     background-image:url('@{imagesPath}headers/kidsHeader.jpg');
   }
-  /*Sub page headers End*/
+  //Sub page headers End
 }
-
+*/
 
 /*Newest Books*/
 .newestSlideWrapper{
