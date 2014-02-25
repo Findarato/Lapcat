@@ -1,11 +1,11 @@
-<div class="bookBox roundAll3">
-  <div class="boxTitle roundAll3 titleElement color3">
+<div class="bookBox">
+  <div class="bookTitle">
     <h2><a href="http://wowbrary.org/nu.aspx?p=8711--GEN&more">
     <?php if ($view->get_title()): ?>
       <?php print $view->get_title(); ?>
     <?php endif; ?></a></h2>
   </div>
-  <div id="blogContainerBox" class="insideBoxShadow roundAll3 bookContainer" style="padding-left:10px;">
+  <div class="bookContainer" style="padding-left:10px;">
     <?php if ($rows): ?>
       <div class="view-content <?php print $classes; ?> coverSlider" style="overflow:hidden;height:300px">
         <?php print $rows; ?>

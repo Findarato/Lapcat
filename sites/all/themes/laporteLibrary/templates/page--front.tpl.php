@@ -9,7 +9,8 @@
 <header>
   <div class="masterHeader">
     <a href="/" alt="Logo" title="La Porte County Public Library">
-      <img class="logoImage" src="sites/all/themes/laporteLibrary/assets/images/2014logo.svg" alt="logo" title="Logo" id="logo" />
+      <img class="logoImage" src="sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
+      <h1><?Php print $site_name; ?></h1>
     </a>
   </div>
   <nav class="masterHeaderMenu">
@@ -105,18 +106,18 @@
     <div class="clear"></div>
     <div class="newArticles">
       <h1>What's New @ the Library</h1> 
-      <?php if ($page['articleHighlight']): ?>
-         <div id="articleHighlight" class="articleHighlight"><?php print render($page['articleHighlight']); ?></div>
-      <?php endif; ?>
-      <?php if ($page['articleBlocks']): ?>
-         <div id="articleBlocks" class="articleBlocks"><?php print render($page['articleBlocks']); ?></div>
-      <?php endif; ?>
       <div class="tagRow">
         <a href="/taxonomy/term/52">Adult</a>
         <a href="/taxonomy/term/8">Children</a>
         <a href="/taxonomy/term/11">History</a>
         <a href="/taxonomy/term/50">Teens</a>
       </div>
+      <?php if ($page['articleHighlight']): ?>
+         <div id="articleHighlight" class="articleHighlight"><?php print render($page['articleHighlight']); ?></div>
+      <?php endif; ?>
+      <?php if ($page['articleBlocks']): ?>
+         <div id="articleBlocks" class="articleBlocks"><?php print render($page['articleBlocks']); ?></div>
+      <?php endif; ?>
     </div>
     <section id="mainContent" class="">
       <?php if ($messages): ?>

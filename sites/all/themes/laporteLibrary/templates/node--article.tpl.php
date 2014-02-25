@@ -9,9 +9,9 @@
           padding:3px;
         }
       </style>
-<div class="bookBox roundAll3 <?php print $classes; ?>" id="node-<?php print $node -> nid; ?>" <?php print $attributes; ?>>
-  <div class="roundAll3 titleElement color3 font1"><h2>Articles</h2></div>
-  <div id="blogContainerBox" class="insideBoxShadow roundAll3 bookContainer" >
+<div class="bookBox <?php print $classes; ?>" id="node-<?php print $node -> nid; ?>" <?php print $attributes; ?>>
+  <div class="bookTitle"><h2>Articles</h2></div>
+  <div class="bookContainer" >
     <div class="t">
       <div class="td" style="height:64px;width:64px;">
         <div class="userImage" style="width:100%;height:100%;border:none;"><?php print $user_picture; ?></div>

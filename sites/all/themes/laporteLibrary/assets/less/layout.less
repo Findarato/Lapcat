@@ -37,7 +37,7 @@ a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 @columns: 14;
 @total-width: 87.692307692em;
 .mainArea{
-  margin:0 auto;
+  margin:0 auto 4em;
   width:@total-width;
   &:after{
     clear: both;
@@ -314,7 +314,7 @@ li {
   
   transform: translateZ(0);
   
-  .Animate();
+  .animate();
   .mapZoom{
     
     box-shadow: inset 0 0 1px 1px @shadow;
@@ -406,7 +406,7 @@ li {
 } 
 
 .highlightSelect{
-  .Animate();
+  .animate();
   cursor:default;
   display:none;
   position:absolute;
@@ -706,7 +706,11 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
 
 
 .scrollerBack,.scrollerNext{
-  
+  .animate(300ms);
+  .softColorHover(@colorBlue6);
+  padding: .3em;
+  a{color:@colorLight};
+  text-align:center;
 }
 
 div.more-link{
@@ -794,13 +798,6 @@ li{
   width:100%;
   background:#FFF;
 }
-.mainContentBox{
-  background:#FFF;
-  height:436px;
-  margin-right:10px;
-  position:relative;
-  width:100%;
-}
 #greatPicksContainerBox .rssItem img{
   width:100px;
 }
@@ -821,9 +818,6 @@ li{
   margin-left:3px;
 }
 .bookTitle{ 
-  left:0px;
-  right:auto;
-  top:0;
   width:100%;
   padding:.7em;
   cursor:pointer;
@@ -945,13 +939,6 @@ li{
 
 .childrenLinks li{display:inline-block;}
 /*Children*/
-.childWholePage{
-  background: rgb(38,163,255); /* Old browsers */ 
-  background:radial-gradient(circle at 20px 36px,  rgb(255,255,255) 5%,rgb(38,163,255) 100%); 
-  height:100%;
-}
-
-
 
 /*Global tweeks*/
 
@@ -960,13 +947,6 @@ li{
 }
 .element-invisible{
   display:none;
-}
-.supPageHeader{
-  margin-bottom:1em;
-  width:100%;
-  height:100%;
-  position:relative;
-  overflow:hidden;
 }
 
 @import 'frontPage.less';

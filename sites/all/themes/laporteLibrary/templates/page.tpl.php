@@ -1,29 +1,19 @@
-<header class="hd-top color1">
-  <nav class=" container_24">
-    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a>
-    <?php if ($page['pageTopMenu']): ?>
-    <div id="pageTopMenu">
-      <?php print render($page['pageTopMenu']); ?>
-    </div>
-    <?php endif; ?>
-  </nav>
-</header>    
-<header class="hd-bottom color2">
-  <div class="container_24">
-    <nav class="">
-      <div class="hd-logo" style="float:left;">
-        <a href="/"><?php if ($logo):?><img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" /><?php endif; ?></a>
-      </div>
-      <div class="hd-menu" style="float:left;">
-        <label class="icon-menu" for="menuToggle"></label>
-      </div>
-      <?php if ($page['menuHeader']): ?>
+<header>
+  <div class="masterHeader">
+    <a href="/" alt="Logo" title="La Porte County Public Library">
+      <img class="logoImage" src="/sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
+      <h1><?Php print $site_name; ?></h1>
+    </a>
+  </div>
+  <nav class="masterHeaderMenu">
+    <?php if ($page['menuHeader']): ?>
       <input class="menuToggle" type="checkbox" id="menuToggle">
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
       </div>
       <?php endif; ?>
-      <div class="spc-Search"  style="float:right;">
+  </nav>
+      <div class="spc-Search">
         <div class="catalog ">
           <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
             <div class="t">
@@ -41,31 +31,27 @@
               <div class="spc-Submit td" >
                 <input type="submit" value="GO!"/>
               </div>
+              <div class="spc-Links td" >
+                <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
+              </div>
+              <div class="spc-Links td" >
+                <a href="help" alt="get Help">?</a>
+              </div>              
             </div>
           </form>
         </div>
       </div>
-    </nav>
-  </div>
+      <!--
+    <?php if ($page['pageTopMenu']): ?>
+    <div id="pageTopMenu">
+      <?php print render($page['pageTopMenu']); ?>
+    </div>
+    <?php endif; ?>-->
 </header>
-  <div id="" style="" class="container_24">
-    <main class="mainArea grid_24 roundAll3" id="main" role="main">
-        <?php if ($page['pageHeader']): ?>
-          <div id="pageHeader"><?php print render($page['pageHeader']); ?></div>
-        <?php endif; ?>
-        <!-- cool stuff testing-->
-        <div class="supPageHeader">
-          <div class="roundAll3 insideBoxShadow subPageHeader <?Php if ( arg(0) == 'node' && is_numeric(arg(1)) && isset($page['content']['system_main']['nodes'][arg(1)]['body']["#bundle"])) {print_r($page['content']['system_main']['nodes'][arg(1)]['body']["#bundle"]);}else{print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);}?>"></div>
-          <div class="pageTitle color4 roundRight3 outSideBoxShadow ">
-            <h1><?Php 
-                    print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]); 
-                  ?>
-            </h1>
-          </div>
-        </div>
-        <!--end of cool testing stuff-->
-        <div class="clear"></div>   
-      <section id="mainContent" class="grid_16">
+<div class="colorWave"></div>
+  <div id="" style="" class="">
+    <main class="mainArea " id="main" role="main">
+      <section id="mainContent" class="">
         <div class="element-invisible"><a id="main-content"></a></div>
           <?php if ($messages): ?>
           <div id="console" class="clearfix"><?php print $messages; ?></div>
@@ -79,7 +65,7 @@
           print render($page['content']);
           ?>
       </section>
-      <aside id="side" class="grid_8">
+      <aside id="side" class="">
         <?php if ($page['rightSide']): ?>
           <div id="rightSide"><?php print render($page['rightSide']); ?></div>
         <?php endif; ?>
@@ -88,15 +74,13 @@
             <?php print render($page['help']); ?>
           </div>
         <?php endif; ?>
-        
         <?php print $feed_icons; ?>
       </aside>
        <div class="clear"></div>
     </main> <!-- end of main content-->
   </div>
-  
-  <footer class="color5" style="margin-top:150px;margin-right:0px;z-index: 10;"> 
-    <div class="" style="width:100%;bottom:0px;position:relative">
+  <footer> 
+    <div class="t" style="width:100%;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
         <?php if ($page['pageLinks']): ?>
           <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
@@ -109,5 +93,4 @@
         <?php endif; ?> 
       </div>
     </div>
-    <div class="copyright"><?Php print("© ".date("Y")." ");print($site_name); print(', '); print($site_slogan) ;?></div>
   </footer>
