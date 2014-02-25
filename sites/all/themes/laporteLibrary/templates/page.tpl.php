@@ -26,7 +26,7 @@
                 </select>
               </div>
               <div class="spc-SearchBox td" >
-                <input class="insideBoxShadow" type="search" name="searcharg" placeholder="Search the Catalog">
+                <input class="" type="search" name="searcharg" placeholder="Search the Catalog">
               </div>
               <div class="spc-Submit td" >
                 <input type="submit" value="GO!"/>

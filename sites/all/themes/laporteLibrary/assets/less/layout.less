@@ -216,6 +216,72 @@ video,.video-js{
   margin-bottom:1em;
 }
 
+
+
+
+.field-content{
+  a[href*="taxonomy"]{display:inline-block;}
+}
+  a[href^="/taxonomy"]:not([href*="?page="]){/*These are tags on items*/
+    width:100%;
+    display:block;
+    padding:0 .5em;
+    .animate(300ms);
+    .colorHover(@navy);
+    color:@colorLight;
+    position:relative;
+    &:after{
+      content:"";
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0 0 18px 18px;
+      border-color: transparent transparent @colorYellow1 transparent;
+      position: absolute;
+      right: 0;
+    }
+    a[href*="/term/52"]{//Adult
+      &:after{
+        border-color: transparent transparent @colorGreen1 transparent;
+      }
+    }
+    a[href*="/term/8"]{//Children
+      &:after{
+        border-color: transparent transparent @colorRed1 transparent;
+      }
+    } 
+    a[href*="/term/50"]{//Teens
+      &:after{
+        border-color: transparent transparent @colorBlue9 transparent;
+      }
+    }
+    a[href*="/term/11"]{//History
+      &:after{
+        border-color: transparent transparent @colorBrown1 transparent;
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .menuSelect {
   width: 160px;
   overflow: hidden;
@@ -557,7 +623,7 @@ iframe{
   border-bottom:@colorDark60 solid 1px;
   margin-bottom:3px;
   a{
-    color:@color3;
+    color:@colorBlue6;
   }
 }
 .articleEntryAuthor{
@@ -706,7 +772,6 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
 
 
 .scrollerBack,.scrollerNext{
-  .animate(300ms);
   .softColorHover(@colorBlue6);
   padding: .3em;
   a{color:@colorLight};

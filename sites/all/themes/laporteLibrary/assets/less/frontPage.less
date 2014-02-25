@@ -6,31 +6,6 @@
   margin:none;
   .slides{
    display:table;
-   &:before{
-    display: block;
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 20%;
-    left: 0;
-    top: 0;
-    //background: -moz-linear-gradient(to right, @gray 5%, rgba(87, 87, 87, 0) 100%);
-    background: linear-gradient(to right, @gray 5%, rgba(87, 87, 87, 0) 100%); 
-    z-index:999;
-   }
-   &:after{ 
-    display: block;
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 20%;
-    right: 0;
-    top: 0;
-    //background: -moz-linear-gradient(to left, @gray 5%, rgba(87, 87, 87, 0) 100%);
-    background: linear-gradient(to left, @gray 5%, rgba(87, 87, 87, 0) 100%);
-    z-index:999;
-    visibility: visible;
-   }
   }
   .flex-direction-nav{display:none;}
   .flexslider-views-slideshow-main-frame-row{
@@ -109,52 +84,12 @@
       width:274px;
     }  
   }
+}
+
+ 
   
-}
-.tagRow,.articlePicture{
-  a[href*="taxonomy"]{/*These are tags on items*/
-    width:100%;
-    display:block;
-    .softColor(@navy);
-    padding:0 .5em;
-    .animate(500ms);
-    &:hover{
-      .softColor(lighten(@navy,10%));
-    }
-    color:@colorLight;
-    position:relative;
-    &:after{
-      content:"";
-      width: 0px;
-      height: 0px;
-      border-style: solid;
-      border-width: 0 0 18px 18px;
-      border-color: transparent transparent @colorYellow1 transparent;
-      position: absolute;
-      right: 0;
-    }
-  }
-  a[href*="taxonomy/term/52"]{//Adult
-    &:after{
-      border-color: transparent transparent @colorGreen1 transparent;
-    }
-  }
-  a[href*="taxonomy/term/8"]{//Children
-    &:after{
-      border-color: transparent transparent @colorRed1 transparent;
-    }
-  } 
-  a[href*="taxonomy/term/50"]{//Teens
-    &:after{
-      border-color: transparent transparent @colorBlue9 transparent;
-    }
-  }
-  a[href*="taxonomy/term/11"]{//History
-    &:after{
-      border-color: transparent transparent @colorBrown1 transparent;
-    }
-  } 
-}
+   
+
 .tagRow{
   height:1em;
   padding:1.2em 2em;
@@ -169,16 +104,20 @@
     &:after{border:none;}
   }
   a[href*="taxonomy/term/52"]{//Adult
-    .softColorHover(@colorGreen1);
+    //.softColorHover(@colorGreen1);
+    .colorHover(@colorGreen1);
   }
   a[href*="taxonomy/term/8"]{//Children
-    .softColorHover(@colorRed1);
+    //.softColorHover(@colorRed1);
+    .colorHover(@colorRed1);
   } 
   a[href*="taxonomy/term/50"]{//Teens
-    .softColorHover(@colorBlue9);
+    //.softColorHover(@colorBlue9);
+    .colorHover(@colorBlue9);
   }
   a[href*="taxonomy/term/11"]{//History
-    .softColorHover(@colorBrown1);
+    //.softColorHover(@colorBrown1);
+    .colorHover(@colorBrown1);
   }
 }
 .articlePicture{

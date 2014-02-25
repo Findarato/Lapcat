@@ -10,7 +10,7 @@
         }
       </style>
 <div class="bookBox <?php print $classes; ?>" id="node-<?php print $node -> nid; ?>" <?php print $attributes; ?>>
-  <div class="bookTitle"><h2>Articles</h2></div>
+  <div class="bookTitle"><h2><?php print $title; ?></h2></div>
   <div class="bookContainer" >
     <div class="t">
       <div class="td" style="height:64px;width:64px;">
@@ -38,7 +38,6 @@
       </div>
         <div class="links"><?php print render($content['links']); ?></div>
       <?php endif; ?>
-      <?php print render($content['comments']); ?>
     </div>
   </div>
 </div>

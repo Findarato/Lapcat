@@ -21,42 +21,47 @@
       </div>
       <?php endif; ?>
   </nav>
-      <div class="spc-Search">
-        <div class="catalog ">
-          <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
-            <div class="t">
-              <div class="spc-Type td" style="display:none;">
-                <select name="searchtype" >
-                  <option value="X" selected="selected">KEYWORD</option>
-                  <option value="t">TITLE</option>
-                  <option value="a">AUTHOR</option>
-                  <option value="d">SUBJECT</option>
-                </select>
-              </div>
-              <div class="spc-SearchBox td" >
-                <input class="insideBoxShadow" type="search" name="searcharg" placeholder="Search the Catalog">
-              </div>
-              <div class="spc-Submit td" >
-                <input type="submit" value="GO!"/>
-              </div>
-              <div class="spc-Links td" >
-                <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
-              </div>
-              <div class="spc-Links td" >
-                <a href="help" alt="get Help">?</a>
-              </div>              
-            </div>
-          </form>
-        </div>
-      </div>
       <!--
     <?php if ($page['pageTopMenu']): ?>
     <div id="pageTopMenu">
       <?php print render($page['pageTopMenu']); ?>
     </div>
     <?php endif; ?>-->
+  <div class="topHeaderMenu">
+    <div class="spc-Links td" >
+      <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
+    </div>
+    <div class="spc-Links td" >
+      <a href="help" alt="get Help">?</a>
+    </div>
+  </div>
 </header>
 <div class="colorWave"></div>
+  <!-- Catalog Search-->
+  <div class="spc-Search">
+    <div class="catalog ">
+      <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
+        <div class="t">
+          <div class="spc-Type td" style="display:none;">
+            <select name="searchtype" >
+              <option value="X" selected="selected">KEYWORD</option>
+              <option value="t">TITLE</option>
+              <option value="a">AUTHOR</option>
+              <option value="d">SUBJECT</option>
+            </select>
+          </div>
+          <div class="spc-SearchBox td" >
+            <input class="" type="search" name="searcharg" placeholder="Search the Catalog">
+          </div>
+          <div class="spc-Submit td" >
+            <input type="submit" value="GO!"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+<div class="colorWave"></div>
+  <!-- End Catalog Search-->
 <div class="shadowColors">
   <div class="banner middleSectionContainer">
    <?php if ($page['featured_slider']): ?>
