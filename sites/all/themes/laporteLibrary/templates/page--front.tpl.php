@@ -28,12 +28,7 @@
     </div>
     <?php endif; ?>-->
   <div class="topHeaderMenu">
-    <div class="spc-Links td" >
-      <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
-    </div>
-    <div class="spc-Links td" >
-      <a href="help" alt="get Help">?</a>
-    </div>
+
   </div>
 </header>
 <div class="colorWave"></div>
@@ -56,22 +51,28 @@
           <div class="spc-Submit td" >
             <input type="submit" value="GO!"/>
           </div>
+          <div class="spc-Links td" >
+            <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
+          </div>
+          <div class="spc-Links td" >
+            <a href="help" alt="get Help">?</a>
+          </div>
         </div>
       </form>
     </div>
   </div>
-<div class="colorWave"></div>
+
   <!-- End Catalog Search-->
-<div class="shadowColors">
-  <div class="banner middleSectionContainer">
-   <?php if ($page['featured_slider']): ?>
-    <div id="featured-slider" class="">
-      <?php print render($page['featured_slider']); ?>
-    </div> <!-- End Featured Slider-->
-  <?php endif; ?>
-  </div>
-</div>
 <div class="colorWave"></div>
+<div class="shadowColors">
+<div class="banner middleSectionContainer">
+ <?php if ($page['featured_slider']): ?>
+  <div id="featured-slider" class="">
+    <?php print render($page['featured_slider']); ?>
+  </div> <!-- End Featured Slider-->
+<?php endif; ?>
+</div>
+</div>
   <main class="mainArea" id="main" role="main">
     <!--Page Header-->
 <!--

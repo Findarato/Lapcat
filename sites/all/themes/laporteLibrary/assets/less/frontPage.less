@@ -1,32 +1,49 @@
 .shadowColors{
-  background:fadeout(@colorBlue9,80%);
+  //background:fadeout(@colorGreen1,80%);
+  background:@white;
+  margin-top:1em;
 }
+
+
+.middleSectionContainer{
+  margin:0 auto;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 88em;
+}
+
+
 .flexslider{
   border:none;
   margin:none;
+  background:@colorLight;
+  padding:3em;
   .slides{
    display:table;
   }
   .flex-direction-nav{display:none;}
   .flexslider-views-slideshow-main-frame-row{
     display:table;
+  
   .flex-caption {
-      background: @black;
-      color: @white;
-      width: 33%;
-      font-size: 2.2em;
-      padding-top: 0.3em;
-      text-transform:capitalize;
-      display:table-cell;
-      vertical-align:top;
-      line-height:1em;
+  //    background: @black;
+  //    color: @white;
+  //    width: 33%;
+  //    font-size: 2.2em;
+  //    padding-top: 0.3em;
+  //    text-transform:capitalize;
+  //    display:table-cell;
+  //    vertical-align:top;
+  //    line-height:1em;
+    display:none;
     }
     a{
-      display:table-cell;
-      width:67%;
+      display:block;
+      width:100%;
     }
   }
-} 
+}
 .flexslider-views-slideshow-main-frame{
   li{
     display:block;
@@ -82,6 +99,10 @@
     .picture{
       height:220px;
       width:274px;
+      img{
+        height:100%;
+        width:100%;
+      }
     }  
   }
 }

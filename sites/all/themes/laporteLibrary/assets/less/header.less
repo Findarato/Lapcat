@@ -48,29 +48,38 @@ header{
   position:relative;
 }
 .spc-Search{
-  margin: 0 auto;
+  width:100%;
   padding-right:1em;
-  width:40em;
+  //background:fadeout(@colorGreen1,80%);
+  background:@white;
  .spc-SearchBox{
     input{
       margin-right: 1em;
       width:100%;
       border:1px solid @navy; 
+      background:@white;
     }
   }
   .catalog{
+    margin: 0 auto;
+    width:32em;
+    a{
+      .headerButtons();
+      border:1px solid @navy;
+      font-size:1.355em;
+    }
     form{
       padding: 2em 0;
-      font-size: 1.4em;
+      font-size: 1em;
       input{
         padding:.4em;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
     }
     .spc-Submit{
       input{
         .headerButtons();
-        font-size:1.355em;
+        font-size:1.2em;
         border:1px solid @navy; 
       }
     }
