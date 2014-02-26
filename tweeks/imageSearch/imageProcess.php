@@ -127,5 +127,6 @@ if($getGoogle){
   <div id="amazonImage">
     
   </div>
+  
 </body>
 </html>
