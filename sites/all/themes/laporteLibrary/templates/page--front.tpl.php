@@ -61,7 +61,6 @@
       </form>
     </div>
   </div>
-
   <!-- End Catalog Search-->
 <div class="colorWave"></div>
 <div class="shadowColors">
@@ -74,41 +73,6 @@
 </div>
 </div>
   <main class="mainArea" id="main" role="main">
-    <!--Page Header-->
-<!--
-    <nav class="navDisplay">
-      
-
-      <div class="navBoxGroup" style="" >
-
-        <div class="navBoxes insideBoxShadow lifted" >
-          <a href="hours">Hours</a>
-        </div> 
-        <div class="navBoxes insideBoxShadow lifted" >
-          <a href="http://engagedpatrons.org/Events.cfm?SiteID=9267">Events</a>
-        </div> 
-        <div class="navBoxes insideBoxShadow lifted" >
-          <a href="greatpicks">Great Picks</a>
-        </div>
-        <div class="navBoxes insideBoxShadow lifted" >
-          <a href="genealogy">Genealogy</a>
-        </div>
-        <div class="navBoxes insideBoxShadow lifted" >
-          <a href="employment">Employment</a>
-        </div>
-        <div class="navBoxes insideBoxShadow lifted" >
-          <a href="local">Community</a>
-        </div>
-        
-          <div class="navBoxes insideBoxShadow lifted" >
-            <a href="educators">Educators</a>
-          </div>
-
-      </div>        
-    </nav>
-    -->  
-    <!--/Page Header-->
-
     <div class="clear"></div>
     <div class="newArticles">
       <h1>What's New @ the Library</h1> 
