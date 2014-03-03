@@ -4,33 +4,9 @@ footer {
   width:100%;
   z-index: 10;
   background:@colorBlue9;
-  .copyright{
-    color:@colorLight60;
-    margin-left:1em;
-    text-align:right;
-  }
   * { 
     vertical-align:top; 
   }
-  &.mainWave:before,&.childGrass:before{
-    top:-98px;
-    left:0;
-    right:0;
-    position: absolute;
-    content:'';
-    background-position-y:0;
-    height:98px;
-//    filter: @dropShadowFilter;
-    background-repeat:no-repeat;
-    display:block;
-    overflow:hidden;
-    
-  }
-  &.mainWave:before{
-    background-image: url('@{imagesPath}/webfooter.svg');
-    //background-image: url('@{imagesPath}/webfooter.png');
-    background-size:cover;
-  } 
   h3{
     text-shadow:0px 2px 4px @colorBlue9, 0 0 0 #000, 0px 2px 4px @colorBlue9;
     color:@colorDark;
@@ -46,27 +22,18 @@ footer {
       position:relative;
       top:-6px;
     }
-    a{
-      text-shadow:0px 5px 4px @colorBlue9, 0 0 0 #000, 0px 2px 4px @colorBlue9;
-      color:rgba(0,0,0,.3);
-      font-size:3.615em;
-      .animate();
-      &:hover{
-        text-shadow:0px 0px 4px @colorBlue9, 0 0 0 #000, 0px 2px 4px @colorBlue9;
-      }
-    }  
   }
   .footerLeft,.footerRight{
-    display:table-cell;
+    display:inherit;
   }
   .footerLeft {
-   width:100%; 
+   //width:100%; 
   }
   .footerRight {
-    width:18em;
+    //width:18em;
   }
   .form-actions,.form-item{
-    display:table-cell;
+  //  display:table-cell;
   }
   #search-block-form{
     box-shadow: inset 0 0 1px 1px @shadow;
@@ -79,7 +46,6 @@ footer {
       width: 9.5em;
       margin-right: .5em;
     }
-    .rounded-corners(3px);
     input{
       color:@colorDark;
       height:1.5em;
@@ -92,7 +58,6 @@ footer {
    .region div{
      padding:.5em;
    }
-    width:46rem;
    li{
     font-size:1.3em;
     padding:3px;
