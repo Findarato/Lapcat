@@ -63,6 +63,9 @@
   </div>
   <!-- End Catalog Search-->
 <div class="colorWave"></div>
+      <?php if ($messages): ?>
+      <div id="console" class="clearfix"><?php print $messages; ?></div>
+      <?php endif; ?>
 <div class="shadowColors">
 <div class="banner middleSectionContainer">
  <?php if ($page['featured_slider']): ?>
@@ -90,9 +93,6 @@
       <?php endif; ?>
     </div>
     <section id="mainContent" class="">
-      <?php if ($messages): ?>
-      <div id="console" class="clearfix"><?php print $messages; ?></div>
-      <?php endif; ?>
       <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
       <?php print render($page['content']); ?>      
     </section>
