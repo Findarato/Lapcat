@@ -67,7 +67,7 @@
       <div id="console" class="clearfix"><?php print $messages; ?></div>
       <?php endif; ?>
 <div class="shadowColors">
-<div class="banner middleSectionContainer">
+<div class="banner">
  <?php if ($page['featured_slider']): ?>
   <div id="featured-slider" class="">
     <?php print render($page['featured_slider']); ?>

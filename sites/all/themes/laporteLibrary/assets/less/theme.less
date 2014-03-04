@@ -101,7 +101,6 @@
   .shadowOut(0,6px,7px,-3px,@color);
 }
 .dropShadow(@color:@shadow){
-  -webkit-box-shadow: -4px 7px 6px 0px @color;
   box-shadow: -4px 7px 6px 0px @color;
 }
 .oneEdgeShadow(@color:@shadow){
@@ -112,30 +111,18 @@
 }
 .shadowIn (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
   box-shadow:inset @arguments;
-  -moz-box-shadow:inset @arguments;
-  -webkit-box-shadow:inset @arguments;
 }
 .shadowOutText (@x: 0, @y: 0, @blur: 1px, @color: rgba(0,0,0,.8)) {
   text-shadow: @arguments;
-  -moz-text-shadow: @arguments;
-  -webkit-text-shadow: @arguments;
 }
 .shadowOut (@x: 0, @y: 0, @blur: 1px,@distance:1px, @color: rgba(0,0,0,.8)) {
   box-shadow: @arguments;
-  -moz-box-shadow: @arguments;
-  -webkit-box-shadow: @arguments;
 }
 .newShadow(){
-    -webkit-box-shadow: 0 5px 10px @shadow;
-    -moz-box-shadow: 0 5px 10px @shadow;
     box-shadow: 0 5px 10px @shadow;
 }
 .animate(@time:200ms){
-  -webkit-transition: all @time linear;
-     -moz-transition: all @time linear;
-      -ms-transition: all @time linear;
-       -o-transition: all @time linear;
-          transition: all @time linear;
+  transition: all @time linear;
 }
 .grow(@px:1.1){
   transform:scale(@px);

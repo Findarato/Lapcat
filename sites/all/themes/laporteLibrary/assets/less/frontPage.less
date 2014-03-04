@@ -7,13 +7,13 @@
 }
 
 
-.middleSectionContainer{
+.banner{
   margin:0 auto;
   position: relative;
   display: block;
   overflow: hidden;
   //width: 88em;
-  width: 55em;
+  width: 88em;
 }
 
 
@@ -58,7 +58,7 @@
 .flex-control-nav {
   bottom:1em;
   right:1em;
-  width:51px;
+  //width:51px;
   z-index:9999;
   display:block;
  li {
@@ -66,13 +66,10 @@
      .animate();
      height:1em;
      width:1em;
-    .softColor(@navy);
-    &:hover{
-       .softColor(lighten(@navy,10%));
-     }
+    .colorHover(@navy);
    }
    a.flex-active {
-    .softColor(@colorBlue6);
+     .colorHover(@colorBlue9);
    }
  } 
 }
@@ -128,19 +125,15 @@
     &:after{border:none;}
   }
   a[href*="taxonomy/term/52"]{//Adult
-    //.softColorHover(@colorGreen1);
     .colorHover(@colorGreen1);
   }
   a[href*="taxonomy/term/8"]{//Children
-    //.softColorHover(@colorRed1);
     .colorHover(@colorRed1);
   } 
   a[href*="taxonomy/term/50"]{//Teens
-    //.softColorHover(@colorBlue9);
     .colorHover(@colorBlue9);
   }
   a[href*="taxonomy/term/11"]{//History
-    //.softColorHover(@colorBrown1);
     .colorHover(@colorBrown1);
   }
 }
