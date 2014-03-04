@@ -944,15 +944,14 @@ li{
 .icon-search:before { content: '\63'; font-size:.8em;color:@shadow} /* 'c' */
 .icon-automobile-car:before { content: '\62'; } /* 'b' */
 
-/*
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media 
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) { 
   body {
-    font-size: 20px;      
-    }
-}
-*/
-@media only screen and (min-device-pixel-ratio: 1.5) {
-  body {
-    zoom:80%; 
+    zoom:75%;
   }
 }

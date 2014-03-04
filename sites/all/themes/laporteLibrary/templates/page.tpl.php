@@ -1,7 +1,15 @@
+<style>
+  .bookCoverImage a{
+    min-width:75px;
+    min-height:100px;
+    display:inline-block;  
+  }
+</style>
+
 <header>
   <div class="masterHeader">
     <a href="/" alt="Logo" title="La Porte County Public Library">
-      <img class="logoImage" src="sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
+      <img class="logoImage" src="/sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
       <h1><?Php print $site_name; ?></h1>
     </a>
   </div>
@@ -55,36 +63,24 @@
   </div>
   <!-- End Catalog Search-->
 <div class="colorWave"></div>
-  <div id="" style="" class="">
-    <main class="mainArea " id="main" role="main">
-      <section id="mainContent" class="">
-        <div class="element-invisible"><a id="main-content"></a></div>
-          <?php if ($messages): ?>
-          <div id="console" class="clearfix"><?php print $messages; ?></div>
-          <?php endif; ?>
-          <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-          <?php
-          if(drupal_is_front_page()) {unset($page['content']['system_main']['default_message']);
-          }
-          if(render($page['content']) != "") {
-          }
-          print render($page['content']);
-          ?>
-      </section>
-      <aside id="side" class="">
-        <?php if ($page['rightSide']): ?>
-          <div id="rightSide"><?php print render($page['rightSide']); ?></div>
-        <?php endif; ?>
-        <?php if ($page['help']): ?>
-          <div id="help">
-            <?php print render($page['help']); ?>
-          </div>
-        <?php endif; ?>
-        <?php print $feed_icons; ?>
-      </aside>
-       <div class="clear"></div>
-    </main> <!-- end of main content-->
-  </div>
+  <?php if ($messages): ?>
+  <div id="console" class="clearfix"><?php print $messages; ?></div>
+  <?php endif; ?>
+<main class="mainArea" id="main" role="main">
+  <div class="clear"></div>
+  <section id="mainContent" class="">
+    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+    <?php print render($page['content']); ?>      
+  </section>
+  <aside id="side" class="">
+    <?php if ($page['rightSide']): ?>
+      <div id="rightSide"><?php print render($page['rightSide']); ?></div>
+    <?php endif; ?>
+    <?php print $feed_icons; ?>
+  </aside>
+</main> <!-- end of main content-->
+  <div class="clear"></div>
+  <div class="colorWave"></div>
   <footer> 
     <div class="t" style="width:100%;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
@@ -93,7 +89,6 @@
         <?php endif; ?>
       </div>
       <div class="footerRight">
-        <h3>Social Library</h3>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 
