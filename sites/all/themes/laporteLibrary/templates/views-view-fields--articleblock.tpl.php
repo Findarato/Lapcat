@@ -8,6 +8,6 @@
       <div class="title" style="width:100%;"><?php print $fields["title"]->content ?></div>
     </div>
     <div class="articleEntryDescription">
-      <?php print $fields["body"]->content ?>
+      <?php if(isset($fields["body"]))print $fields["body"]->content; ?>
     </div>
 </article>

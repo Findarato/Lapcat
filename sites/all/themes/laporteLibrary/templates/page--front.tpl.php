@@ -28,7 +28,21 @@
     </div>
     <?php endif; ?>-->
   <div class="topHeaderMenu">
-
+    <a class="socialLinks" href="https://www.facebook.com/laportelibrary" alt="Facebook">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/facebook.svg" alt="Facebook">
+    </a>
+    <a class="socialLinks" href="https://twitter.com/lpcpls" alt="Twitter">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/twitter.svg" alt="Twitter">
+    </a>
+    <a class="socialLinks" href="https://plus.google.com/101643741377376006619" alt="Google+">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/plus.svg" alt="Google+">
+    </a>
+    <a class="socialLinks" href="http://www.youtube.com/user/LaporteCoLibrary" alt="YouTube">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/youtube.svg" alt="YouTube">
+    </a>
+    <a class="socialLinks" href="http://instagram.com/laportelibrary" alt="Instagram">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/instagram.svg" alt="Instagram">
+    </a>            
   </div>
 </header>
 <div class="colorWave"></div>
