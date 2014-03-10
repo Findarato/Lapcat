@@ -39,7 +39,7 @@ $(".scrollerNext>a").click(function(){
   return false;
 });
 var previousLeft = 0;
-/*
+
 scroller.addEventListener('reachedend',function(i){
   console.log("reached the end");
   scroller.scrollTo(0,0);
@@ -53,4 +53,3 @@ setInterval(function(){
     scroller.scrollBy(300,0,750);
   }
 },3000);
-*/
