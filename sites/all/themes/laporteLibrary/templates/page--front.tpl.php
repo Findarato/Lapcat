@@ -42,7 +42,10 @@
     </a>
     <a class="socialLinks" href="http://instagram.com/laportelibrary" alt="Instagram">
       <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/instagram.svg" alt="Instagram">
-    </a>            
+    </a>
+    <a class="socialLinks" href="http://www.flickr.com/photos/laportelibrary" alt="Flickr">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/flickr.svg" alt="Flicky">
+    </a>
   </div>
 </header>
 <div class="colorWave"></div>

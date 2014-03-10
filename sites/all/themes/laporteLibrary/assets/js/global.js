@@ -67,7 +67,7 @@ function displayLocation(locationCode,domElementSelector){
 
 
 jQuery(document).ready(function(){
-  var jsPath = "/sites/all/themes/lapcat/assets/js/";
+  var jsPath = "/sites/all/themes/laporteLibrary/assets/js/";
   
     //if($("#blogBox")){get_blog_feed();}
     uri = window.location.toString();

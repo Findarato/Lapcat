@@ -28,10 +28,21 @@ nav{position:relative;}
   top: .1em;
   right:0; 
   a{
-    border:1px solid @colorBlue6; 
+    border:1px solid @colorBlue6;
+    height:34/13em;
+    width:34/13em; 
+    display:inline-flex;
+    opacity:.95;
+    .animate();
+    &:hover{
+     opacity:1;
+    }
+    img{
+     
+    }
   }  
 }
-.masterHeaderMenu{
+.masterHeaderMenu{ 
   right: 0;
   position: absolute;
   bottom: 0;

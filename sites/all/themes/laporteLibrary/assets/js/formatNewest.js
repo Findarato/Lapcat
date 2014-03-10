@@ -39,10 +39,11 @@ $(".scrollerNext>a").click(function(){
   return false;
 });
 var previousLeft = 0;
+/*
 scroller.addEventListener('reachedend',function(i){
   console.log("reached the end");
   scroller.scrollTo(0,0);
-  //scroller.scrollBy(scroller.scrollLeft*-1,0,750);
+  scroller.scrollBy(scroller.scrollLeft*-1,0,750);
   console.log(scroller.scrollLeft);
   setTimeout(function(){scroller.scrollLeft = 0;},800);
   
@@ -52,3 +53,4 @@ setInterval(function(){
     scroller.scrollBy(300,0,750);
   }
 },3000);
+*/
