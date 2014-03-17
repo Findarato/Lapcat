@@ -1,3 +1,11 @@
+<style>
+  .bookCoverImage a{
+    min-width:75px;
+    min-height:100px;
+    display:inline-block;  
+  }
+</style>
+
 <header>
   <div class="masterHeader">
     <a href="/" alt="Logo" title="La Porte County Public Library">
@@ -13,6 +21,12 @@
       </div>
       <?php endif; ?>
   </nav>
+      <!--
+    <?php if ($page['pageTopMenu']): ?>
+    <div id="pageTopMenu">
+      <?php print render($page['pageTopMenu']); ?>
+    </div>
+    <?php endif; ?>-->
   <div class="topHeaderMenu">
     <a class="socialLinks" href="https://www.facebook.com/laportelibrary" alt="Facebook">
       <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/facebook.svg" alt="Facebook">
@@ -65,24 +79,23 @@
     </div>
   </div>
   <!-- End Catalog Search-->
-<div class="colorWave"></div>
-<?php if ($messages): ?>
-<div id="console" class="clearfix"><?php print $messages; ?></div>
-<?php endif; ?>
-<div class="shadowColors">
-<main class="mainArea" id="main" role="main">
-  <div class="clear"></div>
-  <section id="mainContent" class="">
-    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
-    <?php print render($page['content']); ?>      
-  </section>
-  <aside id="side" class="">
-    <?php if ($page['rightSide']): ?>
-      <div id="rightSide"><?php print render($page['rightSide']); ?></div>
-    <?php endif; ?>
-    <?php print $feed_icons; ?>
-  </aside>
-</main> <!-- end of main content-->
+  <div class="colorWave"></div>
+      <?php if ($messages): ?>
+      <div id="console" class="clearfix"><?php print $messages; ?></div>
+      <?php endif; ?>
+  <main class="mainArea" id="main" role="main">
+    <div class="clear"></div>
+    <section id="mainContent" class="">
+      <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+      <?php print render($page['content']); ?>      
+    </section>
+    <aside id="side" class="">
+      <?php if ($page['rightSide']): ?>
+        <div id="rightSide"><?php print render($page['rightSide']); ?></div>
+      <?php endif; ?>
+      <?php print $feed_icons; ?>
+    </aside>
+  </main> <!-- end of main content-->
   <div class="clear"></div>
   <div class="colorWave"></div>
   <footer> 
