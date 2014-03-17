@@ -97,8 +97,8 @@
   }
   .articlePicture{
     .picture{
-      height:220px;
-      width:274px;
+      height:220/13em;
+      width:274/13em;
       img{
         height:100%;
         width:100%;
@@ -120,21 +120,41 @@
   a[href*="taxonomy"]{
     display:inline-block;
     font-size:1.2em;
-    display:table-cell;
     width:auto;
+    min-width:5.5em;
+    padding:.3em;
+    margin:.1em;
     &:after{border:none;}
   }
-  a[href*="taxonomy/term/52"]{//Adult
+  a[href*="taxonomy/term/76"]{//Arts
     .colorHover(@colorGreen1);
+  }
+  a[href*="taxonomy/term/77"]{//Books, Movies, Music
+    .colorHover(@colorBlue1);
+  }  
+  a[href*="taxonomy/term/78"]{//Home Live
+    .colorHover(@colorYellow1);
   }
   a[href*="taxonomy/term/8"]{//Children
     .colorHover(@colorRed1);
-  } 
-  a[href*="taxonomy/term/50"]{//Teens
-    .colorHover(@colorBlue9);
   }
   a[href*="taxonomy/term/11"]{//History
     .colorHover(@colorBrown1);
+  }
+  a[href*="taxonomy/term/79"]{//Library News
+    .colorHover(@colorGreen2);
+  }
+  a[href*="taxonomy/term/80"]{//Parents and Educators
+    .colorHover(@colorBlue2);
+  }  
+  a[href*="taxonomy/term/82"]{//Technology
+    .colorHover(@colorYellow2);
+  }
+  a[href*="taxonomy/term/50"]{//Teens
+    .colorHover(@colorRed2);
+  }
+  a[href*="taxonomy/term/82"]{//Work Life
+    .colorHover(@colorBlue9);
   }
 }
 .articlePicture{
@@ -144,9 +164,10 @@
   margin:1em 0;
   display:table;
   .picture{
-    height:165px;
-    width:220px;
+    height:165/13em;
+    width:220/13em;
     background:@gray;
+    img{height:100%;width:100%;}
   }
   .title{
     color:@colorDark;

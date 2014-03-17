@@ -1,104 +1,101 @@
-<!--Hours-->
-<header class="hd-top color1">
-  <nav class=" container_24">
-    <a class="hd-logoTitle" href="/"><h2>La Porte County Public Library</h2></a>
-    <?php if ($page['pageTopMenu']): ?>
-    <div id="pageTopMenu">
-      <?php print render($page['pageTopMenu']); ?>
-    </div>
-    <?php endif; ?>
-  </nav>
-</header>        
-<header class="hd-bottom color2">
-  <div class="container_24">
-    <nav class="">
-      <div class="hd-logo" style="float:left;">
-        <a href="/"><?php if ($logo):?><img class="logoImage" src="<?php print $logo ?>" alt="logo" title="Logo" id="logo" /><?php endif; ?></a>
-      </div>
-      <div class="hd-menu" style="float:left;">
-        <label class="icon-menu" for="menuToggle"></label>
-      </div>
-      <?php if ($page['menuHeader']): ?>
+<header>
+  <div class="masterHeader">
+    <a href="/" alt="Logo" title="La Porte County Public Library">
+      <img class="logoImage" src="sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
+      <h1><?Php print $site_name; ?></h1>
+    </a>
+  </div>
+  <nav class="masterHeaderMenu">
+    <?php if ($page['menuHeader']): ?>
       <input class="menuToggle" type="checkbox" id="menuToggle">
       <div id="menuHeader">
         <?php print render($page['menuHeader']); ?>
       </div>
       <?php endif; ?>
-      <div class="spc-Search"  style="float:right;">
-        <div class="catalog ">
-          <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
-            <div class="t">
-              <div class="spc-Type td" style="display:none;">
-                <select name="searchtype" >
-                  <option value="X" selected="selected">KEYWORD</option>
-                  <option value="t">TITLE</option>
-                  <option value="a">AUTHOR</option>
-                  <option value="d">SUBJECT</option>
-                </select>
-              </div>
-              <div class="spc-SearchBox td" >
-                <input class="insideBoxShadow" type="search" name="searcharg" placeholder="Search the Catalog">
-              </div>
-              <div class="spc-Submit td" >
-                <input type="submit" value="GO!"/>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </nav>
+  </nav>
+  <div class="topHeaderMenu">
+    <a class="socialLinks" href="https://www.facebook.com/laportelibrary" alt="Facebook">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/facebook.svg" alt="Facebook">
+    </a>
+    <a class="socialLinks" href="https://twitter.com/lpcpls" alt="Twitter">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/twitter.svg" alt="Twitter">
+    </a>
+    <a class="socialLinks" href="https://plus.google.com/101643741377376006619" alt="Google+">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/plus.svg" alt="Google+">
+    </a>
+    <a class="socialLinks" href="http://www.youtube.com/user/LaporteCoLibrary" alt="YouTube">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/youtube.svg" alt="YouTube">
+    </a>
+    <a class="socialLinks" href="http://instagram.com/laportelibrary" alt="Instagram">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/instagram.svg" alt="Instagram">
+    </a>
+    <a class="socialLinks" href="http://www.flickr.com/photos/laportelibrary" alt="Flickr">
+      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/flickr.svg" alt="Flicky">
+    </a>
   </div>
 </header>
-<div class="teenWholePage" style="overflow: hidden;z-index: 5">
-    <div id="" style="" class="container_24">
-      <main class="mainArea grid_24 roundAll3" id="main" role="main">
-        <?php if ($page['pageHeader']): ?>
-          <div id="pageHeader"><?php print render($page['pageHeader']); ?></div>
-        <?php endif; ?>
-<!-- cool stuff testing-->
-        <div class="supPageHeader">
-          <div class="roundAll3 insideBoxShadow subPageHeader <?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?>" ></div>
-          <div class="pageTitle color4 roundRight3 outSideBoxShadow " style="position: absolute;top:25%; left:5px;padding-right:5px;">
-            <h1><?Php print_r($page['pageTitle']["blockify_blockify-page-title"]["#markup"]);?></h1>
+<div class="colorWave"></div>
+  <!-- Catalog Search-->
+  <div class="spc-Search">
+    <div class="catalog ">
+      <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
+        <div class="t">
+          <div class="spc-Type td" style="display:none;">
+            <select name="searchtype" >
+              <option value="X" selected="selected">KEYWORD</option>
+              <option value="t">TITLE</option>
+              <option value="a">AUTHOR</option>
+              <option value="d">SUBJECT</option>
+            </select>
           </div>
-          
-
+          <div class="spc-SearchBox td" >
+            <input class="" type="search" name="searcharg" placeholder="Search the Catalog">
+          </div>
+          <div class="spc-Submit td" >
+            <input type="submit" value="GO!"/>
+          </div>
+          <div class="spc-Links td" >
+            <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
+          </div>
+          <div class="spc-Links td" >
+            <a href="help" alt="get Help">?</a>
+          </div>
         </div>
-        
-        <!--end of cool testing stuff-->       
-        <div class="clear"></div>   
-        <section id="mainContent" class="grid_12">
-          <?php print render($page['content']); ?>      
-        </section>
-        <aside id="side" class="grid_12">
-          <?php if ($page['rightSide']): ?>
-            <div id="rightSide"><?php print render($page['rightSide']); ?></div>
-          <?php endif; ?>
-          <?php if ($page['help']): ?>
-            <div id="help">
-              <?php print render($page['help']); ?>
-            </div>
-          <?php endif; ?>
-        </aside>
-      </main> <!-- end of main content-->
+      </form>
     </div>
   </div>
-   <div class="" style="margin-top:150px;z-index:-1"></div>
-    <footer class="color5" style="margin-top:0px;margin-right:0px;z-index: 10">
-    <div class="" style="width:100%;display:table;bottom:0px;position:relative">
+  <!-- End Catalog Search-->
+<div class="colorWave"></div>
+<?php if ($messages): ?>
+<div id="console" class="clearfix"><?php print $messages; ?></div>
+<?php endif; ?>
+<div class="shadowColors">
+<main class="mainArea" id="main" role="main">
+  <div class="clear"></div>
+  <section id="mainContent" class="">
+    <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
+    <?php print render($page['content']); ?>      
+  </section>
+  <aside id="side" class="">
+    <?php if ($page['rightSide']): ?>
+      <div id="rightSide"><?php print render($page['rightSide']); ?></div>
+    <?php endif; ?>
+    <?php print $feed_icons; ?>
+  </aside>
+</main> <!-- end of main content-->
+  <div class="clear"></div>
+  <div class="colorWave"></div>
+  <footer> 
+    <div class="t" style="width:100%;bottom:0px;position:relative">
       <div class="footerLeft"> <!--Links-->
-        <div>
-          <?php if ($page['pageLinks']): ?>
-            <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div> 
-          <?php endif; ?>
-        </div>
+        <?php if ($page['pageLinks']): ?>
+          <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
+        <?php endif; ?>
       </div>
       <div class="footerRight">
-        <h3>Social Library</h3>
         <?php if ($page['search']): ?>
           <div id="search"><?php print render($page['search']); ?></div>
         <?php endif; ?> 
       </div>
     </div>
-    <div class="copyright"><?Php print("© ".date("Y")." ");print($site_name); print(', '); print($site_slogan) ;?></div>
-  </footer> 
+  </footer>

@@ -9,7 +9,7 @@
 <header>
   <div class="masterHeader">
     <a href="/" alt="Logo" title="La Porte County Public Library">
-      <img class="logoImage" src="sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
+      <img class="logoImage" src="/sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
       <h1><?Php print $site_name; ?></h1>
     </a>
   </div>
@@ -97,10 +97,16 @@
     <div class="newArticles">
       <h1>What's New @ the Library</h1> 
       <div class="tagRow">
-        <a href="/taxonomy/term/52">Adult</a>
+        <a href="/taxonomy/term/76">Arts</a>
+        <a href="/taxonomy/term/77">Books, Movies, Music</a>
+        <a href="/taxonomy/term/78">Home Life</a>
         <a href="/taxonomy/term/8">Children</a>
         <a href="/taxonomy/term/11">History</a>
+        <a href="/taxonomy/term/79">Library News</a>
+        <a href="/taxonomy/term/80">Parents and Educators</a>
+        <a href="/taxonomy/term/81">Technology</a>
         <a href="/taxonomy/term/50">Teens</a>
+        <a href="/taxonomy/term/82">Work Life</a>
       </div>
       <?php if ($page['articleHighlight']): ?>
          <div id="articleHighlight" class="articleHighlight"><?php print render($page['articleHighlight']); ?></div>

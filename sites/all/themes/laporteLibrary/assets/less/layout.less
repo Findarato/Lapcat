@@ -1,4 +1,4 @@
-@imagesPath : "/sites/all/themes/lapcat/assets/images/";
+@imagesPath: "/sites/all/themes/laporteLibrary/assets/images/";
 @import 'reset.less';
 @import 'grid.less';
 @import url("theme.less");
@@ -57,7 +57,7 @@ a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 }
 .articleHighlight{
   .column(4);
-  .push(1);
+  margin:0px 0.55773em 0px 2.22147em;
   vertical-align:top;
 }
 .articleBlocks{
@@ -171,7 +171,7 @@ a[href^="/taxonomy"]:not([href*="?page="]){/*These are tags on items*/
     width: 0px;
     height: 0px;
     border-style: solid;
-    border-width: 0 0 18px 18px;
+    border-width: 0 0 18/13em 18/13em;
     border-color: transparent transparent @colorYellow1 transparent;
     position: absolute;
     right: 0;
@@ -307,14 +307,7 @@ li {
   }
 }
 
-.locationDisplay{
-  min-height:146px;
-  min-width:135px;
-  font-size:1.1rem;
-  div{
-    margin:.3em;
-  }
-} 
+
 
 .dayBox {
   width: 4.4em;
@@ -697,16 +690,44 @@ ul.pager{
 }
 
 
-
-.locationBoxInfo{
-  width:100%;
-  display:table;
-  font-size: 1.1em;
-  .locationBoxInfoLocation,.locationBoxInfoHours{
-    display:table-cell;
-    width:50%;
-  }
+.locationBox{
+  background:gray;
+  margin:2em;
+  width:33%;
 }
+.branchPicture{
+  background:white no-repeat;
+  background-size:cover;
+}
+.main{
+  background-image:url("@{imagesPath}branchImages/coolspring_branch.jpg");
+  height:300px;
+  width:484px;
+}
+.coolspring{
+  background-image:url("@{imagesPath}branchImages/coolspring_branch.jpg");
+  height:300px;
+  width:484px;
+}
+.fishlake{
+  background-image:url("@{imagesPath}branchImages/Fish_Lake_branch.jpg");
+  height:300px;
+  width:484px;
+}
+.locationTitle{
+  font-size:1.2em;
+  margin-bottom:1em;
+}
+.locationInfo{
+  padding:1em;
+  position:relative;
+  box-shadow: 7px 0px 4px -2px rgba(0, 0, 0, 0.75);
+  width:13em;
+}
+
+
+
+
 
 .locationBoxMap{
   width:100%;
@@ -801,7 +822,10 @@ li{
   margin: .3em;
 }
 
-
+.fancyEventDate{
+  .headerButtons();
+  display:inline-block;
+}
 
 .mainContentTitle{
   right:525px;
@@ -952,17 +976,21 @@ only screen and (                min-resolution: 2dppx) {
     font-size:10px;
   }
 }
-@media only screen and (min-width: 50em) and (max-width:88em){ /* middle width */
-    
-}
-@media only screen and (min-width: 25em) and (max-width:88em) { /* Portrait Phones */
-
-
-}
-@media only screen and (min-width: .1em) and (max-width:88em){ /*everything should be here*/
-  .newArticles{
-    display:none;
+@media only screen and (min-width: 50em) and (max-width:88em){ /* middle width 720p */
+  body{font-size:10px;}
+  .shadowColors,.banner{width:88em;}
+  .banner{
+    margin:0;
+    .flexslider{
+      padding:1em 1em 3em 1em;
+    }
   }
+}
+@media only screen and (min-width: 25em) and (max-width:49em) { /* Portrait Phones */
+
+
+}
+@media only screen and (min-width: .1em) and (max-width:24em){ /*everything should be here*/
   .masterHeaderMenu{
     top:-999px;
     left:-999px;

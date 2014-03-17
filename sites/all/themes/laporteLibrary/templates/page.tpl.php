@@ -1,15 +1,7 @@
-<style>
-  .bookCoverImage a{
-    min-width:75px;
-    min-height:100px;
-    display:inline-block;  
-  }
-</style>
-
 <header>
   <div class="masterHeader">
     <a href="/" alt="Logo" title="La Porte County Public Library">
-      <img class="logoImage" src="sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
+      <img class="logoImage" src="/sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
       <h1><?Php print $site_name; ?></h1>
     </a>
   </div>
@@ -21,12 +13,6 @@
       </div>
       <?php endif; ?>
   </nav>
-      <!--
-    <?php if ($page['pageTopMenu']): ?>
-    <div id="pageTopMenu">
-      <?php print render($page['pageTopMenu']); ?>
-    </div>
-    <?php endif; ?>-->
   <div class="topHeaderMenu">
     <a class="socialLinks" href="https://www.facebook.com/laportelibrary" alt="Facebook">
       <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/facebook.svg" alt="Facebook">
@@ -80,9 +66,9 @@
   </div>
   <!-- End Catalog Search-->
 <div class="colorWave"></div>
-      <?php if ($messages): ?>
-      <div id="console" class="clearfix"><?php print $messages; ?></div>
-      <?php endif; ?>
+<?php if ($messages): ?>
+<div id="console" class="clearfix"><?php print $messages; ?></div>
+<?php endif; ?>
 <div class="shadowColors">
 <main class="mainArea" id="main" role="main">
   <div class="clear"></div>

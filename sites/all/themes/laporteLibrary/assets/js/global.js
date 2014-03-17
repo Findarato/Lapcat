@@ -134,6 +134,12 @@ jQuery(document).ready(function(){
     container.append(oldMe);
     me.replaceWith(container);
   });
+  jQuery(".eventDate").replaceWith(function(){
+    var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+    me = jQuery(this);
+    date = new Date(me.text()*1000);
+    return $("<div/>",{"class":"fancyEventDate"}).html($("<div/>",{"html":monthNames[date.getMonth()]})).append($("<div/>",{"html":date.getDay()}));
+  });
 });
 
 
