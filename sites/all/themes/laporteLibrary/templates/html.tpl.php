@@ -42,15 +42,19 @@
  *
  * @ingroup themeable
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html>
 <head profile="<?php print $grddl_profile; ?>">
   <meta name="viewport" content="width=device-width">
   <meta name=”mobile-web-app-capable” content=”yes”>
-  <link rel=”shortcut icon” sizes=”1024x1024” href=”/sites/all/themes/laporteLibrary/assets/images/highRezTree.png”>
+  <link rel="icon" type="image/png" href="/sites/all/themes/laporteLibrary/assets/images/2014Logo200x200.png">
+  <link rel="apple-touch-icon" href="/sites/all/themes/laporteLibrary/assets/images/" type="image/png">
+  <link rel="shortcut icon" href="/sites/all/themes/laporteLibrary/assets/images/favicon.ico" type="image/x-icon">
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  
 </head>
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   <?php print $page_top; ?>
