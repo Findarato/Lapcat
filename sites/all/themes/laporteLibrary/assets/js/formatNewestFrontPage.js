@@ -32,13 +32,13 @@ container
   .append(
     $("<div/>",{"class":"scrollerBack"})
       .html(
-        $("<a/>",{"html":"Back"})
+        $("<a/>",{"html":"^","alt":"Back"})
       )
   )
   .append(
     $("<div/>",{"class":"scrollerNext"})
       .html(
-        $("<a/>",{"html":"Next"})
+        $("<a/>",{"html":"^","alt":"Next"})
       )
   );
     

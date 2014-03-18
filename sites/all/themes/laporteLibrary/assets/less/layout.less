@@ -179,6 +179,7 @@ a[href^="/taxonomy"]:not([href*="?page="]){/*These are tags on items*/
   }
   */
 }
+/*
 a[href^="/taxonomy/term/52"]:not([href*="?page="]){//Adult
   .colorHover(@colorGreen1);
   //&:after{
@@ -203,7 +204,37 @@ a[href^="/taxonomy/term/11"]:not([href*="?page="]){//History
   //  border-color: transparent transparent @colorBrown1 transparent;
  // }
 }
-
+*/
+a[href^="/taxonomy/term/76"]:not([href*="?page="]){//Arts
+  .colorHover(@colorGreen1);
+}
+a[href^="/taxonomy/term/77"]:not([href*="?page="]){//Books, Movies, Music
+  .colorHover(@colorBlue1);
+}  
+a[href^="/taxonomy/term/78"]:not([href*="?page="]){//Home Live
+  .colorHover(@colorYellow1);
+}
+a[href^="/taxonomy/term/8"]:not([href*="?page="]){//Children
+  .colorHover(@colorRed1);
+}
+a[href^="/taxonomy/term/11"]:not([href*="?page="]){//History
+  .colorHover(@colorBrown1);
+}
+a[href^="/taxonomy/term/79"]:not([href*="?page="]){//Library News
+  .colorHover(@colorGreen2);
+}
+a[href^="/taxonomy/term/80"]:not([href*="?page="]){//Parents and Educators
+  .colorHover(@colorBlue2);
+}  
+a[href^="/taxonomy/term/82"]:not([href*="?page="]){//Technology
+  .colorHover(@colorYellow2);
+}
+a[href^="/taxonomy/term/50"]:not([href*="?page="]){//Teens
+  .colorHover(@colorRed2);
+}
+a[href^="/taxonomy/term/82"]:not([href*="?page="]){//Work Life
+  .colorHover(@colorBlue9);
+}
 
 
 
@@ -659,7 +690,7 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
 
 
 .scrollerBack,.scrollerNext{
-  .softColorHover(@colorBlue9);
+  .softColorHover(@colorLight60);
   padding: .3em;
   cursor:pointer;
   a{color:@colorLight;cursor:pointer;};
@@ -669,6 +700,17 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
   position:absolute;
   top:120/13em;
   width: 120/13em;
+  &:after{
+    content:"";
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 18/13em 18/13em;
+    border-color: transparent transparent fadeout(@colorBlue6,10%) transparent;
+    position: absolute;
+    right: 35%;
+    bottom: 4px;
+  }
 }
 .scrollerBack{
   transform:rotate(90deg);
