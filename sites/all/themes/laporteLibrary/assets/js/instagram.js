@@ -23,7 +23,7 @@ jQuery(function () {
   var flickrContainer = $(".flickr365");
   flickrContainer
     .append(jQuery("<div/>", {
-      "class": "newestSlideWrapper",
+      "class": "slideWrapper365",
       "id": "slideWrapper365"
     }));
   //flickrContainer.appendTo(".laporte365");
@@ -36,7 +36,7 @@ jQuery(function () {
     url: "https://api.instagram.com/v1/users/896925642/media/recent/?access_token=896925642.5b9e1e6.03f6c9f01b8246ee9cf61c4140dafb7e",
     success: function (data) {
       for (var i = 0; i < num_to_display; i++) {
-          jQuery(".flickr365 .newestSlideWrapper")
+          jQuery(".flickr365 .slideWrapper365")
             .append(insertPoint = jQuery("<section/>", {
               "class": "newestSlide" + i
             }));

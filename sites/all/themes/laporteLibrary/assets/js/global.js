@@ -69,7 +69,7 @@ function displayLocation(locationCode,domElementSelector){
 jQuery(document).ready(function(){
   var jsPath = "/sites/all/themes/laporteLibrary/assets/js/";
   
-    //if($("#blogBox")){get_blog_feed();}
+    
     uri = window.location.toString();
     if(
       uri.search(/children/i)>0 || 
@@ -78,6 +78,7 @@ jQuery(document).ready(function(){
       uri.search(/teens/i)>0
       ){// this is the research page
       jQuery.getScript(jsPath+"formatNewest.js");
+      
     }
     if(
       uri.search(/research/i)>0 || 
@@ -105,9 +106,10 @@ jQuery(document).ready(function(){
             	}else{//if all else fails lets just load a local rss feed
             		if(uri.search(/help/i)>0){// this is the about page
               		}else{
-            			jQuery.getScript(jsPath+"locations.js");
+            			//jQuery.getScript(jsPath+"locations.js");
             			jQuery.getScript(jsPath+"/libs/ftscroller.js");
             			jQuery.getScript(jsPath+"instagram.js");
+            			jQuery.getScript(jsPath+"formatNewestFrontPage.js");
             		}
             	}
             }

@@ -161,11 +161,12 @@ video,.video-js{
 a[href^="/taxonomy"]:not([href*="?page="]){/*These are tags on items*/
   width:100%;
   display:block;
-  padding:0 .5em;
+  padding:.2em;
   .animate(300ms);
   .colorHover(@colorBlue6);
   color:@colorLight;
   position:relative;
+  /*
   &:after{
     content:"";
     width: 0px;
@@ -176,26 +177,31 @@ a[href^="/taxonomy"]:not([href*="?page="]){/*These are tags on items*/
     position: absolute;
     right: 0;
   }
+  */
 }
 a[href^="/taxonomy/term/52"]:not([href*="?page="]){//Adult
-  &:after{
-    border-color: transparent transparent @colorGreen1 transparent;
-  }
+  .colorHover(@colorGreen1);
+  //&:after{
+  //  border-color: transparent transparent @colorGreen1 transparent;
+  //}
 }
 a[href^="/taxonomy/term/8"]:not([href*="?page="]){//Children
-  &:after{
-    border-color: transparent transparent @colorRed1 transparent;
-  }
+  .colorHover(@colorRed1);
+  //&:after{
+  //  border-color: transparent transparent @colorRed1 transparent;
+  //}
 } 
 a[href^="/taxonomy/term/50"]:not([href*="?page="]){//Teens
-  &:after{
-    border-color: transparent transparent @colorBlue9 transparent;
-  }
+  .colorHover(@colorBlue9);
+  //&:after{
+  //  border-color: transparent transparent @colorBlue9 transparent;
+  //}
 }
 a[href^="/taxonomy/term/11"]:not([href*="?page="]){//History
-  &:after{
-    border-color: transparent transparent @colorBrown1 transparent;
-  }
+  .colorHover(@colorBrown1);
+  //&:after{
+  //  border-color: transparent transparent @colorBrown1 transparent;
+ // }
 }
 
 
@@ -584,7 +590,7 @@ iframe{
 */
 
 /*Newest Books*/
-.newestSlideWrapper{
+.newestSlideWrapper,.slideWrapper365{
   width: auto; 
   display: block;
   height:300px;
@@ -653,10 +659,21 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
 
 
 .scrollerBack,.scrollerNext{
-  .softColorHover(@colorBlue6);
+  .softColorHover(@colorBlue9);
   padding: .3em;
-  a{color:@colorLight};
+  cursor:pointer;
+  a{color:@colorLight;cursor:pointer;};
+  transform-origin:0 0;
+  transform:rotate(270deg);
   text-align:center;
+  position:absolute;
+  top:120/13em;
+  width: 120/13em;
+}
+.scrollerBack{
+  transform:rotate(90deg);
+  top: 0;
+  left: 100%;
 }
 
 div.more-link{

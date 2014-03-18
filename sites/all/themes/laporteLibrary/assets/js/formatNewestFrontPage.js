@@ -1,8 +1,8 @@
-var container = jQuery(".coverSlider"); 
+var container = jQuery(".view-new-dvd-slider"); 
 var covers = container.children();
-var page = 6;
+var page = 1;
 var counter = 0;
-container.empty();
+container.empty().css({"position":"relative"});
 container
   .append(
     jQuery("<div/>",{"class":"newestSlideWrapper","id":"slideWrapper"})
@@ -12,7 +12,7 @@ jQuery.each(covers,function(i,item){
   if(counter==0){
     jQuery(".newestSlideWrapper")
       .append(
-        jQuery("<section/>",{"class":"newestSlide"+i})
+        jQuery("<section/>",{"class":"newestSlide"+i,css:{"height":"120px","width":"80px"}})
      );
     insertPoint = jQuery(".newestSlide"+i);
   }
@@ -28,18 +28,31 @@ var scroller = new FTScroller(document.getElementById('slideWrapper'), {
   updateOnWindowResize:true
 });
 
+container
+  .append(
+    $("<div/>",{"class":"scrollerBack"})
+      .html(
+        $("<a/>",{"html":"Back"})
+      )
+  )
+  .append(
+    $("<div/>",{"class":"scrollerNext"})
+      .html(
+        $("<a/>",{"html":"Next"})
+      )
+  );
     
-$(".scrollerBack>a").click(function(){
+$(".scrollerBack").click(function(){
   scroller.scrollBy(-300,0,500);
   return false;
 });
 
-$(".scrollerNext>a").click(function(){
+$(".scrollerNext").click(function(){
   scroller.scrollBy(300,0,500);
   return false;
 });
 var previousLeft = 0;
-
+/*
 scroller.addEventListener('reachedend',function(i){
   console.log("reached the end");
   scroller.scrollTo(0,0);
@@ -53,3 +66,4 @@ setInterval(function(){
     scroller.scrollBy(300,0,750);
   }
 },3000);
+*/
