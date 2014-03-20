@@ -88,16 +88,12 @@
  } 
 }
 .newArticles{
-  margin:1em 0;
   background:@colorLight;
   padding:1em 0;
   overflow:auto;
   width:100%;
-  &:after{
-    clear: both;
-    content: "";
-    display: block; 
-  }
+  display: flex;
+  flex-flow: row wrap;
   h1{
  
   }

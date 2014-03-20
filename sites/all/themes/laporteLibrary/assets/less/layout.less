@@ -1055,8 +1055,25 @@ only screen and (                min-resolution: 2dppx) {
     margin:1em;
     width:100%;
   }
-  .shadowColors{
-    width:auto;
+  .topHeaderMenu {
+    right: auto;
+    left:11em;
+  }
+  .articleBlocks{
+    width:100%;
+  }
+  .articlePicture{
+    .articleEntryDescription:empty{display:none;}
+      height:18.461538462em;
+      width:200/13em;
+      margin:1em 0;
+      display:table;
+    .picture{
+      height:150/13em;
+      width:200/13em;
+      background:@gray;
+      img{height:100%;width:100%;}
+    }
   }
 }
 @media only screen and (min-width: .1em) and (max-width:88em){ /*everything should be here*/
@@ -1064,17 +1081,26 @@ only screen and (                min-resolution: 2dppx) {
   .masterHeaderMenu{
     top:-999px;
     left:-999px;
+    display:none;
   }
   .topHeaderMenu {
     position: absolute;
     top: ~"calc(100% - 26px)";
-    right: 80px;
+    right: 69%;
+    display: flex;
+    justify-content: space-between;
+    width: 18em;
   }
-  .body{
+  .body{ 
     .animate();
   }
   .tagRow{
     justify-content: flex-start;
+    margin:0;
+    padding:0;
+  }
+  .shadowColors{
+    width:auto;
   }
   .banner{
     width:100%;

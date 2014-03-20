@@ -93,7 +93,6 @@
 </div>
 </div>
   <main class="mainArea" id="main" role="main">
-    <div class="clear"></div>
     <div class="newArticles">
       <h1>What's New @ the Library</h1> 
       <div class="tagRow">
