@@ -108,12 +108,14 @@
         <a href="/taxonomy/term/50">Teens</a>
         <a href="/taxonomy/term/82">Work Life</a>
       </div>
-      <?php if ($page['articleHighlight']): ?>
-         <div id="articleHighlight" class="articleHighlight"><?php print render($page['articleHighlight']); ?></div>
-      <?php endif; ?>
-      <?php if ($page['articleBlocks']): ?>
-         <div id="articleBlocks" class="articleBlocks"><?php print render($page['articleBlocks']); ?></div>
-      <?php endif; ?>
+      <div class="newArticlesContainer">
+        <?php if ($page['articleHighlight']): ?>
+           <div id="articleHighlight" class="articleHighlight"><?php print render($page['articleHighlight']); ?></div>
+        <?php endif; ?>
+        <?php if ($page['articleBlocks']): ?>
+           <div id="articleBlocks" class="articleBlocks"><?php print render($page['articleBlocks']); ?></div>
+        <?php endif; ?>
+      </div>
     </div>
     <section id="mainContent" class="">
       <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
