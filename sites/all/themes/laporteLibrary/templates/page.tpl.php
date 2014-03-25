@@ -97,15 +97,15 @@
   <div class="colorWave"></div>
   <footer> 
     <div class="t" style="width:100%;bottom:0px;position:relative">
-      <div class="footerLeft"> <!--Links-->
-        <?php if ($page['pageLinks']): ?>
-          <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
-        <?php endif; ?>
+     <?php if ($page['pageLinks']): ?>
+      <div>
+        <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
       </div>
-      <div class="footerRight">
-        <?php if ($page['search']): ?>
-          <div id="search"><?php print render($page['search']); ?></div>
-        <?php endif; ?> 
+      <?php endif; ?>
+      <?php if ($page['search']): ?>
+      <div>
+       <div id="search"><?php print render($page['search']); ?></div>
       </div>
+      <?php endif; ?> 
     </div>
   </footer>
