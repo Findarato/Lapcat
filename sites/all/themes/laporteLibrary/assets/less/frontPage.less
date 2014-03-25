@@ -95,8 +95,7 @@
   padding:1em 0;
   overflow:auto;
   width:100%;
-  display: flex;
-  flex-flow: row wrap;
+  display: block;
   margin:1em 0;
   h1{
  
@@ -105,9 +104,10 @@
 .articleBlocks{
   width:67%;
   .view-newest-article-blocks{
-    display:flex;
+    display:block;
     justify-content: space-around;
-    flex-flow: row wrap;
+    //flex-flow: row wrap;
+    flex-flow: row;
   } 
   .views-row{
     display:inline-block;
@@ -117,7 +117,8 @@
 .newArticlesContainer{
   display:flex;
   justify-content: space-around;
-  flex-flow: row wrap;
+  //flex-flow: row wrap;
+  flex-flow: row;
 }
 .articleHighlight{
   width:33%;
@@ -144,7 +145,8 @@
   padding:.5em;
   display:flex;
   justify-content: space-around;
-  flex-flow: row wrap;
+  //flex-flow: row wrap;
+  flex-flow: row;
   width:100%;
   a[href*="taxonomy"]{
     font-size:1.2em;
@@ -176,6 +178,10 @@
  
   
 .view-display-id-page_1{
+  .newestSlideWrapper{
+    height:auto;
+    overflow:auto;
+  }
   .scrollerBack,.scrollerNext{
     .softColorHover(@colorLight60);
     padding: .3em;

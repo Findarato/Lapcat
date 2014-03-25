@@ -14,7 +14,6 @@ html{
   //font-size:81.25%;
   font-size:13px;
   line-height:1.4em;
-  overflow-x: hidden;
 }
 body,html {
   font-size:13px;
@@ -32,9 +31,7 @@ h2,h4,body{
   
 }
 body{
-  height:auto;
-  display: flex;
-	flex-flow: row wrap;
+
 }
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 
@@ -47,19 +44,19 @@ a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 .mainArea{
   margin:0 auto 4em;
   width:@total-width;
-  display:flex;
-  justify-content: space-between;
-  flex-flow: row wrap;
+  display:block;
 }
 #mainContent{
   //.column(10);
   width:61.5219em;
   margin: 0px 0.5em;
+  display:inline-flex;
 }
 #side{
   //.column(4);
   width: 23.9395em;
   margin: 0px 0.5em;
+  display:inline-flex;
 }
 /*Grid layout End*/
 
@@ -1013,16 +1010,9 @@ only screen and (                min-resolution: 2dppx) {
 @media only screen and (min-width: 50em) and (max-width:88em){ /* middle width 720p */
   body{font-size:10px;}
   .shadowColors,.banner{width:88em;}
-  .banner{
-    margin:0;
-    .flexslider{
-      padding:1em 1em 3em 1em;
-    }
-  }
 }
 @media only screen and (min-width: 25em) and (max-width:49em) { /* Portrait Phones */	
 	.mainArea{
-		
 		margin:1em;
 	}
 	.shadowColors{
@@ -1051,7 +1041,7 @@ only screen and (                min-resolution: 2dppx) {
     top: ~"calc(100% - 26px)";
     right: 69%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     width: 18em;
   }
   .tagRow{
