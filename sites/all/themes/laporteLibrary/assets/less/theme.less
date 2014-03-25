@@ -48,7 +48,7 @@
 @colorBlue3:#343E98;
 @colorBlue4:#1E2459;
 @colorBlue5:#4E5de4;
-@colorBlue6:#343e98; //*
+@colorBlue6:#343e98; 
 @colorBlue7:#3843A5;
 @colorBlue8:#2B347E;
 @colorBlue9:#1aa6bc;
@@ -75,9 +75,9 @@
 @color1:rgb(92,131,47);
 @color3:rgb(40,73,7);
 @color5:rgb(56,37,19);  
-@color4:rgb(54,57,68);
+@color4:rgb(54,57,68); 
 
-
+ 
 @colorDark: rgb(87, 87, 87);
 @colorLight: rgb(241,241,241);
 @shadow:rgba(36, 36, 36,.3);
@@ -144,6 +144,7 @@
 }
 .colorHover(@color){
   background: @color; /* Old browsers */
+  .animate();
   &:hover{
     background: lighten(@color,10%); /* Old browsers */
   }

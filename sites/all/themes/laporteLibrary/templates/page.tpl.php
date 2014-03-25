@@ -49,6 +49,7 @@
   </div>
 </header>
 <div class="colorWave"></div>
+  <?php if ($messages): ?><div id="console"><?php print $messages; ?></div><?php endif; ?>
   <!-- Catalog Search-->
   <div class="spc-Search">
     <div class="catalog ">
@@ -80,9 +81,6 @@
   </div>
   <!-- End Catalog Search-->
   <div class="colorWave"></div>
-      <?php if ($messages): ?>
-      <div id="console" class="clearfix"><?php print $messages; ?></div>
-      <?php endif; ?>
   <main class="mainArea" id="main" role="main">
     <div class="clear"></div>
     <section id="mainContent" class="">
@@ -96,7 +94,6 @@
       <?php print $feed_icons; ?>
     </aside>
   </main> <!-- end of main content-->
-  <div class="clear"></div>
   <div class="colorWave"></div>
   <footer> 
     <div class="t" style="width:100%;bottom:0px;position:relative">

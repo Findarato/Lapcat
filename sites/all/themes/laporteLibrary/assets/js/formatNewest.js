@@ -52,4 +52,4 @@ setInterval(function(){
   if(!scroller.scroll){
     scroller.scrollBy(300,0,750);
   }
-},3000);
+},10000);

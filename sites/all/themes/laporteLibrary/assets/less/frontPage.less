@@ -1,8 +1,6 @@
 .shadowColors{
-  //background:fadeout(@colorGreen1,80%);
   background:@colorLight;
-  margin:0 auto;
-  margin-top:1em;
+  margin:1em auto;
   width:88em;
 }
 
@@ -87,6 +85,11 @@
    }
  } 
 }
+.flex-direction-nav{
+	li{
+		display:none;
+	}
+}
 .newArticles{
   background:@colorLight;
   padding:1em 0;
@@ -94,17 +97,18 @@
   width:100%;
   display: flex;
   flex-flow: row wrap;
+  margin:1em 0;
   h1{
  
   }
 }
 .articleBlocks{
-  width:55em;
+  width:67%;
   .view-newest-article-blocks{
     display:flex;
     justify-content: space-around;
     flex-flow: row wrap;
-  }
+  } 
   .views-row{
     display:inline-block;
   }
@@ -116,7 +120,9 @@
   flex-flow: row wrap;
 }
 .articleHighlight{
-  width:23em;
+  width:33%;
+  justify-content: center;
+  display: inline-flex;
   .articleEntryDescription{
     height: 15em;
     display: block;
@@ -134,10 +140,6 @@
   }
 }
 
- 
-  
-   
-
 .tagRow{
   padding:.5em;
   display:flex;
@@ -150,6 +152,7 @@
     min-width:5.5em;
     padding:.3em;
     margin:.1em;
+    display: inline-block;
     &:after{border:none;}
   }
 }
@@ -170,5 +173,36 @@
     font-size:1.2em;
   }
 }
+ 
   
+.view-display-id-page_1{
+  .scrollerBack,.scrollerNext{
+    .softColorHover(@colorLight60);
+    padding: .3em;
+    cursor:pointer;
+    a{color:@colorLight;cursor:pointer;};
+    transform-origin:0 0;
+    transform:rotate(270deg);
+    text-align:center;
+    position:absolute;
+    top:120/13em;
+    width: 120/13em;
+    &:after{
+      content:"";
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 0 18/13em 18/13em;
+      border-color: transparent transparent fadeout(@colorBlue6,10%) transparent;
+      position: absolute;
+      right: 35%;
+      bottom: 4px;
+    }
+  }
+  .scrollerBack{
+    transform:rotate(90deg);
+    top: 0;
+    left: 100%;
+  }  
+}  
 

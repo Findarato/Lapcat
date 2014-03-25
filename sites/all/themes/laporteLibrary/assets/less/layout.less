@@ -33,6 +33,8 @@ h2,h4,body{
 }
 body{
   height:auto;
+  display: flex;
+	flex-flow: row wrap;
 }
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 
@@ -48,21 +50,16 @@ a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
   display:flex;
   justify-content: space-between;
   flex-flow: row wrap;
-  &:after{
-    clear: both;
-    content: "";
-    display: block; 
-  }
 }
 #mainContent{
   //.column(10);
   width:61.5219em;
-  margin: 0px 0.55773em;
+  margin: 0px 0.5em;
 }
 #side{
   //.column(4);
   width: 23.9395em;
-  margin: 0px 0.55773em;
+  margin: 0px 0.5em;
 }
 /*Grid layout End*/
 
@@ -675,9 +672,7 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
       height:11rem;
       width:7.22rem;
       img{
-       width:7rem;
        verticle-align:top;
-       .rounded-corners(.1875rem);
        display:inline-block;
       }
     }
@@ -687,35 +682,6 @@ div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"]
   }
 }
 
-
-.scrollerBack,.scrollerNext{
-  .softColorHover(@colorLight60);
-  padding: .3em;
-  cursor:pointer;
-  a{color:@colorLight;cursor:pointer;};
-  transform-origin:0 0;
-  transform:rotate(270deg);
-  text-align:center;
-  position:absolute;
-  top:120/13em;
-  width: 120/13em;
-  &:after{
-    content:"";
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 0 18/13em 18/13em;
-    border-color: transparent transparent fadeout(@colorBlue6,10%) transparent;
-    position: absolute;
-    right: 35%;
-    bottom: 4px;
-  }
-}
-.scrollerBack{
-  transform:rotate(90deg);
-  top: 0;
-  left: 100%;
-}
 
 div.more-link{
   display:inline-block;
@@ -750,7 +716,13 @@ ul.pager{
     }
   }
 }
-
+.scrollerBack,.scrollerNext{
+    .colorHover(@colorBlue9);
+    padding: .3em;
+    cursor:pointer;
+    text-align:center;
+    a{color:@colorLight;cursor:pointer;};
+  }
 
 .locationBox{
   background:gray;
@@ -1039,6 +1011,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 }
 @media only screen and (min-width: 50em) and (max-width:88em){ /* middle width 720p */
+  body{font-size:10px;}
   .shadowColors,.banner{width:88em;}
   .banner{
     margin:0;
@@ -1047,11 +1020,50 @@ only screen and (                min-resolution: 2dppx) {
     }
   }
 }
-@media only screen and (min-width: 25em) and (max-width:49em) { /* Portrait Phones */
-
+@media only screen and (min-width: 25em) and (max-width:49em) { /* Portrait Phones */	
+	.mainArea{
+		
+		margin:1em;
+	}
+	.shadowColors{
+    width:100%;
+    margin:1em;
+  }
 }
-@media only screen and (min-width: .1em) and (max-width:24em){ /*everything should be here*/
-  .mainArea,.shadowColors,#mainContent,#side,header{
+@media only screen and (min-width: .1em) and (max-width:49em){ /*everything should be here*/ 
+  body{ 
+    .animate();
+    font-size:10px;
+  }
+  body{}
+  .masterHeader{
+    h1{
+      width:100%;
+    }
+  }
+  .masterHeaderMenu{
+    top:-999px;
+    left:-999px;
+    display:none;
+  }
+  .topHeaderMenu {
+    position: absolute;
+    top: ~"calc(100% - 26px)";
+    right: 69%;
+    display: flex;
+    justify-content: space-between;
+    width: 18em;
+  }
+  .tagRow{
+    justify-content: flex-start;
+    margin:0;
+    padding:0;
+  }
+  .flex-control-nav {
+    display:none;
+  }
+  .masterHeader h1{font-size:2.7em;}
+  .shadowColors,#mainContent,#side,header{
     margin:1em;
     width:100%;
   }
@@ -1059,7 +1071,8 @@ only screen and (                min-resolution: 2dppx) {
     right: auto;
     left:11em;
   }
-  .articleBlocks{
+  
+  .articleBlocks,.articleHighlight{
     width:100%;
   }
   .articlePicture{
@@ -1075,40 +1088,15 @@ only screen and (                min-resolution: 2dppx) {
       img{height:100%;width:100%;}
     }
   }
-}
-@media only screen and (min-width: .1em) and (max-width:88em){ /*everything should be here*/
-  body{font-size:10px;}
-  .masterHeaderMenu{
-    top:-999px;
-    left:-999px;
-    display:none;
-  }
-  .topHeaderMenu {
-    position: absolute;
-    top: ~"calc(100% - 26px)";
-    right: 69%;
-    display: flex;
-    justify-content: space-between;
-    width: 18em;
-  }
-  .body{ 
-    .animate();
-  }
-  .tagRow{
-    justify-content: flex-start;
-    margin:0;
-    padding:0;
-  }
-  .shadowColors{
-    width:auto;
-  }
   .banner{
     width:100%;
     margin:0;
     .flexslider{
-      padding:1em 1em 3em 1em;
+      padding:.5em;
     }
   }
+
+
 }
 /* ==|== print styles ======================================================= */
  

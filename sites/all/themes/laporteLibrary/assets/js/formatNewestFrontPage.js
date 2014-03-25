@@ -12,7 +12,7 @@ jQuery.each(covers,function(i,item){
   if(counter==0){
     jQuery(".newestSlideWrapper")
       .append(
-        jQuery("<section/>",{"class":"newestSlide"+i,css:{"height":"120px","width":"80px"}})
+        jQuery("<section/>",{"class":"newestSlide"+i,css:{"height":"120px","width":"80px","margin":"0 .3em"}})
      );
     insertPoint = jQuery(".newestSlide"+i);
   }
