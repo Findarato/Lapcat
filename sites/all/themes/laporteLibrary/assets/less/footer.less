@@ -6,6 +6,15 @@ footer {
     flex-flow: row;
     justify-content:space-around;    
   }
+  .mobileLibrary{
+    img{
+      height: 8em;
+      margin: 1em 4em;
+      &:hover{
+        animation: rockTheBus 1s 2s 3 alternate backwards
+      }  
+    }
+  }
   * { 
     vertical-align:top; 
   }
@@ -23,4 +32,17 @@ footer {
     white-space:nowrap;
    } 
   }
+}
+@keyframes rockTheBus {
+  0%   { transform:rotate(0deg); }
+  10%   { transform:rotate(-10deg); }
+  20%   { transform:rotate(0deg); }
+  30%   { transform:rotate(10deg); }
+  40%   { transform:rotate(0deg); }
+  50%   { transform:rotate(-10deg); }
+  60%   { transform:rotate(0deg); }
+  70%   { transform:rotate(10deg); }
+  80%   { transform:rotate(0deg); }
+  70%   { transform:rotate(-10deg); }
+  100% { transform:rotate(-10deg); }
 }
