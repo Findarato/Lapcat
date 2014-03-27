@@ -4,7 +4,7 @@ button, a.button, .button,.selectButton{
 	padding:3px;
 	white-space: nowrap;
 	z-index:5;
-	border: 1px solid rgb(170,170,170);
+	border: 2px solid rgb(170,170,170);
 	background-color:rgb(240,240,240);
   //.lp-Buttons(2.3rem);
 }
@@ -17,6 +17,6 @@ button, a.button, .button,.selectButton{
   white-space:nowrap;
   color:@colorLight;
   .animate();
-  .colorHover(@colorBlue9);
+  .colorHover(darken(@colorBlue6,10%));
   a{color:@colorLight;}
 }

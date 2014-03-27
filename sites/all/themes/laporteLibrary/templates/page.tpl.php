@@ -82,7 +82,9 @@
   <!-- End Catalog Search-->
   <div class="colorWave"></div>
   <main class="mainArea" id="main" role="main">
-    <div class="clear"></div>
+    <section id="breadCrumbs" class="breadCrumbs">
+      <?php print render($page['breadCrumbs']); ?>
+    </section>
     <section id="mainContent" class="">
       <?php if ($action_links): ?><ul class="action-links"><?php print render($action_links); ?></ul><?php endif; ?>
       <?php print render($page['content']); ?>      

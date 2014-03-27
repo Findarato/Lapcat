@@ -34,12 +34,16 @@ body{
 
 }
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
+.breadcrumb{
+  font-size:1.2em;
+  margin:1em;
+  .active{
+    color:@colorDark; 
+  }
+}
 
 /*Grid layout*/
 
-@column-width: 4.615384615em;
-@gutter-width: 1em;
-@columns: 14;
 @total-width: 87.692307692em;
 .mainArea{
   margin:0 auto 4em;
@@ -47,16 +51,20 @@ a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
   display:block;
 }
 #mainContent{
-  //.column(10);
   width:61.5219em;
-  margin: 0px 0.5em;
+  margin: 0 0.5em;
   display:inline-flex;
+  .region-content{
+    flex:100%;
+  }
 }
 #side{
-  //.column(4);
   width: 23.9395em;
-  margin: 0px 0.5em;
+  margin: 0 0.5em;
   display:inline-flex;
+  .region-content{
+    flex:100%;
+  }
 }
 /*Grid layout End*/
 
@@ -154,79 +162,43 @@ video,.video-js{
 a[href^="/taxonomy"]:not([href*="?page="]){/*These are tags on items*/
   width:100%;
   display:block;
-  padding:.2em;
+  padding:.3em;
   .animate(300ms);
-  .colorHover(@colorBlue6);
+  .colorHover(darken(@colorBlue6,20%));
   color:@colorLight;
   position:relative;
-  /*
-  &:after{
-    content:"";
-    width: 0px;
-    height: 0px;
-    border-style: solid;
-    border-width: 0 0 18/13em 18/13em;
-    border-color: transparent transparent @colorYellow1 transparent;
-    position: absolute;
-    right: 0;
-  }
-  */
+  white-space: nowrap;
 }
-/*
-a[href^="/taxonomy/term/52"]:not([href*="?page="]){//Adult
-  .colorHover(@colorGreen1);
-  //&:after{
-  //  border-color: transparent transparent @colorGreen1 transparent;
-  //}
-}
-a[href^="/taxonomy/term/8"]:not([href*="?page="]){//Children
-  .colorHover(@colorRed1);
-  //&:after{
-  //  border-color: transparent transparent @colorRed1 transparent;
-  //}
-} 
-a[href^="/taxonomy/term/50"]:not([href*="?page="]){//Teens
-  .colorHover(@colorBlue9);
-  //&:after{
-  //  border-color: transparent transparent @colorBlue9 transparent;
-  //}
-}
-a[href^="/taxonomy/term/11"]:not([href*="?page="]){//History
-  .colorHover(@colorBrown1);
-  //&:after{
-  //  border-color: transparent transparent @colorBrown1 transparent;
- // }
-}
-*/
+
 a[href^="/taxonomy/term/76"]:not([href*="?page="]){//Arts
-  .colorHover(@colorGreen1);
+  .colorHover(darken(@colorGreen1,10%));
 }
 a[href^="/taxonomy/term/77"]:not([href*="?page="]){//Books, Movies, Music
-  .colorHover(@colorBlue1);
+  .colorHover(darken(@colorBlue1,10%));
 }  
 a[href^="/taxonomy/term/78"]:not([href*="?page="]){//Home Live
-  .colorHover(@colorYellow1);
+  .colorHover(darken(@colorYellow1,10%));
 }
 a[href^="/taxonomy/term/8"]:not([href*="?page="]){//Children
-  .colorHover(@colorRed1);
+  .colorHover(darken(@colorRed1,10%));
 }
 a[href^="/taxonomy/term/11"]:not([href*="?page="]){//History
-  .colorHover(@colorBrown1);
+  .colorHover(darken(@colorBrown1,10%));
 }
 a[href^="/taxonomy/term/79"]:not([href*="?page="]){//Library News
-  .colorHover(@colorGreen2);
+  .colorHover(darken(@colorGreen2,10%));
 }
 a[href^="/taxonomy/term/80"]:not([href*="?page="]){//Parents and Educators
-  .colorHover(@colorBlue2);
+  .colorHover(darken(@colorBlue2,10%));
 }  
 a[href^="/taxonomy/term/82"]:not([href*="?page="]){//Technology
-  .colorHover(@colorYellow2);
+  .colorHover(darken(@colorYellow2,10%));
 }
 a[href^="/taxonomy/term/50"]:not([href*="?page="]){//Teens
-  .colorHover(@colorRed2);
+  .colorHover(darken(@colorRed2,10%));
 }
 a[href^="/taxonomy/term/82"]:not([href*="?page="]){//Work Life
-  .colorHover(@colorBlue9);
+  .colorHover(darken(@colorBlue9,10%));
 }
 
 
@@ -632,7 +604,7 @@ iframe{
   overflow:hidden;
   margin:.5em auto;
   /*border:3px solid @color5;*/
-  .newestSlideWrapper{
+  .slideWrapper365{
     section{
       img{
         width: 278/13em;
@@ -666,8 +638,8 @@ iframe{
 div[class*="view-new"][class*="-books"],div[class*="view-new"][class*="-slider"] {
   div{
     a{
-      height:11rem;
-      width:7.22rem;
+      //height:11rem;
+      //width:7.22rem;
       img{
        verticle-align:top;
        display:inline-block;
@@ -818,7 +790,7 @@ li{
   padding:.7em;
   cursor:pointer;
   white-space: nowrap;
-  background:@colorBlue6;
+  background:darken(@colorBlue6,10%);
   a{color:@colorLight;}
 }
 .twitterList{
@@ -1010,60 +982,40 @@ only screen and (                min-resolution: 2dppx) {
 @media only screen and (min-width: 50em) and (max-width:88em){ /* middle width 720p */
   body{font-size:10px;}
   .shadowColors,.banner{width:88em;}
+  .view-display-id-page_1{
+    .scrollerBack,.scrollerNext{
+      &:after{
+        right: 40%;
+      }
+    }
+  }
+  .bookTitle{
+    font-size:1.5em;
+  }
 }
 @media only screen and (min-width: 25em) and (max-width:49em) { /* Portrait Phones */	
-	.mainArea{
-		margin:1em;
-	}
 	.shadowColors{
     width:100%;
-    margin:1em;
+    padding:1em;
+  }
+  .masterHeader{
+    h1{
+      width:auto;
+      font-size:2.7em;
+    }
   }
 }
 @media only screen and (min-width: .1em) and (max-width:49em){ /*everything should be here*/ 
-  body{ 
-    .animate();
-    font-size:10px;
-  }
-  body{}
-  .masterHeader{
-    h1{
-      width:100%;
-    }
-  }
-  .masterHeaderMenu{
-    top:-999px;
-    left:-999px;
-    display:none;
-  }
-  .topHeaderMenu {
-    position: absolute;
-    top: ~"calc(100% - 26px)";
-    right: 69%;
-    display: flex;
-    justify-content: space-between; 
-    width: 18em;
-  }
-  .tagRow{
-    justify-content: flex-start;
-    margin:0;
-    padding:0;
-  }
-  .flex-control-nav {
-    display:none;
-  }
-  .masterHeader h1{font-size:2.7em;}
-  .shadowColors,#mainContent,#side,header{
-    margin:1em;
+  .articleBlocks{
     width:100%;
+    .view-newest-article-blocks{
+      display:flex;
+      justify-content: space-around;
+      flex-flow: row wrap;
+     } 
   }
-  .topHeaderMenu {
-    right: auto;
-    left:11em;
-  }
-  
-  .articleBlocks,.articleHighlight{
-    width:100%;
+  .articleHighlight {
+    width: auto;
   }
   .articlePicture{
     .articleEntryDescription:empty{display:none;}
@@ -1078,6 +1030,54 @@ only screen and (                min-resolution: 2dppx) {
       img{height:100%;width:100%;}
     }
   }
+  body{ 
+    .animate();
+    font-size:10px;
+  }
+  .bookTitle{
+    font-size:1.5em;
+  }
+  .flex-control-nav {
+    display:none;
+  }
+  .mainArea{
+    padding:1em;
+    display:flex;
+    flex-flow:row wrap;
+    width:100%;
+  }
+  .masterHeaderMenu{
+    top:-999px;
+    left:-999px;
+    display:none;
+  }
+  .newArticlesContainer{
+    flex-flow: row wrap;
+  }
+  .shadowColors,#mainContent,#side,header{
+    padding:1em;
+    width:100%;
+  }
+  .tagRow{
+    justify-content: flex-start;
+    flex-flow: row wrap;
+  }
+  .topHeaderMenu {
+    position: absolute;
+    top: ~"calc(100% - 26px)";
+    right: 69%;
+    display: flex;
+    justify-content: space-between; 
+    width: 18em;
+  }
+
+
+  .topHeaderMenu {
+    right: auto;
+    left:11em;
+  }
+  
+
   .banner{
     width:100%;
     margin:0;
@@ -1085,7 +1085,11 @@ only screen and (                min-resolution: 2dppx) {
       padding:.5em;
     }
   }
-
+  footer {
+    .region-pagelinks{
+      flex-flow: row wrap;
+    }
+  }
 
 }
 /* ==|== print styles ======================================================= */

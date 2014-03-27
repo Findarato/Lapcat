@@ -24,6 +24,7 @@ regions[menuHeader] = Header Menu
 regions[featured_slider] = Featured Slider
 regions[articleHighlight] = Article Highlight
 regions[articleBlocks] = Article Blocks
+regions[breadCrumbs] = Bread Crumbs
 regions[content] = Content
 regions[rightSide] = Side Content
 regions[search] = Search
