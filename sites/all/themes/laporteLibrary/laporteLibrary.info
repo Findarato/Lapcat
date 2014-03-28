@@ -7,6 +7,11 @@ stylesheets[screen][] = reset.css
 
 stylesheets[screen][less] = assets/less/compiled.css
 
+;-------------- CSS FOAD -------------
+stylesheets[all][] = system.messages.css
+stylesheets[all][] = comment.css
+stylesheets[all][] = node.css
+
 scripts[] = assets/js/libs/jquery-1.9.1.min.js
 scripts[] = assets/js/libs/jquery.hovercard.min.js
 scripts[] = assets/js/libs/modernizr-2.0.6.min.js

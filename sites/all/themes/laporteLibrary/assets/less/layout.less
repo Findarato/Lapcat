@@ -102,10 +102,6 @@ article{
   }
 }
 aside {
-  .video-js{
-   width:290px;
-   overflow:hidden; 
-  }
   .view-content .skin-default{
     margin-left:25px;
     img{
@@ -160,9 +156,6 @@ aside {
   }
 }
 /*Grid layout End*/
-
-
-
 
 h1,h2,h3,h4{
   margin:2px;
@@ -221,13 +214,6 @@ form #user-login-form{
  * All layouts
  *  
  */
-
-
-
-video,.video-js{
-  margin-bottom:1em;
-}
-
 
 .field-content{
   a[href*="taxonomy"]{display:inline-block;}
@@ -294,33 +280,67 @@ li {
   }
 }
 
-.closedDate{
-  padding-left:0 1%
-  .timerContainer{
-    left:4px;
+/**
+ *   Locations Page
+ * 
+ */
+.page-node-28{
+  //adjustments for the locations page
+  #mainContent{
+    width:42em;
   }
-  .dayBox{
-    display:inline-block;
-    width: 8em;
-    height: 7em;
-    margin: .2em;
-    span:nth-child(1){font-size:2.4em;}
-    span:nth-child(2){font-size:2.1em;}
-    span:nth-child(3){font-size:2.3em;}
+  #side{
+    width:42em; 
   }
 }
-.closedDate.catalog{
-  .dayBox{
-    width:10.74em;
-    background-color:@button;
-    border:1px solid @buttonBorder;
-    font-size: .77em;
-    a{
-      color:@colorDark;
-    }
-  } 
-}
-
+.locationBox{
+    flex-direction: column;
+    display: inline-flex;
+    width: 100%;
+    margin: .5em;
+    flex: 100%;
+  }
+  .locationBody{
+    flex-direction: row;
+    display: flex;
+  }
+  .branchPicture{
+    background:white no-repeat;
+    background-size:cover;
+    height: 257px;
+    width: 28.6em;
+  }
+  .main{
+    background-image:url("@{imagesPath}branchImages/coolspring_branch.png");
+    height: 257px;
+    //width: 400px;
+  }
+  .cs{
+    background-image:url("@{imagesPath}branchImages/coolspring_branch.png");
+    height: 257px;
+    //width: 400px;
+  }
+  .fl{
+    background-image:url("@{imagesPath}branchImages/Fish_Lake_branch.png");
+    height:257px;
+    //width:400px;
+  }
+  .kh{
+    background-image:url("@{imagesPath}branchImages/Kingsford_heights_branch.png");
+    height:257px;
+    //width:400px;
+  }
+  .locationTitle{
+    font-size:1.2em;
+    margin-bottom:1em;
+  }
+  .locationInfo{
+    padding:1em;
+    position:relative;
+    box-shadow: 7px 0px 4px -5px rgba(0, 0, 0, 0.75);
+    width:13em;
+    background:@colorLight;
+  }
  
 /**
  * NoveList  
@@ -610,45 +630,12 @@ ul.pager{
     a{color:@colorLight;cursor:pointer;};
   }
 
-.locationBox{
-  background:gray;
-  margin:2em;
-  width:33%;
-}
-.branchPicture{
-  background:white no-repeat;
-  background-size:cover;
-}
-.main{
-  background-image:url("@{imagesPath}branchImages/coolspring_branch.jpg");
-  height:300px;
-  width:484px;
-}
-.coolspring{
-  background-image:url("@{imagesPath}branchImages/coolspring_branch.jpg");
-  height:300px;
-  width:484px;
-}
-.fishlake{
-  background-image:url("@{imagesPath}branchImages/Fish_Lake_branch.jpg");
-  height:300px;
-  width:484px;
-}
-.locationTitle{
-  font-size:1.2em;
-  margin-bottom:1em;
-}
-.locationInfo{
-  padding:1em;
-  position:relative;
-  box-shadow: 7px 0px 4px -2px rgba(0, 0, 0, 0.75);
-  width:13em;
-}
 
 
 
 
 
+/*
 .locationBoxMap{
   width:100%;
   a{
@@ -669,75 +656,16 @@ ul.pager{
   .rollingPrairie{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.673963,-86.617124&key=@{gMapsApi}');}
   .unionMills{background-image:url('http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=@{gMapsSize}&sensor=true&format=jpg&markers=color:0x@{gMapsColor}|41.491091,-86.771871&key=@{gMapsApi}');}
 }
-.centerBox{
-  margin:0 auto;
-  width:918px;
-}
-
-li{
-  list-style: none outside none;
-}
-
-#container{
-  position:relative;
-  z-index:10;
-}
-
-#greatPicksContainerBox .rssItem img{
-  width:100px;
-}
-
-
-
+*/
 
 
 /**
  * Title and Button elements  
  * 
  */
-.subTitleElement a{
-  display:inline-block;
-  margin-left:3px;
-}
-.subTitleElement a.selected{
-  margin-left:3px;
-}
-
-.eventFeedTitle{
-  left:350px;
-  right:350px;
-  width:auto;
-  top:3px;
-  text-align:center;
-}
-
-
 .view-header{
   font-size: 1.1em;
   margin: .3em;
-}
-
-.fancyEventDate{
-  .headerButtons();
-  display:inline-block;
-}
-
-.mainContentTitle{
-  right:525px;
-  top:-5px;
-}
-.middleSectionScroll{
-  display:inline-block;
-  width:10px;
-  height:10px;
-  background-color:rgba(255,255,255,.4);
-  border:solid 1px rgba(255,255,255,.6);
-  cursor: pointer;
-  margin:2px;
-}
-.middleSectionScroll:hover{
-  background-color:rgba(132,185,189,.4);
-  border:solid 1px rgba(132,185,189,.6);
 }
 
 .blogTitle a:hover,.twitterFeedTitle a:hover,.deliciousFeedTitle a:hover{text-decoration:none;}
@@ -765,25 +693,25 @@ li{
 }
 
 [class^="icon-"], [class*=" icon-"] {font-family:"lpcpl";background:none;width:auto;height:auto;font-style:normal}
-.icon-googleplus:before { content: '\70'; } /* 'p' */
+//.icon-googleplus:before { content: '\70'; } /* 'p' */
 .icon-lock:before { content: '\4c'; } /* 'L' */
-.icon-twitter:before { content: '\74'; } /* 't' */
+//.icon-twitter:before { content: '\74'; } /* 't' */
 .icon-drupal:before { content: '\44'; } /* 'D' */
-.icon-css3:before { content: '\33'; } /* '3' */
-.icon-html5:before { content: '\35'; } /* '5' */
-.icon-b:before { content: '\31'; } /* '1' */
-.icon-facebook:before { content: '\46'; } /* 'F' */
+//.icon-css3:before { content: '\33'; } /* '3' */
+//.icon-html5:before { content: '\35'; } /* '5' */
+//.icon-b:before { content: '\31'; } /* '1' */
+//.icon-facebook:before { content: '\46'; } /* 'F' */
 .icon-menu:before { content: '\3d'; } /* '=' */
-.icon-zoom-out:before { content: '\7a'; } /* 'z' */
-.icon-bus:before { content: '\76'; } /* 'v' */
-.icon-youtube-play:before { content: '\59'; } /* 'Y' */
-.icon-B:before { content: '\30'; } /* '0' */
-.icon-picture:before { content: '\6d'; } /* 'm' */
-.icon-delicious:before { content: '\64'; } /* 'd' */
-.icon-zoom-in:before { content: '\5a'; } /* 'Z' */
-.icon-gitHub:before { content: '\67'; } /* 'g' */
+//.icon-zoom-out:before { content: '\7a'; } /* 'z' */
+//.icon-bus:before { content: '\76'; } /* 'v' */
+//.icon-youtube-play:before { content: '\59'; } /* 'Y' */
+//.icon-B:before { content: '\30'; } /* '0' */
+//.icon-picture:before { content: '\6d'; } /* 'm' */
+//.icon-delicious:before { content: '\64'; } /* 'd' */
+//.icon-zoom-in:before { content: '\5a'; } /* 'Z' */
+//.icon-gitHub:before { content: '\67'; } /* 'g' */
 .icon-search:before { content: '\63'; font-size:.8em;color:@shadow} /* 'c' */
-.icon-automobile-car:before { content: '\62'; } /* 'b' */
+//.icon-automobile-car:before { content: '\62'; } /* 'b' */
 
 /*sprite Code*/
 .sprite{background-image:url('@{imagesPath}/csg-511916e61907f.png'); display:block;text-indent:100%;overflow:hidden;white-space:nowrap;}

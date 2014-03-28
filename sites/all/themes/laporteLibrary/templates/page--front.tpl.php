@@ -1,11 +1,3 @@
-<style>
-  .bookCoverImage a{
-    min-width:75px;
-    min-height:100px;
-    display:inline-block;  
-  }
-</style>
-
 <header>
   <div class="masterHeader">
     <a class="masterHeaderLogo" href="/" alt="Logo" title="La Porte County Public Library">
