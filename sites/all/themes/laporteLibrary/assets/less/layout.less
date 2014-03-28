@@ -292,6 +292,9 @@ li {
   #side{
     width:42em; 
   }
+  .bookTitle{
+    font-size:1.2em;
+  }
 }
 .locationBox{
     flex-direction: column;
@@ -303,12 +306,34 @@ li {
   .locationBody{
     flex-direction: row;
     display: flex;
+    a{
+      margin:1em 0;
+      display:block      
+    }
+    .map{
+    }
+  }
+  .locationTitle{
+    font-size:1.2em;
+    margin-bottom:1em;
+  }
+  .locationNow{
+    margin:1em 0;
+  }
+  .locationInfo{
+    padding:1em;
+    position:relative;
+    box-shadow: 7px 0px 4px -5px rgba(0, 0, 0, 0.75);
+    width:13em;
+    background:@colorLight;
+    font-size:1.2em;
   }
   .branchPicture{
     background:white no-repeat;
     background-size:cover;
     height: 257px;
-    width: 28.6em;
+    width: 26em;
+    background-position:50%;
   }
   .main{
     background-image:url("@{imagesPath}branchImages/coolspring_branch.png");
@@ -330,17 +355,7 @@ li {
     height:257px;
     //width:400px;
   }
-  .locationTitle{
-    font-size:1.2em;
-    margin-bottom:1em;
-  }
-  .locationInfo{
-    padding:1em;
-    position:relative;
-    box-shadow: 7px 0px 4px -5px rgba(0, 0, 0, 0.75);
-    width:13em;
-    background:@colorLight;
-  }
+
  
 /**
  * NoveList  
@@ -781,11 +796,11 @@ only screen and (        min-device-pixel-ratio: 2),
 only screen and (                min-resolution: 192dpi),
 only screen and (                min-resolution: 2dppx) {
   body {
-    font-size:12px;
+    //font-size:12px;
   }
 }
 @media only screen and (min-width: 50em) and (max-width:88em){ /* middle width 720p */
-  body{font-size:10px;}
+  //body{font-size:10px;}
   .shadowColors,.banner{width:88em;}
   .view-display-id-page_1{
     .scrollerBack,.scrollerNext{
