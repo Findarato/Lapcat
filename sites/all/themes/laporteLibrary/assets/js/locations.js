@@ -161,7 +161,6 @@ var locations={
          
       }
 };
-var mz = jQuery(".mapZoom");
 function displayLocation(me,domElementSelector){
   var today = new Date();
   var dayOfWeek = today.getDay();
@@ -222,22 +221,11 @@ function displayLocation(me,domElementSelector){
     }
     var offset = me.offset();
 }
-
-
-jQuery(".headerButton").bind("click",function(){
-  me = jQuery(this);
-  jQuery(".headerButton").removeClass("color2").addClass("color560");
-  me.toggleClass("color2 color560");
-  displayLocation(me,jQuery("#locationDisplay"));
-  
-});
-jQuery("#MA").trigger("click");
-
-jQuery("#mapIcon").bind("click",function(){
-  me = jQuery(this);
-  me.parent().toggleClass("mapDisplayZoom");
-  var MZ =jQuery(".mapZoom"); 
-  MZ.css("background-image","url("+MZ.attr("data-map")+")");
-  me.toggleClass("icon-zoom-in icon-zoom-out");
-  return false;
+date=new Date();
+today = date.getDay();
+jQuery(".locationNow > span").each(function(i,item){
+  me=jQuery(item);
+  if(me.attr("data-day")==today){
+    me.addClass("now");
+  }
 });

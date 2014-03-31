@@ -102,16 +102,18 @@ jQuery(document).ready(function(){
           }else{//if all else fails lets just load a local rss feed
             if(uri.search(/educators/i)>0){// this is the teens page
             }else{//if all else fails lets just load a local rss feed
-            	if(uri.search(/genealogy/i)>0){// this is the teens page
-            	}else{//if all else fails lets just load a local rss feed
-            		if(uri.search(/help/i)>0){// this is the about page
-              		}else{
-            			//jQuery.getScript(jsPath+"locations.js");
-            			jQuery.getScript(jsPath+"/libs/ftscroller.js");
-            			jQuery.getScript(jsPath+"instagram.js");
-            			jQuery.getScript(jsPath+"formatNewestFrontPage.js");
-            		}
-            	}
+              if(uri.search(/genealogy/i)>0){// this is the teens page
+              }else{//if all else fails lets just load a local rss feed
+                if(uri.search(/help/i)>0){// this is the about page
+                }else{
+                  if(uri.search(/locations/i)>0){// locations
+                    jQuery.getScript(jsPath+"locations.js");
+                  }else{
+                    jQuery.getScript(jsPath+"/libs/ftscroller.js");
+                    jQuery.getScript(jsPath+"instagram.js");
+                  }
+                }
+              }
             }
           }
         } 
