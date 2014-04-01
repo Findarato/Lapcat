@@ -321,13 +321,23 @@ li {
     margin:0 0 1em;
     .now{font-weight:bold;} 
   }
-  .locationInfo{
+  
+  .locationInfo,.closedInfo{
     padding:1em;
     position:relative;
     box-shadow: 7px 0px 4px -5px rgba(0, 0, 0, 0.75);
     width:13em;
     background:@colorLight;
     font-size:1.2em;
+  }
+  .closedInfo{
+    width: 100%;
+    height: 300px;
+    box-shadow: none;
+    span{
+      display:block;
+      padding:.25em;
+    }
   }
   .branchPicture{
     background:white no-repeat;
@@ -337,21 +347,26 @@ li {
     background-position:50%;
   }
   .main{
-    background-image:url("@{imagesPath}branchImages/coolspring_branch.png");
+    background-image:url("@{imagesPath}branchImages/library_facade.jpg"); 
   }
   .cs{
-    background-image:url("@{imagesPath}branchImages/coolspring_branch.png");
+    background-image:url("@{imagesPath}branchImages/coolspring_branch.jpg");
   }
   .fl{
-    background-image:url("@{imagesPath}branchImages/Fish_Lake_branch.png");
+    background-image:url("@{imagesPath}branchImages/Fish_Lake_branch.jpg");
   }
   .kh{
-    background-image:url("@{imagesPath}branchImages/Kingsford_heights_branch.png");
+    background-image:url("@{imagesPath}branchImages/Kingsford_heights_branch.jpg");
   }
   .ha{
-    background-image:url("@{imagesPath}branchImages/hanna_branch.png");
+    background-image:url("@{imagesPath}branchImages/hanna_branch.jpg");
   }
-
+  .rp{
+    background-image:url("@{imagesPath}branchImages/rollinprarie_branch.jpg");
+  }
+  .um{
+    background-image:url("@{imagesPath}branchImages/Union_mills_branch.jpg");
+  }
  
 /**
  * NoveList  

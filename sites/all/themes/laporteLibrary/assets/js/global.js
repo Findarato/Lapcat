@@ -111,6 +111,7 @@ jQuery(document).ready(function(){
                   }else{
                     jQuery.getScript(jsPath+"/libs/ftscroller.js");
                     jQuery.getScript(jsPath+"instagram.js");
+                    jQuery.getScript(jsPath+"formatNewestFrontPage.js");
                   }
                 }
               }
