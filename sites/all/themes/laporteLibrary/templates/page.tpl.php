@@ -1,17 +1,33 @@
-<style>
-  .bookCoverImage a{
-    min-width:75px;
-    min-height:100px;
-    display:inline-block;  
-  }
-</style>
-
 <header>
   <div class="masterHeader">
-    <a href="/" alt="Logo" title="La Porte County Public Library">
+    <a class="masterHeaderLogo" href="/" alt="Logo" title="La Porte County Public Library">
       <img class="logoImage" src="/sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />
+    </a>
+    <a class="masterHeaderTitle" href="/" alt="Logo" title="La Porte County Public Library">
       <h1><?Php print $site_name; ?></h1>
     </a>
+    
+    <div class="topHeaderMenu">
+      <label for="menuToggle" class="icon-menu menuToggleButton"></label>
+      <a class="socialLinks" href="https://www.facebook.com/laportelibrary" alt="Facebook">
+        <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/facebook.svg" alt="Facebook">
+      </a>
+      <a class="socialLinks" href="https://twitter.com/lpcpls" alt="Twitter">
+        <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/twitter.svg" alt="Twitter">
+      </a>
+      <a class="socialLinks" href="https://plus.google.com/101643741377376006619" alt="Google+">
+        <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/plus.svg" alt="Google+">
+      </a>
+      <a class="socialLinks" href="http://www.youtube.com/user/LaporteCoLibrary" alt="YouTube">
+        <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/youtube.svg" alt="YouTube">
+      </a>
+      <a class="socialLinks" href="http://instagram.com/laportelibrary" alt="Instagram">
+        <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/instagram.svg" alt="Instagram">
+      </a>
+      <a class="socialLinks" href="http://www.flickr.com/photos/laportelibrary" alt="Flickr">
+        <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/flickr.svg" alt="Flicky">
+      </a>
+    </div>
   </div>
   <nav class="masterHeaderMenu">
     <?php if ($page['menuHeader']): ?>
@@ -27,26 +43,6 @@
       <?php print render($page['pageTopMenu']); ?>
     </div>
     <?php endif; ?>-->
-  <div class="topHeaderMenu">
-    <a class="socialLinks" href="https://www.facebook.com/laportelibrary" alt="Facebook">
-      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/facebook.svg" alt="Facebook">
-    </a>
-    <a class="socialLinks" href="https://twitter.com/lpcpls" alt="Twitter">
-      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/twitter.svg" alt="Twitter">
-    </a>
-    <a class="socialLinks" href="https://plus.google.com/101643741377376006619" alt="Google+">
-      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/plus.svg" alt="Google+">
-    </a>
-    <a class="socialLinks" href="http://www.youtube.com/user/LaporteCoLibrary" alt="YouTube">
-      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/youtube.svg" alt="YouTube">
-    </a>
-    <a class="socialLinks" href="http://instagram.com/laportelibrary" alt="Instagram">
-      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/instagram.svg" alt="Instagram">
-    </a>
-    <a class="socialLinks" href="http://www.flickr.com/photos/laportelibrary" alt="Flickr">
-      <img src="/sites/all/themes/laporteLibrary/assets/images/socialMedia/flickr.svg" alt="Flicky">
-    </a>
-  </div>
 </header>
 <div class="colorWave"></div>
   <?php if ($messages): ?><div id="console"><?php print $messages; ?></div><?php endif; ?>

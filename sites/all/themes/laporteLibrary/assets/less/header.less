@@ -23,15 +23,19 @@ nav{position:relative;}
 .topHeaderMenu{
   position:absolute;
   top: .5em;
-  right:1.3em; 
+  right:1.3em;
+  .menuToggleButton{
+    height:37px;
+    width:34px;
+  }
   a{
     border:1px solid @colorBlue6;
     display:inline-flex;
     opacity:.8;
     .animate();
     img{
-			height:2.615384615em;
-	    width:2.615384615em; 
+			height:34px;
+	    width:34px;
     }
     &:hover{
      opacity:1;
@@ -48,9 +52,12 @@ nav{position:relative;}
       .headerButtons();
       border:1px solid @colorBlue9;
       border-bottom:none;
+      a{
+        width: 100%;
+        display: inline-block;
+      }
     }
   }
-  
 }
 .colorWave{
   background:@colorBlue9;
@@ -133,11 +140,13 @@ input[type=checkbox].menuToggle {
   }
 
 }
-  input[type=checkbox]:checked ~ #menuHeader {
-   opacity:1;
-   height:4em;
+input[type=checkbox]:checked ~ #menuHeader {
+  opacity:1;
+  height:33.5em;
+  overflow:visable;
+  ul.menu li{
+
   }
-  #menuHeader{} 
-ul.menu li{
-  margin:0;
 }
+  #menuHeader{} 
+
