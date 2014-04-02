@@ -41,12 +41,12 @@ jQuery.each(adultCategories,function(i,item){
   if(item.length>1){// lets not have random spaces or one letter categories
   categoryBox
     .append(
-      jQuery("<a/>",{"html":item,"class":"roundAll3 insideBoxShadow color560 "+item+"Menu"})
+      jQuery("<a/>",{"html":item,"class":"researchMenuItem "+item+"Menu"})
         .css({"padding":"5px","margin":"2px","cursor":"pointer"})
         .click(function(){
           var me = jQuery(this);
           jQuery(".researchList").fadeOut("fast").delay("200");
-          jQuery(".subTitleElement a.color2").removeClass("color2").addClass("color560")
+          jQuery(".subTitleElement a.color2").removeClass("color2").addClass("color560");
           me.addClass("color2").removeClass("color560");
           jQuery("."+item).fadeIn("fast");
           return false;

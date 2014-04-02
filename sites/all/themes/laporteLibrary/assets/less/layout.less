@@ -803,10 +803,7 @@ ul.pager{
   }
   
 }
-.menuToggleButton{
-  visibility:none;
-  .headerButtons()
-}
+
 @media
 only screen and (-webkit-min-device-pixel-ratio: 2),
 only screen and (   min--moz-device-pixel-ratio: 2),
@@ -837,12 +834,6 @@ only screen and (                min-resolution: 2dppx) {
     width:100%;
     padding:1em;
   }
-  .masterHeader{
-    h1{
-      width:auto;
-      font-size:2.7em;
-    }
-  }
 }
 @media only screen and (min-width: .1em) and (max-width:49em){ /*everything should be here*/ 
   .articleBlocks{
@@ -869,8 +860,11 @@ only screen and (                min-resolution: 2dppx) {
       img{height:100%;width:100%;}
     }
   }
-  body{ 
-    .animate();
+  body{
+    *{
+      .animate();  
+    }
+    
     font-size:10px;
   }
   .bookTitle{
@@ -902,6 +896,13 @@ only screen and (                min-resolution: 2dppx) {
     justify-content: center;
 
   }
+  .masterHeader{
+    h1{
+      //width:auto;
+      font-size:2em;
+      left:5.5em;
+    }
+  }
   .masterHeaderMenu{
     position:relative;
     width: 100%;
@@ -912,13 +913,6 @@ only screen and (                min-resolution: 2dppx) {
       }
     }
   }
-
-
-
-
-
-
-  
   #menuHeader{
     .animate();
     height: 0;
@@ -939,9 +933,7 @@ only screen and (                min-resolution: 2dppx) {
       }
     }
   }
-  .menuToggleButton{
-    visibility:visable;
-  }
+
   .newArticlesContainer{
     flex-flow: row wrap;
   }
@@ -965,6 +957,9 @@ only screen and (                min-resolution: 2dppx) {
     display: flex;
     justify-content: space-between; 
     width: 26.308em;
+    .menuToggleButton{
+      opacity:1;
+    }
   }
 
 
