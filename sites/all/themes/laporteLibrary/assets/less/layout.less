@@ -23,6 +23,7 @@ body,html {
   padding:0px; 
   height:105%;
   color:@colorDark;
+  -webkit-animation: bugfix infinite 1s; 
 }
 html body.admin-menu {
     margin-top: 80px !important;
@@ -787,12 +788,16 @@ ul.pager{
 
 /*Bug fixes*/
   
-  .adultResearch{
-    img{
-      float:left;
-      height:6em;
-    }
+.adultResearch{
+  img{
+    float:left;
+    height:6em;
   }
+}
+@-webkit-keyframes bugfix { 
+  from {padding:0;} 
+  to {padding:0;} 
+} 
 //this allows for the bullet points to show on ULs
 .field-type-text-with-summary {
   ul{
@@ -861,10 +866,6 @@ only screen and (                min-resolution: 2dppx) {
     }
   }
   body{
-    *{
-      .animate();  
-    }
-    
     font-size:10px;
   }
   .bookTitle{

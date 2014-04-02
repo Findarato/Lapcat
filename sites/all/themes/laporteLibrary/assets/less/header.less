@@ -29,7 +29,8 @@ nav{position:relative;}
     height:37px;
     width:34px;
     opacity:0;
-    
+    cursor: pointer;
+    user-select: none;
   }
   a{
     border:1px solid @colorBlue6;
@@ -49,7 +50,10 @@ nav{position:relative;}
   right: 0;
   position: absolute;
   bottom: 0;
-  #menuHeader{}
+  #menuHeader{
+    transform:translateZ(0);
+  }
+  transform:translateZ(0);
   ul{
     li{
       .headerButtons();
