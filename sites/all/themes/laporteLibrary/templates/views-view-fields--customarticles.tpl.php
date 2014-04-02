@@ -13,4 +13,7 @@
       <?php print $fields["body"]->content ?>
     </div>
     <?php print $fields["field_tags"]->content ?>
+    <div class="joeiscool" style="height:100px;width:100px;overflow:hidden;">
+      <?php print $fields["field_image"]->content ?>
+    </div>
 </article>

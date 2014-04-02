@@ -131,7 +131,7 @@ jQuery(document).ready(function(){
           "background-size":"16px 16px"
       });
   });
-  jQuery("iframe").each(function(i,item){
+  jQuery(".field-name-body").find("iframe").each(function(i,item){
     me = jQuery(item);
     oldMe = me.clone();
     oldMe.show();

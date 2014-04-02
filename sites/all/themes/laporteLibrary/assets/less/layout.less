@@ -21,9 +21,12 @@ body,html {
   line-height:1.4em;
   margin:0px;
   padding:0px; 
-  height:105%;
+  min-height:100vh;
   color:@colorDark;
   -webkit-animation: bugfix infinite 1s; 
+//  display:flex;
+//  flex-direction: column;
+  flex:1;
 }
 html body.admin-menu {
     margin-top: 80px !important;
@@ -157,7 +160,7 @@ aside {
   width: 23.9395em;
   margin: 0 0.5em;
   display:inline-flex;
-  .region-rightside{
+  .region-rightside,#rightSide{
     flex:100%;
   }
 }
@@ -461,7 +464,7 @@ iframe{
   vertical-align:   top;
     img{
       //width:        auto;
-      max-width:    28em;
+      //max-width:    28em;
       
     }
 }

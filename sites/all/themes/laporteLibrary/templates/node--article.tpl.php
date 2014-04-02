@@ -1,14 +1,24 @@
-      <style>
-        .userImage img{
-          width:64px;
-          height:64px;
-          margin:0px;
-          padding:0px;
-        }
-        .submitted{
-          padding:3px;
-        }
-      </style>
+<style>
+  .userImage img{
+    width:64px;
+    height:64px;
+    margin:0px;
+    padding:0px;
+  }
+  .submitted{
+    padding:3px;
+  }
+  .field-type-image{
+    top: 40px;
+    position: absolute;
+    height: 94px;
+    overflow: hidden;
+    width: 97%;
+  }
+  .bookContainer{
+    margin-top:88px;
+  }
+</style>
 <div class="bookBox <?php print $classes; ?>" id="node-<?php print $node -> nid; ?>" <?php print $attributes; ?>>
   <div class="bookTitle"><h2><?php print $title; ?></h2></div>
   <div class="bookContainer" >
@@ -31,8 +41,6 @@
       <div class="content clearfix"<?php print $content_attributes; ?>>
         <?php
           // We hide the comments and links now so that we can render them later.
-          hide($content['comments']);
-          hide($content['links']);
           print render($content);
         ?>
       </div>
