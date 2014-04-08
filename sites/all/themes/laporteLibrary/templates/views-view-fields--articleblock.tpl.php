@@ -3,7 +3,7 @@
     <div>
       <?php print $fields["field_tags"]->content ?>
       <div class="picture">
-        <?php print $fields["field_image"]->content ?>
+        <?Php  print $fields["field_image"]->content ?>
       </div>
       <div class="title" style="width:100%;"><?php print $fields["title"]->content ?></div>
     </div>

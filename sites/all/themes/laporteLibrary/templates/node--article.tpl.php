@@ -8,16 +8,6 @@
   .submitted{
     padding:3px;
   }
-  .field-type-image{
-    top: 40px;
-    position: absolute;
-    height: 94px;
-    overflow: hidden;
-    width: 97%;
-  }
-  .bookContainer{
-    margin-top:88px;
-  }
 </style>
 <div class="bookBox <?php print $classes; ?>" id="node-<?php print $node -> nid; ?>" <?php print $attributes; ?>>
   <div class="bookTitle"><h2><?php print $title; ?></h2></div>
@@ -36,16 +26,17 @@
       </div>
     </div> 
   <!-- Comments -->
-    <div class="clearfix">
-      <?php if (!empty($content['links'])): ?>
-      <div class="content clearfix"<?php print $content_attributes; ?>>
-        <?php
-          // We hide the comments and links now so that we can render them later.
-          print render($content);
-        ?>
-      </div>
-        <div class="links"><?php print render($content['links']); ?></div>
-      <?php endif; ?>
-    </div>
+  
+    
+  <?php if (!empty($content['links'])): ?>
+  <div class="content"<?php print $content_attributes; ?>>
+    <?php
+      print render($content["body"]);
+      print render($content["field_tags"]);
+    ?>
+  </div>
+    <div class="links"><?php print render($content['links']); ?></div>
+  <?php endif; ?>
+    
   </div>
 </div>

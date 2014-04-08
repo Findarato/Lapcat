@@ -124,7 +124,6 @@
     </aside>
   </main> <!-- end of main content-->
   <div class="clear"></div>
-  <div class="colorWave"></div>
   <footer>
     <div class="t" style="width:100%;bottom:0px;position:relative">
      <?php if ($page['pageLinks']): ?>
