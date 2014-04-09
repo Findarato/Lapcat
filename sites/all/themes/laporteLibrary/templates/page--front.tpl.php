@@ -94,10 +94,10 @@
       <div class="tagRow">
         <a href="/taxonomy/term/76">Arts</a>
         <a href="/taxonomy/term/77">Books, Movies, Music</a>
-        <a href="/taxonomy/term/78">Home</a>
         <a href="/taxonomy/term/8">Children</a>
         <a href="/taxonomy/term/85">Community</a>
         <a href="/taxonomy/term/11">History</a>
+        <a href="/taxonomy/term/78">Home</a>
         <a href="/taxonomy/term/79">Library News</a>
         <a href="/taxonomy/term/80">Parents and Educators</a>
         <a href="/taxonomy/term/81">Technology</a>

@@ -44,8 +44,8 @@ body{
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 a[href^="/taxonomy"]:not([href*="?page="]),.researchMenuItem{/*These are tags on items*/
   width:100%;
-  display:block;
-  padding:.3em;
+  display:inline-block;
+  padding:.4em;
   .animate(300ms);
   .colorHover(darken(@colorBlue6,20%));
   color:@colorLight;
@@ -53,7 +53,7 @@ a[href^="/taxonomy"]:not([href*="?page="]),.researchMenuItem{/*These are tags on
   white-space: nowrap;
 }
 .researchMenuItem{
-  width: 13%;
+  width:auto;
 }
 a[href^="/taxonomy/term/76"]:not([href*="?page="]),.AllMenu{//Arts
   .colorHover(darken(@colorGreen1,10%));
