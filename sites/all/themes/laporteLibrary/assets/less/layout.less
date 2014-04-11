@@ -25,10 +25,10 @@ body,html {
 html body.admin-menu {
     margin-top: 80px !important;
 }
-h1,h3,.bookTitle{
+h1,h2{
   font-family:"Ubuntu",sans;
 }
-h2,h4,body{
+h3,h4,body{
   font-family:"Vollkorn",sans-serif;
   
 }
@@ -37,6 +37,7 @@ a[href^="/taxonomy"]:not([href*="?page="]),.researchMenuItem{/*These are tags on
   width:100%;
   display:inline-block;
   padding:.4em;
+  font-size:1.3rem;
   .animate(300ms);
   .colorHover(darken(@colorBlue6,20%));
   color:@colorLight;
@@ -137,16 +138,16 @@ aside {
   }
 }
 /*Grid layout*/
-@total-width: 87.6923em;
+@total-width: 87.6923rem;
 //@total-width: 1140px;
 .mainArea{
-  margin:0 auto 4em;
+  margin:0 auto 4rem;
   width:@total-width;
   display:block;
 }
 #mainContent{
-  width:61.5219em;
-  margin: 0 0.5em;
+  width:61.5219rem;
+  margin: 0 0.5rem;
   display:inline-flex;
   vertical-align: top;
   .region-content{
@@ -154,8 +155,8 @@ aside {
   }
 }
 #side{
-  width: 23.9395em;
-  margin: 0 0.5em;
+  width: 23.9395rem;
+  margin: 0 0.5rem;
   display:inline-flex;
   vertical-align: top;
   .region-rightside,#rightSide{
@@ -176,7 +177,7 @@ h1 {
   @colorDark;
 }
 h2 {
-  font-size: 1em;
+  font-size: 1.2em;
   line-height:.8em;
   font-weight:normal;
   color:@colorLight;
@@ -325,6 +326,7 @@ li {
     width: 100%;
     margin: .5em;
     flex: 100%;
+    line-height:1.3rem;
   }
   .locationBody{
     flex-direction: row;

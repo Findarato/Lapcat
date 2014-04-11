@@ -123,11 +123,14 @@
   justify-content: center;
   display: inline-flex;
   .articleEntryDescription{
-    height: 15em;
+    //height: 15em;
     display: block;
-    
+    font-size:1.4em;    
   }
   .articlePicture{
+    .title{
+      
+    }
     .picture{
       height:220/13em;
       width:274/13em;
@@ -166,11 +169,13 @@
     height:165/13em;
     width:220/13em;
     background:@gray;
+    margin-top: -15px;
     img{height:100%;width:100%;}
   }
   .title{
     color:@colorDark;
-    font-size:1.2em;
+    font-size: 1.6rem;
+    text-transform: capitalize;
   }
 }
  
