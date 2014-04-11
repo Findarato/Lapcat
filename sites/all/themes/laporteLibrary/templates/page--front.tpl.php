@@ -79,16 +79,16 @@
       <?php if ($messages): ?>
       <div id="console" class="clearfix"><?php print $messages; ?></div>
       <?php endif; ?>
-<div class="shadowColors">
-<div class="banner">
- <?php if ($page['featured_slider']): ?>
-  <div id="featured-slider" class="">
-    <?php print render($page['featured_slider']); ?>
-  </div> <!-- End Featured Slider-->
-<?php endif; ?>
-</div>
-</div>
   <main class="mainArea" id="main" role="main">
+    <div class="shadowColors">
+      <div class="banner">
+       <?php if ($page['featured_slider']): ?>
+        <div id="featured-slider" class="">
+          <?php print render($page['featured_slider']); ?>
+        </div> <!-- End Featured Slider-->
+      <?php endif; ?>
+      </div>
+    </div>
     <div class="newArticles">
       <h1>What's New @ the Library</h1> 
       <div class="tagRow">

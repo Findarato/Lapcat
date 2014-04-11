@@ -10,15 +10,9 @@
 @gMapsColor:`"@{hex5}".replace("#",'')`;
 *{box-sizing: border-box;}
 *:focus {outline: none; }
-html{
-  //font-size:81.25%;
-  font-size:13px;
-  line-height:1.4em;
-}
-
 body,html {
   font-size:13px;
-  line-height:1.4em;
+  line-height:1.5;
   margin:0px;
   padding:0px; 
   min-height:100%;
@@ -37,9 +31,6 @@ h1,h3,.bookTitle{
 h2,h4,body{
   font-family:"Vollkorn",sans-serif;
   
-}
-body{
-
 }
 a,a:visited,a:focus { color: @color5; text-decoration:none;font-weight:normal;}
 a[href^="/taxonomy"]:not([href*="?page="]),.researchMenuItem{/*These are tags on items*/
@@ -146,8 +137,8 @@ aside {
   }
 }
 /*Grid layout*/
-
-@total-width: 87.692307692em;
+@total-width: 87.6923em;
+//@total-width: 1140px;
 .mainArea{
   margin:0 auto 4em;
   width:@total-width;
