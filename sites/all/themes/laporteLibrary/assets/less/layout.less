@@ -137,6 +137,11 @@ aside {
     color:@colorDark; 
   }
 }
+.downloadIcon{
+  height:1.4em;
+  width:1.4em;
+  margin-bottom:1em;
+}
 /*Grid layout*/
 @total-width: 87.6923rem;
 //@total-width: 1140px;
@@ -476,6 +481,23 @@ iframe{
   background:        @globalBackground;
 }
 .bookContainer{
+  .downloadDisplay{
+    padding:.5rem 0;
+    .td{vertical-align: bottom;}
+    .td:first-of-type{
+      width: 26rem;
+      div:first-of-type{
+        display:table;
+        *{
+          display:table-cell;  
+        }  
+      }
+      
+    }
+    .td:last-of-type{
+       width:auto;
+    }
+  }
   padding:          2em 1em 1em 1em;
   vertical-align:   top;
     img{
