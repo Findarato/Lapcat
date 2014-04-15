@@ -89,7 +89,6 @@ a[href^="/taxonomy/term/85"]:not([href*="?page="]){//Community
 article{
   position:relative;
   width:100%;
-  padding:3px;
   margin-bottom:1em;
   min-height:150px;
   .field-content{
@@ -137,11 +136,7 @@ aside {
     color:@colorDark; 
   }
 }
-.downloadIcon{
-  height:1.4em;
-  width:1.4em;
-  margin-bottom:1em;
-}
+
 /*Grid layout*/
 @total-width: 87.6923rem;
 //@total-width: 1140px;
@@ -157,6 +152,9 @@ aside {
   vertical-align: top;
   .region-content{
     flex:100%;
+    //display:inline-flex;
+    display:block;
+    flex-direction: column;
   }
 }
 #side{
@@ -325,78 +323,137 @@ li {
     font-size:1.2em;
   }
 }
-.locationBox{
+.locationBox,.downloadsBox{
     flex-direction: column;
     display: inline-flex;
     width: 100%;
-    margin: .5em;
+    //margin: .5em;
     flex: 100%;
     line-height:1.3rem;
+}
+.locationBody{
+  flex-direction: row;
+  display: flex;
+  a{
+    margin:1em 0;
+    display:block      
   }
-  .locationBody{
-    flex-direction: row;
-    display: flex;
-    a{
-      margin:1em 0;
-      display:block      
-    }
-    .map{
-    }
+  .map{
   }
-  .locationTitle{
-    font-size:1.2em;
-    margin-bottom:1em;
-  }
-  .locationNow{
-    margin:0 0 1em;
-    .now{font-weight:bold;} 
-  }
+}
+.locationTitle{
+  font-size:1.2em;
+  margin-bottom:1em;
+}
+.locationNow{
+  margin:0 0 1em;
+  .now{font-weight:bold;} 
+}
   
-  .locationInfo,.closedInfo{
-    padding:.5em;
-    position:relative;
-    box-shadow: 7px 0px 4px -5px rgba(0, 0, 0, 0.75);
-    width:13em;
-    background:@colorLight;
-    font-size:1.2em;
+.locationInfo,.closedInfo{
+  padding:.5em;
+  position:relative;
+  box-shadow: 7px 0px 4px -5px rgba(0, 0, 0, 0.75);
+  width:13em;
+  background:@colorLight;
+  font-size:1.2em;
+}
+.closedInfo{
+  width: 100%;
+  height: 300px;
+  box-shadow: none;
+  span{
+    display:block;
+    padding:.25em;
   }
-  .closedInfo{
-    width: 100%;
-    height: 300px;
-    box-shadow: none;
-    span{
-      display:block;
-      padding:.25em;
+}
+.branchPicture{
+  background:white no-repeat;
+  background-size:cover;
+  height: 300px;
+  width: 344px;
+  background-position:50%;
+}
+.main{
+  background-image:url("@{imagesPath}branchImages/library_facade.jpg"); 
+}
+.cs{
+  background-image:url("@{imagesPath}branchImages/coolspring_branch.jpg");
+}
+.fl{
+  background-image:url("@{imagesPath}branchImages/Fish_Lake_branch.jpg");
+}
+.kh{
+  background-image:url("@{imagesPath}branchImages/Kingsford_heights_branch.jpg");
+}
+.ha{
+  background-image:url("@{imagesPath}branchImages/hanna_branch.jpg");
+}
+.rp{
+  background-image:url("@{imagesPath}branchImages/rollinprarie_branch.jpg");
+}
+.um{
+  background-image:url("@{imagesPath}branchImages/Union_mills_branch.jpg");
+}
+/*Downloads Section*/
+@downloadWidth:20rem;
+.downloadIcon{
+  margin-bottom: 0px;
+  display: table-cell;
+  vertical-align: top;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+#boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud{
+  display:inline-block;
+  width:@downloadWidth;
+  vertical-align: top;
+  //width:100%;
+}
+.downloadsBox{
+  width:@downloadWidth;
+  line-height: inherit;
+  display:inline-block;
+  flex:0;
+  
+  .bookTitle{
+    display:table;
+    height: 1em;
+    h2{
+      display: table-cell;
+      width: 100%;
     }
   }
   .branchPicture{
-    background:white no-repeat;
-    background-size:cover;
-    height: 300px;
-    width: 337px;
-    background-position:50%;
+    
   }
-  .main{
-    background-image:url("@{imagesPath}branchImages/library_facade.jpg"); 
+  .locationBody{
+    flex-direction:column;
   }
-  .cs{
-    background-image:url("@{imagesPath}branchImages/coolspring_branch.jpg");
+  .locationInfo{
+    box-shadow:0 7px 4px -5px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: auto;
   }
-  .fl{
-    background-image:url("@{imagesPath}branchImages/Fish_Lake_branch.jpg");
+  .locationPicture{
+    margin-top:0rem;
+    .branchPicture{
+      width:19rem;
+      height:6rem;
+    }
   }
-  .kh{
-    background-image:url("@{imagesPath}branchImages/Kingsford_heights_branch.jpg");
-  }
-  .ha{
-    background-image:url("@{imagesPath}branchImages/hanna_branch.jpg");
-  }
-  .rp{
-    background-image:url("@{imagesPath}branchImages/rollinprarie_branch.jpg");
-  }
-  .um{
-    background-image:url("@{imagesPath}branchImages/Union_mills_branch.jpg");
-  }
+}
+.freegal{
+  background-image:url("@{imagesPath}banners/freegalLogo.png");
+}
+.overdrive{
+  background-image:url("@{imagesPath}banners/overdriveLogo.png");
+}
+.zinio{
+  background-image:url("@{imagesPath}banners/zinioLogo.png");
+}
+/*Do
+
  
 /**
  * NoveList  
@@ -871,9 +928,6 @@ only screen and (                min-resolution: 2dppx) {
       }
     }
   }
-  .bookTitle{
-    font-size:1.5em;
-  }
 }
 @media only screen and (min-width: 25em) and (max-width:49em) { /* Portrait Phones */	
 	.shadowColors{
@@ -882,6 +936,7 @@ only screen and (                min-resolution: 2dppx) {
   }
 }
 @media only screen and (min-width: .1em) and (max-width:49em){ /*everything should be here*/ 
+  
   .articleBlocks{
     width:100%;
     .view-newest-article-blocks{
@@ -900,17 +955,14 @@ only screen and (                min-resolution: 2dppx) {
       margin:1em 0;
       display:table;
     .picture{
-      height:150/13em;
-      width:200/13em;
+      height:150/13rem;
+      width:200/13rem;
       background:@gray;
       img{height:100%;width:100%;}
     }
   }
   body{
     font-size:10px;
-  }
-  .bookTitle{
-    font-size:1.5em;
   }
   .flex-control-nav {
     display:none;
@@ -922,16 +974,54 @@ only screen and (                min-resolution: 2dppx) {
     flex-direction: column;
     .locationInfo{
       width:100%;
-      box-shadow:0 7px 4px -5px rgba(0, 0, 0, 0.75);;
+      box-shadow:0 7px 4px -5px rgba(0, 0, 0, 0.75);
     }
     .branchPicture{
       width:100%;
-      margin-top:-7em;
+      margin-top:-7rem;
     }
   }
-
+  
+  /*Downloads Section*/
+@downloadWidth:100%;
+#boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud{
+  display:inline-block;
+  width:@downloadWidth;
+  vertical-align: top;
+  //width:100%;
+}
+.downloadsBox{
+  width:@downloadWidth;
+  line-height: inherit;
+  display:inline-block;
+  flex:0;
+  .branchPicture{
+    
+  }
+  .locationBody{
+    flex-direction:column;
+  }
+  .locationInfo{
+    box-shadow:0 7px 4px -5px rgba(0, 0, 0, 0.75);
+    width: 100%;
+    height: 16rem;
+  }
+  .locationPicture{
+    margin-top:0;
+    display:none;
+    .branchPicture{
+      width:@downloadWidth;
+      height:@downloadWidth/2;
+    }
+  }
+}
+  
+  
+  
+  
+  
   .mainArea{
-    padding:1em;
+    padding:1rem;
     display:flex;
     flex-flow:row wrap;
     width:100%;
