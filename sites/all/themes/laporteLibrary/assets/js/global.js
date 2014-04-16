@@ -131,14 +131,15 @@ jQuery(document).ready(function(){
           "background-size":"16px 16px"
       });
   });
-  jQuery(".field-name-body").find("iframe").each(function(i,item){
-    me = jQuery(item);
-    oldMe = me.clone();
-    oldMe.show();
-    container = jQuery("<div/>",{"class":"videoContainer"});
-    container.append(oldMe);
-    me.replaceWith(container);
-  });
+  jQuery("iframe[src*='youtube.com'], iframe[src*='youtu.be']")
+    .each(function(i,item){
+      me = jQuery(item);
+      oldMe = me.clone();
+      oldMe.show();
+      container = jQuery("<div/>",{"class":"videoContainer"});
+      container.append(oldMe);
+      me.replaceWith(container);
+    });
   jQuery(".eventDate").replaceWith(function(){
     var monthNames = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun","Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
     me = jQuery(this);

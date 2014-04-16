@@ -227,7 +227,12 @@ form #user-login-form{
  */
 
 .field-content{
-  a[href*="taxonomy"]{display:inline-block;}
+  a[href*="taxonomy"]{
+    display:inline-block;
+    width: auto;
+    margin-right: .5rem;
+    font-size: 1rem;
+  }
 }
 
 .menuSelect {
@@ -519,6 +524,9 @@ input.noveListSubmit{
 }
 iframe{
   //display:none;
+}
+iframe[src*="youtube.com"], iframe[src*="youtu.be"]{
+  display:none;
 }
 .user-picture img{
   height:40px;
