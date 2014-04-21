@@ -10,7 +10,7 @@
 @gMapsColor:`"@{hex5}".replace("#",'')`;
 *{box-sizing: border-box;}
 *:focus {outline: none; }
-body,html {
+body {
   font-size:13px;
   line-height:1.5;
   margin:0px;
@@ -18,10 +18,11 @@ body,html {
   min-height:100%;
   color:@colorDark;
   -webkit-animation: bugfix infinite 1s; 
-//  display:flex;
-//  flex-direction: column;
-  flex:1;
+  display:flex;
+  flex-direction: column;
+  //flex:1;
 }
+
 html body.admin-menu {
     margin-top: 80px !important;
 }
@@ -207,11 +208,8 @@ form #user-login-form{
 }
 
 
-
-
-
 ::-moz-selection { background: @navy; color: @colorLight; text-shadow: none; }
-::selection { background: @navy; color: @colorLight; text-shadow: none; }
+::selection { background: @navy; color: @colorLight; text-shadow: none; } 
 
 .siteMap{
   height:auto;
@@ -420,7 +418,6 @@ li {
   line-height: inherit;
   display:inline-block;
   flex:0;
-  
   .bookTitle{
     display:flex;
     h2{ 
@@ -437,13 +434,27 @@ li {
   .locationInfo{
     box-shadow:none;
     width: 100%;
-    height: auto;
+    //min-height: 19rem;
   }
-  .locationPicture{
-    margin-top:0rem;
-    .branchPicture{
+  .locationNow{
+    height:16.8rem;
+    display: inline-flex;
+    flex-direction: column;
+    align-items:stretch;
+    justify-content: space-between;
+    align-items:flex-end; 
+    .locationNowInfo{
+      //align-self: flex-start;
+    }
+    .locationPicture{
+      margin-top:0rem;
+      //align-self: flex-end;
       width:19rem;
       height:6rem;
+      .branchPicture{
+        width:19rem;
+        height:6rem;
+      }
     }
   }
 }
