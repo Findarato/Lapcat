@@ -312,7 +312,20 @@ li {
   }
 }
 
-
+.bannerBox{
+  width:100%;
+  height:auto;
+  background:@colorLight;
+  background: linear-gradient(to bottom, lighten(@colorYellow1,10%) 0%,lighten(@colorYellow1,100%) 90%); /* W3C */ 
+  display: flex;
+  justify-content: center;
+   .masterplan{
+     display:block;
+     font-size:2em;
+     font-family:"Ubuntu",sans;
+     color:@colorBlue6;
+   }
+}
 /**
  *   Locations Page
  * 
