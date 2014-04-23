@@ -1,6 +1,7 @@
 .shadowColors{
   background:@colorLight;
   margin:1em .5em;
+  //width:87rem;
 }
 
 
@@ -25,15 +26,6 @@
   //  display:table;
   
   .flex-caption {
-  //    background: @black;
-  //    color: @white;
-  //    width: 33%;
-  //    font-size: 2.2em;
-  //    padding-top: 0.3em;
-  //    text-transform:capitalize;
-  //    display:table-cell;
-  //    vertical-align:top;
-  //    line-height:1em;
     display:none;
     }
     a{
@@ -73,8 +65,8 @@
  li {
    a {
      .animate();
-     height:1em;
-     width:1em;
+     height:1rem;
+     width:1rem;
     .colorHover(@navy);
    }
    a.flex-active {
@@ -89,11 +81,11 @@
 }
 .newArticles{
   background:@colorLight;
-  padding:1em 0;
-  overflow:auto;
+  padding:1rem 0;
+  //overflow:auto;
   //width:100%;
   display: block;
-  margin:1em .5em;
+  margin:1rem .5rem;
   h1{
  
   }
@@ -129,15 +121,18 @@
     font-size:1.4em;    
   }
   .articlePicture{
+    display: inline-flex;
+    flex-direction: column;
+    width: 23rem;
     .title{
       
     }
     .picture{
-      height:220/13em;
-      width:274/13em;
+      height:17rem;
+      width:23rem;
       img{
         height:100%;
-        width:100%;
+        width:100%; 
       }
     }  
   }
@@ -155,20 +150,20 @@
     font-size:1.3em;
     width:auto;
    // min-width:5.5em;
-    padding:.4em;
-    margin:.1em;
+    padding:.4rem;
+    margin:.1rem;
     display: inline-block;
   }
 }
 .articlePicture{
   .articleEntryDescription:empty{display:none;}
-  height: 16.692rem;
-  width: 16rem;
+  height: 17rem;
+  width: 17rem;
   margin:1em 0;
   display:table;
   .picture{
     height:12rem;
-    width:16rem;
+    width:17rem;
     background:@gray;
     margin-top: -15px;
     img{height:100%;width:100%;}

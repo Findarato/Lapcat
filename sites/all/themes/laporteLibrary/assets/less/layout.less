@@ -10,8 +10,10 @@
 @gMapsColor:`"@{hex5}".replace("#",'')`;
 *{box-sizing: border-box;}
 *:focus {outline: none; }
-body {
+html{
   font-size:13px;
+}
+body {
   line-height:1.5;
   margin:0px;
   padding:0px; 
@@ -90,7 +92,7 @@ a[href^="/taxonomy/term/85"]:not([href*="?page="]){//Community
 article{
   position:relative;
   width:100%;
-  margin-bottom:1em;
+  margin-bottom:1rem;
   min-height:150px;
   .field-content{
     display:table-cell;
@@ -99,7 +101,7 @@ article{
   .articleEntryDescription{
     width:100%;
     overflow:hidden;
-    margin-bottom:1em; 
+    margin-bottom:1rem; 
     display:table;   
     .field-content{
       width:95%;
@@ -123,7 +125,7 @@ aside {
 }
 .bookTitle{ 
   width:100%;
-  padding:.7em;
+  padding:.7rem;
   cursor:pointer;
   white-space: nowrap;
   background:darken(@colorBlue6,10%);
@@ -131,7 +133,7 @@ aside {
 }
 .breadCrumbs{
   font-size:1.2em;
-  margin:1em;
+  margin:1rem;
   width:100%;
   .active{
     color:@colorDark; 
@@ -139,15 +141,15 @@ aside {
 }
 
 /*Grid layout*/
-@total-width: 87.6923rem;
-//@total-width: 1140px;
+//@total-width: 87rem;
+@total-width: 1131px;
 .mainArea{
   margin:0 auto 4rem;
   width:@total-width;
   display:block;
 }
 #mainContent{
-  width:61.5219rem;
+  width:61rem;
   margin: 0 0.5rem;
   display:inline-flex;
   vertical-align: top;
@@ -159,7 +161,7 @@ aside {
   }
 }
 #side{
-  width: 23.9395rem;
+  width: 23rem;
   margin: 0 0.5rem;
   display:inline-flex;
   vertical-align: top;
@@ -167,6 +169,7 @@ aside {
     flex:100%;
   }
 }
+
 /*Grid layout End*/
 
 h1,h2,h3,h4{
@@ -945,8 +948,8 @@ only screen and (                min-resolution: 2dppx) {
   }
 }
 @media only screen and (min-width: 50em) and (max-width:88em){ /* middle width 720p */
-  //body{font-size:10px;}
-  .shadowColors,.banner{width:88em;}
+  body{font-size:11.7px;}
+  //.shadowColors,.banner{width:87rem;}
   .view-display-id-page_1{
     .scrollerBack,.scrollerNext{
       &:after{
@@ -988,7 +991,7 @@ only screen and (                min-resolution: 2dppx) {
     }
   }
   body{
-    font-size:10px;
+    font-size:11.7px;
   }
   .flex-control-nav {
     display:none;
