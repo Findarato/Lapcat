@@ -320,14 +320,15 @@ li {
 .page-node-28{
   //adjustments for the locations page
   #mainContent{
-    width:42em;
+    width:42rem;
   }
   #side{
-    width:42em; 
+    width:42rem;
   }
   .bookTitle{
     font-size:1.2em;
   }
+
 }
 .locationBox,.downloadsBox{
     flex-direction: column;
@@ -347,6 +348,16 @@ li {
   .map{
   }
 }
+.locationPicture{
+  width:27rem;
+}
+.branchPicture{
+  background:white no-repeat;
+  background-size:cover;
+  height: 300px;
+  width: 27rem;
+  background-position:50%;
+}
 .locationTitle{
   font-size:1.2em;
   margin-bottom:1em;
@@ -360,9 +371,9 @@ li {
   padding:.5em;
   position:relative;
   box-shadow: 7px 0px 4px -5px rgba(0, 0, 0, 0.75);
-  width:13em;
+  width:15rem;
   background:@colorLight;
-  font-size:1.2em;
+  font-size:1.1em;
 }
 .closedInfo{
   width: 100%;
@@ -373,13 +384,7 @@ li {
     padding:.25em;
   }
 }
-.branchPicture{
-  background:white no-repeat;
-  background-size:cover;
-  height: 300px;
-  width: 344px;
-  background-position:50%;
-}
+
 .main{
   background-image:url("@{imagesPath}branchImages/library_facade.jpg"); 
 }
@@ -443,7 +448,7 @@ li {
     //min-height: 19rem;
   }
   .locationNow{
-    height:16.8rem;
+    height:16rem;
     display: inline-flex;
     flex-direction: column;
     align-items:stretch;
@@ -455,7 +460,7 @@ li {
     .locationPicture{
       margin-top:0rem;
       //align-self: flex-end;
-      //width: 247px;
+      width: 100%;
       .branchPicture{
         width: 247px;
         height: 78px;
