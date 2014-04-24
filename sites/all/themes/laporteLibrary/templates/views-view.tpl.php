@@ -1,4 +1,4 @@
-<div class="bookBox">
+<div class="bookBox <?Php print $css_class; ?>">
   <div class="bookTitle">
     <h2>
     <?php if ($view->get_title()): ?>
@@ -12,7 +12,7 @@
       </div>
     <?php endif; ?>
     <?php if ($rows): ?>
-      <div class="view-content <?php print $classes; ?>">
+      <div class="view-content <?php print str_replace($css_class,'',$classes); ?>">
         <?php print $rows; ?>
       </div>
     <?php elseif ($empty): ?>
@@ -28,3 +28,13 @@
   <?php endif; ?>
   </div>
 </div>
+<?Php
+  //print '<pre>';
+  
+  //print '</pre>';
+?>
+<?Php
+//  print '<pre>';
+ // var_dump(get_defined_vars());
+//print '</pre>';
+?>

@@ -428,11 +428,22 @@ li {
   height: 1.2rem;
   width: 1.2rem;
 }
-#boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud{
+.dlpBox,#boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud,#boxes-box-downloads_devices{
   display:inline-block;
   width:@downloadWidth;
   vertical-align: top;
   //width:100%;
+}
+.dlpBox{
+  .bookTitle{
+    display:none;
+  }
+  .bookContainer{
+    background:@colorLight;
+    height: 20rem;
+    padding: 1rem;
+    font-size:1.5em;
+  }
 }
 .downloadsBox{
   width:@downloadWidth;
@@ -713,20 +724,20 @@ iframe[src*="youtube.com"], iframe[src*="youtu.be"]{
 }
 
 .laporte365{
-  width:278/13em;
-  height:278/13em;
+  width: 57rem;
+  height: 21rem;
   overflow:hidden;
   margin:.5em auto;
   /*border:3px solid @color5;*/
   .slideWrapper365{
     section{
       img{
-        width: 278/13em;
-        height:278/13em;
+        width: 21rem;
+        height:21rem;
       }
       display:inline-block;
-      width: 278/13em;
-      height:278/13em;
+      width: 21rem;
+      height:21rem;
       .scollerCaption{
         position: relative;
         bottom:50/13em;
@@ -1031,7 +1042,7 @@ only screen and (                min-resolution: 2dppx) {
   
   /*Downloads Section*/
 @downloadWidth:100%;
-#boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud{
+#boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud,#boxes-box-downloads_devices{
   display:inline-block;
   width:@downloadWidth;
   vertical-align: top;
@@ -1062,11 +1073,6 @@ only screen and (                min-resolution: 2dppx) {
     }
   }
 }
-  
-  
-  
-  
-  
   .mainArea{
     padding:1rem;
     display:flex;

@@ -139,7 +139,7 @@ input[type=checkbox].menuToggle {
  position: absolute;
  top: -9999px;
  left: -9999px;
-  @media only screen and (min-width: .1em){
+  @media only screen and (min-width: .1em) and (max-width:49em){
   /* For mobile, it's typically better to position checkbox on top of clickable
     area and turn opacity to 0 instead.
     http://css-tricks.com/the-checkbox-hack/  
@@ -148,6 +148,8 @@ input[type=checkbox].menuToggle {
     left: 58px;
     z-index:9999;
     opacity:0;
+    height: 10px;
+    width: 10px;
   }
 
 }

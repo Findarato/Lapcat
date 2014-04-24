@@ -40,13 +40,13 @@ jQuery(function () {
             .append(insertPoint = jQuery("<section/>", {
               "class": "newestSlide" + i
             }));
-          jQuery('<div><a target="_blank" href="' + data.data[i].link +'"><img height=278px width=278px src="' + data.data[i].images.low_resolution.url + '" alt="' + data.data[i].caption.text + '"></a></div>')
+          jQuery('<div><a target="_blank" href="' + data.data[i].link +'"><img src="' + data.data[i].images.low_resolution.url + '" alt="' + data.data[i].caption.text + '"></a></div>')
             .append("<div class='scollerCaption'>"+data.data[i].caption.text+"</div>")
             .appendTo(insertPoint);
       }
       var scroller = new FTScroller(document.getElementById("slideWrapper365"), {
         scrollingY: false,
-        snapping: true,
+        snapping: false,
         scrollbars: true,
         brouncing: true,
         updateOnWindowResize: true
@@ -75,5 +75,4 @@ jQuery(function () {
       */
     }
   });
-
 });

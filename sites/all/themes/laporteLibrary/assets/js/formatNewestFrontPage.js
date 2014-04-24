@@ -43,12 +43,12 @@ container
   );
     
 $(".scrollerBack").click(function(){
-  scroller.scrollBy(-160,0,500);
+  scroller.scrollBy(160,0,500);
   return false;
 });
 
 $(".scrollerNext").click(function(){
-  scroller.scrollBy(160,0,500);
+  scroller.scrollBy(-160,0,500);
   return false;
 });
 var previousLeft = 0;

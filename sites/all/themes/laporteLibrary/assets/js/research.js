@@ -54,5 +54,5 @@ jQuery.each(adultCategories,function(i,item){
     );
   }
 });
-adultContainer.prepend(categoryBox);
+adultContainer.find(".view-content").prepend(categoryBox);
 $(".AllMenu").trigger("click");

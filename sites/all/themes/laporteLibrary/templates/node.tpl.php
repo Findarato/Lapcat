@@ -1,4 +1,4 @@
-<?php
+<?Php
 if(render($content)!=""){
 ?>
   <div class="bookBox">
