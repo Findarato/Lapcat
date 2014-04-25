@@ -17,12 +17,11 @@ body {
   line-height:1.5;
   margin:0px;
   padding:0px; 
-  min-height:100%;
+  min-height:100vh;
   color:@colorDark;
   -webkit-animation: bugfix infinite 1s; 
   display:flex;
   flex-direction: column;
-  //flex:1;
 }
 
 html body.admin-menu {
@@ -129,7 +128,7 @@ aside {
   cursor:pointer;
   white-space: nowrap;
   background:darken(@colorBlue6,10%);
-  a{color:@colorLight;}
+  a{color:@colorLight;} 
 }
 .breadCrumbs{
   font-size:1.2em;
@@ -147,6 +146,7 @@ aside {
   margin:0 auto 4rem;
   width:@total-width;
   display:block;
+  flex:1;
 }
 #mainContent{
   width:61rem;
@@ -637,6 +637,12 @@ iframe[src*="youtube.com"], iframe[src*="youtu.be"]{
   display:table;
   span{
     padding:0 .3em;
+  }
+}
+.easy_social-widget{
+  width:4rem;
+  iframe{
+    width:4rem;
   }
 }
 .siteMap .secondNav{
