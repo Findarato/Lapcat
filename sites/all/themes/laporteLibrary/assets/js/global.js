@@ -146,7 +146,7 @@ jQuery(document).ready(function(){
     date = new Date(me.text()*1000);
     return $("<div/>",{"class":"fancyEventDate"}).html($("<div/>",{"html":monthNames[date.getMonth()]})).append($("<div/>",{"html":date.getDay()}));
   });
-  jQuery(".easy_social-widget iframe").css({"width":"4rem"});
+  jQuery(".easy_social-widget iframe").css({"width":"5rem"});
 });
 
 
