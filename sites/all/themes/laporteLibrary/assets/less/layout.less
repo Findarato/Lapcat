@@ -1019,9 +1019,25 @@ only screen and (                min-resolution: 2dppx) {
     width:100%;
     padding:1em;
   }
+
 }
 @media only screen and (min-width: .1em) and (max-width:49em){ /*everything should be here*/ 
-  
+  .laporte365{
+    width: 100%;
+  }
+  .spc-Search {
+    .catalog {
+      width:100%;
+      form {
+        padding: 1rem;
+        overflow: hidden;
+      } 
+    }
+  }
+  .spc-Search .catalog .spc-Submit input {width:4rem;}
+  .spc-Links{
+    display:none;
+  }  
   .articleBlocks{
     width:100%;
     .view-newest-article-blocks{
@@ -1036,8 +1052,8 @@ only screen and (                min-resolution: 2dppx) {
   .articlePicture{
     .articleEntryDescription:empty{display:none;}
       height:18.461538462em;
-      width:200/13em;
-      margin:1em 0;
+      width:200/13rem;
+      margin:1rem 0;
       display:table;
     .picture{
       height:150/13rem;
