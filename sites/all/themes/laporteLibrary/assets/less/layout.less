@@ -125,7 +125,7 @@ aside {
 .bookTitle{ 
   width:100%;
   padding:.7rem;
-  cursor:pointer;
+  //cursor:pointer;
   white-space: nowrap;
   background:darken(@colorBlue6,10%);
   a{color:@colorLight;} 
@@ -419,6 +419,32 @@ li {
 .um{
   background-image:url("@{imagesPath}branchImages/Union_mills_branch.jpg");
 }
+
+
+/**
+ *   Blocks Display
+ */
+
+.view-employment-pdfs{
+  display:flex;
+  .views-row{
+    height:16rem;
+    width:16rem;
+    background:@colorLight;
+    display: inline-flex;
+    flex-direction: column;
+    align-items:stretch;
+    justify-content: space-between;
+    align-items:flex-end;
+    padding:.5rem;
+    a{
+      display:block;
+      width:100%;
+    }     
+  }
+}
+
+
 /*Downloads Section*/
 @downloadWidth:20rem;
 .downloadIcon{
@@ -1042,6 +1068,21 @@ only screen and (                min-resolution: 2dppx) {
       margin-top:-7rem;
     }
   }
+
+
+/*
+ Block Display
+*/
+.view-employment-pdfs{
+  display:flex;
+  .view-row{
+    display:inline-block;
+    width:20rem;
+    height:16rem;
+    background:@colorLight; 
+  }
+} 
+
   
   /*Downloads Section*/
 @downloadWidth:100%;
@@ -1056,6 +1097,7 @@ only screen and (                min-resolution: 2dppx) {
   line-height: inherit;
   display:inline-block;
   flex:0;
+  background:red;
   .branchPicture{
     
   }
