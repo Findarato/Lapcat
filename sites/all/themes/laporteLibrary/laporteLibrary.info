@@ -26,13 +26,13 @@ regions[pageTopMenu] = Page Top Menu
 regions[pageHeader] = Page Header
 regions[pageTitle] = Page Title
 regions[menuHeader] = Header Menu
+regions[search] = Search
 regions[featured_slider] = Featured Slider
 regions[articleHighlight] = Article Highlight
 regions[articleBlocks] = Article Blocks
 regions[breadCrumbs] = Bread Crumbs
 regions[content] = Content
 regions[rightSide] = Side Content
-regions[search] = Search
 regions[contact] = Contact
 regions[pageLinks] = Page Links
 ; Information added by drupal.org packaging script on 2012-10-17

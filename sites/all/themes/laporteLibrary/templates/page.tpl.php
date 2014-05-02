@@ -48,34 +48,9 @@
 <div class="colorWave"></div>
   <?php if ($messages): ?><div id="console"><?php print $messages; ?></div><?php endif; ?>
   <!-- Catalog Search-->
-  <div class="spc-Search">
-    <div class="catalog ">
-      <form method="get" action="https://catalog.lapcat.org/search/~/a?a">
-        <div class="t">
-          <div class="spc-Type td" style="display:none;">
-            <select name="searchtype" >
-              <option value="X" selected="selected">KEYWORD</option>
-              <option value="t">TITLE</option>
-              <option value="a">AUTHOR</option>
-              <option value="d">SUBJECT</option>
-            </select>
-          </div>
-          <div class="spc-SearchBox td" >
-            <input class="" type="search" name="searcharg" placeholder="Search the Catalog">
-          </div>
-          <div class="spc-Submit td" >
-            <input type="submit" value="GO!"/>
-          </div>
-          <div class="spc-Links td" >
-            <a href="https://catalog.lapcat.org:444/patroninfo" alt="My Account Link">My Account</a>
-          </div>
-          <div class="spc-Links td" >
-            <a href="help" alt="get Help">?</a>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div>
+  <?php if ($page['search']): ?>
+   <?php print render($page['search']); ?>
+  <?php endif; ?> 
   <!-- End Catalog Search-->
   <div class="colorWave"></div>
   <main class="mainArea" id="main" role="main">
@@ -100,10 +75,5 @@
         <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
       </div>
       <?php endif; ?>
-      <?php if ($page['search']): ?>
-      <div>
-       <div id="search"><?php print render($page['search']); ?></div>
-      </div>
-      <?php endif; ?> 
     </div>
   </footer>
