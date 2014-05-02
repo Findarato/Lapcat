@@ -27,8 +27,11 @@
  * @ingroup views_templates
  */
 ?>
+<div class="shadowColors">
+  <div class="banner">
+    <div id="featured-slider" class="">
     <?php if ($rows): ?>
-      <div class="view-content">
+      <div class="view-content slider">
         <?php print $rows; ?>
       </div>
     <?php elseif ($empty): ?>
@@ -36,3 +39,6 @@
         <?php print $empty; ?>
       </div>
     <?php endif; ?>
+    </div> <!-- End Featured Slider-->
+  </div>
+</div>
