@@ -104,10 +104,5 @@
         <div id="pageLinks" ><?php print render($page['pageLinks']); ?></div>
       </div>
       <?php endif; ?>
-      <?php if ($page['search']): ?>
-      <div>
-       <div id="search"><?php print render($page['search']); ?></div>
-      </div>
-      <?php endif; ?> 
     </div>
   </footer>
