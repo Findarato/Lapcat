@@ -1,8 +1,7 @@
 <header>
   <div class="masterHeader">
     <a class="masterHeaderLogo" href="/" alt="Logo" title="La Porte County Public Library">
-      <!--<img class="logoImage" src="/sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg" alt="logo" title="Logo" id="logo" />-->
-      <?Php include($_SERVER['DOCUMENT_ROOT']."/sites/all/themes/laporteLibrary/assets/images/2014logo_notext.svg");  ?>
+      <img class="logoImage" src="/sites/all/themes/laporteLibrary/assets/images/2014logoNoText.png" alt="logo" title="Logo" id="logo" />
     </a>
     <a class="masterHeaderTitle" href="/" alt="Logo" title="La Porte County Public Library">
       <h1><?Php print $site_name; ?></h1>
