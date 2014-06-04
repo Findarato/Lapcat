@@ -990,15 +990,6 @@ ul.pager{
 @import url("header.less");
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
-
-/*Bug fixes*/
-
-.adultResearch{
-  img{
-    float:left;
-    height:6em;
-  }
-}
 @-webkit-keyframes bugfix {
   from {padding:0;}
   to {padding:0;}
@@ -1218,6 +1209,11 @@ only screen and (                min-resolution: 2dppx) {
   #mainContent,#side,header{
     padding:1em;
     width:100%;
+  }
+  .researchList{
+    img{display:none;}
+    .researchInfoBasic{display:none;}
+    
   }
   .shadowColors{width:auto;padding: .3rem;}
   .tagRow,.subTitleElement{
