@@ -155,8 +155,7 @@ aside {
   vertical-align: top;
   .region-content{
     flex:100%;
-    //display:inline-flex;
-    display:block;
+     display:block;
     flex-direction: column;
   }
 }
@@ -317,7 +316,7 @@ li {
   height:auto;
   background:@colorLight;
   margin-bottom:1rem;
-  .masterplan,.genealogyBanner{
+  .masterplan,.genealogyBanner,.communityBanner{
      background: linear-gradient(to bottom, lighten(@colorYellow1,10%) 0%,lighten(@colorYellow1,100%) 90%); /* W3C */
      display:block;
      font-size:2em;
@@ -335,6 +334,9 @@ li {
    }
    .genealogyBanner{
      background:url("@{imagesPath}banners/geneology_blur.jpg") no-repeat scroll 50% 0% transparent;
+   }
+   .communityBanner{
+     background:url("@{imagesPath}banners/community_blur.png") no-repeat scroll 50% 0% transparent;
    }
 }
 /**
@@ -632,7 +634,7 @@ iframe[src*="youtube.com"], iframe[src*="youtu.be"]{
 }
 .bookContainer{
   h2{color:@colorDark;margin:1rem 0;}
-  font-size:1.1em;
+  font-size:        1.2rem;
   padding:          1rem;
   vertical-align:   top;
   .downloadDisplay{
@@ -890,8 +892,8 @@ ul.pager{
  *
  */
 .view-header{
-  font-size: 1.1em;
-  margin: .3em;
+  font-size: 1.1rem;
+  margin: .3rem 0;
 }
 
 .blogTitle a:hover,.twitterFeedTitle a:hover,.deliciousFeedTitle a:hover{text-decoration:none;}
@@ -1106,56 +1108,59 @@ only screen and (                min-resolution: 2dppx) {
       margin-top:-7rem;
     }
   }
-
-
-/*
- Block Display
-*/
-.view-employment-pdfs{
-  display:flex;
-  .view-row{
-    display:inline-block;
-    width:20rem;
-    height:16rem;
+  .region-featured-slider{
     background:@colorLight;
+    width:100%;
+    display: block;
+    margin:1rem .5rem;
   }
-}
+  /*
+   Block Display
+  */
+  .view-employment-pdfs{
+    display:flex;
+    .view-row{
+      display:inline-block;
+      width:20rem;
+      height:16rem;
+      background:@colorLight;
+    }
+  }
 
 
   /*Downloads Section*/
-@downloadWidth:100%;
-#boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud,#boxes-box-downloads_devices{
-  display:inline-block;
-  width:@downloadWidth;
-  vertical-align: top;
-  //width:100%;
-}
-.downloadsBox{
-  width:@downloadWidth;
-  line-height: inherit;
-  display:inline-block;
-  flex:0;
-  background:red;
-  .branchPicture{
-
+  @downloadWidth:100%;
+  #boxes-box-freegal,#boxes-box-overdrive,#boxes-box-zinio,#boxes-box-downloads_tumble_books,#boxes-box-downloads_tumble_books_cloud,#boxes-box-downloads_devices,.dlpBox{
+    display:inline-block;
+    width:@downloadWidth;
+    vertical-align: top;
+    //width:100%;
   }
-  .locationBody{
-    flex-direction:column;
-  }
-  .locationInfo{
-    box-shadow:0 7px 4px -5px rgba(0, 0, 0, 0.75);
-    width: 100%;
-    height: 16rem;
-  }
-  .locationPicture{
-    margin-top:0;
-    display:none;
+  .downloadsBox,.dlpBox{
+    width:@downloadWidth;
+    line-height: inherit;
+    display:inline-block;
+    flex:0;
     .branchPicture{
-      width:@downloadWidth;
-      height:@downloadWidth/2;
+  
+    }
+    .locationBody{
+      flex-direction:column;
+    }
+    .locationInfo{
+      box-shadow:0 7px 4px -5px rgba(0, 0, 0, 0.75);
+      width: 100%;
+      height: 16rem;
+    }
+    .locationPicture{
+      margin-top:0;
+      display:none;
+      .branchPicture{
+        width:@downloadWidth;
+        height:@downloadWidth/2;
+      }
     }
   }
-}
   .mainArea{
     padding:1rem;
     display:flex;
@@ -1210,10 +1215,11 @@ only screen and (                min-resolution: 2dppx) {
       width:100%;
     }
   }
-  .shadowColors,#mainContent,#side,header{
+  #mainContent,#side,header{
     padding:1em;
     width:100%;
   }
+  .shadowColors{width:auto;padding: .3rem;}
   .tagRow,.subTitleElement{
     justify-content: flex-start;
     flex-flow: row wrap;
